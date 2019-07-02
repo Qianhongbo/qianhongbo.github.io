@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Blog | Qian Homeberg</title>
+  
+  <subtitle>Look! Who is here! Welcome~~</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://www.qianhongbo.top/"/>
+  <updated>2019-07-02T02:50:51.261Z</updated>
+  <id>https://www.qianhongbo.top/</id>
+  
+  <author>
+    <name>Qian Hongbo</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>20190702</title>
+    <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/20190702/"/>
+    <id>https://www.qianhongbo.top/随笔/20190702/</id>
+    <published>2019-07-02T02:48:39.000Z</published>
+    <updated>2019-07-02T02:50:51.261Z</updated>
+    
+    <content type="html"><![CDATA[<p>考完试啦，也把博客搬迁到我的mac上了，还是蛮简单的</p><p>遇到了点小问题但是都解决了，蛮好</p><p>Everything we can just google it!</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;考完试啦，也把博客搬迁到我的mac上了，还是蛮简单的&lt;/p&gt;
+&lt;p&gt;遇到了点小问题但是都解决了，蛮好&lt;/p&gt;
+&lt;p&gt;Everything we can just google it!&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="Diary" scheme="https://www.qianhongbo.top/tags/Diary/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/hello-world/"/>
+    <id>https://www.qianhongbo.top/随笔/hello-world/</id>
+    <published>2019-07-02T01:57:10.000Z</published>
+    <updated>2019-06-05T06:02:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<center>Yes, hello world.</center>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;center&gt;Yes, hello world.&lt;/center&gt;
+
+
+      
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="Code" scheme="https://www.qianhongbo.top/tags/Code/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>1</title>
+    <link href="https://www.qianhongbo.top/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://www.qianhongbo.top/学习笔记/C语言学习笔记/</id>
+    <published>2019-06-26T07:23:15.000Z</published>
+    <updated>2019-06-26T08:29:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="我为什么要学习C语言"><a href="#我为什么要学习C语言" class="headerlink" title="我为什么要学习C语言"></a>我为什么要学习C语言</h1><p>说来惭愧，作为一个工科学生，我竟然没有学过C语言，只在大一的时候学过一学期的VB，虽然语言这种东西说起来都差不多，但毕竟也是将近三年前的事了，早就忘光了。</p><p>可是不掌握C语言真的很麻烦，这尤其体现在做单片机上，单片机要求我们使用C语言，我当时连那些代码都看不懂，更别谈让我自己去写了。</p><p>正好，最近时间比较充沛。拿出时间来把C语言好好学学</p><p>p.s. 突然想起来我初中好像就学过C++了，但只是皮毛</p><h1 id="我用什么工具学习C语言"><a href="#我用什么工具学习C语言" class="headerlink" title="我用什么工具学习C语言"></a>我用什么工具学习C语言</h1><p>书籍：C程序设计语言（第二版 新版）→ 纸质</p><p>软件：VS2017</p><p>其它：Google，CSDN，Baidu</p><h1 id="20190626"><a href="#20190626" class="headerlink" title="20190626"></a>20190626</h1><h2 id="我的第一段代码"><a href="#我的第一段代码" class="headerlink" title="我的第一段代码"></a>我的第一段代码</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"hello, world.\n"</span>);</span><br><span class="line">system(<span class="string">"pause"</span>);</span><br><span class="line"><span class="comment">//return 0;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol><li>main函数：main是一个特殊的函数名——每个程序都从main函数的起点开始执行。main函数通常会调用其它函数来帮助完成某些工作</li><li>本例中main函数不需要任何参数</li><li>用双引号括起来的字符序列称为字符串或字符串常量</li><li>\n 表示换行符</li></ol><h2 id="第二段代码"><a href="#第二段代码" class="headerlink" title="第二段代码"></a>第二段代码</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="comment">/* 当fatr = 0,20,...,300时，分别打印华氏温度与摄氏温度对照表 */</span></span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">int</span> fahr, celsius;</span><br><span class="line"><span class="keyword">int</span> lower, upper, step;</span><br><span class="line"></span><br><span class="line">lower = <span class="number">0</span>; <span class="comment">/* 温度表的上限 */</span></span><br><span class="line">upper = <span class="number">300</span>; <span class="comment">/* 温度表的下限 */</span></span><br><span class="line">step = <span class="number">20</span>; <span class="comment">/* 步长 */</span></span><br><span class="line"></span><br><span class="line">fahr = lower;</span><br><span class="line"><span class="keyword">while</span> (fahr &lt;= upper) &#123;</span><br><span class="line">celsius = <span class="number">5</span> * (fahr - <span class="number">32</span>) / <span class="number">9</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d\t%d\n"</span>, fahr, celsius);</span><br><span class="line">fahr = fahr + step;</span><br><span class="line">&#125;</span><br><span class="line">system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol><li>其中，int表示其后所列的变量为整数，与之对应的float表示浮点数（即可以带有小数部分）</li><li>为什么不用5/9？因为C语言存在舍位，小数部分都会被舍弃</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;我为什么要学习C语言&quot;&gt;&lt;a href=&quot;#我为什么要学习C语言&quot; class=&quot;headerlink&quot; title=&quot;我为什么要学习C语言&quot;&gt;&lt;/a&gt;我为什么要学习C语言&lt;/h1&gt;&lt;p&gt;说来惭愧，作为一个工科学生，我竟然没有学过C语言，只在大一的时候学过一学期的
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://www.qianhongbo.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="C" scheme="https://www.qianhongbo.top/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>脸上各部位长痘痘的原因及调理方法汇总</title>
+    <link href="https://www.qianhongbo.top/%E7%9F%A5%E8%AF%86%E7%A7%AF%E7%B4%AF/%E8%84%B8%E4%B8%8A%E5%90%84%E9%83%A8%E4%BD%8D%E9%95%BF%E7%97%98%E7%97%98%E7%9A%84%E5%8E%9F%E5%9B%A0%E5%8F%8A%E8%B0%83%E7%90%86%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB/"/>
+    <id>https://www.qianhongbo.top/知识积累/脸上各部位长痘痘的原因及调理方法汇总/</id>
+    <published>2019-06-26T01:24:31.000Z</published>
+    <updated>2019-06-26T01:45:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>额头痘状况：</strong>有可能是压力太大，容易脾气不好，造成心火和血液循环有问题。</p><p>改善：应养成早睡早起的习惯，让睡眠充足，并多喝水。</p><p><strong>印堂痘状况：</strong>出现在两眉正中间的痘痘，通常有胸闷、心律不整、<a href="http://www.med66.com/jibing/xinji/" target="_blank" rel="noopener">心悸</a>等毛病。</p><p>改善：不要尝试太过激烈的运动，要避免烟、酒等刺激性的食品。</p><p><strong>发髻痘状况：</strong>因为卸妆没有卸干净，造成毛孔堵塞河污染，容易在较闷的发髻或眉间形成细小痘痘。</p><p>改善：加强卸妆和清洁的工作，一定要彻底搓揉干净，每星期做一次去角质工作，报纸皮脂腺顺畅。</p><p><strong>鼻翼痘状况：</strong>突然冒出的肿大痘痘，可能是卵巢机能或者生殖系统有关。</p><p>改善：不要过度纵欲或禁欲，尽量走出户外，享受降的自然环境。</p><p><strong>鼻头痘状况：</strong>可能是胃火过大，消化系统异常。</p><p>改善：少吃冰冷食物，寒性食品容易引起胃酸分泌，造成胃火过大。</p><p><strong>眼头痘状况：</strong>K近鼻子和眼头区域的痘痘，通常是肝机能不好所引起。</p><p>改善：生活作息要正常，避免熬夜，尽量在11点前上床睡觉。</p><p><strong>唇周痘状况：</strong><a href="http://www.med66.com/jibing/bianmi/" target="_blank" rel="noopener">便秘</a>导致体内毒素累计，或者是使用含氟过量的牙膏，都是造成唇周痘痘的主因。</p><p>改善：多吃高纤维的蔬菜水果，调整饮食习惯，刷牙漱口要彻底。</p><p><strong>下巴痘状况：</strong>通常是月经要来的前几天，造成<a href="http://www.med66.com/jibing/neifenmishitiao/" target="_blank" rel="noopener">内分泌失调</a>所引起的。</p><p>改善：少吃冰冷的东西，月经期间可用消炎镇定的保养品。</p><p><strong>右边脸颊痘状况：</strong>可能是肺部功能失常，手脚冰冷，或是容易敏感的体质，也有可能是<a href="http://www.med66.com/jibing/ganmao/" target="_blank" rel="noopener">感冒</a>前兆。</p><p>改善：平时注意呼吸道的保养，尽量避免芒果、芋头、海鲜甲壳类易过敏的食物。</p><p><strong>左边脸颊痘状况：</strong>可能是肝功能不顺畅，如肝脏的分泌、解毒或造血等功能出了状况。</p><p>改善：作息正常，保持心情愉快，该吹冷气就吹冷气，不要让身体处在过度闷热。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;额头痘状况：&lt;/strong&gt;有可能是压力太大，容易脾气不好，造成心火和血液循环有问题。&lt;/p&gt;
+&lt;p&gt;改善：应养成早睡早起的习惯，让睡眠充足，并多喝水。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;印堂痘状况：&lt;/strong&gt;出现在两眉正中间的痘痘，通常有胸闷、心律不
+      
+    
+    </summary>
+    
+      <category term="知识积累" scheme="https://www.qianhongbo.top/categories/%E7%9F%A5%E8%AF%86%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>20190626</title>
+    <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/20190626/"/>
+    <id>https://www.qianhongbo.top/随笔/20190626/</id>
+    <published>2019-06-26T00:55:19.000Z</published>
+    <updated>2019-06-26T02:08:58.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天没事闲的，在百度上搜索了一下自己，发现一个文档，是16年吉林一中所有毕业生的去向</p><p>说实话，这个表格我从没打开过，也没看过，所以我也不知道自己在这么一批人中到底处于一个什么层次什么位置</p><p>无奈，手贱点开了，内心难免升起波澜</p><p>我想如果我当年看了这个表格的话，我应该会选择复读吧</p><p>不是很好的学校的最差专业，这个报考也是很不明智</p><p>难怪我觉得来到这个学校和我期待的大学不一样，因为我的确没有去上我所期待的大学啊</p><p>最开始来到这里之后先是觉得不适应，觉得自己不属于这里，</p><p>后来慢慢适应了，也习惯这里的一切</p><p>后来自己又变成了这一批人里的中游</p><p>想想还是蛮扎心的</p><p>今天看到这个也算给自己一个警示</p><p>我不该这么消沉，我应该去追求属于我自己的未来</p><hr><p>包括来到大学，我也不是很努力，我一直都不是一个努力型人格，喜欢放纵自己，跟着自己的性子来</p><p>这样的话，等到大学毕业，我可能还是同样的结局</p><p>真是活该啊！</p><hr><p>人应该今早认识到一点：</p><p>人这一生，考的不光是实力，也看运气</p><p>运气也是实力的一种</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;今天没事闲的，在百度上搜索了一下自己，发现一个文档，是16年吉林一中所有毕业生的去向&lt;/p&gt;
+&lt;p&gt;说实话，这个表格我从没打开过，也没看过，所以我也不知道自己在这么一批人中到底处于一个什么层次什么位置&lt;/p&gt;
+&lt;p&gt;无奈，手贱点开了，内心难免升起波澜&lt;/p&gt;
+&lt;p&gt;我想如果
+      
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="Diary" scheme="https://www.qianhongbo.top/tags/Diary/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>华科机械模电课后答案，实验手册答案</title>
+    <link href="https://www.qianhongbo.top/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E6%A8%A1%E7%94%B5%E8%AF%BE%E5%90%8E%E7%AD%94%E6%A1%88%EF%BC%8C%E5%AE%9E%E9%AA%8C%E6%89%8B%E5%86%8C%E7%AD%94%E6%A1%88/"/>
+    <id>https://www.qianhongbo.top/华科机械学习资料分享/华科机械模电课后答案，实验手册答案/</id>
+    <published>2019-06-14T15:24:38.000Z</published>
+    <updated>2019-06-14T15:30:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<div class="row">    <embed src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E6%A8%A1%E7%94%B5%E8%AF%BE%E5%90%8E%E7%AD%94%E6%A1%88.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E6%A8%A1%E7%94%B5%E8%AF%BE%E5%90%
+      
+    
+    </summary>
+    
+      <category term="华科机械学习资料分享" scheme="https://www.qianhongbo.top/categories/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="模电" scheme="https://www.qianhongbo.top/tags/%E6%A8%A1%E7%94%B5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>钱泓勃大学各学期大致课外学习规划</title>
+    <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/%E9%92%B1%E6%B3%93%E5%8B%83%E5%A4%A7%E5%AD%A6%E5%90%84%E5%AD%A6%E6%9C%9F%E5%A4%A7%E8%87%B4%E8%AF%BE%E5%A4%96%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/"/>
+    <id>https://www.qianhongbo.top/随笔/钱泓勃大学各学期大致课外学习规划/</id>
+    <published>2019-06-14T13:18:55.000Z</published>
+    <updated>2019-06-14T13:21:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>大二下学期：学控制，以Arduino为主，可能学不完，学不透，暑假继续</p><p>大三上学期：转去学机器人学（Matlab），也算是为之后去参加数模美赛做基础</p><p>大三下学期：如果有精力可以去学Linux，ROS</p><p>大四：Linux，ROS，Python，Tensorflow…</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;大二下学期：学控制，以Arduino为主，可能学不完，学不透，暑假继续&lt;/p&gt;
+&lt;p&gt;大三上学期：转去学机器人学（Matlab），也算是为之后去参加数模美赛做基础&lt;/p&gt;
+&lt;p&gt;大三下学期：如果有精力可以去学Linux，ROS&lt;/p&gt;
+&lt;p&gt;大四：Linux，ROS，Pyt
+      
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="目标" scheme="https://www.qianhongbo.top/tags/%E7%9B%AE%E6%A0%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>华科机械学院模电复习笔记</title>
+    <link href="https://www.qianhongbo.top/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E9%99%A2%E6%A8%A1%E7%94%B5%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://www.qianhongbo.top/学习笔记/华科机械学院模电复习笔记/</id>
+    <published>2019-06-14T13:18:45.000Z</published>
+    <updated>2019-06-14T13:20:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>N型半导体掺杂五价元素，多子是自由电子</li><li>P型半导体掺杂三价元素，多子是空穴</li><li>多子的浓度取决于掺杂浓度</li><li>少子的浓度和温度有关</li><li>扩散运动：由载流子浓度差产生</li><li>漂移运动：在电厂作用下引起的</li><li>P型半导体和N型半导体放在一起交界面的两侧载流子的浓度差很大，多数载流子会像对面扩散形成载流子的扩散运动。</li><li>由此在交界面的两侧，载流子行程里内电场，方向由N指向P。</li><li>内电场的存在阻碍了载流子的扩散运动，而有利于载流子向对方的漂移运动，形成了少数载流子的漂移运动</li><li>刚开始扩散占优势，漂移很弱</li><li>随着扩散的进行，空间电荷区加宽，内电场加强，阻碍扩散运动的作用增强。漂移运动也随着内电场的增强而增强</li><li>最终形成动态平衡，形成了稳定的空间电荷区，即PN结！</li><li>电源正极接P区，负极接N区时，正偏</li><li>外加的正向电场称为外电场，其方向与内电场方向相反，为P指向N</li><li>加外电场后，内电场会被削弱，空间电荷区变窄，有利于扩散不利于漂移。</li><li>导致大量的多数载流子通过PN结形成较大的正向电流，PN结导通，此时PN结的正向电阻很小</li><li>若在PN结两端加反向电压，则空间电荷区变宽，反向电阻很大很大，几乎不导通</li><li>二极管分为：点接触型，面接触型和平面型二极管</li><li>二极管的死区电压：硅管0.7V</li><li>二极管的限幅特性，都导通怎么判断？</li><li>稳压二极管：反向击穿可逆，工作在反向击穿区</li><li>Uz为其反向击穿电压</li><li>三极管 ： NPN PNP </li><li>三极管会构成两个回路，一个是输入回路，一个是输出回路，所以一定会有一个点击作为回路的公共端。从而形成了三种连接方式：共射放大电路，共集放大电路，共基放大电路</li><li>外部条件：发射结正偏，集电结反偏</li><li>原理：发射区向基区发射自由电子，基区的多数载流子空穴也会通过发射结到达发射区，两种载流子的方向相反，形成电流相同，成为发射结电流Ie（主要认为是由发射区的多数载流子的自由电子形成的）</li><li>发射区进入基区的自由电子继续想自由电子浓度少的集电结方向扩散，并不断的与基区的多数载流子空穴复合而消失。电源补充基区的空穴，形成了基极电流Ib（基区很薄，复合的是少数，多数继续扩散）</li><li>集电结处于反向偏置，所以基区的自由电子很容易扩散到集电区，形成较大的电流Ic，集电区的少数载流子空穴也在电压的作用下漂移到基区形成Ic的一部分，成为反向饱和电流Icbo</li><li>输入特性曲线：不太理解</li><li>输出特性曲线：以输入电流为参考变量，输出电流Ic和输出电压uce的关系曲线</li><li>Y轴为Ic，X轴为uce</li><li>起始部分，即uce很小的时候，集电结收集载流子的能力大大增强，导致ic增加很快</li><li>但当uce增大到一定数值的时候，集电结反向电场已经足够大，能将发射区扩散的载流子都吸引到集电区，导致uce继续增加后，ic几乎不变，曲线趋近于平坦</li><li>三极管工作在放大区，又称线性去，即平坦部分，此时基极电流的微小变化可以引起集电极电流的较大变化，三极管具有电流放大作用</li><li>饱和区，当ib不断增加，ic随之增加，而使uce减小到小于ube时集电结也将处于正向偏置状态，内电场减弱，不利于收集从发射区到达基区的载流子，无电流放大作用</li><li>深度饱和时uce很小，硅管约为0.3V</li><li>三极管饱和时的管压降用Uces来表示，此时C和E之间相当于开关合上</li><li>截止区，将对应于ib=0以下的区域成为截至区，此时ic约等于0，C和E之间没有电流流过，相当于开关断开</li><li>温度影响，温度升高输入特性曲线向左移动，Ic，beita均增大</li><li>输入电阻：从放大电路的输入端看进去的<strong>交流</strong>等效电阻，此时所有的电容近似忽略</li><li>输入电阻越大，向信号源索取的电流越小，得到的输入电压越大，Ui与Us越接近</li><li>对于电流源类型的信号源，希望输入电阻小一些，以便放大电路获取的电流接近于信号源的电流</li><li>电压源形式的电路则希望输入电阻大一些</li><li>输出电阻的定义：当负载RL开路的时候信号源为0，在输出端看进去的交流等效电阻</li><li>输出电阻越小，输出电压越接近理想电压源，也表明放大电路的带负载能力越强</li><li>通频带：fbw=fH-fL，通频带越宽表明放大电路对不同信号的适应能力越强</li><li>基本放大电路，C1，C2为耦合电容，用来隔直通交</li><li>集电结电阻的作用是用来将ic转化为集电极电压的变化</li><li>耦合电容C1的容量较大，通常采用电解电容，所以要考虑正负极，正的接直流电源的正极</li><li>C2耦合电容的目的就是滤去静态工作点设置过程中的直流信号</li><li>静态工作点的图解法，先利用解析法求出Ib，满足直线方程 uCE = Ucc-icRc</li><li>做一条直线，斜率为-1/Rc，因为已经求出IbQ，所以可以在交点上求出IcQ和UCEQ</li><li>Rb的影响：Rb不影响直流负载线，故改变Rb只会是Q点在直流负载线上和各个不同的输出曲线相交</li><li>且加大Rb，IBQ将减小，Q点将沿着直流负载线向下移动</li><li>Rc的影响改变Rc将会影响直流负载线的斜率，IBQ不会受到影响，减小Rc斜率增大，与横轴的交点不变，沿着输出特性曲线向右移动</li><li>交流负载线一定通过静态工作点</li><li>斜率为-1/RL’，斜率比直流负载线要大</li><li>只有在空载时，直流负载线和交流负载线重合</li><li>非线性失真：静态工作点设置过低输入信号的负半周进入截止区，反向之后会出现顶部失真</li><li>解决办法：适当减小Rb的值，是的静态工作点上移</li><li>如果静态工作点已经不能修改，可减小信号，是的信号处于放大区</li><li>静态工作点设置过高，输入回路并没有出现问题，而是在输出回路。在饱和区，ic出现顶部失真，在反向之后则是底部失真</li><li>如果想使得输出信号不失真，要讲Rb增大，使得静态工作点下移</li><li>交流负载线应该是指在AB段的中点处</li><li>解析法就是微变等效电路</li><li>P42页电流方向，ib向下，beita倍的ib也向下</li><li>PN结的伏安特性，i = Is（e^(u/UT)-1）</li><li>rbede计算公式</li><li>rbb’ 基区体电阻 未特殊说明，均取300</li><li>动态参数</li><li>Au就散 负号 </li><li>输入电阻是Rb和小rbe的并联，没有Rs</li><li>输出电阻就是Rc，没有RL</li><li>Aus 叫做源电压放大倍数，是输入电阻除以输入电阻和Rs的和</li><li>在计算小rbe的时候IEQ可以直接用ICQ代替</li><li>mv/mA 等于Ω不用换了！</li><li>静态工作点稳定电路：归根到底就是要稳定ICQ使得ICQ基本不变</li><li>静态工作点稳定电路的工作原理：集电极电流变大，发射极电流也变大，发射极有一个电阻，导致发射极电压变大，基极电压不变，所以三极管山发射结电压变小，使得基极电流变小，导致集电极电流变小，形成负反馈</li><li>P48也的几个式子很容易搞错！</li><li>Re可以起到稳定静态工作点的作用，但是同样会减小电压放大倍数，而且是很大的减小电压放大倍数</li><li>解决方法就是引入旁路电容，只在静态工作点稳定中Re起作用，在动态中，不起作用</li><li>如果输入回路并联了一个电阻，那么静态工作点的求法就不是之前的公式了，而是应该用分压公式计算，求出Ubq再计算发射极的电流，计算出来</li><li>P51页共集电极放大电路，注意电流方向，和rbe位置，都不一样了！电阻编导上面，电流汇集到一起不是分开的</li><li>它的放大倍数约等于1</li><li>共基级放大电路，很复杂，但输入是输入到Re电阻上头</li><li>多级放大电路</li><li>阻容耦合放大电路，优点是各级之间用电容分割开来，静态工作点相互不会影响。缺点略</li><li>直接耦合电路存在零点漂移现象，也就是输入信号为0时，输出信号不是0，严重的时候，会影响到需要的实际信号</li><li>变压器耦合</li><li>阻容耦合多级放大电路的电压放大倍数是它们每级放大电路当大倍数的乘积</li><li>输入电阻是第一级的输入电阻，输出电阻是最后一级的输出电阻</li><li>场效应管和NPN型类似，只是是电压控制电流</li><li>负反馈部分暂时跳过</li><li>偏置电路是为各级提供合适的工作电流，确定合适的工作点</li><li>单门限电压，将连续变化的模拟量变化成数字量</li><li>阈值电压 UOH</li><li>两个输入一个输出</li><li>其中一个输入作为比较电压</li><li>正的比负的大，输出高电压</li><li>正的比负的小，输出负电压</li><li>电压比较器工作在非线性区，所以虚端不成立，虚断仍然成立</li><li>反向单门限电压比较器</li><li>传输特性为左上右下，因为UR在同向端，u1在反向端，</li><li>同向比较器，左下右上，自己推一下就好了</li><li>接入两个相反的二极管，可以起到限幅和保护输入的作用</li><li>自激震荡的条件：幅值平衡条件AF=1，相位平衡条件 A的相位+B的相位=2nπ</li><li>起震条件：AF大于1，相位的和是2nπ</li><li>RC串并联选频网络 f=1/2πRC，F=1/3，</li><li>LC并联电路的选频特性：f0 = 1/2π根号LC</li><li>变压器反馈式LC震荡电路：三极管的作用是利用非线性性质自动稳幅</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;N型半导体掺杂五价元素，多子是自由电子&lt;/li&gt;
+&lt;li&gt;P型半导体掺杂三价元素，多子是空穴&lt;/li&gt;
+&lt;li&gt;多子的浓度取决于掺杂浓度&lt;/li&gt;
+&lt;li&gt;少子的浓度和温度有关&lt;/li&gt;
+&lt;li&gt;扩散运动：由载流子浓度差产生&lt;/li&gt;
+&lt;li&gt;漂移运动：在电厂作
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://www.qianhongbo.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="模电" scheme="https://www.qianhongbo.top/tags/%E6%A8%A1%E7%94%B5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>托福综合写作</title>
+    <link href="https://www.qianhongbo.top/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%89%98%E7%A6%8F%E7%BB%BC%E5%90%88%E5%86%99%E4%BD%9C/"/>
+    <id>https://www.qianhongbo.top/学习笔记/托福综合写作/</id>
+    <published>2019-06-14T13:15:06.000Z</published>
+    <updated>2019-06-14T13:17:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>阅读：3mins 230-300words</p><p>听力：2mins 230-300words 语音语调类似lecture 话题范围相比听力更窄 理工科背景有优势  不需要额外准备</p><p>先3min阅读 之后听听力 最后开始写作文 20min倒计时 </p><p>最后写作文能看到阅读，也就是对阅读没有那么高的要求</p><ol><li>从听力中选择重要信息</li></ol><p>记笔记符号使用</p><ol><li>大括号</li><li>&gt; &lt; =</li><li>箭头：单箭头上升下降，体现多和少</li><li>双箭头：快速上升，快速下降</li><li>波浪箭头：起伏，progress</li><li>从笔记中直接拉下来单词</li><li>$ 符号 用来表示任何和钱有关的东西</li><li>√ ×</li><li>自行添加</li></ol><p>注意事项</p><ol><li>阅读：只记录要点 不写细节 要改写</li><li>听力 既要有要点，又要有细节 不用改写</li><li>阅读和听力要点一定是只有三个</li><li>阅读永远是三分钟</li><li>写作是能再次看到阅读材料</li><li>记笔记，先看，再做笔记，正常可以一分半读完文章，1分钟记笔记，10s左右整理。（前期可以看一段记一段）</li><li>写作的时候以阅读原文为主，不要看笔记啦</li><li>阅读笔记只服务于听力</li><li>机经使用独立口语和独立写作的题目</li><li>机经的获得方式：贴吧，淘宝,，找老师要</li><li>段落结构(总分分分式)：每一段包括：阅读的观点，演讲的观点加细节，两者的关系</li></ol><p>例子</p><p>The passage claims that the salvage logging will help forest recover and make room for the fresh frowth, while the lecturre argues that it is unnecessary because the natrual decomposed trees can also enrich the soil. This will be good nutrients for the forest.  <strong>OK，没有问题</strong> </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;阅读：3mins 230-300words&lt;/p&gt;
+&lt;p&gt;听力：2mins 230-300words 语音语调类似lecture 话题范围相比听力更窄 理工科背景有优势  不需要额外准备&lt;/p&gt;
+&lt;p&gt;先3min阅读 之后听听力 最后开始写作文 20min倒计时 &lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://www.qianhongbo.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="TOEFL" scheme="https://www.qianhongbo.top/tags/TOEFL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>20190614</title>
+    <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/20190614/"/>
+    <id>https://www.qianhongbo.top/随笔/20190614/</id>
+    <published>2019-06-14T08:58:54.000Z</published>
+    <updated>2019-06-14T09:19:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><input checked disabled type="checkbox"> 写博客</li><li><input disabled type="checkbox"> 不看没用的视频</li><li><input disabled type="checkbox"> 做眼保健操</li><li><input disabled type="checkbox"> 英语学习2小时</li></ul><hr><p>感觉自己距离实习、工作还有好大的一段距离啊，真的要抓紧要努力了</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;&lt;input checked disabled type=&quot;checkbox&quot;&gt; 写博客&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&quot;checkbox&quot;&gt; 不看没用的视频&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&quot;check
+      
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="Diary" scheme="https://www.qianhongbo.top/tags/Diary/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>专业导论课最后一节个人认为比较有价值内容整理</title>
+    <link href="https://www.qianhongbo.top/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/%E4%B8%93%E4%B8%9A%E5%AF%BC%E8%AE%BA%E8%AF%BE%E6%9C%80%E5%90%8E%E4%B8%80%E8%8A%82%E4%B8%AA%E4%BA%BA%E8%AE%A4%E4%B8%BA%E6%AF%94%E8%BE%83%E6%9C%89%E4%BB%B7%E5%80%BC%E5%86%85%E5%AE%B9%E6%95%B4%E7%90%86/"/>
+    <id>https://www.qianhongbo.top/华科机械学习资料分享/专业导论课最后一节个人认为比较有价值内容整理/</id>
+    <published>2019-06-14T04:07:11.000Z</published>
+    <updated>2019-06-14T04:39:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="机械工程伦理"><a href="#机械工程伦理" class="headerlink" title="机械工程伦理"></a>机械工程伦理</h2><h3 id="问问自己："><a href="#问问自己：" class="headerlink" title="问问自己："></a>问问自己：</h3><p>内心世界?</p><p>存在的意义?</p><p>为何要多一点形而上?</p><p>你的价值感?</p><p>你的技术创造的欲求?</p><p>技术工作者/工程师的责任?</p><p>你对未来技术的感觉?</p><h2 id="知识、能力与素质的区别和联系"><a href="#知识、能力与素质的区别和联系" class="headerlink" title="知识、能力与素质的区别和联系"></a>知识、能力与素质的区别和联系</h2><table><thead><tr><th align="left"></th><th align="center">核心</th><th align="center">t特点</th></tr></thead><tbody><tr><td align="left">知识</td><td align="center">人类认识的成果</td><td align="center">形成能力，素质的基础</td></tr><tr><td align="left">能力</td><td align="center">完成一定活动的本领</td><td align="center">对知识的运用，是知识发挥作用的实践条件，具“外显性”</td></tr><tr><td align="left">素养</td><td align="center">基本品质或基础条件</td><td align="center">人在活动过程中所塑造成的内在升华，具“内凝性”</td></tr></tbody></table><h2 id="专业教育组成"><a href="#专业教育组成" class="headerlink" title="专业教育组成"></a>专业教育组成</h2><p>数学类和自然科学类总计最少为450学时</p><p>工程科学类、工程设计与实践类两者总计最少1000学时</p><p>人文和社会科学不少于400学时</p><h2 id="机械专业教育知识体系包含如下5个知识领域"><a href="#机械专业教育知识体系包含如下5个知识领域" class="headerlink" title="机械专业教育知识体系包含如下5个知识领域"></a>机械专业教育知识体系包含如下5个知识领域</h2><ol><li>机械设计的原理与方法</li><li>机械制造工程原理与技术</li><li>机械系统中的传动和控制</li><li>计算机应用技术</li><li>热流体</li></ol><h2 id="中国加入《华盛顿协议》"><a href="#中国加入《华盛顿协议》" class="headerlink" title="中国加入《华盛顿协议》"></a>中国加入《华盛顿协议》</h2><p>国内本科生获得的文凭，在国际上都会被认可</p><h2 id="企业对毕业生能力的评价"><a href="#企业对毕业生能力的评价" class="headerlink" title="企业对毕业生能力的评价"></a>企业对毕业生能力的评价</h2><ol><li>独立性强、思路开阔、时尚;</li><li>知识面广;</li><li>不够踏实、团队协作意识弱;</li><li>不能承受较大压力,工作责任心、事业心弱,急功近利;</li><li>熟悉、胜任本职工作需要的时间较长,须在企业工作3-4年左右才能完全胜任工作。</li></ol><h2 id="企业对毕业生能力的期待"><a href="#企业对毕业生能力的期待" class="headerlink" title="企业对毕业生能力的期待"></a>企业对毕业生能力的期待</h2><ol><li>除专业能力外,最基本的要求是踏实、勤奋、敬业、忠诚、合作;</li><li>感兴趣的主要不是学习成绩,更注重处理问题的能力、解决问题的能力以及工作中的综合性能</li><li>很看重学生的整体素质和品德.</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;机械工程伦理&quot;&gt;&lt;a href=&quot;#机械工程伦理&quot; class=&quot;headerlink&quot; title=&quot;机械工程伦理&quot;&gt;&lt;/a&gt;机械工程伦理&lt;/h2&gt;&lt;h3 id=&quot;问问自己：&quot;&gt;&lt;a href=&quot;#问问自己：&quot; class=&quot;headerlink&quot; title=
+      
+    
+    </summary>
+    
+      <category term="华科机械学习资料分享" scheme="https://www.qianhongbo.top/categories/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>关于项目的几个想法</title>
+    <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/%E5%85%B3%E4%BA%8E%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%87%A0%E4%B8%AA%E6%83%B3%E6%B3%95/"/>
+    <id>https://www.qianhongbo.top/随笔/关于项目的几个想法/</id>
+    <published>2019-06-13T12:08:37.000Z</published>
+    <updated>2019-06-26T01:10:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="关于项目的几个想法"><a href="#关于项目的几个想法" class="headerlink" title="关于项目的几个想法"></a>关于项目的几个想法</h1><h2 id="手机app："><a href="#手机app：" class="headerlink" title="手机app："></a>手机app：</h2><p>百词斩手部控制器</p><p>备忘录锁屏提醒</p><h2 id="实物："><a href="#实物：" class="headerlink" title="实物："></a>实物：</h2><p>AGV跟随小车：用来背书包，也可背在身上</p><p>可折叠快递柜</p><p>自动洗头机器人</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;关于项目的几个想法&quot;&gt;&lt;a href=&quot;#关于项目的几个想法&quot; class=&quot;headerlink&quot; title=&quot;关于项目的几个想法&quot;&gt;&lt;/a&gt;关于项目的几个想法&lt;/h1&gt;&lt;h2 id=&quot;手机app：&quot;&gt;&lt;a href=&quot;#手机app：&quot; class=&quot;head
+      
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="目标" scheme="https://www.qianhongbo.top/tags/%E7%9B%AE%E6%A0%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ROS入门</title>
+    <link href="https://www.qianhongbo.top/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/ROS%E5%85%A5%E9%97%A8/"/>
+    <id>https://www.qianhongbo.top/华科机械学习资料分享/ROS入门/</id>
+    <published>2019-06-13T10:29:31.000Z</published>
+    <updated>2019-06-13T10:36:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>鸟哥私房菜1 2 3章作为了解，第4 5 6章随书操作一遍，这样大家对Linux系统的基本操作会有一个大致的认识。注意，鸟哥书中系统与我们不同，因此不要太纠结于必须每一步结果都与书中一样。另外，遇到问题的话，把问题复制下来直接百度，绝大多数问题是有解决方法的。</p><p>ROS_Robot_Programming_CN电子书1、2章粗略浏览，3~7章重点学习，后续章节以后再说。</p><div class="row">    <embed src="http://pso1yp87m.bkt.clouddn.com/ROS_Robot_Programming_CN.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;鸟哥私房菜1 2 3章作为了解，第4 5 6章随书操作一遍，这样大家对Linux系统的基本操作会有一个大致的认识。注意，鸟哥书中系统与我们不同，因此不要太纠结于必须每一步结果都与书中一样。另外，遇到问题的话，把问题复制下来直接百度，绝大多数问题是有解决方法的。&lt;/p&gt;
+&lt;p
+      
+    
+    </summary>
+    
+      <category term="华科机械学习资料分享" scheme="https://www.qianhongbo.top/categories/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>华科机械学院材料力学课后答案</title>
+    <link href="https://www.qianhongbo.top/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E9%99%A2%E6%9D%90%E6%96%99%E5%8A%9B%E5%AD%A6%E8%AF%BE%E5%90%8E%E7%AD%94%E6%A1%88/"/>
+    <id>https://www.qianhongbo.top/华科机械学习资料分享/华科机械学院材料力学课后答案/</id>
+    <published>2019-06-13T09:53:37.000Z</published>
+    <updated>2019-06-13T09:55:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<div class="row">    <embed src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E4%B8%AD%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%E6%9D%90%E6%96%99%E5%8A%9B%E5%AD%A6%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98%E8%A7%A3%E7%AD%94.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E4%B8%AD%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%E6%9D%90%E6%96%
+      
+    
+    </summary>
+    
+      <category term="华科机械学习资料分享" scheme="https://www.qianhongbo.top/categories/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Laplace拉氏变换公式表</title>
+    <link href="https://www.qianhongbo.top/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Laplace%E6%8B%89%E6%B0%8F%E5%8F%98%E6%8D%A2%E5%85%AC%E5%BC%8F%E8%A1%A8/"/>
+    <id>https://www.qianhongbo.top/学习笔记/Laplace拉氏变换公式表/</id>
+    <published>2019-06-13T09:41:02.000Z</published>
+    <updated>2019-06-13T09:51:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<div class="row">    <embed src="http://pso1yp87m.bkt.clouddn.com/Laplace%E6%8B%89%E6%B0%8F%E5%8F%98%E6%8D%A2%E5%85%AC%E5%BC%8F%E8%A1%A8.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;http://pso1yp87m.bkt.clouddn.com/Laplace%E6%8B%89%E6%B0%8F%E5%8F%98%E6%8D%A2%E5%85%AC%E5%BC%8F%E8%A1%A8
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://www.qianhongbo.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Laplace" scheme="https://www.qianhongbo.top/tags/Laplace/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>钱泓勃在大学毕业前的愿望和目标</title>
+    <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/%E9%92%B1%E6%B3%93%E5%8B%83%E5%9C%A8%E5%A4%A7%E5%AD%A6%E6%AF%95%E4%B8%9A%E5%89%8D%E7%9A%84%E6%84%BF%E6%9C%9B%E5%92%8C%E7%9B%AE%E6%A0%87/"/>
+    <id>https://www.qianhongbo.top/随笔/钱泓勃在大学毕业前的愿望和目标/</id>
+    <published>2019-06-13T00:54:21.000Z</published>
+    <updated>2019-06-13T12:14:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><input checked disabled type="checkbox"> 建一个自己的博客</li><li><input disabled type="checkbox"> 毕业季去一次云南，玩很久的那种</li><li><input disabled type="checkbox"> 在b站发一个点击量上千的视频</li><li><input disabled type="checkbox"> 自己的博客每天有人看</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;&lt;input checked disabled type=&quot;checkbox&quot;&gt; 建一个自己的博客&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&quot;checkbox&quot;&gt; 毕业季去一次云南，玩很久的那种&lt;/li&gt;
+&lt;li&gt;&lt;input disable
+      
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="目标" scheme="https://www.qianhongbo.top/tags/%E7%9B%AE%E6%A0%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>华科机械学院大二下学习资料分享</title>
+    <link href="https://www.qianhongbo.top/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%A4%A7%E4%BA%8C%E4%B8%8B%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
+    <id>https://www.qianhongbo.top/华科机械学习资料分享/华科机械大二下学习资料/</id>
+    <published>2019-06-11T13:40:27.000Z</published>
+    <updated>2019-06-11T13:47:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="链接：https://pan.baidu.com/s/1dHzxPkSfFQhlM11DN1waoA">各科目课件百度网盘链接</a></p><p>提取码：y8iy </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;链接：https://pan.baidu.com/s/1dHzxPkSfFQhlM11DN1waoA&quot;&gt;各科目课件百度网盘链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;提取码：y8iy &lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="华科机械学习资料分享" scheme="https://www.qianhongbo.top/categories/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>华科工程力学实验指导书</title>
+    <link href="https://www.qianhongbo.top/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/%E5%8D%8E%E7%A7%91%E5%B7%A5%E7%A8%8B%E5%8A%9B%E5%AD%A6%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6/"/>
+    <id>https://www.qianhongbo.top/华科机械学习资料分享/华科工程力学实验指导书/</id>
+    <published>2019-06-11T11:44:21.000Z</published>
+    <updated>2019-06-11T12:14:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E5%B7%A5%E7%A8%8B%E5%8A%9B%E5%AD%A6%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6_1.jpg" alt><br><img src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E5%B7%A5%E7%A8%8B%E5%8A%9B%E5%AD%A6%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6_2.jpg" alt><br><img src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E5%B7%A5%E7%A8%8B%E5%8A%9B%E5%AD%A6%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6_3.jpg" alt><br><img src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E5%B7%A5%E7%A8%8B%E5%8A%9B%E5%AD%A6%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6_4.jpg" alt><br><img src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E5%B7%A5%E7%A8%8B%E5%8A%9B%E5%AD%A6%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6_5.jpg" alt><br><img src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E5%B7%A5%E7%A8%8B%E5%8A%9B%E5%AD%A6%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6_6.jpg" alt><br><img src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E5%B7%A5%E7%A8%8B%E5%8A%9B%E5%AD%A6%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6_7.jpg" alt><br><img src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E5%B7%A5%E7%A8%8B%E5%8A%9B%E5%AD%A6%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6_8.jpg" alt><br><img src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E5%B7%A5%E7%A8%8B%E5%8A%9B%E5%AD%A6%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6_9.jpg" alt><br><img src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E5%B7%A5%E7%A8%8B%E5%8A%9B%E5%AD%A6%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6_10.jpg" alt><br><img src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E5%B7%A5%E7%A8%8B%E5%8A%9B%E5%AD%A6%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6_11.jpg" alt><br><img src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E5%B7%A5%E7%A8%8B%E5%8A%9B%E5%AD%A6%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6_12.jpg" alt><br><img src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E5%B7%A5%E7%A8%8B%E5%8A%9B%E5%AD%A6%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6_13.jpg" alt><br><img src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E5%B7%A5%E7%A8%8B%E5%8A%9B%E5%AD%A6%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6_14.jpg" alt><br><img src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E5%B7%A5%E7%A8%8B%E5%8A%9B%E5%AD%A6%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6_15.jpg" alt><br><img src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E5%B7%A5%E7%A8%8B%E5%8A%9B%E5%AD%A6%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6_16.jpg" alt><br><img src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E5%B7%A5%E7%A8%8B%E5%8A%9B%E5%AD%A6%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6_17.jpg" alt><br><img src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E5%B7%A5%E7%A8%8B%E5%8A%9B%E5%AD%A6%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6_18.jpg" alt><br><img src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E5%B7%A5%E7%A8%8B%E5%8A%9B%E5%AD%A6%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6_19.jpg" alt><br><img src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E5%B7%A5%E7%A8%8B%E5%8A%9B%E5%AD%A6%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6_20.jpg" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E5%B7%A5%E7%A8%8B%E5%8A%9B%E5%AD%A6%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%
+      
+    
+    </summary>
+    
+      <category term="华科机械学习资料分享" scheme="https://www.qianhongbo.top/categories/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="工程力学实验" scheme="https://www.qianhongbo.top/tags/%E5%B7%A5%E7%A8%8B%E5%8A%9B%E5%AD%A6%E5%AE%9E%E9%AA%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>华科机械制造工艺基础实验指导书及实验报告</title>
+    <link href="https://www.qianhongbo.top/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%88%B6%E9%80%A0%E5%B7%A5%E8%89%BA%E5%9F%BA%E7%A1%80%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6%E5%8F%8A%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/"/>
+    <id>https://www.qianhongbo.top/华科机械学习资料分享/华科机械制造工艺基础实验指导书及实验报告/</id>
+    <published>2019-06-11T11:12:23.000Z</published>
+    <updated>2019-06-11T11:29:28.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%88%B6%E9%80%A0%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6%E4%B8%8E%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A_1.jpg" alt></p><p><img src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%88%B6%E9%80%A0%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6%E4%B8%8E%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A_2.jpg" alt></p><p><img src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%88%B6%E9%80%A0%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6%E4%B8%8E%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A_3.jpg" alt></p><p><img src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%88%B6%E9%80%A0%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6%E4%B8%8E%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A_4.jpg" alt></p><p><img src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%88%B6%E9%80%A0%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6%E4%B8%8E%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A_5.jpg" alt></p><p><img src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%88%B6%E9%80%A0%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6%E4%B8%8E%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A_6.jpg" alt></p><p><img src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%88%B6%E9%80%A0%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6%E4%B8%8E%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A_7.jpg" alt></p><p><img src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%88%B6%E9%80%A0%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6%E4%B8%8E%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A_8.jpg" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%88%B6%E9%80%A0%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80%E5%
+      
+    
+    </summary>
+    
+      <category term="华科机械学习资料分享" scheme="https://www.qianhongbo.top/categories/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="机械制造工艺基础" scheme="https://www.qianhongbo.top/tags/%E6%9C%BA%E6%A2%B0%E5%88%B6%E9%80%A0%E5%B7%A5%E8%89%BA%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>华科17级磨削实习报告</title>
+    <link href="https://www.qianhongbo.top/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/%E5%8D%8E%E7%A7%9117%E7%BA%A7%E7%A3%A8%E5%89%8A%E5%AE%9E%E4%B9%A0%E6%8A%A5%E5%91%8A/"/>
+    <id>https://www.qianhongbo.top/华科机械学习资料分享/华科17级磨削实习报告/</id>
+    <published>2019-06-11T11:09:26.000Z</published>
+    <updated>2019-06-11T11:11:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E9%87%91%E5%B7%A5%E5%AE%9E%E4%B9%A0%E7%A3%A8%E5%89%8A%E6%8A%A5%E5%91%8A.jpg" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E9%87%91%E5%B7%A5%E5%AE%9E%E4%B9%A0%E7%A3%A8%E5%89%8A%E6%8A%A5%E5%91%8A.jpg
+      
+    
+    </summary>
+    
+      <category term="华科机械学习资料分享" scheme="https://www.qianhongbo.top/categories/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="金工实习" scheme="https://www.qianhongbo.top/tags/%E9%87%91%E5%B7%A5%E5%AE%9E%E4%B9%A0/"/>
+    
+  </entry>
+  
+</feed>

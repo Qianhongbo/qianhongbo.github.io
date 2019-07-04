@@ -71,7 +71,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="机器人学,">
 
 
 
@@ -84,17 +84,18 @@
 
 
 
-<meta name="description" content="Daily update">
-<meta name="keywords" content="WoW">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Blog | Qian Homeberg">
-<meta property="og:url" content="https://www.qianhongbo.top/categories/随笔/page/2/index.html">
+<meta name="description" content="第二章 空间描述和变换位置描述：我们用一个位置矢量来描述空间中点的位置$$^AP = \left[\begin{matrix}1\2\3\end{matrix}\right]\tag1$$ 姿态描述：物体的姿态可用固定在物体上的坐标系来描述。我们用$X_B,Y_B,Z_B$来描述坐标系B主轴方向的单位矢量，当用坐标系A的坐标表达时，它们被写为$^AX_B,^AY_B,^AZ_B$。我们可以吧这三个">
+<meta name="keywords" content="机器人学">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器人学 学习笔记">
+<meta property="og:url" content="https://www.qianhongbo.top/学习笔记/机器人学 学习笔记/index.html">
 <meta property="og:site_name" content="Blog | Qian Homeberg">
-<meta property="og:description" content="Daily update">
+<meta property="og:description" content="第二章 空间描述和变换位置描述：我们用一个位置矢量来描述空间中点的位置$$^AP = \left[\begin{matrix}1\2\3\end{matrix}\right]\tag1$$ 姿态描述：物体的姿态可用固定在物体上的坐标系来描述。我们用$X_B,Y_B,Z_B$来描述坐标系B主轴方向的单位矢量，当用坐标系A的坐标表达时，它们被写为$^AX_B,^AY_B,^AZ_B$。我们可以吧这三个">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-04T03:48:27.882Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Blog | Qian Homeberg">
-<meta name="twitter:description" content="Daily update">
+<meta name="twitter:title" content="机器人学 学习笔记">
+<meta name="twitter:description" content="第二章 空间描述和变换位置描述：我们用一个位置矢量来描述空间中点的位置$$^AP = \left[\begin{matrix}1\2\3\end{matrix}\right]\tag1$$ 姿态描述：物体的姿态可用固定在物体上的坐标系来描述。我们用$X_B,Y_B,Z_B$来描述坐标系B主轴方向的单位矢量，当用坐标系A的坐标表达时，它们被写为$^AX_B,^AY_B,^AZ_B$。我们可以吧这三个">
 
 
 
@@ -128,7 +129,7 @@
 
 
 
-  <title>分类: 随笔 | Blog | Qian Homeberg</title>
+  <title>机器人学 学习笔记 | Blog | Qian Homeberg</title>
   
 
 
@@ -147,7 +148,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	
 	<a href="https://github.com/Qianhongbo" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
@@ -295,83 +296,260 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>随笔<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.top/学习笔记/机器人学 学习笔记/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/随笔/写在2019年高考前/" itemprop="url">
-              
-                <span itemprop="name">写在2019年高考前</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">机器人学 学习笔记</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-07T00:24:31+08:00" content="2019-06-07">
-          06-07
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-03T18:51:33+08:00">
+                2019-07-03
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/学习笔记/机器人学 学习笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="学习笔记/机器人学 学习笔记/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  512 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/随笔/I-finally-succeeded/" itemprop="url">
-              
-                <span itemprop="name">I finally succeeded!</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-04T12:27:43+08:00" content="2019-06-04">
-          06-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
+        <h2 id="第二章-空间描述和变换"><a href="#第二章-空间描述和变换" class="headerlink" title="第二章 空间描述和变换"></a>第二章 空间描述和变换</h2><h3 id="位置描述："><a href="#位置描述：" class="headerlink" title="位置描述："></a>位置描述：</h3><p>我们用一个位置矢量来描述空间中点的位置<br>$$<br>^AP = \left[\begin{matrix}1\2\3\end{matrix}\right]\tag1<br>$$</p>
+<h3 id="姿态描述："><a href="#姿态描述：" class="headerlink" title="姿态描述："></a>姿态描述：</h3><p>物体的姿态可用固定在物体上的坐标系来描述。我们用$X_B,Y_B,Z_B$来描述坐标系B主轴方向的单位矢量，当用坐标系A的坐标表达时，它们被写为$^AX_B,^AY_B,^AZ_B$。我们可以吧这三个单位矢量按照顺序排成一个3x3的矩阵，我们称这个矩阵为<strong>旋转矩阵</strong>，并且这个矩阵是坐标系B相对于坐标系A的表达，所以我们用符号$^A_BR$来表示<br>$$<br>^A_BR = [^AX_B\ ^AY_B\ ^AZ_B] = \left[\begin{matrix}X_B · X_A &amp; Y_B · X_A &amp; Z_B · X_A\<br>X_B · Y_A &amp; Y_B · Y_A &amp; Z_B · Y_A\<br>X_B · Z_A &amp; Y_B · Z_A &amp; Z_B · Z_A\end{matrix}\right]=\left[\begin{matrix}^BX^T_A\^BY^T_A\^BZ^T_A\end{matrix}\right] = \ ^B_AR^T\tag2<br>$$<br>其中最右边矩阵为两坐标的点积，来表示投影。</p>
+<h3 id="坐标系描述："><a href="#坐标系描述：" class="headerlink" title="坐标系描述："></a>坐标系描述：</h3><p>完整描述操作手位姿的信息为位置和姿态。我们可以任选一点来描述位置，为方便起见，选择远点。我们将位置和姿态的组合称作坐标系，四个矢量为一组，表示了位置和姿态的信息。<br>$$<br>{B} = {^A_BR, \ ^AP_{BORG}}\tag4<br>$$</p>
+<h3 id="映射："><a href="#映射：" class="headerlink" title="映射："></a>映射：</h3><ol>
+<li><p>平移映射<br>$$<br>^A P = \ ^B P + \ ^A P_{BORG}\tag5<br>$$</p>
+</li>
+<li><p>旋转映射<br>$$<br>^AP = \ ^A_BR\ ^BP\tag6<br>$$<br>引入符号可以看出，正好是左下标消掉了后面变量的左上标</p>
+</li>
+<li><p>关于一般坐标系的映射<br>$$<br>^AP = \ ^A_BR\ ^BP + \ ^AP_{BORG}\tag7<br>$$<br>引入新的概念<br>$$<br>^A P = \ ^A_BT\ ^BP\tag8<br>$$<br>即用一个矩阵的形式的算子来表示从一个从一个坐标系到另一个坐标系的映射，定义一个$4 * 4$的矩阵算子并使用了$4*1$的位置向量<br>$$<br>\left[\begin{matrix}^A P \1\end{matrix}\right] =<br>\left[</p>
+<pre><code>\begin{array}{c|c}
+  ^A_BR &amp; ^A P_{BORG} \\
+  0\ 0\ 0 &amp; 1 
+\end{array}</code></pre><p>\right]<br>\left[\begin{matrix}^B P \1\end{matrix}\right]\tag9<br>$$<br>上式中的$4<em>4$矩阵被称为*</em>齐次变换矩阵**</p>
+</li>
+</ol>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果觉得不错，可以打赏喔~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Qian Hongbo 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Qian Hongbo 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器人学/" rel="tag"><i class="fa fa-tag"></i> 机器人学</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/随笔/20190703/" rel="next" title="20190703">
+                <i class="fa fa-chevron-left"></i> 20190703
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/categories/随笔/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/categories/随笔/">1</a><span class="page-number current">2</span>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -379,6 +557,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -399,8 +591,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -505,6 +706,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第二章-空间描述和变换"><span class="nav-number">1.</span> <span class="nav-text">第二章 空间描述和变换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#位置描述："><span class="nav-number">1.1.</span> <span class="nav-text">位置描述：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#姿态描述："><span class="nav-number">1.2.</span> <span class="nav-text">姿态描述：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#坐标系描述："><span class="nav-number">1.3.</span> <span class="nav-text">坐标系描述：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#映射："><span class="nav-number">1.4.</span> <span class="nav-text">映射：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -668,6 +885,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -685,6 +906,18 @@
       <script id="dsq-count-scr" src="https://qianhongbo.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://www.qianhongbo.top/学习笔记/机器人学 学习笔记/';
+          this.page.identifier = '学习笔记/机器人学 学习笔记/';
+          this.page.title = '机器人学 学习笔记';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://qianhongbo.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
@@ -1061,26 +1294,6 @@
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 

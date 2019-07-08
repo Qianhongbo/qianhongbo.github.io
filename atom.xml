@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.qianhongbo.top/"/>
-  <updated>2019-07-07T11:51:31.836Z</updated>
+  <updated>2019-07-06T10:09:24.450Z</updated>
   <id>https://www.qianhongbo.top/</id>
   
   <author>
@@ -15,69 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>20190707</title>
-    <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/20190707/"/>
-    <id>https://www.qianhongbo.top/随笔/20190707/</id>
-    <published>2019-07-07T05:54:22.000Z</published>
-    <updated>2019-07-07T11:51:31.836Z</updated>
-    
-    <content type="html"><![CDATA[<p>哥伦比亚大学门口的雕塑是女神雅典娜，还藏了一只猫头鹰，象征着智慧。</p><hr><p>大学要培养的是可迁移的能力</p><p>没事多听听ted什么的别看直播了！</p><p>科研项目并不是学校的那种科研，而是国外背景的科研</p><hr><p>我第一喜欢的lpl输了，呜呜呜，以后不看比赛了，扎心呀</p><p>好好学习，报效祖国～～</p><hr>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;哥伦比亚大学门口的雕塑是女神雅典娜，还藏了一只猫头鹰，象征着智慧。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;大学要培养的是可迁移的能力&lt;/p&gt;
-&lt;p&gt;没事多听听ted什么的别看直播了！&lt;/p&gt;
-&lt;p&gt;科研项目并不是学校的那种科研，而是国外背景的科研&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;我第一喜欢的lp
-      
-    
-    </summary>
-    
-      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="Diary" scheme="https://www.qianhongbo.top/tags/Diary/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>20190706</title>
-    <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/20190706/"/>
-    <id>https://www.qianhongbo.top/随笔/20190706/</id>
-    <published>2019-07-06T06:33:35.000Z</published>
-    <updated>2019-07-07T11:51:41.632Z</updated>
-    
-    <content type="html"><![CDATA[<p>凡事应该谨言慎行，不可草率啊</p><p>事不过三，事不过三</p><hr><p>我觉得我就是一个宅男，屌丝。。至少目前阶段是的，我承认。。</p><p>要改吗？能改吗？</p><p>，，</p><hr><p>我倒是很希望自己能成为一个技术控，人总是要有自己的一点特长的啊</p><hr><p>昨晚看了个电影，蜘蛛侠英雄远征，个人觉得比较一般，以后最好不要看这种电影了</p><hr><p>今天是最后一天休息了，明天开始生活就要走上正轨了，准确的说今天也不应该休息的。</p><p>作为学生，每天必须要有八个小时的学习时间。</p><p>这几天都没达到吧。。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;凡事应该谨言慎行，不可草率啊&lt;/p&gt;
-&lt;p&gt;事不过三，事不过三&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;我觉得我就是一个宅男，屌丝。。至少目前阶段是的，我承认。。&lt;/p&gt;
-&lt;p&gt;要改吗？能改吗？&lt;/p&gt;
-&lt;p&gt;，，&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;我倒是很希望自己能成为一个技术控，人总是要有自己的
-      
-    
-    </summary>
-    
-      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="Diary" scheme="https://www.qianhongbo.top/tags/Diary/"/>
-    
-  </entry>
   
   <entry>
     <title>嵌入式开发学习笔记</title>
@@ -111,9 +48,9 @@
     <link href="https://www.qianhongbo.top/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>https://www.qianhongbo.top/学习笔记/机器人学 学习笔记/</id>
     <published>2019-07-03T10:51:33.000Z</published>
-    <updated>2019-07-07T06:04:32.382Z</updated>
+    <updated>2019-07-08T09:36:07.364Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="第二章-空间描述和变换"><a href="#第二章-空间描述和变换" class="headerlink" title="第二章 空间描述和变换"></a>第二章 空间描述和变换</h2><h3 id="位置描述："><a href="#位置描述：" class="headerlink" title="位置描述："></a>位置描述：</h3><p>我们用一个位置矢量来描述空间中点的位置</p><script type="math/tex; mode=display">^AP = \left[\begin{matrix}1\\\\  2\\\\3\end{matrix}\right]\tag1</script><h3 id="姿态描述："><a href="#姿态描述：" class="headerlink" title="姿态描述："></a>姿态描述：</h3><p>物体的姿态可用固定在物体上的坐标系来描述。我们用$X_B,Y_B,Z_B$来描述坐标系B主轴方向的单位矢量，当用坐标系A的坐标表达时，它们被写为$^AX_B,^AY_B,^AZ_B$。我们可以吧这三个单位矢量按照顺序排成一个3x3的矩阵，我们称这个矩阵为<strong>旋转矩阵</strong>，并且这个矩阵是坐标系B相对于坐标系A的表达，所以我们用符号$^A_BR$来表示</p><script type="math/tex; mode=display">^A_BR = [^AX_B\ ^AY_B\ ^AZ_B] = \left[\begin{matrix}X_B · X_A & Y_B · X_A & Z_B · X_A\\\\X_B · Y_A & Y_B · Y_A & Z_B · Y_A\\\\X_B · Z_A & Y_B · Z_A & Z_B · Z_A\end{matrix}\right]=\left[\begin{matrix}^BX^T_A\\\\^BY^T_A\\\\^BZ^T_A\end{matrix}\right] = \ ^B_AR^T\tag2</script><p>其中最右边矩阵为两坐标的点积，来表示投影。</p><h3 id="坐标系描述："><a href="#坐标系描述：" class="headerlink" title="坐标系描述："></a>坐标系描述：</h3><p>完整描述操作手位姿的信息为位置和姿态。我们可以任选一点来描述位置，为方便起见，选择远点。我们将位置和姿态的组合称作坐标系，四个矢量为一组，表示了位置和姿态的信息。</p><script type="math/tex; mode=display">{B} = {^A_BR, \ ^AP_{BORG}}\tag4</script><h3 id="映射："><a href="#映射：" class="headerlink" title="映射："></a>映射：</h3><ol><li><p>平移映射</p><script type="math/tex; mode=display">^A P = \ ^B P + \ ^A P_{BORG}\tag5</script></li><li><p>旋转映射</p><script type="math/tex; mode=display">^AP = \ ^A_BR\ ^BP\tag6</script><p>引入符号可以看出，正好是左下标消掉了后面变量的左上标</p></li><li><p>关于一般坐标系的映射</p><script type="math/tex; mode=display">^AP = \ ^A_BR\ ^BP + \ ^AP_{BORG}\tag7</script><p>引入新的概念</p><script type="math/tex; mode=display">^A P = \ ^A_BT\ ^BP\tag8</script><p>即用一个矩阵的形式的算子来表示从一个从一个坐标系到另一个坐标系的映射，定义一个$4 <em> 4$的矩阵算子并使用了$4 </em> 1$的位置向量</p><script type="math/tex; mode=display">\left[\begin{matrix}^A P \\\\ 1 \end{matrix} \right] = \left[\begin{array}{c|c}^A_BR & ^A P_{BORG} \\\\ 0\ 0\ 0 & 1 \end{array}\right] \left[\begin{matrix} ^B P \\\\ 1 \end{matrix} \right] \tag9</script><p>上式中的$4 <em> 4$矩阵被称为<em>*齐次变换矩阵</em></em></p></li></ol><h3 id="算子："><a href="#算子：" class="headerlink" title="算子："></a>算子：</h3><ol><li><p>平移算子：</p><script type="math/tex; mode=display">^AP_2 = \ ^AP_1 + \ ^AQ</script><p>用矩阵算子写出平移变换，有：</p><script type="math/tex; mode=display">^AP_2 = D_Q(q)^AP_1</script><p>其中，q是沿矢量Q方向的数量，它是有符号的。算子可以堪称一种特殊形式的齐次变换：</p><script type="math/tex; mode=display">D_Q(q)=\left[\begin{matrix} 1 & 0 & 0& q_x\\\\  0 & 1 & 0 & q_y\\\\  0 & 0 & 1 & q_z\\\\  0 & 0 & 0 & 1\end{matrix}\right]</script><p>其中$q_x, q_y, q_z$是平移矢量Q的分量</p></li><li><p>旋转算子：</p><script type="math/tex; mode=display">^AP_2 = R^AP_1</script><p>用矩阵算子写出旋转变换，有：</p><script type="math/tex; mode=display">^AP_2 = R_K(\theta)\ ^AP_1</script><p>其中R表示一个旋转算子，它表示绕K轴旋转$\theta$角度</p><script type="math/tex; mode=display">R_Z(\theta)=\left[\begin{matrix} cos\theta & sin\theta & 0& 0\\\\  sin\theta & cos\theta & 0 & 0\\\\  0 & 0 & 1 & 0\\\\  0 & 0 & 0 & 1\end{matrix}\right]</script></li><li><p>变换算子：</p><script type="math/tex; mode=display">^AP_2 = T^AP_1</script></li></ol><h3 id="变换算法"><a href="#变换算法" class="headerlink" title="变换算法"></a>变换算法</h3><ol><li><p>混合变换：</p><script type="math/tex; mode=display">^AP =\  ^A_BT\ ^B_CT\ ^CP\\  ^A_CT = ^A_BT\ ^B_CT</script><p>即：</p><script type="math/tex; mode=display">^A_CT =\left[\begin{array}{c|c}^A_BR\ ^B_CR & ^A_BR\ ^BP_{CORG} + \ ^AP_{BORG} \\\\ 0\ 0\ 0 & 1 \end{array}\right]</script></li><li><p>逆变换：</p><p>…</p></li></ol><h2 id="第三章-操作臂运动学"><a href="#第三章-操作臂运动学" class="headerlink" title="第三章 操作臂运动学"></a>第三章 操作臂运动学</h2><h3 id="连杆描述"><a href="#连杆描述" class="headerlink" title="连杆描述"></a>连杆描述</h3><p>连杆长度，连杆转角</p><h3 id="连杆连接的描述"><a href="#连杆连接的描述" class="headerlink" title="连杆连接的描述"></a>连杆连接的描述</h3><ol><li><p>连杆链中的中间连杆</p><p>连杆偏距，关节角</p></li><li><p>对于运动链中的末端连杆，其参数习惯设定为0</p><p>即$a_0 = a_n = 0.0, \alpha_0 = \alpha_n =0.0$</p><p>之所以采用了这种规定，是因为当一个参数可以人喜选取时，把另一个参数设定为0，可以使计算变得简便。</p></li><li><p>连杆参数：每个连杆可以用四个运动学参数来描述，其中两个参数用于描述连杆本身，另外两个参数用于描述连杆之间的连接关系。</p><p>对于转动关节，$\theta$为关节变量，其他三个连杆参数是固定不变的</p><p>对于移动关节了，d为关节变量，其他三个连杆参数是固定不变的。</p><p>这种两岸参数描述规则称为Denavit-Hartenberg参数</p><p>根据以上方法，，对于一个六关节的机器人，需要用18个参数就可以完全描述这些固定的运动学参数。</p></li><li><p>对连杆附加坐标系的规定</p><p>固连在连杆i上的固连坐标系称为坐标系{i}</p></li></ol>]]></content>
+    <content type="html"><![CDATA[<h2 id="第二章-空间描述和变换"><a href="#第二章-空间描述和变换" class="headerlink" title="第二章 空间描述和变换"></a>第二章 空间描述和变换</h2><h3 id="位置描述："><a href="#位置描述：" class="headerlink" title="位置描述："></a>位置描述：</h3><p>我们用一个位置矢量来描述空间中点的位置<br>$$<br>^AP = \left[\begin{matrix}1\\<br>2\\<br>3\end{matrix}\right]\tag1<br>$$</p><h3 id="姿态描述："><a href="#姿态描述：" class="headerlink" title="姿态描述："></a>姿态描述：</h3><p>物体的姿态可用固定在物体上的坐标系来描述。我们用$X_B,Y_B,Z_B$来描述坐标系B主轴方向的单位矢量，当用坐标系A的坐标表达时，它们被写为$^AX_B,^AY_B,^AZ_B$。我们可以吧这三个单位矢量按照顺序排成一个3x3的矩阵，我们称这个矩阵为<strong>旋转矩阵</strong>，并且这个矩阵是坐标系B相对于坐标系A的表达，所以我们用符号$^A_BR$来表示<br>$$<br>^A_BR = [^AX_B\ ^AY_B\ ^AZ_B] = \left[\begin{matrix}X_B · X_A &amp; Y_B · X_A &amp; Z_B · X_A\\<br>X_B · Y_A &amp; Y_B · Y_A &amp; Z_B · Y_A\\<br>X_B · Z_A &amp; Y_B · Z_A &amp; Z_B · Z_A\end{matrix}\right]=\left[\begin{matrix}^BX^T_A\\^BY^T_A\\^BZ^T_A\end{matrix}\right] = \ ^B_AR^T\tag2<br>$$<br>其中最右边矩阵为两坐标的点积，来表示投影。</p><h3 id="坐标系描述："><a href="#坐标系描述：" class="headerlink" title="坐标系描述："></a>坐标系描述：</h3><p>完整描述操作手位姿的信息为位置和姿态。我们可以任选一点来描述位置，为方便起见，选择远点。我们将位置和姿态的组合称作坐标系，四个矢量为一组，表示了位置和姿态的信息。<br>$$<br>{B} = {^A_BR, \ ^AP_{BORG}}\tag4<br>$$</p><h3 id="映射："><a href="#映射：" class="headerlink" title="映射："></a>映射：</h3><ol><li><p>平移映射<br>$$<br>^A P = \ ^B P + \ ^A P_{BORG}\tag5<br>$$</p></li><li><p>旋转映射<br>$$<br>^AP = \ ^A_BR\ ^BP\tag6<br>$$<br>引入符号可以看出，正好是左下标消掉了后面变量的左上标</p></li><li><p>关于一般坐标系的映射<br>$$<br>^AP = \ ^A_BR\ ^BP + \ ^AP_{BORG}\tag7<br>$$<br>引入新的概念<br>$$<br>^A P = \ ^A_BT\ ^BP\tag8<br>$$<br>即用一个矩阵的形式的算子来表示从一个从一个坐标系到另一个坐标系的映射，定义一个$4 * 4$的矩阵算子并使用了$4 * 1$的位置向量<br>$$<br>\left[\begin{matrix}^A P \\ 1 \end{matrix} \right] =<br>\left[\begin{array}{c|c}^A_BR &amp; ^A P_{BORG} \\<br>0\ 0\ 0 &amp; 1 \end{array}\right]<br>\left[\begin{matrix} ^B P \\ 1 \end{matrix} \right] \tag9<br>$$<br>上式中的$4 * 4$矩阵被称为<strong>齐次变换矩阵</strong></p></li></ol><h3 id="算子："><a href="#算子：" class="headerlink" title="算子："></a>算子：</h3><ol><li><p>平移算子：<br>$$<br>^AP_2 = \ ^AP_1 + \ ^AQ<br>$$<br>用矩阵算子写出平移变换，有：<br>$$<br>^AP_2 = D_Q(q)^AP_1<br>$$<br>其中，q是沿矢量Q方向的数量，它是有符号的。算子可以堪称一种特殊形式的齐次变换：<br>$$<br>D_Q(q)=\left[\begin{matrix} 1 &amp; 0 &amp; 0&amp; q_x\\<br>0 &amp; 1 &amp; 0 &amp; q_y\\<br>0 &amp; 0 &amp; 1 &amp; q_z\\<br>0 &amp; 0 &amp; 0 &amp; 1<br>\end{matrix}\right]<br>$$<br>其中$q_x, q_y, q_z$是平移矢量Q的分量</p></li><li><p>旋转算子：<br>$$<br>^AP_2 = R^AP_1<br>$$<br>用矩阵算子写出旋转变换，有：<br>$$<br>^AP_2 = R_K(\theta)\ ^AP_1<br>$$<br>其中R表示一个旋转算子，它表示绕K轴旋转$\theta$角度<br>$$<br>R_Z(\theta)=\left[\begin{matrix} cos\theta &amp; sin\theta &amp; 0&amp; 0\\<br>sin\theta &amp; cos\theta &amp; 0 &amp; 0\\<br>0 &amp; 0 &amp; 1 &amp; 0\\<br>0 &amp; 0 &amp; 0 &amp; 1<br>\end{matrix}\right]<br>$$</p></li><li><p>变换算子：<br>$$<br>^AP_2 = T^AP_1<br>$$</p></li></ol><h3 id="变换算法"><a href="#变换算法" class="headerlink" title="变换算法"></a>变换算法</h3><ol><li><p>混合变换：<br>$$<br>^AP =\  ^A_BT\ ^B_CT\ ^CP\<br>^A_CT = ^A_BT\ ^B_CT<br>$$<br>即：<br>$$<br>^A_CT =\left[\begin{array}{c|c}^A_BR\ ^B_CR &amp; ^A_BR\ ^BP_{CORG} + \ ^AP_{BORG} \\<br>0\ 0\ 0 &amp; 1 \end{array}\right]<br>$$</p></li><li><p>逆变换：</p><p>…</p></li></ol><h2 id="第三章-操作臂运动学"><a href="#第三章-操作臂运动学" class="headerlink" title="第三章 操作臂运动学"></a>第三章 操作臂运动学</h2><h3 id="连杆描述"><a href="#连杆描述" class="headerlink" title="连杆描述"></a>连杆描述</h3><p>连杆长度，连杆转角</p><h3 id="连杆连接的描述"><a href="#连杆连接的描述" class="headerlink" title="连杆连接的描述"></a>连杆连接的描述</h3><ol><li><p>连杆链中的中间连杆</p><p>连杆偏距，关节角</p></li><li><p>对于运动链中的末端连杆，其参数习惯设定为0</p><p>即$a_0 = a_n = 0.0, \alpha_0 = \alpha_n =0.0$</p><p>之所以采用了这种规定，是因为当一个参数可以人喜选取时，把另一个参数设定为0，可以使计算变得简便。</p></li><li><p>连杆参数：每个连杆可以用四个运动学参数来描述，其中两个参数用于描述连杆本身，另外两个参数用于描述连杆之间的连接关系。</p><p>对于转动关节，$\theta$为关节变量，其他三个连杆参数是固定不变的</p><p>对于移动关节了，d为关节变量，其他三个连杆参数是固定不变的。</p><p>这种两岸参数描述规则称为Denavit-Hartenberg参数</p><p>根据以上方法，，对于一个六关节的机器人，需要用18个参数就可以完全描述这些固定的运动学参数。</p></li><li><p>对连杆附加坐标系的规定</p><p>固连在连杆i上的固连坐标系称为坐标系{i}</p><p>z轴和关节轴重合</p><p>坐标系原点位于关节轴和公垂线的交点处</p><p>x轴沿着公垂线方向，指向下一个关节</p><p>y轴由右手定则确定</p><p><img src="https://upload-images.jianshu.io/upload_images/17194236-9eb722452ff0bcda.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="机器人学1.png"></p></li><li></li></ol>]]></content>
     
     <summary type="html">
     
@@ -128,61 +65,6 @@
     
     
       <category term="机器人学" scheme="https://www.qianhongbo.top/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>20190703</title>
-    <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/20190703/"/>
-    <id>https://www.qianhongbo.top/随笔/20190703/</id>
-    <published>2019-07-03T09:30:40.000Z</published>
-    <updated>2019-07-03T09:39:35.213Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="整理一下思路"><a href="#整理一下思路" class="headerlink" title="整理一下思路"></a>整理一下思路</h2><ul><li>为实习做准备需要学习：c, linux, arm</li><li>为下学期机器人学做准备需要学习：机器人学, Matlab</li><li>为出国做准备需要学习：toefl</li><li>为下学期课程做准备应该学习：机械原理等课程</li><li>为未来接触更新的知识做准备应该学习：python, tensorflow</li><li>为了更好的身体我应该：每天坚持健身</li></ul><hr><h2 id="那么，到底是应该每天一个部分学一点还是应该阶段性的学习一个内容呢？"><a href="#那么，到底是应该每天一个部分学一点还是应该阶段性的学习一个内容呢？" class="headerlink" title="那么，到底是应该每天一个部分学一点还是应该阶段性的学习一个内容呢？"></a>那么，到底是应该每天一个部分学一点还是应该阶段性的学习一个内容呢？</h2>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;整理一下思路&quot;&gt;&lt;a href=&quot;#整理一下思路&quot; class=&quot;headerlink&quot; title=&quot;整理一下思路&quot;&gt;&lt;/a&gt;整理一下思路&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;为实习做准备需要学习：c, linux, arm&lt;/li&gt;
-&lt;li&gt;为下学期机器人学做准备需要学
-      
-    
-    </summary>
-    
-      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="Diary" scheme="https://www.qianhongbo.top/tags/Diary/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>20190702</title>
-    <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/20190702/"/>
-    <id>https://www.qianhongbo.top/随笔/20190702/</id>
-    <published>2019-07-02T02:48:39.000Z</published>
-    <updated>2019-07-02T02:50:51.261Z</updated>
-    
-    <content type="html"><![CDATA[<p>考完试啦，也把博客搬迁到我的mac上了，还是蛮简单的</p><p>遇到了点小问题但是都解决了，蛮好</p><p>Everything we can just google it!</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;考完试啦，也把博客搬迁到我的mac上了，还是蛮简单的&lt;/p&gt;
-&lt;p&gt;遇到了点小问题但是都解决了，蛮好&lt;/p&gt;
-&lt;p&gt;Everything we can just google it!&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="Diary" scheme="https://www.qianhongbo.top/tags/Diary/"/>
     
   </entry>
   
@@ -264,62 +146,6 @@
   </entry>
   
   <entry>
-    <title>20190626</title>
-    <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/20190626/"/>
-    <id>https://www.qianhongbo.top/随笔/20190626/</id>
-    <published>2019-06-26T00:55:19.000Z</published>
-    <updated>2019-06-26T02:08:58.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天没事闲的，在百度上搜索了一下自己，发现一个文档，是16年吉林一中所有毕业生的去向</p><p>说实话，这个表格我从没打开过，也没看过，所以我也不知道自己在这么一批人中到底处于一个什么层次什么位置</p><p>无奈，手贱点开了，内心难免升起波澜</p><p>我想如果我当年看了这个表格的话，我应该会选择复读吧</p><p>不是很好的学校的最差专业，这个报考也是很不明智</p><p>难怪我觉得来到这个学校和我期待的大学不一样，因为我的确没有去上我所期待的大学啊</p><p>最开始来到这里之后先是觉得不适应，觉得自己不属于这里，</p><p>后来慢慢适应了，也习惯这里的一切</p><p>后来自己又变成了这一批人里的中游</p><p>想想还是蛮扎心的</p><p>今天看到这个也算给自己一个警示</p><p>我不该这么消沉，我应该去追求属于我自己的未来</p><hr><p>包括来到大学，我也不是很努力，我一直都不是一个努力型人格，喜欢放纵自己，跟着自己的性子来</p><p>这样的话，等到大学毕业，我可能还是同样的结局</p><p>真是活该啊！</p><hr><p>人应该今早认识到一点：</p><p>人这一生，考的不光是实力，也看运气</p><p>运气也是实力的一种</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;今天没事闲的，在百度上搜索了一下自己，发现一个文档，是16年吉林一中所有毕业生的去向&lt;/p&gt;
-&lt;p&gt;说实话，这个表格我从没打开过，也没看过，所以我也不知道自己在这么一批人中到底处于一个什么层次什么位置&lt;/p&gt;
-&lt;p&gt;无奈，手贱点开了，内心难免升起波澜&lt;/p&gt;
-&lt;p&gt;我想如果
-      
-    
-    </summary>
-    
-      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="Diary" scheme="https://www.qianhongbo.top/tags/Diary/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>华科机械模电课后答案，实验手册答案</title>
-    <link href="https://www.qianhongbo.top/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E6%A8%A1%E7%94%B5%E8%AF%BE%E5%90%8E%E7%AD%94%E6%A1%88%EF%BC%8C%E5%AE%9E%E9%AA%8C%E6%89%8B%E5%86%8C%E7%AD%94%E6%A1%88/"/>
-    <id>https://www.qianhongbo.top/华科机械学习资料分享/华科机械模电课后答案，实验手册答案/</id>
-    <published>2019-06-14T15:24:38.000Z</published>
-    <updated>2019-06-14T15:30:12.000Z</updated>
-    
-    <content type="html"><![CDATA[<div class="row">    <embed src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E6%A8%A1%E7%94%B5%E8%AF%BE%E5%90%8E%E7%AD%94%E6%A1%88.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        
-
-	&lt;div class=&quot;row&quot;&gt;
-    &lt;embed src=&quot;http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E6%A8%A1%E7%94%B5%E8%AF%BE%E5%90%
-      
-    
-    </summary>
-    
-      <category term="华科机械学习资料分享" scheme="https://www.qianhongbo.top/categories/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/"/>
-    
-    
-      <category term="模电" scheme="https://www.qianhongbo.top/tags/%E6%A8%A1%E7%94%B5/"/>
-    
-  </entry>
-  
-  <entry>
     <title>钱泓勃大学各学期大致课外学习规划</title>
     <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/%E9%92%B1%E6%B3%93%E5%8B%83%E5%A4%A7%E5%AD%A6%E5%90%84%E5%AD%A6%E6%9C%9F%E5%A4%A7%E8%87%B4%E8%AF%BE%E5%A4%96%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/"/>
     <id>https://www.qianhongbo.top/随笔/钱泓勃大学各学期大致课外学习规划/</id>
@@ -348,44 +174,13 @@
   </entry>
   
   <entry>
-    <title>华科机械学院模电复习笔记</title>
-    <link href="https://www.qianhongbo.top/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E9%99%A2%E6%A8%A1%E7%94%B5%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>https://www.qianhongbo.top/学习笔记/华科机械学院模电复习笔记/</id>
-    <published>2019-06-14T13:18:45.000Z</published>
-    <updated>2019-06-14T13:20:18.000Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li>N型半导体掺杂五价元素，多子是自由电子</li><li>P型半导体掺杂三价元素，多子是空穴</li><li>多子的浓度取决于掺杂浓度</li><li>少子的浓度和温度有关</li><li>扩散运动：由载流子浓度差产生</li><li>漂移运动：在电厂作用下引起的</li><li>P型半导体和N型半导体放在一起交界面的两侧载流子的浓度差很大，多数载流子会像对面扩散形成载流子的扩散运动。</li><li>由此在交界面的两侧，载流子行程里内电场，方向由N指向P。</li><li>内电场的存在阻碍了载流子的扩散运动，而有利于载流子向对方的漂移运动，形成了少数载流子的漂移运动</li><li>刚开始扩散占优势，漂移很弱</li><li>随着扩散的进行，空间电荷区加宽，内电场加强，阻碍扩散运动的作用增强。漂移运动也随着内电场的增强而增强</li><li>最终形成动态平衡，形成了稳定的空间电荷区，即PN结！</li><li>电源正极接P区，负极接N区时，正偏</li><li>外加的正向电场称为外电场，其方向与内电场方向相反，为P指向N</li><li>加外电场后，内电场会被削弱，空间电荷区变窄，有利于扩散不利于漂移。</li><li>导致大量的多数载流子通过PN结形成较大的正向电流，PN结导通，此时PN结的正向电阻很小</li><li>若在PN结两端加反向电压，则空间电荷区变宽，反向电阻很大很大，几乎不导通</li><li>二极管分为：点接触型，面接触型和平面型二极管</li><li>二极管的死区电压：硅管0.7V</li><li>二极管的限幅特性，都导通怎么判断？</li><li>稳压二极管：反向击穿可逆，工作在反向击穿区</li><li>Uz为其反向击穿电压</li><li>三极管 ： NPN PNP </li><li>三极管会构成两个回路，一个是输入回路，一个是输出回路，所以一定会有一个点击作为回路的公共端。从而形成了三种连接方式：共射放大电路，共集放大电路，共基放大电路</li><li>外部条件：发射结正偏，集电结反偏</li><li>原理：发射区向基区发射自由电子，基区的多数载流子空穴也会通过发射结到达发射区，两种载流子的方向相反，形成电流相同，成为发射结电流Ie（主要认为是由发射区的多数载流子的自由电子形成的）</li><li>发射区进入基区的自由电子继续想自由电子浓度少的集电结方向扩散，并不断的与基区的多数载流子空穴复合而消失。电源补充基区的空穴，形成了基极电流Ib（基区很薄，复合的是少数，多数继续扩散）</li><li>集电结处于反向偏置，所以基区的自由电子很容易扩散到集电区，形成较大的电流Ic，集电区的少数载流子空穴也在电压的作用下漂移到基区形成Ic的一部分，成为反向饱和电流Icbo</li><li>输入特性曲线：不太理解</li><li>输出特性曲线：以输入电流为参考变量，输出电流Ic和输出电压uce的关系曲线</li><li>Y轴为Ic，X轴为uce</li><li>起始部分，即uce很小的时候，集电结收集载流子的能力大大增强，导致ic增加很快</li><li>但当uce增大到一定数值的时候，集电结反向电场已经足够大，能将发射区扩散的载流子都吸引到集电区，导致uce继续增加后，ic几乎不变，曲线趋近于平坦</li><li>三极管工作在放大区，又称线性去，即平坦部分，此时基极电流的微小变化可以引起集电极电流的较大变化，三极管具有电流放大作用</li><li>饱和区，当ib不断增加，ic随之增加，而使uce减小到小于ube时集电结也将处于正向偏置状态，内电场减弱，不利于收集从发射区到达基区的载流子，无电流放大作用</li><li>深度饱和时uce很小，硅管约为0.3V</li><li>三极管饱和时的管压降用Uces来表示，此时C和E之间相当于开关合上</li><li>截止区，将对应于ib=0以下的区域成为截至区，此时ic约等于0，C和E之间没有电流流过，相当于开关断开</li><li>温度影响，温度升高输入特性曲线向左移动，Ic，beita均增大</li><li>输入电阻：从放大电路的输入端看进去的<strong>交流</strong>等效电阻，此时所有的电容近似忽略</li><li>输入电阻越大，向信号源索取的电流越小，得到的输入电压越大，Ui与Us越接近</li><li>对于电流源类型的信号源，希望输入电阻小一些，以便放大电路获取的电流接近于信号源的电流</li><li>电压源形式的电路则希望输入电阻大一些</li><li>输出电阻的定义：当负载RL开路的时候信号源为0，在输出端看进去的交流等效电阻</li><li>输出电阻越小，输出电压越接近理想电压源，也表明放大电路的带负载能力越强</li><li>通频带：fbw=fH-fL，通频带越宽表明放大电路对不同信号的适应能力越强</li><li>基本放大电路，C1，C2为耦合电容，用来隔直通交</li><li>集电结电阻的作用是用来将ic转化为集电极电压的变化</li><li>耦合电容C1的容量较大，通常采用电解电容，所以要考虑正负极，正的接直流电源的正极</li><li>C2耦合电容的目的就是滤去静态工作点设置过程中的直流信号</li><li>静态工作点的图解法，先利用解析法求出Ib，满足直线方程 uCE = Ucc-icRc</li><li>做一条直线，斜率为-1/Rc，因为已经求出IbQ，所以可以在交点上求出IcQ和UCEQ</li><li>Rb的影响：Rb不影响直流负载线，故改变Rb只会是Q点在直流负载线上和各个不同的输出曲线相交</li><li>且加大Rb，IBQ将减小，Q点将沿着直流负载线向下移动</li><li>Rc的影响改变Rc将会影响直流负载线的斜率，IBQ不会受到影响，减小Rc斜率增大，与横轴的交点不变，沿着输出特性曲线向右移动</li><li>交流负载线一定通过静态工作点</li><li>斜率为-1/RL’，斜率比直流负载线要大</li><li>只有在空载时，直流负载线和交流负载线重合</li><li>非线性失真：静态工作点设置过低输入信号的负半周进入截止区，反向之后会出现顶部失真</li><li>解决办法：适当减小Rb的值，是的静态工作点上移</li><li>如果静态工作点已经不能修改，可减小信号，是的信号处于放大区</li><li>静态工作点设置过高，输入回路并没有出现问题，而是在输出回路。在饱和区，ic出现顶部失真，在反向之后则是底部失真</li><li>如果想使得输出信号不失真，要讲Rb增大，使得静态工作点下移</li><li>交流负载线应该是指在AB段的中点处</li><li>解析法就是微变等效电路</li><li>P42页电流方向，ib向下，beita倍的ib也向下</li><li>PN结的伏安特性，i = Is（e^(u/UT)-1）</li><li>rbede计算公式</li><li>rbb’ 基区体电阻 未特殊说明，均取300</li><li>动态参数</li><li>Au就散 负号 </li><li>输入电阻是Rb和小rbe的并联，没有Rs</li><li>输出电阻就是Rc，没有RL</li><li>Aus 叫做源电压放大倍数，是输入电阻除以输入电阻和Rs的和</li><li>在计算小rbe的时候IEQ可以直接用ICQ代替</li><li>mv/mA 等于Ω不用换了！</li><li>静态工作点稳定电路：归根到底就是要稳定ICQ使得ICQ基本不变</li><li>静态工作点稳定电路的工作原理：集电极电流变大，发射极电流也变大，发射极有一个电阻，导致发射极电压变大，基极电压不变，所以三极管山发射结电压变小，使得基极电流变小，导致集电极电流变小，形成负反馈</li><li>P48也的几个式子很容易搞错！</li><li>Re可以起到稳定静态工作点的作用，但是同样会减小电压放大倍数，而且是很大的减小电压放大倍数</li><li>解决方法就是引入旁路电容，只在静态工作点稳定中Re起作用，在动态中，不起作用</li><li>如果输入回路并联了一个电阻，那么静态工作点的求法就不是之前的公式了，而是应该用分压公式计算，求出Ubq再计算发射极的电流，计算出来</li><li>P51页共集电极放大电路，注意电流方向，和rbe位置，都不一样了！电阻编导上面，电流汇集到一起不是分开的</li><li>它的放大倍数约等于1</li><li>共基级放大电路，很复杂，但输入是输入到Re电阻上头</li><li>多级放大电路</li><li>阻容耦合放大电路，优点是各级之间用电容分割开来，静态工作点相互不会影响。缺点略</li><li>直接耦合电路存在零点漂移现象，也就是输入信号为0时，输出信号不是0，严重的时候，会影响到需要的实际信号</li><li>变压器耦合</li><li>阻容耦合多级放大电路的电压放大倍数是它们每级放大电路当大倍数的乘积</li><li>输入电阻是第一级的输入电阻，输出电阻是最后一级的输出电阻</li><li>场效应管和NPN型类似，只是是电压控制电流</li><li>负反馈部分暂时跳过</li><li>偏置电路是为各级提供合适的工作电流，确定合适的工作点</li><li>单门限电压，将连续变化的模拟量变化成数字量</li><li>阈值电压 UOH</li><li>两个输入一个输出</li><li>其中一个输入作为比较电压</li><li>正的比负的大，输出高电压</li><li>正的比负的小，输出负电压</li><li>电压比较器工作在非线性区，所以虚端不成立，虚断仍然成立</li><li>反向单门限电压比较器</li><li>传输特性为左上右下，因为UR在同向端，u1在反向端，</li><li>同向比较器，左下右上，自己推一下就好了</li><li>接入两个相反的二极管，可以起到限幅和保护输入的作用</li><li>自激震荡的条件：幅值平衡条件AF=1，相位平衡条件 A的相位+B的相位=2nπ</li><li>起震条件：AF大于1，相位的和是2nπ</li><li>RC串并联选频网络 f=1/2πRC，F=1/3，</li><li>LC并联电路的选频特性：f0 = 1/2π根号LC</li><li>变压器反馈式LC震荡电路：三极管的作用是利用非线性性质自动稳幅</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;ol&gt;
-&lt;li&gt;N型半导体掺杂五价元素，多子是自由电子&lt;/li&gt;
-&lt;li&gt;P型半导体掺杂三价元素，多子是空穴&lt;/li&gt;
-&lt;li&gt;多子的浓度取决于掺杂浓度&lt;/li&gt;
-&lt;li&gt;少子的浓度和温度有关&lt;/li&gt;
-&lt;li&gt;扩散运动：由载流子浓度差产生&lt;/li&gt;
-&lt;li&gt;漂移运动：在电厂作
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="https://www.qianhongbo.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="模电" scheme="https://www.qianhongbo.top/tags/%E6%A8%A1%E7%94%B5/"/>
-    
-  </entry>
-  
-  <entry>
     <title>托福综合写作</title>
     <link href="https://www.qianhongbo.top/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%89%98%E7%A6%8F%E7%BB%BC%E5%90%88%E5%86%99%E4%BD%9C/"/>
     <id>https://www.qianhongbo.top/学习笔记/托福综合写作/</id>
     <published>2019-06-14T13:15:06.000Z</published>
     <updated>2019-06-14T13:17:48.000Z</updated>
     
-    <content type="html"><![CDATA[<p>阅读：3mins 230-300words</p><p>听力：2mins 230-300words 语音语调类似lecture 话题范围相比听力更窄 理工科背景有优势  不需要额外准备</p><p>先3min阅读 之后听听力 最后开始写作文 20min倒计时 </p><p>最后写作文能看到阅读，也就是对阅读没有那么高的要求</p><ol><li>从听力中选择重要信息</li></ol><p>记笔记符号使用</p><ol><li>大括号</li><li>> &lt; =</li><li>箭头：单箭头上升下降，体现多和少</li><li>双箭头：快速上升，快速下降</li><li>波浪箭头：起伏，progress</li><li>从笔记中直接拉下来单词</li><li>$ 符号 用来表示任何和钱有关的东西</li><li>√ ×</li><li>自行添加</li></ol><p>注意事项</p><ol><li>阅读：只记录要点 不写细节 要改写</li><li>听力 既要有要点，又要有细节 不用改写</li><li>阅读和听力要点一定是只有三个</li><li>阅读永远是三分钟</li><li>写作是能再次看到阅读材料</li><li>记笔记，先看，再做笔记，正常可以一分半读完文章，1分钟记笔记，10s左右整理。（前期可以看一段记一段）</li><li>写作的时候以阅读原文为主，不要看笔记啦</li><li>阅读笔记只服务于听力</li><li>机经使用独立口语和独立写作的题目</li><li>机经的获得方式：贴吧，淘宝,，找老师要</li><li>段落结构(总分分分式)：每一段包括：阅读的观点，演讲的观点加细节，两者的关系</li></ol><p>例子</p><p>The passage claims that the salvage logging will help forest recover and make room for the fresh frowth, while the lecturre argues that it is unnecessary because the natrual decomposed trees can also enrich the soil. This will be good nutrients for the forest.  <strong>OK，没有问题</strong> </p>]]></content>
+    <content type="html"><![CDATA[<p>阅读：3mins 230-300words</p><p>听力：2mins 230-300words 语音语调类似lecture 话题范围相比听力更窄 理工科背景有优势  不需要额外准备</p><p>先3min阅读 之后听听力 最后开始写作文 20min倒计时 </p><p>最后写作文能看到阅读，也就是对阅读没有那么高的要求</p><ol><li>从听力中选择重要信息</li></ol><p>记笔记符号使用</p><ol><li>大括号</li><li>&gt; &lt; =</li><li>箭头：单箭头上升下降，体现多和少</li><li>双箭头：快速上升，快速下降</li><li>波浪箭头：起伏，progress</li><li>从笔记中直接拉下来单词</li><li>$ 符号 用来表示任何和钱有关的东西</li><li>√ ×</li><li>自行添加</li></ol><p>注意事项</p><ol><li>阅读：只记录要点 不写细节 要改写</li><li>听力 既要有要点，又要有细节 不用改写</li><li>阅读和听力要点一定是只有三个</li><li>阅读永远是三分钟</li><li>写作是能再次看到阅读材料</li><li>记笔记，先看，再做笔记，正常可以一分半读完文章，1分钟记笔记，10s左右整理。（前期可以看一段记一段）</li><li>写作的时候以阅读原文为主，不要看笔记啦</li><li>阅读笔记只服务于听力</li><li>机经使用独立口语和独立写作的题目</li><li>机经的获得方式：贴吧，淘宝,，找老师要</li><li>段落结构(总分分分式)：每一段包括：阅读的观点，演讲的观点加细节，两者的关系</li></ol><p>例子</p><p>The passage claims that the salvage logging will help forest recover and make room for the fresh frowth, while the lecturre argues that it is unnecessary because the natrual decomposed trees can also enrich the soil. This will be good nutrients for the forest.  <strong>OK，没有问题</strong> </p>]]></content>
     
     <summary type="html">
     
@@ -407,46 +202,13 @@
   </entry>
   
   <entry>
-    <title>20190614</title>
-    <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/20190614/"/>
-    <id>https://www.qianhongbo.top/随笔/20190614/</id>
-    <published>2019-06-14T08:58:54.000Z</published>
-    <updated>2019-06-14T09:19:38.000Z</updated>
-    
-    <content type="html"><![CDATA[<ul><li>[x] 写博客</li><li>[ ] 不看没用的视频</li><li>[ ] 做眼保健操</li><li>[ ] 英语学习2小时</li></ul><hr><p>感觉自己距离实习、工作还有好大的一段距离啊，真的要抓紧要努力了</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;ul&gt;
-&lt;li&gt;[x] 写博客&lt;/li&gt;
-&lt;li&gt;[ ] 不看没用的视频&lt;/li&gt;
-&lt;li&gt;[ ] 做眼保健操&lt;/li&gt;
-&lt;li&gt;[ ] 英语学习2小时&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;感觉自己距离实习、工作还有好大的一段距离啊，真的要抓紧要努力了&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="Diary" scheme="https://www.qianhongbo.top/tags/Diary/"/>
-    
-  </entry>
-  
-  <entry>
     <title>专业导论课最后一节个人认为比较有价值内容整理</title>
     <link href="https://www.qianhongbo.top/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/%E4%B8%93%E4%B8%9A%E5%AF%BC%E8%AE%BA%E8%AF%BE%E6%9C%80%E5%90%8E%E4%B8%80%E8%8A%82%E4%B8%AA%E4%BA%BA%E8%AE%A4%E4%B8%BA%E6%AF%94%E8%BE%83%E6%9C%89%E4%BB%B7%E5%80%BC%E5%86%85%E5%AE%B9%E6%95%B4%E7%90%86/"/>
     <id>https://www.qianhongbo.top/华科机械学习资料分享/专业导论课最后一节个人认为比较有价值内容整理/</id>
     <published>2019-06-14T04:07:11.000Z</published>
     <updated>2019-06-14T04:39:54.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="机械工程伦理"><a href="#机械工程伦理" class="headerlink" title="机械工程伦理"></a>机械工程伦理</h2><h3 id="问问自己："><a href="#问问自己：" class="headerlink" title="问问自己："></a>问问自己：</h3><p>内心世界?</p><p>存在的意义?</p><p>为何要多一点形而上?</p><p>你的价值感?</p><p>你的技术创造的欲求?</p><p>技术工作者/工程师的责任?</p><p>你对未来技术的感觉?</p><h2 id="知识、能力与素质的区别和联系"><a href="#知识、能力与素质的区别和联系" class="headerlink" title="知识、能力与素质的区别和联系"></a>知识、能力与素质的区别和联系</h2><div class="table-container"><table><thead><tr><th style="text-align:left"></th><th style="text-align:center">核心</th><th style="text-align:center">t特点</th></tr></thead><tbody><tr><td style="text-align:left">知识</td><td style="text-align:center">人类认识的成果</td><td style="text-align:center">形成能力，素质的基础</td></tr><tr><td style="text-align:left">能力</td><td style="text-align:center">完成一定活动的本领</td><td style="text-align:center">对知识的运用，是知识发挥作用的实践条件，具“外显性”</td></tr><tr><td style="text-align:left">素养</td><td style="text-align:center">基本品质或基础条件</td><td style="text-align:center">人在活动过程中所塑造成的内在升华，具“内凝性”</td></tr></tbody></table></div><h2 id="专业教育组成"><a href="#专业教育组成" class="headerlink" title="专业教育组成"></a>专业教育组成</h2><p>数学类和自然科学类总计最少为450学时</p><p>工程科学类、工程设计与实践类两者总计最少1000学时</p><p>人文和社会科学不少于400学时</p><h2 id="机械专业教育知识体系包含如下5个知识领域"><a href="#机械专业教育知识体系包含如下5个知识领域" class="headerlink" title="机械专业教育知识体系包含如下5个知识领域"></a>机械专业教育知识体系包含如下5个知识领域</h2><ol><li>机械设计的原理与方法</li><li>机械制造工程原理与技术</li><li>机械系统中的传动和控制</li><li>计算机应用技术</li><li>热流体</li></ol><h2 id="中国加入《华盛顿协议》"><a href="#中国加入《华盛顿协议》" class="headerlink" title="中国加入《华盛顿协议》"></a>中国加入《华盛顿协议》</h2><p>国内本科生获得的文凭，在国际上都会被认可</p><h2 id="企业对毕业生能力的评价"><a href="#企业对毕业生能力的评价" class="headerlink" title="企业对毕业生能力的评价"></a>企业对毕业生能力的评价</h2><ol><li>独立性强、思路开阔、时尚;</li><li>知识面广;</li><li>不够踏实、团队协作意识弱;</li><li>不能承受较大压力,工作责任心、事业心弱,急功近利;</li><li>熟悉、胜任本职工作需要的时间较长,须在企业工作3-4年左右才能完全胜任工作。</li></ol><h2 id="企业对毕业生能力的期待"><a href="#企业对毕业生能力的期待" class="headerlink" title="企业对毕业生能力的期待"></a>企业对毕业生能力的期待</h2><ol><li>除专业能力外,最基本的要求是踏实、勤奋、敬业、忠诚、合作;</li><li>感兴趣的主要不是学习成绩,更注重处理问题的能力、解决问题的能力以及工作中的综合性能</li><li>很看重学生的整体素质和品德.</li></ol>]]></content>
+    <content type="html"><![CDATA[<h2 id="机械工程伦理"><a href="#机械工程伦理" class="headerlink" title="机械工程伦理"></a>机械工程伦理</h2><h3 id="问问自己："><a href="#问问自己：" class="headerlink" title="问问自己："></a>问问自己：</h3><p>内心世界?</p><p>存在的意义?</p><p>为何要多一点形而上?</p><p>你的价值感?</p><p>你的技术创造的欲求?</p><p>技术工作者/工程师的责任?</p><p>你对未来技术的感觉?</p><h2 id="知识、能力与素质的区别和联系"><a href="#知识、能力与素质的区别和联系" class="headerlink" title="知识、能力与素质的区别和联系"></a>知识、能力与素质的区别和联系</h2><table><thead><tr><th align="left"></th><th align="center">核心</th><th align="center">t特点</th></tr></thead><tbody><tr><td align="left">知识</td><td align="center">人类认识的成果</td><td align="center">形成能力，素质的基础</td></tr><tr><td align="left">能力</td><td align="center">完成一定活动的本领</td><td align="center">对知识的运用，是知识发挥作用的实践条件，具“外显性”</td></tr><tr><td align="left">素养</td><td align="center">基本品质或基础条件</td><td align="center">人在活动过程中所塑造成的内在升华，具“内凝性”</td></tr></tbody></table><h2 id="专业教育组成"><a href="#专业教育组成" class="headerlink" title="专业教育组成"></a>专业教育组成</h2><p>数学类和自然科学类总计最少为450学时</p><p>工程科学类、工程设计与实践类两者总计最少1000学时</p><p>人文和社会科学不少于400学时</p><h2 id="机械专业教育知识体系包含如下5个知识领域"><a href="#机械专业教育知识体系包含如下5个知识领域" class="headerlink" title="机械专业教育知识体系包含如下5个知识领域"></a>机械专业教育知识体系包含如下5个知识领域</h2><ol><li>机械设计的原理与方法</li><li>机械制造工程原理与技术</li><li>机械系统中的传动和控制</li><li>计算机应用技术</li><li>热流体</li></ol><h2 id="中国加入《华盛顿协议》"><a href="#中国加入《华盛顿协议》" class="headerlink" title="中国加入《华盛顿协议》"></a>中国加入《华盛顿协议》</h2><p>国内本科生获得的文凭，在国际上都会被认可</p><h2 id="企业对毕业生能力的评价"><a href="#企业对毕业生能力的评价" class="headerlink" title="企业对毕业生能力的评价"></a>企业对毕业生能力的评价</h2><ol><li>独立性强、思路开阔、时尚;</li><li>知识面广;</li><li>不够踏实、团队协作意识弱;</li><li>不能承受较大压力,工作责任心、事业心弱,急功近利;</li><li>熟悉、胜任本职工作需要的时间较长,须在企业工作3-4年左右才能完全胜任工作。</li></ol><h2 id="企业对毕业生能力的期待"><a href="#企业对毕业生能力的期待" class="headerlink" title="企业对毕业生能力的期待"></a>企业对毕业生能力的期待</h2><ol><li>除专业能力外,最基本的要求是踏实、勤奋、敬业、忠诚、合作;</li><li>感兴趣的主要不是学习成绩,更注重处理问题的能力、解决问题的能力以及工作中的综合性能</li><li>很看重学生的整体素质和品德.</li></ol>]]></content>
     
     <summary type="html">
     
@@ -492,9 +254,9 @@
     <link href="https://www.qianhongbo.top/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/ROS%E5%85%A5%E9%97%A8/"/>
     <id>https://www.qianhongbo.top/华科机械学习资料分享/ROS入门/</id>
     <published>2019-06-13T10:29:31.000Z</published>
-    <updated>2019-06-13T10:36:02.000Z</updated>
+    <updated>2019-07-08T09:21:20.465Z</updated>
     
-    <content type="html"><![CDATA[<p>鸟哥私房菜1 2 3章作为了解，第4 5 6章随书操作一遍，这样大家对Linux系统的基本操作会有一个大致的认识。注意，鸟哥书中系统与我们不同，因此不要太纠结于必须每一步结果都与书中一样。另外，遇到问题的话，把问题复制下来直接百度，绝大多数问题是有解决方法的。</p><p>ROS_Robot_Programming_CN电子书1、2章粗略浏览，3~7章重点学习，后续章节以后再说。</p><div class="row">    <embed src="http://pso1yp87m.bkt.clouddn.com/ROS_Robot_Programming_CN.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    <content type="html"><![CDATA[<p>鸟哥私房菜1 2 3章作为了解，第4 5 6章随书操作一遍，这样大家对Linux系统的基本操作会有一个大致的认识。注意，鸟哥书中系统与我们不同，因此不要太纠结于必须每一步结果都与书中一样。另外，遇到问题的话，把问题复制下来直接百度，绝大多数问题是有解决方法的。</p><p>ROS_Robot_Programming_CN电子书1、2章粗略浏览，3~7章重点学习，后续章节以后再说。</p>]]></content>
     
     <summary type="html">
     
@@ -502,32 +264,6 @@
       
         &lt;p&gt;鸟哥私房菜1 2 3章作为了解，第4 5 6章随书操作一遍，这样大家对Linux系统的基本操作会有一个大致的认识。注意，鸟哥书中系统与我们不同，因此不要太纠结于必须每一步结果都与书中一样。另外，遇到问题的话，把问题复制下来直接百度，绝大多数问题是有解决方法的。&lt;/p&gt;
 &lt;p
-      
-    
-    </summary>
-    
-      <category term="华科机械学习资料分享" scheme="https://www.qianhongbo.top/categories/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>华科机械学院材料力学课后答案</title>
-    <link href="https://www.qianhongbo.top/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E9%99%A2%E6%9D%90%E6%96%99%E5%8A%9B%E5%AD%A6%E8%AF%BE%E5%90%8E%E7%AD%94%E6%A1%88/"/>
-    <id>https://www.qianhongbo.top/华科机械学习资料分享/华科机械学院材料力学课后答案/</id>
-    <published>2019-06-13T09:53:37.000Z</published>
-    <updated>2019-06-13T09:55:24.000Z</updated>
-    
-    <content type="html"><![CDATA[<div class="row">    <embed src="http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E4%B8%AD%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%E6%9D%90%E6%96%99%E5%8A%9B%E5%AD%A6%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98%E8%A7%A3%E7%AD%94.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        
-
-	&lt;div class=&quot;row&quot;&gt;
-    &lt;embed src=&quot;http://pso1yp87m.bkt.clouddn.com/%E5%8D%8E%E4%B8%AD%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%E6%9D%90%E6%96%
       
     
     </summary>
@@ -562,6 +298,238 @@
     
     
       <category term="Laplace" scheme="https://www.qianhongbo.top/tags/Laplace/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>钱泓勃在大学毕业前的愿望和目标</title>
+    <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/%E9%92%B1%E6%B3%93%E5%8B%83%E5%9C%A8%E5%A4%A7%E5%AD%A6%E6%AF%95%E4%B8%9A%E5%89%8D%E7%9A%84%E6%84%BF%E6%9C%9B%E5%92%8C%E7%9B%AE%E6%A0%87/"/>
+    <id>https://www.qianhongbo.top/随笔/钱泓勃在大学毕业前的愿望和目标/</id>
+    <published>2019-06-13T00:54:21.000Z</published>
+    <updated>2019-06-13T12:14:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><input checked disabled type="checkbox"> 建一个自己的博客</li><li><input disabled type="checkbox"> 毕业季去一次云南，玩很久的那种</li><li><input disabled type="checkbox"> 在b站发一个点击量上千的视频</li><li><input disabled type="checkbox"> 自己的博客每天有人看</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;&lt;input checked disabled type=&quot;checkbox&quot;&gt; 建一个自己的博客&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&quot;checkbox&quot;&gt; 毕业季去一次云南，玩很久的那种&lt;/li&gt;
+&lt;li&gt;&lt;input disable
+      
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="目标" scheme="https://www.qianhongbo.top/tags/%E7%9B%AE%E6%A0%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>华科机械学院大二下学习资料分享</title>
+    <link href="https://www.qianhongbo.top/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%A4%A7%E4%BA%8C%E4%B8%8B%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
+    <id>https://www.qianhongbo.top/华科机械学习资料分享/华科机械大二下学习资料/</id>
+    <published>2019-06-11T13:40:27.000Z</published>
+    <updated>2019-06-11T13:47:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="链接：https://pan.baidu.com/s/1dHzxPkSfFQhlM11DN1waoA">各科目课件百度网盘链接</a></p><p>提取码：y8iy </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;链接：https://pan.baidu.com/s/1dHzxPkSfFQhlM11DN1waoA&quot;&gt;各科目课件百度网盘链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;提取码：y8iy &lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="华科机械学习资料分享" scheme="https://www.qianhongbo.top/categories/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>梦里花落知多少</title>
+    <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/%E6%A2%A6%E9%87%8C%E8%8A%B1%E8%90%BD%E7%9F%A5%E5%A4%9A%E5%B0%91/"/>
+    <id>https://www.qianhongbo.top/随笔/梦里花落知多少/</id>
+    <published>2019-06-10T03:32:45.000Z</published>
+    <updated>2019-07-08T09:35:44.959Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="20190609"><a href="#20190609" class="headerlink" title="20190609"></a>20190609</h1><p>该结束的课程终于都结束了，剩下的就是两个期末考试了。最近也是十分的空虚和无聊，呜呜。</p><p>昨天和黄智威出去吃饭，也是觉得自己突然刷新了自己对生活的认识，或许想在这个社会上生存，不能只想着简简单单的一个人打拼，在几个人的小团体里活着。想要在这个社会上获得你的地位，需要建立自己的人脉网，才能在走入社会后吃得开，显然，我目前并不是这样的人，我喜欢呆在自己极小的圈子，甚至在这个小圈子里我也很少和周围的人沟通交流，我也明白这样是不对的，慢慢去改变吧。</p><h1 id="20190610"><a href="#20190610" class="headerlink" title="20190610"></a>20190610</h1><p>今天早上起来之后就觉得不对头，脖子不是很舒服，像是落枕了。</p><p>这几天也没有好好休息，听了别人说每晚要早点睡觉，自己也在暗下决心，可是每晚躺倒床上就打起了精神，想要看会儿手机再睡，这一看就不是一会儿两会儿能解决的事情了，往往会熬夜到后半夜才会睡觉，周末利用空闲时间还想玩玩游戏，我应该知道自己颈椎不好不要总是低头玩手机用笔记本，但内心的躁动总是难以压抑，每次之后内心又充满了后悔。这就是太过放纵自己的结果。</p><p>身体最重要！永远不要和自己的身体开玩笑，永远不要做有害自己身体的事情，不然后悔都来不及</p><h1 id="20190614"><a href="#20190614" class="headerlink" title="20190614"></a>20190614</h1><p>感觉自己距离实习、工作还有好大的一段距离啊，真的要抓紧要努力了</p><p>自己没事做做眼保健操，保护眼睛</p><h1 id="20190626"><a href="#20190626" class="headerlink" title="20190626"></a>20190626</h1><p>今天没事闲的，在百度上搜索了一下自己，发现一个文档，是16年吉林一中所有毕业生的去向。说实话，这个表格我从没打开过，也没看过，所以我也不知道自己在这么一批人中到底处于一个什么层次什么位置。无奈，手贱点开了，内心难免升起波澜。我想如果我当年看了这个表格的话，我应该会选择复读吧。不是很好的学校的最差专业，这个报考也是很不明智。难怪我觉得来到这个学校和我期待的大学不一样，因为我的确没有去上我所期待的大学啊。</p><p>最开始来到这里之后先是觉得不适应，觉得自己不属于这里，后来慢慢适应了，也习惯这里的一切，后来自己又变成了这一批人里的中游，想想还是蛮扎心的。</p><p>今天看到这个也算给自己一个警示，我不该这么消沉，我应该去追求属于我自己的未来。包括来到大学，我也不是很努力，我一直都不是一个努力型人格，喜欢放纵自己，跟着自己的性子来，这样的话，等到大学毕业，我可能还是同样的结局，真是活该啊！</p><p>人应该今早认识到一点：人这一生，靠的不光是实力，也看运气，运气也是实力的一种</p><h1 id="20190702"><a href="#20190702" class="headerlink" title="20190702"></a>20190702</h1><p>考完试啦，也把博客搬迁到我的mac上了，还是蛮简单的</p><p>遇到了点小问题但是都解决了，蛮好</p><p>Everything we can just google it!</p><h1 id="20190703"><a href="#20190703" class="headerlink" title="20190703"></a>20190703</h1><h2 id="整理一下思路"><a href="#整理一下思路" class="headerlink" title="整理一下思路"></a>整理一下思路</h2><ul><li>为实习做准备需要学习：c, linux, arm</li><li>为下学期机器人学做准备需要学习：机器人学, Matlab</li><li>为出国做准备需要学习：toefl</li><li>为下学期课程做准备应该学习：机械原理等课程</li><li>为未来接触更新的知识做准备应该学习：python, tensorflow</li><li>为了更好的身体我应该：每天坚持健身</li></ul><p>那么，到底是应该每天一个部分学一点还是应该阶段性的学习一个内容呢？</p><h1 id="20190706"><a href="#20190706" class="headerlink" title="20190706"></a>20190706</h1><p>凡事应该谨言慎行，不可草率啊。事不过三，事不过三</p><p>我觉得我就是一个宅男，屌丝。。至少目前阶段是的，我承认。。要改吗？能改吗？，，我倒是很希望自己能成为一个技术控，人总是要有自己的一点特长的啊</p><p>昨晚看了个电影，蜘蛛侠英雄远征，个人觉得比较一般，以后最好不要看这种电影了</p><p>今天是最后一天休息了，明天开始生活就要走上正轨了，准确的说今天也不应该休息的。作为学生，每天必须要有八个小时的学习时间。这几天都没达到吧。。</p><h1 id="20190707"><a href="#20190707" class="headerlink" title="20190707"></a>20190707</h1><p>哥伦比亚大学门口的雕塑是女神雅典娜，还藏了一只猫头鹰，象征着智慧。</p><p>大学要培养的是可迁移的能力</p><p>没事多听听ted什么的别看直播了！</p><p>科研项目并不是学校的那种科研，而是国外背景的科研</p><p>我第一喜欢的lpl输了，呜呜呜，以后不看比赛了，扎心呀</p><p>好好学习，报效祖国～～</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;20190609&quot;&gt;&lt;a href=&quot;#20190609&quot; class=&quot;headerlink&quot; title=&quot;20190609&quot;&gt;&lt;/a&gt;20190609&lt;/h1&gt;&lt;p&gt;该结束的课程终于都结束了，剩下的就是两个期末考试了。最近也是十分的空虚和无聊，呜呜。&lt;/p&gt;
+      
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="Diary" scheme="https://www.qianhongbo.top/tags/Diary/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>写在2019年高考前</title>
+    <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/%E5%86%99%E5%9C%A82019%E5%B9%B4%E9%AB%98%E8%80%83%E5%89%8D/"/>
+    <id>https://www.qianhongbo.top/随笔/写在2019年高考前/</id>
+    <published>2019-06-06T16:24:31.000Z</published>
+    <updated>2019-06-07T04:28:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>我对高考的记忆真的剩下的很少了</p><p>我记不起来那天发生了什么，也记不起来我的任何分数，更记不起来考了什么题目</p><p>我能记起来的，只有发成绩那天我妈的泪水。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;我对高考的记忆真的剩下的很少了&lt;/p&gt;
+&lt;p&gt;我记不起来那天发生了什么，也记不起来我的任何分数，更记不起来考了什么题目&lt;/p&gt;
+&lt;p&gt;我能记起来的，只有发成绩那天我妈的泪水。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="Diary" scheme="https://www.qianhongbo.top/tags/Diary/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>手机惊云（二）</title>
+    <link href="https://www.qianhongbo.top/%E5%B0%8F%E8%AF%B4/%E6%89%8B%E6%9C%BA%E6%83%8A%E4%BA%91%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+    <id>https://www.qianhongbo.top/小说/手机惊云（二）/</id>
+    <published>2019-06-06T14:18:28.000Z</published>
+    <updated>2019-06-06T14:19:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>电梯很长，人也不少，除了地铁口我就看到了一个穿着粉色t恤，年级估摸着有将近五十岁，个子不是很高的中年人，有一点油腻，猥琐的气质，但看起来不像是坏人</p><p>我故作镇定的走过去，和他说：”你为什么上来了？“</p><p>他说：”我没做地铁来，我那里没有地铁，我骑车过来的。“</p><p>wdnmd…武汉哪里没地铁我是不信的</p><p>算了算了，你骑车就骑车吧，直接验货（滑稽）</p><p>我就找了个地方，从书包里掏出了我的手机</p><p>他说：”我没用过苹果手机，你这个手机咋用啊？”</p><p>我心想：哎呦，遇到外行了</p><p>他随便操作了几下，鬼知道他怎么操作的，竟然操作到了多任务栏，他尝试上滑关掉应用，竟然没关掉？？？</p><p>我当时也懵了，这个情况我也没遇见过啊，我好几周都没用过这个手机了，我心里也不是很确定，不会是坏了吧？</p><p>我就自己拿过来操作了几下，发现的确不行，我心里开始发慌，还好他也没有说什么</p><p>于是我就开始解释，手上还是在操作，想着是不是什么设置没打开？</p><p>就在我调的时候他手机响了，我瞄了一眼，这TM不就是苹果手机吗？？？你跟我说你没用过苹果手机不会用？</p><p>wdnmd，你这有什么骗我的</p><p>内心暗自怀疑</p><hr><p>我继续在那里试怎么关不掉多任务</p><p>也不知道我怎么按的，就长按了屏幕，左上角出现了一个红色的关闭按钮，我点了一下应用就关掉了</p><p>wdnmd！这什么智障设计，苹果真的不如我手里的安卓好用啊，这个设计也太脑残了吧。。。</p><p>暗自感叹了一下之后，心想：还好度过了难关，手机肯定没问题，你随便验</p><p>他又调了几下铃声什么的，发现都没问题</p><p>他又问我：“你带针没？我把卡插进去试一下。”</p><p>。。。</p><p>我带这玩意儿干啥，我哪知道您这么急啊</p><p>我说：“我没有，但肯定没问题，我用的好好的，你就放心吧。”</p><p>他的表情明显告诉我他不相信，他说他想试试话筒，他说他的手机话筒坏了</p><p>但他看是在是没法子，就说：“那就这样吧，有问题我给你打电话联系你。”</p><p>我说好</p><p>之后就开始转账了，我打开了我的支付宝收钱，</p><p>他很快扫了我的码，很果断的付了钱，谁知道我没收到提示</p><p>我心想原来你是用这种不付钱的骗术来骗我</p><p>哼，也太低级了吧，我早就听说过这种骗术了</p><p>别想用这种方法骗到我！</p><p>我手里死死的握着我的手机不放，谁知道他开始急了</p><p>他说：“你咋没收到呢？我都付过去了啊？“</p><p>我看着他手机上的账单，的确是这样，显示的已付款</p><p>难道这又是什么新型骗术吗？</p><p>我手机疯狂刷新，还是没有，唉？咋回事</p><p>我看到我手机上的信号突然没了，半天之后才有，也就听到了那熟悉的：”支付宝到账…“</p><p>突然心里一阵舒爽，这下落袋为安了哈哈</p><p>我就开学的走了，走之前回头看了他一眼，我看他急匆匆的往地铁站走，像是要去坐地铁</p><p>我心想，你TM不是做不了地铁吗？</p><p>算了，管他呢，反正也结束了</p><p>看着他那粉色t恤的背影，我也回头往学校走，脑子里还在想着晚上吃点什么的问题</p><p>可谁又知道，事情才刚刚开始……</p><center><未完待续></未完待续></center>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;电梯很长，人也不少，除了地铁口我就看到了一个穿着粉色t恤，年级估摸着有将近五十岁，个子不是很高的中年人，有一点油腻，猥琐的气质，但看起来不像是坏人&lt;/p&gt;
+&lt;p&gt;我故作镇定的走过去，和他说：”你为什么上来了？“&lt;/p&gt;
+&lt;p&gt;他说：”我没做地铁来，我那里没有地铁，我骑车过来
+      
+    
+    </summary>
+    
+      <category term="小说" scheme="https://www.qianhongbo.top/categories/%E5%B0%8F%E8%AF%B4/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>手机惊云（一）</title>
+    <link href="https://www.qianhongbo.top/%E5%B0%8F%E8%AF%B4/%E6%89%8B%E6%9C%BA%E6%83%8A%E4%BA%91%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>https://www.qianhongbo.top/小说/手机惊云（一）/</id>
+    <published>2019-06-06T13:12:19.000Z</published>
+    <updated>2019-06-06T14:19:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>爸妈给换了个新手机，Huawei的，用着还挺顺手，用了好几年的iphone6sp就扔在寝室不用了。</p><p>旧手机在寝室放着一直看的挺烦的，也不是烦，就是想让每个东西都能有它们自己的归宿吧，不想让它们闲着。于是我就挂到了咸鱼上去，定了一个蛮高的价格，想着这么心爱的手机不想它这么就卖出去了…</p><p>果不其然，两天了没人来找我问，我心想，看来价格合适，不是那种贱卖的价格。我也没继续理它，反正我也不急着用这笔钱。</p><p>没想到今天下午我收到一个人的消息，他说他想买手机，还说他就在武汉，离我学校还挺近，说一会儿能不能当面交易，让我定一个地方。剧情发展的太快我根本没反应过来，而且他的果断和紧急让我更加的警觉，我在怀疑是不是什么骗局，毕竟闲鱼上的骗局还是很多的。</p><p>于是我马上追问：“在哪里交易？”（交易这个词怎么觉得怪怪的）</p><p>他说：“你定一个地方吧，我到时候直接给你现金。”</p><p>现金？？？</p><p>我看到了一个关键词，立马勾起了我的警觉心。我马上在脑海里构想了各种可能的诈骗方式，比如什么钱是假钱，或者是他会以验机为名直接拿着我的手机跑路？…… </p><p>越想越后怕，我马上回：我不收现金，只接受转账。</p><p>我本以为他会因为我这么一说直接放弃这笔交易</p><p>没想到他直接回：没事，我们去银行门口见面，没问题的话我直接去ATM存钱，我手机里没钱！</p><p>事情发展的更加扑朔迷离</p><p>奈何我一天下来也蛮累的，不如就用这个晚饭是时间休息下，把这个事情搞个明白，我倒是要看看这个人到底是个什么底细！</p><hr><p>紧接着我就挑了一个离学校在最近的地铁站，给他发了过去</p><p>我心想：地铁站人多而且有监控，就算你有问题，我也可以找别人来帮忙啊</p><p>我想着他会不会因为地点问题再次放弃交易</p><p>没想到，他又回了一句：我查查</p><p>真是出乎我的意料，难道他真的是要买手机？那为什么偏偏选择了我这个嘞？</p><p>还没等我多考虑，他就回复我：”好的，我这就出门。“</p><p>。。。</p><p>我当时人还在教室里呢，手机还在寝室躺着呢！</p><p>心想：你是真急啊，你急的我害怕！…</p><p>我也来不及多想，收拾东西就往寝室走，因为我手机还没清理，里面还有好几10G的照片没删呢，还好我前几天把它们全上传到我的百度云里了。</p><p>回到寝室后，把手机刷掉，完全格式化，不想留下任何和我有关的信息</p><p>我在路上又想了一下，想到了更可怕的事情…他会不会用武力解决我并拿走我的手机…</p><p>虽然很离谱，但这种想法的确在我的脑子里的浮现过，而且当时脑子里的画面不是他一个人，是他带着他的一帮弟兄一起过来的，就像是那种黑帮电影里的感觉，一群光着膀子的大汉一排走过来…我是不是想象力太丰富了…</p><p>收拾的差不多，拿上了充电线就出门了，想着我耽误了这么久，他也该到了吧，临走前我还拿上了周二工程实训刚做好的喵喵锤。想着防身用hhh</p><p>然后我就往地铁站走了</p><hr><p>到了地铁站，特意选了个出战的检票口，想着这旁边保安多得很，这下我的人身安全肯定没问题了吧</p><p>突然觉得自己真的机智，于是就找了个地方休息，也没再想什么有的没的。</p><p>过了十分钟他还是没消息，我心想，这该不会是不想买，但是要骗我时间的吧</p><p>话说我自己觉得我的时间宝贵，应该他不觉得吧</p><p>于是我就闲鱼给他发了个消息，说：你到了没？</p><p>他过了半天才说：在路上，一刻钟到</p><p>一刻钟？？？我这么多年都没用过这个词，这个此时啥意思？是十五分钟的意思吗？</p><p>我脑子里觉得是十五分钟，但还是不确定，我还特意去查了一下确认</p><p>哎，么得办法，买点东西是不容易啊，又冒着生命危险，又要浪费时间</p><p>可是我的书包也重的很啊，我还背着一个电脑，我总不能在这里傻站着等吧</p><p>关键是他说是十五分钟，到底是不是，谁知道啊？</p><p>于是我就找了一个地方做了下去，刷起了手机。</p><p>刷手机时间还是过得快啊，大概不到二十分钟，他给我来了个电话</p><p>说他到了，没看到我。</p><p>我说：”我在地上坐着呢，你看到我没？“</p><p>他说：”没有啊，你人呢？“</p><p>我说：”我就在这个检票口出口啊。“</p><p>他说：”我在上面，没在下面。“</p><p>。。。</p><p>完了，之前的计划全部泡汤</p><p>但听他的声音，好像也不是很凶的样子，我就想着行吧，我上去会会你，反正我有小锤锤护身</p><p>然后我就上了电梯，往地铁口走</p><center><未完待续></未完待续></center>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;p&gt;爸妈给换了个新手机，Huawei的，用着还挺顺手，用了好几年的iphone6sp就扔在寝室不用了。&lt;/p&gt;
+&lt;p&gt;旧手机在寝室放着一直看的挺烦的，也不是烦，就是想让每个东西都能有它们自己的归宿吧，不想让它们闲着。于是我就挂到了咸鱼上去，定了一个蛮高的价格，想着这么
+      
+    
+    </summary>
+    
+      <category term="小说" scheme="https://www.qianhongbo.top/categories/%E5%B0%8F%E8%AF%B4/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>各种你可能不知道的知识</title>
+    <link href="https://www.qianhongbo.top/%E7%9F%A5%E8%AF%86%E7%A7%AF%E7%B4%AF/%E5%90%84%E7%A7%8D%E4%BD%A0%E5%8F%AF%E8%83%BD%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E7%9F%A5%E8%AF%86%20/"/>
+    <id>https://www.qianhongbo.top/知识积累/各种你可能不知道的知识 /</id>
+    <published>2019-06-06T13:09:44.000Z</published>
+    <updated>2019-07-08T09:25:37.111Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="游戏里的SSR-SR-R-UR，N都是什么意思？"><a href="#游戏里的SSR-SR-R-UR，N都是什么意思？" class="headerlink" title="游戏里的SSR, SR, R, UR，N都是什么意思？"></a>游戏里的SSR, SR, R, UR，N都是什么意思？</h2><ol><li>SSR**：全称为superior super rare，表示特级超稀有;</li><li><strong>UR</strong>:  全称是Ultra Rare，表示极度稀有;</li><li><strong>SR</strong>:   全称是Super Rare，表示超稀有；</li><li><strong>R</strong>:   即Rare，表示稀有;</li><li><strong>N</strong>:   是Normal的缩写，表示普通;</li></ol><hr><p>64位是什么意思？</p><p>API是什么？</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;游戏里的SSR-SR-R-UR，N都是什么意思？&quot;&gt;&lt;a href=&quot;#游戏里的SSR-SR-R-UR，N都是什么意思？&quot; class=&quot;headerlink&quot; title=&quot;游戏里的SSR, SR, R, UR，N都是什么意思？&quot;&gt;&lt;/a&gt;游戏里的SSR, SR
+      
+    
+    </summary>
+    
+      <category term="知识积累" scheme="https://www.qianhongbo.top/categories/%E7%9F%A5%E8%AF%86%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+      <category term="English" scheme="https://www.qianhongbo.top/tags/English/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我的Hexo博客搭建经历</title>
+    <link href="https://www.qianhongbo.top/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%80%BB%E7%BB%93/"/>
+    <id>https://www.qianhongbo.top/学习笔记/我的个人博客搭建总结/</id>
+    <published>2019-06-06T06:37:27.000Z</published>
+    <updated>2019-07-04T05:07:38.920Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="为什么要做自己的博客？"><a href="#为什么要做自己的博客？" class="headerlink" title="为什么要做自己的博客？"></a>为什么要做自己的博客？</h1><p>说到为什么要这么做，这个想法也是已经有很久了。当时的起因是我想通过互联网上的某个平台来记录自己的学习笔记或者自己的一些思考。在知乎等搜索了很多，都没有找到太合适的，其中包括公众号，简书，csdn等等。我觉得不合适的原因有的是因为网站太过烟火气，对我来说我觉得不够“干净”。有的是因为我觉得和我的圈子不符合，有的是因为我个人的喜好，最终都没有选择。有一天就突然萌生了做一个自己的博客的想法！</p><p>但问题来了，怎么做呢？我完全摸不到头脑。我就去知乎查了一下看到了蛮多科普的帖子，但一翻，好长好长，其中也包括很多很多的代码。对于一个机械专业的学生来说，看到这些内心是恐惧的。于是…我就把那篇帖子收藏了，打算等我有时间再做…当时可能觉得的时间是大四…可是这个想法实际上一直深深的埋在我的心里。</p><p>上周，这学期该忙的事情几乎结束，剩下的就是为了期末考试做准备了，我向来是一个喜欢拖延的人，不到考试前一周应该是打不起学习的兴趣的。我就在教室看着电脑，可能又萌生了写点东西的想法，奈何没有平台给我发挥。于是突然决定，就现在！把博客给我搞出来</p><p><img src="http://pso1yp87m.bkt.clouddn.com/%E6%9D%8E%E4%BA%91%E9%BE%99.jpg" alt="image"></p><h1 id="我花了多少时间？"><a href="#我花了多少时间？" class="headerlink" title="我花了多少时间？"></a>我花了多少时间？</h1><p>总共时长大概是3天白天的时间，对于我这个毫无基础的IT小白来说还是可以接受的（毕竟如果我不是搞这个的话估计也不会学习吧）</p><h1 id="我是怎么做出来的？"><a href="#我是怎么做出来的？" class="headerlink" title="我是怎么做出来的？"></a>我是怎么做出来的？</h1><p>遇到了很多问题，也查了很多资料，通过别人的教程一步一步完善自己的博客</p><p>推荐链接：<a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener"><strong>知乎上的一篇文章，我的启蒙</strong></a> </p><p>看了这个博客之后大部分操作就都可以完成了，当然你可能会像我一样，遇到很多的问题，那么怎么办呢？当然是自己查！而且很容易查到你想要的解决方法</p><p><a href="[https://slanceli.top/2019/02/18/%E6%B7%B1%E5%BA%A6%E7%BE%8E%E5%8C%96Hexo%EF%BC%88NexT%E4%B8%BB%E9%A2%98%EF%BC%89/](https://slanceli.top/2019/02/18/深度美化Hexo（NexT主题）/)"><strong>这篇博客是我的努力目标，当时就是朝着这个方向努力完善</strong></a></p><p><a href="[http://shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html](http://shenzekun.cn/hexo的next主题个性化配置教程.html)"><strong>这篇博客讲了很多博客美化的内容，我都是自己一步一步搞的</strong></a></p><p>以上部分完成了，你的博客基本就完成啦！如果你遇到了什么问题，都可以去google，相信你能得到你想要的答案~</p><h2 id="会不会出教程？"><a href="#会不会出教程？" class="headerlink" title="会不会出教程？"></a>会不会出教程？</h2><p>应该不会，教程太多了，我还没那么牛，等我再学习学习吧…</p><h1 id="如果换电脑了，想在新电脑上写博客，怎么迁移"><a href="#如果换电脑了，想在新电脑上写博客，怎么迁移" class="headerlink" title="如果换电脑了，想在新电脑上写博客，怎么迁移"></a>如果换电脑了，想在新电脑上写博客，怎么迁移</h1><p>[一个比较好的教程]([<a href="https://showcc.github.io/2017/06/08/Change%20the%20computer%20update%20the%20hexo%20blog/]" target="_blank" rel="noopener">https://showcc.github.io/2017/06/08/Change%20the%20computer%20update%20the%20hexo%20blog/]</a>(<a href="https://showcc.github.io/2017/06/08/Change" target="_blank" rel="noopener">https://showcc.github.io/2017/06/08/Change</a> the computer update the hexo blog/))</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;为什么要做自己的博客？&quot;&gt;&lt;a href=&quot;#为什么要做自己的博客？&quot; class=&quot;headerlink&quot; title=&quot;为什么要做自己的博客？&quot;&gt;&lt;/a&gt;为什么要做自己的博客？&lt;/h1&gt;&lt;p&gt;说到为什么要这么做，这个想法也是已经有很久了。当时的起因是我想通过互
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://www.qianhongbo.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Hexo" scheme="https://www.qianhongbo.top/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown 语法总结整理</title>
+    <link href="https://www.qianhongbo.top/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Markdown-%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93%E6%95%B4%E7%90%86/"/>
+    <id>https://www.qianhongbo.top/学习笔记/Markdown-语法总结整理/</id>
+    <published>2019-06-06T06:18:55.000Z</published>
+    <updated>2019-07-04T05:08:37.780Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Markdown文本学习"><a href="#Markdown文本学习" class="headerlink" title="Markdown文本学习"></a>Markdown文本学习</h2><p>就不总结了</p><p>直接上传一个我觉得不错的链接吧</p><p><a href="https://list.yinxiang.com/markdown/eef42447-db3f-48ee-827b-1bb34c03eb83.php" target="_blank" rel="noopener">印象笔记Markdown文本入门指南</a></p><h1 id="Markdown文本公式写法"><a href="#Markdown文本公式写法" class="headerlink" title="Markdown文本公式写法"></a>Markdown文本公式写法</h1><p><a href="https://blog.csdn.net/mingzhuo_126/article/details/82722455" target="_blank" rel="noopener">超全公式指南，简单易懂</a></p><p>hhh ，比如：<br>$$<br>E=mc^2<br>$$</p><p>然而用这个写法在Hexo Next主题下网页上并不会显示出公式，我查了一下</p><p><a href="https://blog.csdn.net/yexiaohhjk/article/details/82526604" target="_blank" rel="noopener">这个教程不错</a></p><p><a href="https://jdhao.github.io/2017/10/06/hexo-markdown-latex-equation/" target="_blank" rel="noopener">打矩阵的时候你会发现无法多行显示，这个教程告诉了我们解决办法</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Markdown文本学习&quot;&gt;&lt;a href=&quot;#Markdown文本学习&quot; class=&quot;headerlink&quot; title=&quot;Markdown文本学习&quot;&gt;&lt;/a&gt;Markdown文本学习&lt;/h2&gt;&lt;p&gt;就不总结了&lt;/p&gt;
+&lt;p&gt;直接上传一个我觉得不错的链接吧&lt;/
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://www.qianhongbo.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Markdown" scheme="https://www.qianhongbo.top/tags/Markdown/"/>
     
   </entry>
   

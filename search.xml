@@ -1,28 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[20190707]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F20190707%2F</url>
-    <content type="text"><![CDATA[哥伦比亚大学门口的雕塑是女神雅典娜，还藏了一只猫头鹰，象征着智慧。 大学要培养的是可迁移的能力 没事多听听ted什么的别看直播了！ 科研项目并不是学校的那种科研，而是国外背景的科研 我第一喜欢的lpl输了，呜呜呜，以后不看比赛了，扎心呀 好好学习，报效祖国～～]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>Diary</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[20190706]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F20190706%2F</url>
-    <content type="text"><![CDATA[凡事应该谨言慎行，不可草率啊 事不过三，事不过三 我觉得我就是一个宅男，屌丝。。至少目前阶段是的，我承认。。 要改吗？能改吗？ ，， 我倒是很希望自己能成为一个技术控，人总是要有自己的一点特长的啊 昨晚看了个电影，蜘蛛侠英雄远征，个人觉得比较一般，以后最好不要看这种电影了 今天是最后一天休息了，明天开始生活就要走上正轨了，准确的说今天也不应该休息的。 作为学生，每天必须要有八个小时的学习时间。 这几天都没达到吧。。]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>Diary</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[嵌入式开发学习笔记]]></title>
     <url>%2F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
     <content type="text"><![CDATA[Linux distribution (linux的发行版本)软件，shell 保护层，kernel内核，硬件 linux系统，完整的分层模型 RedHat：server 服务器 面向企业用户 具有license CentOS：已经被红帽子收购，开源免费版本，区别于企业版，比较稳定 以上两款界面不好看，不追求绚丽的东西 Ubuntu：稳定性不如上面两个，但适用于普通用户，中文支持，软件支持做的都比较好 ubuntu操作 sudo 为普通命令提升权限 sudo passwd root su - 切换到系统的身份 apt-get update更新源，用于下载新的安装包（如果是普通用于，记得在前面加sudo 尽量用命令行的方式来学习linux vim安装 apt-get install vim-nox vi已经安装，是一个编辑软件的记事本 vim回车，进入 退出，敲：q（不知道要不要加！） vim全键盘操作，效率很高 cd / 根目录 c—change d—directory 目录 ls 不要在根目录里面操作 回去 cd vi /etc/ vi 命令模式，编辑模式，用 i 切换模式，esc键退出 ssh-secure shell SecureCRT安装 sshd回车 apt-get install openssh-server ifconfig net add: rz zmodem r:receive sz zmodem s:send samba apt-get install samba]]></content>
@@ -37,34 +15,12 @@
   <entry>
     <title><![CDATA[机器人学 学习笔记]]></title>
     <url>%2F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[第二章 空间描述和变换位置描述：我们用一个位置矢量来描述空间中点的位置 ^AP = \left[\begin{matrix}1\\\\ 2\\\\ 3\end{matrix}\right]\tag1姿态描述：物体的姿态可用固定在物体上的坐标系来描述。我们用$X_B,Y_B,Z_B$来描述坐标系B主轴方向的单位矢量，当用坐标系A的坐标表达时，它们被写为$^AX_B,^AY_B,^AZ_B$。我们可以吧这三个单位矢量按照顺序排成一个3x3的矩阵，我们称这个矩阵为旋转矩阵，并且这个矩阵是坐标系B相对于坐标系A的表达，所以我们用符号$^A_BR$来表示 ^A_BR = [^AX_B\ ^AY_B\ ^AZ_B] = \left[\begin{matrix}X_B · X_A & Y_B · X_A & Z_B · X_A\\\\ X_B · Y_A & Y_B · Y_A & Z_B · Y_A\\\\ X_B · Z_A & Y_B · Z_A & Z_B · Z_A\end{matrix}\right]=\left[\begin{matrix}^BX^T_A\\\\^BY^T_A\\\\^BZ^T_A\end{matrix}\right] = \ ^B_AR^T\tag2其中最右边矩阵为两坐标的点积，来表示投影。 坐标系描述：完整描述操作手位姿的信息为位置和姿态。我们可以任选一点来描述位置，为方便起见，选择远点。我们将位置和姿态的组合称作坐标系，四个矢量为一组，表示了位置和姿态的信息。 {B} = {^A_BR, \ ^AP_{BORG}}\tag4映射： 平移映射 ^A P = \ ^B P + \ ^A P_{BORG}\tag5 旋转映射 ^AP = \ ^A_BR\ ^BP\tag6引入符号可以看出，正好是左下标消掉了后面变量的左上标 关于一般坐标系的映射 ^AP = \ ^A_BR\ ^BP + \ ^AP_{BORG}\tag7引入新的概念 ^A P = \ ^A_BT\ ^BP\tag8即用一个矩阵的形式的算子来表示从一个从一个坐标系到另一个坐标系的映射，定义一个$4 4$的矩阵算子并使用了$4 1$的位置向量 \left[\begin{matrix}^A P \\\\ 1 \end{matrix} \right] = \left[\begin{array}{c|c}^A_BR & ^A P_{BORG} \\\\ 0\ 0\ 0 & 1 \end{array}\right] \left[\begin{matrix} ^B P \\\\ 1 \end{matrix} \right] \tag9上式中的$4 4$矩阵被称为*齐次变换矩阵 算子： 平移算子： ^AP_2 = \ ^AP_1 + \ ^AQ用矩阵算子写出平移变换，有： ^AP_2 = D_Q(q)^AP_1其中，q是沿矢量Q方向的数量，它是有符号的。算子可以堪称一种特殊形式的齐次变换： D_Q(q)=\left[\begin{matrix} 1 & 0 & 0& q_x\\\\ 0 & 1 & 0 & q_y\\\\ 0 & 0 & 1 & q_z\\\\ 0 & 0 & 0 & 1 \end{matrix}\right]其中$q_x, q_y, q_z$是平移矢量Q的分量 旋转算子： ^AP_2 = R^AP_1用矩阵算子写出旋转变换，有： ^AP_2 = R_K(\theta)\ ^AP_1其中R表示一个旋转算子，它表示绕K轴旋转$\theta$角度 R_Z(\theta)=\left[\begin{matrix} cos\theta & sin\theta & 0& 0\\\\ sin\theta & cos\theta & 0 & 0\\\\ 0 & 0 & 1 & 0\\\\ 0 & 0 & 0 & 1 \end{matrix}\right] 变换算子： ^AP_2 = T^AP_1 变换算法 混合变换： ^AP =\ ^A_BT\ ^B_CT\ ^CP\\ ^A_CT = ^A_BT\ ^B_CT即： ^A_CT =\left[\begin{array}{c|c}^A_BR\ ^B_CR & ^A_BR\ ^BP_{CORG} + \ ^AP_{BORG} \\\\ 0\ 0\ 0 & 1 \end{array}\right] 逆变换： … 第三章 操作臂运动学连杆描述连杆长度，连杆转角 连杆连接的描述 连杆链中的中间连杆 连杆偏距，关节角 对于运动链中的末端连杆，其参数习惯设定为0 即$a_0 = a_n = 0.0, \alpha_0 = \alpha_n =0.0$ 之所以采用了这种规定，是因为当一个参数可以人喜选取时，把另一个参数设定为0，可以使计算变得简便。 连杆参数：每个连杆可以用四个运动学参数来描述，其中两个参数用于描述连杆本身，另外两个参数用于描述连杆之间的连接关系。 对于转动关节，$\theta$为关节变量，其他三个连杆参数是固定不变的 对于移动关节了，d为关节变量，其他三个连杆参数是固定不变的。 这种两岸参数描述规则称为Denavit-Hartenberg参数 根据以上方法，，对于一个六关节的机器人，需要用18个参数就可以完全描述这些固定的运动学参数。 对连杆附加坐标系的规定 固连在连杆i上的固连坐标系称为坐标系{i}]]></content>
+    <content type="text"><![CDATA[第二章 空间描述和变换位置描述：我们用一个位置矢量来描述空间中点的位置$$^AP = \left[\begin{matrix}1\\2\\3\end{matrix}\right]\tag1$$ 姿态描述：物体的姿态可用固定在物体上的坐标系来描述。我们用$X_B,Y_B,Z_B$来描述坐标系B主轴方向的单位矢量，当用坐标系A的坐标表达时，它们被写为$^AX_B,^AY_B,^AZ_B$。我们可以吧这三个单位矢量按照顺序排成一个3x3的矩阵，我们称这个矩阵为旋转矩阵，并且这个矩阵是坐标系B相对于坐标系A的表达，所以我们用符号$^A_BR$来表示$$^A_BR = [^AX_B\ ^AY_B\ ^AZ_B] = \left[\begin{matrix}X_B · X_A &amp; Y_B · X_A &amp; Z_B · X_A\\X_B · Y_A &amp; Y_B · Y_A &amp; Z_B · Y_A\\X_B · Z_A &amp; Y_B · Z_A &amp; Z_B · Z_A\end{matrix}\right]=\left[\begin{matrix}^BX^T_A\\^BY^T_A\\^BZ^T_A\end{matrix}\right] = \ ^B_AR^T\tag2$$其中最右边矩阵为两坐标的点积，来表示投影。 坐标系描述：完整描述操作手位姿的信息为位置和姿态。我们可以任选一点来描述位置，为方便起见，选择远点。我们将位置和姿态的组合称作坐标系，四个矢量为一组，表示了位置和姿态的信息。$${B} = {^A_BR, \ ^AP_{BORG}}\tag4$$ 映射： 平移映射$$^A P = \ ^B P + \ ^A P_{BORG}\tag5$$ 旋转映射$$^AP = \ ^A_BR\ ^BP\tag6$$引入符号可以看出，正好是左下标消掉了后面变量的左上标 关于一般坐标系的映射$$^AP = \ ^A_BR\ ^BP + \ ^AP_{BORG}\tag7$$引入新的概念$$^A P = \ ^A_BT\ ^BP\tag8$$即用一个矩阵的形式的算子来表示从一个从一个坐标系到另一个坐标系的映射，定义一个$4 * 4$的矩阵算子并使用了$4 * 1$的位置向量$$\left[\begin{matrix}^A P \\ 1 \end{matrix} \right] =\left[\begin{array}{c|c}^A_BR &amp; ^A P_{BORG} \\0\ 0\ 0 &amp; 1 \end{array}\right]\left[\begin{matrix} ^B P \\ 1 \end{matrix} \right] \tag9$$上式中的$4 * 4$矩阵被称为齐次变换矩阵 算子： 平移算子：$$^AP_2 = \ ^AP_1 + \ ^AQ$$用矩阵算子写出平移变换，有：$$^AP_2 = D_Q(q)^AP_1$$其中，q是沿矢量Q方向的数量，它是有符号的。算子可以堪称一种特殊形式的齐次变换：$$D_Q(q)=\left[\begin{matrix} 1 &amp; 0 &amp; 0&amp; q_x\\0 &amp; 1 &amp; 0 &amp; q_y\\0 &amp; 0 &amp; 1 &amp; q_z\\0 &amp; 0 &amp; 0 &amp; 1\end{matrix}\right]$$其中$q_x, q_y, q_z$是平移矢量Q的分量 旋转算子：$$^AP_2 = R^AP_1$$用矩阵算子写出旋转变换，有：$$^AP_2 = R_K(\theta)\ ^AP_1$$其中R表示一个旋转算子，它表示绕K轴旋转$\theta$角度$$R_Z(\theta)=\left[\begin{matrix} cos\theta &amp; sin\theta &amp; 0&amp; 0\\sin\theta &amp; cos\theta &amp; 0 &amp; 0\\0 &amp; 0 &amp; 1 &amp; 0\\0 &amp; 0 &amp; 0 &amp; 1\end{matrix}\right]$$ 变换算子：$$^AP_2 = T^AP_1$$ 变换算法 混合变换：$$^AP =\ ^A_BT\ ^B_CT\ ^CP\^A_CT = ^A_BT\ ^B_CT$$即：$$^A_CT =\left[\begin{array}{c|c}^A_BR\ ^B_CR &amp; ^A_BR\ ^BP_{CORG} + \ ^AP_{BORG} \\0\ 0\ 0 &amp; 1 \end{array}\right]$$ 逆变换： … 第三章 操作臂运动学连杆描述连杆长度，连杆转角 连杆连接的描述 连杆链中的中间连杆 连杆偏距，关节角 对于运动链中的末端连杆，其参数习惯设定为0 即$a_0 = a_n = 0.0, \alpha_0 = \alpha_n =0.0$ 之所以采用了这种规定，是因为当一个参数可以人喜选取时，把另一个参数设定为0，可以使计算变得简便。 连杆参数：每个连杆可以用四个运动学参数来描述，其中两个参数用于描述连杆本身，另外两个参数用于描述连杆之间的连接关系。 对于转动关节，$\theta$为关节变量，其他三个连杆参数是固定不变的 对于移动关节了，d为关节变量，其他三个连杆参数是固定不变的。 这种两岸参数描述规则称为Denavit-Hartenberg参数 根据以上方法，，对于一个六关节的机器人，需要用18个参数就可以完全描述这些固定的运动学参数。 对连杆附加坐标系的规定 固连在连杆i上的固连坐标系称为坐标系{i} z轴和关节轴重合 坐标系原点位于关节轴和公垂线的交点处 x轴沿着公垂线方向，指向下一个关节 y轴由右手定则确定 ]]></content>
       <categories>
         <category>学习笔记</category>
       </categories>
       <tags>
         <tag>机器人学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[20190703]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F20190703%2F</url>
-    <content type="text"><![CDATA[整理一下思路 为实习做准备需要学习：c, linux, arm 为下学期机器人学做准备需要学习：机器人学, Matlab 为出国做准备需要学习：toefl 为下学期课程做准备应该学习：机械原理等课程 为未来接触更新的知识做准备应该学习：python, tensorflow 为了更好的身体我应该：每天坚持健身 那么，到底是应该每天一个部分学一点还是应该阶段性的学习一个内容呢？]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>Diary</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[20190702]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F20190702%2F</url>
-    <content type="text"><![CDATA[考完试啦，也把博客搬迁到我的mac上了，还是蛮简单的 遇到了点小问题但是都解决了，蛮好 Everything we can just google it!]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>Diary</tag>
       </tags>
   </entry>
   <entry>
@@ -98,28 +54,6 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[20190626]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F20190626%2F</url>
-    <content type="text"><![CDATA[今天没事闲的，在百度上搜索了一下自己，发现一个文档，是16年吉林一中所有毕业生的去向 说实话，这个表格我从没打开过，也没看过，所以我也不知道自己在这么一批人中到底处于一个什么层次什么位置 无奈，手贱点开了，内心难免升起波澜 我想如果我当年看了这个表格的话，我应该会选择复读吧 不是很好的学校的最差专业，这个报考也是很不明智 难怪我觉得来到这个学校和我期待的大学不一样，因为我的确没有去上我所期待的大学啊 最开始来到这里之后先是觉得不适应，觉得自己不属于这里， 后来慢慢适应了，也习惯这里的一切 后来自己又变成了这一批人里的中游 想想还是蛮扎心的 今天看到这个也算给自己一个警示 我不该这么消沉，我应该去追求属于我自己的未来 包括来到大学，我也不是很努力，我一直都不是一个努力型人格，喜欢放纵自己，跟着自己的性子来 这样的话，等到大学毕业，我可能还是同样的结局 真是活该啊！ 人应该今早认识到一点： 人这一生，考的不光是实力，也看运气 运气也是实力的一种]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>Diary</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[华科机械模电课后答案，实验手册答案]]></title>
-    <url>%2F%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB%2F%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E6%A8%A1%E7%94%B5%E8%AF%BE%E5%90%8E%E7%AD%94%E6%A1%88%EF%BC%8C%E5%AE%9E%E9%AA%8C%E6%89%8B%E5%86%8C%E7%AD%94%E6%A1%88%2F</url>
-    <content type="text"><![CDATA[]]></content>
-      <categories>
-        <category>华科机械学习资料分享</category>
-      </categories>
-      <tags>
-        <tag>模电</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[钱泓勃大学各学期大致课外学习规划]]></title>
     <url>%2F%E9%9A%8F%E7%AC%94%2F%E9%92%B1%E6%B3%93%E5%8B%83%E5%A4%A7%E5%AD%A6%E5%90%84%E5%AD%A6%E6%9C%9F%E5%A4%A7%E8%87%B4%E8%AF%BE%E5%A4%96%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92%2F</url>
     <content type="text"><![CDATA[大二下学期：学控制，以Arduino为主，可能学不完，学不透，暑假继续 大三上学期：转去学机器人学（Matlab），也算是为之后去参加数模美赛做基础 大三下学期：如果有精力可以去学Linux，ROS 大四：Linux，ROS，Python，Tensorflow…]]></content>
@@ -131,36 +65,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[华科机械学院模电复习笔记]]></title>
-    <url>%2F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E9%99%A2%E6%A8%A1%E7%94%B5%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[N型半导体掺杂五价元素，多子是自由电子 P型半导体掺杂三价元素，多子是空穴 多子的浓度取决于掺杂浓度 少子的浓度和温度有关 扩散运动：由载流子浓度差产生 漂移运动：在电厂作用下引起的 P型半导体和N型半导体放在一起交界面的两侧载流子的浓度差很大，多数载流子会像对面扩散形成载流子的扩散运动。 由此在交界面的两侧，载流子行程里内电场，方向由N指向P。 内电场的存在阻碍了载流子的扩散运动，而有利于载流子向对方的漂移运动，形成了少数载流子的漂移运动 刚开始扩散占优势，漂移很弱 随着扩散的进行，空间电荷区加宽，内电场加强，阻碍扩散运动的作用增强。漂移运动也随着内电场的增强而增强 最终形成动态平衡，形成了稳定的空间电荷区，即PN结！ 电源正极接P区，负极接N区时，正偏 外加的正向电场称为外电场，其方向与内电场方向相反，为P指向N 加外电场后，内电场会被削弱，空间电荷区变窄，有利于扩散不利于漂移。 导致大量的多数载流子通过PN结形成较大的正向电流，PN结导通，此时PN结的正向电阻很小 若在PN结两端加反向电压，则空间电荷区变宽，反向电阻很大很大，几乎不导通 二极管分为：点接触型，面接触型和平面型二极管 二极管的死区电压：硅管0.7V 二极管的限幅特性，都导通怎么判断？ 稳压二极管：反向击穿可逆，工作在反向击穿区 Uz为其反向击穿电压 三极管 ： NPN PNP 三极管会构成两个回路，一个是输入回路，一个是输出回路，所以一定会有一个点击作为回路的公共端。从而形成了三种连接方式：共射放大电路，共集放大电路，共基放大电路 外部条件：发射结正偏，集电结反偏 原理：发射区向基区发射自由电子，基区的多数载流子空穴也会通过发射结到达发射区，两种载流子的方向相反，形成电流相同，成为发射结电流Ie（主要认为是由发射区的多数载流子的自由电子形成的） 发射区进入基区的自由电子继续想自由电子浓度少的集电结方向扩散，并不断的与基区的多数载流子空穴复合而消失。电源补充基区的空穴，形成了基极电流Ib（基区很薄，复合的是少数，多数继续扩散） 集电结处于反向偏置，所以基区的自由电子很容易扩散到集电区，形成较大的电流Ic，集电区的少数载流子空穴也在电压的作用下漂移到基区形成Ic的一部分，成为反向饱和电流Icbo 输入特性曲线：不太理解 输出特性曲线：以输入电流为参考变量，输出电流Ic和输出电压uce的关系曲线 Y轴为Ic，X轴为uce 起始部分，即uce很小的时候，集电结收集载流子的能力大大增强，导致ic增加很快 但当uce增大到一定数值的时候，集电结反向电场已经足够大，能将发射区扩散的载流子都吸引到集电区，导致uce继续增加后，ic几乎不变，曲线趋近于平坦 三极管工作在放大区，又称线性去，即平坦部分，此时基极电流的微小变化可以引起集电极电流的较大变化，三极管具有电流放大作用 饱和区，当ib不断增加，ic随之增加，而使uce减小到小于ube时集电结也将处于正向偏置状态，内电场减弱，不利于收集从发射区到达基区的载流子，无电流放大作用 深度饱和时uce很小，硅管约为0.3V 三极管饱和时的管压降用Uces来表示，此时C和E之间相当于开关合上 截止区，将对应于ib=0以下的区域成为截至区，此时ic约等于0，C和E之间没有电流流过，相当于开关断开 温度影响，温度升高输入特性曲线向左移动，Ic，beita均增大 输入电阻：从放大电路的输入端看进去的交流等效电阻，此时所有的电容近似忽略 输入电阻越大，向信号源索取的电流越小，得到的输入电压越大，Ui与Us越接近 对于电流源类型的信号源，希望输入电阻小一些，以便放大电路获取的电流接近于信号源的电流 电压源形式的电路则希望输入电阻大一些 输出电阻的定义：当负载RL开路的时候信号源为0，在输出端看进去的交流等效电阻 输出电阻越小，输出电压越接近理想电压源，也表明放大电路的带负载能力越强 通频带：fbw=fH-fL，通频带越宽表明放大电路对不同信号的适应能力越强 基本放大电路，C1，C2为耦合电容，用来隔直通交 集电结电阻的作用是用来将ic转化为集电极电压的变化 耦合电容C1的容量较大，通常采用电解电容，所以要考虑正负极，正的接直流电源的正极 C2耦合电容的目的就是滤去静态工作点设置过程中的直流信号 静态工作点的图解法，先利用解析法求出Ib，满足直线方程 uCE = Ucc-icRc 做一条直线，斜率为-1/Rc，因为已经求出IbQ，所以可以在交点上求出IcQ和UCEQ Rb的影响：Rb不影响直流负载线，故改变Rb只会是Q点在直流负载线上和各个不同的输出曲线相交 且加大Rb，IBQ将减小，Q点将沿着直流负载线向下移动 Rc的影响改变Rc将会影响直流负载线的斜率，IBQ不会受到影响，减小Rc斜率增大，与横轴的交点不变，沿着输出特性曲线向右移动 交流负载线一定通过静态工作点 斜率为-1/RL’，斜率比直流负载线要大 只有在空载时，直流负载线和交流负载线重合 非线性失真：静态工作点设置过低输入信号的负半周进入截止区，反向之后会出现顶部失真 解决办法：适当减小Rb的值，是的静态工作点上移 如果静态工作点已经不能修改，可减小信号，是的信号处于放大区 静态工作点设置过高，输入回路并没有出现问题，而是在输出回路。在饱和区，ic出现顶部失真，在反向之后则是底部失真 如果想使得输出信号不失真，要讲Rb增大，使得静态工作点下移 交流负载线应该是指在AB段的中点处 解析法就是微变等效电路 P42页电流方向，ib向下，beita倍的ib也向下 PN结的伏安特性，i = Is（e^(u/UT)-1） rbede计算公式 rbb’ 基区体电阻 未特殊说明，均取300 动态参数 Au就散 负号 输入电阻是Rb和小rbe的并联，没有Rs 输出电阻就是Rc，没有RL Aus 叫做源电压放大倍数，是输入电阻除以输入电阻和Rs的和 在计算小rbe的时候IEQ可以直接用ICQ代替 mv/mA 等于Ω不用换了！ 静态工作点稳定电路：归根到底就是要稳定ICQ使得ICQ基本不变 静态工作点稳定电路的工作原理：集电极电流变大，发射极电流也变大，发射极有一个电阻，导致发射极电压变大，基极电压不变，所以三极管山发射结电压变小，使得基极电流变小，导致集电极电流变小，形成负反馈 P48也的几个式子很容易搞错！ Re可以起到稳定静态工作点的作用，但是同样会减小电压放大倍数，而且是很大的减小电压放大倍数 解决方法就是引入旁路电容，只在静态工作点稳定中Re起作用，在动态中，不起作用 如果输入回路并联了一个电阻，那么静态工作点的求法就不是之前的公式了，而是应该用分压公式计算，求出Ubq再计算发射极的电流，计算出来 P51页共集电极放大电路，注意电流方向，和rbe位置，都不一样了！电阻编导上面，电流汇集到一起不是分开的 它的放大倍数约等于1 共基级放大电路，很复杂，但输入是输入到Re电阻上头 多级放大电路 阻容耦合放大电路，优点是各级之间用电容分割开来，静态工作点相互不会影响。缺点略 直接耦合电路存在零点漂移现象，也就是输入信号为0时，输出信号不是0，严重的时候，会影响到需要的实际信号 变压器耦合 阻容耦合多级放大电路的电压放大倍数是它们每级放大电路当大倍数的乘积 输入电阻是第一级的输入电阻，输出电阻是最后一级的输出电阻 场效应管和NPN型类似，只是是电压控制电流 负反馈部分暂时跳过 偏置电路是为各级提供合适的工作电流，确定合适的工作点 单门限电压，将连续变化的模拟量变化成数字量 阈值电压 UOH 两个输入一个输出 其中一个输入作为比较电压 正的比负的大，输出高电压 正的比负的小，输出负电压 电压比较器工作在非线性区，所以虚端不成立，虚断仍然成立 反向单门限电压比较器 传输特性为左上右下，因为UR在同向端，u1在反向端， 同向比较器，左下右上，自己推一下就好了 接入两个相反的二极管，可以起到限幅和保护输入的作用 自激震荡的条件：幅值平衡条件AF=1，相位平衡条件 A的相位+B的相位=2nπ 起震条件：AF大于1，相位的和是2nπ RC串并联选频网络 f=1/2πRC，F=1/3， LC并联电路的选频特性：f0 = 1/2π根号LC 变压器反馈式LC震荡电路：三极管的作用是利用非线性性质自动稳幅]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>模电</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[托福综合写作]]></title>
     <url>%2F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F%E6%89%98%E7%A6%8F%E7%BB%BC%E5%90%88%E5%86%99%E4%BD%9C%2F</url>
-    <content type="text"><![CDATA[阅读：3mins 230-300words 听力：2mins 230-300words 语音语调类似lecture 话题范围相比听力更窄 理工科背景有优势 不需要额外准备 先3min阅读 之后听听力 最后开始写作文 20min倒计时 最后写作文能看到阅读，也就是对阅读没有那么高的要求 从听力中选择重要信息 记笔记符号使用 大括号 > &lt; = 箭头：单箭头上升下降，体现多和少 双箭头：快速上升，快速下降 波浪箭头：起伏，progress 从笔记中直接拉下来单词 $ 符号 用来表示任何和钱有关的东西 √ × 自行添加 注意事项 阅读：只记录要点 不写细节 要改写 听力 既要有要点，又要有细节 不用改写 阅读和听力要点一定是只有三个 阅读永远是三分钟 写作是能再次看到阅读材料 记笔记，先看，再做笔记，正常可以一分半读完文章，1分钟记笔记，10s左右整理。（前期可以看一段记一段） 写作的时候以阅读原文为主，不要看笔记啦 阅读笔记只服务于听力 机经使用独立口语和独立写作的题目 机经的获得方式：贴吧，淘宝,，找老师要 段落结构(总分分分式)：每一段包括：阅读的观点，演讲的观点加细节，两者的关系 例子 The passage claims that the salvage logging will help forest recover and make room for the fresh frowth, while the lecturre argues that it is unnecessary because the natrual decomposed trees can also enrich the soil. This will be good nutrients for the forest. OK，没有问题]]></content>
+    <content type="text"><![CDATA[阅读：3mins 230-300words 听力：2mins 230-300words 语音语调类似lecture 话题范围相比听力更窄 理工科背景有优势 不需要额外准备 先3min阅读 之后听听力 最后开始写作文 20min倒计时 最后写作文能看到阅读，也就是对阅读没有那么高的要求 从听力中选择重要信息 记笔记符号使用 大括号 &gt; &lt; = 箭头：单箭头上升下降，体现多和少 双箭头：快速上升，快速下降 波浪箭头：起伏，progress 从笔记中直接拉下来单词 $ 符号 用来表示任何和钱有关的东西 √ × 自行添加 注意事项 阅读：只记录要点 不写细节 要改写 听力 既要有要点，又要有细节 不用改写 阅读和听力要点一定是只有三个 阅读永远是三分钟 写作是能再次看到阅读材料 记笔记，先看，再做笔记，正常可以一分半读完文章，1分钟记笔记，10s左右整理。（前期可以看一段记一段） 写作的时候以阅读原文为主，不要看笔记啦 阅读笔记只服务于听力 机经使用独立口语和独立写作的题目 机经的获得方式：贴吧，淘宝,，找老师要 段落结构(总分分分式)：每一段包括：阅读的观点，演讲的观点加细节，两者的关系 例子 The passage claims that the salvage logging will help forest recover and make room for the fresh frowth, while the lecturre argues that it is unnecessary because the natrual decomposed trees can also enrich the soil. This will be good nutrients for the forest. OK，没有问题]]></content>
       <categories>
         <category>学习笔记</category>
       </categories>
       <tags>
         <tag>TOEFL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[20190614]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F20190614%2F</url>
-    <content type="text"><![CDATA[[x] 写博客 [ ] 不看没用的视频 [ ] 做眼保健操 [ ] 英语学习2小时 感觉自己距离实习、工作还有好大的一段距离啊，真的要抓紧要努力了]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>Diary</tag>
       </tags>
   </entry>
   <entry>
@@ -191,14 +103,6 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[华科机械学院材料力学课后答案]]></title>
-    <url>%2F%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB%2F%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E9%99%A2%E6%9D%90%E6%96%99%E5%8A%9B%E5%AD%A6%E8%AF%BE%E5%90%8E%E7%AD%94%E6%A1%88%2F</url>
-    <content type="text"><![CDATA[]]></content>
-      <categories>
-        <category>华科机械学习资料分享</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[Laplace拉氏变换公式表]]></title>
     <url>%2F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2FLaplace%E6%8B%89%E6%B0%8F%E5%8F%98%E6%8D%A2%E5%85%AC%E5%BC%8F%E8%A1%A8%2F</url>
     <content type="text"><![CDATA[]]></content>
@@ -212,7 +116,7 @@
   <entry>
     <title><![CDATA[钱泓勃在大学毕业前的愿望和目标]]></title>
     <url>%2F%E9%9A%8F%E7%AC%94%2F%E9%92%B1%E6%B3%93%E5%8B%83%E5%9C%A8%E5%A4%A7%E5%AD%A6%E6%AF%95%E4%B8%9A%E5%89%8D%E7%9A%84%E6%84%BF%E6%9C%9B%E5%92%8C%E7%9B%AE%E6%A0%87%2F</url>
-    <content type="text"><![CDATA[[x] 建一个自己的博客 [ ] 毕业季去一次云南，玩很久的那种 [ ] 在b站发一个点击量上千的视频 [ ] 自己的博客每天有人看]]></content>
+    <content type="text"><![CDATA[建一个自己的博客 毕业季去一次云南，玩很久的那种 在b站发一个点击量上千的视频 自己的博客每天有人看]]></content>
       <categories>
         <category>随笔</category>
       </categories>
@@ -229,91 +133,14 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[华科工程力学实验指导书]]></title>
-    <url>%2F%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB%2F%E5%8D%8E%E7%A7%91%E5%B7%A5%E7%A8%8B%E5%8A%9B%E5%AD%A6%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6%2F</url>
-    <content type="text"><![CDATA[]]></content>
-      <categories>
-        <category>华科机械学习资料分享</category>
-      </categories>
-      <tags>
-        <tag>工程力学实验</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[华科机械制造工艺基础实验指导书及实验报告]]></title>
-    <url>%2F%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB%2F%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%88%B6%E9%80%A0%E5%B7%A5%E8%89%BA%E5%9F%BA%E7%A1%80%E5%AE%9E%E9%AA%8C%E6%8C%87%E5%AF%BC%E4%B9%A6%E5%8F%8A%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A%2F</url>
-    <content type="text"><![CDATA[]]></content>
-      <categories>
-        <category>华科机械学习资料分享</category>
-      </categories>
-      <tags>
-        <tag>机械制造工艺基础</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[华科17级磨削实习报告]]></title>
-    <url>%2F%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB%2F%E5%8D%8E%E7%A7%9117%E7%BA%A7%E7%A3%A8%E5%89%8A%E5%AE%9E%E4%B9%A0%E6%8A%A5%E5%91%8A%2F</url>
-    <content type="text"><![CDATA[]]></content>
-      <categories>
-        <category>华科机械学习资料分享</category>
-      </categories>
-      <tags>
-        <tag>金工实习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[华科17级车削实习报告]]></title>
-    <url>%2F%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB%2F%E5%8D%8E%E7%A7%9117%E7%BA%A7%E8%BD%A6%E5%89%8A%E5%AE%9E%E4%B9%A0%E6%8A%A5%E5%91%8A%2F</url>
-    <content type="text"><![CDATA[]]></content>
-      <categories>
-        <category>华科机械学习资料分享</category>
-      </categories>
-      <tags>
-        <tag>金工实习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[华科机械学院材料力学公式总结]]></title>
-    <url>%2F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E9%99%A2%E6%9D%90%E6%96%99%E5%8A%9B%E5%AD%A6%E5%85%AC%E5%BC%8F%E6%80%BB%E7%BB%93%2F</url>
-    <content type="text"><![CDATA[本文中公式均摘自我的另一篇博客，对材料力学课本上的知识点做了总结 \sigma=\frac{F_N}{A} \sigma=\sigma\cos^2\alpha \tau=\frac{\sigma}{2}\sin2\alpha \tau=\frac{\sigma}{2}\sin2\alpha \epsilon=\frac{\Delta l}{l} \Delta l = \frac{F_Nl}{EA} \sigma = E\epsilon \mu = - \frac{\epsilon'}{\epsilon} [\sigma] = \frac{\sigma_u}{n} \delta_T = \alpha_l l \Delta T {M_0}_N._m = 9549\frac{P}{n} \gamma_\rho = \frac{\rho d\phi}{dx} \tau_\rho = G \gamma = G\frac{\rho d\phi}{dx} \tau_\rho = \frac {T \rho}{I_p}\\ I_p=\int_{A}^{}{\rho^2}dA\\ \tau_m = \frac{TR}{I_p}=\frac{T}{W_p}\\ W_p = \frac{I_p}{R}]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>材料力学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[20190610]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F20190610%2F</url>
-    <content type="text"><![CDATA[今天早上起来之后就觉得不对头，脖子不是很舒服，像是落枕了。 这几天也没有好好休息，听了别人说每晚要早点睡觉，自己也在暗下决心，可是每晚躺倒床上就打起了精神，想要看会儿手机再睡，这一看就不是一会儿两会儿能解决的事情了，往往会熬夜到后半夜才会睡觉，周末利用空闲时间还想玩玩游戏，我应该知道自己颈椎不好不要总是低头玩手机用笔记本，但内心的躁动总是难以压抑，每次之后内心又充满了后悔。这就是太过放纵自己的结果。 身体最重要！永远不要和自己的身体开玩笑，永远不要做有害自己身体的事情，不然后悔都来不及]]></content>
+    <title><![CDATA[梦里花落知多少]]></title>
+    <url>%2F%E9%9A%8F%E7%AC%94%2F%E6%A2%A6%E9%87%8C%E8%8A%B1%E8%90%BD%E7%9F%A5%E5%A4%9A%E5%B0%91%2F</url>
+    <content type="text"><![CDATA[20190609该结束的课程终于都结束了，剩下的就是两个期末考试了。最近也是十分的空虚和无聊，呜呜。 昨天和黄智威出去吃饭，也是觉得自己突然刷新了自己对生活的认识，或许想在这个社会上生存，不能只想着简简单单的一个人打拼，在几个人的小团体里活着。想要在这个社会上获得你的地位，需要建立自己的人脉网，才能在走入社会后吃得开，显然，我目前并不是这样的人，我喜欢呆在自己极小的圈子，甚至在这个小圈子里我也很少和周围的人沟通交流，我也明白这样是不对的，慢慢去改变吧。 20190610今天早上起来之后就觉得不对头，脖子不是很舒服，像是落枕了。 这几天也没有好好休息，听了别人说每晚要早点睡觉，自己也在暗下决心，可是每晚躺倒床上就打起了精神，想要看会儿手机再睡，这一看就不是一会儿两会儿能解决的事情了，往往会熬夜到后半夜才会睡觉，周末利用空闲时间还想玩玩游戏，我应该知道自己颈椎不好不要总是低头玩手机用笔记本，但内心的躁动总是难以压抑，每次之后内心又充满了后悔。这就是太过放纵自己的结果。 身体最重要！永远不要和自己的身体开玩笑，永远不要做有害自己身体的事情，不然后悔都来不及 20190614感觉自己距离实习、工作还有好大的一段距离啊，真的要抓紧要努力了 自己没事做做眼保健操，保护眼睛 20190626今天没事闲的，在百度上搜索了一下自己，发现一个文档，是16年吉林一中所有毕业生的去向。说实话，这个表格我从没打开过，也没看过，所以我也不知道自己在这么一批人中到底处于一个什么层次什么位置。无奈，手贱点开了，内心难免升起波澜。我想如果我当年看了这个表格的话，我应该会选择复读吧。不是很好的学校的最差专业，这个报考也是很不明智。难怪我觉得来到这个学校和我期待的大学不一样，因为我的确没有去上我所期待的大学啊。 最开始来到这里之后先是觉得不适应，觉得自己不属于这里，后来慢慢适应了，也习惯这里的一切，后来自己又变成了这一批人里的中游，想想还是蛮扎心的。 今天看到这个也算给自己一个警示，我不该这么消沉，我应该去追求属于我自己的未来。包括来到大学，我也不是很努力，我一直都不是一个努力型人格，喜欢放纵自己，跟着自己的性子来，这样的话，等到大学毕业，我可能还是同样的结局，真是活该啊！ 人应该今早认识到一点：人这一生，靠的不光是实力，也看运气，运气也是实力的一种 20190702考完试啦，也把博客搬迁到我的mac上了，还是蛮简单的 遇到了点小问题但是都解决了，蛮好 Everything we can just google it! 20190703整理一下思路 为实习做准备需要学习：c, linux, arm 为下学期机器人学做准备需要学习：机器人学, Matlab 为出国做准备需要学习：toefl 为下学期课程做准备应该学习：机械原理等课程 为未来接触更新的知识做准备应该学习：python, tensorflow 为了更好的身体我应该：每天坚持健身 那么，到底是应该每天一个部分学一点还是应该阶段性的学习一个内容呢？ 20190706凡事应该谨言慎行，不可草率啊。事不过三，事不过三 我觉得我就是一个宅男，屌丝。。至少目前阶段是的，我承认。。要改吗？能改吗？，，我倒是很希望自己能成为一个技术控，人总是要有自己的一点特长的啊 昨晚看了个电影，蜘蛛侠英雄远征，个人觉得比较一般，以后最好不要看这种电影了 今天是最后一天休息了，明天开始生活就要走上正轨了，准确的说今天也不应该休息的。作为学生，每天必须要有八个小时的学习时间。这几天都没达到吧。。 20190707哥伦比亚大学门口的雕塑是女神雅典娜，还藏了一只猫头鹰，象征着智慧。 大学要培养的是可迁移的能力 没事多听听ted什么的别看直播了！ 科研项目并不是学校的那种科研，而是国外背景的科研 我第一喜欢的lpl输了，呜呜呜，以后不看比赛了，扎心呀 好好学习，报效祖国～～]]></content>
       <categories>
         <category>随笔</category>
       </categories>
       <tags>
         <tag>Diary</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[20190609]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2F20190609%2F</url>
-    <content type="text"><![CDATA[该结束的课程终于都结束了，剩下的就是两个期末考试了。最近也是十分的空虚和无聊，呜呜。 昨天和黄智威出去吃饭，也是觉得自己突然刷新了自己对生活的认识，或许想在这个社会上生存，不能只想着简简单单的一个人打拼，在几个人的小团体里活着。想要在这个社会上获得你的地位，需要建立自己的人脉网，才能在走入社会后吃得开，显然，我目前并不是这样的人，我喜欢呆在自己极小的圈子，甚至在这个小圈子里我也很少和周围的人沟通交流，我也明白这样是不对的，慢慢去改变吧。]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>Diary</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[华科材料力学知识点总结]]></title>
-    <url>%2F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E9%99%A2%E6%9D%90%E6%96%99%E5%8A%9B%E5%AD%A6%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93%2F</url>
-    <content type="text"><![CDATA[先上书教材，pdf版本 第一章强度、刚度和稳定性强度：构件在外力作用下抵御破坏的能力 刚度：构件在外力作用下抵御变形的能力 稳定性：构件在某些受载形式下保持或回复原有平衡形式的能力，即其平衡形式不会发生突然转变 弹性变形和塑性变形弹性变形：撤除外力后完全自行消除的变形 塑性变形：撤除外力后不能消除而被永久保留下来的变形 固体材料在受力较小的时候一般只发生弹性变形，受力较大的时候会同时发生弹性变形和塑性变形 一般工程上只允许发生弹性变形，所以材料力学所研究的材料主要是弹性材料 几个假设１.均匀连续性假设 ２.各向同性假设（尽管金属材料在微观上并不是各向同性材料，但由于每个晶粒聚集时呈随机取向，故宏观上可以认为是各向同性） ３.小变形条件 截面法及其一般情况截面法，和一般形式下的各种力 图2.5中，其中 $F_N$为轴力，$Fs_y$,$Fs_z$为切应力，$M_x$为扭矩T，$M_y$$M_z$为弯矩 轴力的正负拉为正，压为负 轴力图 应力应力分为正应力和切应力，一个是沿截面法向分量，一个是沿截面切向分量，符号分别记为$\sigma$和$\tau$ 正应力计算公式 \sigma=\frac{F_N}{A}斜截面上的应力 \sigma=\sigma\cos^2\alpha \tau=\frac{\sigma}{2}\sin2\alpha拉杆的轴向应变胡克定律 \Delta l = l_1 - l其中$\Delta l$表示的是杆的总变形量，但无法说明杆的变形程度 由于拉压杆的各部分的伸长是均匀的，所以用每单位长度的轴向变形来表示即：$\epsilon$ \epsilon=\frac{\Delta l}{l}又因为$\Delta l$和F，l成正比，和A成反比，引入弹性模量E，其量纲与应力相同，单位为Pa 所以可得公式: \Delta l = \frac{F_Nl}{EA}乘积$EA$称为拉压刚度 改写后可得胡克定律的另一种表示形式： \sigma = E\epsilon泊松比拉压杆件也存在横向变形，即： \epsilon' =\frac{\Delta b}{b}引入泊松比的概念，即： \mu = - \frac{\epsilon'}{\epsilon} \epsilon' = - \mu\epsilon例题 应力应变图略 安全系数和许用应力许用应力的关系式，其中$\sigma_u$是指工作盈利的最大容许值，$n$是一个大于一的因数，称为安全系数 [\sigma] = \frac{\sigma_u}{n}连接杆件的强度计算暂时略去，之后有时间再做补充 拉压超静定问题（重点！）什么是超静定问题？如果未知力的数目大于独立平衡方程的数目，仅用平衡方程不能解决的问题，成为超静定问题 超静定次数未知力数超过平衡方程的数目，称为超静定次数（阶数） 除了平衡方程还需要补充变形协调方程和物理关系补充方程两道例题： 热应力公式： \delta_T = \alpha_l l \Delta T其中$\alpha_l$为材料的线膨胀系数，公式表示：当温度变化$\Delta T$之后，杆长的变化量 热应力定义因温度变化所引起的应力称为热应力 热应力例题 装配应力，也称为初应力，例题： 第三章扭转凡以扭转变形为主要变形的直的杆称为轴 受力特点为：杆的两端作用有一对等值反向的扭力矩$M_0$，使得杆的任意两截面绕其轴线发生相对转动，产生相对角位移，称为扭转角，用$\varphi$表示 作用在轴上的扭力矩与传递的功率和转速间的关系为 {M_0}_N._m = 9549\frac{P}{n}其中P的单位kW，n的单位为r/min 内力偶矩T是截面上唯一的内力分量，称为扭矩 其中$\gamma$称为切应变，这个切应变和切线方向的$\tau$相对应 剪切胡克定律 \tau = G\gamma其中G称为材料的剪切模量 切应力互等定理略 切应变计算公式 \gamma_\rho = \frac{\rho d\phi}{dx}可见，切应变正比于该点到轴线的距离$\rho$ 依据胡克定律，切应力与切应变成正比： \tau_\rho = G \gamma = G\frac{\rho d\phi}{dx} 切应力比在半径平面内，即横截面内，且方向与半径垂直。此外，由切应力互等定理可知，切应力的分布如图(b)所示。 经计算，有 \tau_\rho = \frac {T \rho}{I_p}\\ I_p=\int_{A}^{}{\rho^2}dA\\ \tau_m = \frac{TR}{I_p}=\frac{T}{W_p}\\ W_p = \frac{I_p}{R}其中$I_p$称为极惯性矩，$W_p$称为抗扭截面系数(模量) 极惯性矩和抗扭截面系数的计算对于圆截面，有： I_p = \frac{\pi D^4}{32} \approx 0.1 D^4\\ W_p = \frac{\pi D^3}{16} \approx 0.2 D^3对于空心圆截面，有 I_p = \frac{\pi D^4}{32}(1 - \alpha^4) \approx 0.1 D^4\\ W_p = \frac{\pi D^3}{16}(1 - \alpha^4) \approx 0.2 D^3\\ 其中，\alpha = d/D ，为内径外径之比斜截面上的应力 \sigma_\alpha = - \tau sin2\alpha, \tau_\alpha=\tau cos2 \alpha上式表明，斜截面上的应力岁斜角$\alpha$变化。当$\alpha = \pm45$时，取得极值 可见，纯剪切相当于一个方向为拉应力，另一个垂直方向为等值压应力状态 两截面间的相对扭转角 \varphi = \frac{Tl}{GI_p}例题 矩形截面的扭转计算 第四章 弯曲强度平面弯曲的梁，按照其约束情况，可简化为三种基本形式：简支梁、外伸梁和悬臂梁 剪力和弯矩的计算 F_s = F_Ay - F_1\\ M = F_Ayx - F_1(x-a)其中的反力可以由整个梁的平衡方程求出 正负号规定凡使梁产生顺时针方向转动趋势的剪力为正，反之为负； 凡使梁弯曲向上成凹形的弯矩为正，反之为负 例题 剪力图正值朝上，弯矩图正值朝下 梁的微分平衡方程如果q = 常数，Fs图为斜直线，其斜率的正负取决于q的正负 M图为二次曲线，其凹凸性取决于q的正负，水平切线的位置为Fs = 0的截面 \Delta F_s = F_{SB}-F_{SA} = \int_{A}^{B}q(x)dx\\ \Delta M = M_{B}-M_{A} = \int_{A}^{B}F_s(x)dx 弯曲正应力梁内既有建立又有弯矩存在的弯曲称为横力弯曲 若梁的某一段内剪力为零，弯矩等于常数，则称为纯弯曲 横截面上弯曲正应力的计算公式 \frac{1}{\rho} = \frac{M}{E I_Z}\\ \sigma = \frac{My}{I_z}\\ \sigma_{max} = \frac{M}{W_z}\\ W_z = \frac{I_Z}{y_{max}}$W_Z$称为抗弯截面系数 对于矩形截面，有： I_z = \frac{bh^3}{12}\\ W_z = \frac{bh^2}{6}实心圆截面： I_z = \frac{\pi D^4}{64}\\ W_z = \frac{\pi D^3}{32}实心圆截面： I_z = \frac{\pi D^4}{64}(1-\alpha^4)\\ W_z = \frac{\pi D^3}{32}(1-\alpha^4)\\ \alpha = \frac{d}{D}平行移轴公式 弯曲切应力 \tau = \tau ' = \frac{F_2-F_1}{bdx}其中，F1和F2分别是微块左右面上正应力的水平合理，即 F_1 = \int_{A*}\sigma dA = \frac{M}{I_z} S^* \int_{A*}ydA = \frac{M}{I_z} S^*\\ F_2 = \int_{A*}\sigma' dA = \frac{M+dM}{I_z} S^* \int_{A*}ydA = \frac{M+dM}{I_z} S^*其中，$S^*$为截面的部分面积A对z轴的静矩 矩形截面梁弯曲切应力的计算公式为 \tau = \frac{F_s S^*_z}{I_zb} S^*_z = \int _{A^*} y_1dA = \int_{y}^{h/2}by_1dy_1 = \frac{b}{2}(\frac{h^2}{4}-y^2) \tau = \frac{F_s}{2I_z}(\frac{h^2}{4}-y^2)可见矩形截面梁的弯曲切应力沿截面高度呈抛物线规律分布 在截面的上下边缘处，切应力为0 在中性轴处，切应力最大，其值为 \tau_{max} =\frac{F_sh^2}{8I_z} = 1.5 \frac{F_s}{A}即最大切应力为平均切应力的1.5倍 上式表明，当梁的跨度远大于其截面高度时，最大正应力远大于最大切应力。 所以，在一般情况下，细长梁的强度有弯曲正应力控制 梁的强度设计暂时略过 第五章 弯曲变形挠曲线方程 y = y(x)\\ \theta = y'梁变形的微分方程 y '' = \frac{M(x)}{EI}积分法例题： 叠加法求梁的变形 简单超静定梁！！ 重点超静定梁梁的反力数目超过有效平衡方程的数目，即成为超静定梁 求解方法建立足够数量的补充方程和平衡方程联立求解 第六章 应力状态与强度理论单元体，主应力对于一般的应力单元体，若有的微面上没有切应力，这样的面则称为主平面，主平面上的正应力称为主应力 在一般情况下，受力构建内的任一点都存在三个相互垂直的主平面，并按照代数值大小排列 如果一点的三个主应力都不为零，则称该店处于三向应力状态 如果有一个主应力不为零，就称为二向应力状态 如果只有一个主应力不为零，就称为单向应力状态 斜截面上的应力 \sigma_\alpha = \frac{\sigma_x+\sigma_y}{2} + \frac{\sigma_x - \sigma_y}{2} cos2\alpha-\tau_{xy}sin2\alpha\\ \tau_\alpha = \frac{\sigma_x-\sigma_y}{2}sin2\alpha +\tau_{xy}cos2\alpha \sigma + \sigma_{\alpha + 90} = \sigma_x+ \sigma_y即任意两个相互吹灰微面上的切应力在数值上相等，即切应力互等定理 应力圆 (\sigma_\alpha - \frac{\sigma_x +\sigma_y}{2})^2+\tau_\alpha^2 = (\frac{\sigma_x-\sigma_y}{2})^2 + \tau_{xy} ^2广义胡克定律 \epsilon_x = \frac{1}{E}[\sigma_x - \mu (\sigma_y+\sigma_z)]\\ \epsilon_y = \frac{1}{E}[\sigma_y - \mu (\sigma_x+\sigma_z)]\\ \epsilon_z = \frac{1}{E}[\sigma_z - \mu (\sigma_x+\sigma_y)]对于平面应力状态下的单元体，广义胡克定律为 \epsilon_x = \frac{1}{E}[\sigma_x - \mu \sigma_y]\\ \epsilon_y = \frac{1}{E}[\sigma_y - \mu \sigma_x]\\ \epsilon_z = - \frac{1}{E}\mu (\sigma_x+\sigma_y)\\ \gamma_{xy} = \frac{\tau_{xy}}{G}由上式求解出应力分量 \sigma_x = \frac{E}{1-\mu^2}(\epsilon_x+\mu\epsilon_y)\\ \sigma_y = \frac{E}{1-\mu^2}(\epsilon_y+\mu\epsilon_x)\\ \tau_{xy} =\frac{E}{2(1+\mu)}\gamma_{xy}强度理论第三强度理论 \sigma_1 - \sigma_3 \leq [\sigma]\\第四强度理论 \sqrt{\frac{1}{2}[(\sigma_1-\sigma_2)^2+(\sigma_2-\sigma_3)^2+(\sigma_3-\sigma_1)^2]} \leq [\sigma]\\]]></content>
-      <categories>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>材料力学</tag>
       </tags>
   </entry>
   <entry>
@@ -344,9 +171,9 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[游戏里的SSR, SR, R, UR，N都是什么意思？]]></title>
-    <url>%2F%E7%9F%A5%E8%AF%86%E7%A7%AF%E7%B4%AF%2F%E6%B8%B8%E6%88%8F%E9%87%8C%E7%9A%84SSR%2C%20SR%2C%20R%2C%20UR%EF%BC%8CN%E9%83%BD%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%EF%BC%9F%20%2F</url>
-    <content type="text"><![CDATA[SSR：全称为superior super rare，表示特级超稀有; UR: 全称是Ultra Rare，表示极度稀有; SR: 全称是Super Rare，表示超稀有； R: 即Rare，表示稀有; N: 是Normal的缩写，表示普通;]]></content>
+    <title><![CDATA[各种你可能不知道的知识]]></title>
+    <url>%2F%E7%9F%A5%E8%AF%86%E7%A7%AF%E7%B4%AF%2F%E5%90%84%E7%A7%8D%E4%BD%A0%E5%8F%AF%E8%83%BD%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E7%9F%A5%E8%AF%86%20%2F</url>
+    <content type="text"><![CDATA[游戏里的SSR, SR, R, UR，N都是什么意思？ SSR**：全称为superior super rare，表示特级超稀有; UR: 全称是Ultra Rare，表示极度稀有; SR: 全称是Super Rare，表示超稀有； R: 即Rare，表示稀有; N: 是Normal的缩写，表示普通; 64位是什么意思？ API是什么？]]></content>
       <categories>
         <category>知识积累</category>
       </categories>
@@ -357,7 +184,7 @@
   <entry>
     <title><![CDATA[我的Hexo博客搭建经历]]></title>
     <url>%2F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%80%BB%E7%BB%93%2F</url>
-    <content type="text"><![CDATA[为什么要做自己的博客？说到为什么要这么做，这个想法也是已经有很久了。当时的起因是我想通过互联网上的某个平台来记录自己的学习笔记或者自己的一些思考。在知乎等搜索了很多，都没有找到太合适的，其中包括公众号，简书，csdn等等。我觉得不合适的原因有的是因为网站太过烟火气，对我来说我觉得不够“干净”。有的是因为我觉得和我的圈子不符合，有的是因为我个人的喜好，最终都没有选择。有一天就突然萌生了做一个自己的博客的想法！ 但问题来了，怎么做呢？我完全摸不到头脑。我就去知乎查了一下看到了蛮多科普的帖子，但一翻，好长好长，其中也包括很多很多的代码。对于一个机械专业的学生来说，看到这些内心是恐惧的。于是…我就把那篇帖子收藏了，打算等我有时间再做…当时可能觉得的时间是大四…可是这个想法实际上一直深深的埋在我的心里。 上周，这学期该忙的事情几乎结束，剩下的就是为了期末考试做准备了，我向来是一个喜欢拖延的人，不到考试前一周应该是打不起学习的兴趣的。我就在教室看着电脑，可能又萌生了写点东西的想法，奈何没有平台给我发挥。于是突然决定，就现在！把博客给我搞出来 我花了多少时间？总共时长大概是3天白天的时间，对于我这个毫无基础的IT小白来说还是可以接受的（毕竟如果我不是搞这个的话估计也不会学习吧） 我是怎么做出来的？遇到了很多问题，也查了很多资料，通过别人的教程一步一步完善自己的博客 推荐链接：知乎上的一篇文章，我的启蒙 看了这个博客之后大部分操作就都可以完成了，当然你可能会像我一样，遇到很多的问题，那么怎么办呢？当然是自己查！而且很容易查到你想要的解决方法 这篇博客是我的努力目标，当时就是朝着这个方向努力完善) 这篇博客讲了很多博客美化的内容，我都是自己一步一步搞的) 以上部分完成了，你的博客基本就完成啦！如果你遇到了什么问题，都可以去google，相信你能得到你想要的答案~ 会不会出教程？应该不会，教程太多了，我还没那么牛，等我再学习学习吧… 如果换电脑了，想在新电脑上写博客，怎么迁移一个比较好的教程)]]></content>
+    <content type="text"><![CDATA[为什么要做自己的博客？说到为什么要这么做，这个想法也是已经有很久了。当时的起因是我想通过互联网上的某个平台来记录自己的学习笔记或者自己的一些思考。在知乎等搜索了很多，都没有找到太合适的，其中包括公众号，简书，csdn等等。我觉得不合适的原因有的是因为网站太过烟火气，对我来说我觉得不够“干净”。有的是因为我觉得和我的圈子不符合，有的是因为我个人的喜好，最终都没有选择。有一天就突然萌生了做一个自己的博客的想法！ 但问题来了，怎么做呢？我完全摸不到头脑。我就去知乎查了一下看到了蛮多科普的帖子，但一翻，好长好长，其中也包括很多很多的代码。对于一个机械专业的学生来说，看到这些内心是恐惧的。于是…我就把那篇帖子收藏了，打算等我有时间再做…当时可能觉得的时间是大四…可是这个想法实际上一直深深的埋在我的心里。 上周，这学期该忙的事情几乎结束，剩下的就是为了期末考试做准备了，我向来是一个喜欢拖延的人，不到考试前一周应该是打不起学习的兴趣的。我就在教室看着电脑，可能又萌生了写点东西的想法，奈何没有平台给我发挥。于是突然决定，就现在！把博客给我搞出来 我花了多少时间？总共时长大概是3天白天的时间，对于我这个毫无基础的IT小白来说还是可以接受的（毕竟如果我不是搞这个的话估计也不会学习吧） 我是怎么做出来的？遇到了很多问题，也查了很多资料，通过别人的教程一步一步完善自己的博客 推荐链接：知乎上的一篇文章，我的启蒙 看了这个博客之后大部分操作就都可以完成了，当然你可能会像我一样，遇到很多的问题，那么怎么办呢？当然是自己查！而且很容易查到你想要的解决方法 这篇博客是我的努力目标，当时就是朝着这个方向努力完善 这篇博客讲了很多博客美化的内容，我都是自己一步一步搞的 以上部分完成了，你的博客基本就完成啦！如果你遇到了什么问题，都可以去google，相信你能得到你想要的答案~ 会不会出教程？应该不会，教程太多了，我还没那么牛，等我再学习学习吧… 如果换电脑了，想在新电脑上写博客，怎么迁移[一个比较好的教程]([https://showcc.github.io/2017/06/08/Change%20the%20computer%20update%20the%20hexo%20blog/](https://showcc.github.io/2017/06/08/Change the computer update the hexo blog/))]]></content>
       <categories>
         <category>学习笔记</category>
       </categories>
@@ -368,7 +195,7 @@
   <entry>
     <title><![CDATA[Markdown 语法总结整理]]></title>
     <url>%2F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2FMarkdown-%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93%E6%95%B4%E7%90%86%2F</url>
-    <content type="text"><![CDATA[Markdown文本学习就不总结了 直接上传一个我觉得不错的链接吧 印象笔记Markdown文本入门指南 Markdown文本公式写法超全公式指南，简单易懂 hhh ，比如： E=mc^2然而用这个写法在Hexo Next主题下网页上并不会显示出公式，我查了一下 这个教程不错 打矩阵的时候你会发现无法多行显示，这个教程告诉了我们解决办法]]></content>
+    <content type="text"><![CDATA[Markdown文本学习就不总结了 直接上传一个我觉得不错的链接吧 印象笔记Markdown文本入门指南 Markdown文本公式写法超全公式指南，简单易懂 hhh ，比如：$$E=mc^2$$ 然而用这个写法在Hexo Next主题下网页上并不会显示出公式，我查了一下 这个教程不错 打矩阵的时候你会发现无法多行显示，这个教程告诉了我们解决办法]]></content>
       <categories>
         <category>学习笔记</category>
       </categories>

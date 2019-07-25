@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Blog | Qian Homeberg</title>
+  
+  <subtitle>Look! Who is here! Welcome~~</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://www.qianhongbo.top/"/>
+  <updated>2019-07-25T02:53:39.590Z</updated>
+  <id>https://www.qianhongbo.top/</id>
+  
+  <author>
+    <name>Qian Hongbo</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>11</title>
+    <link href="https://www.qianhongbo.top/uncategorized/11/"/>
+    <id>https://www.qianhongbo.top/uncategorized/11/</id>
+    <published>2019-07-25T02:53:00.000Z</published>
+    <updated>2019-07-25T02:53:39.590Z</updated>
+    
+    <content type="html"><![CDATA[<p>hello baby~</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;hello baby~&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>newpage</title>
+    <link href="https://www.qianhongbo.top/uncategorized/tryit/"/>
+    <id>https://www.qianhongbo.top/uncategorized/tryit/</id>
+    <published>2019-07-25T02:45:29.000Z</published>
+    <updated>2019-07-25T02:53:29.558Z</updated>
+    
+    <content type="html"><![CDATA[<p>can I get it?</p><p>please…</p><p>Reply:</p><p>really good!</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;can I get it?&lt;/p&gt;
+&lt;p&gt;please…&lt;/p&gt;
+&lt;p&gt;Reply:&lt;/p&gt;
+&lt;p&gt;really good!&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>嵌入式开发学习笔记</title>
+    <link href="https://www.qianhongbo.top/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://www.qianhongbo.top/学习笔记/嵌入式开发学习笔记/</id>
+    <published>2019-07-04T05:24:53.000Z</published>
+    <updated>2019-07-06T10:09:24.450Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Linux-distribution-linux的发行版本"><a href="#Linux-distribution-linux的发行版本" class="headerlink" title="Linux distribution (linux的发行版本)"></a>Linux distribution (linux的发行版本)</h2><p>软件，shell 保护层，kernel内核，硬件</p><p>linux系统，完整的分层模型</p><p>RedHat：server 服务器 面向企业用户 具有license</p><p>CentOS：已经被红帽子收购，开源免费版本，区别于企业版，比较稳定</p><p>以上两款界面不好看，不追求绚丽的东西</p><p>Ubuntu：稳定性不如上面两个，但适用于普通用户，中文支持，软件支持做的都比较好</p><h2 id="ubuntu操作"><a href="#ubuntu操作" class="headerlink" title="ubuntu操作"></a>ubuntu操作</h2><ol><li>sudo 为普通命令提升权限</li><li>sudo  passwd root </li><li>su - 切换到系统的身份</li><li>apt-get update更新源，用于下载新的安装包（如果是普通用于，记得在前面加sudo</li><li>尽量用命令行的方式来学习linux</li><li>vim安装 apt-get install vim-nox</li><li>vi已经安装，是一个编辑软件的记事本</li><li>vim回车，进入</li><li>退出，敲：q（不知道要不要加！）</li><li>vim全键盘操作，效率很高</li><li>cd /    根目录  </li><li>c—change  d—directory 目录</li><li>ls</li><li>不要在根目录里面操作</li><li>回去 cd</li><li>vi /etc/</li><li>vi 命令模式，编辑模式，用 i 切换模式，esc键退出</li><li>ssh-secure shell</li><li>SecureCRT安装 </li><li>sshd回车</li><li>apt-get install openssh-server</li><li>ifconfig</li><li>net add:</li><li>rz zmodem r:receive</li><li>sz zmodem s:send</li><li>samba</li><li>apt-get install samba</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Linux-distribution-linux的发行版本&quot;&gt;&lt;a href=&quot;#Linux-distribution-linux的发行版本&quot; class=&quot;headerlink&quot; title=&quot;Linux distribution (linux的发行版本)&quot;&gt;&lt;
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://www.qianhongbo.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="嵌入式开发" scheme="https://www.qianhongbo.top/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="Linux" scheme="https://www.qianhongbo.top/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器人学 学习笔记</title>
+    <link href="https://www.qianhongbo.top/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://www.qianhongbo.top/学习笔记/机器人学 学习笔记/</id>
+    <published>2019-07-03T10:51:33.000Z</published>
+    <updated>2019-07-08T09:36:07.364Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="第二章-空间描述和变换"><a href="#第二章-空间描述和变换" class="headerlink" title="第二章 空间描述和变换"></a>第二章 空间描述和变换</h2><h3 id="位置描述："><a href="#位置描述：" class="headerlink" title="位置描述："></a>位置描述：</h3><p>我们用一个位置矢量来描述空间中点的位置<br>$$<br>^AP = \left[\begin{matrix}1\\<br>2\\<br>3\end{matrix}\right]\tag1<br>$$</p><h3 id="姿态描述："><a href="#姿态描述：" class="headerlink" title="姿态描述："></a>姿态描述：</h3><p>物体的姿态可用固定在物体上的坐标系来描述。我们用$X_B,Y_B,Z_B$来描述坐标系B主轴方向的单位矢量，当用坐标系A的坐标表达时，它们被写为$^AX_B,^AY_B,^AZ_B$。我们可以吧这三个单位矢量按照顺序排成一个3x3的矩阵，我们称这个矩阵为<strong>旋转矩阵</strong>，并且这个矩阵是坐标系B相对于坐标系A的表达，所以我们用符号$^A_BR$来表示<br>$$<br>^A_BR = [^AX_B\ ^AY_B\ ^AZ_B] = \left[\begin{matrix}X_B · X_A &amp; Y_B · X_A &amp; Z_B · X_A\\<br>X_B · Y_A &amp; Y_B · Y_A &amp; Z_B · Y_A\\<br>X_B · Z_A &amp; Y_B · Z_A &amp; Z_B · Z_A\end{matrix}\right]=\left[\begin{matrix}^BX^T_A\\^BY^T_A\\^BZ^T_A\end{matrix}\right] = \ ^B_AR^T\tag2<br>$$<br>其中最右边矩阵为两坐标的点积，来表示投影。</p><h3 id="坐标系描述："><a href="#坐标系描述：" class="headerlink" title="坐标系描述："></a>坐标系描述：</h3><p>完整描述操作手位姿的信息为位置和姿态。我们可以任选一点来描述位置，为方便起见，选择远点。我们将位置和姿态的组合称作坐标系，四个矢量为一组，表示了位置和姿态的信息。<br>$$<br>{B} = {^A_BR, \ ^AP_{BORG}}\tag4<br>$$</p><h3 id="映射："><a href="#映射：" class="headerlink" title="映射："></a>映射：</h3><ol><li><p>平移映射<br>$$<br>^A P = \ ^B P + \ ^A P_{BORG}\tag5<br>$$</p></li><li><p>旋转映射<br>$$<br>^AP = \ ^A_BR\ ^BP\tag6<br>$$<br>引入符号可以看出，正好是左下标消掉了后面变量的左上标</p></li><li><p>关于一般坐标系的映射<br>$$<br>^AP = \ ^A_BR\ ^BP + \ ^AP_{BORG}\tag7<br>$$<br>引入新的概念<br>$$<br>^A P = \ ^A_BT\ ^BP\tag8<br>$$<br>即用一个矩阵的形式的算子来表示从一个从一个坐标系到另一个坐标系的映射，定义一个$4 * 4$的矩阵算子并使用了$4 * 1$的位置向量<br>$$<br>\left[\begin{matrix}^A P \\ 1 \end{matrix} \right] =<br>\left[\begin{array}{c|c}^A_BR &amp; ^A P_{BORG} \\<br>0\ 0\ 0 &amp; 1 \end{array}\right]<br>\left[\begin{matrix} ^B P \\ 1 \end{matrix} \right] \tag9<br>$$<br>上式中的$4 * 4$矩阵被称为<strong>齐次变换矩阵</strong></p></li></ol><h3 id="算子："><a href="#算子：" class="headerlink" title="算子："></a>算子：</h3><ol><li><p>平移算子：<br>$$<br>^AP_2 = \ ^AP_1 + \ ^AQ<br>$$<br>用矩阵算子写出平移变换，有：<br>$$<br>^AP_2 = D_Q(q)^AP_1<br>$$<br>其中，q是沿矢量Q方向的数量，它是有符号的。算子可以堪称一种特殊形式的齐次变换：<br>$$<br>D_Q(q)=\left[\begin{matrix} 1 &amp; 0 &amp; 0&amp; q_x\\<br>0 &amp; 1 &amp; 0 &amp; q_y\\<br>0 &amp; 0 &amp; 1 &amp; q_z\\<br>0 &amp; 0 &amp; 0 &amp; 1<br>\end{matrix}\right]<br>$$<br>其中$q_x, q_y, q_z$是平移矢量Q的分量</p></li><li><p>旋转算子：<br>$$<br>^AP_2 = R^AP_1<br>$$<br>用矩阵算子写出旋转变换，有：<br>$$<br>^AP_2 = R_K(\theta)\ ^AP_1<br>$$<br>其中R表示一个旋转算子，它表示绕K轴旋转$\theta$角度<br>$$<br>R_Z(\theta)=\left[\begin{matrix} cos\theta &amp; sin\theta &amp; 0&amp; 0\\<br>sin\theta &amp; cos\theta &amp; 0 &amp; 0\\<br>0 &amp; 0 &amp; 1 &amp; 0\\<br>0 &amp; 0 &amp; 0 &amp; 1<br>\end{matrix}\right]<br>$$</p></li><li><p>变换算子：<br>$$<br>^AP_2 = T^AP_1<br>$$</p></li></ol><h3 id="变换算法"><a href="#变换算法" class="headerlink" title="变换算法"></a>变换算法</h3><ol><li><p>混合变换：<br>$$<br>^AP =\  ^A_BT\ ^B_CT\ ^CP\<br>^A_CT = ^A_BT\ ^B_CT<br>$$<br>即：<br>$$<br>^A_CT =\left[\begin{array}{c|c}^A_BR\ ^B_CR &amp; ^A_BR\ ^BP_{CORG} + \ ^AP_{BORG} \\<br>0\ 0\ 0 &amp; 1 \end{array}\right]<br>$$</p></li><li><p>逆变换：</p><p>…</p></li></ol><h2 id="第三章-操作臂运动学"><a href="#第三章-操作臂运动学" class="headerlink" title="第三章 操作臂运动学"></a>第三章 操作臂运动学</h2><h3 id="连杆描述"><a href="#连杆描述" class="headerlink" title="连杆描述"></a>连杆描述</h3><p>连杆长度，连杆转角</p><h3 id="连杆连接的描述"><a href="#连杆连接的描述" class="headerlink" title="连杆连接的描述"></a>连杆连接的描述</h3><ol><li><p>连杆链中的中间连杆</p><p>连杆偏距，关节角</p></li><li><p>对于运动链中的末端连杆，其参数习惯设定为0</p><p>即$a_0 = a_n = 0.0, \alpha_0 = \alpha_n =0.0$</p><p>之所以采用了这种规定，是因为当一个参数可以人喜选取时，把另一个参数设定为0，可以使计算变得简便。</p></li><li><p>连杆参数：每个连杆可以用四个运动学参数来描述，其中两个参数用于描述连杆本身，另外两个参数用于描述连杆之间的连接关系。</p><p>对于转动关节，$\theta$为关节变量，其他三个连杆参数是固定不变的</p><p>对于移动关节了，d为关节变量，其他三个连杆参数是固定不变的。</p><p>这种两岸参数描述规则称为Denavit-Hartenberg参数</p><p>根据以上方法，，对于一个六关节的机器人，需要用18个参数就可以完全描述这些固定的运动学参数。</p></li><li><p>对连杆附加坐标系的规定</p><p>固连在连杆i上的固连坐标系称为坐标系{i}</p><p>z轴和关节轴重合</p><p>坐标系原点位于关节轴和公垂线的交点处</p><p>x轴沿着公垂线方向，指向下一个关节</p><p>y轴由右手定则确定</p><p><img src="https://upload-images.jianshu.io/upload_images/17194236-9eb722452ff0bcda.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="机器人学1.png"></p></li><li></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;第二章-空间描述和变换&quot;&gt;&lt;a href=&quot;#第二章-空间描述和变换&quot; class=&quot;headerlink&quot; title=&quot;第二章 空间描述和变换&quot;&gt;&lt;/a&gt;第二章 空间描述和变换&lt;/h2&gt;&lt;h3 id=&quot;位置描述：&quot;&gt;&lt;a href=&quot;#位置描述：&quot; class
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://www.qianhongbo.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="机器人学" scheme="https://www.qianhongbo.top/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/hello-world/"/>
+    <id>https://www.qianhongbo.top/随笔/hello-world/</id>
+    <published>2019-07-02T01:57:10.000Z</published>
+    <updated>2019-06-05T06:02:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<center>Yes, hello world.</center>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;center&gt;Yes, hello world.&lt;/center&gt;
+
+
+      
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="Code" scheme="https://www.qianhongbo.top/tags/Code/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>c语言学习笔记</title>
+    <link href="https://www.qianhongbo.top/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://www.qianhongbo.top/学习笔记/C语言学习笔记/</id>
+    <published>2019-06-26T07:23:15.000Z</published>
+    <updated>2019-07-03T10:55:11.123Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="我为什么要学习C语言"><a href="#我为什么要学习C语言" class="headerlink" title="我为什么要学习C语言"></a>我为什么要学习C语言</h2><p>说来惭愧，作为一个工科学生，我竟然没有学过C语言，只在大一的时候学过一学期的VB，虽然语言这种东西说起来都差不多，但毕竟也是将近三年前的事了，早就忘光了。</p><p>可是不掌握C语言真的很麻烦，这尤其体现在做单片机上，单片机要求我们使用C语言，我当时连那些代码都看不懂，更别谈让我自己去写了。</p><p>正好，最近时间比较充沛。拿出时间来把C语言好好学学</p><p>p.s. 突然想起来我初中好像就学过C++了，但只是皮毛</p><h2 id="我用什么工具学习C语言"><a href="#我用什么工具学习C语言" class="headerlink" title="我用什么工具学习C语言"></a>我用什么工具学习C语言</h2><p>书籍：C程序设计语言（第二版 新版）→ 纸质</p><p>软件：VS2017, Xcode</p><p>其它：Google，CSDN，Baidu</p><h2 id="20190626"><a href="#20190626" class="headerlink" title="20190626"></a>20190626</h2><h3 id="我的第一段代码"><a href="#我的第一段代码" class="headerlink" title="我的第一段代码"></a>我的第一段代码</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"hello, world.\n"</span>);</span><br><span class="line">system(<span class="string">"pause"</span>);</span><br><span class="line"><span class="comment">//return 0;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol><li>main函数：main是一个特殊的函数名——每个程序都从main函数的起点开始执行。main函数通常会调用其它函数来帮助完成某些工作</li><li>本例中main函数不需要任何参数</li><li>用双引号括起来的字符序列称为字符串或字符串常量</li><li>\n 表示换行符</li></ol><h3 id="第二段代码"><a href="#第二段代码" class="headerlink" title="第二段代码"></a>第二段代码</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="comment">/* 当fatr = 0,20,...,300时，分别打印华氏温度与摄氏温度对照表 */</span></span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">int</span> fahr, celsius;</span><br><span class="line"><span class="keyword">int</span> lower, upper, step;</span><br><span class="line"></span><br><span class="line">lower = <span class="number">0</span>; <span class="comment">/* 温度表的上限 */</span></span><br><span class="line">upper = <span class="number">300</span>; <span class="comment">/* 温度表的下限 */</span></span><br><span class="line">step = <span class="number">20</span>; <span class="comment">/* 步长 */</span></span><br><span class="line"></span><br><span class="line">fahr = lower;</span><br><span class="line"><span class="keyword">while</span> (fahr &lt;= upper) &#123;</span><br><span class="line">celsius = <span class="number">5</span> * (fahr - <span class="number">32</span>) / <span class="number">9</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d\t%d\n"</span>, fahr, celsius);</span><br><span class="line">fahr = fahr + step;</span><br><span class="line">&#125;</span><br><span class="line">system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol><li>其中，int表示其后所列的变量为整数，与之对应的float表示浮点数（即可以带有小数部分）</li><li>为什么不用5/9？因为C语言存在舍位，小数部分都会被舍弃</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;我为什么要学习C语言&quot;&gt;&lt;a href=&quot;#我为什么要学习C语言&quot; class=&quot;headerlink&quot; title=&quot;我为什么要学习C语言&quot;&gt;&lt;/a&gt;我为什么要学习C语言&lt;/h2&gt;&lt;p&gt;说来惭愧，作为一个工科学生，我竟然没有学过C语言，只在大一的时候学过一学期的
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://www.qianhongbo.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="C" scheme="https://www.qianhongbo.top/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>脸上各部位长痘痘的原因及调理方法汇总</title>
+    <link href="https://www.qianhongbo.top/%E7%9F%A5%E8%AF%86%E7%A7%AF%E7%B4%AF/%E8%84%B8%E4%B8%8A%E5%90%84%E9%83%A8%E4%BD%8D%E9%95%BF%E7%97%98%E7%97%98%E7%9A%84%E5%8E%9F%E5%9B%A0%E5%8F%8A%E8%B0%83%E7%90%86%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB/"/>
+    <id>https://www.qianhongbo.top/知识积累/脸上各部位长痘痘的原因及调理方法汇总/</id>
+    <published>2019-06-26T01:24:31.000Z</published>
+    <updated>2019-06-26T01:45:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>额头痘状况：</strong>有可能是压力太大，容易脾气不好，造成心火和血液循环有问题。</p><p>改善：应养成早睡早起的习惯，让睡眠充足，并多喝水。</p><p><strong>印堂痘状况：</strong>出现在两眉正中间的痘痘，通常有胸闷、心律不整、<a href="http://www.med66.com/jibing/xinji/" target="_blank" rel="noopener">心悸</a>等毛病。</p><p>改善：不要尝试太过激烈的运动，要避免烟、酒等刺激性的食品。</p><p><strong>发髻痘状况：</strong>因为卸妆没有卸干净，造成毛孔堵塞河污染，容易在较闷的发髻或眉间形成细小痘痘。</p><p>改善：加强卸妆和清洁的工作，一定要彻底搓揉干净，每星期做一次去角质工作，报纸皮脂腺顺畅。</p><p><strong>鼻翼痘状况：</strong>突然冒出的肿大痘痘，可能是卵巢机能或者生殖系统有关。</p><p>改善：不要过度纵欲或禁欲，尽量走出户外，享受降的自然环境。</p><p><strong>鼻头痘状况：</strong>可能是胃火过大，消化系统异常。</p><p>改善：少吃冰冷食物，寒性食品容易引起胃酸分泌，造成胃火过大。</p><p><strong>眼头痘状况：</strong>K近鼻子和眼头区域的痘痘，通常是肝机能不好所引起。</p><p>改善：生活作息要正常，避免熬夜，尽量在11点前上床睡觉。</p><p><strong>唇周痘状况：</strong><a href="http://www.med66.com/jibing/bianmi/" target="_blank" rel="noopener">便秘</a>导致体内毒素累计，或者是使用含氟过量的牙膏，都是造成唇周痘痘的主因。</p><p>改善：多吃高纤维的蔬菜水果，调整饮食习惯，刷牙漱口要彻底。</p><p><strong>下巴痘状况：</strong>通常是月经要来的前几天，造成<a href="http://www.med66.com/jibing/neifenmishitiao/" target="_blank" rel="noopener">内分泌失调</a>所引起的。</p><p>改善：少吃冰冷的东西，月经期间可用消炎镇定的保养品。</p><p><strong>右边脸颊痘状况：</strong>可能是肺部功能失常，手脚冰冷，或是容易敏感的体质，也有可能是<a href="http://www.med66.com/jibing/ganmao/" target="_blank" rel="noopener">感冒</a>前兆。</p><p>改善：平时注意呼吸道的保养，尽量避免芒果、芋头、海鲜甲壳类易过敏的食物。</p><p><strong>左边脸颊痘状况：</strong>可能是肝功能不顺畅，如肝脏的分泌、解毒或造血等功能出了状况。</p><p>改善：作息正常，保持心情愉快，该吹冷气就吹冷气，不要让身体处在过度闷热。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;额头痘状况：&lt;/strong&gt;有可能是压力太大，容易脾气不好，造成心火和血液循环有问题。&lt;/p&gt;
+&lt;p&gt;改善：应养成早睡早起的习惯，让睡眠充足，并多喝水。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;印堂痘状况：&lt;/strong&gt;出现在两眉正中间的痘痘，通常有胸闷、心律不
+      
+    
+    </summary>
+    
+      <category term="知识积累" scheme="https://www.qianhongbo.top/categories/%E7%9F%A5%E8%AF%86%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>钱泓勃大学各学期大致课外学习规划</title>
+    <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/%E9%92%B1%E6%B3%93%E5%8B%83%E5%A4%A7%E5%AD%A6%E5%90%84%E5%AD%A6%E6%9C%9F%E5%A4%A7%E8%87%B4%E8%AF%BE%E5%A4%96%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/"/>
+    <id>https://www.qianhongbo.top/随笔/钱泓勃大学各学期大致课外学习规划/</id>
+    <published>2019-06-14T13:18:55.000Z</published>
+    <updated>2019-06-14T13:21:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>大二下学期：学控制，以Arduino为主，可能学不完，学不透，暑假继续</p><p>大三上学期：转去学机器人学（Matlab），也算是为之后去参加数模美赛做基础</p><p>大三下学期：如果有精力可以去学Linux，ROS</p><p>大四：Linux，ROS，Python，Tensorflow…</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;大二下学期：学控制，以Arduino为主，可能学不完，学不透，暑假继续&lt;/p&gt;
+&lt;p&gt;大三上学期：转去学机器人学（Matlab），也算是为之后去参加数模美赛做基础&lt;/p&gt;
+&lt;p&gt;大三下学期：如果有精力可以去学Linux，ROS&lt;/p&gt;
+&lt;p&gt;大四：Linux，ROS，Pyt
+      
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="目标" scheme="https://www.qianhongbo.top/tags/%E7%9B%AE%E6%A0%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>专业导论课最后一节个人认为比较有价值内容整理</title>
+    <link href="https://www.qianhongbo.top/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/%E4%B8%93%E4%B8%9A%E5%AF%BC%E8%AE%BA%E8%AF%BE%E6%9C%80%E5%90%8E%E4%B8%80%E8%8A%82%E4%B8%AA%E4%BA%BA%E8%AE%A4%E4%B8%BA%E6%AF%94%E8%BE%83%E6%9C%89%E4%BB%B7%E5%80%BC%E5%86%85%E5%AE%B9%E6%95%B4%E7%90%86/"/>
+    <id>https://www.qianhongbo.top/华科机械学习资料分享/专业导论课最后一节个人认为比较有价值内容整理/</id>
+    <published>2019-06-14T04:07:11.000Z</published>
+    <updated>2019-06-14T04:39:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="机械工程伦理"><a href="#机械工程伦理" class="headerlink" title="机械工程伦理"></a>机械工程伦理</h2><h3 id="问问自己："><a href="#问问自己：" class="headerlink" title="问问自己："></a>问问自己：</h3><p>内心世界?</p><p>存在的意义?</p><p>为何要多一点形而上?</p><p>你的价值感?</p><p>你的技术创造的欲求?</p><p>技术工作者/工程师的责任?</p><p>你对未来技术的感觉?</p><h2 id="知识、能力与素质的区别和联系"><a href="#知识、能力与素质的区别和联系" class="headerlink" title="知识、能力与素质的区别和联系"></a>知识、能力与素质的区别和联系</h2><table><thead><tr><th align="left"></th><th align="center">核心</th><th align="center">t特点</th></tr></thead><tbody><tr><td align="left">知识</td><td align="center">人类认识的成果</td><td align="center">形成能力，素质的基础</td></tr><tr><td align="left">能力</td><td align="center">完成一定活动的本领</td><td align="center">对知识的运用，是知识发挥作用的实践条件，具“外显性”</td></tr><tr><td align="left">素养</td><td align="center">基本品质或基础条件</td><td align="center">人在活动过程中所塑造成的内在升华，具“内凝性”</td></tr></tbody></table><h2 id="专业教育组成"><a href="#专业教育组成" class="headerlink" title="专业教育组成"></a>专业教育组成</h2><p>数学类和自然科学类总计最少为450学时</p><p>工程科学类、工程设计与实践类两者总计最少1000学时</p><p>人文和社会科学不少于400学时</p><h2 id="机械专业教育知识体系包含如下5个知识领域"><a href="#机械专业教育知识体系包含如下5个知识领域" class="headerlink" title="机械专业教育知识体系包含如下5个知识领域"></a>机械专业教育知识体系包含如下5个知识领域</h2><ol><li>机械设计的原理与方法</li><li>机械制造工程原理与技术</li><li>机械系统中的传动和控制</li><li>计算机应用技术</li><li>热流体</li></ol><h2 id="中国加入《华盛顿协议》"><a href="#中国加入《华盛顿协议》" class="headerlink" title="中国加入《华盛顿协议》"></a>中国加入《华盛顿协议》</h2><p>国内本科生获得的文凭，在国际上都会被认可</p><h2 id="企业对毕业生能力的评价"><a href="#企业对毕业生能力的评价" class="headerlink" title="企业对毕业生能力的评价"></a>企业对毕业生能力的评价</h2><ol><li>独立性强、思路开阔、时尚;</li><li>知识面广;</li><li>不够踏实、团队协作意识弱;</li><li>不能承受较大压力,工作责任心、事业心弱,急功近利;</li><li>熟悉、胜任本职工作需要的时间较长,须在企业工作3-4年左右才能完全胜任工作。</li></ol><h2 id="企业对毕业生能力的期待"><a href="#企业对毕业生能力的期待" class="headerlink" title="企业对毕业生能力的期待"></a>企业对毕业生能力的期待</h2><ol><li>除专业能力外,最基本的要求是踏实、勤奋、敬业、忠诚、合作;</li><li>感兴趣的主要不是学习成绩,更注重处理问题的能力、解决问题的能力以及工作中的综合性能</li><li>很看重学生的整体素质和品德.</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;机械工程伦理&quot;&gt;&lt;a href=&quot;#机械工程伦理&quot; class=&quot;headerlink&quot; title=&quot;机械工程伦理&quot;&gt;&lt;/a&gt;机械工程伦理&lt;/h2&gt;&lt;h3 id=&quot;问问自己：&quot;&gt;&lt;a href=&quot;#问问自己：&quot; class=&quot;headerlink&quot; title=
+      
+    
+    </summary>
+    
+      <category term="华科机械学习资料分享" scheme="https://www.qianhongbo.top/categories/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>关于项目的几个想法</title>
+    <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/%E5%85%B3%E4%BA%8E%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%87%A0%E4%B8%AA%E6%83%B3%E6%B3%95/"/>
+    <id>https://www.qianhongbo.top/随笔/关于项目的几个想法/</id>
+    <published>2019-06-13T12:08:37.000Z</published>
+    <updated>2019-06-26T01:10:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="关于项目的几个想法"><a href="#关于项目的几个想法" class="headerlink" title="关于项目的几个想法"></a>关于项目的几个想法</h1><h2 id="手机app："><a href="#手机app：" class="headerlink" title="手机app："></a>手机app：</h2><p>百词斩手部控制器</p><p>备忘录锁屏提醒</p><h2 id="实物："><a href="#实物：" class="headerlink" title="实物："></a>实物：</h2><p>AGV跟随小车：用来背书包，也可背在身上</p><p>可折叠快递柜</p><p>自动洗头机器人</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;关于项目的几个想法&quot;&gt;&lt;a href=&quot;#关于项目的几个想法&quot; class=&quot;headerlink&quot; title=&quot;关于项目的几个想法&quot;&gt;&lt;/a&gt;关于项目的几个想法&lt;/h1&gt;&lt;h2 id=&quot;手机app：&quot;&gt;&lt;a href=&quot;#手机app：&quot; class=&quot;head
+      
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="目标" scheme="https://www.qianhongbo.top/tags/%E7%9B%AE%E6%A0%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ROS入门</title>
+    <link href="https://www.qianhongbo.top/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/ROS%E5%85%A5%E9%97%A8/"/>
+    <id>https://www.qianhongbo.top/华科机械学习资料分享/ROS入门/</id>
+    <published>2019-06-13T10:29:31.000Z</published>
+    <updated>2019-07-08T09:21:20.465Z</updated>
+    
+    <content type="html"><![CDATA[<p>鸟哥私房菜1 2 3章作为了解，第4 5 6章随书操作一遍，这样大家对Linux系统的基本操作会有一个大致的认识。注意，鸟哥书中系统与我们不同，因此不要太纠结于必须每一步结果都与书中一样。另外，遇到问题的话，把问题复制下来直接百度，绝大多数问题是有解决方法的。</p><p>ROS_Robot_Programming_CN电子书1、2章粗略浏览，3~7章重点学习，后续章节以后再说。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;鸟哥私房菜1 2 3章作为了解，第4 5 6章随书操作一遍，这样大家对Linux系统的基本操作会有一个大致的认识。注意，鸟哥书中系统与我们不同，因此不要太纠结于必须每一步结果都与书中一样。另外，遇到问题的话，把问题复制下来直接百度，绝大多数问题是有解决方法的。&lt;/p&gt;
+&lt;p
+      
+    
+    </summary>
+    
+      <category term="华科机械学习资料分享" scheme="https://www.qianhongbo.top/categories/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Laplace拉氏变换公式表</title>
+    <link href="https://www.qianhongbo.top/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Laplace%E6%8B%89%E6%B0%8F%E5%8F%98%E6%8D%A2%E5%85%AC%E5%BC%8F%E8%A1%A8/"/>
+    <id>https://www.qianhongbo.top/学习笔记/Laplace拉氏变换公式表/</id>
+    <published>2019-06-13T09:41:02.000Z</published>
+    <updated>2019-06-13T09:51:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<div class="row">    <embed src="http://pso1yp87m.bkt.clouddn.com/Laplace%E6%8B%89%E6%B0%8F%E5%8F%98%E6%8D%A2%E5%85%AC%E5%BC%8F%E8%A1%A8.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;http://pso1yp87m.bkt.clouddn.com/Laplace%E6%8B%89%E6%B0%8F%E5%8F%98%E6%8D%A2%E5%85%AC%E5%BC%8F%E8%A1%A8
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://www.qianhongbo.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Laplace" scheme="https://www.qianhongbo.top/tags/Laplace/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>钱泓勃在大学毕业前的愿望和目标</title>
+    <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/%E9%92%B1%E6%B3%93%E5%8B%83%E5%9C%A8%E5%A4%A7%E5%AD%A6%E6%AF%95%E4%B8%9A%E5%89%8D%E7%9A%84%E6%84%BF%E6%9C%9B%E5%92%8C%E7%9B%AE%E6%A0%87/"/>
+    <id>https://www.qianhongbo.top/随笔/钱泓勃在大学毕业前的愿望和目标/</id>
+    <published>2019-06-13T00:54:21.000Z</published>
+    <updated>2019-06-13T12:14:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><input checked disabled type="checkbox"> 建一个自己的博客</li><li><input disabled type="checkbox"> 毕业季去一次云南，玩很久的那种</li><li><input disabled type="checkbox"> 在b站发一个点击量上千的视频</li><li><input disabled type="checkbox"> 自己的博客每天有人看</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;&lt;input checked disabled type=&quot;checkbox&quot;&gt; 建一个自己的博客&lt;/li&gt;
+&lt;li&gt;&lt;input disabled type=&quot;checkbox&quot;&gt; 毕业季去一次云南，玩很久的那种&lt;/li&gt;
+&lt;li&gt;&lt;input disable
+      
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="目标" scheme="https://www.qianhongbo.top/tags/%E7%9B%AE%E6%A0%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>华科机械学院大二下学习资料分享</title>
+    <link href="https://www.qianhongbo.top/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%A4%A7%E4%BA%8C%E4%B8%8B%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
+    <id>https://www.qianhongbo.top/华科机械学习资料分享/华科机械大二下学习资料/</id>
+    <published>2019-06-11T13:40:27.000Z</published>
+    <updated>2019-06-11T13:47:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="链接：https://pan.baidu.com/s/1dHzxPkSfFQhlM11DN1waoA">各科目课件百度网盘链接</a></p><p>提取码：y8iy </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;链接：https://pan.baidu.com/s/1dHzxPkSfFQhlM11DN1waoA&quot;&gt;各科目课件百度网盘链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;提取码：y8iy &lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="华科机械学习资料分享" scheme="https://www.qianhongbo.top/categories/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>梦里花落知多少</title>
+    <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/%E6%A2%A6%E9%87%8C%E8%8A%B1%E8%90%BD%E7%9F%A5%E5%A4%9A%E5%B0%91/"/>
+    <id>https://www.qianhongbo.top/随笔/梦里花落知多少/</id>
+    <published>2019-06-10T03:32:45.000Z</published>
+    <updated>2019-07-12T10:55:17.810Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="20190609"><a href="#20190609" class="headerlink" title="20190609"></a>20190609</h1><p>该结束的课程终于都结束了，剩下的就是两个期末考试了。最近也是十分的空虚和无聊，呜呜。</p><p>昨天和黄智威出去吃饭，也是觉得自己突然刷新了自己对生活的认识，或许想在这个社会上生存，不能只想着简简单单的一个人打拼，在几个人的小团体里活着。想要在这个社会上获得你的地位，需要建立自己的人脉网，才能在走入社会后吃得开，显然，我目前并不是这样的人，我喜欢呆在自己极小的圈子，甚至在这个小圈子里我也很少和周围的人沟通交流，我也明白这样是不对的，慢慢去改变吧。</p><h1 id="20190610"><a href="#20190610" class="headerlink" title="20190610"></a>20190610</h1><p>今天早上起来之后就觉得不对头，脖子不是很舒服，像是落枕了。</p><p>这几天也没有好好休息，听了别人说每晚要早点睡觉，自己也在暗下决心，可是每晚躺倒床上就打起了精神，想要看会儿手机再睡，这一看就不是一会儿两会儿能解决的事情了，往往会熬夜到后半夜才会睡觉，周末利用空闲时间还想玩玩游戏，我应该知道自己颈椎不好不要总是低头玩手机用笔记本，但内心的躁动总是难以压抑，每次之后内心又充满了后悔。这就是太过放纵自己的结果。</p><p>身体最重要！永远不要和自己的身体开玩笑，永远不要做有害自己身体的事情，不然后悔都来不及</p><h1 id="20190614"><a href="#20190614" class="headerlink" title="20190614"></a>20190614</h1><p>感觉自己距离实习、工作还有好大的一段距离啊，真的要抓紧要努力了</p><p>自己没事做做眼保健操，保护眼睛</p><h1 id="20190626"><a href="#20190626" class="headerlink" title="20190626"></a>20190626</h1><p>今天没事闲的，在百度上搜索了一下自己，发现一个文档，是16年吉林一中所有毕业生的去向。说实话，这个表格我从没打开过，也没看过，所以我也不知道自己在这么一批人中到底处于一个什么层次什么位置。无奈，手贱点开了，内心难免升起波澜。我想如果我当年看了这个表格的话，我应该会选择复读吧。不是很好的学校的最差专业，这个报考也是很不明智。难怪我觉得来到这个学校和我期待的大学不一样，因为我的确没有去上我所期待的大学啊。</p><p>最开始来到这里之后先是觉得不适应，觉得自己不属于这里，后来慢慢适应了，也习惯这里的一切，后来自己又变成了这一批人里的中游，想想还是蛮扎心的。</p><p>今天看到这个也算给自己一个警示，我不该这么消沉，我应该去追求属于我自己的未来。包括来到大学，我也不是很努力，我一直都不是一个努力型人格，喜欢放纵自己，跟着自己的性子来，这样的话，等到大学毕业，我可能还是同样的结局，真是活该啊！</p><p>人应该今早认识到一点：人这一生，靠的不光是实力，也看运气，运气也是实力的一种</p><h1 id="20190702"><a href="#20190702" class="headerlink" title="20190702"></a>20190702</h1><p>考完试啦，也把博客搬迁到我的mac上了，还是蛮简单的</p><p>遇到了点小问题但是都解决了，蛮好</p><p>Everything we can just google it!</p><h1 id="20190703"><a href="#20190703" class="headerlink" title="20190703"></a>20190703</h1><h2 id="整理一下思路"><a href="#整理一下思路" class="headerlink" title="整理一下思路"></a>整理一下思路</h2><ul><li>为实习做准备需要学习：c, linux, arm</li><li>为下学期机器人学做准备需要学习：机器人学, Matlab</li><li>为出国做准备需要学习：toefl</li><li>为下学期课程做准备应该学习：机械原理等课程</li><li>为未来接触更新的知识做准备应该学习：python, tensorflow</li><li>为了更好的身体我应该：每天坚持健身</li></ul><p>那么，到底是应该每天一个部分学一点还是应该阶段性的学习一个内容呢？</p><h1 id="20190706"><a href="#20190706" class="headerlink" title="20190706"></a>20190706</h1><p>凡事应该谨言慎行，不可草率啊。事不过三，事不过三</p><p>我觉得我就是一个宅男，屌丝。。至少目前阶段是的，我承认。。要改吗？能改吗？，，我倒是很希望自己能成为一个技术控，人总是要有自己的一点特长的啊</p><p>昨晚看了个电影，蜘蛛侠英雄远征，个人觉得比较一般，以后最好不要看这种电影了</p><p>今天是最后一天休息了，明天开始生活就要走上正轨了，准确的说今天也不应该休息的。作为学生，每天必须要有八个小时的学习时间。这几天都没达到吧。。</p><h1 id="20190707"><a href="#20190707" class="headerlink" title="20190707"></a>20190707</h1><p>哥伦比亚大学门口的雕塑是女神雅典娜，还藏了一只猫头鹰，象征着智慧。</p><p>大学要培养的是可迁移的能力</p><p>没事多听听ted什么的别看直播了！</p><p>科研项目并不是学校的那种科研，而是国外背景的科研</p><p>我第一喜欢的lpl输了，呜呜呜，以后不看比赛了，扎心呀</p><p>好好学习，报效祖国～～</p><h1 id="20190712"><a href="#20190712" class="headerlink" title="20190712"></a>20190712</h1><p>原来变强是一定要付出代价的，健身也好，学英语也好，都是一个循序渐进的过程，不会有立竿见影的效果，但每天的练习一定会内化到身体里成为你的一种力量！无论什么时候都要顶住，顶住压力，坚持下去✊</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;20190609&quot;&gt;&lt;a href=&quot;#20190609&quot; class=&quot;headerlink&quot; title=&quot;20190609&quot;&gt;&lt;/a&gt;20190609&lt;/h1&gt;&lt;p&gt;该结束的课程终于都结束了，剩下的就是两个期末考试了。最近也是十分的空虚和无聊，呜呜。&lt;/p&gt;
+      
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="Diary" scheme="https://www.qianhongbo.top/tags/Diary/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>写在2019年高考前</title>
+    <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/%E5%86%99%E5%9C%A82019%E5%B9%B4%E9%AB%98%E8%80%83%E5%89%8D/"/>
+    <id>https://www.qianhongbo.top/随笔/写在2019年高考前/</id>
+    <published>2019-06-06T16:24:31.000Z</published>
+    <updated>2019-06-07T04:28:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>我对高考的记忆真的剩下的很少了</p><p>我记不起来那天发生了什么，也记不起来我的任何分数，更记不起来考了什么题目</p><p>我能记起来的，只有发成绩那天我妈的泪水。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;我对高考的记忆真的剩下的很少了&lt;/p&gt;
+&lt;p&gt;我记不起来那天发生了什么，也记不起来我的任何分数，更记不起来考了什么题目&lt;/p&gt;
+&lt;p&gt;我能记起来的，只有发成绩那天我妈的泪水。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="Diary" scheme="https://www.qianhongbo.top/tags/Diary/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>手机惊云（二）</title>
+    <link href="https://www.qianhongbo.top/%E5%B0%8F%E8%AF%B4/%E6%89%8B%E6%9C%BA%E6%83%8A%E4%BA%91%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+    <id>https://www.qianhongbo.top/小说/手机惊云（二）/</id>
+    <published>2019-06-06T14:18:28.000Z</published>
+    <updated>2019-06-06T14:19:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>电梯很长，人也不少，除了地铁口我就看到了一个穿着粉色t恤，年级估摸着有将近五十岁，个子不是很高的中年人，有一点油腻，猥琐的气质，但看起来不像是坏人</p><p>我故作镇定的走过去，和他说：”你为什么上来了？“</p><p>他说：”我没做地铁来，我那里没有地铁，我骑车过来的。“</p><p>wdnmd…武汉哪里没地铁我是不信的</p><p>算了算了，你骑车就骑车吧，直接验货（滑稽）</p><p>我就找了个地方，从书包里掏出了我的手机</p><p>他说：”我没用过苹果手机，你这个手机咋用啊？”</p><p>我心想：哎呦，遇到外行了</p><p>他随便操作了几下，鬼知道他怎么操作的，竟然操作到了多任务栏，他尝试上滑关掉应用，竟然没关掉？？？</p><p>我当时也懵了，这个情况我也没遇见过啊，我好几周都没用过这个手机了，我心里也不是很确定，不会是坏了吧？</p><p>我就自己拿过来操作了几下，发现的确不行，我心里开始发慌，还好他也没有说什么</p><p>于是我就开始解释，手上还是在操作，想着是不是什么设置没打开？</p><p>就在我调的时候他手机响了，我瞄了一眼，这TM不就是苹果手机吗？？？你跟我说你没用过苹果手机不会用？</p><p>wdnmd，你这有什么骗我的</p><p>内心暗自怀疑</p><hr><p>我继续在那里试怎么关不掉多任务</p><p>也不知道我怎么按的，就长按了屏幕，左上角出现了一个红色的关闭按钮，我点了一下应用就关掉了</p><p>wdnmd！这什么智障设计，苹果真的不如我手里的安卓好用啊，这个设计也太脑残了吧。。。</p><p>暗自感叹了一下之后，心想：还好度过了难关，手机肯定没问题，你随便验</p><p>他又调了几下铃声什么的，发现都没问题</p><p>他又问我：“你带针没？我把卡插进去试一下。”</p><p>。。。</p><p>我带这玩意儿干啥，我哪知道您这么急啊</p><p>我说：“我没有，但肯定没问题，我用的好好的，你就放心吧。”</p><p>他的表情明显告诉我他不相信，他说他想试试话筒，他说他的手机话筒坏了</p><p>但他看是在是没法子，就说：“那就这样吧，有问题我给你打电话联系你。”</p><p>我说好</p><p>之后就开始转账了，我打开了我的支付宝收钱，</p><p>他很快扫了我的码，很果断的付了钱，谁知道我没收到提示</p><p>我心想原来你是用这种不付钱的骗术来骗我</p><p>哼，也太低级了吧，我早就听说过这种骗术了</p><p>别想用这种方法骗到我！</p><p>我手里死死的握着我的手机不放，谁知道他开始急了</p><p>他说：“你咋没收到呢？我都付过去了啊？“</p><p>我看着他手机上的账单，的确是这样，显示的已付款</p><p>难道这又是什么新型骗术吗？</p><p>我手机疯狂刷新，还是没有，唉？咋回事</p><p>我看到我手机上的信号突然没了，半天之后才有，也就听到了那熟悉的：”支付宝到账…“</p><p>突然心里一阵舒爽，这下落袋为安了哈哈</p><p>我就开学的走了，走之前回头看了他一眼，我看他急匆匆的往地铁站走，像是要去坐地铁</p><p>我心想，你TM不是做不了地铁吗？</p><p>算了，管他呢，反正也结束了</p><p>看着他那粉色t恤的背影，我也回头往学校走，脑子里还在想着晚上吃点什么的问题</p><p>可谁又知道，事情才刚刚开始……</p><center><未完待续></未完待续></center>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;电梯很长，人也不少，除了地铁口我就看到了一个穿着粉色t恤，年级估摸着有将近五十岁，个子不是很高的中年人，有一点油腻，猥琐的气质，但看起来不像是坏人&lt;/p&gt;
+&lt;p&gt;我故作镇定的走过去，和他说：”你为什么上来了？“&lt;/p&gt;
+&lt;p&gt;他说：”我没做地铁来，我那里没有地铁，我骑车过来
+      
+    
+    </summary>
+    
+      <category term="小说" scheme="https://www.qianhongbo.top/categories/%E5%B0%8F%E8%AF%B4/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>手机惊云（一）</title>
+    <link href="https://www.qianhongbo.top/%E5%B0%8F%E8%AF%B4/%E6%89%8B%E6%9C%BA%E6%83%8A%E4%BA%91%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>https://www.qianhongbo.top/小说/手机惊云（一）/</id>
+    <published>2019-06-06T13:12:19.000Z</published>
+    <updated>2019-06-06T14:19:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>爸妈给换了个新手机，Huawei的，用着还挺顺手，用了好几年的iphone6sp就扔在寝室不用了。</p><p>旧手机在寝室放着一直看的挺烦的，也不是烦，就是想让每个东西都能有它们自己的归宿吧，不想让它们闲着。于是我就挂到了咸鱼上去，定了一个蛮高的价格，想着这么心爱的手机不想它这么就卖出去了…</p><p>果不其然，两天了没人来找我问，我心想，看来价格合适，不是那种贱卖的价格。我也没继续理它，反正我也不急着用这笔钱。</p><p>没想到今天下午我收到一个人的消息，他说他想买手机，还说他就在武汉，离我学校还挺近，说一会儿能不能当面交易，让我定一个地方。剧情发展的太快我根本没反应过来，而且他的果断和紧急让我更加的警觉，我在怀疑是不是什么骗局，毕竟闲鱼上的骗局还是很多的。</p><p>于是我马上追问：“在哪里交易？”（交易这个词怎么觉得怪怪的）</p><p>他说：“你定一个地方吧，我到时候直接给你现金。”</p><p>现金？？？</p><p>我看到了一个关键词，立马勾起了我的警觉心。我马上在脑海里构想了各种可能的诈骗方式，比如什么钱是假钱，或者是他会以验机为名直接拿着我的手机跑路？…… </p><p>越想越后怕，我马上回：我不收现金，只接受转账。</p><p>我本以为他会因为我这么一说直接放弃这笔交易</p><p>没想到他直接回：没事，我们去银行门口见面，没问题的话我直接去ATM存钱，我手机里没钱！</p><p>事情发展的更加扑朔迷离</p><p>奈何我一天下来也蛮累的，不如就用这个晚饭是时间休息下，把这个事情搞个明白，我倒是要看看这个人到底是个什么底细！</p><hr><p>紧接着我就挑了一个离学校在最近的地铁站，给他发了过去</p><p>我心想：地铁站人多而且有监控，就算你有问题，我也可以找别人来帮忙啊</p><p>我想着他会不会因为地点问题再次放弃交易</p><p>没想到，他又回了一句：我查查</p><p>真是出乎我的意料，难道他真的是要买手机？那为什么偏偏选择了我这个嘞？</p><p>还没等我多考虑，他就回复我：”好的，我这就出门。“</p><p>。。。</p><p>我当时人还在教室里呢，手机还在寝室躺着呢！</p><p>心想：你是真急啊，你急的我害怕！…</p><p>我也来不及多想，收拾东西就往寝室走，因为我手机还没清理，里面还有好几10G的照片没删呢，还好我前几天把它们全上传到我的百度云里了。</p><p>回到寝室后，把手机刷掉，完全格式化，不想留下任何和我有关的信息</p><p>我在路上又想了一下，想到了更可怕的事情…他会不会用武力解决我并拿走我的手机…</p><p>虽然很离谱，但这种想法的确在我的脑子里的浮现过，而且当时脑子里的画面不是他一个人，是他带着他的一帮弟兄一起过来的，就像是那种黑帮电影里的感觉，一群光着膀子的大汉一排走过来…我是不是想象力太丰富了…</p><p>收拾的差不多，拿上了充电线就出门了，想着我耽误了这么久，他也该到了吧，临走前我还拿上了周二工程实训刚做好的喵喵锤。想着防身用hhh</p><p>然后我就往地铁站走了</p><hr><p>到了地铁站，特意选了个出战的检票口，想着这旁边保安多得很，这下我的人身安全肯定没问题了吧</p><p>突然觉得自己真的机智，于是就找了个地方休息，也没再想什么有的没的。</p><p>过了十分钟他还是没消息，我心想，这该不会是不想买，但是要骗我时间的吧</p><p>话说我自己觉得我的时间宝贵，应该他不觉得吧</p><p>于是我就闲鱼给他发了个消息，说：你到了没？</p><p>他过了半天才说：在路上，一刻钟到</p><p>一刻钟？？？我这么多年都没用过这个词，这个此时啥意思？是十五分钟的意思吗？</p><p>我脑子里觉得是十五分钟，但还是不确定，我还特意去查了一下确认</p><p>哎，么得办法，买点东西是不容易啊，又冒着生命危险，又要浪费时间</p><p>可是我的书包也重的很啊，我还背着一个电脑，我总不能在这里傻站着等吧</p><p>关键是他说是十五分钟，到底是不是，谁知道啊？</p><p>于是我就找了一个地方做了下去，刷起了手机。</p><p>刷手机时间还是过得快啊，大概不到二十分钟，他给我来了个电话</p><p>说他到了，没看到我。</p><p>我说：”我在地上坐着呢，你看到我没？“</p><p>他说：”没有啊，你人呢？“</p><p>我说：”我就在这个检票口出口啊。“</p><p>他说：”我在上面，没在下面。“</p><p>。。。</p><p>完了，之前的计划全部泡汤</p><p>但听他的声音，好像也不是很凶的样子，我就想着行吧，我上去会会你，反正我有小锤锤护身</p><p>然后我就上了电梯，往地铁口走</p><center><未完待续></未完待续></center>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;p&gt;爸妈给换了个新手机，Huawei的，用着还挺顺手，用了好几年的iphone6sp就扔在寝室不用了。&lt;/p&gt;
+&lt;p&gt;旧手机在寝室放着一直看的挺烦的，也不是烦，就是想让每个东西都能有它们自己的归宿吧，不想让它们闲着。于是我就挂到了咸鱼上去，定了一个蛮高的价格，想着这么
+      
+    
+    </summary>
+    
+      <category term="小说" scheme="https://www.qianhongbo.top/categories/%E5%B0%8F%E8%AF%B4/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>那些你可能不知道的知识</title>
+    <link href="https://www.qianhongbo.top/%E7%9F%A5%E8%AF%86%E7%A7%AF%E7%B4%AF/%E9%82%A3%E4%BA%9B%E4%BD%A0%E5%8F%AF%E8%83%BD%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E7%9F%A5%E8%AF%86%20/"/>
+    <id>https://www.qianhongbo.top/知识积累/那些你可能不知道的知识 /</id>
+    <published>2019-06-06T13:09:44.000Z</published>
+    <updated>2019-07-24T09:27:45.265Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="游戏里的SSR-SR-R-UR，N都是什么意思？"><a href="#游戏里的SSR-SR-R-UR，N都是什么意思？" class="headerlink" title="游戏里的SSR, SR, R, UR，N都是什么意思？"></a>游戏里的SSR, SR, R, UR，N都是什么意思？</h2><ol><li><strong>SSR</strong>：全称为superior super rare，表示特级超稀有;</li><li><strong>UR</strong>:  全称是Ultra Rare，表示极度稀有;</li><li><strong>SR</strong>:   全称是Super Rare，表示超稀有；</li><li><strong>R</strong>:   即Rare，表示稀有;</li><li><strong>N</strong>:   是Normal的缩写，表示普通;</li></ol><hr><h2 id="64位是什么意思？"><a href="#64位是什么意思？" class="headerlink" title="64位是什么意思？"></a>64位是什么意思？</h2><p>一个 64 位的 CPU，内部可能有外部数据总线或不同大小的<a href="https://baike.baidu.com/item/地址总线" target="_blank" rel="noopener">地址总线</a>，可能比较大或比较小；术语“64位”也常用于描述这些总线的大小</p><p>在计算机架构中，64位<a href="https://baike.baidu.com/item/整数/1293937" target="_blank" rel="noopener">整数</a>、<a href="https://baike.baidu.com/item/内存地址/7354236" target="_blank" rel="noopener">内存地址</a>或其他<a href="https://baike.baidu.com/item/数据单元/1415766" target="_blank" rel="noopener">数据单元</a>，是指它们最高达到64位（8<a href="https://baike.baidu.com/item/字节/1096318" target="_blank" rel="noopener">字节</a>）宽。</p><h2 id="API是什么？"><a href="#API是什么？" class="headerlink" title="API是什么？"></a>API是什么？</h2><p>API（Application Programming Interface，应用程序编程接口）</p><p>对于浏览器来说（这也是所谓的客户端），Facebook的服务器就是一个应用程序编程接口。这意味着每当你在互联网上访问一个页面的时候，你都在与某个远程服务器的API发生交互。</p><p>API并不完全等同于远程服务器——它其实是服务器的一部分，负责接收请求并发送响应。</p><h2 id="IDE是什么"><a href="#IDE是什么" class="headerlink" title="IDE是什么"></a>IDE是什么</h2><p>integreted development environment 即集成开发环境</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;游戏里的SSR-SR-R-UR，N都是什么意思？&quot;&gt;&lt;a href=&quot;#游戏里的SSR-SR-R-UR，N都是什么意思？&quot; class=&quot;headerlink&quot; title=&quot;游戏里的SSR, SR, R, UR，N都是什么意思？&quot;&gt;&lt;/a&gt;游戏里的SSR, SR
+      
+    
+    </summary>
+    
+      <category term="知识积累" scheme="https://www.qianhongbo.top/categories/%E7%9F%A5%E8%AF%86%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+      <category term="English" scheme="https://www.qianhongbo.top/tags/English/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我的Hexo博客搭建经历</title>
+    <link href="https://www.qianhongbo.top/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%80%BB%E7%BB%93/"/>
+    <id>https://www.qianhongbo.top/学习笔记/我的个人博客搭建总结/</id>
+    <published>2019-06-06T06:37:27.000Z</published>
+    <updated>2019-07-04T05:07:38.920Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="为什么要做自己的博客？"><a href="#为什么要做自己的博客？" class="headerlink" title="为什么要做自己的博客？"></a>为什么要做自己的博客？</h1><p>说到为什么要这么做，这个想法也是已经有很久了。当时的起因是我想通过互联网上的某个平台来记录自己的学习笔记或者自己的一些思考。在知乎等搜索了很多，都没有找到太合适的，其中包括公众号，简书，csdn等等。我觉得不合适的原因有的是因为网站太过烟火气，对我来说我觉得不够“干净”。有的是因为我觉得和我的圈子不符合，有的是因为我个人的喜好，最终都没有选择。有一天就突然萌生了做一个自己的博客的想法！</p><p>但问题来了，怎么做呢？我完全摸不到头脑。我就去知乎查了一下看到了蛮多科普的帖子，但一翻，好长好长，其中也包括很多很多的代码。对于一个机械专业的学生来说，看到这些内心是恐惧的。于是…我就把那篇帖子收藏了，打算等我有时间再做…当时可能觉得的时间是大四…可是这个想法实际上一直深深的埋在我的心里。</p><p>上周，这学期该忙的事情几乎结束，剩下的就是为了期末考试做准备了，我向来是一个喜欢拖延的人，不到考试前一周应该是打不起学习的兴趣的。我就在教室看着电脑，可能又萌生了写点东西的想法，奈何没有平台给我发挥。于是突然决定，就现在！把博客给我搞出来</p><p><img src="http://pso1yp87m.bkt.clouddn.com/%E6%9D%8E%E4%BA%91%E9%BE%99.jpg" alt="image"></p><h1 id="我花了多少时间？"><a href="#我花了多少时间？" class="headerlink" title="我花了多少时间？"></a>我花了多少时间？</h1><p>总共时长大概是3天白天的时间，对于我这个毫无基础的IT小白来说还是可以接受的（毕竟如果我不是搞这个的话估计也不会学习吧）</p><h1 id="我是怎么做出来的？"><a href="#我是怎么做出来的？" class="headerlink" title="我是怎么做出来的？"></a>我是怎么做出来的？</h1><p>遇到了很多问题，也查了很多资料，通过别人的教程一步一步完善自己的博客</p><p>推荐链接：<a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener"><strong>知乎上的一篇文章，我的启蒙</strong></a> </p><p>看了这个博客之后大部分操作就都可以完成了，当然你可能会像我一样，遇到很多的问题，那么怎么办呢？当然是自己查！而且很容易查到你想要的解决方法</p><p><a href="[https://slanceli.top/2019/02/18/%E6%B7%B1%E5%BA%A6%E7%BE%8E%E5%8C%96Hexo%EF%BC%88NexT%E4%B8%BB%E9%A2%98%EF%BC%89/](https://slanceli.top/2019/02/18/深度美化Hexo（NexT主题）/)"><strong>这篇博客是我的努力目标，当时就是朝着这个方向努力完善</strong></a></p><p><a href="[http://shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html](http://shenzekun.cn/hexo的next主题个性化配置教程.html)"><strong>这篇博客讲了很多博客美化的内容，我都是自己一步一步搞的</strong></a></p><p>以上部分完成了，你的博客基本就完成啦！如果你遇到了什么问题，都可以去google，相信你能得到你想要的答案~</p><h2 id="会不会出教程？"><a href="#会不会出教程？" class="headerlink" title="会不会出教程？"></a>会不会出教程？</h2><p>应该不会，教程太多了，我还没那么牛，等我再学习学习吧…</p><h1 id="如果换电脑了，想在新电脑上写博客，怎么迁移"><a href="#如果换电脑了，想在新电脑上写博客，怎么迁移" class="headerlink" title="如果换电脑了，想在新电脑上写博客，怎么迁移"></a>如果换电脑了，想在新电脑上写博客，怎么迁移</h1><p>[一个比较好的教程]([<a href="https://showcc.github.io/2017/06/08/Change%20the%20computer%20update%20the%20hexo%20blog/]" target="_blank" rel="noopener">https://showcc.github.io/2017/06/08/Change%20the%20computer%20update%20the%20hexo%20blog/]</a>(<a href="https://showcc.github.io/2017/06/08/Change" target="_blank" rel="noopener">https://showcc.github.io/2017/06/08/Change</a> the computer update the hexo blog/))</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;为什么要做自己的博客？&quot;&gt;&lt;a href=&quot;#为什么要做自己的博客？&quot; class=&quot;headerlink&quot; title=&quot;为什么要做自己的博客？&quot;&gt;&lt;/a&gt;为什么要做自己的博客？&lt;/h1&gt;&lt;p&gt;说到为什么要这么做，这个想法也是已经有很久了。当时的起因是我想通过互
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://www.qianhongbo.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Hexo" scheme="https://www.qianhongbo.top/tags/Hexo/"/>
+    
+  </entry>
+  
+</feed>

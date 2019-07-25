@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[11]]></title>
-    <url>%2Funcategorized%2F11%2F</url>
-    <content type="text"><![CDATA[hello baby~]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[newpage]]></title>
-    <url>%2Funcategorized%2Ftryit%2F</url>
-    <content type="text"><![CDATA[can I get it? please… Reply: really good!]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[嵌入式开发学习笔记]]></title>
     <url>%2F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
     <content type="text"><![CDATA[Linux distribution (linux的发行版本)软件，shell 保护层，kernel内核，硬件 linux系统，完整的分层模型 RedHat：server 服务器 面向企业用户 具有license CentOS：已经被红帽子收购，开源免费版本，区别于企业版，比较稳定 以上两款界面不好看，不追求绚丽的东西 Ubuntu：稳定性不如上面两个，但适用于普通用户，中文支持，软件支持做的都比较好 ubuntu操作 sudo 为普通命令提升权限 sudo passwd root su - 切换到系统的身份 apt-get update更新源，用于下载新的安装包（如果是普通用于，记得在前面加sudo 尽量用命令行的方式来学习linux vim安装 apt-get install vim-nox vi已经安装，是一个编辑软件的记事本 vim回车，进入 退出，敲：q（不知道要不要加！） vim全键盘操作，效率很高 cd / 根目录 c—change d—directory 目录 ls 不要在根目录里面操作 回去 cd vi /etc/ vi 命令模式，编辑模式，用 i 切换模式，esc键退出 ssh-secure shell SecureCRT安装 sshd回车 apt-get install openssh-server ifconfig net add: rz zmodem r:receive sz zmodem s:send samba apt-get install samba]]></content>
@@ -31,17 +21,6 @@
       </categories>
       <tags>
         <tag>机器人学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F%E9%9A%8F%E7%AC%94%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Yes, hello world.]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>Code</tag>
       </tags>
   </entry>
   <entry>
@@ -183,7 +162,7 @@
   <entry>
     <title><![CDATA[我的Hexo博客搭建经历]]></title>
     <url>%2F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%80%BB%E7%BB%93%2F</url>
-    <content type="text"><![CDATA[为什么要做自己的博客？说到为什么要这么做，这个想法也是已经有很久了。当时的起因是我想通过互联网上的某个平台来记录自己的学习笔记或者自己的一些思考。在知乎等搜索了很多，都没有找到太合适的，其中包括公众号，简书，csdn等等。我觉得不合适的原因有的是因为网站太过烟火气，对我来说我觉得不够“干净”。有的是因为我觉得和我的圈子不符合，有的是因为我个人的喜好，最终都没有选择。有一天就突然萌生了做一个自己的博客的想法！ 但问题来了，怎么做呢？我完全摸不到头脑。我就去知乎查了一下看到了蛮多科普的帖子，但一翻，好长好长，其中也包括很多很多的代码。对于一个机械专业的学生来说，看到这些内心是恐惧的。于是…我就把那篇帖子收藏了，打算等我有时间再做…当时可能觉得的时间是大四…可是这个想法实际上一直深深的埋在我的心里。 上周，这学期该忙的事情几乎结束，剩下的就是为了期末考试做准备了，我向来是一个喜欢拖延的人，不到考试前一周应该是打不起学习的兴趣的。我就在教室看着电脑，可能又萌生了写点东西的想法，奈何没有平台给我发挥。于是突然决定，就现在！把博客给我搞出来 我花了多少时间？总共时长大概是3天白天的时间，对于我这个毫无基础的IT小白来说还是可以接受的（毕竟如果我不是搞这个的话估计也不会学习吧） 我是怎么做出来的？遇到了很多问题，也查了很多资料，通过别人的教程一步一步完善自己的博客 推荐链接：知乎上的一篇文章，我的启蒙 看了这个博客之后大部分操作就都可以完成了，当然你可能会像我一样，遇到很多的问题，那么怎么办呢？当然是自己查！而且很容易查到你想要的解决方法 这篇博客是我的努力目标，当时就是朝着这个方向努力完善 这篇博客讲了很多博客美化的内容，我都是自己一步一步搞的 以上部分完成了，你的博客基本就完成啦！如果你遇到了什么问题，都可以去google，相信你能得到你想要的答案~ 会不会出教程？应该不会，教程太多了，我还没那么牛，等我再学习学习吧… 如果换电脑了，想在新电脑上写博客，怎么迁移[一个比较好的教程]([https://showcc.github.io/2017/06/08/Change%20the%20computer%20update%20the%20hexo%20blog/](https://showcc.github.io/2017/06/08/Change the computer update the hexo blog/))]]></content>
+    <content type="text"><![CDATA[为什么要做自己的博客？说到为什么要这么做，这个想法也是已经有很久了。当时的起因是我想通过互联网上的某个平台来记录自己的学习笔记或者自己的一些思考。在知乎等搜索了很多，都没有找到太合适的，其中包括公众号，简书，csdn等等。我觉得不合适的原因有的是因为网站太过烟火气，对我来说我觉得不够“干净”。有的是因为我觉得和我的圈子不符合，有的是因为我个人的喜好，最终都没有选择。有一天就突然萌生了做一个自己的博客的想法！ 但问题来了，怎么做呢？我完全摸不到头脑。我就去知乎查了一下看到了蛮多科普的帖子，但一翻，好长好长，其中也包括很多很多的代码。对于一个机械专业的学生来说，看到这些内心是恐惧的。于是…我就把那篇帖子收藏了，打算等我有时间再做…当时可能觉得的时间是大四…可是这个想法实际上一直深深的埋在我的心里。 上周，这学期该忙的事情几乎结束，剩下的就是为了期末考试做准备了，我向来是一个喜欢拖延的人，不到考试前一周应该是打不起学习的兴趣的。我就在教室看着电脑，可能又萌生了写点东西的想法，奈何没有平台给我发挥。于是突然决定，就现在！把博客给我搞出来 我花了多少时间？总共时长大概是3天白天的时间，对于我这个毫无基础的IT小白来说还是可以接受的（毕竟如果我不是搞这个的话估计也不会学习吧） 我是怎么做出来的？遇到了很多问题，也查了很多资料，通过别人的教程一步一步完善自己的博客 推荐链接：知乎上的一篇文章，我的启蒙 看了这个博客之后大部分操作就都可以完成了，当然你可能会像我一样，遇到很多的问题，那么怎么办呢？当然是自己查！而且很容易查到你想要的解决方法 这篇博客是我的努力目标，当时就是朝着这个方向努力完善 这篇博客讲了很多博客美化的内容，我都是自己一步一步搞的 以上部分完成了，你的博客基本就完成啦！如果你遇到了什么问题，都可以去google，相信你能得到你想要的答案~ 会不会出教程？应该不会，教程太多了，我还没那么牛，等我再学习学习吧… 如果换电脑了，想在新电脑上写博客，怎么迁移一个比较好的教程 想在两台电脑上同时写博客的方法利用git的分支功能！ 把生成的静态网页上传到master分支，把写的原文件上传到新建的hexo分支 每次在另一台电脑上写博客前，先git pull将本地文件更新，而在写好文章后要记得用 123git add . git commit -m &quot;&quot;git push 参考了知乎上的一篇答案，十分详细，对新手小白十分友好，点击跳转 做完这个对git的分支功能有了更深刻的认识~]]></content>
       <categories>
         <category>学习笔记</category>
       </categories>

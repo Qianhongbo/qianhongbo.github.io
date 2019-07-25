@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.qianhongbo.top/"/>
-  <updated>2019-07-25T02:53:39.590Z</updated>
+  <updated>2019-07-06T10:09:24.450Z</updated>
   <id>https://www.qianhongbo.top/</id>
   
   <author>
@@ -15,53 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>11</title>
-    <link href="https://www.qianhongbo.top/uncategorized/11/"/>
-    <id>https://www.qianhongbo.top/uncategorized/11/</id>
-    <published>2019-07-25T02:53:00.000Z</published>
-    <updated>2019-07-25T02:53:39.590Z</updated>
-    
-    <content type="html"><![CDATA[<p>hello baby~</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;hello baby~&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>newpage</title>
-    <link href="https://www.qianhongbo.top/uncategorized/tryit/"/>
-    <id>https://www.qianhongbo.top/uncategorized/tryit/</id>
-    <published>2019-07-25T02:45:29.000Z</published>
-    <updated>2019-07-25T02:53:29.558Z</updated>
-    
-    <content type="html"><![CDATA[<p>can I get it?</p><p>please…</p><p>Reply:</p><p>really good!</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;can I get it?&lt;/p&gt;
-&lt;p&gt;please…&lt;/p&gt;
-&lt;p&gt;Reply:&lt;/p&gt;
-&lt;p&gt;really good!&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>嵌入式开发学习笔记</title>
@@ -112,33 +65,6 @@
     
     
       <category term="机器人学" scheme="https://www.qianhongbo.top/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/hello-world/"/>
-    <id>https://www.qianhongbo.top/随笔/hello-world/</id>
-    <published>2019-07-02T01:57:10.000Z</published>
-    <updated>2019-06-05T06:02:30.000Z</updated>
-    
-    <content type="html"><![CDATA[<center>Yes, hello world.</center>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;center&gt;Yes, hello world.&lt;/center&gt;
-
-
-      
-    
-    </summary>
-    
-      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="Code" scheme="https://www.qianhongbo.top/tags/Code/"/>
     
   </entry>
   
@@ -506,9 +432,9 @@
     <link href="https://www.qianhongbo.top/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%80%BB%E7%BB%93/"/>
     <id>https://www.qianhongbo.top/学习笔记/我的个人博客搭建总结/</id>
     <published>2019-06-06T06:37:27.000Z</published>
-    <updated>2019-07-04T05:07:38.920Z</updated>
+    <updated>2019-07-25T07:06:32.811Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="为什么要做自己的博客？"><a href="#为什么要做自己的博客？" class="headerlink" title="为什么要做自己的博客？"></a>为什么要做自己的博客？</h1><p>说到为什么要这么做，这个想法也是已经有很久了。当时的起因是我想通过互联网上的某个平台来记录自己的学习笔记或者自己的一些思考。在知乎等搜索了很多，都没有找到太合适的，其中包括公众号，简书，csdn等等。我觉得不合适的原因有的是因为网站太过烟火气，对我来说我觉得不够“干净”。有的是因为我觉得和我的圈子不符合，有的是因为我个人的喜好，最终都没有选择。有一天就突然萌生了做一个自己的博客的想法！</p><p>但问题来了，怎么做呢？我完全摸不到头脑。我就去知乎查了一下看到了蛮多科普的帖子，但一翻，好长好长，其中也包括很多很多的代码。对于一个机械专业的学生来说，看到这些内心是恐惧的。于是…我就把那篇帖子收藏了，打算等我有时间再做…当时可能觉得的时间是大四…可是这个想法实际上一直深深的埋在我的心里。</p><p>上周，这学期该忙的事情几乎结束，剩下的就是为了期末考试做准备了，我向来是一个喜欢拖延的人，不到考试前一周应该是打不起学习的兴趣的。我就在教室看着电脑，可能又萌生了写点东西的想法，奈何没有平台给我发挥。于是突然决定，就现在！把博客给我搞出来</p><p><img src="http://pso1yp87m.bkt.clouddn.com/%E6%9D%8E%E4%BA%91%E9%BE%99.jpg" alt="image"></p><h1 id="我花了多少时间？"><a href="#我花了多少时间？" class="headerlink" title="我花了多少时间？"></a>我花了多少时间？</h1><p>总共时长大概是3天白天的时间，对于我这个毫无基础的IT小白来说还是可以接受的（毕竟如果我不是搞这个的话估计也不会学习吧）</p><h1 id="我是怎么做出来的？"><a href="#我是怎么做出来的？" class="headerlink" title="我是怎么做出来的？"></a>我是怎么做出来的？</h1><p>遇到了很多问题，也查了很多资料，通过别人的教程一步一步完善自己的博客</p><p>推荐链接：<a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener"><strong>知乎上的一篇文章，我的启蒙</strong></a> </p><p>看了这个博客之后大部分操作就都可以完成了，当然你可能会像我一样，遇到很多的问题，那么怎么办呢？当然是自己查！而且很容易查到你想要的解决方法</p><p><a href="[https://slanceli.top/2019/02/18/%E6%B7%B1%E5%BA%A6%E7%BE%8E%E5%8C%96Hexo%EF%BC%88NexT%E4%B8%BB%E9%A2%98%EF%BC%89/](https://slanceli.top/2019/02/18/深度美化Hexo（NexT主题）/)"><strong>这篇博客是我的努力目标，当时就是朝着这个方向努力完善</strong></a></p><p><a href="[http://shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html](http://shenzekun.cn/hexo的next主题个性化配置教程.html)"><strong>这篇博客讲了很多博客美化的内容，我都是自己一步一步搞的</strong></a></p><p>以上部分完成了，你的博客基本就完成啦！如果你遇到了什么问题，都可以去google，相信你能得到你想要的答案~</p><h2 id="会不会出教程？"><a href="#会不会出教程？" class="headerlink" title="会不会出教程？"></a>会不会出教程？</h2><p>应该不会，教程太多了，我还没那么牛，等我再学习学习吧…</p><h1 id="如果换电脑了，想在新电脑上写博客，怎么迁移"><a href="#如果换电脑了，想在新电脑上写博客，怎么迁移" class="headerlink" title="如果换电脑了，想在新电脑上写博客，怎么迁移"></a>如果换电脑了，想在新电脑上写博客，怎么迁移</h1><p>[一个比较好的教程]([<a href="https://showcc.github.io/2017/06/08/Change%20the%20computer%20update%20the%20hexo%20blog/]" target="_blank" rel="noopener">https://showcc.github.io/2017/06/08/Change%20the%20computer%20update%20the%20hexo%20blog/]</a>(<a href="https://showcc.github.io/2017/06/08/Change" target="_blank" rel="noopener">https://showcc.github.io/2017/06/08/Change</a> the computer update the hexo blog/))</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="为什么要做自己的博客？"><a href="#为什么要做自己的博客？" class="headerlink" title="为什么要做自己的博客？"></a>为什么要做自己的博客？</h1><p>说到为什么要这么做，这个想法也是已经有很久了。当时的起因是我想通过互联网上的某个平台来记录自己的学习笔记或者自己的一些思考。在知乎等搜索了很多，都没有找到太合适的，其中包括公众号，简书，csdn等等。我觉得不合适的原因有的是因为网站太过烟火气，对我来说我觉得不够“干净”。有的是因为我觉得和我的圈子不符合，有的是因为我个人的喜好，最终都没有选择。有一天就突然萌生了做一个自己的博客的想法！</p><p>但问题来了，怎么做呢？我完全摸不到头脑。我就去知乎查了一下看到了蛮多科普的帖子，但一翻，好长好长，其中也包括很多很多的代码。对于一个机械专业的学生来说，看到这些内心是恐惧的。于是…我就把那篇帖子收藏了，打算等我有时间再做…当时可能觉得的时间是大四…可是这个想法实际上一直深深的埋在我的心里。</p><p>上周，这学期该忙的事情几乎结束，剩下的就是为了期末考试做准备了，我向来是一个喜欢拖延的人，不到考试前一周应该是打不起学习的兴趣的。我就在教室看着电脑，可能又萌生了写点东西的想法，奈何没有平台给我发挥。于是突然决定，就现在！把博客给我搞出来</p><h1 id="我花了多少时间？"><a href="#我花了多少时间？" class="headerlink" title="我花了多少时间？"></a>我花了多少时间？</h1><p>总共时长大概是3天白天的时间，对于我这个毫无基础的IT小白来说还是可以接受的（毕竟如果我不是搞这个的话估计也不会学习吧）</p><h1 id="我是怎么做出来的？"><a href="#我是怎么做出来的？" class="headerlink" title="我是怎么做出来的？"></a>我是怎么做出来的？</h1><p>遇到了很多问题，也查了很多资料，通过别人的教程一步一步完善自己的博客</p><p>推荐链接：<a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener"><strong>知乎上的一篇文章，我的启蒙</strong></a> </p><p>看了这个博客之后大部分操作就都可以完成了，当然你可能会像我一样，遇到很多的问题，那么怎么办呢？当然是自己查！而且很容易查到你想要的解决方法</p><p><a href="[https://slanceli.top/2019/02/18/%E6%B7%B1%E5%BA%A6%E7%BE%8E%E5%8C%96Hexo%EF%BC%88NexT%E4%B8%BB%E9%A2%98%EF%BC%89/](https://slanceli.top/2019/02/18/深度美化Hexo（NexT主题）/)"><strong>这篇博客是我的努力目标，当时就是朝着这个方向努力完善</strong></a></p><p><a href="[http://shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html](http://shenzekun.cn/hexo的next主题个性化配置教程.html)"><strong>这篇博客讲了很多博客美化的内容，我都是自己一步一步搞的</strong></a></p><p>以上部分完成了，你的博客基本就完成啦！如果你遇到了什么问题，都可以去google，相信你能得到你想要的答案~</p><h2 id="会不会出教程？"><a href="#会不会出教程？" class="headerlink" title="会不会出教程？"></a>会不会出教程？</h2><p>应该不会，教程太多了，我还没那么牛，等我再学习学习吧…</p><h2 id="如果换电脑了，想在新电脑上写博客，怎么迁移"><a href="#如果换电脑了，想在新电脑上写博客，怎么迁移" class="headerlink" title="如果换电脑了，想在新电脑上写博客，怎么迁移"></a>如果换电脑了，想在新电脑上写博客，怎么迁移</h2><p><a href="https://showcc.github.io/2017/06/08/Change%20the%20computer%20update%20the%20hexo%20blog/" target="_blank" rel="noopener"><strong>一个比较好的教程</strong></a></p><h2 id="想在两台电脑上同时写博客的方法"><a href="#想在两台电脑上同时写博客的方法" class="headerlink" title="想在两台电脑上同时写博客的方法"></a>想在两台电脑上同时写博客的方法</h2><p>利用git的分支功能！</p><p>把生成的静态网页上传到master分支，把写的原文件上传到新建的hexo分支</p><p>每次在另一台电脑上写博客前，先<code>git pull</code>将本地文件更新，而在写好文章后要记得用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add . </span><br><span class="line">git commit -m &quot;&quot;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure><p>参考了知乎上的一篇答案，十分详细，对新手小白十分友好，<a href="https://www.zhihu.com/question/21193762/answer/489124966" target="_blank" rel="noopener"><strong>点击跳转</strong></a></p><p>做完这个对git的分支功能有了更深刻的认识~</p>]]></content>
     
     <summary type="html">
     
@@ -523,6 +449,60 @@
     
     
       <category term="Hexo" scheme="https://www.qianhongbo.top/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown 语法总结整理</title>
+    <link href="https://www.qianhongbo.top/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Markdown-%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93%E6%95%B4%E7%90%86/"/>
+    <id>https://www.qianhongbo.top/学习笔记/Markdown-语法总结整理/</id>
+    <published>2019-06-06T06:18:55.000Z</published>
+    <updated>2019-07-04T05:08:37.780Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Markdown文本学习"><a href="#Markdown文本学习" class="headerlink" title="Markdown文本学习"></a>Markdown文本学习</h2><p>就不总结了</p><p>直接上传一个我觉得不错的链接吧</p><p><a href="https://list.yinxiang.com/markdown/eef42447-db3f-48ee-827b-1bb34c03eb83.php" target="_blank" rel="noopener">印象笔记Markdown文本入门指南</a></p><h1 id="Markdown文本公式写法"><a href="#Markdown文本公式写法" class="headerlink" title="Markdown文本公式写法"></a>Markdown文本公式写法</h1><p><a href="https://blog.csdn.net/mingzhuo_126/article/details/82722455" target="_blank" rel="noopener">超全公式指南，简单易懂</a></p><p>hhh ，比如：<br>$$<br>E=mc^2<br>$$</p><p>然而用这个写法在Hexo Next主题下网页上并不会显示出公式，我查了一下</p><p><a href="https://blog.csdn.net/yexiaohhjk/article/details/82526604" target="_blank" rel="noopener">这个教程不错</a></p><p><a href="https://jdhao.github.io/2017/10/06/hexo-markdown-latex-equation/" target="_blank" rel="noopener">打矩阵的时候你会发现无法多行显示，这个教程告诉了我们解决办法</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Markdown文本学习&quot;&gt;&lt;a href=&quot;#Markdown文本学习&quot; class=&quot;headerlink&quot; title=&quot;Markdown文本学习&quot;&gt;&lt;/a&gt;Markdown文本学习&lt;/h2&gt;&lt;p&gt;就不总结了&lt;/p&gt;
+&lt;p&gt;直接上传一个我觉得不错的链接吧&lt;/
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://www.qianhongbo.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Markdown" scheme="https://www.qianhongbo.top/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>I finally succeeded!</title>
+    <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/I-finally-succeeded/"/>
+    <id>https://www.qianhongbo.top/随笔/I-finally-succeeded/</id>
+    <published>2019-06-04T04:27:43.000Z</published>
+    <updated>2019-06-05T09:52:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>It is really complicated. Fortunately, I get it.</p><p>But I also have a long way to go…</p><p>yes…</p><p>It cost me three days to complete it.</p><p>我现在真的感觉好累好累啊</p><p>脖子痛，肌肉也紧张的很</p><p>呜呼</p><p>但也很满足啦</p><p>看到这几天自己的成果还是非常开心的~</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;It is really complicated. Fortunately, I get it.&lt;/p&gt;
+&lt;p&gt;But I also have a long way to go…&lt;/p&gt;
+&lt;p&gt;yes…&lt;/p&gt;
+&lt;p&gt;It cost me three days to com
+      
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="Diary" scheme="https://www.qianhongbo.top/tags/Diary/"/>
     
   </entry>
   

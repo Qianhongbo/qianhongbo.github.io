@@ -8,7 +8,7 @@ tags:
 mathjax: true
 ---
 
-## Markdown文本学习
+# Markdown文本学习
 
 就不总结了
 
@@ -30,4 +30,18 @@ $$
 [这个教程不错](<https://blog.csdn.net/yexiaohhjk/article/details/82526604>)
 
 [打矩阵的时候你会发现无法多行显示，这个教程告诉了我们解决办法](https://jdhao.github.io/2017/10/06/hexo-markdown-latex-equation/)
+
+# Markdown代码块的使用方法
+
+```c++
+#include1 <iostream>
+```
+
+在句首加"" ```" 即可，即键盘左上角
+
+# Markdown引用的方法
+
+> 引用内容
+
+引用方法在句首‘ > ’加空格即可
 

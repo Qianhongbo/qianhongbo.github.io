@@ -71,7 +71,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Qt,">
 
 
 
@@ -84,18 +84,18 @@
 
 
 
-<meta name="description" content="爸妈给换了个新手机，Huawei的，用着还挺顺手，用了好几年的iphone6sp就扔在寝室不用了。 旧手机在寝室放着一直看的挺烦的，也不是烦，就是想让每个东西都能有它们自己的归宿吧，不想让它们闲着。于是我就挂到了咸鱼上去，定了一个蛮高的价格，想着这么心爱的手机不想它这么就卖出去了… 果不其然，两天了没人来找我问，我心想，看来价格合适，不是那种贱卖的价格。我也没继续理它，反正我也不急着用这笔钱。">
-<meta name="keywords" content="WoW">
+<meta name="description" content="暑假来深圳这边实习，做的是嵌入式方向，负责人分配给我的第一个任务是用Qt写一个串口调试助手。这个任务总体来讲难度适中，尽管我没接触过Qt，但能查到很多很多的资料，甚至包括别人写好的源代码，所以有很多的学习资源。 我第一天在同学的推荐下，看了一个入门的文档，《Qt 学习之路 2》，其中内容讲的比较基础，基本可以理解，算是能对Qt的语法了解个大概。而且如果实在不懂，也可以参看b站上的视频教程，是黑马程">
+<meta name="keywords" content="Qt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="手机惊云（一）">
-<meta property="og:url" content="https://www.qianhongbo.top/小说/手机惊云（一）/index.html">
+<meta property="og:title" content="【从零入门Qt】开发一款属于自己的串口调试助手">
+<meta property="og:url" content="https://www.qianhongbo.top/学习笔记/【从零入门Qt】开发一款属于自己的串口调试助手/index.html">
 <meta property="og:site_name" content="Blog | Qian Homeberg">
-<meta property="og:description" content="爸妈给换了个新手机，Huawei的，用着还挺顺手，用了好几年的iphone6sp就扔在寝室不用了。 旧手机在寝室放着一直看的挺烦的，也不是烦，就是想让每个东西都能有它们自己的归宿吧，不想让它们闲着。于是我就挂到了咸鱼上去，定了一个蛮高的价格，想着这么心爱的手机不想它这么就卖出去了… 果不其然，两天了没人来找我问，我心想，看来价格合适，不是那种贱卖的价格。我也没继续理它，反正我也不急着用这笔钱。">
+<meta property="og:description" content="暑假来深圳这边实习，做的是嵌入式方向，负责人分配给我的第一个任务是用Qt写一个串口调试助手。这个任务总体来讲难度适中，尽管我没接触过Qt，但能查到很多很多的资料，甚至包括别人写好的源代码，所以有很多的学习资源。 我第一天在同学的推荐下，看了一个入门的文档，《Qt 学习之路 2》，其中内容讲的比较基础，基本可以理解，算是能对Qt的语法了解个大概。而且如果实在不懂，也可以参看b站上的视频教程，是黑马程">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-25T02:40:58.788Z">
+<meta property="og:updated_time" content="2019-07-31T09:24:42.546Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="手机惊云（一）">
-<meta name="twitter:description" content="爸妈给换了个新手机，Huawei的，用着还挺顺手，用了好几年的iphone6sp就扔在寝室不用了。 旧手机在寝室放着一直看的挺烦的，也不是烦，就是想让每个东西都能有它们自己的归宿吧，不想让它们闲着。于是我就挂到了咸鱼上去，定了一个蛮高的价格，想着这么心爱的手机不想它这么就卖出去了… 果不其然，两天了没人来找我问，我心想，看来价格合适，不是那种贱卖的价格。我也没继续理它，反正我也不急着用这笔钱。">
+<meta name="twitter:title" content="【从零入门Qt】开发一款属于自己的串口调试助手">
+<meta name="twitter:description" content="暑假来深圳这边实习，做的是嵌入式方向，负责人分配给我的第一个任务是用Qt写一个串口调试助手。这个任务总体来讲难度适中，尽管我没接触过Qt，但能查到很多很多的资料，甚至包括别人写好的源代码，所以有很多的学习资源。 我第一天在同学的推荐下，看了一个入门的文档，《Qt 学习之路 2》，其中内容讲的比较基础，基本可以理解，算是能对Qt的语法了解个大概。而且如果实在不懂，也可以参看b站上的视频教程，是黑马程">
 
 
 
@@ -129,7 +129,7 @@
 
 
 
-  <title>手机惊云（一） | Blog | Qian Homeberg</title>
+  <title>【从零入门Qt】开发一款属于自己的串口调试助手 | Blog | Qian Homeberg</title>
   
 
 
@@ -310,7 +310,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.top/小说/手机惊云（一）/">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.top/学习笔记/【从零入门Qt】开发一款属于自己的串口调试助手/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Qian Hongbo">
@@ -327,7 +327,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">手机惊云（一）</h1>
+          <h1 class="post-title" itemprop="name headline">【从零入门Qt】开发一款属于自己的串口调试助手</h1>
         
 
         <div class="post-meta">
@@ -339,8 +339,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-06T21:12:19+08:00">
-                2019-06-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-31T17:22:58+08:00">
+                2019-07-31
               </time>
             
 
@@ -362,8 +362,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/小说/" itemprop="url" rel="index">
-                    <span itemprop="name">小说</span>
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
                   </a>
                 </span>
 
@@ -382,8 +382,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/小说/手机惊云（一）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="小说/手机惊云（一）/" itemprop="commentCount"></span>
+                <a href="/学习笔记/【从零入门Qt】开发一款属于自己的串口调试助手/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="学习笔记/【从零入门Qt】开发一款属于自己的串口调试助手/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -410,7 +410,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.4k 字
+                  1.1k 字
                 </span>
               
 
@@ -447,67 +447,29 @@
       
 
       
-        <hr>
-<p>爸妈给换了个新手机，Huawei的，用着还挺顺手，用了好几年的iphone6sp就扔在寝室不用了。</p>
-<p>旧手机在寝室放着一直看的挺烦的，也不是烦，就是想让每个东西都能有它们自己的归宿吧，不想让它们闲着。于是我就挂到了咸鱼上去，定了一个蛮高的价格，想着这么心爱的手机不想它这么就卖出去了…</p>
-<p>果不其然，两天了没人来找我问，我心想，看来价格合适，不是那种贱卖的价格。我也没继续理它，反正我也不急着用这笔钱。</p>
-<p>没想到今天下午我收到一个人的消息，他说他想买手机，还说他就在武汉，离我学校还挺近，说一会儿能不能当面交易，让我定一个地方。剧情发展的太快我根本没反应过来，而且他的果断和紧急让我更加的警觉，我在怀疑是不是什么骗局，毕竟闲鱼上的骗局还是很多的。</p>
-<p>于是我马上追问：“在哪里交易？”（交易这个词怎么觉得怪怪的）</p>
-<p>他说：“你定一个地方吧，我到时候直接给你现金。”</p>
-<p>现金？？？</p>
-<p>我看到了一个关键词，立马勾起了我的警觉心。我马上在脑海里构想了各种可能的诈骗方式，比如什么钱是假钱，或者是他会以验机为名直接拿着我的手机跑路？…… </p>
-<p>越想越后怕，我马上回：我不收现金，只接受转账。</p>
-<p>我本以为他会因为我这么一说直接放弃这笔交易</p>
-<p>没想到他直接回：没事，我们去银行门口见面，没问题的话我直接去ATM存钱，我手机里没钱！</p>
-<p>事情发展的更加扑朔迷离</p>
-<p>奈何我一天下来也蛮累的，不如就用这个晚饭是时间休息下，把这个事情搞个明白，我倒是要看看这个人到底是个什么底细！</p>
-<hr>
-<p>紧接着我就挑了一个离学校在最近的地铁站，给他发了过去</p>
-<p>我心想：地铁站人多而且有监控，就算你有问题，我也可以找别人来帮忙啊</p>
-<p>我想着他会不会因为地点问题再次放弃交易</p>
-<p>没想到，他又回了一句：我查查</p>
-<p>真是出乎我的意料，难道他真的是要买手机？那为什么偏偏选择了我这个嘞？</p>
-<p>还没等我多考虑，他就回复我：”好的，我这就出门。“</p>
-<p>。。。</p>
-<p>我当时人还在教室里呢，手机还在寝室躺着呢！</p>
-<p>心想：你是真急啊，你急的我害怕！…</p>
-<p>我也来不及多想，收拾东西就往寝室走，因为我手机还没清理，里面还有好几10G的照片没删呢，还好我前几天把它们全上传到我的百度云里了。</p>
-<p>回到寝室后，把手机刷掉，完全格式化，不想留下任何和我有关的信息</p>
-<p>我在路上又想了一下，想到了更可怕的事情…他会不会用武力解决我并拿走我的手机…</p>
-<p>虽然很离谱，但这种想法的确在我的脑子里的浮现过，而且当时脑子里的画面不是他一个人，是他带着他的一帮弟兄一起过来的，就像是那种黑帮电影里的感觉，一群光着膀子的大汉一排走过来…我是不是想象力太丰富了…</p>
-<p>收拾的差不多，拿上了充电线就出门了，想着我耽误了这么久，他也该到了吧，临走前我还拿上了周二工程实训刚做好的喵喵锤。想着防身用hhh</p>
-<p>然后我就往地铁站走了</p>
-<hr>
-<p>到了地铁站，特意选了个出战的检票口，想着这旁边保安多得很，这下我的人身安全肯定没问题了吧</p>
-<p>突然觉得自己真的机智，于是就找了个地方休息，也没再想什么有的没的。</p>
-<p>过了十分钟他还是没消息，我心想，这该不会是不想买，但是要骗我时间的吧</p>
-<p>话说我自己觉得我的时间宝贵，应该他不觉得吧</p>
-<p>于是我就闲鱼给他发了个消息，说：你到了没？</p>
-<p>他过了半天才说：在路上，一刻钟到</p>
-<p>一刻钟？？？我这么多年都没用过这个词，这个此时啥意思？是十五分钟的意思吗？</p>
-<p>我脑子里觉得是十五分钟，但还是不确定，我还特意去查了一下确认</p>
-<p>哎，么得办法，买点东西是不容易啊，又冒着生命危险，又要浪费时间</p>
-<p>可是我的书包也重的很啊，我还背着一个电脑，我总不能在这里傻站着等吧</p>
-<p>关键是他说是十五分钟，到底是不是，谁知道啊？</p>
-<p>于是我就找了一个地方做了下去，刷起了手机。</p>
-<p>刷手机时间还是过得快啊，大概不到二十分钟，他给我来了个电话</p>
-<p>说他到了，没看到我。</p>
-<p>我说：”我在地上坐着呢，你看到我没？“</p>
-<p>他说：”没有啊，你人呢？“</p>
-<p>我说：”我就在这个检票口出口啊。“</p>
-<p>他说：”我在上面，没在下面。“</p>
-<p>。。。</p>
-<p>完了，之前的计划全部泡汤</p>
-<p>但听他的声音，好像也不是很凶的样子，我就想着行吧，我上去会会你，反正我有小锤锤护身</p>
-<p>然后我就上了电梯，往地铁口走</p>
-<center><未完待续></未完待续></center>
+        <p>暑假来深圳这边实习，做的是嵌入式方向，负责人分配给我的第一个任务是用Qt写一个串口调试助手。这个任务总体来讲难度适中，尽管我没接触过Qt，但能查到很多很多的资料，甚至包括别人写好的源代码，所以有很多的学习资源。</p>
+<p>我第一天在同学的推荐下，看了一个入门的文档，<a href="https://www.devbean.net/2012/08/qt-study-road-2-catelog/" target="_blank" rel="noopener">《Qt 学习之路 2》</a>，其中内容讲的比较基础，基本可以理解，算是能对Qt的语法了解个大概。而且如果实在不懂，也可以参看b站上的视频教程，是<a href="https://www.bilibili.com/video/av20446734" target="_blank" rel="noopener">黑马程序员的教程</a>，视频内容比较冗长，但对于初学者来说可能更好理解，各取所需，看个人选择。</p>
+<p>因为负责人只给了我三天的时间，所以我也就花了一天左右的时间看教程，就开始看我在网上看的一份源码了。当时我的进度是黑马程序员看了不到10个视频，《Qt 学习之路 2》看了不到20节教程，虽然说看了不少，但我当时还是很慌的，对于我这种小白来说，还是不知道源代码是什么意思，但这个时候我能大概明白每个函数要做什么功能了，也就是我看懂了函数名，但函数里的句子我看不懂。</p>
+<p>然后我就选择了按照这份代码自己复刻一份，算是尝试着自己写一下。</p>
+<p>于是我新建了一个<code>project</code>，名字是<code>Myserialport</code>，发现源代码中<code>main.cpp</code>完全一样，也就是一个窗体的显示功能，很好理解，直接略去~</p>
+<p>上面的<code>mainwindow.h</code>文件里面有很多库函数的引用，函数的声明，我姑且认为不重要，暂时略去</p>
+<p>而代码最多的就集中在<code>mainwindow.cpp</code>文件里了，也是我最需要解决的部分！</p>
+<p>这是我新建工程后的代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"mainwindow.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"ui_mainwindow.h"</span></span></span><br><span class="line"></span><br><span class="line">MainWindow::MainWindow(QWidget *parent) :</span><br><span class="line">    QMainWindow(parent),</span><br><span class="line">    ui(<span class="keyword">new</span> Ui::MainWindow)</span><br><span class="line">&#123;</span><br><span class="line">    ui-&gt;setupUi(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MainWindow::~MainWindow()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">delete</span> ui;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>而源代码在<code>MainWindow::MainWindow(QWidget *parent)</code>中添加了很多窗体生成的初始化语句</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">MainWindow::MainWindow(QWidget *parent) :</span><br><span class="line">    QMainWindow(parent),</span><br><span class="line">    ui(<span class="keyword">new</span> Ui::MainWindow)</span><br><span class="line">&#123;</span><br><span class="line">    ui-&gt;setupUi(<span class="keyword">this</span>);</span><br><span class="line">    textstate_receive = <span class="literal">false</span>;                 <span class="comment">//初始化发送窗口状态为文本模式</span></span><br><span class="line">    textstate_send = <span class="literal">false</span>;                    <span class="comment">//初始化接收窗口状态为文本模式</span></span><br><span class="line">    serialport = <span class="keyword">new</span> QSerialPort;              <span class="comment">//创建QSerialPort类，需要在头文件中添加#include &lt;QSerialPort&gt;</span></span><br><span class="line">    ui-&gt;send_button-&gt;setEnabled(<span class="literal">false</span>);        <span class="comment">//初始化接收按钮不可用</span></span><br><span class="line">    ui-&gt;close_port-&gt;setEnabled(<span class="literal">false</span>);         <span class="comment">//初始化接收按钮不可用</span></span><br><span class="line">    ui-&gt;Receive_text_window-&gt;setReadOnly(<span class="literal">true</span>);<span class="comment">//讲接收窗口设置为只读窗口</span></span><br><span class="line">    setWindowTitle(<span class="string">"串口调试助手"</span>);              <span class="comment">//设置程序的标题</span></span><br><span class="line">    setWindowIcon(QIcon(<span class="string">":/images/exe.jpg"</span>));  <span class="comment">//设置程序左上角图标</span></span><br><span class="line">    find_port();                               <span class="comment">//查找可用串口函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>以上语句还是比较好理解的，每句话我都进行了注释。</p>
+<p>下面的代码就是定义各个函数，而.h文件里的很多函数声明也就很好理解了，也就是在.h文件里定义一下各个函数</p>
+<p>比如以下很重要的两个函数，用于实现数据的发送和接收</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//发送数据</span></span><br><span class="line"><span class="keyword">void</span> MainWindow::on_send_button_clicked()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(textstate_send == <span class="literal">false</span>)  <span class="comment">//文本模式</span></span><br><span class="line">    &#123;</span><br><span class="line">        serialport-&gt;write(ui-&gt;Send_text_window-&gt;toPlainText().toUtf8());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(textstate_send == <span class="literal">true</span>)     <span class="comment">//hex模式</span></span><br><span class="line">    &#123;</span><br><span class="line">        QString str = ui-&gt;Send_text_window-&gt;toPlainText();</span><br><span class="line">        <span class="keyword">int</span> num = str.toInt();</span><br><span class="line">        str = str.setNum(num,<span class="number">16</span>);</span><br><span class="line">        ui-&gt;Send_text_window-&gt;clear();</span><br><span class="line">        ui-&gt;Send_text_window-&gt;append(str);</span><br><span class="line">        serialport-&gt;write(ui-&gt;Send_text_window-&gt;toPlainText().toLatin1());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//窗口显示串口传来的数据</span></span><br><span class="line"><span class="keyword">void</span> MainWindow::Read_Data()</span><br><span class="line">&#123;</span><br><span class="line">    QByteArray buf;</span><br><span class="line">    buf = serialport-&gt;readAll();</span><br><span class="line">    <span class="keyword">if</span>(!buf.isEmpty())          <span class="comment">//将数据显示到文本串口</span></span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(textstate_receive == <span class="literal">false</span>)   <span class="comment">//文本模式</span></span><br><span class="line">        &#123;</span><br><span class="line">            QString str = ui-&gt;Receive_text_window-&gt;toPlainText();</span><br><span class="line">            str += tr(buf);</span><br><span class="line">            ui-&gt;Receive_text_window-&gt;clear();</span><br><span class="line">            ui-&gt;Receive_text_window-&gt;append(str);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(textstate_receive == <span class="literal">true</span>)   <span class="comment">//hex模式</span></span><br><span class="line">        &#123;</span><br><span class="line">            QString str = ui-&gt;Receive_text_window-&gt;toPlainText();</span><br><span class="line">            <span class="comment">// byteArray 转 16进制</span></span><br><span class="line">            QByteArray temp = buf.toHex().toUpper();</span><br><span class="line">            str += tr(temp);</span><br><span class="line">            ui-&gt;Receive_text_window-&gt;clear();</span><br><span class="line">            ui-&gt;Receive_text_window-&gt;append(str);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    buf.clear();    <span class="comment">//清空缓存区</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
-
-
+<p>最后实现了以下的界面，以及文本模式和16进制（hex模式）两种模式转换的数据收发</p>
+<p>p.s.：尝试了很久想要解决中文无法显示的问题，最终无果…</p>
+<p>有需要的话可以在这个链接下载嗷~</p>
 
       
     </div>
@@ -552,6 +514,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Qt/" rel="tag"><i class="fa fa-tag"></i> Qt</a>
+          
+        </div>
+      
 
       
       
@@ -561,8 +529,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/知识积累/那些你可能不知道的知识 /" rel="next" title="那些你可能不知道的知识">
-                <i class="fa fa-chevron-left"></i> 那些你可能不知道的知识
+              <a href="/学习笔记/嵌入式开发学习笔记/" rel="next" title="嵌入式开发学习笔记">
+                <i class="fa fa-chevron-left"></i> 嵌入式开发学习笔记
               </a>
             
           </div>
@@ -570,10 +538,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/小说/手机惊云（二）/" rel="prev" title="手机惊云（二）">
-                手机惊云（二） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -928,9 +892,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://www.qianhongbo.top/小说/手机惊云（一）/';
-          this.page.identifier = '小说/手机惊云（一）/';
-          this.page.title = '手机惊云（一）';
+          this.page.url = 'https://www.qianhongbo.top/学习笔记/【从零入门Qt】开发一款属于自己的串口调试助手/';
+          this.page.identifier = '学习笔记/【从零入门Qt】开发一款属于自己的串口调试助手/';
+          this.page.title = '【从零入门Qt】开发一款属于自己的串口调试助手';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://qianhongbo.disqus.com/embed.js';

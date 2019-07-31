@@ -122,7 +122,7 @@ void MainWindow::Read_Data()
 
 p.s.：尝试了很久想要解决中文无法显示的问题，最终无果...
 
-
+![](http://ww1.sinaimg.cn/large/006tNc79gy1g5j5oshorpj30kc0k5769.jpg)
 
 [有需要的话可以在这个链接下载嗷~](https://download.csdn.net/download/weixin_42559298/11457836)
 

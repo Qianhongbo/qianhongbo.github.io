@@ -28,7 +28,7 @@ override: false
 # Then need to rename & redefine they on any other names, otherwise icons from Next will rewrite your custom icons in Hexo.
 favicon:
   small: /images/Me_16x16.JPG
-  medium: /images/Me_32x32.JPG
+  medium: /images/ironman.ico     #/images/Me_32x32.JPG
   apple_touch_icon: /images/Me.JPG
   safari_pinned_tab: /images/logo.svg
   #android_manifest: /images/manifest.json
@@ -112,8 +112,8 @@ menu_icons:
 
 # Schemes
 #scheme: Muse
-#scheme: Mist
-scheme: Pisces
+scheme: Mist
+#scheme: Pisces
 #scheme: Gemini
 
 
@@ -303,7 +303,7 @@ highlight_theme: normal
 # Arial | Tahoma | Helvetica | Times New Roman | Courier New | Verdana | Georgia | Palatino | Garamond | Comic Sans MS | Trebuchet MS
 # ---------------------------------------------------------------
 font:
-  enable: false
+  enable: true
 
   # Uri of fonts host. E.g. //fonts.googleapis.com (Default).
   host:
@@ -336,13 +336,13 @@ font:
   # Fallback to `global` font settings.
   logo:
     external: true
-    family:
-    size:
+    family: 
+    size: 
 
   # Font settings for <code> and code blocks.
   codes:
     external: true
-    family:
+    family: Roboto Mono
     size:
 
 
@@ -710,7 +710,7 @@ pace: false
 #pace_theme: pace-theme-minimal
 
 # Canvas-nest
-canvas_nest: false
+canvas_nest: true
 
 # three_waves
 three_waves: false

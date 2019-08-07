@@ -124,7 +124,7 @@
 <meta property="og:site_name" content="Blog | Qian Homeberg">
 <meta property="og:description" content="我为什么要学习C语言说来惭愧，作为一个工科学生，我竟然没有学过C语言，只在大一的时候学过一学期的VB，虽然语言这种东西说起来都差不多，但毕竟也是将近三年前的事了，早就忘光了。 可是不掌握C语言真的很麻烦，这尤其体现在做单片机上，单片机要求我们使用C语言，我当时连那些代码都看不懂，更别谈让我自己去写了。 正好，最近时间比较充沛。拿出时间来把C语言好好学学 p.s. 突然想起来我初中好像就学过C++了">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-25T02:40:58.780Z">
+<meta property="og:updated_time" content="2019-08-06T08:50:33.498Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="c语言学习笔记">
 <meta name="twitter:description" content="我为什么要学习C语言说来惭愧，作为一个工科学生，我竟然没有学过C语言，只在大一的时候学过一学期的VB，虽然语言这种东西说起来都差不多，但毕竟也是将近三年前的事了，早就忘光了。 可是不掌握C语言真的很麻烦，这尤其体现在做单片机上，单片机要求我们使用C语言，我当时连那些代码都看不懂，更别谈让我自己去写了。 正好，最近时间比较充沛。拿出时间来把C语言好好学学 p.s. 突然想起来我初中好像就学过C++了">
@@ -442,7 +442,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  488 字
+                  979 字
                 </span>
               
 
@@ -458,7 +458,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -500,6 +500,80 @@
 <li>其中，int表示其后所列的变量为整数，与之对应的float表示浮点数（即可以带有小数部分）</li>
 <li>为什么不用5/9？因为C语言存在舍位，小数部分都会被舍弃</li>
 </ol>
+<h2 id="Bit-amp-Byte"><a href="#Bit-amp-Byte" class="headerlink" title="Bit &amp; Byte"></a>Bit &amp; Byte</h2><ul>
+<li><p>字节(Byte): 通常将可表示常用英文字符8位二进制称为一字节</p>
+</li>
+<li><p>比特(Bit)，亦称二进制位 ，1比特就是1位</p>
+</li>
+<li><p>1字节(Byte） = 8位(bit) </p>
+</li>
+<li><p>在ASCII码中，一个英文字母(不分大小写)占一个字节的空间，一个中文汉字占两个字节的空间</p>
+</li>
+<li><p>符号：英文标点占一个字节，中文标点占两个字节</p>
+</li>
+</ul>
+<ul>
+<li><p>1千吉字节（TB,Terabyte）=1024吉字节（2的40次方字节）（1TB=1024GB）</p>
+</li>
+<li><p>1吉字节（GB,Gigabyte）=1024兆字节（2的30次方字节）（1GB=1024MB）</p>
+</li>
+<li><p>1兆字节（MB,Megabyte）=1024千字节（2的20次方字节）（1MB=1024KB）</p>
+</li>
+<li><p>1千字节（KB,Kilobyte）=1024字节（2的10次方字节）（1KB=1024B）</p>
+</li>
+<li><p>1字节（Byte）= 8位（bit）</p>
+</li>
+</ul>
+<blockquote>
+<p>  计算机中的位</p>
+<pre><code>二进制数系统中，每个0或1就是一个位(bit)，位是数据存储的最小单位。其中8bit就称为一个字节（Byte）。计算机中的CPU位数指的是CPU一次能处理的最大位数。例如32位计算机的CPU一次最多能处理32位数据。  </code></pre></blockquote>
+<blockquote>
+<p>所以char类型的存储大小为1个字节，也就是8位，这8位代表8位二进制，</p>
+</blockquote>
+<h2 id="浮点类型"><a href="#浮点类型" class="headerlink" title="浮点类型"></a>浮点类型</h2><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>存储大小</th>
+<th>精度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>float</td>
+<td>4 字节</td>
+<td>6 位小数</td>
+</tr>
+<tr>
+<td>double</td>
+<td>8 字节</td>
+<td>15 位小数</td>
+</tr>
+<tr>
+<td>long double</td>
+<td>16 字节</td>
+<td>19 位小数</td>
+</tr>
+</tbody></table>
+<h2 id="void类型"><a href="#void类型" class="headerlink" title="void类型"></a>void类型</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>类型与描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><strong>函数返回为空</strong><br>C 中有各种函数都不返回值，或者您可以说它们返回空。不返回值的函数的返回类型为空。例如 <strong>void exit (int status);</strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>函数参数为空</strong><br>C 中有各种函数不接受任何参数。不带参数的函数可以接受一个 void。例如 <strong>int rand(void);</strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>指针指向 void</strong><br>类型为 void * 的指针代表对象的地址，而不是类型。例如，内存分配函数 <strong>void *malloc( size_t size );</strong> 返回指向 void 的指针，可以转换为任何数据类型。</td>
+</tr>
+</tbody></table>
 
       
     </div>
@@ -660,7 +734,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -671,7 +745,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -682,7 +756,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -758,7 +832,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#我为什么要学习C语言"><span class="nav-number">1.</span> <span class="nav-text">我为什么要学习C语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我用什么工具学习C语言"><span class="nav-number">2.</span> <span class="nav-text">我用什么工具学习C语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#20190626"><span class="nav-number">3.</span> <span class="nav-text">20190626</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#我的第一段代码"><span class="nav-number">3.1.</span> <span class="nav-text">我的第一段代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二段代码"><span class="nav-number">3.2.</span> <span class="nav-text">第二段代码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#我为什么要学习C语言"><span class="nav-number">1.</span> <span class="nav-text">我为什么要学习C语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我用什么工具学习C语言"><span class="nav-number">2.</span> <span class="nav-text">我用什么工具学习C语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#20190626"><span class="nav-number">3.</span> <span class="nav-text">20190626</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#我的第一段代码"><span class="nav-number">3.1.</span> <span class="nav-text">我的第一段代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二段代码"><span class="nav-number">3.2.</span> <span class="nav-text">第二段代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bit-amp-Byte"><span class="nav-number">4.</span> <span class="nav-text">Bit &amp; Byte</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浮点类型"><span class="nav-number">5.</span> <span class="nav-text">浮点类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#void类型"><span class="nav-number">6.</span> <span class="nav-text">void类型</span></a></li></ol></div>
             
 
           </div>
@@ -792,7 +866,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">9.7k</span>
+    <span title="Site words total count">10.8k</span>
   
 </div>
 

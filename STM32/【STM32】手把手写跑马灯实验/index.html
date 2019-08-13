@@ -124,7 +124,7 @@
 <meta property="og:site_name" content="Blog | Qian Homeberg">
 <meta property="og:description" content="库函数版本回顾GPIO基础知识4种输入模式： 输入浮空 输入上拉 输入下拉 模拟输入  4种输出模式： 开漏输出 开漏复用功能 推挽式输出 推挽式复用功能  3种最大输出速度： 2MHZ 10MHz 50MHz  寄存器 GPIOx_CRL : 端口配置低寄存器（低8位） GPIOx_CRH: 端口配置高寄存器（高8位） GPIOx_IDR: 端口输入寄存器 GPIOx_ODR: 端口输出寄存器">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-12T06:54:53.529Z">
+<meta property="og:updated_time" content="2019-08-12T07:13:28.917Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【STM32】手把手写跑马灯实验">
 <meta name="twitter:description" content="库函数版本回顾GPIO基础知识4种输入模式： 输入浮空 输入上拉 输入下拉 模拟输入  4种输出模式： 开漏输出 开漏复用功能 推挽式输出 推挽式复用功能  3种最大输出速度： 2MHZ 10MHz 50MHz  寄存器 GPIOx_CRL : 端口配置低寄存器（低8位） GPIOx_CRH: 端口配置高寄存器（高8位） GPIOx_IDR: 端口输入寄存器 GPIOx_ODR: 端口输出寄存器">
@@ -521,7 +521,7 @@
 
 <h3 id="2个读取输出电平函数："><a href="#2个读取输出电平函数：" class="headerlink" title="2个读取输出电平函数："></a>2个读取输出电平函数：</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">uint8_t</span> GPIO_ReadOutputDataBit (GPIO_TypeDef* GPIOx, <span class="keyword">uint16_t</span> GPIO_Pin);</span><br><span class="line"><span class="comment">//作用：读取某个GPIO的输出电平。实际操作的是GPIO_ODR寄存器。</span></span><br><span class="line"><span class="comment">//例如：</span></span><br><span class="line">GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_5);<span class="comment">//读取GPIOA.5的输出电平</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">uint16_t</span> GPIO_ReadOutputData(GPIO_TypeDef* GPIOx);</span><br><span class="line"><span class="comment">//作用：读取某组GPIO的输出电平。实际操作的是GPIO_ODR寄存器。</span></span><br><span class="line"><span class="comment">//例如：</span></span><br><span class="line">GPIO_ReadOutputData(GPIOA);<span class="comment">//读取GPIOA组中所有io口输出电平</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="4个设置输出电平函数："><a href="#4个设置输出电平函数：" class="headerlink" title="4个设置输出电平函数："></a>4个设置输出电平函数：</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">GPIO_SetBits</span><span class="params">(GPIO_TypeDef* GPIOx, <span class="keyword">uint16_t</span> GPIO_Pin)</span></span>;</span><br><span class="line"><span class="comment">//作用：设置某个IO口输出为高电平（1）。实际操作BSRR寄存器</span></span><br><span class="line"><span class="comment">//例如：</span></span><br><span class="line">GPIO_SetBits(GPIOB,GPIO_Pin_5);                       <span class="comment">//GPIOB.5设置为高电平，LED高电平不亮</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">GPIO_ResetBits</span><span class="params">(GPIO_TypeDef* GPIOx, <span class="keyword">uint16_t</span> GPIO_Pin)</span></span>;</span><br><span class="line"><span class="comment">//作用：设置某个IO口输出为低电平（0）。实际操作的BRR寄存器。</span></span><br><span class="line"><span class="comment">//例如：</span></span><br></pre></td></tr></table></figure>
+<h3 id="4个设置输出电平函数："><a href="#4个设置输出电平函数：" class="headerlink" title="4个设置输出电平函数："></a>4个设置输出电平函数：</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">GPIO_SetBits</span><span class="params">(GPIO_TypeDef* GPIOx, <span class="keyword">uint16_t</span> GPIO_Pin)</span></span>;</span><br><span class="line"><span class="comment">//作用：设置某个IO口输出为高电平（1）。实际操作BSRR寄存器</span></span><br><span class="line"><span class="comment">//例如：</span></span><br><span class="line">GPIO_SetBits(GPIOB,GPIO_Pin_5);   <span class="comment">//GPIOB.5设置为高电平，LED高电平不亮</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">GPIO_ResetBits</span><span class="params">(GPIO_TypeDef* GPIOx, <span class="keyword">uint16_t</span> GPIO_Pin)</span></span>;</span><br><span class="line"><span class="comment">//作用：设置某个IO口输出为低电平（0）。实际操作的BRR寄存器。</span></span><br><span class="line"><span class="comment">//例如：</span></span><br><span class="line"> GPIO_ResetBits(GPIOB,GPIO_Pin_5);<span class="comment">//GPIOB.5设置为低电平，LED高电平亮</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="代码思路"><a href="#代码思路" class="headerlink" title="代码思路"></a>代码思路</h2><ul>
 <li>使能IO口时钟。调用函数<code>RCC_APB2PeriphColckCmd()</code>;</li>
@@ -624,6 +624,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/学习笔记/使用VSCode写博客/" rel="prev" title="使用VSCode写博客">
+                使用VSCode写博客 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -711,7 +715,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -733,7 +737,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -843,7 +847,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">12k</span>
+    <span title="Site words total count">12.6k</span>
   
 </div>
 

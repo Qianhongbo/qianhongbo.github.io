@@ -1,4 +1,4 @@
-https://www.qianhongbo.top/uncategorized/【C】struct和typedef struct/
+https://www.qianhongbo.top/学习笔记/【C】struct和typedef struct/
 https://www.qianhongbo.top/学习笔记/【C】从GPIO_Init引发的关于C的研究/
 https://www.qianhongbo.top/STM32/【STM32】按键输入实验/
 https://www.qianhongbo.top/学习笔记/使用VSCode写博客/

@@ -1942,7 +1942,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff98c3;
+  background: #ff38ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2902,12 +2902,12 @@ hr {
 }
 @media (max-width: 767px) {
   .posts-expand .post-title {
-    font-size: 25px;
+    font-size: 24px;
   }
 }
 @media (min-width: 1600px) {
   .posts-expand .post-title {
-    font-size: 29px;
+    font-size: 28px;
   }
 }
 .posts-expand .post-title:hover:before {

@@ -103,7 +103,7 @@
 
 
 
-  <meta name="keywords" content="嵌入式开发,Linux,">
+  <meta name="keywords" content="C,">
 
 
 
@@ -116,18 +116,18 @@
 
 
 
-<meta name="description" content="Linux distribution (linux的发行版本)软件，shell 保护层，kernel内核，硬件 linux系统，完整的分层模型 RedHat：server 服务器 面向企业用户 具有license CentOS：已经被红帽子收购，开源免费版本，区别于企业版，比较稳定 以上两款界面不好看，不追求绚丽的东西 Ubuntu：稳定性不如上面两个，但适用于普通用户，中文支持，软件支持做的都比">
-<meta name="keywords" content="嵌入式开发,Linux">
+<meta name="description" content="我为什么要学习C语言说来惭愧，作为一个工科学生，我竟然没有学过C语言，只在大一的时候学过一学期的VB，虽然语言这种东西说起来都差不多，但毕竟也是将近三年前的事了，早就忘光了。 可是不掌握C语言真的很麻烦，这尤其体现在做单片机上，单片机要求我们使用C语言，我当时连那些代码都看不懂，更别谈让我自己去写了。 正好，最近时间比较充沛。拿出时间来把C语言好好学学 p.s. 突然想起来我初中好像就学过C++了">
+<meta name="keywords" content="C">
 <meta property="og:type" content="article">
-<meta property="og:title" content="嵌入式开发学习笔记">
-<meta property="og:url" content="https://www.qianhongbo.top/学习笔记/嵌入式开发学习笔记/index.html">
+<meta property="og:title" content="c语言学习笔记">
+<meta property="og:url" content="https://www.qianhongbo.top/学习笔记/【C】C语言学习笔记/index.html">
 <meta property="og:site_name" content="Blog | Qian Homeberg">
-<meta property="og:description" content="Linux distribution (linux的发行版本)软件，shell 保护层，kernel内核，硬件 linux系统，完整的分层模型 RedHat：server 服务器 面向企业用户 具有license CentOS：已经被红帽子收购，开源免费版本，区别于企业版，比较稳定 以上两款界面不好看，不追求绚丽的东西 Ubuntu：稳定性不如上面两个，但适用于普通用户，中文支持，软件支持做的都比">
+<meta property="og:description" content="我为什么要学习C语言说来惭愧，作为一个工科学生，我竟然没有学过C语言，只在大一的时候学过一学期的VB，虽然语言这种东西说起来都差不多，但毕竟也是将近三年前的事了，早就忘光了。 可是不掌握C语言真的很麻烦，这尤其体现在做单片机上，单片机要求我们使用C语言，我当时连那些代码都看不懂，更别谈让我自己去写了。 正好，最近时间比较充沛。拿出时间来把C语言好好学学 p.s. 突然想起来我初中好像就学过C++了">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-25T02:40:58.786Z">
+<meta property="og:updated_time" content="2019-08-14T08:27:54.417Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="嵌入式开发学习笔记">
-<meta name="twitter:description" content="Linux distribution (linux的发行版本)软件，shell 保护层，kernel内核，硬件 linux系统，完整的分层模型 RedHat：server 服务器 面向企业用户 具有license CentOS：已经被红帽子收购，开源免费版本，区别于企业版，比较稳定 以上两款界面不好看，不追求绚丽的东西 Ubuntu：稳定性不如上面两个，但适用于普通用户，中文支持，软件支持做的都比">
+<meta name="twitter:title" content="c语言学习笔记">
+<meta name="twitter:description" content="我为什么要学习C语言说来惭愧，作为一个工科学生，我竟然没有学过C语言，只在大一的时候学过一学期的VB，虽然语言这种东西说起来都差不多，但毕竟也是将近三年前的事了，早就忘光了。 可是不掌握C语言真的很麻烦，这尤其体现在做单片机上，单片机要求我们使用C语言，我当时连那些代码都看不懂，更别谈让我自己去写了。 正好，最近时间比较充沛。拿出时间来把C语言好好学学 p.s. 突然想起来我初中好像就学过C++了">
 
 
 
@@ -161,7 +161,7 @@
 
 
 
-  <title>嵌入式开发学习笔记 | Blog | Qian Homeberg</title>
+  <title>c语言学习笔记 | Blog | Qian Homeberg</title>
   
 
 
@@ -342,7 +342,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.top/学习笔记/嵌入式开发学习笔记/">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.top/学习笔记/【C】C语言学习笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Qian Hongbo">
@@ -359,7 +359,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">嵌入式开发学习笔记</h1>
+          <h1 class="post-title" itemprop="name headline">c语言学习笔记</h1>
         
 
         <div class="post-meta">
@@ -371,8 +371,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-04T13:24:53+08:00">
-                2019-07-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-26T15:23:15+08:00">
+                2019-06-26
               </time>
             
 
@@ -414,8 +414,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/学习笔记/嵌入式开发学习笔记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="学习笔记/嵌入式开发学习笔记/" itemprop="commentCount"></span>
+                <a href="/学习笔记/【C】C语言学习笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="学习笔记/【C】C语言学习笔记/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -442,7 +442,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  309 字
+                  979 字
                 </span>
               
 
@@ -458,7 +458,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -479,41 +479,101 @@
       
 
       
-        <h2 id="Linux-distribution-linux的发行版本"><a href="#Linux-distribution-linux的发行版本" class="headerlink" title="Linux distribution (linux的发行版本)"></a>Linux distribution (linux的发行版本)</h2><p>软件，shell 保护层，kernel内核，硬件</p>
-<p>linux系统，完整的分层模型</p>
-<p>RedHat：server 服务器 面向企业用户 具有license</p>
-<p>CentOS：已经被红帽子收购，开源免费版本，区别于企业版，比较稳定</p>
-<p>以上两款界面不好看，不追求绚丽的东西</p>
-<p>Ubuntu：稳定性不如上面两个，但适用于普通用户，中文支持，软件支持做的都比较好</p>
-<h2 id="ubuntu操作"><a href="#ubuntu操作" class="headerlink" title="ubuntu操作"></a>ubuntu操作</h2><ol>
-<li>sudo 为普通命令提升权限</li>
-<li>sudo  passwd root </li>
-<li>su - 切换到系统的身份</li>
-<li>apt-get update更新源，用于下载新的安装包（如果是普通用于，记得在前面加sudo</li>
-<li>尽量用命令行的方式来学习linux</li>
-<li>vim安装 apt-get install vim-nox</li>
-<li>vi已经安装，是一个编辑软件的记事本</li>
-<li>vim回车，进入</li>
-<li>退出，敲：q（不知道要不要加！）</li>
-<li>vim全键盘操作，效率很高</li>
-<li>cd /    根目录  </li>
-<li>c—change  d—directory 目录</li>
-<li>ls</li>
-<li>不要在根目录里面操作</li>
-<li>回去 cd</li>
-<li>vi /etc/</li>
-<li>vi 命令模式，编辑模式，用 i 切换模式，esc键退出</li>
-<li>ssh-secure shell</li>
-<li>SecureCRT安装 </li>
-<li>sshd回车</li>
-<li>apt-get install openssh-server</li>
-<li>ifconfig</li>
-<li>net add:</li>
-<li>rz zmodem r:receive</li>
-<li>sz zmodem s:send</li>
-<li>samba</li>
-<li>apt-get install samba</li>
+        <h2 id="我为什么要学习C语言"><a href="#我为什么要学习C语言" class="headerlink" title="我为什么要学习C语言"></a>我为什么要学习C语言</h2><p>说来惭愧，作为一个工科学生，我竟然没有学过C语言，只在大一的时候学过一学期的VB，虽然语言这种东西说起来都差不多，但毕竟也是将近三年前的事了，早就忘光了。</p>
+<p>可是不掌握C语言真的很麻烦，这尤其体现在做单片机上，单片机要求我们使用C语言，我当时连那些代码都看不懂，更别谈让我自己去写了。</p>
+<p>正好，最近时间比较充沛。拿出时间来把C语言好好学学</p>
+<p>p.s. 突然想起来我初中好像就学过C++了，但只是皮毛</p>
+<h2 id="我用什么工具学习C语言"><a href="#我用什么工具学习C语言" class="headerlink" title="我用什么工具学习C语言"></a>我用什么工具学习C语言</h2><p>书籍：C程序设计语言（第二版 新版）→ 纸质</p>
+<p>软件：VS2017, Xcode</p>
+<p>其它：Google，CSDN，Baidu</p>
+<h2 id="20190626"><a href="#20190626" class="headerlink" title="20190626"></a>20190626</h2><h3 id="我的第一段代码"><a href="#我的第一段代码" class="headerlink" title="我的第一段代码"></a>我的第一段代码</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"hello, world.\n"</span>);</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	<span class="comment">//return 0;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>main函数：main是一个特殊的函数名——每个程序都从main函数的起点开始执行。main函数通常会调用其它函数来帮助完成某些工作</li>
+<li>本例中main函数不需要任何参数</li>
+<li>用双引号括起来的字符序列称为字符串或字符串常量</li>
+<li>\n 表示换行符</li>
 </ol>
+<h3 id="第二段代码"><a href="#第二段代码" class="headerlink" title="第二段代码"></a>第二段代码</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="comment">/* 当fatr = 0,20,...,300时，分别打印华氏温度与摄氏温度对照表 */</span></span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> fahr, celsius;</span><br><span class="line">	<span class="keyword">int</span> lower, upper, step;</span><br><span class="line"></span><br><span class="line">	lower = <span class="number">0</span>; <span class="comment">/* 温度表的上限 */</span></span><br><span class="line">	upper = <span class="number">300</span>; <span class="comment">/* 温度表的下限 */</span></span><br><span class="line">	step = <span class="number">20</span>; <span class="comment">/* 步长 */</span></span><br><span class="line"></span><br><span class="line">	fahr = lower;</span><br><span class="line">	<span class="keyword">while</span> (fahr &lt;= upper) &#123;</span><br><span class="line">		celsius = <span class="number">5</span> * (fahr - <span class="number">32</span>) / <span class="number">9</span>;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\t%d\n"</span>, fahr, celsius);</span><br><span class="line">		fahr = fahr + step;</span><br><span class="line">	&#125;</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>其中，int表示其后所列的变量为整数，与之对应的float表示浮点数（即可以带有小数部分）</li>
+<li>为什么不用5/9？因为C语言存在舍位，小数部分都会被舍弃</li>
+</ol>
+<h2 id="Bit-amp-Byte"><a href="#Bit-amp-Byte" class="headerlink" title="Bit &amp; Byte"></a>Bit &amp; Byte</h2><ul>
+<li><p>字节(Byte): 通常将可表示常用英文字符8位二进制称为一字节</p>
+</li>
+<li><p>比特(Bit)，亦称二进制位 ，1比特就是1位</p>
+</li>
+<li><p>1字节(Byte） = 8位(bit) </p>
+</li>
+<li><p>在ASCII码中，一个英文字母(不分大小写)占一个字节的空间，一个中文汉字占两个字节的空间</p>
+</li>
+<li><p>符号：英文标点占一个字节，中文标点占两个字节</p>
+</li>
+</ul>
+<ul>
+<li><p>1千吉字节（TB,Terabyte）=1024吉字节（2的40次方字节）（1TB=1024GB）</p>
+</li>
+<li><p>1吉字节（GB,Gigabyte）=1024兆字节（2的30次方字节）（1GB=1024MB）</p>
+</li>
+<li><p>1兆字节（MB,Megabyte）=1024千字节（2的20次方字节）（1MB=1024KB）</p>
+</li>
+<li><p>1千字节（KB,Kilobyte）=1024字节（2的10次方字节）（1KB=1024B）</p>
+</li>
+<li><p>1字节（Byte）= 8位（bit）</p>
+</li>
+</ul>
+<blockquote>
+<p>  计算机中的位</p>
+<pre><code>二进制数系统中，每个0或1就是一个位(bit)，位是数据存储的最小单位。其中8bit就称为一个字节（Byte）。计算机中的CPU位数指的是CPU一次能处理的最大位数。例如32位计算机的CPU一次最多能处理32位数据。  </code></pre></blockquote>
+<blockquote>
+<p>所以char类型的存储大小为1个字节，也就是8位，这8位代表8位二进制，</p>
+</blockquote>
+<h2 id="浮点类型"><a href="#浮点类型" class="headerlink" title="浮点类型"></a>浮点类型</h2><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>存储大小</th>
+<th>精度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>float</td>
+<td>4 字节</td>
+<td>6 位小数</td>
+</tr>
+<tr>
+<td>double</td>
+<td>8 字节</td>
+<td>15 位小数</td>
+</tr>
+<tr>
+<td>long double</td>
+<td>16 字节</td>
+<td>19 位小数</td>
+</tr>
+</tbody></table>
+<h2 id="void类型"><a href="#void类型" class="headerlink" title="void类型"></a>void类型</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>类型与描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><strong>函数返回为空</strong><br>C 中有各种函数都不返回值，或者您可以说它们返回空。不返回值的函数的返回类型为空。例如 <strong>void exit (int status);</strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>函数参数为空</strong><br>C 中有各种函数不接受任何参数。不带参数的函数可以接受一个 void。例如 <strong>int rand(void);</strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>指针指向 void</strong><br>类型为 void * 的指针代表对象的地址，而不是类型。例如，内存分配函数 <strong>void *malloc( size_t size );</strong> 返回指向 void 的指针，可以转换为任何数据类型。</td>
+</tr>
+</tbody></table>
 
       
     </div>
@@ -560,9 +620,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/嵌入式开发/" rel="tag"><i class="fa fa-tag"></i> 嵌入式开发</a>
-          
-            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+            <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C</a>
           
         </div>
       
@@ -575,8 +633,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/学习笔记/机器人学 学习笔记/" rel="next" title="机器人学 学习笔记">
-                <i class="fa fa-chevron-left"></i> 机器人学 学习笔记
+              <a href="/知识积累/脸上各部位长痘痘的原因及调理方法汇总/" rel="next" title="脸上各部位长痘痘的原因及调理方法汇总">
+                <i class="fa fa-chevron-left"></i> 脸上各部位长痘痘的原因及调理方法汇总
               </a>
             
           </div>
@@ -585,8 +643,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/学习笔记/【从零入门Qt】开发一款属于自己的串口调试助手/" rel="prev" title="【从零入门Qt】开发一款属于自己的串口调试助手">
-                【从零入门Qt】开发一款属于自己的串口调试助手 <i class="fa fa-chevron-right"></i>
+              <a href="/学习笔记/机器人学 学习笔记/" rel="prev" title="机器人学 学习笔记">
+                机器人学 学习笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -774,7 +832,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-distribution-linux的发行版本"><span class="nav-number">1.</span> <span class="nav-text">Linux distribution (linux的发行版本)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ubuntu操作"><span class="nav-number">2.</span> <span class="nav-text">ubuntu操作</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#我为什么要学习C语言"><span class="nav-number">1.</span> <span class="nav-text">我为什么要学习C语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我用什么工具学习C语言"><span class="nav-number">2.</span> <span class="nav-text">我用什么工具学习C语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#20190626"><span class="nav-number">3.</span> <span class="nav-text">20190626</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#我的第一段代码"><span class="nav-number">3.1.</span> <span class="nav-text">我的第一段代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二段代码"><span class="nav-number">3.2.</span> <span class="nav-text">第二段代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bit-amp-Byte"><span class="nav-number">4.</span> <span class="nav-text">Bit &amp; Byte</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浮点类型"><span class="nav-number">5.</span> <span class="nav-text">浮点类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#void类型"><span class="nav-number">6.</span> <span class="nav-text">void类型</span></a></li></ol></div>
             
 
           </div>
@@ -967,9 +1025,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://www.qianhongbo.top/学习笔记/嵌入式开发学习笔记/';
-          this.page.identifier = '学习笔记/嵌入式开发学习笔记/';
-          this.page.title = '嵌入式开发学习笔记';
+          this.page.url = 'https://www.qianhongbo.top/学习笔记/【C】C语言学习笔记/';
+          this.page.identifier = '学习笔记/【C】C语言学习笔记/';
+          this.page.title = 'c语言学习笔记';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://qianhongbo.disqus.com/embed.js';

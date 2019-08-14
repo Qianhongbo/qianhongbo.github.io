@@ -478,16 +478,106 @@
       
         
           
-          我为什么要学习C语言说来惭愧，作为一个工科学生，我竟然没有学过C语言，只在大一的时候学过一学期的VB，虽然语言这种东西说起来都差不多，但毕竟也是将近三年前的事了，早就忘光了。
-可是不掌握C语言真的很麻烦，这尤其体现在做单片机上，单片机要求我们使用C语言，我当时连那些代码都看不懂，更别谈让我自己去写了
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/学习笔记/【C】C语言学习笔记/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <h1 id="我为什么要学习C语言"><a href="#我为什么要学习C语言" class="headerlink" title="我为什么要学习C语言"></a>我为什么要学习C语言</h1><p>说来惭愧，作为一个工科学生，我竟然没有学过C语言，只在大一的时候学过一学期的VB，虽然语言这种东西说起来都差不多，但毕竟也是将近三年前的事了，早就忘光了。</p>
+<p>可是不掌握C语言真的很麻烦，这尤其体现在做单片机上，单片机要求我们使用C语言，我当时连那些代码都看不懂，更别谈让我自己去写了。</p>
+<p>正好，最近时间比较充沛。拿出时间来把C语言好好学学</p>
+<p>p.s. 突然想起来我初中好像就学过C++了，但只是皮毛</p>
+<h1 id="我用什么工具学习C语言"><a href="#我用什么工具学习C语言" class="headerlink" title="我用什么工具学习C语言"></a>我用什么工具学习C语言</h1><p>书籍：C程序设计语言（第二版 新版）→ 纸质</p>
+<p>软件：VS2017, Xcode</p>
+<p>其它：Google，CSDN，Baidu</p>
+<h1 id="我的第一段代码"><a href="#我的第一段代码" class="headerlink" title="我的第一段代码"></a>我的第一段代码</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"hello, world.\n"</span>);</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	<span class="comment">//return 0;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>main函数：main是一个特殊的函数名——每个程序都从main函数的起点开始执行。main函数通常会调用其它函数来帮助完成某些工作</li>
+<li>本例中main函数不需要任何参数</li>
+<li>用双引号括起来的字符序列称为字符串或字符串常量</li>
+<li>\n 表示换行符</li>
+</ol>
+<h1 id="第二段代码"><a href="#第二段代码" class="headerlink" title="第二段代码"></a>第二段代码</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="comment">/* 当fatr = 0,20,...,300时，分别打印华氏温度与摄氏温度对照表 */</span></span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> fahr, celsius;</span><br><span class="line">	<span class="keyword">int</span> lower, upper, step;</span><br><span class="line"></span><br><span class="line">	lower = <span class="number">0</span>; <span class="comment">/* 温度表的上限 */</span></span><br><span class="line">	upper = <span class="number">300</span>; <span class="comment">/* 温度表的下限 */</span></span><br><span class="line">	step = <span class="number">20</span>; <span class="comment">/* 步长 */</span></span><br><span class="line"></span><br><span class="line">	fahr = lower;</span><br><span class="line">	<span class="keyword">while</span> (fahr &lt;= upper) &#123;</span><br><span class="line">		celsius = <span class="number">5</span> * (fahr - <span class="number">32</span>) / <span class="number">9</span>;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\t%d\n"</span>, fahr, celsius);</span><br><span class="line">		fahr = fahr + step;</span><br><span class="line">	&#125;</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>其中，int表示其后所列的变量为整数，与之对应的float表示浮点数（即可以带有小数部分）</li>
+<li>为什么不用5/9？因为C语言存在舍位，小数部分都会被舍弃</li>
+</ol>
+<h1 id="Bit-amp-Byte"><a href="#Bit-amp-Byte" class="headerlink" title="Bit &amp; Byte"></a>Bit &amp; Byte</h1><ul>
+<li><p>字节(Byte): 通常将可表示常用英文字符8位二进制称为一字节</p>
+</li>
+<li><p>比特(Bit)，亦称二进制位 ，1比特就是1位</p>
+</li>
+<li><p>1字节(Byte） = 8位(bit) </p>
+</li>
+<li><p>在ASCII码中，一个英文字母(不分大小写)占一个字节的空间，一个中文汉字占两个字节的空间</p>
+</li>
+<li><p>符号：英文标点占一个字节，中文标点占两个字节</p>
+</li>
+</ul>
+<ul>
+<li><p>1千吉字节（TB,Terabyte）=1024吉字节（2的40次方字节）（1TB=1024GB）</p>
+</li>
+<li><p>1吉字节（GB,Gigabyte）=1024兆字节（2的30次方字节）（1GB=1024MB）</p>
+</li>
+<li><p>1兆字节（MB,Megabyte）=1024千字节（2的20次方字节）（1MB=1024KB）</p>
+</li>
+<li><p>1千字节（KB,Kilobyte）=1024字节（2的10次方字节）（1KB=1024B）</p>
+</li>
+<li><p>1字节（Byte）= 8位（bit）</p>
+</li>
+</ul>
+<blockquote>
+<p>  计算机中的位</p>
+<pre><code>二进制数系统中，每个0或1就是一个位(bit)，位是数据存储的最小单位。其中8bit就称为一个字节（Byte）。计算机中的CPU位数指的是CPU一次能处理的最大位数。例如32位计算机的CPU一次最多能处理32位数据。  </code></pre></blockquote>
+<blockquote>
+<p>所以char类型的存储大小为1个字节，也就是8位，这8位代表8位二进制，</p>
+</blockquote>
+<h1 id="浮点类型"><a href="#浮点类型" class="headerlink" title="浮点类型"></a>浮点类型</h1><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>存储大小</th>
+<th>精度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>float</td>
+<td>4 字节</td>
+<td>6 位小数</td>
+</tr>
+<tr>
+<td>double</td>
+<td>8 字节</td>
+<td>15 位小数</td>
+</tr>
+<tr>
+<td>long double</td>
+<td>16 字节</td>
+<td>19 位小数</td>
+</tr>
+</tbody></table>
+<h1 id="void类型"><a href="#void类型" class="headerlink" title="void类型"></a>void类型</h1><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>类型与描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><strong>函数返回为空</strong><br>C 中有各种函数都不返回值，或者您可以说它们返回空。不返回值的函数的返回类型为空。例如 <strong>void exit (int status);</strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>函数参数为空</strong><br>C 中有各种函数不接受任何参数。不带参数的函数可以接受一个 void。例如 <strong>int rand(void);</strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>指针指向 void</strong><br>类型为 void * 的指针代表对象的地址，而不是类型。例如，内存分配函数 <strong>void *malloc( size_t size );</strong> 返回指向 void 的指针，可以转换为任何数据类型。</td>
+</tr>
+</tbody></table>
+<h1 id="printf-输出"><a href="#printf-输出" class="headerlink" title="printf 输出"></a><code>printf</code> 输出</h1><p>```<br>%a  浮点数、十六进制数字和p-记数法（c99<br>%A  浮点数、十六进制数字和p-记法（c99）<br>%c  一个字符(char)<br>%C  一个ISO宽字符<br>%d  有符号十进制整数(int)（%ld、%Ld：长整型数据(long),%hd：输出短整形。）　<br>%e  浮点数、e-记数法<br>%E  浮点数、E-记数法<br>%f  单精度浮点数(默认float)、十进制记数法（%.nf  这里n表示精确到小数位后n位.十进制计数）<br>%g  根据数值不同自动选择%f或%e．<br>%G  根据数值不同自动选择%f或%e.<br>%i  有符号十进制数（与%d相同）<br>%o  无符号八进制整数<br>%p  指针<br>%s  对应字符串char<em>（%s = %hs = %hS 输出 窄字符）<br>%S  对应宽字符串WCAHR</em>（%ws = %S 输出宽字符串）<br>%u  无符号十进制整数(unsigned int)<br>%x  使用十六进制数字0xf的无符号十六进制整数　<br>%X  使用十六进制数字0xf的无符号十六进制整数<br>%%  打印一个百分号</p>
+<p>%I64d 用于INT64 或者 long long<br>%I64u 用于UINT64 或者 unsigned long long<br>%I64x 用于64位16进制数据</p>
+<p>​　</p>
+
+          
         
       
     </div>
@@ -670,19 +760,28 @@
       
         
           
-          额头痘状况：有可能是压力太大，容易脾气不好，造成心火和血液循环有问题。
-改善：应养成早睡早起的习惯，让睡眠充足，并多喝水。
-印堂痘状况：出现在两眉正中间的痘痘，通常有胸闷、心律不整、心悸等毛病。
-改善：不要尝试太过激烈的运动，要避免烟、酒等刺激性的食品。
-发髻痘状况：因为卸妆没有卸干净，造成毛孔堵塞
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/知识积累/脸上各部位长痘痘的原因及调理方法汇总/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <p><strong>额头痘状况：</strong>有可能是压力太大，容易脾气不好，造成心火和血液循环有问题。</p>
+<p>改善：应养成早睡早起的习惯，让睡眠充足，并多喝水。</p>
+<p><strong>印堂痘状况：</strong>出现在两眉正中间的痘痘，通常有胸闷、心律不整、<a href="http://www.med66.com/jibing/xinji/" target="_blank" rel="noopener">心悸</a>等毛病。</p>
+<p>改善：不要尝试太过激烈的运动，要避免烟、酒等刺激性的食品。</p>
+<p><strong>发髻痘状况：</strong>因为卸妆没有卸干净，造成毛孔堵塞河污染，容易在较闷的发髻或眉间形成细小痘痘。</p>
+<p>改善：加强卸妆和清洁的工作，一定要彻底搓揉干净，每星期做一次去角质工作，报纸皮脂腺顺畅。</p>
+<p><strong>鼻翼痘状况：</strong>突然冒出的肿大痘痘，可能是卵巢机能或者生殖系统有关。</p>
+<p>改善：不要过度纵欲或禁欲，尽量走出户外，享受降的自然环境。</p>
+<p><strong>鼻头痘状况：</strong>可能是胃火过大，消化系统异常。</p>
+<p>改善：少吃冰冷食物，寒性食品容易引起胃酸分泌，造成胃火过大。</p>
+<p><strong>眼头痘状况：</strong>K近鼻子和眼头区域的痘痘，通常是肝机能不好所引起。</p>
+<p>改善：生活作息要正常，避免熬夜，尽量在11点前上床睡觉。</p>
+<p><strong>唇周痘状况：</strong><a href="http://www.med66.com/jibing/bianmi/" target="_blank" rel="noopener">便秘</a>导致体内毒素累计，或者是使用含氟过量的牙膏，都是造成唇周痘痘的主因。</p>
+<p>改善：多吃高纤维的蔬菜水果，调整饮食习惯，刷牙漱口要彻底。</p>
+<p><strong>下巴痘状况：</strong>通常是月经要来的前几天，造成<a href="http://www.med66.com/jibing/neifenmishitiao/" target="_blank" rel="noopener">内分泌失调</a>所引起的。</p>
+<p>改善：少吃冰冷的东西，月经期间可用消炎镇定的保养品。</p>
+<p><strong>右边脸颊痘状况：</strong>可能是肺部功能失常，手脚冰冷，或是容易敏感的体质，也有可能是<a href="http://www.med66.com/jibing/ganmao/" target="_blank" rel="noopener">感冒</a>前兆。</p>
+<p>改善：平时注意呼吸道的保养，尽量避免芒果、芋头、海鲜甲壳类易过敏的食物。</p>
+<p><strong>左边脸颊痘状况：</strong>可能是肝功能不顺畅，如肝脏的分泌、解毒或造血等功能出了状况。</p>
+<p>改善：作息正常，保持心情愉快，该吹冷气就吹冷气，不要让身体处在过度闷热。</p>
+
+          
         
       
     </div>
@@ -865,19 +964,12 @@
       
         
           
-          大二下学期：学控制，以Arduino为主，可能学不完，学不透，暑假继续
-大三上学期：转去学机器人学（Matlab），也算是为之后去参加数模美赛做基础
-大三下学期：如果有精力可以去学Linux，ROS
-大四：Linux，ROS，Python，Tensorflow…
+            <p>大二下学期：学控制，以Arduino为主，可能学不完，学不透，暑假继续</p>
+<p>大三上学期：转去学机器人学（Matlab），也算是为之后去参加数模美赛做基础</p>
+<p>大三下学期：如果有精力可以去学Linux，ROS</p>
+<p>大四：Linux，ROS，Python，Tensorflow…</p>
 
           
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/随笔/我在大学各学期大致课外学习规划/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -1060,38 +1152,62 @@
       
         
           
-          机械工程伦理问问自己：内心世界?
-存在的意义?
-为何要多一点形而上?
-你的价值感?
-你的技术创造的欲求?
-技术工作者/工程师的责任?
-你对未来技术的感觉?
-知识、能力与素质的区别和联系
+            <h2 id="机械工程伦理"><a href="#机械工程伦理" class="headerlink" title="机械工程伦理"></a>机械工程伦理</h2><h3 id="问问自己："><a href="#问问自己：" class="headerlink" title="问问自己："></a>问问自己：</h3><p>内心世界?</p>
+<p>存在的意义?</p>
+<p>为何要多一点形而上?</p>
+<p>你的价值感?</p>
+<p>你的技术创造的欲求?</p>
+<p>技术工作者/工程师的责任?</p>
+<p>你对未来技术的感觉?</p>
+<h2 id="知识、能力与素质的区别和联系"><a href="#知识、能力与素质的区别和联系" class="headerlink" title="知识、能力与素质的区别和联系"></a>知识、能力与素质的区别和联系</h2><table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="center">核心</th>
+<th align="center">t特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">知识</td>
+<td align="center">人类认识的成果</td>
+<td align="center">形成能力，素质的基础</td>
+</tr>
+<tr>
+<td align="left">能力</td>
+<td align="center">完成一定活动的本领</td>
+<td align="center">对知识的运用，是知识发挥作用的实践条件，具“外显性”</td>
+</tr>
+<tr>
+<td align="left">素养</td>
+<td align="center">基本品质或基础条件</td>
+<td align="center">人在活动过程中所塑造成的内在升华，具“内凝性”</td>
+</tr>
+</tbody></table>
+<h2 id="专业教育组成"><a href="#专业教育组成" class="headerlink" title="专业教育组成"></a>专业教育组成</h2><p>数学类和自然科学类总计最少为450学时</p>
+<p>工程科学类、工程设计与实践类两者总计最少1000学时</p>
+<p>人文和社会科学不少于400学时</p>
+<h2 id="机械专业教育知识体系包含如下5个知识领域"><a href="#机械专业教育知识体系包含如下5个知识领域" class="headerlink" title="机械专业教育知识体系包含如下5个知识领域"></a>机械专业教育知识体系包含如下5个知识领域</h2><ol>
+<li>机械设计的原理与方法</li>
+<li>机械制造工程原理与技术</li>
+<li>机械系统中的传动和控制</li>
+<li>计算机应用技术</li>
+<li>热流体</li>
+</ol>
+<h2 id="中国加入《华盛顿协议》"><a href="#中国加入《华盛顿协议》" class="headerlink" title="中国加入《华盛顿协议》"></a>中国加入《华盛顿协议》</h2><p>国内本科生获得的文凭，在国际上都会被认可</p>
+<h2 id="企业对毕业生能力的评价"><a href="#企业对毕业生能力的评价" class="headerlink" title="企业对毕业生能力的评价"></a>企业对毕业生能力的评价</h2><ol>
+<li>独立性强、思路开阔、时尚;</li>
+<li>知识面广;</li>
+<li>不够踏实、团队协作意识弱;</li>
+<li>不能承受较大压力,工作责任心、事业心弱,急功近利;</li>
+<li>熟悉、胜任本职工作需要的时间较长,须在企业工作3-4年左右才能完全胜任工作。</li>
+</ol>
+<h2 id="企业对毕业生能力的期待"><a href="#企业对毕业生能力的期待" class="headerlink" title="企业对毕业生能力的期待"></a>企业对毕业生能力的期待</h2><ol>
+<li>除专业能力外,最基本的要求是踏实、勤奋、敬业、忠诚、合作;</li>
+<li>感兴趣的主要不是学习成绩,更注重处理问题的能力、解决问题的能力以及工作中的综合性能</li>
+<li>很看重学生的整体素质和品德.</li>
+</ol>
 
-
-
-核心
-t特点
-
-
-
-知识
-人类认识的成果
-形成能力，素质的基础
-
-
-能力
-完成一定活动的本领
-对知识的运用，
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/华科机械学习资料分享/专业导论课最后一节个人认为比较有价值内容整理/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
         
       
     </div>
@@ -1274,20 +1390,13 @@ t特点
       
         
           
-          关于项目的几个想法手机app：百词斩手部控制器
-备忘录锁屏提醒
-实物：AGV跟随小车：用来背书包，也可背在身上
-可折叠快递柜
-自动洗头机器人
+            <h1 id="关于项目的几个想法"><a href="#关于项目的几个想法" class="headerlink" title="关于项目的几个想法"></a>关于项目的几个想法</h1><h2 id="手机app："><a href="#手机app：" class="headerlink" title="手机app："></a>手机app：</h2><p>百词斩手部控制器</p>
+<p>备忘录锁屏提醒</p>
+<h2 id="实物："><a href="#实物：" class="headerlink" title="实物："></a>实物：</h2><p>AGV跟随小车：用来背书包，也可背在身上</p>
+<p>可折叠快递柜</p>
+<p>自动洗头机器人</p>
 
           
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/随笔/关于项目的几个想法/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -1470,16 +1579,10 @@ t特点
       
         
           
-          鸟哥私房菜1 2 3章作为了解，第4 5 6章随书操作一遍，这样大家对Linux系统的基本操作会有一个大致的认识。注意，鸟哥书中系统与我们不同，因此不要太纠结于必须每一步结果都与书中一样。另外，遇到问题的话，把问题复制下来直接百度，绝大多数问题是有解决方法的。
-ROS_Robot_Programmi
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/华科机械学习资料分享/ROS入门/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <p>鸟哥私房菜1 2 3章作为了解，第4 5 6章随书操作一遍，这样大家对Linux系统的基本操作会有一个大致的认识。注意，鸟哥书中系统与我们不同，因此不要太纠结于必须每一步结果都与书中一样。另外，遇到问题的话，把问题复制下来直接百度，绝大多数问题是有解决方法的。</p>
+<p>ROS_Robot_Programming_CN电子书1、2章粗略浏览，3~7章重点学习，后续章节以后再说。</p>
+
+          
         
       
     </div>
@@ -1662,24 +1765,17 @@ ROS_Robot_Programmi
       
         
           
+            
+
+	<div class="row">
+    <embed src="http://pso1yp87m.bkt.clouddn.com/Laplace%E6%8B%89%E6%B0%8F%E5%8F%98%E6%8D%A2%E5%85%AC%E5%BC%8F%E8%A1%A8.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+
+
           
-
-	
-    
-	
-
-
-
-
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/学习笔记/Laplace拉氏变换公式表/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -1862,17 +1958,10 @@ ROS_Robot_Programmi
       
         
           
-          各科目课件百度网盘链接
-提取码：y8iy 
+            <p><a href="链接：https://pan.baidu.com/s/1dHzxPkSfFQhlM11DN1waoA">各科目课件百度网盘链接</a></p>
+<p>提取码：y8iy </p>
 
           
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/华科机械学习资料分享/华科机械大二下学习资料/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -2055,16 +2144,42 @@ ROS_Robot_Programmi
       
         
           
-          20190609该结束的课程终于都结束了，剩下的就是两个期末考试了。最近也是十分的空虚和无聊，呜呜。
-昨天和黄智威出去吃饭，也是觉得自己突然刷新了自己对生活的认识，或许想在这个社会上生存，不能只想着简简单单的一个人打拼，在几个人的小团体里活着。想要在这个社会上获得你的地位，需要建立自己的人脉网，才能
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/随笔/梦里花落知多少/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <h1 id="20190609"><a href="#20190609" class="headerlink" title="20190609"></a>20190609</h1><p>该结束的课程终于都结束了，剩下的就是两个期末考试了。最近也是十分的空虚和无聊，呜呜。</p>
+<p>昨天和黄智威出去吃饭，也是觉得自己突然刷新了自己对生活的认识，或许想在这个社会上生存，不能只想着简简单单的一个人打拼，在几个人的小团体里活着。想要在这个社会上获得你的地位，需要建立自己的人脉网，才能在走入社会后吃得开，显然，我目前并不是这样的人，我喜欢呆在自己极小的圈子，甚至在这个小圈子里我也很少和周围的人沟通交流，我也明白这样是不对的，慢慢去改变吧。</p>
+<h1 id="20190610"><a href="#20190610" class="headerlink" title="20190610"></a>20190610</h1><p>今天早上起来之后就觉得不对头，脖子不是很舒服，像是落枕了。</p>
+<p>这几天也没有好好休息，听了别人说每晚要早点睡觉，自己也在暗下决心，可是每晚躺倒床上就打起了精神，想要看会儿手机再睡，这一看就不是一会儿两会儿能解决的事情了，往往会熬夜到后半夜才会睡觉，周末利用空闲时间还想玩玩游戏，我应该知道自己颈椎不好不要总是低头玩手机用笔记本，但内心的躁动总是难以压抑，每次之后内心又充满了后悔。这就是太过放纵自己的结果。</p>
+<p>身体最重要！永远不要和自己的身体开玩笑，永远不要做有害自己身体的事情，不然后悔都来不及</p>
+<h1 id="20190614"><a href="#20190614" class="headerlink" title="20190614"></a>20190614</h1><p>感觉自己距离实习、工作还有好大的一段距离啊，真的要抓紧要努力了</p>
+<p>自己没事做做眼保健操，保护眼睛</p>
+<h1 id="20190626"><a href="#20190626" class="headerlink" title="20190626"></a>20190626</h1><p>今天没事闲的，在百度上搜索了一下自己，发现一个文档，是16年吉林一中所有毕业生的去向。说实话，这个表格我从没打开过，也没看过，所以我也不知道自己在这么一批人中到底处于一个什么层次什么位置。无奈，手贱点开了，内心难免升起波澜。我想如果我当年看了这个表格的话，我应该会选择复读吧。不是很好的学校的最差专业，这个报考也是很不明智。难怪我觉得来到这个学校和我期待的大学不一样，因为我的确没有去上我所期待的大学啊。</p>
+<p>最开始来到这里之后先是觉得不适应，觉得自己不属于这里，后来慢慢适应了，也习惯这里的一切，后来自己又变成了这一批人里的中游，想想还是蛮扎心的。</p>
+<p>今天看到这个也算给自己一个警示，我不该这么消沉，我应该去追求属于我自己的未来。包括来到大学，我也不是很努力，我一直都不是一个努力型人格，喜欢放纵自己，跟着自己的性子来，这样的话，等到大学毕业，我可能还是同样的结局，真是活该啊！</p>
+<p>人应该今早认识到一点：人这一生，靠的不光是实力，也看运气，运气也是实力的一种</p>
+<h1 id="20190702"><a href="#20190702" class="headerlink" title="20190702"></a>20190702</h1><p>考完试啦，也把博客搬迁到我的mac上了，还是蛮简单的</p>
+<p>遇到了点小问题但是都解决了，蛮好</p>
+<p>Everything we can just google it!</p>
+<h1 id="20190703"><a href="#20190703" class="headerlink" title="20190703"></a>20190703</h1><h2 id="整理一下思路"><a href="#整理一下思路" class="headerlink" title="整理一下思路"></a>整理一下思路</h2><ul>
+<li>为实习做准备需要学习：c, linux, arm</li>
+<li>为下学期机器人学做准备需要学习：机器人学, Matlab</li>
+<li>为出国做准备需要学习：toefl</li>
+<li>为下学期课程做准备应该学习：机械原理等课程</li>
+<li>为未来接触更新的知识做准备应该学习：python, tensorflow</li>
+<li>为了更好的身体我应该：每天坚持健身</li>
+</ul>
+<p>那么，到底是应该每天一个部分学一点还是应该阶段性的学习一个内容呢？</p>
+<h1 id="20190706"><a href="#20190706" class="headerlink" title="20190706"></a>20190706</h1><p>凡事应该谨言慎行，不可草率啊。事不过三，事不过三</p>
+<p>我觉得我就是一个宅男，屌丝。。至少目前阶段是的，我承认。。要改吗？能改吗？，，我倒是很希望自己能成为一个技术控，人总是要有自己的一点特长的啊</p>
+<p>昨晚看了个电影，蜘蛛侠英雄远征，个人觉得比较一般，以后最好不要看这种电影了</p>
+<p>今天是最后一天休息了，明天开始生活就要走上正轨了，准确的说今天也不应该休息的。作为学生，每天必须要有八个小时的学习时间。这几天都没达到吧。。</p>
+<h1 id="20190707"><a href="#20190707" class="headerlink" title="20190707"></a>20190707</h1><p>哥伦比亚大学门口的雕塑是女神雅典娜，还藏了一只猫头鹰，象征着智慧。</p>
+<p>大学要培养的是可迁移的能力</p>
+<p>没事多听听ted什么的别看直播了！</p>
+<p>科研项目并不是学校的那种科研，而是国外背景的科研</p>
+<p>我第一喜欢的lpl输了，呜呜呜，以后不看比赛了，扎心呀</p>
+<p>好好学习，报效祖国～～</p>
+<h1 id="20190712"><a href="#20190712" class="headerlink" title="20190712"></a>20190712</h1><p>原来变强是一定要付出代价的，健身也好，学英语也好，都是一个循序渐进的过程，不会有立竿见影的效果，但每天的练习一定会内化到身体里成为你的一种力量！无论什么时候都要顶住，顶住压力，坚持下去✊</p>
+
+          
         
       
     </div>
@@ -2247,18 +2362,11 @@ ROS_Robot_Programmi
       
         
           
-          我对高考的记忆真的剩下的很少了
-我记不起来那天发生了什么，也记不起来我的任何分数，更记不起来考了什么题目
-我能记起来的，只有发成绩那天我妈的泪水。
+            <p>我对高考的记忆真的剩下的很少了</p>
+<p>我记不起来那天发生了什么，也记不起来我的任何分数，更记不起来考了什么题目</p>
+<p>我能记起来的，只有发成绩那天我妈的泪水。</p>
 
           
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/随笔/写在2019年高考前/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>

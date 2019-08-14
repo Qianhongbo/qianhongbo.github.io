@@ -57,6 +57,68 @@ VSCode不安装插件是没有灵魂的...
 ## 运行代码
 
 最终用配置好的环境跑了一下`hello，world`成功编译！
+<font color="#006600">
+## 问题补充（修改于19.8.14）
+
+再次出现问题！之前成功编译只是通过了代码右上角的“播放”按键，也就是插件`Code Runner`，然而`F5`依然无法通过！
+
+继续查阅资料，查到一篇比较详细的教程，[地址请点击](https://blog.csdn.net/bat67/article/details/76095813#commentBox)
+
+简单来讲就是还要修改`.vscode`文件夹里的`launch.json`和`tasks.json`文件。
+
+而我是将`launch.json`修改为，其中`gdb.exe`的路径需要自己进行修改一下
+</font><br /> 
+```java
+{  
+    "version": "0.2.0",  
+    "configurations": [  
+        {  
+            "name": "(gdb) Launch", // 配置名称，将会在启动配置的下拉菜单中显示  
+            "type": "cppdbg",       // 配置类型，这里只能为cppdbg  
+            "request": "launch",    // 请求配置类型，可以为launch（启动）或attach（附加）  
+            "program": "${workspaceFolder}/${fileBasenameNoExtension}.exe",// 将要进行调试的程序的路径  
+            "args": [],             // 程序调试时传递给程序的命令行参数，一般设为空即可  
+            "stopAtEntry": false,   // 设为true时程序将暂停在程序入口处，一般设置为false  
+            "cwd": "${workspaceFolder}", // 调试程序时的工作目录，一般为${workspaceFolder}即代码所在目录  
+            "environment": [],  
+            "externalConsole": true, // 调试时是否显示控制台窗口，一般设置为true显示控制台  
+            "MIMode": "gdb",  
+            "miDebuggerPath": "D:\\MinGW64\\mingw64\\bin\\gdb.exe", // miDebugger的路径，注意这里要与MinGw的路径对应  
+            "preLaunchTask": "g++", // 调试会话开始前执行的任务，一般为编译程序，c++为g++, c为gcc  
+            "setupCommands": [  
+                {   
+		    "description": "Enable pretty-printing for gdb",  
+                    "text": "-enable-pretty-printing",  
+                    "ignoreFailures": true  
+                }  
+            ]  
+        }  
+    ]  
+}
+```
+将`tasks.json`修改为
+```java
+{
+    "version": "2.0.0",
+    "command": "g++",
+    "args": ["-g","${file}","-o","${fileBasenameNoExtension}.exe"],    // 编译命令参数
+    "problemMatcher": {
+        "owner": "cpp",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "pattern": {
+            "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+            "file": 1,
+            "line": 2,
+            "column": 3,
+            "severity": 4,
+            "message": 5
+        }
+    }
+}
+```
+## 最终实现`F5`调试
+
+并且可以实现断点debug等功能
 
 # 使用VSCode编辑博客
 

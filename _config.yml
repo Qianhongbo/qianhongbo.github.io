@@ -13,7 +13,7 @@ language: zh-Hans
 timezone: Asia/Shanghai
 
 search:
-  path: search.xml
+  path: ./public/search.xml
   field: post
   format: html
   limit: 10000

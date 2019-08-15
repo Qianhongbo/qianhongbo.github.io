@@ -1,6 +1,7 @@
 ---
 title: 【STM32】按键输入实验
 date: 2019-08-13 14:07:34
+keywods: STM32,GPIO,static 
 categories: 
 - STM32
 tags: 
@@ -31,6 +32,14 @@ GPIOx_IDR:端口输入寄存器
 - 使能按键对应IO口时钟。调用函数：`RCC_APB2PeriphClockCmd()`
 - 初始化IO模式：上拉/下拉输入。调用函数：`GPIO_Init()`
 - 扫描IO口电平（库函数/寄存器/位操作）
+
+# 硬件连接
+
+![key](https://wx3.sinaimg.cn/large/006BuM4Jgy1g607sfu2jyj30ku059q4q.jpg)
+
+所以需要打开`PA`,`PE`的时钟，并打开`PA0`; `PE2,3,4`;
+
+而且，对于KEY0，一端连接地，另一端连接PE4的IO口，KEY1，KEY2同理，所以当案件按下的时候，IO口坚持得到低电平。WK_UP正好相反。
 
 # 按键扫描思路
 
@@ -325,4 +334,112 @@ u8 KEY_Scan(u8 mode)
         }else if(KEY没有按下)  key_up=1;
        return 没有按下
     }
+```
+
+# 实际代码
+
+```C
+//key.h
+#ifndef __KEY_H
+#define __KEY_H	 
+
+#define KEY0  GPIO_ReadInputDataBit(GPIOE,GPIO_Pin_4)  //读取按键0
+#define KEY1  GPIO_ReadInputDataBit(GPIOE,GPIO_Pin_3)  //读取按键1
+#define KEY2  GPIO_ReadInputDataBit(GPIOE,GPIO_Pin_2)  //读取按键2 
+#define WK_UP   GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_0)//读取按键3(WK_UP) 
+#define KEY0_PRES 	1	//KEY0按下
+#define KEY1_PRES	2	//KEY1按下
+#define KEY2_PRES	3	//KEY2按下
+#define WKUP_PRES   4	//KEY_UP按下(即WK_UP/KEY_UP)
+
+void KEY_Init(void); //IO初始化
+u8 KEY_Scan(u8);  	 //按键扫描函数
+
+
+#endif
+```
+```C
+//key.c
+#include "stm32f10x.h"
+#include "key.h"
+#include "delay.h"
+
+void KEY_Init(void)
+{
+	GPIO_InitTypeDef GPIO_InitStructure;
+	
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA|RCC_APB2Periph_GPIOE,ENABLE); //使能PORTA,PORTE时钟
+	GPIO_InitStructure.GPIO_Pin  = GPIO_Pin_2|GPIO_Pin_3|GPIO_Pin_4;          //KEY0-KEY2
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;                             //设置成上拉输入
+	GPIO_Init(GPIOE, &GPIO_InitStructure);                                    //初始化GPIOE2,3,4
+	//初始化 WK_UP-->GPIOA.0	  下拉输入
+	GPIO_InitStructure.GPIO_Pin  = GPIO_Pin_0;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD;                             //PA0设置成输入，默认下拉
+	GPIO_Init(GPIOA, &GPIO_InitStructure);                                    //初始化GPIOA.0
+}
+//按键处理函数，用来返回按键值
+//mode:0,不支持连续按;1,支持连续按;
+//各种返回值代表的情况：
+//0，没有任何按键按下
+//1，KEY0按下
+//2，KEY1按下
+//3，KEY2按下 
+//4，KEY3按下 WK_UP
+u8 KEY_Scan(u8 mode)
+{	 
+	static u8 key_up=1;//按键按松开标志
+	if(mode)key_up=1;  //支持连按		  
+	if(key_up&&(KEY0==0||KEY1==0||KEY2==0||WK_UP==1)) // if条件句判读是否有按键按下，有则执行判断语句
+	{
+		delay_ms(10);    //去抖动 
+		key_up=0;
+		if(KEY0==0)return KEY0_PRES;
+		else if(KEY1==0)return KEY1_PRES;
+		else if(KEY2==0)return KEY2_PRES;
+		else if(WK_UP==1)return WKUP_PRES;
+	}else if(KEY0==1&&KEY1==1&&KEY2==1&&WK_UP==0)key_up=1; 	    
+ 	return 0;          // 无按键按下
+}
+```
+```C
+//main.c
+#include "stm32f10x.h"
+#include "led.h"
+#include "beep.h"
+#include "key.h"
+#include "sys.h"
+#include "delay.h"
+
+int main()
+{
+	u8 key=0;	
+	delay_init();	    	  //延时函数初始化	  
+ 	LED_Init();			      //LED端口初始化
+	KEY_Init();           //初始化与按键连接的硬件接口
+	beep_init();         	//初始化蜂鸣器端口
+	LED0 = 0;					    //先点亮红灯
+	while(1)
+	{
+ 		key = KEY_Scan(0);	//得到键值
+	   	if(key)
+		{						   
+			switch(key)
+			{				 
+				case WKUP_PRES:	//控制蜂鸣器
+					BEEP = !BEEP; //取反，则蜂鸣器不叫
+					break;
+				case KEY2_PRES:	//控制LED0翻转
+					LED0 = !LED0;
+					break;
+				case KEY1_PRES:	//控制LED1翻转	 
+					LED1 = !LED1;
+					break;
+				case KEY0_PRES:	//同时控制LED0,LED1翻转 
+					LED0 = !LED0;
+					LED1 = !LED1;
+					break;
+			}
+		}else delay_ms(10); 
+	}	 
+}
 ```

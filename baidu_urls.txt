@@ -1,10 +1,10 @@
-https://www.qianhongbo.top/学习笔记/【C】struct和typedef struct/
-https://www.qianhongbo.top/学习笔记/【C】从GPIO_Init引发的关于C的研究/
-https://www.qianhongbo.top/STM32/【STM32】按键输入实验/
-https://www.qianhongbo.top/学习笔记/使用VSCode写博客/
-https://www.qianhongbo.top/STM32/【STM32】手把手写跑马灯实验/
-https://www.qianhongbo.top/STM32/【STM32】用GCC编译Keil5的代码，了解GCC工具链/
-https://www.qianhongbo.top/学习笔记/【从零入门Qt】开发一款属于自己的串口调试助手/
-https://www.qianhongbo.top/学习笔记/嵌入式开发学习笔记/
-https://www.qianhongbo.top/学习笔记/机器人学 学习笔记/
-https://www.qianhongbo.top/学习笔记/【C】C语言学习笔记/
+https://www.qianhongbo.top/【C】struct和typedef struct.html
+https://www.qianhongbo.top/【C】从GPIO_Init引发的关于C的研究.html
+https://www.qianhongbo.top/【STM32】按键输入实验.html
+https://www.qianhongbo.top/使用VSCode写博客.html
+https://www.qianhongbo.top/【STM32】手把手写跑马灯实验.html
+https://www.qianhongbo.top/【STM32】用GCC编译Keil5的代码，了解GCC工具链.html
+https://www.qianhongbo.top/【从零入门Qt】开发一款属于自己的串口调试助手.html
+https://www.qianhongbo.top/嵌入式开发学习笔记.html
+https://www.qianhongbo.top/机器人学 学习笔记.html
+https://www.qianhongbo.top/【C】C语言学习笔记.html

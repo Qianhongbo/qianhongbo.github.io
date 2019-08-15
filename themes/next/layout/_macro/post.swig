@@ -275,6 +275,7 @@
     {#################}
     {### POST BODY ###}
     {#################}
+
     <div class="post-body{% if theme.han %} han-init-context{% endif %}{% if post.direction && post.direction.toLowerCase() === 'rtl' %} rtl{% endif %}" itemprop="articleBody">
 
       {# Gallery support #}
@@ -340,6 +341,12 @@
     {#####################}
     {### END POST BODY ###}
     {#####################}
+	
+	{% if not is_index %}
+      <div>
+        {% include 'passage-end-tag.swig' %}
+      </div>
+    {% endif %}
 
     {% if theme.wechat_subscriber.enabled and not is_index %}
       <div>

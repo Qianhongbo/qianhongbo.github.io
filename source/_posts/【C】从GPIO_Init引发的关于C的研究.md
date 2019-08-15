@@ -1,5 +1,5 @@
 ---
-title: 从GPIO_Init引发的关于C的研究
+title: 【C】从GPIO_Init引发的关于C的研究
 date: 2019-08-14 16:26:18
 categories: 
 - 学习笔记
@@ -65,4 +65,3 @@ GPIO_InitTypeDef GPIO_InitStructure;
 第三个问题
 
 > GPIOB本身就是一个指针类型！
-

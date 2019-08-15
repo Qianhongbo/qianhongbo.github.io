@@ -22,7 +22,8 @@ search:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://www.qianhongbo.top
 root: /
-permalink: :category/:title/
+#permalink: :category/:title/
+permalink: :title.html
 permalink_defaults:
 
 sitemap:

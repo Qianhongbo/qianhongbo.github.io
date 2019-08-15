@@ -103,7 +103,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,">
+  <meta name="keywords" content="STM32,">
 
 
 
@@ -116,18 +116,20 @@
 
 
 
-<meta name="description" content="为什么要做自己的博客？说到为什么要这么做，这个想法也是已经有很久了。当时的起因是我想通过互联网上的某个平台来记录自己的学习笔记或者自己的一些思考。在知乎等搜索了很多，都没有找到太合适的，其中包括公众号，简书，csdn等等。我觉得不合适的原因有的是因为网站太过烟火气，对我来说我觉得不够“干净”。有的是因为我觉得和我的圈子不符合，有的是因为我个人的喜好，最终都没有选择。有一天就突然萌生了做一个自己的博">
-<meta name="keywords" content="Hexo">
+<meta name="description" content="时钟系统知识总结 STM32 有5个时钟源:HSI、HSE、LSI、LSE、PLL。   HSI是高速内部时钟，RC振荡器，频率为8MHz，精度不高。 HSE是高速外部时钟，可接石英/陶瓷谐振器，或者接外部时钟源，频率范围为4MHz~16MHz。 LSI是低速内部时钟，RC振荡器，频率为40kHz，提供低功耗时钟。WDG LSE是低速外部时钟，接频率为32.768kHz的石英晶体。RTC  PLL">
+<meta name="keywords" content="STM32">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的Hexo博客搭建经历">
-<meta property="og:url" content="https://www.qianhongbo.top/我的个人博客搭建总结.html">
+<meta property="og:title" content="【STM32】STM32时钟系统和时钟系统初始化函数">
+<meta property="og:url" content="https://www.qianhongbo.top/【STM32】STM32时钟系统.html">
 <meta property="og:site_name" content="Blog | Qian Homeberg">
-<meta property="og:description" content="为什么要做自己的博客？说到为什么要这么做，这个想法也是已经有很久了。当时的起因是我想通过互联网上的某个平台来记录自己的学习笔记或者自己的一些思考。在知乎等搜索了很多，都没有找到太合适的，其中包括公众号，简书，csdn等等。我觉得不合适的原因有的是因为网站太过烟火气，对我来说我觉得不够“干净”。有的是因为我觉得和我的圈子不符合，有的是因为我个人的喜好，最终都没有选择。有一天就突然萌生了做一个自己的博">
+<meta property="og:description" content="时钟系统知识总结 STM32 有5个时钟源:HSI、HSE、LSI、LSE、PLL。   HSI是高速内部时钟，RC振荡器，频率为8MHz，精度不高。 HSE是高速外部时钟，可接石英/陶瓷谐振器，或者接外部时钟源，频率范围为4MHz~16MHz。 LSI是低速内部时钟，RC振荡器，频率为40kHz，提供低功耗时钟。WDG LSE是低速外部时钟，接频率为32.768kHz的石英晶体。RTC  PLL">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-06T03:28:36.652Z">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006BuM4Jgy1g60eusarn7j30mw0f2gqp.jpg">
+<meta property="og:updated_time" content="2019-08-15T09:20:24.104Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的Hexo博客搭建经历">
-<meta name="twitter:description" content="为什么要做自己的博客？说到为什么要这么做，这个想法也是已经有很久了。当时的起因是我想通过互联网上的某个平台来记录自己的学习笔记或者自己的一些思考。在知乎等搜索了很多，都没有找到太合适的，其中包括公众号，简书，csdn等等。我觉得不合适的原因有的是因为网站太过烟火气，对我来说我觉得不够“干净”。有的是因为我觉得和我的圈子不符合，有的是因为我个人的喜好，最终都没有选择。有一天就突然萌生了做一个自己的博">
+<meta name="twitter:title" content="【STM32】STM32时钟系统和时钟系统初始化函数">
+<meta name="twitter:description" content="时钟系统知识总结 STM32 有5个时钟源:HSI、HSE、LSI、LSE、PLL。   HSI是高速内部时钟，RC振荡器，频率为8MHz，精度不高。 HSE是高速外部时钟，可接石英/陶瓷谐振器，或者接外部时钟源，频率范围为4MHz~16MHz。 LSI是低速内部时钟，RC振荡器，频率为40kHz，提供低功耗时钟。WDG LSE是低速外部时钟，接频率为32.768kHz的石英晶体。RTC  PLL">
+<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006BuM4Jgy1g60eusarn7j30mw0f2gqp.jpg">
 
 
 
@@ -161,7 +163,7 @@
 
 
 
-  <title>我的Hexo博客搭建经历 | Blog | Qian Homeberg</title>
+  <title>【STM32】STM32时钟系统和时钟系统初始化函数 | Blog | Qian Homeberg</title>
   
 
 
@@ -342,7 +344,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.top/我的个人博客搭建总结.html">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.top/【STM32】STM32时钟系统.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Qian Hongbo">
@@ -359,7 +361,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">我的Hexo博客搭建经历</h2>
+          <h2 class="post-title" itemprop="name headline">【STM32】STM32时钟系统和时钟系统初始化函数</h2>
         
 
         <div class="post-meta">
@@ -371,8 +373,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-06T14:37:27+08:00">
-                2019-06-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-15T15:49:16+08:00">
+                2019-08-15
               </time>
             
 
@@ -394,8 +396,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
+                  <a href="/categories/STM32/" itemprop="url" rel="index">
+                    <span itemprop="name">STM32</span>
                   </a>
                 </span>
 
@@ -414,8 +416,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/我的个人博客搭建总结.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="我的个人博客搭建总结.html" itemprop="commentCount"></span>
+                <a href="/【STM32】STM32时钟系统.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="【STM32】STM32时钟系统.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -442,7 +444,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  901 字
+                  435 字
                 </span>
               
 
@@ -458,7 +460,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3 分钟
+                  1 分钟
                 </span>
               
             </div>
@@ -478,27 +480,56 @@
 
       
       
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox" href="https://ws3.sinaimg.cn/large/006BuM4Jgy1g60eusarn7j30mw0f2gqp.jpg" rel="gallery_cjzch4z5i000j0wur90zh3jkj" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://ws3.sinaimg.cn/large/006BuM4Jgy1g60eusarn7j30mw0f2gqp.jpg" itemprop="contentUrl">
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
 
       
-        <h1 id="为什么要做自己的博客？"><a href="#为什么要做自己的博客？" class="headerlink" title="为什么要做自己的博客？"></a>为什么要做自己的博客？</h1><p>说到为什么要这么做，这个想法也是已经有很久了。当时的起因是我想通过互联网上的某个平台来记录自己的学习笔记或者自己的一些思考。在知乎等搜索了很多，都没有找到太合适的，其中包括公众号，简书，csdn等等。我觉得不合适的原因有的是因为网站太过烟火气，对我来说我觉得不够“干净”。有的是因为我觉得和我的圈子不符合，有的是因为我个人的喜好，最终都没有选择。有一天就突然萌生了做一个自己的博客的想法！</p>
-<p>但问题来了，怎么做呢？我完全摸不到头脑。我就去知乎查了一下看到了蛮多科普的帖子，但一翻，好长好长，其中也包括很多很多的代码。对于一个机械专业的学生来说，看到这些内心是恐惧的。于是…我就把那篇帖子收藏了，打算等我有时间再做…当时可能觉得的时间是大四…可是这个想法实际上一直深深的埋在我的心里。</p>
-<p>上周，这学期该忙的事情几乎结束，剩下的就是为了期末考试做准备了，我向来是一个喜欢拖延的人，不到考试前一周应该是打不起学习的兴趣的。我就在教室看着电脑，可能又萌生了写点东西的想法，奈何没有平台给我发挥。于是突然决定，就现在！把博客给我搞出来</p>
-<h1 id="我花了多少时间？"><a href="#我花了多少时间？" class="headerlink" title="我花了多少时间？"></a>我花了多少时间？</h1><p>总共时长大概是3天白天的时间，对于我这个毫无基础的IT小白来说还是可以接受的（毕竟如果我不是搞这个的话估计也不会学习吧）</p>
-<h1 id="我是怎么做出来的？"><a href="#我是怎么做出来的？" class="headerlink" title="我是怎么做出来的？"></a>我是怎么做出来的？</h1><p>遇到了很多问题，也查了很多资料，通过别人的教程一步一步完善自己的博客</p>
-<p>推荐链接：<a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener"><strong>知乎上的一篇文章，我的启蒙</strong></a> </p>
-<p>看了这个博客之后大部分操作就都可以完成了，当然你可能会像我一样，遇到很多的问题，那么怎么办呢？当然是自己查！而且很容易查到你想要的解决方法</p>
-<p><a href="https://slanceli.top/2019/02/18/%E6%B7%B1%E5%BA%A6%E7%BE%8E%E5%8C%96Hexo%EF%BC%88NexT%E4%B8%BB%E9%A2%98%EF%BC%89/" target="_blank" rel="noopener"><strong>这篇博客是我的努力目标，当时就是朝着这个方向努力完善</strong></a></p>
-<p><a href="http://shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html" target="_blank" rel="noopener"><strong>这篇博客讲了很多博客美化的内容，我都是自己一步一步搞的</strong></a></p>
-<p>以上部分完成了，你的博客基本就完成啦！如果你遇到了什么问题，都可以去google，相信你能得到你想要的答案~</p>
-<h2 id="会不会出教程？"><a href="#会不会出教程？" class="headerlink" title="会不会出教程？"></a>会不会出教程？</h2><p>应该不会，教程太多了，我还没那么牛，等我再学习学习吧…</p>
-<h2 id="如果换电脑了，想在新电脑上写博客，怎么迁移"><a href="#如果换电脑了，想在新电脑上写博客，怎么迁移" class="headerlink" title="如果换电脑了，想在新电脑上写博客，怎么迁移"></a>如果换电脑了，想在新电脑上写博客，怎么迁移</h2><p><a href="https://showcc.github.io/2017/06/08/Change%20the%20computer%20update%20the%20hexo%20blog/" target="_blank" rel="noopener"><strong>一个比较好的教程</strong></a></p>
-<h2 id="想在两台电脑上同时写博客的方法"><a href="#想在两台电脑上同时写博客的方法" class="headerlink" title="想在两台电脑上同时写博客的方法"></a>想在两台电脑上同时写博客的方法</h2><p>利用git的分支功能！</p>
-<p>把生成的静态网页上传到master分支，把写的原文件上传到新建的hexo分支</p>
-<p>每次在另一台电脑上写博客前，先<code>git pull</code>将本地文件更新，而在写好文章后要记得用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add . </span><br><span class="line">git commit -m &quot;&quot;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+        <h1 id="时钟系统知识总结"><a href="#时钟系统知识总结" class="headerlink" title="时钟系统知识总结"></a>时钟系统知识总结</h1><ol>
+<li>STM32 有5个时钟源:HSI、HSE、LSI、LSE、PLL。</li>
+</ol>
+<ul>
+<li>HSI是高速内部时钟，RC振荡器，频率为8MHz，精度不高。</li>
+<li>HSE是高速外部时钟，可接石英/陶瓷谐振器，或者接外部时钟源，频率范围为4MHz~16MHz。</li>
+<li>LSI是低速内部时钟，RC振荡器，频率为40kHz，提供低功耗时钟。WDG</li>
+<li>LSE是低速外部时钟，接频率为32.768kHz的石英晶体。RTC </li>
+<li>PLL为锁相环倍频输出，其时钟输入源可选择为HSI/2、HSE或者HSE/2倍频可选择为2~16倍，但是其输出频率最大不得超过72MHz。</li>
+</ul>
+<ol start="2">
+<li>系统时钟SYSCLK可来源于三个时钟源：        </li>
+</ol>
+<ul>
+<li>HSI振荡器时钟</li>
+<li>HSE振荡器时钟</li>
+<li>PLL时钟</li>
+</ul>
+<ol start="3">
+<li><p>STM32可以选择一个时钟信号输出到MCO脚(PA8)上，可以选择为PLL<br>输出的2分频、HSI、HSE、或者系统时钟。</p>
+</li>
+<li><p>任何一个外设在使用之前，必须首先使能其相应的时钟。</p>
+</li>
+</ol>
+<p>几个重要的时钟：</p>
+<ul>
+<li>SYSCLK(系统时钟) :</li>
+<li>AHB总线时钟</li>
+<li>APB1总线时钟(低速): 速度最高36MHz</li>
+<li>APB2总线时钟(高速): 速度最高72MHz</li>
+<li>PLL时钟</li>
+</ul>
+<h1 id="RCC相关配置寄存器"><a href="#RCC相关配置寄存器" class="headerlink" title="RCC相关配置寄存器"></a>RCC相关配置寄存器</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> CR;    <span class="comment">//HSI,HSE,CSS,PLL等的使能和就绪标志位 </span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> CFGR;     <span class="comment">//PLL等的时钟源选择，分频系数设定</span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> CIR;       <span class="comment">// 清除/使能 时钟就绪中断</span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> APB2RSTR;  <span class="comment">//APB2线上外设复位寄存器</span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> APB1RSTR;   <span class="comment">//APB1线上外设复位寄存器</span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> AHBENR;    <span class="comment">//DMA，SDIO等时钟使能</span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> APB2ENR;   <span class="comment">//APB2线上外设时钟使能</span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> APB1ENR;   <span class="comment">//APB1线上外设时钟使能</span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> BDCR;        <span class="comment">//备份域控制寄存器</span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> CSR;           <span class="comment">//控制状态寄存器</span></span><br><span class="line">&#125; RCC_TypeDef;</span><br></pre></td></tr></table></figure>
 
-<p>参考了知乎上的一篇答案，十分详细，对新手小白十分友好，<a href="https://www.zhihu.com/question/21193762/answer/489124966" target="_blank" rel="noopener"><strong>点击跳转</strong></a></p>
-<p>做完这个对git的分支功能有了更深刻的认识~</p>
 
       
     </div>
@@ -557,7 +588,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.qianhongbo.top/我的个人博客搭建总结.html" title="我的Hexo博客搭建经历">https://www.qianhongbo.top/我的个人博客搭建总结.html</a>
+    <a href="https://www.qianhongbo.top/【STM32】STM32时钟系统.html" title="【STM32】STM32时钟系统和时钟系统初始化函数">https://www.qianhongbo.top/【STM32】STM32时钟系统.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -572,7 +603,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
+            <a href="/tags/STM32/" rel="tag"><i class="fa fa-tag"></i> STM32</a>
           
         </div>
       
@@ -585,8 +616,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Markdown-语法总结整理.html" rel="next" title="Markdown 语法总结整理">
-                <i class="fa fa-chevron-left"></i> Markdown 语法总结整理
+              <a href="/【C】struct和typedef struct.html" rel="next" title="【C】struct和typedef struct">
+                <i class="fa fa-chevron-left"></i> 【C】struct和typedef struct
               </a>
             
           </div>
@@ -594,10 +625,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/那些你可能不知道的知识.html" rel="prev" title="那些你可能不知道的知识">
-                那些你可能不知道的知识 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -784,7 +811,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么要做自己的博客？"><span class="nav-number">1.</span> <span class="nav-text">为什么要做自己的博客？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#我花了多少时间？"><span class="nav-number">2.</span> <span class="nav-text">我花了多少时间？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#我是怎么做出来的？"><span class="nav-number">3.</span> <span class="nav-text">我是怎么做出来的？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#会不会出教程？"><span class="nav-number">3.1.</span> <span class="nav-text">会不会出教程？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如果换电脑了，想在新电脑上写博客，怎么迁移"><span class="nav-number">3.2.</span> <span class="nav-text">如果换电脑了，想在新电脑上写博客，怎么迁移</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#想在两台电脑上同时写博客的方法"><span class="nav-number">3.3.</span> <span class="nav-text">想在两台电脑上同时写博客的方法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#时钟系统知识总结"><span class="nav-number">1.</span> <span class="nav-text">时钟系统知识总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RCC相关配置寄存器"><span class="nav-number">2.</span> <span class="nav-text">RCC相关配置寄存器</span></a></li></ol></div>
             
 
           </div>
@@ -977,9 +1004,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://www.qianhongbo.top/我的个人博客搭建总结.html';
-          this.page.identifier = '我的个人博客搭建总结.html';
-          this.page.title = '我的Hexo博客搭建经历';
+          this.page.url = 'https://www.qianhongbo.top/【STM32】STM32时钟系统.html';
+          this.page.identifier = '【STM32】STM32时钟系统.html';
+          this.page.title = '【STM32】STM32时钟系统和时钟系统初始化函数';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://qianhongbo.disqus.com/embed.js';

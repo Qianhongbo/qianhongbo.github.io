@@ -104,10 +104,10 @@ deploy:
 - type：baidu_url_submitter
   
 live2d:
-  enable: false
+  enable: true
   pluginModelPath: assets/
   model:
-    use: live2d-widget-model-tororo
+    use: live2d-widget-model-wanko
   display:
     position: left
     width: 166

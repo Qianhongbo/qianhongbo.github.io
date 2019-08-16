@@ -17,7 +17,7 @@ photos: 'https://ws3.sinaimg.cn/large/006BuM4Jgy1g60eusarn7j30mw0f2gqp.jpg'
 - LSE是低速外部时钟，接频率为32.768kHz的石英晶体。RTC 
 - PLL为锁相环倍频输出，其时钟输入源可选择为HSI/2、HSE或者HSE/2倍频可选择为2~16倍，但是其输出频率最大不得超过72MHz。
 
-2. 系统时钟SYSCLK可来源于三个时钟源：        
+2. 系统时钟SYSCLK可来源于三个时钟源：       
 - HSI振荡器时钟
 - HSE振荡器时钟
 - PLL时钟

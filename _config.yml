@@ -118,3 +118,17 @@ live2d:
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 plugins: hexo-generate-feed
+
+douban:
+  user: 202079136
+  builtin: false
+  book:
+    title: '我的读书'
+    #quote: 'This is my book quote'
+  movie:
+    title: '我的电影'
+    #quote: 'This is my movie quote'
+  #game:
+    #title: 'This is my game title'
+    #quote: 'This is my game quote'
+  timeout: 10000

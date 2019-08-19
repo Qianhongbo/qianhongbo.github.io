@@ -124,7 +124,7 @@
 <meta property="og:site_name" content="Blog | Qian Homeberg">
 <meta property="og:description" content="首先注意在C和C++里不同 在C中定义一个结构体类型要用typedef: 1234typedef struct Student　　　　&amp;#123;　　　　 int a;　　　　&amp;#125;Stu;  于是在声明变量的时候就可：Stu stu1 (如果没有typedef就必须用struct Student stu1;来声明) 这里的Stu实际上就是struct Student的别名。Stu==str">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-14T10:02:42.707Z">
+<meta property="og:updated_time" content="2019-08-19T03:33:38.689Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【C】struct和typedef struct">
 <meta name="twitter:description" content="首先注意在C和C++里不同 在C中定义一个结构体类型要用typedef: 1234typedef struct Student　　　　&amp;#123;　　　　 int a;　　　　&amp;#125;Stu;  于是在声明变量的时候就可：Stu stu1 (如果没有typedef就必须用struct Student stu1;来声明) 这里的Stu实际上就是struct Student的别名。Stu==str">
@@ -514,11 +514,12 @@
 
 <p>这语句实际上完成两个操作：</p>
 <ol>
-<li><p>定义一个新的结构类型</p>
+<li>定义一个新的结构类型</li>
+</ol>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tagMyStruct</span></span></span><br><span class="line"><span class="class">　　　　&#123;</span>　　 </span><br><span class="line">　　　　　<span class="keyword">int</span> iNum; </span><br><span class="line">　　　　　<span class="keyword">long</span> lLength; </span><br><span class="line">　　　　&#125;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>typedef为这个新的结构起了一个名字，叫MyStruct</p>
-</li>
+
+<ol start="2">
+<li>typedef为这个新的结构起了一个名字，叫MyStruct</li>
 </ol>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">　<span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">tagMyStruct</span> <span class="title">MyStruct</span>;</span></span><br></pre></td></tr></table></figure>
 
@@ -727,7 +728,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -859,7 +860,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">17.4k</span>
+    <span title="Site words total count">21.9k</span>
   
 </div>
 

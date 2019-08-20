@@ -76,6 +76,7 @@ typedef struct tagMyStruct
 这语句实际上完成两个操作：
 
 1. 定义一个新的结构类型
+
 ```C
 struct tagMyStruct
 　　　　{　　 

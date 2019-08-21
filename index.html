@@ -493,7 +493,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://ws3.sinaimg.cn/large/006BuM4Jgy1g5zmstj49mj31hc0u0ak5.jpg" rel="gallery_cjzj6jyh0002bcwurc2gm01ny" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://ws3.sinaimg.cn/large/006BuM4Jgy1g5zmstj49mj31hc0u0ak5.jpg" rel="gallery_cjzl7edtm002c1curklkea0py" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://ws3.sinaimg.cn/large/006BuM4Jgy1g5zmstj49mj31hc0u0ak5.jpg" itemprop="contentUrl">
               </a>
             
@@ -664,7 +664,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.2k 字
+                  927 字
                 </span>
               
 
@@ -680,7 +680,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -704,7 +704,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://ws1.sinaimg.cn/large/006BuM4Jgy1g6546c2yokj30d90en0uz.jpg" rel="gallery_cjzj6jyf9000mcwuruc5o4ttx" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://ws1.sinaimg.cn/large/006BuM4Jgy1g6546c2yokj30d90en0uz.jpg" rel="gallery_cjzl7eds1000n1curz63og8a2" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://ws1.sinaimg.cn/large/006BuM4Jgy1g6546c2yokj30d90en0uz.jpg" itemprop="contentUrl">
               </a>
             
@@ -802,22 +802,6 @@
 <li>串口传输状态获取：<br><code>FlagStatus USART_GetFlagStatus(USART_TypeDef* USARTx, uint16_t USART_FLAG);
 void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></li>
 </ol>
-<p>```C<br>void uart_init(u32 bound){<br>  //GPIO端口设置<br>  GPIO_InitTypeDef GPIO_InitStructure;<br>    USART_InitTypeDef USART_InitStructure;<br>    NVIC_InitTypeDef NVIC_InitStructure;</p>
-<pre><code>RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1|RCC_APB2Periph_GPIOA, ENABLE);    //使能USART1，GPIOA时钟
-
-//USART1_TX   GPIOA.9</code></pre><p>  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9; //PA.9<br>  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;<br>  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;    //复用推挽输出<br>  GPIO_Init(GPIOA, &amp;GPIO_InitStructure);//初始化GPIOA.9</p>
-<p>  //USART1_RX      GPIOA.10初始化<br>  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;//PA10<br>  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;//浮空输入<br>  GPIO_Init(GPIOA, &amp;GPIO_InitStructure);//初始化GPIOA.10  </p>
-<p>  //Usart1 NVIC 配置<br>  NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;<br>    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=3 ;//抢占优先级3<br>    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 3;        //子优先级3<br>    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;            //IRQ通道使能<br>    NVIC_Init(&amp;NVIC_InitStructure);    //根据指定的参数初始化VIC寄存器</p>
-<p>   //USART 初始化设置</p>
-<pre><code>USART_InitStructure.USART_BaudRate = bound;//串口波特率
-USART_InitStructure.USART_WordLength = USART_WordLength_8b;//字长为8位数据格式
-USART_InitStructure.USART_StopBits = USART_StopBits_1;//一个停止位
-USART_InitStructure.USART_Parity = USART_Parity_No;//无奇偶校验位
-USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;//无硬件数据流控制
-USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;    //收发模式</code></pre><p>  USART_Init(USART1, &amp;USART_InitStructure); //初始化串口1<br>  USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);//开启串口接受中断<br>  USART_Cmd(USART1, ENABLE);                    //使能串口1 </p>
-<p>}</p>
-<p>void USART1_IRQHandler(void)<br>{<br>    u8 res;<br>    if(USART_GetITStatus(USART1,USART_IT_RXNE))<br>    {<br>        res = USART_ReceiveData(USART1);<br>        USART_SendData(USART1,res);<br>    }<br>}</p>
-<p>int main(void)<br>{<br>    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); //设置NVIC中断分组2:2位抢占优先级，2位响应优先级<br>    uart_init(115200);<br>    while(1);<br>}</p>
 
           
         
@@ -1690,7 +1674,7 @@ USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;    //收发模�
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://ws3.sinaimg.cn/large/006BuM4Jgy1g60eusarn7j30mw0f2gqp.jpg" rel="gallery_cjzj6jyf1000gcwurbofr677y" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="https://ws3.sinaimg.cn/large/006BuM4Jgy1g60eusarn7j30mw0f2gqp.jpg" rel="gallery_cjzl7edrt000h1curo3j5uibl" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="https://ws3.sinaimg.cn/large/006BuM4Jgy1g60eusarn7j30mw0f2gqp.jpg" itemprop="contentUrl">
               </a>
             
@@ -2900,7 +2884,7 @@ USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;    //收发模�
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">21.9k</span>
+    <span title="Site words total count">21.6k</span>
   
 </div>
 

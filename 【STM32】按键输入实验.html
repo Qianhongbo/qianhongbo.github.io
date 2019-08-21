@@ -124,12 +124,12 @@
 <meta property="og:site_name" content="Blog | Qian Homeberg">
 <meta property="og:description" content="GPIO操作复习 读取IO口输入电平调用库函数为  1uint8_t GPIO_ReadInputDataBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);   读取IO口输入电平操作寄存器为  1GPIOx_IDR:端口输入寄存器   使用位带操作读取IO口输入电平：  12PEin(4)          //读取GPIOE.4口电平PEin(n)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://wx3.sinaimg.cn/large/006BuM4Jgy1g607sfu2jyj30ku059q4q.jpg">
-<meta property="og:updated_time" content="2019-08-21T12:56:54.782Z">
+<meta property="og:image" content="http://wx3.sinaimg.cn/large/006BuM4Jgy1g607sfu2jyj30ku059q4q.jpg">
+<meta property="og:updated_time" content="2019-08-21T13:06:40.114Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【STM32】按键输入实验">
 <meta name="twitter:description" content="GPIO操作复习 读取IO口输入电平调用库函数为  1uint8_t GPIO_ReadInputDataBit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);   读取IO口输入电平操作寄存器为  1GPIOx_IDR:端口输入寄存器   使用位带操作读取IO口输入电平：  12PEin(4)          //读取GPIOE.4口电平PEin(n)">
-<meta name="twitter:image" content="https://wx3.sinaimg.cn/large/006BuM4Jgy1g607sfu2jyj30ku059q4q.jpg">
+<meta name="twitter:image" content="http://wx3.sinaimg.cn/large/006BuM4Jgy1g607sfu2jyj30ku059q4q.jpg">
 
 
 
@@ -512,7 +512,7 @@
 <li>初始化IO模式：上拉/下拉输入。调用函数：<code>GPIO_Init()</code></li>
 <li>扫描IO口电平（库函数/寄存器/位操作）</li>
 </ul>
-<h1 id="硬件连接"><a href="#硬件连接" class="headerlink" title="硬件连接"></a>硬件连接</h1><p><img src="https://wx3.sinaimg.cn/large/006BuM4Jgy1g607sfu2jyj30ku059q4q.jpg" alt="key"></p>
+<h1 id="硬件连接"><a href="#硬件连接" class="headerlink" title="硬件连接"></a>硬件连接</h1><p><img src="http://wx3.sinaimg.cn/large/006BuM4Jgy1g607sfu2jyj30ku059q4q.jpg" alt="key"></p>
 <p>所以需要打开<code>PA</code>,<code>PE</code>的时钟，并打开<code>PA0</code>; <code>PE2,3,4</code>;</p>
 <p>而且，对于KEY0，一端连接地，另一端连接PE4的IO口，KEY1，KEY2同理，所以当案件按下的时候，IO口坚持得到低电平。WK_UP正好相反。</p>
 <h1 id="按键扫描思路"><a href="#按键扫描思路" class="headerlink" title="按键扫描思路"></a>按键扫描思路</h1><h2 id="扫描的两种类型"><a href="#扫描的两种类型" class="headerlink" title="扫描的两种类型"></a>扫描的两种类型</h2><ul>

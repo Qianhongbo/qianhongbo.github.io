@@ -124,12 +124,16 @@
 <meta property="og:site_name" content="Blog | Qian Homeberg">
 <meta property="og:description" content="处理器与外部设备通信的两种方式 并行通信  传输原理：数据各个位同时传输。 优点：速度快 缺点：占用引脚资源多   串行通信  传输原理：数据按位顺序传输。 优点：占用引脚资源少 缺点：速度相对较慢    串行通信分类按照数据传送方向，分为：  单工：数据传输只支持数据在一个方向上传输  半双工：允许数据在两个方向上传输，但是，在某一时刻，只允许数据在一个方向上传输，它实际上是一种切换方向的单工通">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006BuM4Jgy1g6546c2yokj30d90en0uz.jpg">
-<meta property="og:updated_time" content="2019-08-20T08:11:45.421Z">
+<meta property="og:image" content="https://wx1.sinaimg.cn/large/006BuM4Jgy1g653m0aqzgj30ml0acdgt.jpg">
+<meta property="og:image" content="https://wx2.sinaimg.cn/large/006BuM4Jgy1g653v4l3u9j309g05hjrm.jpg">
+<meta property="og:image" content="https://wx2.sinaimg.cn/large/006BuM4Jgy1g653vfp7wtj30d4059gm0.jpg">
+<meta property="og:image" content="https://wx2.sinaimg.cn/large/006BuM4Jgy1g653wqh5f9j30j4071aa5.jpg">
+<meta property="og:image" content="https://wx1.sinaimg.cn/large/006BuM4Jgy1g654k6970sj30lv0d90z4.jpg">
+<meta property="og:updated_time" content="2019-08-21T12:12:01.041Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【STM32】串口通信基本原理">
 <meta name="twitter:description" content="处理器与外部设备通信的两种方式 并行通信  传输原理：数据各个位同时传输。 优点：速度快 缺点：占用引脚资源多   串行通信  传输原理：数据按位顺序传输。 优点：占用引脚资源少 缺点：速度相对较慢    串行通信分类按照数据传送方向，分为：  单工：数据传输只支持数据在一个方向上传输  半双工：允许数据在两个方向上传输，但是，在某一时刻，只允许数据在一个方向上传输，它实际上是一种切换方向的单工通">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006BuM4Jgy1g6546c2yokj30d90en0uz.jpg">
+<meta name="twitter:image" content="https://wx1.sinaimg.cn/large/006BuM4Jgy1g653m0aqzgj30ml0acdgt.jpg">
 
 
 
@@ -490,20 +494,6 @@
 
       
       
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-          
-          
-            <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://ws1.sinaimg.cn/large/006BuM4Jgy1g6546c2yokj30d90en0uz.jpg" rel="gallery_cjzl7eds1000n1curz63og8a2" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="https://ws1.sinaimg.cn/large/006BuM4Jgy1g6546c2yokj30d90en0uz.jpg" itemprop="contentUrl">
-              </a>
-            
-          
-
-          
-          </div>
-        </div>
-      
 
       
         <h1 id="处理器与外部设备通信的两种方式"><a href="#处理器与外部设备通信的两种方式" class="headerlink" title="处理器与外部设备通信的两种方式"></a>处理器与外部设备通信的两种方式</h1><ol>
@@ -537,7 +527,7 @@
 <li><p>异步通信：<strong>不带时钟同步信号</strong>。-<code>UART</code>(通用异步收发器),单总线（必须约定波特率，按照相同的速度发送和读取）</p>
 </li>
 </ol>
-<h1 id="常见的串行通信接口"><a href="#常见的串行通信接口" class="headerlink" title="常见的串行通信接口"></a>常见的串行通信接口</h1><p><img src="https://wx3.sinaimg.cn/large/006BuM4Jgy1g653m0aqzgj30ml0acdgt.jpg" alt="图片6"></p>
+<h1 id="常见的串行通信接口"><a href="#常见的串行通信接口" class="headerlink" title="常见的串行通信接口"></a>常见的串行通信接口</h1><p><img src="https://wx1.sinaimg.cn/large/006BuM4Jgy1g653m0aqzgj30ml0acdgt.jpg" alt="图片6"></p>
 <p>STM32的串口通信接口</p>
 <ul>
 <li>UART:通用异步收发器</li>
@@ -548,9 +538,9 @@
 <li>RXD:数据输入引脚。数据接受。</li>
 <li>TXD:数据发送引脚。数据发送。</li>
 </ul>
-<p><img src="https://ws4.sinaimg.cn/large/006BuM4Jgy1g653v4l3u9j309g05hjrm.jpg" alt="图片7"></p>
-<p><img src="https://wx4.sinaimg.cn/large/006BuM4Jgy1g653vfp7wtj30d4059gm0.jpg" alt="图片8"></p>
-<p><img src="https://ws4.sinaimg.cn/large/006BuM4Jgy1g653wqh5f9j30j4071aa5.jpg" alt="图片9"></p>
+<p><img src="https://wx2.sinaimg.cn/large/006BuM4Jgy1g653v4l3u9j309g05hjrm.jpg" alt="图片7"></p>
+<p><img src="https://wx2.sinaimg.cn/large/006BuM4Jgy1g653vfp7wtj30d4059gm0.jpg" alt="图片8"></p>
+<p><img src="https://wx2.sinaimg.cn/large/006BuM4Jgy1g653wqh5f9j30j4071aa5.jpg" alt="图片9"></p>
 <h1 id="UART异步通信方式特点"><a href="#UART异步通信方式特点" class="headerlink" title="UART异步通信方式特点"></a>UART异步通信方式特点</h1><ul>
 <li>全双工异步通信。</li>
 <li>分数波特率发生器系统，提供精确的波特率。</li>
@@ -575,7 +565,7 @@
 <li>USART_DR数据寄存器</li>
 <li>USART_BRR波特率寄存器 </li>
 </ul>
-<h1 id="波特率计算方法"><a href="#波特率计算方法" class="headerlink" title="波特率计算方法"></a>波特率计算方法</h1><p><img src="https://ws2.sinaimg.cn/large/006BuM4Jgy1g654k6970sj30lv0d90z4.jpg" alt="图片11"></p>
+<h1 id="波特率计算方法"><a href="#波特率计算方法" class="headerlink" title="波特率计算方法"></a>波特率计算方法</h1><p><img src="https://wx1.sinaimg.cn/large/006BuM4Jgy1g654k6970sj30lv0d90z4.jpg" alt="图片11"></p>
 <h1 id="串口操作相关库函数"><a href="#串口操作相关库函数" class="headerlink" title="串口操作相关库函数"></a>串口操作相关库函数</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_Init</span><span class="params">()</span></span>; <span class="comment">//串口初始化：波特率，数据字长，奇偶校验，硬件流控以及收发使能</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_Cmd</span><span class="params">()</span></span>;<span class="comment">//使能串口</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_ITConfig</span><span class="params">()</span></span>;<span class="comment">//使能相关中断</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_SendData</span><span class="params">()</span></span>;<span class="comment">//发送数据到串口，DR</span></span><br><span class="line"><span class="keyword">uint16_t</span> USART_ReceiveData();<span class="comment">//接受数据，从DR读取接受到的数据</span></span><br><span class="line"></span><br><span class="line"><span class="function">FlagStatus <span class="title">USART_GetFlagStatus</span><span class="params">()</span></span>;<span class="comment">//获取状态标志位</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_ClearFlag</span><span class="params">()</span></span>;<span class="comment">//清除状态标志位</span></span><br><span class="line"><span class="function">ITStatus <span class="title">USART_GetITStatus</span><span class="params">()</span></span>;<span class="comment">//获取中断状态标志位</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_ClearITPendingBit</span><span class="params">()</span></span>;<span class="comment">//清除中断状态标志位</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="串口配置的一般步骤"><a href="#串口配置的一般步骤" class="headerlink" title="串口配置的一般步骤"></a>串口配置的一般步骤</h1><ol>

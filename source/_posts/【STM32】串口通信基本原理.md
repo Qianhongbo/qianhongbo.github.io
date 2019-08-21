@@ -6,7 +6,6 @@ categories:
 - STM32
 tags: 
 - STM32
-photos: 'https://ws1.sinaimg.cn/large/006BuM4Jgy1g6546c2yokj30d90en0uz.jpg'
 ---
 # 处理器与外部设备通信的两种方式
 1. 并行通信
@@ -39,7 +38,7 @@ photos: 'https://ws1.sinaimg.cn/large/006BuM4Jgy1g6546c2yokj30d90en0uz.jpg'
 
 # 常见的串行通信接口
 
-![图片6](https://wx3.sinaimg.cn/large/006BuM4Jgy1g653m0aqzgj30ml0acdgt.jpg)
+![图片6](http://wx1.sinaimg.cn/large/006BuM4Jgy1g653m0aqzgj30ml0acdgt.jpg)
 
 STM32的串口通信接口
 
@@ -53,11 +52,11 @@ STM32的串口通信接口
 - RXD:数据输入引脚。数据接受。
 - TXD:数据发送引脚。数据发送。
 
-![图片7](https://ws4.sinaimg.cn/large/006BuM4Jgy1g653v4l3u9j309g05hjrm.jpg)
+![图片7](http://wx2.sinaimg.cn/large/006BuM4Jgy1g653v4l3u9j309g05hjrm.jpg)
 
-![图片8](https://wx4.sinaimg.cn/large/006BuM4Jgy1g653vfp7wtj30d4059gm0.jpg)
+![图片8](http://wx2.sinaimg.cn/large/006BuM4Jgy1g653vfp7wtj30d4059gm0.jpg)
 
-![图片9](https://ws4.sinaimg.cn/large/006BuM4Jgy1g653wqh5f9j30j4071aa5.jpg)
+![图片9](http://wx2.sinaimg.cn/large/006BuM4Jgy1g653wqh5f9j30j4071aa5.jpg)
 
 # UART异步通信方式特点
 
@@ -88,7 +87,7 @@ STM32的串口通信接口
 
 # 波特率计算方法
 
-![图片11](https://ws2.sinaimg.cn/large/006BuM4Jgy1g654k6970sj30lv0d90z4.jpg)
+![图片11](http://wx1.sinaimg.cn/large/006BuM4Jgy1g654k6970sj30lv0d90z4.jpg)
 
 # 串口操作相关库函数
 

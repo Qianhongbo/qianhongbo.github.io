@@ -35,7 +35,7 @@ GPIOx_IDR:端口输入寄存器
 
 # 硬件连接
 
-![key](https://wx3.sinaimg.cn/large/006BuM4Jgy1g607sfu2jyj30ku059q4q.jpg)
+![key](http://wx3.sinaimg.cn/large/006BuM4Jgy1g607sfu2jyj30ku059q4q.jpg)
 
 所以需要打开`PA`,`PE`的时钟，并打开`PA0`; `PE2,3,4`;
 

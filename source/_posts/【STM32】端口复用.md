@@ -16,13 +16,13 @@ STM32有很多的内置外设，这些外设的外部引脚都是与GPIO复用�
 # 端口复用配置过程
 以PA9,PA10配置为串口1为例
 
-- GPIO端口时钟使能。
-```RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);```
-- 复用外设时钟使能。比如你要将端口PA9,PA10复用为串口，所以要使能串口时钟。```RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);```
+- GPIO端口时钟使能。`RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);`
+
+- 复用外设时钟使能。比如你要将端口PA9,PA10复用为串口，所以要使能串口时钟。`RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);`
 
 - 端口模式配置。 GPIO_Init（）函数。查表：《STM32中文参考手册V10》P110的表格“8.1.11外设的GPIO配置”
 
-![图片4](https://wx2.sinaimg.cn/large/006BuM4Jgy1g64z937e7zj30pb07qq4w.jpg)
+![图片4](http://ws1.sinaimg.cn/large/006BuM4Jgy1g67l5tal6nj30pb07qq4w.jpg)
 
 ```C
 RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);//①IO时钟使能

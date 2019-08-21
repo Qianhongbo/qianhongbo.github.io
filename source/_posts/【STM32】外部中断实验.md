@@ -19,7 +19,8 @@ tags:
 首先，对STM32中断进行分组，组0~4。同时，对每个中断设置一个抢占优先级和一个响应优先级值。
 
 分组配置是在寄存器SCB->AIRCR中配置：
-![图片5](https://ws2.sinaimg.cn/large/006BuM4Jgy1g650de3jh5j30jf073t8r.jpg)
+
+![图片5](http://ws3.sinaimg.cn/large/006BuM4Jgy1g67l4p94d5j30jf073t8r.jpg)
 
 # 抢占优先级 & 响应优先级区别
 
@@ -96,7 +97,7 @@ typedef struct
 
 - 32位寄存器，每个位控制一个中断的使能。STM32F10x只有60个可屏蔽中断，所以只使用了其中的ISER[0]和ISER[1]。
 
-- ISER[0]的bit0~bit31分别对应中断0~31。ISER[1]的bit0~27对应中断32~59；
+- ISER[0]的`bit0-bit31`分别对应中断`0-31`。ISER[1]的`bit0-27`对应中断`32~59`；
 
 - `void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct);
 `
@@ -107,7 +108,7 @@ typedef struct
 
 - 32位寄存器，每个位控制一个中断的失能。STM32F10x只有60个可屏蔽中断，所以只使用了其中的ICER[0]和ICER[1]。
 
-- ICER[0]的bit0~bit31分别对应中断0~31。ICER[1]的bit0~27对应中断32~59；
+- ICER[0]的`bit0~bit31`分别对应中断`0~31`。ICER[1]的`bit0~27`对应中断`32~59`；
 
 - 配置方法跟ISER一样
  `static __INLINE uint32_t NVIC_GetActive(IRQn_Type IRQn)

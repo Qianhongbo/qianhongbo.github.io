@@ -125,7 +125,7 @@
 <meta property="og:description" content="什么是端口复用STM32有很多的内置外设，这些外设的外部引脚都是与GPIO复用的。也就是说，一个GPIO如果可以复用为内置外设的功能引脚，那么当这个GPIO作为内置外设使用的时候，就叫做复用。   例如串口1 的发送接收引脚是PA9,PA10，当我们把PA9,PA10不用作GPIO，而用做复用功能串口1的发送接收引脚的时候，叫端口复用。  端口复用配置过程以PA9,PA10配置为串口1为例  GP">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://wx2.sinaimg.cn/large/006BuM4Jgy1g64z937e7zj30pb07qq4w.jpg">
-<meta property="og:updated_time" content="2019-08-19T06:38:10.433Z">
+<meta property="og:updated_time" content="2019-08-21T12:21:44.680Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【STM32】端口复用">
 <meta name="twitter:description" content="什么是端口复用STM32有很多的内置外设，这些外设的外部引脚都是与GPIO复用的。也就是说，一个GPIO如果可以复用为内置外设的功能引脚，那么当这个GPIO作为内置外设使用的时候，就叫做复用。   例如串口1 的发送接收引脚是PA9,PA10，当我们把PA9,PA10不用作GPIO，而用做复用功能串口1的发送接收引脚的时候，叫端口复用。  端口复用配置过程以PA9,PA10配置为串口1为例  GP">
@@ -454,7 +454,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  284 字
+                  285 字
                 </span>
               
 
@@ -498,8 +498,9 @@
 </blockquote>
 <h1 id="端口复用配置过程"><a href="#端口复用配置过程" class="headerlink" title="端口复用配置过程"></a>端口复用配置过程</h1><p>以PA9,PA10配置为串口1为例</p>
 <ul>
-<li><p>GPIO端口时钟使能。</p>
-<figure class="highlight plain"><figcaption><span>ENABLE);```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 复用外设时钟使能。比如你要将端口PA9,PA10复用为串口，所以要使能串口时钟。```RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);</span><br></pre></td></tr></table></figure>
+<li><p>GPIO端口时钟使能。<code>RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);</code></p>
+</li>
+<li><p>复用外设时钟使能。比如你要将端口PA9,PA10复用为串口，所以要使能串口时钟。<code>RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);</code></p>
 </li>
 <li><p>端口模式配置。 GPIO_Init（）函数。查表：《STM32中文参考手册V10》P110的表格“8.1.11外设的GPIO配置”</p>
 </li>

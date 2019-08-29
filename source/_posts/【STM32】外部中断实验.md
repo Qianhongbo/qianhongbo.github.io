@@ -1,164 +1,119 @@
 ---
 title: 【STM32】外部中断实验
-date: 2019-08-19 14:39:35
+date: 2019-08-28 21:12:38
 keywods: STM32,NVIC
 categories: 
 - STM32
 tags: 
 - STM32
 ---
-# NVIC中断介绍
+# 外部中断概述
 
-- CM3内核支持256个中断，其中包含了16个内核中断和240个外部中断，并且具有256级的可编程中断设置。
-- STM32并没有使用CM3内核的全部东西，而是只用了它的一部分。
-- STM32有84个中断，包括16个内核中断和68个可屏蔽中断，具有16级可编程的中断优先级。
-- STM32F103系列上面，又只有60个可屏蔽中断（在107系列才有68个）
+1. STM32的每个IO都可以作为外部中断输入。
 
-# 中断管理方法
+2. STM32的中断控制器支持19个外部中断/事件请求：
+- 线0~15：对应外部IO口的输入中断。
+- 线16：连接到PVD输出。
+- 线17：连接到RTC闹钟事件。
+- 线18：连接到USB唤醒事件。
 
-首先，对STM32中断进行分组，组0~4。同时，对每个中断设置一个抢占优先级和一个响应优先级值。
+3. 每个外部中断线可以独立的配置触发方式（上升沿，下降沿或者双边沿触发），触发/屏蔽，专用的状态位。
 
-分组配置是在寄存器SCB->AIRCR中配置：
+4. 从上面可以看出，STM32供IO使用的中断线只有16个，但是STM32F10x系列的IO口多达上百个，那么中断线怎么跟io口对应呢？
+- GPIOx.0映射到EXTI0
+- GPIOx.1映射到EXTI1
+- …
+- GPIOx.15映射到EXTI15
 
-![图片5](http://ws3.sinaimg.cn/large/006BuM4Jgy1g67l4p94d5j30jf073t8r.jpg)
+5. IO口外部中断在中断向量表中只分配了7个中断向量，也就是
+   只能使用7个中断服务函数
+   >从表中可以看出，外部中断线5~9分配一个中断向量，共用一个服务函数，外部中断线10~15分配一个中断向量，共用一个中断服务函数。
 
-# 抢占优先级 & 响应优先级区别
+# 外部中断常用库函数
 
-- 高优先级的抢占优先级是可以打断正在进行的低抢占优先级中断的。
-- 抢占优先级相同的中断，高响应优先级不可以打断低响应优先级的中断。
-- 抢占优先级相同的中断，当两个中断同时发生的情况下，哪个响应优先级高，哪个先执行。
-- 如果两个中断的抢占优先级和响应优先级都是一样的话，则看哪个中断先发生就先执行；
-
-# 举例
-
-假定设置中断优先级组为2，然后设置中断3(RTC中断)的抢占优先级为2，响应优先级为1。  中断6（外部中断0）的抢占优先级为3，响应优先级为0。中断7（外部中断1）的抢占优先级为2，响应优先级为0。
-
-那么这3个中断的优先级顺序为：中断7>中断3>中断6。 
-
-# 特别说明
-
-一般情况下，系统代码执行过程中，只设置一次中断优先级分组，比如分组2，设置好分组之后一般不会再改变分组。随意改变分组会导致中断管理混乱，程序出现意想不到的执行结果。
-
-# 中断优先级分组函数
 ```C
-void NVIC_PriorityGroupConfig(uint32_t NVIC_PriorityGroup)
-{
-  assert_param(IS_NVIC_PRIORITY_GROUP(NVIC_PriorityGroup));
-  SCB->AIRCR = AIRCR_VECTKEY_MASK | NVIC_PriorityGroup;
+//exti.c文件
+void GPIO_EXTILineConfig(uint8_t GPIO_PortSource, uint8_t GPIO_PinSource);
+//设置IO口与中断线的映射关系
+
+exp:  GPIO_EXTILineConfig(GPIO_PortSourceGPIOE,GPIO_PinSource2);
+
+void EXTI_Init(EXTI_InitTypeDef* EXTI_InitStruct);
+ //初始化中断线：触发方式等
+
+ITStatus EXTI_GetITStatus(uint32_t EXTI_Line);
+//判断中断线中断状态，是否发生
+
+void EXTI_ClearITPendingBit(uint32_t EXTI_Line);
+//清除中断线上的中断标志位
+```
+# 实际代码
+
+```C
+#include "exti.h"
+#include "stm32f10x.h"
+#include "key.h"
+#include "delay.h"
+#include "led.h"
+
+void EXTIX_Init(void){
+	
+	EXTI_InitTypeDef  EXTI_InitStruct;
+	NVIC_InitTypeDef  NVIC_InitStruct;
+	
+	KEY_Init();
+	
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO,ENABLE);
+	
+	GPIO_EXTILineConfig(GPIO_PortSourceGPIOE,GPIO_PinSource4);
+	
+	EXTI_InitStruct.EXTI_Line = EXTI_Line4;
+	EXTI_InitStruct.EXTI_LineCmd = ENABLE;
+	EXTI_InitStruct.EXTI_Mode = EXTI_Mode_Interrupt;
+	EXTI_InitStruct.EXTI_Trigger = EXTI_Trigger_Falling;
+	EXTI_Init(&EXTI_InitStruct);
+	
+	NVIC_InitStruct.NVIC_IRQChannel = EXTI4_IRQn;
+	NVIC_InitStruct.NVIC_IRQChannelCmd = ENABLE;
+	NVIC_InitStruct.NVIC_IRQChannelPreemptionPriority = 2;
+	NVIC_InitStruct.NVIC_IRQChannelSubPriority = 2;
+	NVIC_Init(&NVIC_InitStruct);
 }
-//比如：
-NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
-```
-# 中断设置相关寄存器 
-```C
-__IO uint8_t  IP[240]; //中断优先级控制的寄存器组
-__IO uint32_t ISER[8]; //中断使能寄存器组
-__IO uint32_t ICER[8]; //中断失能寄存器组
-__IO uint32_t ISPR[8]; //中断挂起寄存器组
-__IO uint32_t ICPR[8]; //中断解挂寄存器组
-__IO uint32_t IABR[8]; //中断激活标志位寄存器组
-```
-# MDK中NVIC寄存器结构体
 
-```C
-typedef struct
+void EXTI4_IRQHandler(void)
 {
-  __IO uint32_t ISER[8];             
-       uint32_t RESERVED0[24];                                   
-  __IO uint32_t ICER[8];                    
-       uint32_t RSERVED1[24];                                    
-  __IO uint32_t ISPR[8];                     
-       uint32_t RESERVED2[24];                                   
-  __IO uint32_t ICPR[8];                   
-       uint32_t RESERVED3[24];                                   
-  __IO uint32_t IABR[8];                     
-       uint32_t RESERVED4[56];                                   
-  __IO uint8_t  IP[240];                     
-       uint32_t RESERVED5[644];                                  
-  __O  uint32_t STIR;                         
-}  NVIC_Type; 
-```
-# 对于每个中断怎么设置优先级
-
-## 中断优先级控制的寄存器组：IP[240]
-
-- 全称是：Interrupt Priority Registers
-
-- 240个8位寄存器，每个中断使用一个寄存器来确定优先级。STM32F10x系列一共60个可屏蔽中断，使用IP[59]~IP[0]。
-
-- 每个IP寄存器的高4位用来设置抢占和响应优先级（根据分组），低4位没有用到。
-
-- `void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct);
-`
-
-## 中断使能寄存器组：ISER[8]
-
-- 作用：用来使能中断
-
-- 32位寄存器，每个位控制一个中断的使能。STM32F10x只有60个可屏蔽中断，所以只使用了其中的ISER[0]和ISER[1]。
-
-- ISER[0]的`bit0-bit31`分别对应中断`0-31`。ISER[1]的`bit0-27`对应中断`32~59`；
-
-- `void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct);
-`
-
-## 中断失能寄存器组：ICER[8]
-
-- 作用：只读，通过它可以知道当前在执行的中断是哪一个
-
-- 32位寄存器，每个位控制一个中断的失能。STM32F10x只有60个可屏蔽中断，所以只使用了其中的ICER[0]和ICER[1]。
-
-- ICER[0]的`bit0~bit31`分别对应中断`0~31`。ICER[1]的`bit0~27`对应中断`32~59`；
-
-- 配置方法跟ISER一样
- `static __INLINE uint32_t NVIC_GetActive(IRQn_Type IRQn)
-`
-
-## 中断挂起控制寄存器组：ISPR[8]
-- 作用：用来挂起中断
-
-## 中断解挂控制寄存器组：ICPR[8]
-- 作用：用来解挂中断
-
-```C
-static __INLINE void NVIC_SetPendingIRQ(IRQn_Type IRQn)；
-static __INLINE uint32_t NVIC_GetPendingIRQ(IRQn_Type IRQn)；
-static __INLINE void NVIC_ClearPendingIRQ(IRQn_Type IRQn)
+	delay_ms(10);
+	if(KEY0 == 0){
+		LED0 = !LED0;
+		LED1 = !LED1;
+	}
+	//手动清除中断标志位
+	EXTI_ClearITPendingBit(EXTI_Line4);
+}
 ```
 
-## 中断激活标志位寄存器组：IABR [8]
-
-- 作用：只读，通过它可以知道当前在执行的中断是哪一个
-
-- 如果对应位为1，说明该中断正在执行。
-
-- `static __INLINE uint32_t NVIC_GetActive(IRQn_Type IRQn)
-`
-
-# 中断参数初始化函数
-
 ```C
-void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct);
+//main.c文件
+#include "stm32f10x.h"
+#include "led.h"
+#include "beep.h"
+#include "key.h"
+#include "sys.h"
+#include "delay.h"
+#include "exti.h"
+#include "usart.h"
 
-typedef struct
+int main()
 {
-  uint8_t NVIC_IRQChannel; //设置中断通道
-  uint8_t NVIC_IRQChannelPreemptionPriority;//设置响应优先级
-  uint8_t NVIC_IRQChannelSubPriority; //设置抢占优先级
-  FunctionalState NVIC_IRQChannelCmd; //使能/使能
-} NVIC_InitTypeDef;
-
-NVIC_InitTypeDef   NVIC_InitStructure;
-NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;//串口1中断
-NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=1 ;// 抢占优先级为1
-NVIC_InitStructure.NVIC_IRQChannelSubPriority = 2;// 子优先级位2
-NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;//IRQ通道使能
-NVIC_Init(&NVIC_InitStructure);	//根据上面指定的参数初始化NVIC寄存器
+	delay_init();	    	  //延时函数初始化	  
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
+ 	LED_Init();			      //LED端口初始化
+	KEY_Init();           //初始化与按键连接的硬件接口
+	EXTIX_Init();
+	LED0 = 0;					    //先点亮红灯
+	while(1)
+	{
+		printf("OK\r\n");
+	}	 
+}
 ```
-# 中断优先级设置步骤
-
-- 系统运行后先设置中断优先级分组。调用函数：
-`void NVIC_PriorityGroupConfig(uint32_t NVIC_PriorityGroup);`整个系统执行过程中，只设置一次中断分组。
-- 针对每个中断，设置对应的抢占优先级和响应优先级：
-`void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct);`
-- 如果需要挂起/解挂，查看中断当前激活状态，分别调用相关函数即可。

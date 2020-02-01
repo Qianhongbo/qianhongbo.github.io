@@ -116,20 +116,18 @@
 
 
 
-<meta name="description" content="NVIC中断介绍 CM3内核支持256个中断，其中包含了16个内核中断和240个外部中断，并且具有256级的可编程中断设置。 STM32并没有使用CM3内核的全部东西，而是只用了它的一部分。 STM32有84个中断，包括16个内核中断和68个可屏蔽中断，具有16级可编程的中断优先级。 STM32F103系列上面，又只有60个可屏蔽中断（在107系列才有68个）  中断管理方法首先，对STM32中断">
+<meta name="description" content="外部中断概述 STM32的每个IO都可以作为外部中断输入。  STM32的中断控制器支持19个外部中断/事件请求：    线0~15：对应外部IO口的输入中断。 线16：连接到PVD输出。 线17：连接到RTC闹钟事件。 线18：连接到USB唤醒事件。   每个外部中断线可以独立的配置触发方式（上升沿，下降沿或者双边沿触发），触发/屏蔽，专用的状态位。  从上面可以看出，STM32供IO使用的中断">
 <meta name="keywords" content="STM32">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【STM32】外部中断实验">
 <meta property="og:url" content="https://www.qianhongbo.top/【STM32】外部中断实验.html">
 <meta property="og:site_name" content="Blog | Qian Homeberg">
-<meta property="og:description" content="NVIC中断介绍 CM3内核支持256个中断，其中包含了16个内核中断和240个外部中断，并且具有256级的可编程中断设置。 STM32并没有使用CM3内核的全部东西，而是只用了它的一部分。 STM32有84个中断，包括16个内核中断和68个可屏蔽中断，具有16级可编程的中断优先级。 STM32F103系列上面，又只有60个可屏蔽中断（在107系列才有68个）  中断管理方法首先，对STM32中断">
+<meta property="og:description" content="外部中断概述 STM32的每个IO都可以作为外部中断输入。  STM32的中断控制器支持19个外部中断/事件请求：    线0~15：对应外部IO口的输入中断。 线16：连接到PVD输出。 线17：连接到RTC闹钟事件。 线18：连接到USB唤醒事件。   每个外部中断线可以独立的配置触发方式（上升沿，下降沿或者双边沿触发），触发/屏蔽，专用的状态位。  从上面可以看出，STM32供IO使用的中断">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ws3.sinaimg.cn/large/006BuM4Jgy1g67l4p94d5j30jf073t8r.jpg">
-<meta property="og:updated_time" content="2019-08-21T13:05:36.636Z">
+<meta property="og:updated_time" content="2019-08-28T14:27:03.281Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【STM32】外部中断实验">
-<meta name="twitter:description" content="NVIC中断介绍 CM3内核支持256个中断，其中包含了16个内核中断和240个外部中断，并且具有256级的可编程中断设置。 STM32并没有使用CM3内核的全部东西，而是只用了它的一部分。 STM32有84个中断，包括16个内核中断和68个可屏蔽中断，具有16级可编程的中断优先级。 STM32F103系列上面，又只有60个可屏蔽中断（在107系列才有68个）  中断管理方法首先，对STM32中断">
-<meta name="twitter:image" content="http://ws3.sinaimg.cn/large/006BuM4Jgy1g67l4p94d5j30jf073t8r.jpg">
+<meta name="twitter:description" content="外部中断概述 STM32的每个IO都可以作为外部中断输入。  STM32的中断控制器支持19个外部中断/事件请求：    线0~15：对应外部IO口的输入中断。 线16：连接到PVD输出。 线17：连接到RTC闹钟事件。 线18：连接到USB唤醒事件。   每个外部中断线可以独立的配置触发方式（上升沿，下降沿或者双边沿触发），触发/屏蔽，专用的状态位。  从上面可以看出，STM32供IO使用的中断">
 
 
 
@@ -383,8 +381,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-19T14:39:35+08:00">
-                2019-08-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-28T21:12:38+08:00">
+                2019-08-28
               </time>
             
 
@@ -454,7 +452,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.3k 字
+                  526 字
                 </span>
               
 
@@ -470,7 +468,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -492,84 +490,41 @@
       
 
       
-        <h1 id="NVIC中断介绍"><a href="#NVIC中断介绍" class="headerlink" title="NVIC中断介绍"></a>NVIC中断介绍</h1><ul>
-<li>CM3内核支持256个中断，其中包含了16个内核中断和240个外部中断，并且具有256级的可编程中断设置。</li>
-<li>STM32并没有使用CM3内核的全部东西，而是只用了它的一部分。</li>
-<li>STM32有84个中断，包括16个内核中断和68个可屏蔽中断，具有16级可编程的中断优先级。</li>
-<li>STM32F103系列上面，又只有60个可屏蔽中断（在107系列才有68个）</li>
+        <h1 id="外部中断概述"><a href="#外部中断概述" class="headerlink" title="外部中断概述"></a>外部中断概述</h1><ol>
+<li><p>STM32的每个IO都可以作为外部中断输入。</p>
+</li>
+<li><p>STM32的中断控制器支持19个外部中断/事件请求：</p>
+</li>
+</ol>
+<ul>
+<li>线0~15：对应外部IO口的输入中断。</li>
+<li>线16：连接到PVD输出。</li>
+<li>线17：连接到RTC闹钟事件。</li>
+<li>线18：连接到USB唤醒事件。</li>
 </ul>
-<h1 id="中断管理方法"><a href="#中断管理方法" class="headerlink" title="中断管理方法"></a>中断管理方法</h1><p>首先，对STM32中断进行分组，组0~4。同时，对每个中断设置一个抢占优先级和一个响应优先级值。</p>
-<p>分组配置是在寄存器SCB-&gt;AIRCR中配置：</p>
-<p><img src="http://ws3.sinaimg.cn/large/006BuM4Jgy1g67l4p94d5j30jf073t8r.jpg" alt="图片5"></p>
-<h1 id="抢占优先级-amp-响应优先级区别"><a href="#抢占优先级-amp-响应优先级区别" class="headerlink" title="抢占优先级 &amp; 响应优先级区别"></a>抢占优先级 &amp; 响应优先级区别</h1><ul>
-<li>高优先级的抢占优先级是可以打断正在进行的低抢占优先级中断的。</li>
-<li>抢占优先级相同的中断，高响应优先级不可以打断低响应优先级的中断。</li>
-<li>抢占优先级相同的中断，当两个中断同时发生的情况下，哪个响应优先级高，哪个先执行。</li>
-<li>如果两个中断的抢占优先级和响应优先级都是一样的话，则看哪个中断先发生就先执行；</li>
+<ol start="3">
+<li><p>每个外部中断线可以独立的配置触发方式（上升沿，下降沿或者双边沿触发），触发/屏蔽，专用的状态位。</p>
+</li>
+<li><p>从上面可以看出，STM32供IO使用的中断线只有16个，但是STM32F10x系列的IO口多达上百个，那么中断线怎么跟io口对应呢？</p>
+</li>
+</ol>
+<ul>
+<li>GPIOx.0映射到EXTI0</li>
+<li>GPIOx.1映射到EXTI1</li>
+<li>…</li>
+<li>GPIOx.15映射到EXTI15</li>
 </ul>
-<h1 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h1><p>假定设置中断优先级组为2，然后设置中断3(RTC中断)的抢占优先级为2，响应优先级为1。  中断6（外部中断0）的抢占优先级为3，响应优先级为0。中断7（外部中断1）的抢占优先级为2，响应优先级为0。</p>
-<p>那么这3个中断的优先级顺序为：中断7&gt;中断3&gt;中断6。 </p>
-<h1 id="特别说明"><a href="#特别说明" class="headerlink" title="特别说明"></a>特别说明</h1><p>一般情况下，系统代码执行过程中，只设置一次中断优先级分组，比如分组2，设置好分组之后一般不会再改变分组。随意改变分组会导致中断管理混乱，程序出现意想不到的执行结果。</p>
-<h1 id="中断优先级分组函数"><a href="#中断优先级分组函数" class="headerlink" title="中断优先级分组函数"></a>中断优先级分组函数</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">NVIC_PriorityGroupConfig</span><span class="params">(<span class="keyword">uint32_t</span> NVIC_PriorityGroup)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  assert_param(IS_NVIC_PRIORITY_GROUP(NVIC_PriorityGroup));</span><br><span class="line">  SCB-&gt;AIRCR = AIRCR_VECTKEY_MASK | NVIC_PriorityGroup;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//比如：</span></span><br><span class="line">NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>IO口外部中断在中断向量表中只分配了7个中断向量，也就是<br>只能使用7个中断服务函数<blockquote>
+<p>从表中可以看出，外部中断线5<del>9分配一个中断向量，共用一个服务函数，外部中断线10</del>15分配一个中断向量，共用一个中断服务函数。</p>
+</blockquote>
+</li>
+</ol>
+<h1 id="外部中断常用库函数"><a href="#外部中断常用库函数" class="headerlink" title="外部中断常用库函数"></a>外部中断常用库函数</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//exti.c文件</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">GPIO_EXTILineConfig</span><span class="params">(<span class="keyword">uint8_t</span> GPIO_PortSource, <span class="keyword">uint8_t</span> GPIO_PinSource)</span></span>;</span><br><span class="line"><span class="comment">//设置IO口与中断线的映射关系</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">exp</span>:  GPIO_EXTILineConfig(GPIO_PortSourceGPIOE,GPIO_PinSource2);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EXTI_Init</span><span class="params">(EXTI_InitTypeDef* EXTI_InitStruct)</span></span>;</span><br><span class="line"> <span class="comment">//初始化中断线：触发方式等</span></span><br><span class="line"></span><br><span class="line"><span class="function">ITStatus <span class="title">EXTI_GetITStatus</span><span class="params">(<span class="keyword">uint32_t</span> EXTI_Line)</span></span>;</span><br><span class="line"><span class="comment">//判断中断线中断状态，是否发生</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EXTI_ClearITPendingBit</span><span class="params">(<span class="keyword">uint32_t</span> EXTI_Line)</span></span>;</span><br><span class="line"><span class="comment">//清除中断线上的中断标志位</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="中断设置相关寄存器"><a href="#中断设置相关寄存器" class="headerlink" title="中断设置相关寄存器"></a>中断设置相关寄存器</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">__IO <span class="keyword">uint8_t</span>  IP[<span class="number">240</span>]; <span class="comment">//中断优先级控制的寄存器组</span></span><br><span class="line">__IO <span class="keyword">uint32_t</span> ISER[<span class="number">8</span>]; <span class="comment">//中断使能寄存器组</span></span><br><span class="line">__IO <span class="keyword">uint32_t</span> ICER[<span class="number">8</span>]; <span class="comment">//中断失能寄存器组</span></span><br><span class="line">__IO <span class="keyword">uint32_t</span> ISPR[<span class="number">8</span>]; <span class="comment">//中断挂起寄存器组</span></span><br><span class="line">__IO <span class="keyword">uint32_t</span> ICPR[<span class="number">8</span>]; <span class="comment">//中断解挂寄存器组</span></span><br><span class="line">__IO <span class="keyword">uint32_t</span> IABR[<span class="number">8</span>]; <span class="comment">//中断激活标志位寄存器组</span></span><br></pre></td></tr></table></figure>
+<h1 id="实际代码"><a href="#实际代码" class="headerlink" title="实际代码"></a>实际代码</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"exti.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stm32f10x.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"key.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"delay.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"led.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EXTIX_Init</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	EXTI_InitTypeDef  EXTI_InitStruct;</span><br><span class="line">	NVIC_InitTypeDef  NVIC_InitStruct;</span><br><span class="line">	</span><br><span class="line">	KEY_Init();</span><br><span class="line">	</span><br><span class="line">	RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO,ENABLE);</span><br><span class="line">	</span><br><span class="line">	GPIO_EXTILineConfig(GPIO_PortSourceGPIOE,GPIO_PinSource4);</span><br><span class="line">	</span><br><span class="line">	EXTI_InitStruct.EXTI_Line = EXTI_Line4;</span><br><span class="line">	EXTI_InitStruct.EXTI_LineCmd = ENABLE;</span><br><span class="line">	EXTI_InitStruct.EXTI_Mode = EXTI_Mode_Interrupt;</span><br><span class="line">	EXTI_InitStruct.EXTI_Trigger = EXTI_Trigger_Falling;</span><br><span class="line">	EXTI_Init(&amp;EXTI_InitStruct);</span><br><span class="line">	</span><br><span class="line">	NVIC_InitStruct.NVIC_IRQChannel = EXTI4_IRQn;</span><br><span class="line">	NVIC_InitStruct.NVIC_IRQChannelCmd = ENABLE;</span><br><span class="line">	NVIC_InitStruct.NVIC_IRQChannelPreemptionPriority = <span class="number">2</span>;</span><br><span class="line">	NVIC_InitStruct.NVIC_IRQChannelSubPriority = <span class="number">2</span>;</span><br><span class="line">	NVIC_Init(&amp;NVIC_InitStruct);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EXTI4_IRQHandler</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	delay_ms(<span class="number">10</span>);</span><br><span class="line">	<span class="keyword">if</span>(KEY0 == <span class="number">0</span>)&#123;</span><br><span class="line">		LED0 = !LED0;</span><br><span class="line">		LED1 = !LED1;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//手动清除中断标志位</span></span><br><span class="line">	EXTI_ClearITPendingBit(EXTI_Line4);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h1 id="MDK中NVIC寄存器结构体"><a href="#MDK中NVIC寄存器结构体" class="headerlink" title="MDK中NVIC寄存器结构体"></a>MDK中NVIC寄存器结构体</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> ISER[<span class="number">8</span>];             </span><br><span class="line">       <span class="keyword">uint32_t</span> RESERVED0[<span class="number">24</span>];                                   </span><br><span class="line">  __IO <span class="keyword">uint32_t</span> ICER[<span class="number">8</span>];                    </span><br><span class="line">       <span class="keyword">uint32_t</span> RSERVED1[<span class="number">24</span>];                                    </span><br><span class="line">  __IO <span class="keyword">uint32_t</span> ISPR[<span class="number">8</span>];                     </span><br><span class="line">       <span class="keyword">uint32_t</span> RESERVED2[<span class="number">24</span>];                                   </span><br><span class="line">  __IO <span class="keyword">uint32_t</span> ICPR[<span class="number">8</span>];                   </span><br><span class="line">       <span class="keyword">uint32_t</span> RESERVED3[<span class="number">24</span>];                                   </span><br><span class="line">  __IO <span class="keyword">uint32_t</span> IABR[<span class="number">8</span>];                     </span><br><span class="line">       <span class="keyword">uint32_t</span> RESERVED4[<span class="number">56</span>];                                   </span><br><span class="line">  __IO <span class="keyword">uint8_t</span>  IP[<span class="number">240</span>];                     </span><br><span class="line">       <span class="keyword">uint32_t</span> RESERVED5[<span class="number">644</span>];                                  </span><br><span class="line">  __O  <span class="keyword">uint32_t</span> STIR;                         </span><br><span class="line">&#125;  NVIC_Type;</span><br></pre></td></tr></table></figure>
-
-<h1 id="对于每个中断怎么设置优先级"><a href="#对于每个中断怎么设置优先级" class="headerlink" title="对于每个中断怎么设置优先级"></a>对于每个中断怎么设置优先级</h1><h2 id="中断优先级控制的寄存器组：IP-240"><a href="#中断优先级控制的寄存器组：IP-240" class="headerlink" title="中断优先级控制的寄存器组：IP[240]"></a>中断优先级控制的寄存器组：IP[240]</h2><ul>
-<li><p>全称是：Interrupt Priority Registers</p>
-</li>
-<li><p>240个8位寄存器，每个中断使用一个寄存器来确定优先级。STM32F10x系列一共60个可屏蔽中断，使用IP[59]~IP[0]。</p>
-</li>
-<li><p>每个IP寄存器的高4位用来设置抢占和响应优先级（根据分组），低4位没有用到。</p>
-</li>
-<li><p><code>void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct);</code></p>
-</li>
-</ul>
-<h2 id="中断使能寄存器组：ISER-8"><a href="#中断使能寄存器组：ISER-8" class="headerlink" title="中断使能寄存器组：ISER[8]"></a>中断使能寄存器组：ISER[8]</h2><ul>
-<li><p>作用：用来使能中断</p>
-</li>
-<li><p>32位寄存器，每个位控制一个中断的使能。STM32F10x只有60个可屏蔽中断，所以只使用了其中的ISER[0]和ISER[1]。</p>
-</li>
-<li><p>ISER[0]的<code>bit0-bit31</code>分别对应中断<code>0-31</code>。ISER[1]的<code>bit0-27</code>对应中断<code>32~59</code>；</p>
-</li>
-<li><p><code>void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct);</code></p>
-</li>
-</ul>
-<h2 id="中断失能寄存器组：ICER-8"><a href="#中断失能寄存器组：ICER-8" class="headerlink" title="中断失能寄存器组：ICER[8]"></a>中断失能寄存器组：ICER[8]</h2><ul>
-<li><p>作用：只读，通过它可以知道当前在执行的中断是哪一个</p>
-</li>
-<li><p>32位寄存器，每个位控制一个中断的失能。STM32F10x只有60个可屏蔽中断，所以只使用了其中的ICER[0]和ICER[1]。</p>
-</li>
-<li><p>ICER[0]的<code>bit0~bit31</code>分别对应中断<code>0~31</code>。ICER[1]的<code>bit0~27</code>对应中断<code>32~59</code>；</p>
-</li>
-<li><p>配置方法跟ISER一样<br><code>static __INLINE uint32_t NVIC_GetActive(IRQn_Type IRQn)</code></p>
-</li>
-</ul>
-<h2 id="中断挂起控制寄存器组：ISPR-8"><a href="#中断挂起控制寄存器组：ISPR-8" class="headerlink" title="中断挂起控制寄存器组：ISPR[8]"></a>中断挂起控制寄存器组：ISPR[8]</h2><ul>
-<li>作用：用来挂起中断</li>
-</ul>
-<h2 id="中断解挂控制寄存器组：ICPR-8"><a href="#中断解挂控制寄存器组：ICPR-8" class="headerlink" title="中断解挂控制寄存器组：ICPR[8]"></a>中断解挂控制寄存器组：ICPR[8]</h2><ul>
-<li>作用：用来解挂中断</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">static __INLINE void NVIC_SetPendingIRQ(IRQn_Type IRQn)；</span><br><span class="line">static __INLINE uint32_t NVIC_GetPendingIRQ(IRQn_Type IRQn)；</span><br><span class="line"><span class="keyword">static</span> __<span class="function">INLINE <span class="keyword">void</span> <span class="title">NVIC_ClearPendingIRQ</span><span class="params">(IRQn_Type IRQn)</span></span></span><br></pre></td></tr></table></figure>
-
-<h2 id="中断激活标志位寄存器组：IABR-8"><a href="#中断激活标志位寄存器组：IABR-8" class="headerlink" title="中断激活标志位寄存器组：IABR [8]"></a>中断激活标志位寄存器组：IABR [8]</h2><ul>
-<li><p>作用：只读，通过它可以知道当前在执行的中断是哪一个</p>
-</li>
-<li><p>如果对应位为1，说明该中断正在执行。</p>
-</li>
-<li><p><code>static __INLINE uint32_t NVIC_GetActive(IRQn_Type IRQn)</code></p>
-</li>
-</ul>
-<h1 id="中断参数初始化函数"><a href="#中断参数初始化函数" class="headerlink" title="中断参数初始化函数"></a>中断参数初始化函数</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">NVIC_Init</span><span class="params">(NVIC_InitTypeDef* NVIC_InitStruct)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  <span class="keyword">uint8_t</span> NVIC_IRQChannel; <span class="comment">//设置中断通道</span></span><br><span class="line">  <span class="keyword">uint8_t</span> NVIC_IRQChannelPreemptionPriority;<span class="comment">//设置响应优先级</span></span><br><span class="line">  <span class="keyword">uint8_t</span> NVIC_IRQChannelSubPriority; <span class="comment">//设置抢占优先级</span></span><br><span class="line">  FunctionalState NVIC_IRQChannelCmd; <span class="comment">//使能/使能</span></span><br><span class="line">&#125; NVIC_InitTypeDef;</span><br><span class="line"></span><br><span class="line">NVIC_InitTypeDef   NVIC_InitStructure;</span><br><span class="line">NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;<span class="comment">//串口1中断</span></span><br><span class="line">NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=<span class="number">1</span> ;<span class="comment">// 抢占优先级为1</span></span><br><span class="line">NVIC_InitStructure.NVIC_IRQChannelSubPriority = <span class="number">2</span>;<span class="comment">// 子优先级位2</span></span><br><span class="line">NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;<span class="comment">//IRQ通道使能</span></span><br><span class="line">NVIC_Init(&amp;NVIC_InitStructure);	<span class="comment">//根据上面指定的参数初始化NVIC寄存器</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="中断优先级设置步骤"><a href="#中断优先级设置步骤" class="headerlink" title="中断优先级设置步骤"></a>中断优先级设置步骤</h1><ul>
-<li>系统运行后先设置中断优先级分组。调用函数：<br><code>void NVIC_PriorityGroupConfig(uint32_t NVIC_PriorityGroup);</code>整个系统执行过程中，只设置一次中断分组。</li>
-<li>针对每个中断，设置对应的抢占优先级和响应优先级：<br><code>void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct);</code></li>
-<li>如果需要挂起/解挂，查看中断当前激活状态，分别调用相关函数即可。</li>
-</ul>
-
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//main.c文件</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stm32f10x.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"led.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"beep.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"key.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"sys.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"delay.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"exti.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"usart.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	delay_init();	    	  <span class="comment">//延时函数初始化	  </span></span><br><span class="line">	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);</span><br><span class="line"> 	LED_Init();			      <span class="comment">//LED端口初始化</span></span><br><span class="line">	KEY_Init();           <span class="comment">//初始化与按键连接的硬件接口</span></span><br><span class="line">	EXTIX_Init();</span><br><span class="line">	LED0 = <span class="number">0</span>;					    <span class="comment">//先点亮红灯</span></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"OK\r\n"</span>);</span><br><span class="line">	&#125;	 </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -655,8 +610,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/【STM32】端口复用.html" rel="next" title="【STM32】端口复用">
-                <i class="fa fa-chevron-left"></i> 【STM32】端口复用
+              <a href="/【机器人学】TASK.html" rel="next" title="【机器人学】TASK">
+                <i class="fa fa-chevron-left"></i> 【机器人学】TASK
               </a>
             
           </div>
@@ -664,10 +619,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/【STM32】串口通信基本原理.html" rel="prev" title="【STM32】串口通信基本原理">
-                【STM32】串口通信基本原理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -756,7 +707,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -767,7 +718,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -854,7 +805,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#NVIC中断介绍"><span class="nav-number">1.</span> <span class="nav-text">NVIC中断介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#中断管理方法"><span class="nav-number">2.</span> <span class="nav-text">中断管理方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#抢占优先级-amp-响应优先级区别"><span class="nav-number">3.</span> <span class="nav-text">抢占优先级 &amp; 响应优先级区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#举例"><span class="nav-number">4.</span> <span class="nav-text">举例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#特别说明"><span class="nav-number">5.</span> <span class="nav-text">特别说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#中断优先级分组函数"><span class="nav-number">6.</span> <span class="nav-text">中断优先级分组函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#中断设置相关寄存器"><span class="nav-number">7.</span> <span class="nav-text">中断设置相关寄存器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MDK中NVIC寄存器结构体"><span class="nav-number">8.</span> <span class="nav-text">MDK中NVIC寄存器结构体</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对于每个中断怎么设置优先级"><span class="nav-number">9.</span> <span class="nav-text">对于每个中断怎么设置优先级</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#中断优先级控制的寄存器组：IP-240"><span class="nav-number">9.1.</span> <span class="nav-text">中断优先级控制的寄存器组：IP[240]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中断使能寄存器组：ISER-8"><span class="nav-number">9.2.</span> <span class="nav-text">中断使能寄存器组：ISER[8]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中断失能寄存器组：ICER-8"><span class="nav-number">9.3.</span> <span class="nav-text">中断失能寄存器组：ICER[8]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中断挂起控制寄存器组：ISPR-8"><span class="nav-number">9.4.</span> <span class="nav-text">中断挂起控制寄存器组：ISPR[8]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中断解挂控制寄存器组：ICPR-8"><span class="nav-number">9.5.</span> <span class="nav-text">中断解挂控制寄存器组：ICPR[8]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中断激活标志位寄存器组：IABR-8"><span class="nav-number">9.6.</span> <span class="nav-text">中断激活标志位寄存器组：IABR [8]</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#中断参数初始化函数"><span class="nav-number">10.</span> <span class="nav-text">中断参数初始化函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#中断优先级设置步骤"><span class="nav-number">11.</span> <span class="nav-text">中断优先级设置步骤</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#外部中断概述"><span class="nav-number">1.</span> <span class="nav-text">外部中断概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#外部中断常用库函数"><span class="nav-number">2.</span> <span class="nav-text">外部中断常用库函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实际代码"><span class="nav-number">3.</span> <span class="nav-text">实际代码</span></a></li></ol></div>
             
 
           </div>
@@ -874,7 +825,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -888,7 +839,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">21.6k</span>
+    <span title="Site words total count">22.7k</span>
   
 </div>
 

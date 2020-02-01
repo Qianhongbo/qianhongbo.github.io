@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.qianhongbo.top/"/>
-  <updated>2019-08-28T14:27:03.281Z</updated>
+  <updated>2020-02-01T02:59:45.754Z</updated>
   <id>https://www.qianhongbo.top/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2.1_英语学习</title>
+    <link href="https://www.qianhongbo.top/2.1_%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0.html"/>
+    <id>https://www.qianhongbo.top/2.1_英语学习.html</id>
+    <published>2020-02-01T02:25:59.000Z</published>
+    <updated>2020-02-01T02:59:45.754Z</updated>
+    
+    <content type="html"><![CDATA[<table><thead><tr><th>WORDS</th><th>Meaning</th></tr></thead><tbody><tr><td>WHO</td><td>THE World Health Organization</td></tr><tr><td>Coronavirus</td><td>新型冠状病毒</td></tr><tr><td>reverse</td><td>v. 撤销，废除；n. 对立面</td></tr><tr><td>hold off</td><td>推迟</td></tr><tr><td>warrant</td><td>justify</td></tr><tr><td>advisory</td><td>顾问，咨询</td></tr><tr><td>body</td><td>组织，机构</td></tr><tr><td>advisory body</td><td>咨询机构</td></tr><tr><td>grave</td><td>庄重的，严峻的</td></tr><tr><td>Thus far</td><td>到目前为止</td></tr><tr><td>relevant</td><td>重要的</td></tr><tr><td>wage</td><td>发动        wage the war</td></tr><tr><td>lavish</td><td>奢侈的，大量的</td></tr><tr><td>lavishly</td><td>慷慨地</td></tr><tr><td>in effect = in fact</td><td>本质上</td></tr><tr><td>effectively</td><td>实际上地</td></tr><tr><td>strand</td><td>搁浅；将…困在某处</td></tr><tr><td>height</td><td>高潮，高峰期</td></tr><tr><td>tantamount to</td><td>相当于，等同于</td></tr><tr><td>quarantine</td><td>将…隔离</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;WORDS&lt;/th&gt;
+&lt;th&gt;Meaning&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;WHO&lt;/td&gt;
+&lt;td&gt;THE World Health Organization&lt;/td&gt;
+&lt;/tr&gt;
+&lt;t
+      
+    
+    </summary>
+    
+      <category term="每日英语学习" scheme="https://www.qianhongbo.top/categories/%E6%AF%8F%E6%97%A5%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="English" scheme="https://www.qianhongbo.top/tags/English/"/>
+    
+  </entry>
   
   <entry>
     <title>【STM32】外部中断实验</title>
@@ -515,29 +551,6 @@
     
     
       <category term="目标" scheme="https://www.qianhongbo.top/tags/%E7%9B%AE%E6%A0%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>专业导论课最后一节个人认为比较有价值内容整理</title>
-    <link href="https://www.qianhongbo.top/%E4%B8%93%E4%B8%9A%E5%AF%BC%E8%AE%BA%E8%AF%BE%E6%9C%80%E5%90%8E%E4%B8%80%E8%8A%82%E4%B8%AA%E4%BA%BA%E8%AE%A4%E4%B8%BA%E6%AF%94%E8%BE%83%E6%9C%89%E4%BB%B7%E5%80%BC%E5%86%85%E5%AE%B9%E6%95%B4%E7%90%86.html"/>
-    <id>https://www.qianhongbo.top/专业导论课最后一节个人认为比较有价值内容整理.html</id>
-    <published>2019-06-14T04:07:11.000Z</published>
-    <updated>2019-07-25T02:40:58.784Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="机械工程伦理"><a href="#机械工程伦理" class="headerlink" title="机械工程伦理"></a>机械工程伦理</h2><h3 id="问问自己："><a href="#问问自己：" class="headerlink" title="问问自己："></a>问问自己：</h3><p>内心世界?</p><p>存在的意义?</p><p>为何要多一点形而上?</p><p>你的价值感?</p><p>你的技术创造的欲求?</p><p>技术工作者/工程师的责任?</p><p>你对未来技术的感觉?</p><h2 id="知识、能力与素质的区别和联系"><a href="#知识、能力与素质的区别和联系" class="headerlink" title="知识、能力与素质的区别和联系"></a>知识、能力与素质的区别和联系</h2><table><thead><tr><th align="left"></th><th align="center">核心</th><th align="center">t特点</th></tr></thead><tbody><tr><td align="left">知识</td><td align="center">人类认识的成果</td><td align="center">形成能力，素质的基础</td></tr><tr><td align="left">能力</td><td align="center">完成一定活动的本领</td><td align="center">对知识的运用，是知识发挥作用的实践条件，具“外显性”</td></tr><tr><td align="left">素养</td><td align="center">基本品质或基础条件</td><td align="center">人在活动过程中所塑造成的内在升华，具“内凝性”</td></tr></tbody></table><h2 id="专业教育组成"><a href="#专业教育组成" class="headerlink" title="专业教育组成"></a>专业教育组成</h2><p>数学类和自然科学类总计最少为450学时</p><p>工程科学类、工程设计与实践类两者总计最少1000学时</p><p>人文和社会科学不少于400学时</p><h2 id="机械专业教育知识体系包含如下5个知识领域"><a href="#机械专业教育知识体系包含如下5个知识领域" class="headerlink" title="机械专业教育知识体系包含如下5个知识领域"></a>机械专业教育知识体系包含如下5个知识领域</h2><ol><li>机械设计的原理与方法</li><li>机械制造工程原理与技术</li><li>机械系统中的传动和控制</li><li>计算机应用技术</li><li>热流体</li></ol><h2 id="中国加入《华盛顿协议》"><a href="#中国加入《华盛顿协议》" class="headerlink" title="中国加入《华盛顿协议》"></a>中国加入《华盛顿协议》</h2><p>国内本科生获得的文凭，在国际上都会被认可</p><h2 id="企业对毕业生能力的评价"><a href="#企业对毕业生能力的评价" class="headerlink" title="企业对毕业生能力的评价"></a>企业对毕业生能力的评价</h2><ol><li>独立性强、思路开阔、时尚;</li><li>知识面广;</li><li>不够踏实、团队协作意识弱;</li><li>不能承受较大压力,工作责任心、事业心弱,急功近利;</li><li>熟悉、胜任本职工作需要的时间较长,须在企业工作3-4年左右才能完全胜任工作。</li></ol><h2 id="企业对毕业生能力的期待"><a href="#企业对毕业生能力的期待" class="headerlink" title="企业对毕业生能力的期待"></a>企业对毕业生能力的期待</h2><ol><li>除专业能力外,最基本的要求是踏实、勤奋、敬业、忠诚、合作;</li><li>感兴趣的主要不是学习成绩,更注重处理问题的能力、解决问题的能力以及工作中的综合性能</li><li>很看重学生的整体素质和品德.</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;机械工程伦理&quot;&gt;&lt;a href=&quot;#机械工程伦理&quot; class=&quot;headerlink&quot; title=&quot;机械工程伦理&quot;&gt;&lt;/a&gt;机械工程伦理&lt;/h2&gt;&lt;h3 id=&quot;问问自己：&quot;&gt;&lt;a href=&quot;#问问自己：&quot; class=&quot;headerlink&quot; title=
-      
-    
-    </summary>
-    
-      <category term="华科机械学习资料分享" scheme="https://www.qianhongbo.top/categories/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/"/>
-    
     
   </entry>
   

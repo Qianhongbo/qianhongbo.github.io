@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.qianhongbo.top/"/>
-  <updated>2020-02-01T02:59:45.754Z</updated>
+  <updated>2020-02-03T10:24:43.106Z</updated>
   <id>https://www.qianhongbo.top/</id>
   
   <author>
@@ -17,11 +17,139 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>计算机四级知识点</title>
+    <link href="https://www.qianhongbo.top/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%9B%E7%BA%A7%E7%9F%A5%E8%AF%86%E7%82%B9.html"/>
+    <id>https://www.qianhongbo.top/计算机四级知识点.html</id>
+    <published>2020-02-03T10:19:45.000Z</published>
+    <updated>2020-02-03T10:24:43.106Z</updated>
+    
+    <content type="html"><![CDATA[<p>时钟分为硬件时钟和软件时钟</p><p>目态：用户态 — 一般指令</p><p>管态：系统态 — 特权指令</p><h1 id="进程线程模型"><a href="#进程线程模型" class="headerlink" title="进程线程模型"></a>进程线程模型</h1><ol><li>顺序执行：顺序性；封闭性；程序结果确定性；程序结果可再现性</li><li>多道程序系统：同时处理多个具有独立功能的程序，提高利用率/ 独立性；随机性；资源共享性</li><li>程序的并发执行：并发程序相互制约；程序与计算不再一一对应；并发程序结果不可再现</li></ol><blockquote><p>多道程序系统属于各种操作系统，是一种思想（实时系统、分布系统）</p><p>并发不等于同时运行</p></blockquote><h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><ol><li>进程是正在执行的程序，包括程序，数据，进程控制块</li><li>并发性；动态性；独立性；交往性；异步性</li><li>三状态模型：就绪状态，运行状态，等待状态<ol><li>就绪状态：进程分配到除CPU之外的一切资源；排成就绪队列</li><li>运行状态：就绪状态的程序获得CPU的使用权，单处理器同一时间只能有一个程序处于运行状态</li><li>等待状态/阻塞状态：进程请求输入输出、申请额外空间；不浪费CPU</li></ol></li><li>创建状态，结束状态（完成、未完成）</li><li>挂起状态，激活状态（内存、外存转换）</li><li>新状态—&gt;就绪状态：就绪队列可以接纳新的进程</li><li>就绪状态—&gt;执行状态：按照算法分配；执行状态的进程称为当前进程</li><li>执行状态—&gt;就绪状态：时间片结束、优先权较低</li><li>执行状态—&gt;阻塞状态：IO请求等</li><li>阻塞状态需要先进入就绪状态再进入运行状态</li></ol><p><img src="//tvax4.sinaimg.cn/large/006BuM4Jly1gbhtnod40pj30qo0f7k0k.jpg" alt="TIM截图20200202095653"></p><h2 id="PCB：进程控制块"><a href="#PCB：进程控制块" class="headerlink" title="PCB：进程控制块"></a>PCB：进程控制块</h2><p>组织方式</p><ol><li>线性方式：需要扫描所有的</li><li>索引方式：需要额外的空间</li><li>链接方式：相同状态的进程排列在一起</li></ol><h2 id="Unix的fork-函数"><a href="#Unix的fork-函数" class="headerlink" title="Unix的fork()函数"></a>Unix的<code>fork()</code>函数</h2><p>父进程通过<code>fork()</code>创建子进程</p><p>特点：只被执行一次，返回<strong>两次</strong>结果，父进程返回的是子进程的<code>PID</code>，子进程中<code>fork</code>返回0</p><blockquote><p>代码中有几个fork()就会输出2^n次</p></blockquote><h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><p>线程是进程的一个实体，是被系统独立调度和执行的基本单位</p><p>线程基本上不拥有系统资源，但它可以与同属于一个进程的其他线程共享所拥有的全部资源</p><p>一个线程可以创建和撤销另一个线程，多个线程之间可以并发执行，因此运行中可以呈现出异步性，因此线程同样有就绪，执行，阻塞三个状态</p><blockquote><p>进程是拥有资源的基本单位</p><p>不同进程之间可以并发执行，一个进程中的多个线程也可以并发执行</p><p>QQ和音乐播放可以同时运行（多进程），QQ里可以多个人同时聊天（多线程）</p><p>线程的引入增加了并发性！</p><p>一个程序至少有一个进程，一个进程至少有一个线程</p></blockquote><p>用户级线程，内核级线程，混合级线程</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;时钟分为硬件时钟和软件时钟&lt;/p&gt;
+&lt;p&gt;目态：用户态 — 一般指令&lt;/p&gt;
+&lt;p&gt;管态：系统态 — 特权指令&lt;/p&gt;
+&lt;h1 id=&quot;进程线程模型&quot;&gt;&lt;a href=&quot;#进程线程模型&quot; class=&quot;headerlink&quot; title=&quot;进程线程模型&quot;&gt;&lt;/a&gt;进程线程模
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>2.3_英语学习</title>
+    <link href="https://www.qianhongbo.top/2-3-%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0.html"/>
+    <id>https://www.qianhongbo.top/2-3-英语学习.html</id>
+    <published>2020-02-03T10:18:42.000Z</published>
+    <updated>2020-02-03T10:22:51.844Z</updated>
+    
+    <content type="html"><![CDATA[<table><thead><tr><th>WORDS</th><th>MEANING</th></tr></thead><tbody><tr><td>lump</td><td>块</td></tr><tr><td>coal</td><td>煤</td></tr><tr><td>upend</td><td>使倒立</td></tr><tr><td>fanfare</td><td>热议</td></tr><tr><td>resurface</td><td>重新出现</td></tr><tr><td>bedeck</td><td>装饰</td></tr><tr><td>mega-</td><td>巨大的</td></tr><tr><td>be out to do sth</td><td>试图做某事</td></tr><tr><td>utterly、utter</td><td>完全地、完全的</td></tr><tr><td>behemoth</td><td>巨兽，庞然大物</td></tr><tr><td>mine</td><td>挖掘</td></tr><tr><td>surveil</td><td>监视</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;WORDS&lt;/th&gt;
+&lt;th&gt;MEANING&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;lump&lt;/td&gt;
+&lt;td&gt;块&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;coal&lt;/td&gt;
+&lt;td&gt;煤&lt;/td&gt;
+      
+    
+    </summary>
+    
+      <category term="每日英语学习" scheme="https://www.qianhongbo.top/categories/%E6%AF%8F%E6%97%A5%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="English" scheme="https://www.qianhongbo.top/tags/English/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2.2_英语学习</title>
+    <link href="https://www.qianhongbo.top/2-2-%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0.html"/>
+    <id>https://www.qianhongbo.top/2-2-英语学习.html</id>
+    <published>2020-02-03T10:18:24.000Z</published>
+    <updated>2020-02-03T10:22:54.970Z</updated>
+    
+    <content type="html"><![CDATA[<table><thead><tr><th>WORDS</th><th>MEANING</th></tr></thead><tbody><tr><td>loot</td><td>掠夺，趁火打劫</td></tr><tr><td>resonate</td><td>产生回响，回档</td></tr><tr><td>systemetic</td><td>全面的，根本的</td></tr><tr><td>property</td><td>财产</td></tr><tr><td>end up in</td><td>最终到达</td></tr><tr><td>relinquish</td><td>（不情愿地）交出</td></tr><tr><td>dealer</td><td>经销商</td></tr><tr><td>auction</td><td>拍卖</td></tr><tr><td>Reich</td><td>帝国</td></tr><tr><td>commission</td><td>委员会</td></tr><tr><td>foster</td><td>促进，培养</td></tr><tr><td>restitution</td><td>归还</td></tr><tr><td>depository</td><td>存放处，仓库</td></tr><tr><td>frustrating</td><td>让人沮丧的</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;WORDS&lt;/th&gt;
+&lt;th&gt;MEANING&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;loot&lt;/td&gt;
+&lt;td&gt;掠夺，趁火打劫&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;resonate&lt;/td&gt;
+
+      
+    
+    </summary>
+    
+      <category term="每日英语学习" scheme="https://www.qianhongbo.top/categories/%E6%AF%8F%E6%97%A5%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="English" scheme="https://www.qianhongbo.top/tags/English/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第5讲.相关系数</title>
+    <link href="https://www.qianhongbo.top/%E7%AC%AC5%E8%AE%B2.%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0.html"/>
+    <id>https://www.qianhongbo.top/第5讲.相关系数.html</id>
+    <published>2020-02-01T14:15:26.000Z</published>
+    <updated>2020-02-01T14:47:18.232Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol><li>非线性也会使得线性相关系数很大</li><li>离群点对相关系数的影响也很大</li><li>如果两个变量的相关系数很大，也不能说明两者相关</li><li>两个变量的相关系数结果为0，只能说明不是线性相关，但可能会有更复杂的相关关系</li></ol><p>所以在建模时，先画出散点图！看出趋势，如果有线性关系，就可以用皮尔逊相关系数计算相关性的大小</p><h2 id="EXCEL-跳转"><a href="#EXCEL-跳转" class="headerlink" title="EXCEL 跳转"></a>EXCEL 跳转</h2><ol><li>ctrl + -&gt; 跳转到最后一列</li><li>ctrl + &lt;- 跳转到第一列</li><li>ctrl + shift + -&gt; 选中这一行</li><li>ctrl + shift + -&gt; + 下 选中所有的数据</li><li>ctrl + shift + -&gt; + 空格 选中所有的数据</li></ol><h2 id="描述性统计"><a href="#描述性统计" class="headerlink" title="描述性统计"></a>描述性统计</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%% 统计描述</span></span><br><span class="line">MIN = <span class="built_in">min</span>(Test);  <span class="comment">% 每一列的最小值</span></span><br><span class="line">MAX = <span class="built_in">max</span>(Test);   <span class="comment">% 每一列的最大值</span></span><br><span class="line">MEAN = <span class="built_in">mean</span>(Test);  <span class="comment">% 每一列的均值</span></span><br><span class="line">MEDIAN = median(Test);  <span class="comment">%每一列的中位数</span></span><br><span class="line">SKEWNESS = skewness(Test); <span class="comment">%每一列的偏度</span></span><br><span class="line">KURTOSIS = kurtosis(Test);  <span class="comment">%每一列的峰度</span></span><br><span class="line">STD = std(Test);  <span class="comment">% 每一列的标准差</span></span><br><span class="line">RESULT = [MIN;MAX;MEAN;MEDIAN;SKEWNESS;KURTOSIS;STD]  <span class="comment">%将这些统计量放到一个矩阵中中表示</span></span><br></pre></td></tr></table></figure><h2 id="皮尔逊相关系数计算"><a href="#皮尔逊相关系数计算" class="headerlink" title="皮尔逊相关系数计算"></a>皮尔逊相关系数计算</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">R = corrcoef(Test)   <span class="comment">% correlation coefficient</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;注意事项&quot;&gt;&lt;a href=&quot;#注意事项&quot; class=&quot;headerlink&quot; title=&quot;注意事项&quot;&gt;&lt;/a&gt;注意事项&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;非线性也会使得线性相关系数很大&lt;/li&gt;
+&lt;li&gt;离群点对相关系数的影响也很大&lt;/li&gt;
+&lt;li&gt;如果两个变量的
+      
+    
+    </summary>
+    
+      <category term="数模美赛" scheme="https://www.qianhongbo.top/categories/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B/"/>
+    
+    
+      <category term="数模" scheme="https://www.qianhongbo.top/tags/%E6%95%B0%E6%A8%A1/"/>
+    
+  </entry>
+  
+  <entry>
     <title>2.1_英语学习</title>
     <link href="https://www.qianhongbo.top/2.1_%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0.html"/>
     <id>https://www.qianhongbo.top/2.1_英语学习.html</id>
     <published>2020-02-01T02:25:59.000Z</published>
-    <updated>2020-02-01T02:59:45.754Z</updated>
+    <updated>2020-02-03T10:22:56.163Z</updated>
     
     <content type="html"><![CDATA[<table><thead><tr><th>WORDS</th><th>Meaning</th></tr></thead><tbody><tr><td>WHO</td><td>THE World Health Organization</td></tr><tr><td>Coronavirus</td><td>新型冠状病毒</td></tr><tr><td>reverse</td><td>v. 撤销，废除；n. 对立面</td></tr><tr><td>hold off</td><td>推迟</td></tr><tr><td>warrant</td><td>justify</td></tr><tr><td>advisory</td><td>顾问，咨询</td></tr><tr><td>body</td><td>组织，机构</td></tr><tr><td>advisory body</td><td>咨询机构</td></tr><tr><td>grave</td><td>庄重的，严峻的</td></tr><tr><td>Thus far</td><td>到目前为止</td></tr><tr><td>relevant</td><td>重要的</td></tr><tr><td>wage</td><td>发动        wage the war</td></tr><tr><td>lavish</td><td>奢侈的，大量的</td></tr><tr><td>lavishly</td><td>慷慨地</td></tr><tr><td>in effect = in fact</td><td>本质上</td></tr><tr><td>effectively</td><td>实际上地</td></tr><tr><td>strand</td><td>搁浅；将…困在某处</td></tr><tr><td>height</td><td>高潮，高峰期</td></tr><tr><td>tantamount to</td><td>相当于，等同于</td></tr><tr><td>quarantine</td><td>将…隔离</td></tr></tbody></table>]]></content>
     
@@ -448,109 +576,6 @@
       <category term="嵌入式开发" scheme="https://www.qianhongbo.top/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/"/>
     
       <category term="Linux" scheme="https://www.qianhongbo.top/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【机器人学】学习笔记</title>
-    <link href="https://www.qianhongbo.top/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html"/>
-    <id>https://www.qianhongbo.top/机器人学 学习笔记.html</id>
-    <published>2019-07-03T10:51:33.000Z</published>
-    <updated>2019-08-26T01:34:19.038Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="第二章-空间描述和变换"><a href="#第二章-空间描述和变换" class="headerlink" title="第二章 空间描述和变换"></a>第二章 空间描述和变换</h1><h2 id="位置描述："><a href="#位置描述：" class="headerlink" title="位置描述："></a>位置描述：</h2><p>我们用一个位置矢量来描述空间中点的位置<br>$$<br>^AP = \left[\begin{matrix}1\\<br>2\\<br>3\end{matrix}\right]\tag1<br>$$</p><h2 id="姿态描述："><a href="#姿态描述：" class="headerlink" title="姿态描述："></a>姿态描述：</h2><p>物体的姿态可用固定在物体上的坐标系来描述。我们用$X_B,Y_B,Z_B$来描述坐标系B主轴方向的单位矢量，当用坐标系A的坐标表达时，它们被写为$^AX_B,^AY_B,^AZ_B$。我们可以吧这三个单位矢量按照顺序排成一个3x3的矩阵，我们称这个矩阵为<strong>旋转矩阵</strong>，并且这个矩阵是坐标系B相对于坐标系A的表达，所以我们用符号$^A_BR$来表示<br>$$<br>^A_BR = [^AX_B\ ^AY_B\ ^AZ_B] = \left[\begin{matrix}X_B · X_A &amp; Y_B · X_A &amp; Z_B · X_A\\<br>X_B · Y_A &amp; Y_B · Y_A &amp; Z_B · Y_A\\<br>X_B · Z_A &amp; Y_B · Z_A &amp; Z_B · Z_A\end{matrix}\right]=\left[\begin{matrix}^BX^T_A\\^BY^T_A\\^BZ^T_A\end{matrix}\right] = \ ^B_AR^T\tag2<br>$$<br>其中最右边矩阵为两坐标的点积，来表示投影。</p><h2 id="坐标系描述："><a href="#坐标系描述：" class="headerlink" title="坐标系描述："></a>坐标系描述：</h2><p>完整描述操作手位姿的信息为位置和姿态。我们可以任选一点来描述位置，为方便起见，选择远点。我们将位置和姿态的组合称作坐标系，四个矢量为一组，表示了位置和姿态的信息。<br>$$<br>{B} = {^A_BR, \ ^AP_{BORG}}\tag4<br>$$</p><h2 id="映射："><a href="#映射：" class="headerlink" title="映射："></a>映射：</h2><ol><li><p>平移映射<br>$$<br>^A P = \ ^B P + \ ^A P_{BORG}\tag5<br>$$</p></li><li><p>旋转映射<br>$$<br>^AP = \ ^A_BR\ ^BP\tag6<br>$$<br>引入符号可以看出，正好是左下标消掉了后面变量的左上标</p></li><li><p>关于一般坐标系的映射<br>$$<br>^AP = \ ^A_BR\ ^BP + \ ^AP_{BORG}\tag7<br>$$<br>引入新的概念<br>$$<br>^A P = \ ^A_BT\ ^BP\tag8<br>$$<br>即用一个矩阵的形式的算子来表示从一个从一个坐标系到另一个坐标系的映射，定义一个$4 * 4$的矩阵算子并使用了$4 * 1$的位置向量<br>$$<br>\left[\begin{matrix}^A P \\ 1 \end{matrix} \right] =<br>\left[\begin{array}{c|c}^A_BR &amp; ^A P_{BORG} \\<br>0\ 0\ 0 &amp; 1 \end{array}\right]<br>\left[\begin{matrix} ^B P \\ 1 \end{matrix} \right] \tag9<br>$$<br>上式中的$4 * 4$矩阵被称为<strong>齐次变换矩阵</strong></p></li></ol><h2 id="算子："><a href="#算子：" class="headerlink" title="算子："></a>算子：</h2><ol><li><p>平移算子：<br>$$<br>^AP_2 = \ ^AP_1 + \ ^AQ<br>$$<br>用矩阵算子写出平移变换，有：<br>$$<br>^AP_2 = D_Q(q)^AP_1<br>$$<br>其中，q是沿矢量Q方向的数量，它是有符号的。算子可以堪称一种特殊形式的齐次变换：<br>$$<br>D_Q(q)=\left[\begin{matrix} 1 &amp; 0 &amp; 0&amp; q_x\\<br>0 &amp; 1 &amp; 0 &amp; q_y\\<br>0 &amp; 0 &amp; 1 &amp; q_z\\<br>0 &amp; 0 &amp; 0 &amp; 1<br>\end{matrix}\right]<br>$$<br>其中$q_x, q_y, q_z$是平移矢量Q的分量</p></li><li><p>旋转算子：<br>$$<br>^AP_2 = R^AP_1<br>$$<br>用矩阵算子写出旋转变换，有：<br>$$<br>^AP_2 = R_K(\theta)\ ^AP_1<br>$$<br>其中R表示一个旋转算子，它表示绕K轴旋转$\theta$角度<br>$$<br>R_Z(\theta)=\left[\begin{matrix} cos\theta &amp; sin\theta &amp; 0&amp; 0\\<br>sin\theta &amp; cos\theta &amp; 0 &amp; 0\\<br>0 &amp; 0 &amp; 1 &amp; 0\\<br>0 &amp; 0 &amp; 0 &amp; 1<br>\end{matrix}\right]<br>$$</p></li><li><p>变换算子：<br>$$<br>^AP_2 = T^AP_1<br>$$</p></li></ol><h2 id="变换算法"><a href="#变换算法" class="headerlink" title="变换算法"></a>变换算法</h2><ol><li><p>混合变换：<br>$$<br>^AP =\  ^A_BT\ ^B_CT\ ^CP\<br>^A_CT = ^A_BT\ ^B_CT<br>$$<br>即：<br>$$<br>^A_CT =\left[\begin{array}{c|c}^A_BR\ ^B_CR &amp; ^A_BR\ ^BP_{CORG} + \ ^AP_{BORG} \\<br>0\ 0\ 0 &amp; 1 \end{array}\right]<br>$$</p></li><li><p>逆变换：</p><p>…</p></li></ol><h1 id="第三章-操作臂运动学"><a href="#第三章-操作臂运动学" class="headerlink" title="第三章 操作臂运动学"></a>第三章 操作臂运动学</h1><h2 id="连杆描述"><a href="#连杆描述" class="headerlink" title="连杆描述"></a>连杆描述</h2><p>连杆长度，连杆转角</p><h2 id="连杆连接的描述"><a href="#连杆连接的描述" class="headerlink" title="连杆连接的描述"></a>连杆连接的描述</h2><ol><li><p>连杆链中的中间连杆</p><p>连杆偏距，关节角</p></li><li><p>对于运动链中的末端连杆，其参数习惯设定为0</p><p>即$a_0 = a_n = 0.0, \alpha_0 = \alpha_n =0.0$</p><p>之所以采用了这种规定，是因为当一个参数可以人喜选取时，把另一个参数设定为0，可以使计算变得简便。</p></li><li><p>连杆参数：每个连杆可以用四个运动学参数来描述，其中两个参数用于描述连杆本身，另外两个参数用于描述连杆之间的连接关系。</p><p>对于转动关节，$\theta$为关节变量，其他三个连杆参数是固定不变的</p><p>对于移动关节了，d为关节变量，其他三个连杆参数是固定不变的。</p><p>这种两岸参数描述规则称为Denavit-Hartenberg参数</p><p>根据以上方法，，对于一个六关节的机器人，需要用18个参数就可以完全描述这些固定的运动学参数。</p></li><li><p>对连杆附加坐标系的规定</p><p>固连在连杆i上的固连坐标系称为坐标系{i}</p><p>z轴和关节轴重合</p><p>坐标系原点位于关节轴和公垂线的交点处</p><p>x轴沿着公垂线方向，指向下一个关节</p><p>y轴由右手定则确定</p><p><img src="http://upload-images.jianshu.io/upload_images/17194236-9eb722452ff0bcda.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="机器人学1.png"></p></li></ol><h2 id="坐标系的标准命名"><a href="#坐标系的标准命名" class="headerlink" title="坐标系的标准命名"></a>坐标系的标准命名</h2><ol><li>基坐标系{B}</li><li>工作台坐标系{S}</li><li>腕部坐标系{W}</li><li>工具坐标系{T}</li><li>目标坐标系{G}</li></ol><p><img src="http://wx2.sinaimg.cn/large/006BuM4Jgy1g6ctk5c79mj30cm0abt8t.jpg" alt="1"></p><h2 id="工具的定位"><a href="#工具的定位" class="headerlink" title="工具的定位"></a>工具的定位</h2><p>也就是需要计算工具坐标系T相对于工作台坐标系S的变换矩阵</p><h1 id="操作臂逆运动学"><a href="#操作臂逆运动学" class="headerlink" title="操作臂逆运动学"></a>操作臂逆运动学</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>为求出要求的关节叫以防止相对于工作台坐标系{S}的工具坐标系，可以将问题分为两部分：</p><ol><li>进行坐标变换求出相对于极坐标系{B}的腕部坐标系{W}</li><li>然后应用你运动学求关节角度</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;第二章-空间描述和变换&quot;&gt;&lt;a href=&quot;#第二章-空间描述和变换&quot; class=&quot;headerlink&quot; title=&quot;第二章 空间描述和变换&quot;&gt;&lt;/a&gt;第二章 空间描述和变换&lt;/h1&gt;&lt;h2 id=&quot;位置描述：&quot;&gt;&lt;a href=&quot;#位置描述：&quot; class
-      
-    
-    </summary>
-    
-      <category term="机器人学" scheme="https://www.qianhongbo.top/categories/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6/"/>
-    
-    
-      <category term="机器人学" scheme="https://www.qianhongbo.top/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>c语言学习笔记</title>
-    <link href="https://www.qianhongbo.top/%E3%80%90C%E3%80%91C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html"/>
-    <id>https://www.qianhongbo.top/【C】C语言学习笔记.html</id>
-    <published>2019-06-26T07:23:15.000Z</published>
-    <updated>2019-08-14T14:52:07.964Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="我为什么要学习C语言"><a href="#我为什么要学习C语言" class="headerlink" title="我为什么要学习C语言"></a>我为什么要学习C语言</h1><p>说来惭愧，作为一个工科学生，我竟然没有学过C语言，只在大一的时候学过一学期的VB，虽然语言这种东西说起来都差不多，但毕竟也是将近三年前的事了，早就忘光了。</p><p>可是不掌握C语言真的很麻烦，这尤其体现在做单片机上，单片机要求我们使用C语言，我当时连那些代码都看不懂，更别谈让我自己去写了。</p><p>正好，最近时间比较充沛。拿出时间来把C语言好好学学</p><p>p.s. 突然想起来我初中好像就学过C++了，但只是皮毛</p><h1 id="我用什么工具学习C语言"><a href="#我用什么工具学习C语言" class="headerlink" title="我用什么工具学习C语言"></a>我用什么工具学习C语言</h1><p>书籍：C程序设计语言（第二版 新版）→ 纸质</p><p>软件：VS2017, Xcode</p><p>其它：Google，CSDN，Baidu</p><h1 id="我的第一段代码"><a href="#我的第一段代码" class="headerlink" title="我的第一段代码"></a>我的第一段代码</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"hello, world.\n"</span>);</span><br><span class="line">system(<span class="string">"pause"</span>);</span><br><span class="line"><span class="comment">//return 0;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol><li>main函数：main是一个特殊的函数名——每个程序都从main函数的起点开始执行。main函数通常会调用其它函数来帮助完成某些工作</li><li>本例中main函数不需要任何参数</li><li>用双引号括起来的字符序列称为字符串或字符串常量</li><li>\n 表示换行符</li></ol><h1 id="第二段代码"><a href="#第二段代码" class="headerlink" title="第二段代码"></a>第二段代码</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="comment">/* 当fatr = 0,20,...,300时，分别打印华氏温度与摄氏温度对照表 */</span></span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">int</span> fahr, celsius;</span><br><span class="line"><span class="keyword">int</span> lower, upper, step;</span><br><span class="line"></span><br><span class="line">lower = <span class="number">0</span>; <span class="comment">/* 温度表的上限 */</span></span><br><span class="line">upper = <span class="number">300</span>; <span class="comment">/* 温度表的下限 */</span></span><br><span class="line">step = <span class="number">20</span>; <span class="comment">/* 步长 */</span></span><br><span class="line"></span><br><span class="line">fahr = lower;</span><br><span class="line"><span class="keyword">while</span> (fahr &lt;= upper) &#123;</span><br><span class="line">celsius = <span class="number">5</span> * (fahr - <span class="number">32</span>) / <span class="number">9</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d\t%d\n"</span>, fahr, celsius);</span><br><span class="line">fahr = fahr + step;</span><br><span class="line">&#125;</span><br><span class="line">system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol><li>其中，int表示其后所列的变量为整数，与之对应的float表示浮点数（即可以带有小数部分）</li><li>为什么不用5/9？因为C语言存在舍位，小数部分都会被舍弃</li></ol><h1 id="Bit-amp-Byte"><a href="#Bit-amp-Byte" class="headerlink" title="Bit &amp; Byte"></a>Bit &amp; Byte</h1><ul><li><p>字节(Byte): 通常将可表示常用英文字符8位二进制称为一字节</p></li><li><p>比特(Bit)，亦称二进制位 ，1比特就是1位</p></li><li><p>1字节(Byte） = 8位(bit) </p></li><li><p>在ASCII码中，一个英文字母(不分大小写)占一个字节的空间，一个中文汉字占两个字节的空间</p></li><li><p>符号：英文标点占一个字节，中文标点占两个字节</p></li></ul><ul><li><p>1千吉字节（TB,Terabyte）=1024吉字节（2的40次方字节）（1TB=1024GB）</p></li><li><p>1吉字节（GB,Gigabyte）=1024兆字节（2的30次方字节）（1GB=1024MB）</p></li><li><p>1兆字节（MB,Megabyte）=1024千字节（2的20次方字节）（1MB=1024KB）</p></li><li><p>1千字节（KB,Kilobyte）=1024字节（2的10次方字节）（1KB=1024B）</p></li><li><p>1字节（Byte）= 8位（bit）</p></li></ul><blockquote><p>  计算机中的位</p><pre><code>二进制数系统中，每个0或1就是一个位(bit)，位是数据存储的最小单位。其中8bit就称为一个字节（Byte）。计算机中的CPU位数指的是CPU一次能处理的最大位数。例如32位计算机的CPU一次最多能处理32位数据。  </code></pre></blockquote><blockquote><p>所以char类型的存储大小为1个字节，也就是8位，这8位代表8位二进制，</p></blockquote><h1 id="浮点类型"><a href="#浮点类型" class="headerlink" title="浮点类型"></a>浮点类型</h1><table><thead><tr><th>类型</th><th>存储大小</th><th>精度</th></tr></thead><tbody><tr><td>float</td><td>4 字节</td><td>6 位小数</td></tr><tr><td>double</td><td>8 字节</td><td>15 位小数</td></tr><tr><td>long double</td><td>16 字节</td><td>19 位小数</td></tr></tbody></table><h1 id="void类型"><a href="#void类型" class="headerlink" title="void类型"></a>void类型</h1><table><thead><tr><th>序号</th><th>类型与描述</th></tr></thead><tbody><tr><td>1</td><td><strong>函数返回为空</strong><br>C 中有各种函数都不返回值，或者您可以说它们返回空。不返回值的函数的返回类型为空。例如 <strong>void exit (int status);</strong></td></tr><tr><td>2</td><td><strong>函数参数为空</strong><br>C 中有各种函数不接受任何参数。不带参数的函数可以接受一个 void。例如 <strong>int rand(void);</strong></td></tr><tr><td>3</td><td><strong>指针指向 void</strong><br>类型为 void * 的指针代表对象的地址，而不是类型。例如，内存分配函数 <strong>void *malloc( size_t size );</strong> 返回指向 void 的指针，可以转换为任何数据类型。</td></tr></tbody></table><h1 id="printf-输出"><a href="#printf-输出" class="headerlink" title="printf 输出"></a><code>printf</code> 输出</h1><p>```<br>%a  浮点数、十六进制数字和p-记数法（c99<br>%A  浮点数、十六进制数字和p-记法（c99）<br>%c  一个字符(char)<br>%C  一个ISO宽字符<br>%d  有符号十进制整数(int)（%ld、%Ld：长整型数据(long),%hd：输出短整形。）　<br>%e  浮点数、e-记数法<br>%E  浮点数、E-记数法<br>%f  单精度浮点数(默认float)、十进制记数法（%.nf  这里n表示精确到小数位后n位.十进制计数）<br>%g  根据数值不同自动选择%f或%e．<br>%G  根据数值不同自动选择%f或%e.<br>%i  有符号十进制数（与%d相同）<br>%o  无符号八进制整数<br>%p  指针<br>%s  对应字符串char<em>（%s = %hs = %hS 输出 窄字符）<br>%S  对应宽字符串WCAHR</em>（%ws = %S 输出宽字符串）<br>%u  无符号十进制整数(unsigned int)<br>%x  使用十六进制数字0xf的无符号十六进制整数　<br>%X  使用十六进制数字0xf的无符号十六进制整数<br>%%  打印一个百分号</p><p>%I64d 用于INT64 或者 long long<br>%I64u 用于UINT64 或者 unsigned long long<br>%I64x 用于64位16进制数据</p><p>​　</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;我为什么要学习C语言&quot;&gt;&lt;a href=&quot;#我为什么要学习C语言&quot; class=&quot;headerlink&quot; title=&quot;我为什么要学习C语言&quot;&gt;&lt;/a&gt;我为什么要学习C语言&lt;/h1&gt;&lt;p&gt;说来惭愧，作为一个工科学生，我竟然没有学过C语言，只在大一的时候学过一学期的
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="https://www.qianhongbo.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="C" scheme="https://www.qianhongbo.top/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>脸上各部位长痘痘的原因及调理方法汇总</title>
-    <link href="https://www.qianhongbo.top/%E8%84%B8%E4%B8%8A%E5%90%84%E9%83%A8%E4%BD%8D%E9%95%BF%E7%97%98%E7%97%98%E7%9A%84%E5%8E%9F%E5%9B%A0%E5%8F%8A%E8%B0%83%E7%90%86%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB.html"/>
-    <id>https://www.qianhongbo.top/脸上各部位长痘痘的原因及调理方法汇总.html</id>
-    <published>2019-06-26T01:24:31.000Z</published>
-    <updated>2019-07-25T02:40:58.790Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>额头痘状况：</strong>有可能是压力太大，容易脾气不好，造成心火和血液循环有问题。</p><p>改善：应养成早睡早起的习惯，让睡眠充足，并多喝水。</p><p><strong>印堂痘状况：</strong>出现在两眉正中间的痘痘，通常有胸闷、心律不整、<a href="http://www.med66.com/jibing/xinji/" target="_blank" rel="noopener">心悸</a>等毛病。</p><p>改善：不要尝试太过激烈的运动，要避免烟、酒等刺激性的食品。</p><p><strong>发髻痘状况：</strong>因为卸妆没有卸干净，造成毛孔堵塞河污染，容易在较闷的发髻或眉间形成细小痘痘。</p><p>改善：加强卸妆和清洁的工作，一定要彻底搓揉干净，每星期做一次去角质工作，报纸皮脂腺顺畅。</p><p><strong>鼻翼痘状况：</strong>突然冒出的肿大痘痘，可能是卵巢机能或者生殖系统有关。</p><p>改善：不要过度纵欲或禁欲，尽量走出户外，享受降的自然环境。</p><p><strong>鼻头痘状况：</strong>可能是胃火过大，消化系统异常。</p><p>改善：少吃冰冷食物，寒性食品容易引起胃酸分泌，造成胃火过大。</p><p><strong>眼头痘状况：</strong>K近鼻子和眼头区域的痘痘，通常是肝机能不好所引起。</p><p>改善：生活作息要正常，避免熬夜，尽量在11点前上床睡觉。</p><p><strong>唇周痘状况：</strong><a href="http://www.med66.com/jibing/bianmi/" target="_blank" rel="noopener">便秘</a>导致体内毒素累计，或者是使用含氟过量的牙膏，都是造成唇周痘痘的主因。</p><p>改善：多吃高纤维的蔬菜水果，调整饮食习惯，刷牙漱口要彻底。</p><p><strong>下巴痘状况：</strong>通常是月经要来的前几天，造成<a href="http://www.med66.com/jibing/neifenmishitiao/" target="_blank" rel="noopener">内分泌失调</a>所引起的。</p><p>改善：少吃冰冷的东西，月经期间可用消炎镇定的保养品。</p><p><strong>右边脸颊痘状况：</strong>可能是肺部功能失常，手脚冰冷，或是容易敏感的体质，也有可能是<a href="http://www.med66.com/jibing/ganmao/" target="_blank" rel="noopener">感冒</a>前兆。</p><p>改善：平时注意呼吸道的保养，尽量避免芒果、芋头、海鲜甲壳类易过敏的食物。</p><p><strong>左边脸颊痘状况：</strong>可能是肝功能不顺畅，如肝脏的分泌、解毒或造血等功能出了状况。</p><p>改善：作息正常，保持心情愉快，该吹冷气就吹冷气，不要让身体处在过度闷热。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;strong&gt;额头痘状况：&lt;/strong&gt;有可能是压力太大，容易脾气不好，造成心火和血液循环有问题。&lt;/p&gt;
-&lt;p&gt;改善：应养成早睡早起的习惯，让睡眠充足，并多喝水。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;印堂痘状况：&lt;/strong&gt;出现在两眉正中间的痘痘，通常有胸闷、心律不
-      
-    
-    </summary>
-    
-      <category term="知识积累" scheme="https://www.qianhongbo.top/categories/%E7%9F%A5%E8%AF%86%E7%A7%AF%E7%B4%AF/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>我在大学各学期大致课外学习规划</title>
-    <link href="https://www.qianhongbo.top/%E6%88%91%E5%9C%A8%E5%A4%A7%E5%AD%A6%E5%90%84%E5%AD%A6%E6%9C%9F%E5%A4%A7%E8%87%B4%E8%AF%BE%E5%A4%96%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92.html"/>
-    <id>https://www.qianhongbo.top/我在大学各学期大致课外学习规划.html</id>
-    <published>2019-06-14T13:18:55.000Z</published>
-    <updated>2019-07-31T09:31:02.543Z</updated>
-    
-    <content type="html"><![CDATA[<p>大二下学期：学控制，以Arduino为主，可能学不完，学不透，暑假继续</p><p>大三上学期：转去学机器人学（Matlab），也算是为之后去参加数模美赛做基础</p><p>大三下学期：如果有精力可以去学Linux，ROS</p><p>大四：Linux，ROS，Python，Tensorflow…</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;大二下学期：学控制，以Arduino为主，可能学不完，学不透，暑假继续&lt;/p&gt;
-&lt;p&gt;大三上学期：转去学机器人学（Matlab），也算是为之后去参加数模美赛做基础&lt;/p&gt;
-&lt;p&gt;大三下学期：如果有精力可以去学Linux，ROS&lt;/p&gt;
-&lt;p&gt;大四：Linux，ROS，Pyt
-      
-    
-    </summary>
-    
-      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="目标" scheme="https://www.qianhongbo.top/tags/%E7%9B%AE%E6%A0%87/"/>
     
   </entry>
   

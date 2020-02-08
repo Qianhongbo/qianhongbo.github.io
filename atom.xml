@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.qianhongbo.top/"/>
-  <updated>2020-02-07T09:47:41.433Z</updated>
+  <updated>2020-02-08T03:11:46.092Z</updated>
   <id>https://www.qianhongbo.top/</id>
   
   <author>
@@ -15,6 +15,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2.8_英语学习</title>
+    <link href="https://www.qianhongbo.top/2-8-%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0.html"/>
+    <id>https://www.qianhongbo.top/2-8-英语学习.html</id>
+    <published>2020-02-08T03:11:00.000Z</published>
+    <updated>2020-02-08T03:11:46.092Z</updated>
+    
+    <content type="html"><![CDATA[<table><thead><tr><th>WORDS</th><th>MEANING</th></tr></thead><tbody><tr><td>misinformation</td><td>假消息</td></tr><tr><td>pathogen</td><td>病原体</td></tr><tr><td>hyperbolic</td><td>exaggerated，夸张的</td></tr><tr><td>fear-mongering</td><td>散布恐慌情绪的人</td></tr><tr><td>monger</td><td>小贩</td></tr><tr><td>blatant</td><td>明显的</td></tr><tr><td>outlet</td><td>出口</td></tr><tr><td>canard、disinformation</td><td>假新闻</td></tr><tr><td>potent</td><td>强大的，强有力的</td></tr><tr><td>story</td><td>新闻报道（可数）</td></tr><tr><td>affirm</td><td>确认，证实</td></tr><tr><td>footage</td><td>（影片中的）片段</td></tr><tr><td>rip</td><td>撕开</td></tr><tr><td>spurious</td><td>false，看似真实的实际是假的</td></tr><tr><td>souriously</td><td>不正确地</td></tr><tr><td>narrative</td><td>a 叙事的 n 故事</td></tr><tr><td>appeal to</td><td>吸引，呼吁</td></tr><tr><td>debunk</td><td>揭穿…的真相</td></tr><tr><td>descend</td><td>下降</td></tr><tr><td>descent</td><td>血统，家室</td></tr><tr><td>Asian descent</td><td>亚裔</td></tr><tr><td>pich on</td><td>故意刁难某人</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;WORDS&lt;/th&gt;
+&lt;th&gt;MEANING&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;misinformation&lt;/td&gt;
+&lt;td&gt;假消息&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;pathogen
+      
+    
+    </summary>
+    
+      <category term="每日英语学习" scheme="https://www.qianhongbo.top/categories/%E6%AF%8F%E6%97%A5%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="English" scheme="https://www.qianhongbo.top/tags/English/"/>
+    
+  </entry>
   
   <entry>
     <title>2.7_英语学习</title>
@@ -172,9 +209,9 @@
     <link href="https://www.qianhongbo.top/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%9B%E7%BA%A7%E7%9F%A5%E8%AF%86%E7%82%B9.html"/>
     <id>https://www.qianhongbo.top/计算机四级知识点.html</id>
     <published>2020-02-03T10:19:45.000Z</published>
-    <updated>2020-02-05T02:06:38.530Z</updated>
+    <updated>2020-02-08T04:08:17.160Z</updated>
     
-    <content type="html"><![CDATA[<p>时钟分为硬件时钟和软件时钟</p><p>目态：用户态 – 一般指令</p><p>管态：系统态 – 特权指令</p><h1 id="进程线程模型"><a href="#进程线程模型" class="headerlink" title="进程线程模型"></a>进程线程模型</h1><ol><li>顺序执行：顺序性；封闭性；程序结果确定性；程序结果可再现性</li><li>多道程序系统：同时处理多个具有独立功能的程序，提高利用率/ 独立性；随机性；资源共享性</li><li>程序的并发执行：并发程序相互制约；程序与计算不再一一对应；并发程序结果不可再现</li></ol><blockquote><p>多道程序系统属于各种操作系统，是一种思想（实时系统、分布系统）</p><p>并发不等于同时运行</p></blockquote><h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><ol><li>进程是正在执行的程序，包括程序，数据，进程控制块</li><li>并发性；动态性；独立性；交往性；异步性</li><li>三状态模型：就绪状态，运行状态，等待状态<ol><li>就绪状态：进程分配到除CPU之外的一切资源；排成就绪队列</li><li>运行状态：就绪状态的程序获得CPU的使用权，单处理器同一时间只能有一个程序处于运行状态</li><li>等待状态/阻塞状态：进程请求输入输出、申请额外空间；不浪费CPU</li></ol></li><li>创建状态，结束状态（完成、未完成）</li><li>挂起状态，激活状态（内存、外存转换）</li><li>新状态–&gt;就绪状态：就绪队列可以接纳新的进程</li><li>就绪状态–&gt;执行状态：按照算法分配；执行状态的进程称为当前进程</li><li>执行状态–&gt;就绪状态：时间片结束、优先权较低</li><li>执行状态–&gt;阻塞状态：IO请求等</li><li>阻塞状态需要先进入就绪状态再进入运行状态</li></ol><p><img src="//tvax4.sinaimg.cn/large/006BuM4Jly1gbhtnod40pj30qo0f7k0k.jpg" alt="TIM截图20200202095653"></p><h2 id="PCB：进程控制块"><a href="#PCB：进程控制块" class="headerlink" title="PCB：进程控制块"></a>PCB：进程控制块</h2><p>组织方式</p><ol><li>线性方式：需要扫描所有的</li><li>索引方式：需要额外的空间</li><li>链接方式：相同状态的进程排列在一起</li></ol><h2 id="Unix的fork-函数"><a href="#Unix的fork-函数" class="headerlink" title="Unix的fork()函数"></a>Unix的<code>fork()</code>函数</h2><p>父进程通过<code>fork()</code>创建子进程</p><p>特点：只被执行一次，返回<strong>两次</strong>结果，父进程返回的是子进程的<code>PID</code>，子进程中<code>fork</code>返回0</p><blockquote><p>代码中有几个fork()就会输出2^n次</p></blockquote><h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><p>线程是进程的一个实体，是被系统独立调度和执行的基本单位</p><p>线程基本上不拥有系统资源，但它可以与同属于一个进程的其他线程共享所拥有的全部资源</p><p>一个线程可以创建和撤销另一个线程，多个线程之间可以并发执行，因此运行中可以呈现出异步性，因此线程同样有就绪，执行，阻塞三个状态</p><blockquote><p>进程是拥有资源的基本单位</p></blockquote><blockquote><p>不同进程之间可以并发执行，一个进程中的多个线程也可以并发执行</p><p>QQ和音乐播放可以同时运行（多进程），QQ里可以多个人同时聊天（多线程）</p><p>线程的引入增加了并发性！</p></blockquote><blockquote><p>一个程序至少有一个进程，一个进程至少有一个线程</p></blockquote><p>用户级线程，内核级线程，混合级线程</p><h2 id="调度"><a href="#调度" class="headerlink" title="调度"></a>调度</h2><ol><li>低级调度：内核用一定的调度算法从就绪队列选出一进程</li><li>中级调度：调度算法将等待状态的进程调至外存中</li></ol><h2 id="调度算法"><a href="#调度算法" class="headerlink" title="调度算法"></a>调度算法</h2><ol><li>先来先服务调度算法 FCFS：最简单，非抢占式，有利于长进程，不利于短进程。</li><li>最短作业优先算法 SPF：优先处理运行时间最短的进程，降低平均等待时间，提高吞吐量，非抢占式，对长进程不利。</li><li>最短剩余时间优先调度算法 SRT：抢占式的动态版本。</li></ol><p><img src="//tvax3.sinaimg.cn/large/006BuM4Jly1gblan566baj30qc0eedoa.jpg" alt="TIM截图20200205100110"></p><ol start="4"><li>时间片轮转调度算法RR：在分时系统中，队首进程执行一个时间片，之后计时器发生一个时钟终端，并将它放到对尾，继续执行。适合于交互进程的调度。</li></ol>]]></content>
+    <content type="html"><![CDATA[<p>时钟分为硬件时钟和软件时钟</p><p>目态：用户态 – 一般指令</p><p>管态：系统态 – 特权指令</p><h1 id="第三章：进程线程模型"><a href="#第三章：进程线程模型" class="headerlink" title="第三章：进程线程模型"></a>第三章：进程线程模型</h1><ol><li>顺序执行：顺序性；封闭性；程序结果确定性；程序结果可再现性</li><li>多道程序系统：同时处理多个具有独立功能的程序，提高利用率/ 独立性；随机性；资源共享性</li><li>程序的并发执行：并发程序相互制约；程序与计算不再一一对应；并发程序结果不可再现</li></ol><blockquote><p>多道程序系统属于各种操作系统，是一种思想（实时系统、分布系统）</p><p>并发不等于同时运行</p></blockquote><h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><ol><li>进程是正在执行的程序，包括程序，数据，进程控制块</li><li>并发性；动态性；独立性；交往性；异步性</li><li>三状态模型：就绪状态，运行状态，等待状态<ol><li>就绪状态：进程分配到除CPU之外的一切资源；排成就绪队列</li><li>运行状态：就绪状态的程序获得CPU的使用权，单处理器同一时间只能有一个程序处于运行状态</li><li>等待状态/阻塞状态：进程请求输入输出、申请额外空间；不浪费CPU</li></ol></li><li>创建状态，结束状态（完成、未完成）</li><li>挂起状态，激活状态（内存、外存转换）</li><li>新状态–&gt;就绪状态：就绪队列可以接纳新的进程</li><li>就绪状态–&gt;执行状态：按照算法分配；执行状态的进程称为当前进程</li><li>执行状态–&gt;就绪状态：时间片结束、优先权较低</li><li>执行状态–&gt;阻塞状态：IO请求等</li><li>阻塞状态需要先进入就绪状态再进入运行状态</li></ol><p><img src="//tvax4.sinaimg.cn/large/006BuM4Jly1gbhtnod40pj30qo0f7k0k.jpg" alt="TIM截图20200202095653"></p><h2 id="PCB：进程控制块"><a href="#PCB：进程控制块" class="headerlink" title="PCB：进程控制块"></a>PCB：进程控制块</h2><p>组织方式</p><ol><li>线性方式：需要扫描所有的</li><li>索引方式：需要额外的空间</li><li>链接方式：相同状态的进程排列在一起</li></ol><h2 id="Unix的fork-函数"><a href="#Unix的fork-函数" class="headerlink" title="Unix的fork()函数"></a>Unix的<code>fork()</code>函数</h2><p>父进程通过<code>fork()</code>创建子进程</p><p>特点：只被执行一次，返回<strong>两次</strong>结果，父进程返回的是子进程的<code>PID</code>，子进程中<code>fork</code>返回0</p><blockquote><p>代码中有几个fork()就会输出2^n次</p></blockquote><h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><p>线程是进程的一个实体，是被系统独立调度和执行的基本单位</p><p>线程基本上不拥有系统资源，但它可以与同属于一个进程的其他线程共享所拥有的全部资源</p><p>一个线程可以创建和撤销另一个线程，多个线程之间可以并发执行，因此运行中可以呈现出异步性，因此线程同样有就绪，执行，阻塞三个状态</p><blockquote><p>进程是拥有资源的基本单位</p></blockquote><blockquote><p>不同进程之间可以并发执行，一个进程中的多个线程也可以并发执行</p><p>QQ和音乐播放可以同时运行（多进程），QQ里可以多个人同时聊天（多线程）</p><p>线程的引入增加了并发性！</p></blockquote><blockquote><p>一个程序至少有一个进程，一个进程至少有一个线程</p></blockquote><p>用户级线程，内核级线程，混合级线程</p><h2 id="调度"><a href="#调度" class="headerlink" title="调度"></a>调度</h2><ol><li>低级调度：内核用一定的调度算法从就绪队列选出一进程</li><li>中级调度：调度算法将等待状态的进程调至外存中</li></ol><h2 id="调度算法"><a href="#调度算法" class="headerlink" title="调度算法"></a>调度算法</h2><ol><li>先来先服务调度算法 FCFS：最简单，非抢占式，有利于长进程，不利于短进程。</li><li>最短作业优先算法 SPF：优先处理运行时间最短的进程，降低平均等待时间，提高吞吐量，非抢占式，对长进程不利。</li><li>最短剩余时间优先调度算法 SRT：抢占式的动态版本。</li></ol><p><img src="//tvax3.sinaimg.cn/large/006BuM4Jly1gblan566baj30qc0eedoa.jpg" alt="TIM截图20200205100110"></p><ol start="4"><li>时间片轮转调度算法RR：在分时系统中，队首进程执行一个时间片，之后计时器发生一个时钟终端，并将它放到对尾，继续执行。适合于交互进程的调度。</li><li>最高优先级调度算法：为了照顾紧迫型的进程</li><li>多级反馈队列调度算法MLF：主流使用调度算法</li></ol><p><img src="//tvax3.sinaimg.cn/large/006BuM4Jly1gbotzhu7lnj30m80fm452.jpg" alt="TIM截图20200208112701"></p><ol start="7"><li>实时系统的调度算法：速率单调调度算法，最早最终时限优先调度</li></ol><blockquote><p>进程和程序的本质区别是：进程是动态的，程序是静态的</p><p>进程和程序的其它区别是：进程是在内存，程序是在外存</p></blockquote><h1 id="第四章-并发与同步"><a href="#第四章-并发与同步" class="headerlink" title="第四章 并发与同步"></a>第四章 并发与同步</h1><p>资源共享程度的三个层次：互斥、死锁、饥饿</p><p>临界资源：资源在一段时间内只允许一个进程访问和使用</p><p>进程同步机制应该遵循的原则：</p><ol><li>空闲让进</li><li>忙则等待</li><li>有限等待：以免进入“死等”</li><li>让权等待：以免进入“忙等”</li></ol>]]></content>
     
     <summary type="html">
     
@@ -183,7 +220,7 @@
         &lt;p&gt;时钟分为硬件时钟和软件时钟&lt;/p&gt;
 &lt;p&gt;目态：用户态 – 一般指令&lt;/p&gt;
 &lt;p&gt;管态：系统态 – 特权指令&lt;/p&gt;
-&lt;h1 id=&quot;进程线程模型&quot;&gt;&lt;a href=&quot;#进程线程模型&quot; class=&quot;headerlink&quot; title=&quot;进程线程模型&quot;&gt;&lt;/a&gt;进程线程模
+&lt;h1 id=&quot;第三章：进程线程模型&quot;&gt;&lt;a href=&quot;#第三章：进程线程模型&quot; class=&quot;headerlink&quot; title=&quot;第三章：进程线程模
       
     
     </summary>
@@ -597,31 +634,6 @@
     
     
       <category term="STM32" scheme="https://www.qianhongbo.top/tags/STM32/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用VSCode写博客</title>
-    <link href="https://www.qianhongbo.top/%E4%BD%BF%E7%94%A8VSCode%E5%86%99%E5%8D%9A%E5%AE%A2.html"/>
-    <id>https://www.qianhongbo.top/使用VSCode写博客.html</id>
-    <published>2019-08-13T03:24:09.000Z</published>
-    <updated>2019-08-14T01:18:13.907Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="使用原因"><a href="#使用原因" class="headerlink" title="使用原因"></a>使用原因</h1><p>偶然之间看到一篇文章推荐使用VSCode，对于它我也是早有耳闻，一个开源的代码编辑器，但是之前觉得麻烦，觉得自己已经有了Visual Studio 2017就没必要再下一个代码编辑器了，当时以为VSCode不带有编译功能。</p><p>昨晚没事干，就下了个尝试一下啊，果然耳目一新，觉得从颜值也好，使用上也好都很舒服，但在配置的时候也遇到了问题，研究了好久才终于解决，特此记录！</p><h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><ul><li>从官网安装VSCode</li><li>安装MinGW64,并将bin文件添加到Path路径中</li><li>安装插件</li><li>成功运行代码！</li></ul><h1 id="具体过程"><a href="#具体过程" class="headerlink" title="具体过程"></a>具体过程</h1><h2 id="从官网安装VSCode"><a href="#从官网安装VSCode" class="headerlink" title="从官网安装VSCode"></a>从官网安装VSCode</h2><p>过程比较简单，从Google搜索VSCode进入官方网站，下载Windows的版本，运行即可。</p><h2 id="安装MinGW64"><a href="#安装MinGW64" class="headerlink" title="安装MinGW64"></a>安装MinGW64</h2><p>由于想在VSCode里跑C代码，最开始下了个C/C++的扩展程序，以为就可以用<code>Fn+F5</code>正常运行，实则不然，遇到报错！</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">提示这个内容：lauch:program does not exist</span><br></pre></td></tr></table></figure><p>并要求我修改<code>launch.json</code>文件，可是我怎么修改也不管用…<br>逐渐开始进入崩溃状态，想要直接写在这**的VSCode…<br>可是作为一个颜控的我沉迷于VSCode的颜值无法自拔，决定再试试…</p><p>最终发现问题出现在没有安装MinGW64无法调试，于是搜索教程，前往官网下载，并将bin文件的目录添加到<code>path</code>路径中去。</p><p>并最终用<code>gcc -v</code>测试是否安装成功，要注意在<code>cmd</code>里测试，不要像我一样，在<code>cmder</code>里怎么测试都不成功…</p><p>安装具体教程点击这个<a href="https://www.cnblogs.com/findumars/p/8289454.html" target="_blank" rel="noopener">链接</a></p><h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p>VSCode不安装插件是没有灵魂的…</p><p>我目前还不是很懂，也只是安装了一下几个插件</p><ul><li>C/C++</li><li>C++ Intellisense</li><li>Chinese Language</li><li>Code Runner</li><li>Seti-theme</li></ul><h2 id="运行代码"><a href="#运行代码" class="headerlink" title="运行代码"></a>运行代码</h2><p>最终用配置好的环境跑了一下<code>hello，world</code>成功编译！<br><font color="#006600"></font></p><h2 id="问题补充（修改于19-8-14）"><a href="#问题补充（修改于19-8-14）" class="headerlink" title="问题补充（修改于19.8.14）"></a>问题补充（修改于19.8.14）</h2><p>再次出现问题！之前成功编译只是通过了代码右上角的“播放”按键，也就是插件<code>Code Runner</code>，然而<code>F5</code>依然无法通过！</p><p>继续查阅资料，查到一篇比较详细的教程，<a href="https://blog.csdn.net/bat67/article/details/76095813#commentBox" target="_blank" rel="noopener">地址请点击</a></p><p>简单来讲就是还要修改<code>.vscode</code>文件夹里的<code>launch.json</code>和<code>tasks.json</code>文件。</p><p>而我是将<code>launch.json</code>修改为，其中<code>gdb.exe</code>的路径需要自己进行修改一下<br><br> </p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&#123;  </span><br><span class="line">    <span class="string">"version"</span>: <span class="string">"0.2.0"</span>,  </span><br><span class="line">    <span class="string">"configurations"</span>: [  </span><br><span class="line">        &#123;  </span><br><span class="line">            <span class="string">"name"</span>: <span class="string">"(gdb) Launch"</span>, <span class="comment">// 配置名称，将会在启动配置的下拉菜单中显示  </span></span><br><span class="line">            <span class="string">"type"</span>: <span class="string">"cppdbg"</span>,       <span class="comment">// 配置类型，这里只能为cppdbg  </span></span><br><span class="line">            <span class="string">"request"</span>: <span class="string">"launch"</span>,    <span class="comment">// 请求配置类型，可以为launch（启动）或attach（附加）  </span></span><br><span class="line">            <span class="string">"program"</span>: <span class="string">"$&#123;workspaceFolder&#125;/$&#123;fileBasenameNoExtension&#125;.exe"</span>,<span class="comment">// 将要进行调试的程序的路径  </span></span><br><span class="line">            <span class="string">"args"</span>: [],             <span class="comment">// 程序调试时传递给程序的命令行参数，一般设为空即可  </span></span><br><span class="line">            <span class="string">"stopAtEntry"</span>: <span class="keyword">false</span>,   <span class="comment">// 设为true时程序将暂停在程序入口处，一般设置为false  </span></span><br><span class="line">            <span class="string">"cwd"</span>: <span class="string">"$&#123;workspaceFolder&#125;"</span>, <span class="comment">// 调试程序时的工作目录，一般为$&#123;workspaceFolder&#125;即代码所在目录  </span></span><br><span class="line">            <span class="string">"environment"</span>: [],  </span><br><span class="line">            <span class="string">"externalConsole"</span>: <span class="keyword">true</span>, <span class="comment">// 调试时是否显示控制台窗口，一般设置为true显示控制台  </span></span><br><span class="line">            <span class="string">"MIMode"</span>: <span class="string">"gdb"</span>,  </span><br><span class="line">            <span class="string">"miDebuggerPath"</span>: <span class="string">"D:\\MinGW64\\mingw64\\bin\\gdb.exe"</span>, <span class="comment">// miDebugger的路径，注意这里要与MinGw的路径对应  </span></span><br><span class="line">            <span class="string">"preLaunchTask"</span>: <span class="string">"g++"</span>, <span class="comment">// 调试会话开始前执行的任务，一般为编译程序，c++为g++, c为gcc  </span></span><br><span class="line">            <span class="string">"setupCommands"</span>: [  </span><br><span class="line">                &#123;   </span><br><span class="line">    <span class="string">"description"</span>: <span class="string">"Enable pretty-printing for gdb"</span>,  </span><br><span class="line">                    <span class="string">"text"</span>: <span class="string">"-enable-pretty-printing"</span>,  </span><br><span class="line">                    <span class="string">"ignoreFailures"</span>: <span class="keyword">true</span>  </span><br><span class="line">                &#125;  </span><br><span class="line">            ]  </span><br><span class="line">        &#125;  </span><br><span class="line">    ]  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>将<code>tasks.json</code>修改为</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"version"</span>: <span class="string">"2.0.0"</span>,</span><br><span class="line">    <span class="string">"command"</span>: <span class="string">"g++"</span>,</span><br><span class="line">    <span class="string">"args"</span>: [<span class="string">"-g"</span>,<span class="string">"$&#123;file&#125;"</span>,<span class="string">"-o"</span>,<span class="string">"$&#123;fileBasenameNoExtension&#125;.exe"</span>],    <span class="comment">// 编译命令参数</span></span><br><span class="line">    <span class="string">"problemMatcher"</span>: &#123;</span><br><span class="line">        <span class="string">"owner"</span>: <span class="string">"cpp"</span>,</span><br><span class="line">        <span class="string">"fileLocation"</span>: [<span class="string">"relative"</span>, <span class="string">"$&#123;workspaceFolder&#125;"</span>],</span><br><span class="line">        <span class="string">"pattern"</span>: &#123;</span><br><span class="line">            <span class="string">"regexp"</span>: <span class="string">"^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$"</span>,</span><br><span class="line">            <span class="string">"file"</span>: <span class="number">1</span>,</span><br><span class="line">            <span class="string">"line"</span>: <span class="number">2</span>,</span><br><span class="line">            <span class="string">"column"</span>: <span class="number">3</span>,</span><br><span class="line">            <span class="string">"severity"</span>: <span class="number">4</span>,</span><br><span class="line">            <span class="string">"message"</span>: <span class="number">5</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="最终实现F5调试"><a href="#最终实现F5调试" class="headerlink" title="最终实现F5调试"></a>最终实现<code>F5</code>调试</h2><p>并且可以实现断点debug等功能</p><h1 id="使用VSCode编辑博客"><a href="#使用VSCode编辑博客" class="headerlink" title="使用VSCode编辑博客"></a>使用VSCode编辑博客</h1><p>VSCode让我比较喜欢的一点是在于可以直接打开文件夹，并且继承了终端处理，git等，很多功能我还没有发掘出来，之后会深度体验一下VSCode！</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;使用原因&quot;&gt;&lt;a href=&quot;#使用原因&quot; class=&quot;headerlink&quot; title=&quot;使用原因&quot;&gt;&lt;/a&gt;使用原因&lt;/h1&gt;&lt;p&gt;偶然之间看到一篇文章推荐使用VSCode，对于它我也是早有耳闻，一个开源的代码编辑器，但是之前觉得麻烦，觉得自己已经有了Vi
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="https://www.qianhongbo.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="VScode" scheme="https://www.qianhongbo.top/tags/VScode/"/>
     
   </entry>
   

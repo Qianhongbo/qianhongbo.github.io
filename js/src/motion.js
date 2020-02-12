@@ -1,4 +1,17 @@
 /* global NexT: true */
+window.onload=function(){
+  var bwol=document.body.offsetWidth;
+  if(bwol < 975){
+      $('aside#sidebar').css("display","none");
+      $('body').css("paddingLeft","0px");
+  }
+}
+window.onresize = function(){
+  var bwos=document.body.offsetWidth;
+  bwos < 975 && $('body').velocity('stop').velocity({paddingLeft: 0},0);
+  if($('aside#sidebar').css('display') != 'none' && $('aside#sidebar').css('width')!='0px')
+      $('body').velocity('stop').velocity({paddingLeft: 350},0);
+}
 
 $(document).ready(function () {
   NexT.motion = {};
@@ -98,7 +111,7 @@ $(document).ready(function () {
       $(document)
         .on('sidebar.isShowing', function () {
           NexT.utils.isDesktop() && $('body').velocity('stop').velocity(
-            {paddingRight: SIDEBAR_WIDTH},
+            {paddingLeft: SIDEBAR_WIDTH},
             SIDEBAR_DISPLAY_DURATION
           );
         })
@@ -164,7 +177,7 @@ $(document).ready(function () {
       this.sidebarEl.trigger('sidebar.isShowing');
     },
     hideSidebar: function () {
-      NexT.utils.isDesktop() && $('body').velocity('stop').velocity({paddingRight: 0});
+      NexT.utils.isDesktop() && $('body').velocity('stop').velocity({paddingLeft: 0});
       this.sidebarEl.find('.motion-element').velocity('stop').css('display', 'none');
       this.sidebarEl.velocity('stop').velocity({width: 0}, {display: 'none'});
 

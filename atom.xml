@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.qianhongbo.top/"/>
-  <updated>2020-02-12T09:05:29.445Z</updated>
+  <updated>2020-02-16T04:14:45.399Z</updated>
   <id>https://www.qianhongbo.top/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2.16_英语学习</title>
+    <link href="https://www.qianhongbo.top/2-16-%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0.html"/>
+    <id>https://www.qianhongbo.top/2-16-英语学习.html</id>
+    <published>2020-02-16T03:54:09.000Z</published>
+    <updated>2020-02-16T04:14:45.399Z</updated>
+    
+    <content type="html"><![CDATA[<p>鸽了好几天，开学前继续坚持！</p><table><thead><tr><th>WORDS</th><th>MEANING</th></tr></thead><tbody><tr><td>cruise ship</td><td>游轮</td></tr><tr><td>hide away</td><td>隐藏，深藏</td></tr><tr><td>reckon</td><td>think 认为</td></tr><tr><td>stalk</td><td>偷偷潜入，笼罩，蔓延</td></tr><tr><td>quarantine</td><td>隔离</td></tr><tr><td>strike</td><td>爆发，攻击，打</td></tr><tr><td>embark</td><td>上船</td></tr><tr><td>disembark</td><td>下船</td></tr><tr><td>screen</td><td>筛查，筛选</td></tr><tr><td>disinfect</td><td>消毒</td></tr><tr><td>meter</td><td>计量器</td></tr><tr><td>thermometer</td><td>温度计</td></tr><tr><td>goggle</td><td>瞪大眼睛看，护目镜</td></tr><tr><td>on its heel</td><td>紧随其后</td></tr><tr><td>steam</td><td>全速前进</td></tr><tr><td>incubation</td><td>潜伏期</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;鸽了好几天，开学前继续坚持！&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;WORDS&lt;/th&gt;
+&lt;th&gt;MEANING&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;cruise ship&lt;/td&gt;
+&lt;td&gt;游轮&lt;/td&gt;
+&lt;/tr&gt;
+      
+    
+    </summary>
+    
+      <category term="每日英语学习" scheme="https://www.qianhongbo.top/categories/%E6%AF%8F%E6%97%A5%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="English" scheme="https://www.qianhongbo.top/tags/English/"/>
+    
+  </entry>
   
   <entry>
     <title>2.12_英语学习</title>
@@ -490,9 +526,9 @@
     <link href="https://www.qianhongbo.top/%E7%AC%AC5%E8%AE%B2.%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0.html"/>
     <id>https://www.qianhongbo.top/第5讲.相关系数.html</id>
     <published>2020-02-01T14:15:26.000Z</published>
-    <updated>2020-02-01T14:47:18.232Z</updated>
+    <updated>2020-02-16T12:43:57.687Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol><li>非线性也会使得线性相关系数很大</li><li>离群点对相关系数的影响也很大</li><li>如果两个变量的相关系数很大，也不能说明两者相关</li><li>两个变量的相关系数结果为0，只能说明不是线性相关，但可能会有更复杂的相关关系</li></ol><p>所以在建模时，先画出散点图！看出趋势，如果有线性关系，就可以用皮尔逊相关系数计算相关性的大小</p><h2 id="EXCEL-跳转"><a href="#EXCEL-跳转" class="headerlink" title="EXCEL 跳转"></a>EXCEL 跳转</h2><ol><li>ctrl + -&gt; 跳转到最后一列</li><li>ctrl + &lt;- 跳转到第一列</li><li>ctrl + shift + -&gt; 选中这一行</li><li>ctrl + shift + -&gt; + 下 选中所有的数据</li><li>ctrl + shift + -&gt; + 空格 选中所有的数据</li></ol><h2 id="描述性统计"><a href="#描述性统计" class="headerlink" title="描述性统计"></a>描述性统计</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%% 统计描述</span></span><br><span class="line">MIN = <span class="built_in">min</span>(Test);  <span class="comment">% 每一列的最小值</span></span><br><span class="line">MAX = <span class="built_in">max</span>(Test);   <span class="comment">% 每一列的最大值</span></span><br><span class="line">MEAN = <span class="built_in">mean</span>(Test);  <span class="comment">% 每一列的均值</span></span><br><span class="line">MEDIAN = median(Test);  <span class="comment">%每一列的中位数</span></span><br><span class="line">SKEWNESS = skewness(Test); <span class="comment">%每一列的偏度</span></span><br><span class="line">KURTOSIS = kurtosis(Test);  <span class="comment">%每一列的峰度</span></span><br><span class="line">STD = std(Test);  <span class="comment">% 每一列的标准差</span></span><br><span class="line">RESULT = [MIN;MAX;MEAN;MEDIAN;SKEWNESS;KURTOSIS;STD]  <span class="comment">%将这些统计量放到一个矩阵中中表示</span></span><br></pre></td></tr></table></figure><h2 id="皮尔逊相关系数计算"><a href="#皮尔逊相关系数计算" class="headerlink" title="皮尔逊相关系数计算"></a>皮尔逊相关系数计算</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">R = corrcoef(Test)   <span class="comment">% correlation coefficient</span></span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol><li>非线性也会使得线性相关系数很大</li><li>离群点对相关系数的影响也很大</li><li>如果两个变量的相关系数很大，也不能说明两者相关</li><li>两个变量的相关系数结果为0，只能说明不是线性相关，但可能会有更复杂的相关关系</li></ol><p>所以在建模时，先画出散点图！看出趋势，如果有线性关系，就可以用皮尔逊相关系数计算相关性的大小</p><h2 id="EXCEL-跳转"><a href="#EXCEL-跳转" class="headerlink" title="EXCEL 跳转"></a>EXCEL 跳转</h2><ol><li>ctrl + -&gt; 跳转到最后一列</li><li>ctrl + &lt;- 跳转到第一列</li><li>ctrl + shift + -&gt; 选中这一行</li><li>ctrl + shift + -&gt; + 下 选中所有的数据</li><li>ctrl + shift + -&gt; + 空格 选中所有的数据</li></ol><h2 id="描述性统计"><a href="#描述性统计" class="headerlink" title="描述性统计"></a>描述性统计</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%% 统计描述</span></span><br><span class="line">MIN = <span class="built_in">min</span>(Test);  <span class="comment">% 每一列的最小值</span></span><br><span class="line">MAX = <span class="built_in">max</span>(Test);   <span class="comment">% 每一列的最大值</span></span><br><span class="line">MEAN = <span class="built_in">mean</span>(Test);  <span class="comment">% 每一列的均值</span></span><br><span class="line">MEDIAN = median(Test);  <span class="comment">%每一列的中位数</span></span><br><span class="line">SKEWNESS = skewness(Test); <span class="comment">%每一列的偏度</span></span><br><span class="line">KURTOSIS = kurtosis(Test);  <span class="comment">%每一列的峰度</span></span><br><span class="line">STD = std(Test);  <span class="comment">% 每一列的标准差</span></span><br><span class="line">RESULT = [MIN;MAX;MEAN;MEDIAN;SKEWNESS;KURTOSIS;STD]  <span class="comment">%将这些统计量放到一个矩阵中中表示</span></span><br></pre></td></tr></table></figure><h2 id="皮尔逊相关系数计算"><a href="#皮尔逊相关系数计算" class="headerlink" title="皮尔逊相关系数计算"></a>皮尔逊相关系数计算</h2><p>皮尔逊相关系数是用于度量两个变量X和Y之间的相关（线性相关），其值介于-1与1之间。绝对值越大，线性相关程度越大，大于零为正相关，小于零为负相关。</p><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">R = corrcoef(Test)   <span class="comment">% correlation coefficient</span></span><br></pre></td></tr></table></figure><h2 id="用皮尔逊相关系数进行假设检验"><a href="#用皮尔逊相关系数进行假设检验" class="headerlink" title="用皮尔逊相关系数进行假设检验"></a>用皮尔逊相关系数进行假设检验</h2><p>p值判断法：</p><ol><li><p>p&lt;0.05，说明在95%的置信水平上拒绝原假设</p></li><li><p>p&gt;0.05，说明在95%的置信水平上无法拒绝原假设</p></li></ol><h2 id="检验数据是否是正态分布"><a href="#检验数据是否是正态分布" class="headerlink" title="检验数据是否是正态分布"></a>检验数据是否是正态分布</h2><ol><li>JB检验（大样本 n&gt;30）</li><li>Shapiro-Wilk检验（小样本 3&lt;n&lt;50）</li><li>Q-Q图（样本数量极大）</li></ol><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">x = normrnd(<span class="number">2</span>,<span class="number">3</span>,<span class="number">100</span>,<span class="number">1</span>);   <span class="comment">% 生成100*1的随机向量，每个元素是均值为2，标准差为3的正态分布</span></span><br><span class="line">skewness(x)  <span class="comment">%偏度</span></span><br><span class="line">kurtosis(x)  <span class="comment">%峰度</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 检验第一列数据是否为正态分布</span></span><br><span class="line">[h,p] = jbtest(Test(:,<span class="number">1</span>),<span class="number">0.05</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">% Q-Q图</span></span><br><span class="line">qqplot(Test(:,<span class="number">1</span>))</span><br></pre></td></tr></table></figure><h2 id="斯皮尔曼相关系数"><a href="#斯皮尔曼相关系数" class="headerlink" title="斯皮尔曼相关系数"></a>斯皮尔曼相关系数</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">X = [<span class="number">3</span> <span class="number">8</span> <span class="number">4</span> <span class="number">7</span> <span class="number">2</span>]'  <span class="comment">% 一定要是列向量</span></span><br><span class="line">Y = [<span class="number">5</span> <span class="number">10</span> <span class="number">9</span> <span class="number">10</span> <span class="number">6</span>]'</span><br><span class="line"></span><br><span class="line">coeff = corr(X , Y , <span class="string">'type'</span> , <span class="string">'Spearman'</span>)</span><br><span class="line"><span class="comment">% 等价于：</span></span><br><span class="line">RX = [<span class="number">2</span> <span class="number">5</span> <span class="number">3</span> <span class="number">4</span> <span class="number">1</span>]</span><br><span class="line">RY = [<span class="number">1</span> <span class="number">4.5</span> <span class="number">3</span> <span class="number">4.5</span> <span class="number">2</span>]</span><br><span class="line">R = corrcoef(RX,RY)</span><br><span class="line">[R,P]=corr(Test, <span class="string">'type'</span> , <span class="string">'Spearman'</span>)</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -646,31 +682,6 @@
       
         &lt;h1 id=&quot;NVIC中断介绍&quot;&gt;&lt;a href=&quot;#NVIC中断介绍&quot; class=&quot;headerlink&quot; title=&quot;NVIC中断介绍&quot;&gt;&lt;/a&gt;NVIC中断介绍&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;CM3内核支持256个中断，其中包含了16个内核中断和240个外部中断，并且具有
-      
-    
-    </summary>
-    
-      <category term="STM32" scheme="https://www.qianhongbo.top/categories/STM32/"/>
-    
-    
-      <category term="STM32" scheme="https://www.qianhongbo.top/tags/STM32/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【STM32】端口复用</title>
-    <link href="https://www.qianhongbo.top/%E3%80%90STM32%E3%80%91%E7%AB%AF%E5%8F%A3%E5%A4%8D%E7%94%A8.html"/>
-    <id>https://www.qianhongbo.top/【STM32】端口复用.html</id>
-    <published>2019-08-19T06:31:53.000Z</published>
-    <updated>2019-08-21T12:57:04.013Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="什么是端口复用"><a href="#什么是端口复用" class="headerlink" title="什么是端口复用"></a>什么是端口复用</h1><p>STM32有很多的内置外设，这些外设的外部引脚都是与GPIO复用的。也就是说，一个GPIO如果可以复用为内置外设的功能引脚，那么当这个GPIO作为内置外设使用的时候，就叫做复用。</p><blockquote><p> 例如串口1 的发送接收引脚是PA9,PA10，当我们把PA9,PA10不用作GPIO，而用做复用功能串口1的发送接收引脚的时候，叫端口复用。</p></blockquote><h1 id="端口复用配置过程"><a href="#端口复用配置过程" class="headerlink" title="端口复用配置过程"></a>端口复用配置过程</h1><p>以PA9,PA10配置为串口1为例</p><ul><li><p>GPIO端口时钟使能。<code>RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);</code></p></li><li><p>复用外设时钟使能。比如你要将端口PA9,PA10复用为串口，所以要使能串口时钟。<code>RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);</code></p></li><li><p>端口模式配置。 GPIO_Init（）函数。查表：《STM32中文参考手册V10》P110的表格“8.1.11外设的GPIO配置”</p></li></ul><p><img src="http://ws1.sinaimg.cn/large/006BuM4Jgy1g67l5tal6nj30pb07qq4w.jpg" alt="图片4"></p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);<span class="comment">//①IO时钟使能</span></span><br><span class="line"></span><br><span class="line">RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);<span class="comment">//②外设时钟使能</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//③初始化IO为对应的模式</span></span><br><span class="line">GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9; <span class="comment">//PA.9//复用推挽输出</span></span><br><span class="line">GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP; </span><br><span class="line">GPIO_Init(GPIOA, &amp;GPIO_InitStructure);</span><br><span class="line">  </span><br><span class="line">GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;<span class="comment">//PA10 PA.10 浮空输入</span></span><br><span class="line">GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;<span class="comment">//浮空输入</span></span><br><span class="line">GPIO_Init(GPIOA, &amp;GPIO_InitStructure);</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;什么是端口复用&quot;&gt;&lt;a href=&quot;#什么是端口复用&quot; class=&quot;headerlink&quot; title=&quot;什么是端口复用&quot;&gt;&lt;/a&gt;什么是端口复用&lt;/h1&gt;&lt;p&gt;STM32有很多的内置外设，这些外设的外部引脚都是与GPIO复用的。也就是说，一个GPIO如果可以复
       
     
     </summary>

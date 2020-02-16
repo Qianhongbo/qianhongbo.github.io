@@ -124,7 +124,7 @@
 <meta property="og:site_name" content="Blog | Qian Homeberg">
 <meta property="og:description" content="注意事项 非线性也会使得线性相关系数很大 离群点对相关系数的影响也很大 如果两个变量的相关系数很大，也不能说明两者相关 两个变量的相关系数结果为0，只能说明不是线性相关，但可能会有更复杂的相关关系  所以在建模时，先画出散点图！看出趋势，如果有线性关系，就可以用皮尔逊相关系数计算相关性的大小 EXCEL 跳转 ctrl + -&amp;gt; 跳转到最后一列 ctrl + &amp;lt;- 跳转到第一列 ctr">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-01T14:47:18.232Z">
+<meta property="og:updated_time" content="2020-02-16T12:43:57.687Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第5讲.相关系数">
 <meta name="twitter:description" content="注意事项 非线性也会使得线性相关系数很大 离群点对相关系数的影响也很大 如果两个变量的相关系数很大，也不能说明两者相关 两个变量的相关系数结果为0，只能说明不是线性相关，但可能会有更复杂的相关关系  所以在建模时，先画出散点图！看出趋势，如果有线性关系，就可以用皮尔逊相关系数计算相关性的大小 EXCEL 跳转 ctrl + -&amp;gt; 跳转到最后一列 ctrl + &amp;lt;- 跳转到第一列 ctr">
@@ -452,7 +452,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  299 字
+                  588 字
                 </span>
               
 
@@ -468,7 +468,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -506,7 +506,24 @@
 </ol>
 <h2 id="描述性统计"><a href="#描述性统计" class="headerlink" title="描述性统计"></a>描述性统计</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%% 统计描述</span></span><br><span class="line">MIN = <span class="built_in">min</span>(Test);  <span class="comment">% 每一列的最小值</span></span><br><span class="line">MAX = <span class="built_in">max</span>(Test);   <span class="comment">% 每一列的最大值</span></span><br><span class="line">MEAN = <span class="built_in">mean</span>(Test);  <span class="comment">% 每一列的均值</span></span><br><span class="line">MEDIAN = median(Test);  <span class="comment">%每一列的中位数</span></span><br><span class="line">SKEWNESS = skewness(Test); <span class="comment">%每一列的偏度</span></span><br><span class="line">KURTOSIS = kurtosis(Test);  <span class="comment">%每一列的峰度</span></span><br><span class="line">STD = std(Test);  <span class="comment">% 每一列的标准差</span></span><br><span class="line">RESULT = [MIN;MAX;MEAN;MEDIAN;SKEWNESS;KURTOSIS;STD]  <span class="comment">%将这些统计量放到一个矩阵中中表示</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="皮尔逊相关系数计算"><a href="#皮尔逊相关系数计算" class="headerlink" title="皮尔逊相关系数计算"></a>皮尔逊相关系数计算</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">R = corrcoef(Test)   <span class="comment">% correlation coefficient</span></span><br></pre></td></tr></table></figure>
+<h2 id="皮尔逊相关系数计算"><a href="#皮尔逊相关系数计算" class="headerlink" title="皮尔逊相关系数计算"></a>皮尔逊相关系数计算</h2><p>皮尔逊相关系数是用于度量两个变量X和Y之间的相关（线性相关），其值介于-1与1之间。绝对值越大，线性相关程度越大，大于零为正相关，小于零为负相关。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">R = corrcoef(Test)   <span class="comment">% correlation coefficient</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="用皮尔逊相关系数进行假设检验"><a href="#用皮尔逊相关系数进行假设检验" class="headerlink" title="用皮尔逊相关系数进行假设检验"></a>用皮尔逊相关系数进行假设检验</h2><p>p值判断法：</p>
+<ol>
+<li><p>p&lt;0.05，说明在95%的置信水平上拒绝原假设</p>
+</li>
+<li><p>p&gt;0.05，说明在95%的置信水平上无法拒绝原假设</p>
+</li>
+</ol>
+<h2 id="检验数据是否是正态分布"><a href="#检验数据是否是正态分布" class="headerlink" title="检验数据是否是正态分布"></a>检验数据是否是正态分布</h2><ol>
+<li>JB检验（大样本 n&gt;30）</li>
+<li>Shapiro-Wilk检验（小样本 3&lt;n&lt;50）</li>
+<li>Q-Q图（样本数量极大）</li>
+</ol>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">x = normrnd(<span class="number">2</span>,<span class="number">3</span>,<span class="number">100</span>,<span class="number">1</span>);   <span class="comment">% 生成100*1的随机向量，每个元素是均值为2，标准差为3的正态分布</span></span><br><span class="line">skewness(x)  <span class="comment">%偏度</span></span><br><span class="line">kurtosis(x)  <span class="comment">%峰度</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 检验第一列数据是否为正态分布</span></span><br><span class="line">[h,p] = jbtest(Test(:,<span class="number">1</span>),<span class="number">0.05</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">% Q-Q图</span></span><br><span class="line">qqplot(Test(:,<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+
+<h2 id="斯皮尔曼相关系数"><a href="#斯皮尔曼相关系数" class="headerlink" title="斯皮尔曼相关系数"></a>斯皮尔曼相关系数</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">X = [<span class="number">3</span> <span class="number">8</span> <span class="number">4</span> <span class="number">7</span> <span class="number">2</span>]'  <span class="comment">% 一定要是列向量</span></span><br><span class="line">Y = [<span class="number">5</span> <span class="number">10</span> <span class="number">9</span> <span class="number">10</span> <span class="number">6</span>]'</span><br><span class="line"></span><br><span class="line">coeff = corr(X , Y , <span class="string">'type'</span> , <span class="string">'Spearman'</span>)</span><br><span class="line"><span class="comment">% 等价于：</span></span><br><span class="line">RX = [<span class="number">2</span> <span class="number">5</span> <span class="number">3</span> <span class="number">4</span> <span class="number">1</span>]</span><br><span class="line">RY = [<span class="number">1</span> <span class="number">4.5</span> <span class="number">3</span> <span class="number">4.5</span> <span class="number">2</span>]</span><br><span class="line">R = corrcoef(RX,RY)</span><br><span class="line">[R,P]=corr(Test, <span class="string">'type'</span> , <span class="string">'Spearman'</span>)</span><br></pre></td></tr></table></figure>
 
 
       
@@ -695,7 +712,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">48</span>
+                  <span class="site-state-item-count">49</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -793,7 +810,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事项"><span class="nav-number">1.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EXCEL-跳转"><span class="nav-number">2.</span> <span class="nav-text">EXCEL 跳转</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#描述性统计"><span class="nav-number">3.</span> <span class="nav-text">描述性统计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#皮尔逊相关系数计算"><span class="nav-number">4.</span> <span class="nav-text">皮尔逊相关系数计算</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事项"><span class="nav-number">1.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EXCEL-跳转"><span class="nav-number">2.</span> <span class="nav-text">EXCEL 跳转</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#描述性统计"><span class="nav-number">3.</span> <span class="nav-text">描述性统计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#皮尔逊相关系数计算"><span class="nav-number">4.</span> <span class="nav-text">皮尔逊相关系数计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用皮尔逊相关系数进行假设检验"><span class="nav-number">5.</span> <span class="nav-text">用皮尔逊相关系数进行假设检验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#检验数据是否是正态分布"><span class="nav-number">6.</span> <span class="nav-text">检验数据是否是正态分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#斯皮尔曼相关系数"><span class="nav-number">7.</span> <span class="nav-text">斯皮尔曼相关系数</span></a></li></ol></div>
             
 
           </div>
@@ -827,7 +844,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">25.7k</span>
+    <span title="Site words total count">26.1k</span>
   
 </div>
 

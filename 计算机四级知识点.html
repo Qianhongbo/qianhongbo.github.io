@@ -130,7 +130,7 @@
 <meta property="og:image" content="https://tva3.sinaimg.cn/large/006BuM4Jly1gbqb4zsslpj30qn0ey14e.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/006BuM4Jly1gbqb54k2rgj30qk0emgvz.jpg">
 <meta property="og:image" content="https://tva3.sinaimg.cn/large/006BuM4Jly1gbsqjtggywj30qv0i1qd4.jpg">
-<meta property="og:updated_time" content="2020-02-11T12:30:55.544Z">
+<meta property="og:updated_time" content="2020-02-18T13:27:21.006Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机四级知识点">
 <meta name="twitter:description" content="时钟分为硬件时钟和软件时钟 目态：用户态 – 一般指令 管态：系统态 – 特权指令 第三章：进程线程模型 顺序执行：顺序性；封闭性；程序结果确定性；程序结果可再现性 多道程序系统：同时处理多个具有独立功能的程序，提高利用率/ 独立性；随机性；资源共享性 程序的并发执行：并发程序相互制约；程序与计算不再一一对应；并发程序结果不可再现   多道程序系统属于各种操作系统，是一种思想（实时系统、分布系统）">
@@ -459,7 +459,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.3k 字
+                  1.7k 字
                 </span>
               
 
@@ -475,7 +475,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4 分钟
+                  5 分钟
                 </span>
               
             </div>
@@ -609,6 +609,18 @@
 <p><img src="//tva3.sinaimg.cn/large/006BuM4Jly1gbqb4zsslpj30qn0ey14e.jpg" alt="111111111"></p>
 <p><img src="//tva1.sinaimg.cn/large/006BuM4Jly1gbqb54k2rgj30qk0emgvz.jpg" alt="222222222222222222"></p>
 <p><img src="//tva3.sinaimg.cn/large/006BuM4Jly1gbsqjtggywj30qv0i1qd4.jpg" alt="TIM截图20200211203024"></p>
+<h1 id="第五章-存储管理方案"><a href="#第五章-存储管理方案" class="headerlink" title="第五章 存储管理方案"></a>第五章 存储管理方案</h1><h2 id="固定分区"><a href="#固定分区" class="headerlink" title="固定分区"></a>固定分区</h2><p>特点：</p>
+<ol>
+<li>一个作业只能装入一个分区，一个分区只能装入一个作业。若分区大小不能满足作业要求的话，该作业暂时不能装入</li>
+<li>通过分区分配表来实现主存的存储和回收。</li>
+</ol>
+<h2 id="可变分区"><a href="#可变分区" class="headerlink" title="可变分区"></a>可变分区</h2><ol>
+<li>移动技术</li>
+<li>采用的数据结构：已分分区表和空闲分区表</li>
+<li>最先适应分配算法（FF）：找到第一个能满足作业长度要求的空闲区，分割这个区域，一部分分配给作业，一部分仍作为空闲区（算法简单，但吧空闲区分成了小的空闲区，有大作业要求分配时，不能满足要求；按照地址递增次序排列）</li>
+<li>最优适应分配算法（BF）：在所有空闲分区中找一个满足要求的最小空闲区进行分配（空闲区按照长度递增次序登记在空闲分区表中）（仍容易产生主存碎片，增加系统开销）</li>
+<li>最坏适应分配算法（WF）：挑选最大空闲分区（按长度递减次序登记）（不会产生过多的碎片，但影响大作业的分配，增加系统开销）</li>
+</ol>
 
       
     </div>
@@ -796,7 +808,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">52</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -894,7 +906,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章：进程线程模型"><span class="nav-number">1.</span> <span class="nav-text">第三章：进程线程模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#进程"><span class="nav-number">1.1.</span> <span class="nav-text">进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PCB：进程控制块"><span class="nav-number">1.2.</span> <span class="nav-text">PCB：进程控制块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unix的fork-函数"><span class="nav-number">1.3.</span> <span class="nav-text">Unix的fork()函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程"><span class="nav-number">1.4.</span> <span class="nav-text">线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调度"><span class="nav-number">1.5.</span> <span class="nav-text">调度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调度算法"><span class="nav-number">1.6.</span> <span class="nav-text">调度算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第四章-并发与同步"><span class="nav-number">2.</span> <span class="nav-text">第四章 并发与同步</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章：进程线程模型"><span class="nav-number">1.</span> <span class="nav-text">第三章：进程线程模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#进程"><span class="nav-number">1.1.</span> <span class="nav-text">进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PCB：进程控制块"><span class="nav-number">1.2.</span> <span class="nav-text">PCB：进程控制块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unix的fork-函数"><span class="nav-number">1.3.</span> <span class="nav-text">Unix的fork()函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程"><span class="nav-number">1.4.</span> <span class="nav-text">线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调度"><span class="nav-number">1.5.</span> <span class="nav-text">调度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调度算法"><span class="nav-number">1.6.</span> <span class="nav-text">调度算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第四章-并发与同步"><span class="nav-number">2.</span> <span class="nav-text">第四章 并发与同步</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第五章-存储管理方案"><span class="nav-number">3.</span> <span class="nav-text">第五章 存储管理方案</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#固定分区"><span class="nav-number">3.1.</span> <span class="nav-text">固定分区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可变分区"><span class="nav-number">3.2.</span> <span class="nav-text">可变分区</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -928,7 +940,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">26.1k</span>
+    <span title="Site words total count">26.9k</span>
   
 </div>
 

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.qianhongbo.top/"/>
-  <updated>2020-02-18T09:16:12.438Z</updated>
+  <updated>2020-02-19T03:37:23.909Z</updated>
   <id>https://www.qianhongbo.top/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2.19_英语学习</title>
+    <link href="https://www.qianhongbo.top/2-19-%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0.html"/>
+    <id>https://www.qianhongbo.top/2-19-英语学习.html</id>
+    <published>2020-02-19T03:37:23.000Z</published>
+    <updated>2020-02-19T03:37:23.909Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>2.18_英语学习</title>
@@ -96,9 +110,9 @@
     <link href="https://www.qianhongbo.top/%E5%A4%A7%E4%B8%89%E4%B8%8A%E5%AD%A6%E6%9C%9F%E6%80%BB%E7%BB%93.html"/>
     <id>https://www.qianhongbo.top/大三上学期总结.html</id>
     <published>2020-02-17T07:38:19.000Z</published>
-    <updated>2020-02-17T07:49:49.320Z</updated>
+    <updated>2020-02-19T03:47:02.078Z</updated>
     
-    <content type="html"><![CDATA[ <font size="3" face="楷体">这是我看似很努力的一个学期，结果也还说得过去，但这些与我预想的都还差了太多，我用20分钟的时间做了一个反思，试图找出我存在的问题。1. 我的努力程度不够，我是一个自制力很差的人，向来如此，总是禁不住诱惑，无论是手机还是游戏，都是一沾上就会上瘾，所以这一学期我尽管花了不少时间在学习上，但相比于其他同学，可能还是不够吧，毕竟很多人可能是花费自己的全部时间去学习了。2. 我对某些并不感兴趣的学科没有学的认真，比如机械原理，热工基础。我并没有抱着一个为了得高分的心态，而是自认为学的够了就不学了，但很显然，这种学习程度对于达到90+以上的分数是不太可能的。3. 学习方法，自从上了大学，我好想对于学习方法就已经不再要求自己了，学得再也不聪明，总是以一种比较笨，低效的方式在学习，这也不是一个聪明人应该做的事情。<p>希望在最后的学期，我能逐渐克服这些问题，尽管GPA可能已经不会有太大的改观，但这学期对我来说尤为重要，我要考出GRE和TOEFL，我希望我能在这两项成绩的考试中证明自己，考出高分！也算不让自己的大学留下遗憾吧。<br></p></font><p></p>]]></content>
+    <content type="html"><![CDATA[ <font size="3" face="楷体">这是我看似很努力的一个学期，结果也还说得过去，但这些与我预想的都还差了太多，我用20分钟的时间做了一个反思，试图找出我存在的问题。<ol><li><p>我的努力程度不够，我是一个自制力很差的人，向来如此，总是禁不住诱惑，无论是手机还是游戏，都是一沾上就会上瘾，所以这一学期我尽管花了不少时间在学习上，但相比于其他同学，可能还是不够吧，毕竟很多人可能是花费自己的全部时间去学习了。</p></li><li><p>我对某些并不感兴趣的学科没有学的认真，比如机械原理，热工基础。我并没有抱着一个为了得高分的心态，而是自认为学的够了就不学了，但很显然，这种学习程度对于达到90+以上的分数是不太可能的。</p></li><li><p>学习方法，自从上了大学，我好想对于学习方法就已经不再要求自己了，学得再也不聪明，总是以一种比较笨，低效的方式在学习，这也不是一个聪明人应该做的事情。</p></li></ol><p>希望在最后的学期，我能逐渐克服这些问题，尽管GPA可能已经不会有太大的改观，但这学期对我来说尤为重要，我要考出GRE和TOEFL，我希望我能在这两项成绩的考试中证明自己，考出高分！也算不让自己的大学留下遗憾吧。<br></p></font><p></p>]]></content>
     
     <summary type="html">
     
@@ -106,7 +120,9 @@
       
          &lt;font size=&quot;3&quot; face=&quot;楷体&quot;&gt;
 这是我看似很努力的一个学期，结果也还说得过去，但这些与我预想的都还差了太多，我用20分钟的时间做了一个反思，试图找出我存在的问题。
-1. 我的努力程度不够，我是一个自制力很差的人，向来如此，总是禁不住诱惑，无论是手机还是游戏，
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;我的努力程度不够，我是一个自制力很差的人，向来如此，总是禁不住诱惑，
       
     
     </summary>
@@ -684,34 +700,6 @@
     
     
       <category term="English" scheme="https://www.qianhongbo.top/tags/English/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【STM32】外部中断实验</title>
-    <link href="https://www.qianhongbo.top/%E3%80%90STM32%E3%80%91%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD%E5%AE%9E%E9%AA%8C.html"/>
-    <id>https://www.qianhongbo.top/【STM32】外部中断实验.html</id>
-    <published>2019-08-28T13:12:38.000Z</published>
-    <updated>2019-08-28T14:27:03.281Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="外部中断概述"><a href="#外部中断概述" class="headerlink" title="外部中断概述"></a>外部中断概述</h1><ol><li><p>STM32的每个IO都可以作为外部中断输入。</p></li><li><p>STM32的中断控制器支持19个外部中断/事件请求：</p></li></ol><ul><li>线0~15：对应外部IO口的输入中断。</li><li>线16：连接到PVD输出。</li><li>线17：连接到RTC闹钟事件。</li><li>线18：连接到USB唤醒事件。</li></ul><ol start="3"><li><p>每个外部中断线可以独立的配置触发方式（上升沿，下降沿或者双边沿触发），触发/屏蔽，专用的状态位。</p></li><li><p>从上面可以看出，STM32供IO使用的中断线只有16个，但是STM32F10x系列的IO口多达上百个，那么中断线怎么跟io口对应呢？</p></li></ol><ul><li>GPIOx.0映射到EXTI0</li><li>GPIOx.1映射到EXTI1</li><li>…</li><li>GPIOx.15映射到EXTI15</li></ul><ol start="5"><li>IO口外部中断在中断向量表中只分配了7个中断向量，也就是<br>只能使用7个中断服务函数<blockquote><p>从表中可以看出，外部中断线5<del>9分配一个中断向量，共用一个服务函数，外部中断线10</del>15分配一个中断向量，共用一个中断服务函数。</p></blockquote></li></ol><h1 id="外部中断常用库函数"><a href="#外部中断常用库函数" class="headerlink" title="外部中断常用库函数"></a>外部中断常用库函数</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//exti.c文件</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">GPIO_EXTILineConfig</span><span class="params">(<span class="keyword">uint8_t</span> GPIO_PortSource, <span class="keyword">uint8_t</span> GPIO_PinSource)</span></span>;</span><br><span class="line"><span class="comment">//设置IO口与中断线的映射关系</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">exp</span>:  GPIO_EXTILineConfig(GPIO_PortSourceGPIOE,GPIO_PinSource2);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EXTI_Init</span><span class="params">(EXTI_InitTypeDef* EXTI_InitStruct)</span></span>;</span><br><span class="line"> <span class="comment">//初始化中断线：触发方式等</span></span><br><span class="line"></span><br><span class="line"><span class="function">ITStatus <span class="title">EXTI_GetITStatus</span><span class="params">(<span class="keyword">uint32_t</span> EXTI_Line)</span></span>;</span><br><span class="line"><span class="comment">//判断中断线中断状态，是否发生</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EXTI_ClearITPendingBit</span><span class="params">(<span class="keyword">uint32_t</span> EXTI_Line)</span></span>;</span><br><span class="line"><span class="comment">//清除中断线上的中断标志位</span></span><br></pre></td></tr></table></figure><h1 id="实际代码"><a href="#实际代码" class="headerlink" title="实际代码"></a>实际代码</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"exti.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stm32f10x.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"key.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"delay.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"led.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EXTIX_Init</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">EXTI_InitTypeDef  EXTI_InitStruct;</span><br><span class="line">NVIC_InitTypeDef  NVIC_InitStruct;</span><br><span class="line"></span><br><span class="line">KEY_Init();</span><br><span class="line"></span><br><span class="line">RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO,ENABLE);</span><br><span class="line"></span><br><span class="line">GPIO_EXTILineConfig(GPIO_PortSourceGPIOE,GPIO_PinSource4);</span><br><span class="line"></span><br><span class="line">EXTI_InitStruct.EXTI_Line = EXTI_Line4;</span><br><span class="line">EXTI_InitStruct.EXTI_LineCmd = ENABLE;</span><br><span class="line">EXTI_InitStruct.EXTI_Mode = EXTI_Mode_Interrupt;</span><br><span class="line">EXTI_InitStruct.EXTI_Trigger = EXTI_Trigger_Falling;</span><br><span class="line">EXTI_Init(&amp;EXTI_InitStruct);</span><br><span class="line"></span><br><span class="line">NVIC_InitStruct.NVIC_IRQChannel = EXTI4_IRQn;</span><br><span class="line">NVIC_InitStruct.NVIC_IRQChannelCmd = ENABLE;</span><br><span class="line">NVIC_InitStruct.NVIC_IRQChannelPreemptionPriority = <span class="number">2</span>;</span><br><span class="line">NVIC_InitStruct.NVIC_IRQChannelSubPriority = <span class="number">2</span>;</span><br><span class="line">NVIC_Init(&amp;NVIC_InitStruct);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EXTI4_IRQHandler</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">delay_ms(<span class="number">10</span>);</span><br><span class="line"><span class="keyword">if</span>(KEY0 == <span class="number">0</span>)&#123;</span><br><span class="line">LED0 = !LED0;</span><br><span class="line">LED1 = !LED1;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//手动清除中断标志位</span></span><br><span class="line">EXTI_ClearITPendingBit(EXTI_Line4);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//main.c文件</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stm32f10x.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"led.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"beep.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"key.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"sys.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"delay.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"exti.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"usart.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">delay_init();      <span class="comment">//延时函数初始化  </span></span><br><span class="line">NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);</span><br><span class="line"> LED_Init();      <span class="comment">//LED端口初始化</span></span><br><span class="line">KEY_Init();           <span class="comment">//初始化与按键连接的硬件接口</span></span><br><span class="line">EXTIX_Init();</span><br><span class="line">LED0 = <span class="number">0</span>;    <span class="comment">//先点亮红灯</span></span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"OK\r\n"</span>);</span><br><span class="line">&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;外部中断概述&quot;&gt;&lt;a href=&quot;#外部中断概述&quot; class=&quot;headerlink&quot; title=&quot;外部中断概述&quot;&gt;&lt;/a&gt;外部中断概述&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;STM32的每个IO都可以作为外部中断输入。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;STM32
-      
-    
-    </summary>
-    
-      <category term="STM32" scheme="https://www.qianhongbo.top/categories/STM32/"/>
-    
-    
-      <category term="STM32" scheme="https://www.qianhongbo.top/tags/STM32/"/>
     
   </entry>
   

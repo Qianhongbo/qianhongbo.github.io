@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.qianhongbo.top/"/>
-  <updated>2020-02-19T03:37:23.909Z</updated>
+  <updated>2020-02-19T04:14:13.791Z</updated>
   <id>https://www.qianhongbo.top/</id>
   
   <author>
@@ -17,16 +17,66 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>华科机械学院综合测控实验</title>
+    <link href="https://www.qianhongbo.top/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E9%99%A2%E7%BB%BC%E5%90%88%E6%B5%8B%E6%8E%A7%E5%AE%9E%E9%AA%8C.html"/>
+    <id>https://www.qianhongbo.top/华科机械学院综合测控实验.html</id>
+    <published>2020-02-19T04:10:39.000Z</published>
+    <updated>2020-02-19T04:14:13.791Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="实验一"><a href="#实验一" class="headerlink" title="实验一"></a>实验一</h1><p>现在布置自学同学第一周的任务：</p><ol><li>用MATLAB产生0-100hz的方波信号，可以在数字框或者滚动条上改变方波频率。</li><li>用时域过零检测方法测量你产生的方波信号，测量误差越小越好，0.2hz以内打100分，0.5hz以内95分，1hz以内90分，5hz以内85分，10hz以内80分，以上评分标准是初步设的，不满意可以提</li><li>在你产生的方波信号上添加一直流分量，比如500-1000，如何保证你的程序也正常测量。</li><li>注意初始信号值如果全为0的情况下，如何保证你的程序也正常测量。</li></ol><p>仿真做好了，把上学期编写的采集代码替换仿真数据即完成第一次实验，第一次实验最终通过测量信号发生器的信号频率来评分。<br>学有余力的同学可以看看实验指导书的实验六编码器模式，另外一种通过硬件测量信号频率的方法，有一定难度。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;实验一&quot;&gt;&lt;a href=&quot;#实验一&quot; class=&quot;headerlink&quot; title=&quot;实验一&quot;&gt;&lt;/a&gt;实验一&lt;/h1&gt;&lt;p&gt;现在布置自学同学第一周的任务：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;用MATLAB产生0-100hz的方波信号，可以在数字框或者滚动条上改变方
+      
+    
+    </summary>
+    
+      <category term="华科机械学习资料分享" scheme="https://www.qianhongbo.top/categories/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="综合测控实验" scheme="https://www.qianhongbo.top/tags/%E7%BB%BC%E5%90%88%E6%B5%8B%E6%8E%A7%E5%AE%9E%E9%AA%8C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>2.19_英语学习</title>
     <link href="https://www.qianhongbo.top/2-19-%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0.html"/>
     <id>https://www.qianhongbo.top/2-19-英语学习.html</id>
     <published>2020-02-19T03:37:23.000Z</published>
-    <updated>2020-02-19T03:37:23.909Z</updated>
+    <updated>2020-02-19T08:12:31.243Z</updated>
+    
+    <content type="html"><![CDATA[<table><thead><tr><th>WORDS</th><th>MEANING</th></tr></thead><tbody><tr><td>truism</td><td>老生长谈</td></tr><tr><td>burned out</td><td>精疲力竭的</td></tr><tr><td>swamp</td><td>淹没</td></tr><tr><td>overwhelm</td><td>淹没</td></tr><tr><td>come into</td><td>突然得到…（金钱，财产）</td></tr><tr><td>expedite</td><td>加速，促进</td></tr><tr><td>luxuriate</td><td>尽情享受</td></tr><tr><td>blithe</td><td>不在意的，漫不经心的</td></tr><tr><td>languish</td><td>衰弱，疲软，被迫处于某种困境</td></tr><tr><td>filth</td><td>污物，脏话</td></tr><tr><td>filthy</td><td>脏兮兮的</td></tr><tr><td>on a semi-annual basis</td><td>每半年的</td></tr><tr><td>basis</td><td>…进行的方式</td></tr><tr><td>inescapable</td><td>不可避免的</td></tr><tr><td>fleet</td><td>舰队</td></tr><tr><td>spring</td><td>突然出现，冒出来</td></tr><tr><td>norm</td><td>标准，规范</td></tr><tr><td>loads of</td><td>lots of</td></tr><tr><td>glisten</td><td>闪光，闪亮</td></tr><tr><td>glistening</td><td>闪闪发光的</td></tr></tbody></table>]]></content>
     
     <summary type="html">
     
+      
+      
+        &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;WORDS&lt;/th&gt;
+&lt;th&gt;MEANING&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;truism&lt;/td&gt;
+&lt;td&gt;老生长谈&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;burned out&lt;/td&gt;
+      
+    
     </summary>
     
+      <category term="每日英语学习" scheme="https://www.qianhongbo.top/categories/%E6%AF%8F%E6%97%A5%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="English" scheme="https://www.qianhongbo.top/tags/English/"/>
     
   </entry>
   
@@ -540,9 +590,9 @@
     <link href="https://www.qianhongbo.top/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%9B%E7%BA%A7%E7%9F%A5%E8%AF%86%E7%82%B9.html"/>
     <id>https://www.qianhongbo.top/计算机四级知识点.html</id>
     <published>2020-02-03T10:19:45.000Z</published>
-    <updated>2020-02-18T13:27:21.006Z</updated>
+    <updated>2020-02-19T12:37:09.033Z</updated>
     
-    <content type="html"><![CDATA[<p>时钟分为硬件时钟和软件时钟</p><p>目态：用户态 – 一般指令</p><p>管态：系统态 – 特权指令</p><h1 id="第三章：进程线程模型"><a href="#第三章：进程线程模型" class="headerlink" title="第三章：进程线程模型"></a>第三章：进程线程模型</h1><ol><li>顺序执行：顺序性；封闭性；程序结果确定性；程序结果可再现性</li><li>多道程序系统：同时处理多个具有独立功能的程序，提高利用率/ 独立性；随机性；资源共享性</li><li>程序的并发执行：并发程序相互制约；程序与计算不再一一对应；并发程序结果不可再现</li></ol><blockquote><p>多道程序系统属于各种操作系统，是一种思想（实时系统、分布系统）</p><p>并发不等于同时运行</p></blockquote><h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><ol><li>进程是正在执行的程序，包括程序，数据，进程控制块</li><li>并发性；动态性；独立性；交往性；异步性</li><li>三状态模型：就绪状态，运行状态，等待状态<ol><li>就绪状态：进程分配到除CPU之外的一切资源；排成就绪队列</li><li>运行状态：就绪状态的程序获得CPU的使用权，单处理器同一时间只能有一个程序处于运行状态</li><li>等待状态/阻塞状态：进程请求输入输出、申请额外空间；不浪费CPU</li></ol></li><li>创建状态，结束状态（完成、未完成）</li><li>挂起状态，激活状态（内存、外存转换）</li><li>新状态–&gt;就绪状态：就绪队列可以接纳新的进程</li><li>就绪状态–&gt;执行状态：按照算法分配；执行状态的进程称为当前进程</li><li>执行状态–&gt;就绪状态：时间片结束、优先权较低</li><li>执行状态–&gt;阻塞状态：IO请求等</li><li>阻塞状态需要先进入就绪状态再进入运行状态</li></ol><p><img src="//tvax4.sinaimg.cn/large/006BuM4Jly1gbhtnod40pj30qo0f7k0k.jpg" alt="TIM截图20200202095653"></p><h2 id="PCB：进程控制块"><a href="#PCB：进程控制块" class="headerlink" title="PCB：进程控制块"></a>PCB：进程控制块</h2><p>组织方式</p><ol><li>线性方式：需要扫描所有的</li><li>索引方式：需要额外的空间</li><li>链接方式：相同状态的进程排列在一起</li></ol><h2 id="Unix的fork-函数"><a href="#Unix的fork-函数" class="headerlink" title="Unix的fork()函数"></a>Unix的<code>fork()</code>函数</h2><p>父进程通过<code>fork()</code>创建子进程</p><p>特点：只被执行一次，返回<strong>两次</strong>结果，父进程返回的是子进程的<code>PID</code>，子进程中<code>fork</code>返回0</p><blockquote><p>代码中有几个fork()就会输出2^n次</p></blockquote><h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><p>线程是进程的一个实体，是被系统独立调度和执行的基本单位</p><p>线程基本上不拥有系统资源，但它可以与同属于一个进程的其他线程共享所拥有的全部资源</p><p>一个线程可以创建和撤销另一个线程，多个线程之间可以并发执行，因此运行中可以呈现出异步性，因此线程同样有就绪，执行，阻塞三个状态</p><blockquote><p>进程是拥有资源的基本单位</p></blockquote><blockquote><p>不同进程之间可以并发执行，一个进程中的多个线程也可以并发执行</p><p>QQ和音乐播放可以同时运行（多进程），QQ里可以多个人同时聊天（多线程）</p><p>线程的引入增加了并发性！</p></blockquote><blockquote><p>一个程序至少有一个进程，一个进程至少有一个线程</p></blockquote><p>用户级线程，内核级线程，混合级线程</p><h2 id="调度"><a href="#调度" class="headerlink" title="调度"></a>调度</h2><ol><li>低级调度：内核用一定的调度算法从就绪队列选出一进程</li><li>中级调度：调度算法将等待状态的进程调至外存中</li></ol><h2 id="调度算法"><a href="#调度算法" class="headerlink" title="调度算法"></a>调度算法</h2><ol><li>先来先服务调度算法 FCFS：最简单，非抢占式，有利于长进程，不利于短进程。</li><li>最短作业优先算法 SPF：优先处理运行时间最短的进程，降低平均等待时间，提高吞吐量，非抢占式，对长进程不利。</li><li>最短剩余时间优先调度算法 SRT：抢占式的动态版本。</li></ol><p><img src="//tvax3.sinaimg.cn/large/006BuM4Jly1gblan566baj30qc0eedoa.jpg" alt="TIM截图20200205100110"></p><ol start="4"><li>时间片轮转调度算法RR：在分时系统中，队首进程执行一个时间片，之后计时器发生一个时钟终端，并将它放到对尾，继续执行。适合于交互进程的调度。</li><li>最高优先级调度算法：为了照顾紧迫型的进程</li><li>多级反馈队列调度算法MLF：主流使用调度算法</li></ol><p><img src="//tvax3.sinaimg.cn/large/006BuM4Jly1gbotzhu7lnj30m80fm452.jpg" alt="TIM截图20200208112701"></p><ol start="7"><li>实时系统的调度算法：速率单调调度算法，最早最终时限优先调度</li></ol><blockquote><p>进程和程序的本质区别是：进程是动态的，程序是静态的</p><p>进程和程序的其它区别是：进程是在内存，程序是在外存</p></blockquote><h1 id="第四章-并发与同步"><a href="#第四章-并发与同步" class="headerlink" title="第四章 并发与同步"></a>第四章 并发与同步</h1><p>资源共享程度的三个层次：互斥、死锁、饥饿</p><p>临界资源：资源在一段时间内只允许一个进程访问和使用</p><p>进程同步机制应该遵循的原则：</p><ol><li>空闲让进</li><li>忙则等待</li><li>有限等待：以免进入“死等”</li><li>让权等待：以免进入“忙等”</li></ol><p>软件互斥的四种算法：</p><ol><li>单标志算法</li><li>双标志、先检查算法</li><li>双标识、后检查算法</li><li>先修改、后检查、后修改者等待算法</li></ol><p>进程互斥的硬件方法：</p><ol><li>TS指令</li><li>Swap指令</li></ol><p>整型信号量：</p><ol><li>大于0，表示系统中可用资源的数目</li><li>小于0，表示被阻塞的进程数目</li><li>等于0，系统资源已经用完，并没有因资源而被阻塞的进程</li></ol><p>PV操作</p><p> P操作用于申请资源</p><p>V操作用于释放资源</p><p><img src="//tva3.sinaimg.cn/large/006BuM4Jly1gbqb4zsslpj30qn0ey14e.jpg" alt="111111111"></p><p><img src="//tva1.sinaimg.cn/large/006BuM4Jly1gbqb54k2rgj30qk0emgvz.jpg" alt="222222222222222222"></p><p><img src="//tva3.sinaimg.cn/large/006BuM4Jly1gbsqjtggywj30qv0i1qd4.jpg" alt="TIM截图20200211203024"></p><h1 id="第五章-存储管理方案"><a href="#第五章-存储管理方案" class="headerlink" title="第五章 存储管理方案"></a>第五章 存储管理方案</h1><h2 id="固定分区"><a href="#固定分区" class="headerlink" title="固定分区"></a>固定分区</h2><p>特点：</p><ol><li>一个作业只能装入一个分区，一个分区只能装入一个作业。若分区大小不能满足作业要求的话，该作业暂时不能装入</li><li>通过分区分配表来实现主存的存储和回收。</li></ol><h2 id="可变分区"><a href="#可变分区" class="headerlink" title="可变分区"></a>可变分区</h2><ol><li>移动技术</li><li>采用的数据结构：已分分区表和空闲分区表</li><li>最先适应分配算法（FF）：找到第一个能满足作业长度要求的空闲区，分割这个区域，一部分分配给作业，一部分仍作为空闲区（算法简单，但吧空闲区分成了小的空闲区，有大作业要求分配时，不能满足要求；按照地址递增次序排列）</li><li>最优适应分配算法（BF）：在所有空闲分区中找一个满足要求的最小空闲区进行分配（空闲区按照长度递增次序登记在空闲分区表中）（仍容易产生主存碎片，增加系统开销）</li><li>最坏适应分配算法（WF）：挑选最大空闲分区（按长度递减次序登记）（不会产生过多的碎片，但影响大作业的分配，增加系统开销）</li></ol>]]></content>
+    <content type="html"><![CDATA[<p>时钟分为硬件时钟和软件时钟</p><p>目态：用户态 – 一般指令</p><p>管态：系统态 – 特权指令</p><h1 id="第三章：进程线程模型"><a href="#第三章：进程线程模型" class="headerlink" title="第三章：进程线程模型"></a>第三章：进程线程模型</h1><ol><li>顺序执行：顺序性；封闭性；程序结果确定性；程序结果可再现性</li><li>多道程序系统：同时处理多个具有独立功能的程序，提高利用率/ 独立性；随机性；资源共享性</li><li>程序的并发执行：并发程序相互制约；程序与计算不再一一对应；并发程序结果不可再现</li></ol><blockquote><p>多道程序系统属于各种操作系统，是一种思想（实时系统、分布系统）</p><p>并发不等于同时运行</p></blockquote><h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><ol><li>进程是正在执行的程序，包括程序，数据，进程控制块</li><li>并发性；动态性；独立性；交往性；异步性</li><li>三状态模型：就绪状态，运行状态，等待状态<ol><li>就绪状态：进程分配到除CPU之外的一切资源；排成就绪队列</li><li>运行状态：就绪状态的程序获得CPU的使用权，单处理器同一时间只能有一个程序处于运行状态</li><li>等待状态/阻塞状态：进程请求输入输出、申请额外空间；不浪费CPU</li></ol></li><li>创建状态，结束状态（完成、未完成）</li><li>挂起状态，激活状态（内存、外存转换）</li><li>新状态–&gt;就绪状态：就绪队列可以接纳新的进程</li><li>就绪状态–&gt;执行状态：按照算法分配；执行状态的进程称为当前进程</li><li>执行状态–&gt;就绪状态：时间片结束、优先权较低</li><li>执行状态–&gt;阻塞状态：IO请求等</li><li>阻塞状态需要先进入就绪状态再进入运行状态</li></ol><p><img src="//tvax4.sinaimg.cn/large/006BuM4Jly1gbhtnod40pj30qo0f7k0k.jpg" alt="TIM截图20200202095653"></p><h2 id="PCB：进程控制块"><a href="#PCB：进程控制块" class="headerlink" title="PCB：进程控制块"></a>PCB：进程控制块</h2><p>组织方式</p><ol><li>线性方式：需要扫描所有的</li><li>索引方式：需要额外的空间</li><li>链接方式：相同状态的进程排列在一起</li></ol><h2 id="Unix的fork-函数"><a href="#Unix的fork-函数" class="headerlink" title="Unix的fork()函数"></a>Unix的<code>fork()</code>函数</h2><p>父进程通过<code>fork()</code>创建子进程</p><p>特点：只被执行一次，返回<strong>两次</strong>结果，父进程返回的是子进程的<code>PID</code>，子进程中<code>fork</code>返回0</p><blockquote><p>代码中有几个fork()就会输出2^n次</p></blockquote><h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><p>线程是进程的一个实体，是被系统独立调度和执行的基本单位</p><p>线程基本上不拥有系统资源，但它可以与同属于一个进程的其他线程共享所拥有的全部资源</p><p>一个线程可以创建和撤销另一个线程，多个线程之间可以并发执行，因此运行中可以呈现出异步性，因此线程同样有就绪，执行，阻塞三个状态</p><blockquote><p>进程是拥有资源的基本单位</p></blockquote><blockquote><p>不同进程之间可以并发执行，一个进程中的多个线程也可以并发执行</p><p>QQ和音乐播放可以同时运行（多进程），QQ里可以多个人同时聊天（多线程）</p><p>线程的引入增加了并发性！</p></blockquote><blockquote><p>一个程序至少有一个进程，一个进程至少有一个线程</p></blockquote><p>用户级线程，内核级线程，混合级线程</p><h2 id="调度"><a href="#调度" class="headerlink" title="调度"></a>调度</h2><ol><li>低级调度：内核用一定的调度算法从就绪队列选出一进程</li><li>中级调度：调度算法将等待状态的进程调至外存中</li></ol><h2 id="调度算法"><a href="#调度算法" class="headerlink" title="调度算法"></a>调度算法</h2><ol><li>先来先服务调度算法 FCFS：最简单，非抢占式，有利于长进程，不利于短进程。</li><li>最短作业优先算法 SPF：优先处理运行时间最短的进程，降低平均等待时间，提高吞吐量，非抢占式，对长进程不利。</li><li>最短剩余时间优先调度算法 SRT：抢占式的动态版本。</li></ol><p><img src="//tvax3.sinaimg.cn/large/006BuM4Jly1gblan566baj30qc0eedoa.jpg" alt="TIM截图20200205100110"></p><ol start="4"><li>时间片轮转调度算法RR：在分时系统中，队首进程执行一个时间片，之后计时器发生一个时钟终端，并将它放到对尾，继续执行。适合于交互进程的调度。</li><li>最高优先级调度算法：为了照顾紧迫型的进程</li><li>多级反馈队列调度算法MLF：主流使用调度算法</li></ol><p><img src="//tvax3.sinaimg.cn/large/006BuM4Jly1gbotzhu7lnj30m80fm452.jpg" alt="TIM截图20200208112701"></p><ol start="7"><li>实时系统的调度算法：速率单调调度算法，最早最终时限优先调度</li></ol><blockquote><p>进程和程序的本质区别是：进程是动态的，程序是静态的</p><p>进程和程序的其它区别是：进程是在内存，程序是在外存</p></blockquote><h1 id="第四章-并发与同步"><a href="#第四章-并发与同步" class="headerlink" title="第四章 并发与同步"></a>第四章 并发与同步</h1><p>资源共享程度的三个层次：互斥、死锁、饥饿</p><p>临界资源：资源在一段时间内只允许一个进程访问和使用</p><p>进程同步机制应该遵循的原则：</p><ol><li>空闲让进</li><li>忙则等待</li><li>有限等待：以免进入“死等”</li><li>让权等待：以免进入“忙等”</li></ol><p>软件互斥的四种算法：</p><ol><li>单标志算法</li><li>双标志、先检查算法</li><li>双标识、后检查算法</li><li>先修改、后检查、后修改者等待算法</li></ol><p>进程互斥的硬件方法：</p><ol><li>TS指令</li><li>Swap指令</li></ol><p>整型信号量：</p><ol><li>大于0，表示系统中可用资源的数目</li><li>小于0，表示被阻塞的进程数目</li><li>等于0，系统资源已经用完，并没有因资源而被阻塞的进程</li></ol><p>PV操作</p><p> P操作用于申请资源</p><p>V操作用于释放资源</p><p><img src="//tva3.sinaimg.cn/large/006BuM4Jly1gbqb4zsslpj30qn0ey14e.jpg" alt="111111111"></p><p><img src="//tva1.sinaimg.cn/large/006BuM4Jly1gbqb54k2rgj30qk0emgvz.jpg" alt="222222222222222222"></p><p><img src="//tva3.sinaimg.cn/large/006BuM4Jly1gbsqjtggywj30qv0i1qd4.jpg" alt="TIM截图20200211203024"></p>]]></content>
     
     <summary type="html">
     
@@ -664,42 +714,6 @@
     
     
       <category term="数模" scheme="https://www.qianhongbo.top/tags/%E6%95%B0%E6%A8%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2.1_英语学习</title>
-    <link href="https://www.qianhongbo.top/2.1_%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0.html"/>
-    <id>https://www.qianhongbo.top/2.1_英语学习.html</id>
-    <published>2020-02-01T02:25:59.000Z</published>
-    <updated>2020-02-03T10:22:56.163Z</updated>
-    
-    <content type="html"><![CDATA[<table><thead><tr><th>WORDS</th><th>Meaning</th></tr></thead><tbody><tr><td>WHO</td><td>THE World Health Organization</td></tr><tr><td>Coronavirus</td><td>新型冠状病毒</td></tr><tr><td>reverse</td><td>v. 撤销，废除；n. 对立面</td></tr><tr><td>hold off</td><td>推迟</td></tr><tr><td>warrant</td><td>justify</td></tr><tr><td>advisory</td><td>顾问，咨询</td></tr><tr><td>body</td><td>组织，机构</td></tr><tr><td>advisory body</td><td>咨询机构</td></tr><tr><td>grave</td><td>庄重的，严峻的</td></tr><tr><td>Thus far</td><td>到目前为止</td></tr><tr><td>relevant</td><td>重要的</td></tr><tr><td>wage</td><td>发动        wage the war</td></tr><tr><td>lavish</td><td>奢侈的，大量的</td></tr><tr><td>lavishly</td><td>慷慨地</td></tr><tr><td>in effect = in fact</td><td>本质上</td></tr><tr><td>effectively</td><td>实际上地</td></tr><tr><td>strand</td><td>搁浅；将…困在某处</td></tr><tr><td>height</td><td>高潮，高峰期</td></tr><tr><td>tantamount to</td><td>相当于，等同于</td></tr><tr><td>quarantine</td><td>将…隔离</td></tr></tbody></table>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;WORDS&lt;/th&gt;
-&lt;th&gt;Meaning&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;WHO&lt;/td&gt;
-&lt;td&gt;THE World Health Organization&lt;/td&gt;
-&lt;/tr&gt;
-&lt;t
-      
-    
-    </summary>
-    
-      <category term="每日英语学习" scheme="https://www.qianhongbo.top/categories/%E6%AF%8F%E6%97%A5%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="English" scheme="https://www.qianhongbo.top/tags/English/"/>
     
   </entry>
   

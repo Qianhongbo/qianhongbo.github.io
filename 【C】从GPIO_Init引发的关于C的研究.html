@@ -492,10 +492,8 @@
       
         <p>在我看下面这段代码对<code>GPIO_Init</code>有一些不理解</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BEEP_Init</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"> GPIO_InitTypeDef  GPIO_InitStructure;     <span class="comment">//声明变量</span></span><br><span class="line"> 	</span><br><span class="line"> RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);</span><br><span class="line"> GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8;				 </span><br><span class="line"> GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 		 </span><br><span class="line"> GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	 </span><br><span class="line"> </span><br><span class="line"> GPIO_Init(GPIOB, &amp;GPIO_InitStructure);	  <span class="comment">//不理解</span></span><br><span class="line"> GPIO_ResetBits(GPIOB,GPIO_Pin_8);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>首先看一下<code>GPIO_Init</code>的语法</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">GPIO_Init</span><span class="params">(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)</span></span>;</span><br></pre></td></tr></table></figure>
-
 <p>我产生了几个疑问：</p>
 <ol>
 <li><code>GPIO_TypeDef* GPIOx</code>是什么意思？</li>
@@ -503,16 +501,13 @@
 <li>为什么<code>GPIOB</code>不用使用指针类型？</li>
 </ol>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这里定义了一个结构体</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  u16 GPIO_Pin;</span><br><span class="line">  GPIOSpeed_TypeDef GPIO_Speed;</span><br><span class="line">  GPIOMode_TypeDef GPIO_Mode;</span><br><span class="line">&#125;GPIO_InitTypeDef;     <span class="comment">//代码里用它来声明变量</span></span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>怎么理解呢？<br>int 是 类型， i 是变量<br>GPIO_InitTypeDef GPIO_InitStructure;<br>同样，GPIO_InitTypeDef 是类型，GPIO_InitStructure 是变量！</p>
-</blockquote>
-<blockquote>
 <p>C语言里面没有这种GPIO_InitTypeDef 类型 ，所以要自己 通过 typedef 来定义这种类型。</p>
 </blockquote>
 <p>引用自一个知乎问题，<a href="https://www.zhihu.com/question/21136956" target="_blank" rel="noopener">链接</a></p>
 <blockquote>
-<p>一般int* p表示p类型是一个int型指针，int *p表示p是一个指针，指向的类型是int。</p>
+<p>一般int<em> p表示p类型是一个int型指针，int </em>p表示p是一个指针，指向的类型是int。</p>
 </blockquote>
 <p>也就是<code>GPIO_TypeDef* GPIOx</code>等同于<code>GPIO_TypeDef *GPIOx</code>，而且我之前对于<code>init *p</code>也有误解，我以为这是在声明一个<code>init</code>常量，我当时误认<code>*</code>已经把地址取值了，实则是造成了误会，它是定义了一个指向<code>init</code>类型的指针变量，也就是<code>p</code>，所以从这点考虑，<code>init* p</code>或许表意更清楚一点！</p>
 <p>终于搞懂了！！！</p>
@@ -817,7 +812,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">32.1k</span>
+    <span title="Site words total count">32k</span>
   
 </div>
 

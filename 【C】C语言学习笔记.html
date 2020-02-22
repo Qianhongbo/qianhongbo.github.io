@@ -498,7 +498,6 @@
 <p>软件：VS2017, Xcode</p>
 <p>其它：Google，CSDN，Baidu</p>
 <h1 id="我的第一段代码"><a href="#我的第一段代码" class="headerlink" title="我的第一段代码"></a>我的第一段代码</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"hello, world.\n"</span>);</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	<span class="comment">//return 0;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <ol>
 <li>main函数：main是一个特殊的函数名——每个程序都从main函数的起点开始执行。main函数通常会调用其它函数来帮助完成某些工作</li>
 <li>本例中main函数不需要任何参数</li>
@@ -506,7 +505,6 @@
 <li>\n 表示换行符</li>
 </ol>
 <h1 id="第二段代码"><a href="#第二段代码" class="headerlink" title="第二段代码"></a>第二段代码</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="comment">/* 当fatr = 0,20,...,300时，分别打印华氏温度与摄氏温度对照表 */</span></span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> fahr, celsius;</span><br><span class="line">	<span class="keyword">int</span> lower, upper, step;</span><br><span class="line"></span><br><span class="line">	lower = <span class="number">0</span>; <span class="comment">/* 温度表的上限 */</span></span><br><span class="line">	upper = <span class="number">300</span>; <span class="comment">/* 温度表的下限 */</span></span><br><span class="line">	step = <span class="number">20</span>; <span class="comment">/* 步长 */</span></span><br><span class="line"></span><br><span class="line">	fahr = lower;</span><br><span class="line">	<span class="keyword">while</span> (fahr &lt;= upper) &#123;</span><br><span class="line">		celsius = <span class="number">5</span> * (fahr - <span class="number">32</span>) / <span class="number">9</span>;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\t%d\n"</span>, fahr, celsius);</span><br><span class="line">		fahr = fahr + step;</span><br><span class="line">	&#125;</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <ol>
 <li>其中，int表示其后所列的变量为整数，与之对应的float表示浮点数（即可以带有小数部分）</li>
 <li>为什么不用5/9？因为C语言存在舍位，小数部分都会被舍弃</li>
@@ -537,11 +535,11 @@
 </ul>
 <blockquote>
 <p>  计算机中的位</p>
-<pre><code>二进制数系统中，每个0或1就是一个位(bit)，位是数据存储的最小单位。其中8bit就称为一个字节（Byte）。计算机中的CPU位数指的是CPU一次能处理的最大位数。例如32位计算机的CPU一次最多能处理32位数据。  </code></pre></blockquote>
-<blockquote>
-<p>所以char类型的存储大小为1个字节，也就是8位，这8位代表8位二进制，</p>
+<pre><code>      二进制数系统中，每个0或1就是一个位(bit)，位是数据存储的最小单位。其中8bit就称为一个字节（Byte）。计算机中的CPU位数指的是CPU一次能处理的最大位数。例如32位计算机的CPU一次最多能处理32位数据。  
+</code></pre><p>所以char类型的存储大小为1个字节，也就是8位，这8位代表8位二进制，</p>
 </blockquote>
-<h1 id="浮点类型"><a href="#浮点类型" class="headerlink" title="浮点类型"></a>浮点类型</h1><table>
+<h1 id="浮点类型"><a href="#浮点类型" class="headerlink" title="浮点类型"></a>浮点类型</h1><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>类型</th>
@@ -549,7 +547,8 @@
 <th>精度</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>float</td>
 <td>4 字节</td>
 <td>6 位小数</td>
@@ -564,15 +563,19 @@
 <td>16 字节</td>
 <td>19 位小数</td>
 </tr>
-</tbody></table>
-<h1 id="void类型"><a href="#void类型" class="headerlink" title="void类型"></a>void类型</h1><table>
+</tbody>
+</table>
+</div>
+<h1 id="void类型"><a href="#void类型" class="headerlink" title="void类型"></a>void类型</h1><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>序号</th>
 <th>类型与描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>1</td>
 <td><strong>函数返回为空</strong><br>C 中有各种函数都不返回值，或者您可以说它们返回空。不返回值的函数的返回类型为空。例如 <strong>void exit (int status);</strong></td>
 </tr>
@@ -582,9 +585,11 @@
 </tr>
 <tr>
 <td>3</td>
-<td><strong>指针指向 void</strong><br>类型为 void * 的指针代表对象的地址，而不是类型。例如，内存分配函数 <strong>void *malloc( size_t size );</strong> 返回指向 void 的指针，可以转换为任何数据类型。</td>
+<td><strong>指针指向 void</strong><br>类型为 void <em> 的指针代表对象的地址，而不是类型。例如，内存分配函数 **void \</em>malloc( size_t size );** 返回指向 void 的指针，可以转换为任何数据类型。</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h1 id="printf-输出"><a href="#printf-输出" class="headerlink" title="printf 输出"></a><code>printf</code> 输出</h1><p>```<br>%a  浮点数、十六进制数字和p-记数法（c99<br>%A  浮点数、十六进制数字和p-记法（c99）<br>%c  一个字符(char)<br>%C  一个ISO宽字符<br>%d  有符号十进制整数(int)（%ld、%Ld：长整型数据(long),%hd：输出短整形。）　<br>%e  浮点数、e-记数法<br>%E  浮点数、E-记数法<br>%f  单精度浮点数(默认float)、十进制记数法（%.nf  这里n表示精确到小数位后n位.十进制计数）<br>%g  根据数值不同自动选择%f或%e．<br>%G  根据数值不同自动选择%f或%e.<br>%i  有符号十进制数（与%d相同）<br>%o  无符号八进制整数<br>%p  指针<br>%s  对应字符串char<em>（%s = %hs = %hS 输出 窄字符）<br>%S  对应宽字符串WCAHR</em>（%ws = %S 输出宽字符串）<br>%u  无符号十进制整数(unsigned int)<br>%x  使用十六进制数字0xf的无符号十六进制整数　<br>%X  使用十六进制数字0xf的无符号十六进制整数<br>%%  打印一个百分号</p>
 <p>%I64d 用于INT64 或者 long long<br>%I64u 用于UINT64 或者 unsigned long long<br>%I64x 用于64位16进制数据</p>
 <p>​　</p>
@@ -907,7 +912,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">32.1k</span>
+    <span title="Site words total count">32k</span>
   
 </div>
 

@@ -116,18 +116,18 @@
 
 
 
-<meta name="description" content="首先注意在C和C++里不同 在C中定义一个结构体类型要用typedef:1234typedef struct Student　　　　&amp;#123;　　　　 int a;　　　　&amp;#125;Stu; 于是在声明变量的时候就可：Stu stu1 (如果没有typedef就必须用struct Student stu1;来声明) 这里的Stu实际上就是struct Student的别名。Stu==struc">
+<meta name="description" content="首先注意在C和C++里不同 在C中定义一个结构体类型要用typedef: 1234typedef struct Student　　　　&amp;#123;　　　　 int a;　　　　&amp;#125;Stu;  于是在声明变量的时候就可：Stu stu1 (如果没有typedef就必须用struct Student stu1;来声明) 这里的Stu实际上就是struct Student的别名。Stu==str">
 <meta name="keywords" content="C">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【C】struct和typedef struct">
 <meta property="og:url" content="https://www.qianhongbo.top/【C】struct和typedef struct.html">
 <meta property="og:site_name" content="Blog | Qian Homeberg">
-<meta property="og:description" content="首先注意在C和C++里不同 在C中定义一个结构体类型要用typedef:1234typedef struct Student　　　　&amp;#123;　　　　 int a;　　　　&amp;#125;Stu; 于是在声明变量的时候就可：Stu stu1 (如果没有typedef就必须用struct Student stu1;来声明) 这里的Stu实际上就是struct Student的别名。Stu==struc">
+<meta property="og:description" content="首先注意在C和C++里不同 在C中定义一个结构体类型要用typedef: 1234typedef struct Student　　　　&amp;#123;　　　　 int a;　　　　&amp;#125;Stu;  于是在声明变量的时候就可：Stu stu1 (如果没有typedef就必须用struct Student stu1;来声明) 这里的Stu实际上就是struct Student的别名。Stu==str">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-08-19T03:33:38.689Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【C】struct和typedef struct">
-<meta name="twitter:description" content="首先注意在C和C++里不同 在C中定义一个结构体类型要用typedef:1234typedef struct Student　　　　&amp;#123;　　　　 int a;　　　　&amp;#125;Stu; 于是在声明变量的时候就可：Stu stu1 (如果没有typedef就必须用struct Student stu1;来声明) 这里的Stu实际上就是struct Student的别名。Stu==struc">
+<meta name="twitter:description" content="首先注意在C和C++里不同 在C中定义一个结构体类型要用typedef: 1234typedef struct Student　　　　&amp;#123;　　　　 int a;　　　　&amp;#125;Stu;  于是在声明变量的时候就可：Stu stu1 (如果没有typedef就必须用struct Student stu1;来声明) 这里的Stu实际上就是struct Student的别名。Stu==str">
 
 
 
@@ -491,27 +491,40 @@
 
       
         <h1 id="首先"><a href="#首先" class="headerlink" title="首先"></a>首先</h1><p>注意在C和C++里不同</p>
-<p>在C中定义一个结构体类型要用typedef:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Student</span></span></span><br><span class="line"><span class="class">　　　　&#123;</span></span><br><span class="line">　　　　 <span class="keyword">int</span> a;</span><br><span class="line">　　　　&#125;Stu;</span><br></pre></td></tr></table></figure></p>
+<p>在C中定义一个结构体类型要用typedef:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Student</span></span></span><br><span class="line"><span class="class">　　　　&#123;</span></span><br><span class="line">　　　　 <span class="keyword">int</span> a;</span><br><span class="line">　　　　&#125;Stu;</span><br></pre></td></tr></table></figure>
+
 <p>于是在声明变量的时候就可：<code>Stu stu1</code> (如果没有typedef就必须用struct Student stu1;来声明)</p>
-<p>这里的Stu实际上就是struct Student的别名。<code>Stu==struct Student</code><br>　　　　<br>另外这里也可以不写Student（于是也不能struct Student stu1;了，必须是Stu stu1;）<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">　　　 &#123;</span></span><br><span class="line">　　　　 <span class="keyword">int</span> a;</span><br><span class="line">　　　　&#125;Stu;</span><br></pre></td></tr></table></figure></p>
-<p>但在c++里很简单，直接<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Student</span></span></span><br><span class="line"><span class="class">　　　　&#123;</span></span><br><span class="line">　　　　 <span class="keyword">int</span> a;</span><br><span class="line">　　　　&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>这里的Stu实际上就是struct Student的别名。<code>Stu==struct Student</code><br>　　　　<br>另外这里也可以不写Student（于是也不能struct Student stu1;了，必须是Stu stu1;）</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">　　　 &#123;</span></span><br><span class="line">　　　　 <span class="keyword">int</span> a;</span><br><span class="line">　　　　&#125;Stu;</span><br></pre></td></tr></table></figure>
+
+<p>但在c++里很简单，直接</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Student</span></span></span><br><span class="line"><span class="class">　　　　&#123;</span></span><br><span class="line">　　　　 <span class="keyword">int</span> a;</span><br><span class="line">　　　　&#125;;</span><br></pre></td></tr></table></figure>
+
 <p>于是就定义了结构体类型Student，声明变量时直接<code>Student stu2</code></p>
-<h1 id="其次"><a href="#其次" class="headerlink" title="其次"></a>其次</h1><p>　　　　<br>在c++中如果用typedef的话，又会造成区别：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Student</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">&#125;stu1;          <span class="comment">//stu1是一个变量</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="其次"><a href="#其次" class="headerlink" title="其次"></a>其次</h1><p>　　　　<br>在c++中如果用typedef的话，又会造成区别：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Student</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">&#125;stu1;          <span class="comment">//stu1是一个变量</span></span><br></pre></td></tr></table></figure>
+
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Student2</span></span></span><br><span class="line"><span class="class">　　　　&#123;</span></span><br><span class="line">　　　　    <span class="keyword">int</span> a;</span><br><span class="line">　　　　&#125;stu2;   <span class="comment">//stu2是一个结构体类型=struct Student</span></span><br></pre></td></tr></table></figure>
+
 <p>使用时可以直接访问<code>stu1.a</code>，</p>
 <p>但是stu2则必须先<code>stu2 s2</code>;然后<code>s2.a=10</code>;</p>
 <h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>　typedef struct和struct的区别：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">tagMyStruct</span></span></span><br><span class="line"><span class="class">　　　　&#123;</span> </span><br><span class="line">　　　　　<span class="keyword">int</span> iNum;</span><br><span class="line">　　　　　<span class="keyword">long</span> lLength;</span><br><span class="line">　　　　&#125; MyStruct;</span><br><span class="line"></span><br><span class="line"><span class="comment">//上面的tagMyStruct是标识符，</span></span><br><span class="line"><span class="comment">//MyStruct是变量类型（相当于（int,char等））</span></span><br></pre></td></tr></table></figure>
+
 <p>这语句实际上完成两个操作：</p>
 <ol>
 <li>定义一个新的结构类型</li>
 </ol>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tagMyStruct</span></span></span><br><span class="line"><span class="class">　　　　&#123;</span>　　 </span><br><span class="line">　　　　　<span class="keyword">int</span> iNum; </span><br><span class="line">　　　　　<span class="keyword">long</span> lLength; </span><br><span class="line">　　　　&#125;;</span><br></pre></td></tr></table></figure>
-<ol>
+
+<ol start="2">
 <li>typedef为这个新的结构起了一个名字，叫MyStruct</li>
 </ol>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">　<span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">tagMyStruct</span> <span class="title">MyStruct</span>;</span></span><br></pre></td></tr></table></figure>
+
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">typedef struct tagMyStruct</span><br><span class="line">　　　　&#123; </span><br><span class="line">　　　　　int iNum;</span><br><span class="line">　　　　　long lLength;</span><br><span class="line">　　　　&#125; MyStruct;</span><br></pre></td></tr></table></figure>
+
 <p>在C中，这个申明后申请结构变量的方法有两种：</p>
 <ul>
 <li><p>struct tagMyStruct 变量名</p>
@@ -715,7 +728,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -726,7 +739,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -847,7 +860,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">32k</span>
+    <span title="Site words total count">32.9k</span>
   
 </div>
 

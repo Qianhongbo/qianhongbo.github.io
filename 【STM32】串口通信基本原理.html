@@ -567,6 +567,7 @@
 </ul>
 <h1 id="波特率计算方法"><a href="#波特率计算方法" class="headerlink" title="波特率计算方法"></a>波特率计算方法</h1><p><img src="http://wx1.sinaimg.cn/large/006BuM4Jgy1g654k6970sj30lv0d90z4.jpg" alt="图片11"></p>
 <h1 id="串口操作相关库函数"><a href="#串口操作相关库函数" class="headerlink" title="串口操作相关库函数"></a>串口操作相关库函数</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_Init</span><span class="params">()</span></span>; <span class="comment">//串口初始化：波特率，数据字长，奇偶校验，硬件流控以及收发使能</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_Cmd</span><span class="params">()</span></span>;<span class="comment">//使能串口</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_ITConfig</span><span class="params">()</span></span>;<span class="comment">//使能相关中断</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_SendData</span><span class="params">()</span></span>;<span class="comment">//发送数据到串口，DR</span></span><br><span class="line"><span class="keyword">uint16_t</span> USART_ReceiveData();<span class="comment">//接受数据，从DR读取接受到的数据</span></span><br><span class="line"></span><br><span class="line"><span class="function">FlagStatus <span class="title">USART_GetFlagStatus</span><span class="params">()</span></span>;<span class="comment">//获取状态标志位</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_ClearFlag</span><span class="params">()</span></span>;<span class="comment">//清除状态标志位</span></span><br><span class="line"><span class="function">ITStatus <span class="title">USART_GetITStatus</span><span class="params">()</span></span>;<span class="comment">//获取中断状态标志位</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_ClearITPendingBit</span><span class="params">()</span></span>;<span class="comment">//清除中断状态标志位</span></span><br></pre></td></tr></table></figure>
+
 <h1 id="串口配置的一般步骤"><a href="#串口配置的一般步骤" class="headerlink" title="串口配置的一般步骤"></a>串口配置的一般步骤</h1><ol>
 <li>串口时钟使能，GPIO时钟使能:<code>RCC_APB2PeriphClockCmd();</code></li>
 <li>串口复位:<code>USART_DeInit()</code>; 这一步不是必须的</li>
@@ -766,7 +767,7 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -777,7 +778,7 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -898,7 +899,7 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">32k</span>
+    <span title="Site words total count">32.9k</span>
   
 </div>
 

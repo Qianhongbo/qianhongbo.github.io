@@ -352,6 +352,244 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.top/【C】struct和typedef struct.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/【C】struct和typedef struct.html" itemprop="url">【C】struct和typedef struct</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-14T17:42:08+08:00">
+                2019-08-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/【C】struct和typedef struct.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="【C】struct和typedef struct.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  363 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="首先"><a href="#首先" class="headerlink" title="首先"></a>首先</h1><p>注意在C和C++里不同</p>
+<p>在C中定义一个结构体类型要用typedef:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Student</span></span></span><br><span class="line"><span class="class">　　　　&#123;</span></span><br><span class="line">　　　　 <span class="keyword">int</span> a;</span><br><span class="line">　　　　&#125;Stu;</span><br></pre></td></tr></table></figure>
+
+<p>于是在声明变量的时候就可：<code>Stu stu1</code> (如果没有typedef就必须用struct Student stu1;来声明)</p>
+<p>这里的Stu实际上就是struct Student的别名。<code>Stu==struct Student</code><br>　　　　<br>另外这里也可以不写Student（于是也不能struct Student stu1;了，必须是Stu stu1;）</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">　　　 &#123;</span></span><br><span class="line">　　　　 <span class="keyword">int</span> a;</span><br><span class="line">　　　　&#125;Stu;</span><br></pre></td></tr></table></figure>
+
+<p>但在c++里很简单，直接</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Student</span></span></span><br><span class="line"><span class="class">　　　　&#123;</span></span><br><span class="line">　　　　 <span class="keyword">int</span> a;</span><br><span class="line">　　　　&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>于是就定义了结构体类型Student，声明变量时直接<code>Student stu2</code></p>
+<h1 id="其次"><a href="#其次" class="headerlink" title="其次"></a>其次</h1><p>　　　　<br>在c++中如果用typedef的话，又会造成区别：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Student</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">&#125;stu1;          <span class="comment">//stu1是一个变量</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Student2</span></span></span><br><span class="line"><span class="class">　　　　&#123;</span></span><br><span class="line">　　　　    <span class="keyword">int</span> a;</span><br><span class="line">　　　　&#125;stu2;   <span class="comment">//stu2是一个结构体类型=struct Student</span></span><br></pre></td></tr></table></figure>
+
+<p>使用时可以直接访问<code>stu1.a</code>，</p>
+<p>但是stu2则必须先<code>stu2 s2</code>;然后<code>s2.a=10</code>;</p>
+<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>　typedef struct和struct的区别：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">tagMyStruct</span></span></span><br><span class="line"><span class="class">　　　　&#123;</span> </span><br><span class="line">　　　　　<span class="keyword">int</span> iNum;</span><br><span class="line">　　　　　<span class="keyword">long</span> lLength;</span><br><span class="line">　　　　&#125; MyStruct;</span><br><span class="line"></span><br><span class="line"><span class="comment">//上面的tagMyStruct是标识符，</span></span><br><span class="line"><span class="comment">//MyStruct是变量类型（相当于（int,char等））</span></span><br></pre></td></tr></table></figure>
+
+<p>这语句实际上完成两个操作：</p>
+<ol>
+<li>定义一个新的结构类型</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tagMyStruct</span></span></span><br><span class="line"><span class="class">　　　　&#123;</span>　　 </span><br><span class="line">　　　　　<span class="keyword">int</span> iNum; </span><br><span class="line">　　　　　<span class="keyword">long</span> lLength; </span><br><span class="line">　　　　&#125;;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>typedef为这个新的结构起了一个名字，叫MyStruct</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">　<span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">tagMyStruct</span> <span class="title">MyStruct</span>;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">typedef struct tagMyStruct</span><br><span class="line">　　　　&#123; </span><br><span class="line">　　　　　int iNum;</span><br><span class="line">　　　　　long lLength;</span><br><span class="line">　　　　&#125; MyStruct;</span><br></pre></td></tr></table></figure>
+
+<p>在C中，这个申明后申请结构变量的方法有两种：</p>
+<ul>
+<li><p>struct tagMyStruct 变量名</p>
+</li>
+<li><p>MyStruct 变量名</p>
+</li>
+</ul>
+<p>在c++中可以有</p>
+<ul>
+<li><p>struct tagMyStruct 变量名</p>
+</li>
+<li><p>MyStruct 变量名</p>
+</li>
+<li><p>tagMyStruct 变量名</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.top/【C】从GPIO_Init引发的关于C的研究.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1315,208 +1553,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.top/【STM32】用GCC编译Keil5的代码，了解GCC工具链.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/【STM32】用GCC编译Keil5的代码，了解GCC工具链.html" itemprop="url">用GCC编译Keil5的代码，了解GCC工具链</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-07T18:14:18+08:00">
-                2019-08-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/STM32/" itemprop="url" rel="index">
-                    <span itemprop="name">STM32</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/【STM32】用GCC编译Keil5的代码，了解GCC工具链.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="【STM32】用GCC编译Keil5的代码，了解GCC工具链.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  560 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="用GCC编译Keil5的代码，了解GCC工具链"><a href="#用GCC编译Keil5的代码，了解GCC工具链" class="headerlink" title="用GCC编译Keil5的代码，了解GCC工具链"></a>用GCC编译Keil5的代码，了解GCC工具链</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>本周接到任务，首先是熟悉<code>STM32cubemx</code>，既然是熟悉框也就不做太高的要求，毕竟也只是一个提升效率的工具，我就按照教程新建了一个简单地模板，算是知道怎么用<code>cubemx</code>从头开始建一个工程了。</p>
-<p>而本周的第二个任务就是研究用<code>GCC</code>工具链编译<code>Keil5</code>的代码，这个的确对我来说难度不小，算是卡了我将近三天的时间，而出现这个问题的原因就是我基础不够牢靠，<code>Keil5</code>软件最基本的知识没有掌握，导致找不到问题的原因所在。还好我中途没有放弃，一直在尝试，也一直在找可能的原因，最终找到了，也算功夫不负有心人吧。</p>
-<p>特此记录一下，因为我在出现这些问题之后并不能在网上找到答案，借此机会来帮助之后和我一样基础不好的小白吧。</p>
-<h2 id="问题产生"><a href="#问题产生" class="headerlink" title="问题产生"></a>问题产生</h2><p>在研究用<code>GCC</code>编译<code>Keil5</code>的代码的时候，我在网上找到了<a href="https://blog.csdn.net/weixin_39871788/article/details/78858791" target="_blank" rel="noopener">CSDN上的一个教程</a>，讲解的还是十分详细的。</p>
-<p>但我按照教程，把我用<code>cubemx</code>建的工程搞了一遍却出现了很多很多的bug，具体如下：</p>
-<p><img src="http://ww4.sinaimg.cn/large/006tNc79gy1g5r9pg9gfxj314o0m2dpg.jpg" alt></p>
-<p>遇到这个问题之后我也查了一下，并没有找到原因，多数是说我没有定义，但我也不知道应该怎么定义呀！</p>
-<h2 id="寻找问题"><a href="#寻找问题" class="headerlink" title="寻找问题"></a>寻找问题</h2><p>我的直觉觉得问题可能出在教程中配置的部分，但同样的配置为什么会出现不同的结果呢？</p>
-<p>我于是按照正点原子的教程从头开始看了一下怎么配置一个用<code>armcc</code>编译的流水灯模板，因为之前我没自己搞过模板，于是发现了很多我之前不知道的细节，比如添加添加定义，头文件，修改<code>output输出</code>文件夹，而我出现的问题就是<code>define</code>没有添加，导致未定义。</p>
-<p><img src="http://ww3.sinaimg.cn/large/006tNc79gy1g5r9pg5syoj30lq0g9778.jpg" alt></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在图中define一定要添加</span></span><br><span class="line">Define: USE_HAL_DRIVER,STM32F103xE,USE_HAL_DRIVER,STM32F103xE</span><br></pre></td></tr></table></figure>
-
-<p>解决之后成功编译！</p>
-<p><img src="http://ww4.sinaimg.cn/large/006tNc79gy1g5r9pfzuh2j31hc0u0jwv.jpg" alt></p>
-<p><a href="https://download.csdn.net/download/weixin_42559298/11493634" target="_blank" rel="noopener">附上可编译模板的链接</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1569,7 +1605,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1685,7 +1721,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">33.7k</span>
+    <span title="Site words total count">34k</span>
   
 </div>
 

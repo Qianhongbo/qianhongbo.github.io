@@ -103,7 +103,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="机器人学,">
 
 
 
@@ -116,22 +116,22 @@
 
 
 
-<meta name="description" content=".hexo-douban-tabs {     margin-bottom: 15px;     margin-top: 15px; }  .hexo-douban-tab {     padding: 5px; }  .hexo-douban-active {     background: #657b83;     color: #">
-<meta name="keywords" content="WoW">
-<meta property="og:type" content="website">
-<meta property="og:title" content="我的读书">
-<meta property="og:url" content="https://www.qianhongbo.top/books/index.html">
+<meta name="description" content="欧拉角也就是绕着固定轴x,y,z旋转 在资料中关于x,y,z和三个角度的方向和对应关系定义的并不是很明确，我认为可能是这个并没有一个严格的规定，但是pitch,roll,yaw三个角度的含义定义还是很明确的。具体定义如下： pitchpitch在英文中的意思是倾斜，坠落的含义，因此就是以翅膀所在的直线为轴发生旋转  rollroll在英文中的意思是翻滚，就是绕着机身所在的那个轴  yawyaw在英">
+<meta name="keywords" content="机器人学">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何理解欧拉角中的pitch,roll,yaw">
+<meta property="og:url" content="https://www.qianhongbo.top/如何理解欧拉角中的roll，pitch，yaw.html">
 <meta property="og:site_name" content="Blog | Qian Homeberg">
-<meta property="og:description" content=".hexo-douban-tabs {     margin-bottom: 15px;     margin-top: 15px; }  .hexo-douban-tab {     padding: 5px; }  .hexo-douban-active {     background: #657b83;     color: #">
+<meta property="og:description" content="欧拉角也就是绕着固定轴x,y,z旋转 在资料中关于x,y,z和三个角度的方向和对应关系定义的并不是很明确，我认为可能是这个并没有一个严格的规定，但是pitch,roll,yaw三个角度的含义定义还是很明确的。具体定义如下： pitchpitch在英文中的意思是倾斜，坠落的含义，因此就是以翅膀所在的直线为轴发生旋转  rollroll在英文中的意思是翻滚，就是绕着机身所在的那个轴  yawyaw在英">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://www.qianhongbo.top/assets/douban-loading.gif">
-<meta property="og:image" content="https://www.qianhongbo.top/assets/douban-loading.gif">
-<meta property="og:image" content="https://www.qianhongbo.top/assets/douban-loading.gif">
-<meta property="og:image" content="https://www.qianhongbo.top/assets/douban-loading.gif">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/006BuM4Jly1gcufkbno87g30dy0b87dz.gif">
+<meta property="og:image" content="https://tva2.sinaimg.cn/large/006BuM4Jly1gcuflbey7gg30e00bbdpp.gif">
+<meta property="og:image" content="https://tvax4.sinaimg.cn/large/006BuM4Jly1gcuff4nhx5g30e00b7122.gif">
+<meta property="og:updated_time" content="2020-03-15T03:03:22.423Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的读书">
-<meta name="twitter:description" content=".hexo-douban-tabs {     margin-bottom: 15px;     margin-top: 15px; }  .hexo-douban-tab {     padding: 5px; }  .hexo-douban-active {     background: #657b83;     color: #">
-<meta name="twitter:image" content="https://www.qianhongbo.top/assets/douban-loading.gif">
+<meta name="twitter:title" content="如何理解欧拉角中的pitch,roll,yaw">
+<meta name="twitter:description" content="欧拉角也就是绕着固定轴x,y,z旋转 在资料中关于x,y,z和三个角度的方向和对应关系定义的并不是很明确，我认为可能是这个并没有一个严格的规定，但是pitch,roll,yaw三个角度的含义定义还是很明确的。具体定义如下： pitchpitch在英文中的意思是倾斜，坠落的含义，因此就是以翅膀所在的直线为轴发生旋转  rollroll在英文中的意思是翻滚，就是绕着机身所在的那个轴  yawyaw在英">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/006BuM4Jly1gcufkbno87g30dy0b87dz.gif">
 
 
 
@@ -165,7 +165,7 @@
 
 
 
-  <title>我的读书 | Blog | Qian Homeberg</title>
+  <title>如何理解欧拉角中的pitch,roll,yaw | Blog | Qian Homeberg</title>
   
 
 
@@ -344,353 +344,278 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.top/如何理解欧拉角中的roll，pitch，yaw.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h2 class="post-title" itemprop="name headline">我的读书</h2>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <blockquote>
-    <p></p>
-</blockquote>
+          <h2 class="post-title" itemprop="name headline">如何理解欧拉角中的pitch,roll,yaw</h2>
+        
 
-<style>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-15T09:44:19+08:00">
+                2020-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器人学/" itemprop="url" rel="index">
+                    <span itemprop="name">机器人学</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/如何理解欧拉角中的roll，pitch，yaw.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="如何理解欧拉角中的roll，pitch，yaw.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  182 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
     
-.hexo-douban-tabs {
-    margin-bottom: 15px;
-    margin-top: 15px;
-}
 
-.hexo-douban-tab {
-    padding: 5px;
-}
+    
+    
+    
 
-.hexo-douban-active {
-    background: #657b83;
-    color: #fff;
-}
-
-.hexo-douban-item {
-    padding-bottom: 10px;
-    position: relative;
-    clear: both;
-    min-height: 170px;
-    padding: 10px 0;
-    border-bottom: 1px #ddd solid;
-}
-
-@media screen and (max-width: 600px) {
-    .hexo-douban-item {
-        width: 100%;
-    }
-}
-
-.hexo-douban-picture {
-    position: absolute;
-    left: 0;
-    top: 10px;
-    width: 100px;
-}
-
-.hexo-douban-info {
-    padding-left: 120px;
-}
-
-.hexo-douban-meta {
-    font-size: 12px;
-    padding-right: 10px;
-}
-
-.hexo-douban-comments {
-    font-size: 12px;
-}
-
-.hexo-douban-pagination {
-    margin-top: 15px;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.hexo-douban-button {
-    padding: 5px;
-}
-
-.hexo-douban-button:hover {
-    background: #657b83;
-    color: #fff;
-}
-
-.hexo-douban-hide {
-    display: none;
-}
-
-.hexo-douban-show {
-    display: block;
-}
-
-
-</style>
-
-<div class="hexo-douban-tabs">
-    <a class="hexo-douban-tab" id="hexo-douban-tab1" href="javascript:;" rel="external">
-        在读
-        (0)</a>
-    <a class="hexo-douban-tab" id="hexo-douban-tab2" href="javascript:;" rel="external">
-        想读
-        (3)</a>
-    <a class="hexo-douban-tab" id="hexo-douban-tab3" href="javascript:;" rel="external">
-        已读
-        (1)</a>
-</div>
-<div>
-    <div id="hexo-douban-item1">
-        
-        <div class="hexo-douban-pagination">
-    <a class="hexo-douban-button hexo-douban-firstpage" href="javascript:;"> 首页</a>
-    <a class="hexo-douban-button hexo-douban-previouspage" href="javascript:;">上一页</a>
-    <span class="hexo-douban-pagenum">2 / 3</span>
-    <a class="hexo-douban-button hexo-douban-nextpage" href="javascript:;">下一页</a>
-    <a class="hexo-douban-button hexo-douban-lastpage" href="javascript:;">尾页</a>
-</div>
-    </div>
-    <div id="hexo-douban-item2">
-        
-        <div class="hexo-douban-item">
-    <div class="hexo-douban-picture"><img src="/assets/douban-loading.gif" data-src="https://img9.doubanio.com/view/subject/s/public/s29105145.jpg" referrerpolicy="no-referrer"></div>
-    <div class="hexo-douban-info">
-        <div class="hexo-douban-title"><a target="_blank" href="https://book.douban.com/subject/26895993/"> 刻意练习</a></div>
-        <div class="hexo-douban-meta">
-        
-  
-  [美] 安德斯·艾利克森（Anders Ericsson）、罗伯特·普尔（Robert Pool） / 王正林 / 机械工业出版社 / 2016-11-6 / 39.00元
+    <div class="post-body" itemprop="articleBody">
 
       
-        </div>
-        <div class="hexo-douban-meta">2020-02-12
-      想读 /  学习方法 方法论 自我管理</div>
-        <div class="hexo-douban-comments">
-  </div>
-    </div>
-</div>
-
-        
-        <div class="hexo-douban-item">
-    <div class="hexo-douban-picture"><img src="/assets/douban-loading.gif" data-src="https://img1.doubanio.com/view/subject/s/public/s10345719.jpg" referrerpolicy="no-referrer"></div>
-    <div class="hexo-douban-info">
-        <div class="hexo-douban-title"><a target="_blank" href="https://book.douban.com/subject/10785583/"> 思考，快与慢</a></div>
-        <div class="hexo-douban-meta">
-        
-  
-  [美] 丹尼尔·卡尼曼 / 胡晓姣、李爱民、何梦莹 / 中信出版社 / 2012-7 / 69.00元
+      
 
       
-        </div>
-        <div class="hexo-douban-meta">2020-02-12
-      想读 /  心理学</div>
-        <div class="hexo-douban-comments">
-  </div>
-    </div>
-</div>
-
-        
-        <div class="hexo-douban-item">
-    <div class="hexo-douban-picture"><img src="/assets/douban-loading.gif" data-src="https://img9.doubanio.com/view/subject/s/public/s3254244.jpg" referrerpolicy="no-referrer"></div>
-    <div class="hexo-douban-info">
-        <div class="hexo-douban-title"><a target="_blank" href="https://book.douban.com/subject/3211779/"> 嫌疑人X的献身</a></div>
-        <div class="hexo-douban-meta">
-        
-  
-  [日] 东野圭吾 / 刘子倩 / 南海出版公司 / 2008-9 / 28.00
+        <p>欧拉角也就是绕着固定轴x,y,z旋转</p>
+<p>在资料中关于x,y,z和三个角度的方向和对应关系定义的并不是很明确，我认为可能是这个并没有一个严格的规定，但是pitch,roll,yaw三个角度的含义定义还是很明确的。具体定义如下：</p>
+<h2 id="pitch"><a href="#pitch" class="headerlink" title="pitch"></a>pitch</h2><p>pitch在英文中的意思是倾斜，坠落的含义，因此就是以翅膀所在的直线为轴发生旋转</p>
+<p><img src="//tva1.sinaimg.cn/large/006BuM4Jly1gcufkbno87g30dy0b87dz.gif" alt="pitch"></p>
+<h2 id="roll"><a href="#roll" class="headerlink" title="roll"></a>roll</h2><p>roll在英文中的意思是翻滚，就是绕着机身所在的那个轴</p>
+<p><img src="//tva2.sinaimg.cn/large/006BuM4Jly1gcuflbey7gg30e00bbdpp.gif" alt="roll"></p>
+<h2 id="yaw"><a href="#yaw" class="headerlink" title="yaw"></a>yaw</h2><p>yaw在英文中是yaw是（火箭、飞机、宇宙飞船等）偏航的意思，也就是绕着重力方向为轴旋转</p>
+<p><img src="//tvax4.sinaimg.cn/large/006BuM4Jly1gcuff4nhx5g30e00b7122.gif" alt="0_1303867644Dzds"></p>
 
       
-        </div>
-        <div class="hexo-douban-meta">2020-02-12
-      想读 /  悬疑推理 东野圭吾</div>
-        <div class="hexo-douban-comments">
+    </div>
+    
+    
+    
+	
+	
+      <div>
+          
+    <div style="text-align:center;color: #ccc;font-size:14px;">
+        ------ 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
+    
+      </div>
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果觉得不错，可以打赏喔~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Qian Hongbo 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Qian Hongbo 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
   </div>
-    </div>
 </div>
-
-        
-        <div class="hexo-douban-pagination">
-    <a class="hexo-douban-button hexo-douban-firstpage" href="javascript:;"> 首页</a>
-    <a class="hexo-douban-button hexo-douban-previouspage" href="javascript:;">上一页</a>
-    <span class="hexo-douban-pagenum">2 / 3</span>
-    <a class="hexo-douban-button hexo-douban-nextpage" href="javascript:;">下一页</a>
-    <a class="hexo-douban-button hexo-douban-lastpage" href="javascript:;">尾页</a>
-</div>
-
-    </div>
-    <div id="hexo-douban-item3">
-        
-        <div class="hexo-douban-item">
-    <div class="hexo-douban-picture"><img src="/assets/douban-loading.gif" data-src="https://img1.doubanio.com/view/subject/s/public/s24514468.jpg" referrerpolicy="no-referrer"></div>
-    <div class="hexo-douban-info">
-        <div class="hexo-douban-title"><a target="_blank" href="https://book.douban.com/subject/10554308/"> 白夜行</a></div>
-        <div class="hexo-douban-meta">
-        
-  
-  [日] 东野圭吾 / 刘姿君 / 南海出版公司 / 2013-1-1 / 39.50元
 
       </div>
-        <div class="hexo-douban-meta">2020-02-10
-      读过 /  悬疑推理 / ★★★★★ 力荐</div>
-        <div class="hexo-douban-comments">
-      好书！后悔没有早读。。
-      
-  
+    
 
-  </div>
-    </div>
-</div>
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Qian Hongbo
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.qianhongbo.top/如何理解欧拉角中的roll，pitch，yaw.html" title="如何理解欧拉角中的pitch,roll,yaw">https://www.qianhongbo.top/如何理解欧拉角中的roll，pitch，yaw.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
 
-        
-        <div class="hexo-douban-pagination">
-    <a class="hexo-douban-button hexo-douban-firstpage" href="javascript:;"> 首页</a>
-    <a class="hexo-douban-button hexo-douban-previouspage" href="javascript:;">上一页</a>
-    <span class="hexo-douban-pagenum">2 / 3</span>
-    <a class="hexo-douban-button hexo-douban-nextpage" href="javascript:;">下一页</a>
-    <a class="hexo-douban-button hexo-douban-lastpage" href="javascript:;">尾页</a>
-</div>
-    </div>
-
-</div>
-
-<script>
-    /**
- * Created by myths on 18-2-8.
- */
-
-Element.prototype.siblings = function () {
-    var siblingElement = [];
-    var sibs = this.parentNode.children;
-    for (var i = 0; i < sibs.length; i++) {
-        if (sibs[i] !== this) {
-            siblingElement.push(sibs[i]);
-        }
-    }
-    return siblingElement;
-};
-function tabClick() {
-    //修改标签样式
-    this.classList.add('hexo-douban-active');
-    var sibs = this.siblings();
-    for (var j = 0; j < sibs.length; j++) {
-        sibs[j].classList.remove('hexo-douban-active');
-    }
-    //显示对应板块
-    var itemId = this.id.replace('tab', 'item');
-    var target = document.getElementById(itemId);
-    target.classList.remove('hexo-douban-hide');
-    target.classList.add('hexo-douban-show');
-    sibs = document.getElementById(itemId).siblings();
-    for (var k = 0; k < sibs.length; k++) {
-        sibs[k].classList.remove('hexo-douban-show');
-        sibs[k].classList.add('hexo-douban-hide');
-    }
-}
-var tabs = document.getElementsByClassName("hexo-douban-tab");
-for (var i = 0; i < tabs.length; i++) {
-    tabs[i].onclick = tabClick;
-    tabs[i].onclick.apply(tabs[i]);
-}
-tabs[2].click();
-
-    var firstpages = document.getElementsByClassName("hexo-douban-firstpage");
-var previouspages = document.getElementsByClassName("hexo-douban-previouspage");
-var nextpages = document.getElementsByClassName("hexo-douban-nextpage");
-var lastpages = document.getElementsByClassName("hexo-douban-lastpage");
-var pagenums = document.getElementsByClassName("hexo-douban-pagenum");
-
-function makePageNum(num, arr) {
-    return (num + 1) + ' / ' + (Math.ceil(arr.length / 10 === 0 ? 1 : Math.ceil(arr.length / 10)));
-}
-
-function firstBtn() {
-    var sibs = this.parentNode.siblings();
-    displayPage(sibs, 0);
-    this.parentNode.getElementsByClassName('hexo-douban-pagenum')[0].innerText = makePageNum(0, sibs);
-}
-
-function previousBtn() {
-    var sibs = this.parentNode.siblings();
-    var currNum = this.parentNode.getElementsByClassName('hexo-douban-pagenum')[0].innerText;
-    currNum = currNum.substr(0, currNum.indexOf('/') - 1);
-    currNum = parseInt(currNum, 10) - 1;
-    if (currNum > 0) {
-        currNum--;
-    }
-    displayPage(sibs, currNum);
-    this.parentNode.getElementsByClassName('hexo-douban-pagenum')[0].innerText = makePageNum(currNum, sibs);
-}
-
-function nextBtn() {
-    var sibs = this.parentNode.siblings();
-    var currNum = this.parentNode.getElementsByClassName('hexo-douban-pagenum')[0].innerText;
-    currNum = currNum.substr(0, currNum.indexOf('/') - 1);
-    currNum = parseInt(currNum, 10) - 1;
-    if (currNum < Math.ceil(sibs.length / 10) - 1) {
-        currNum++;
-    }
-    displayPage(sibs, currNum);
-    this.parentNode.getElementsByClassName('hexo-douban-pagenum')[0].innerText = makePageNum(currNum, sibs);
-}
-
-function lastBtn() {
-    var sibs = this.parentNode.siblings();
-    displayPage(sibs, Math.ceil(sibs.length / 10) - 1);
-    this.parentNode.getElementsByClassName('hexo-douban-pagenum')[0].innerText = makePageNum(Math.ceil(sibs.length / 10) - 1 === -1 ? 0 : Math.ceil(sibs.length / 10) - 1, sibs);
-}
-
-function displayPage(arr, num) {
-    for (var i = 0; i < arr.length; i++) {
-        if (Math.floor(i / 10) === num) {
-            arr[i].classList.remove('hexo-douban-hide');
-            var img = arr[i].getElementsByTagName('img')[0];
-            img.src = img.getAttribute('data-src');
-        } else {
-            arr[i].classList.add('hexo-douban-hide');
-        }
-    }
-}
-
-for (var i = 0; i < firstpages.length; i++) {
-
-    //add listener
-    firstpages[i].onclick = firstBtn;
-    previouspages[i].onclick = previousBtn;
-    nextpages[i].onclick = nextBtn;
-    lastpages[i].onclick = lastBtn;
-
-    //set page num
-    var size = pagenums[i].parentNode.siblings().length;
-    pagenums[i].innerText = '1 / ' + (Math.ceil(size / 10) === 0 ? 1 : Math.ceil(size / 10));
-    firstpages[i].click();
-}
-
-</script>
-
-
-        
       </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器人学/" rel="tag"><i class="fa fa-tag"></i> 机器人学</a>
+          
+        </div>
+      
+
       
       
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Matlab机器人工具箱.html" rel="next" title="Matlab机器人工具箱（Robotic Toolbox）">
+                <i class="fa fa-chevron-left"></i> Matlab机器人工具箱（Robotic Toolbox）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
       
     </div>
-    
-    
-    
   </div>
 
 
@@ -699,6 +624,20 @@ for (var i = 0; i < firstpages.length; i++) {
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -719,8 +658,17 @@ for (var i = 0; i < firstpages.length; i++) {
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -737,7 +685,7 @@ for (var i = 0; i < firstpages.length; i++) {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -826,6 +774,22 @@ for (var i = 0; i < firstpages.length; i++) {
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#pitch"><span class="nav-number">1.</span> <span class="nav-text">pitch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#roll"><span class="nav-number">2.</span> <span class="nav-text">roll</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yaw"><span class="nav-number">3.</span> <span class="nav-text">yaw</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -853,7 +817,7 @@ for (var i = 0; i < firstpages.length; i++) {
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">33.7k</span>
+    <span title="Site words total count">34k</span>
   
 </div>
 
@@ -1029,6 +993,18 @@ setInterval("createtime()",250);
       <script id="dsq-count-scr" src="https://qianhongbo.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://www.qianhongbo.top/如何理解欧拉角中的roll，pitch，yaw.html';
+          this.page.identifier = '如何理解欧拉角中的roll，pitch，yaw.html';
+          this.page.title = '如何理解欧拉角中的pitch,roll,yaw';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://qianhongbo.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   

@@ -60,6 +60,45 @@ rpy2r(roll,pitch,yaw,'xyz')
 
 > 需要说名的是，rpy2r这个函数在不同的工具箱版本的函数并不一样，使用的角度顺序发生了改变，具体内容可以看具体版本的rpy2r.m文件。
 
+在此附上机器人工具箱中关于各个参数option的定义，仅提供10版本
+
+```matlab
+switch opt.order
+        case {'xyz', 'arm'}
+            % XYZ order
+            if numrows(roll) == 1
+                R = rotx(yaw) * roty(pitch) * rotz(roll);
+            else
+                R = zeros(3,3,numrows(roll));
+                for i=1:numrows(roll)
+                    R(:,:,i) = rotx(yaw(i)) * roty(pitch(i)) * rotz(roll(i));
+                end
+            end
+        case {'zyx', 'vehicle'}
+            % ZYX order
+            if numrows(roll) == 1
+                R = rotz(yaw) * roty(pitch) * rotx(roll);
+            else
+                R = zeros(3,3,numrows(roll));
+                for i=1:numrows(roll)
+                    R(:,:,i) = rotz(yaw(i)) * roty(pitch(i)) * rotx(roll(i));
+                end
+            end
+            
+        case {'yxz', 'camera'}
+            % YXZ order
+            if numrows(roll) == 1
+                R = roty(yaw) * rotx(pitch) * rotz(roll);
+            else
+                R = zeros(3,3,numrows(roll));
+                for i=1:numrows(roll)
+                    R(:,:,i) = roty(yaw(i)) * rotx(pitch(i)) * rotz(roll(i));
+                end
+            end
+    end
+end
+```
+
 ### 检验
 
 ```matlab

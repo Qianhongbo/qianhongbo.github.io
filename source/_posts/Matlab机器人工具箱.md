@@ -149,3 +149,91 @@ theta=30*pi/180; k=[1;0;0];
 angvec2r(theta,k)
 ```
 
+## 建立连杆坐标系
+
+```matlab
+L(1)=Link('revolute','a',0,'alpha',0,'d',0);
+L(1).mdh=1;
+L(2)=Link('revolute','a',10,'alpha',pi/2,'d',0);
+L(2).mdh=1;
+L(3)=Link('revolute','a',6,'alpha',0,'d',0);
+L(3).mdh=1;
+R=SerialLink(L,'name','3RRR')
+%改变一些参数
+R.base=transl([-10 0 0]);
+R.tool=transl([4 0 0]);
+q0=[0 0 0];
+R.plot(q0)
+```
+
+## 让连杆坐标系运动起来
+
+```matlab
+L(1)=Link('revolute','a',0,'alpha',0,'d',0);
+L(1).mdh=1;
+L(2)=Link('revolute','a',10,'alpha',pi/2,'d',0);
+L(2).mdh=1;
+L(3)=Link('revolute','a',6,'alpha',0,'d',0);
+L(3).mdh=1;
+R=SerialLink(L,'name','3RRR')
+q1=linspace(0,pi/2,100)';
+q2=linspace(0,pi/2,100)';
+q3=linspace(0,pi/2,100)';
+Q=[q1,q2,q3];
+figure(2)
+R.plot(Q)
+R.fkine(Q(end,:))
+```
+
+# 实操任务
+
+1. 建立两个机器人，机器人基座的相对位置可调。（实际环境中，机器人位置可能发生变动，需要进行修改）
+2. 建立一个一条线段（一系列散点），线段的位置可调。（此线段即为机器人末端需要走的xyz轨迹点。实际环境中，轨迹位置随着工件安装位置而变换）
+3. 针对线段上的任意一个点，使某一机器人末端以某种姿态到达该点。（为xyz轨迹点加上姿态，一般的，机械臂末端z轴应当和工件表面垂直。这里只有一条线段，可指定rpy为pi/4,0,0)
+4. 针对线段上的任意一个点，使某一机器人末端以某种姿态，到达距离该点z向（末端坐标系下的z向）距离为某值的点。(此处表达的是待加工平板有一定厚度，而线段位于平板中部的情况。)
+5. 在4的基础上，使得两个机器人末端z 向正对（xy不作要求），且两个机器人末端距离可调b
+
+## Matlab仿真结果图
+
+![19](https://tvax3.sinaimg.cn/large/006BuM4Jly1gd2tp522waj30ji0hgq42.jpg)
+
+## 代码
+
+```matlab
+close all
+clear;
+d = 0.1;
+plot3([0 0],[-1 1],[0 0])
+p560_1 = mdl_puma560;
+p560_1.name = 'puma1';
+p560_1.base = [-0.6 0 0];
+p560_2 = mdl_puma560;
+p560_2.name = 'puma2';
+p560_2.base = [0.6 0 0];
+t=0:0.05:2;
+%计算puma1机械臂移动到指定点，并将z轴指向朝下的齐次变换矩阵
+T1 = transl(-0.4,0.2,0.1);
+T2 = transl(0,-0.4,d)*trotx(180);
+%计算puma2机械臂移动到指定点，z轴指向朝上的齐次变换矩阵
+T3 = transl(0.2,-0.2,-0.1);
+T4 = transl(0,-0.4,-d);
+%利用jtraj函数让两个机械臂运动到指定点
+q=p560_1.jtraj(T1,T2,t);
+s=p560_2.jtraj(T3,T4,t);
+%移动到指定点后沿直线移动
+T5 = transl(0,0.5,d)*trotx(180);%puma1沿直线移动
+T6 = transl(0,0.5,-d);%puma2沿直线移动                                                         
+m=ctraj(T2,T5,50);
+n=ctraj(T4,T6,length(t));
+y=p560_1.ikine6s(m);
+f=p560_2.ikine6s(n);
+%画图
+p560_1.plot(q);
+hold on;
+p560_2.plot(s);
+hold on;
+p560_1.plot(y);
+hold on;
+p560_2.plot(f);
+hold on;
+```

@@ -197,6 +197,10 @@ R.fkine(Q(end,:))
 
 ![19](https://tvax3.sinaimg.cn/large/006BuM4Jly1gd2tp522waj30ji0hgq42.jpg)
 
+> 使用的机器人工具箱版本为10.3.1版本
+>
+> 修改了工具箱自带的函数mdl_puma560，要使用代码需要在函数开头加上function p560 = mdl_puma560，结尾加上end以实现调用功能。
+
 ## 代码
 
 ```matlab

@@ -125,7 +125,7 @@
 <meta property="og:description" content="Matlab机器人工具箱是我们在学习机器人学时候的一个非常好的工具，不但可以帮助我们计算，也可以做图形化的输出。 在此就不多谈安装问题，主要介绍各个函数的使用方法。 启动机器人工具箱1startup_rvc;  绕xyz轴的旋转变化矩阵1234rotx(30*pi/180) %用弧度rotx(30,&apos;deg&apos;) %用角度roty(30,&apos;deg&apos;)rotz(30,&apos;deg&apos;)  绕xyz轴旋转的齐">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://tvax3.sinaimg.cn/large/006BuM4Jly1gd2tp522waj30ji0hgq42.jpg">
-<meta property="og:updated_time" content="2020-03-22T09:18:02.493Z">
+<meta property="og:updated_time" content="2020-05-10T15:49:50.673Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Matlab机器人工具箱（Robotic Toolbox）">
 <meta name="twitter:description" content="Matlab机器人工具箱是我们在学习机器人学时候的一个非常好的工具，不但可以帮助我们计算，也可以做图形化的输出。 在此就不多谈安装问题，主要介绍各个函数的使用方法。 启动机器人工具箱1startup_rvc;  绕xyz轴的旋转变化矩阵1234rotx(30*pi/180) %用弧度rotx(30,&apos;deg&apos;) %用角度roty(30,&apos;deg&apos;)rotz(30,&apos;deg&apos;)  绕xyz轴旋转的齐">
@@ -537,6 +537,10 @@
 <li>在4的基础上，使得两个机器人末端z 向正对（xy不作要求），且两个机器人末端距离可调b</li>
 </ol>
 <h2 id="Matlab仿真结果图"><a href="#Matlab仿真结果图" class="headerlink" title="Matlab仿真结果图"></a>Matlab仿真结果图</h2><p><img src="https://tvax3.sinaimg.cn/large/006BuM4Jly1gd2tp522waj30ji0hgq42.jpg" alt="19"></p>
+<blockquote>
+<p>使用的机器人工具箱版本为10.3.1版本</p>
+<p>修改了工具箱自带的函数mdl_puma560，要使用代码需要在函数开头加上function p560 = mdl_puma560，结尾加上end以实现调用功能。</p>
+</blockquote>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">close all</span><br><span class="line">clear;</span><br><span class="line">d = <span class="number">0.1</span>;</span><br><span class="line"><span class="built_in">plot3</span>([<span class="number">0</span> <span class="number">0</span>],[<span class="number">-1</span> <span class="number">1</span>],[<span class="number">0</span> <span class="number">0</span>])</span><br><span class="line">p560_1 = mdl_puma560;</span><br><span class="line">p560_1.name = <span class="string">'puma1'</span>;</span><br><span class="line">p560_1.base = [<span class="number">-0.6</span> <span class="number">0</span> <span class="number">0</span>];</span><br><span class="line">p560_2 = mdl_puma560;</span><br><span class="line">p560_2.name = <span class="string">'puma2'</span>;</span><br><span class="line">p560_2.base = [<span class="number">0.6</span> <span class="number">0</span> <span class="number">0</span>];</span><br><span class="line">t=<span class="number">0</span>:<span class="number">0.05</span>:<span class="number">2</span>;</span><br><span class="line"><span class="comment">%计算puma1机械臂移动到指定点，并将z轴指向朝下的齐次变换矩阵</span></span><br><span class="line">T1 = transl(<span class="number">-0.4</span>,<span class="number">0.2</span>,<span class="number">0.1</span>);</span><br><span class="line">T2 = transl(<span class="number">0</span>,<span class="number">-0.4</span>,d)*trotx(<span class="number">180</span>);</span><br><span class="line"><span class="comment">%计算puma2机械臂移动到指定点，z轴指向朝上的齐次变换矩阵</span></span><br><span class="line">T3 = transl(<span class="number">0.2</span>,<span class="number">-0.2</span>,<span class="number">-0.1</span>);</span><br><span class="line">T4 = transl(<span class="number">0</span>,<span class="number">-0.4</span>,-d);</span><br><span class="line"><span class="comment">%利用jtraj函数让两个机械臂运动到指定点</span></span><br><span class="line">q=p560_1.jtraj(T1,T2,t);</span><br><span class="line">s=p560_2.jtraj(T3,T4,t);</span><br><span class="line"><span class="comment">%移动到指定点后沿直线移动</span></span><br><span class="line">T5 = transl(<span class="number">0</span>,<span class="number">0.5</span>,d)*trotx(<span class="number">180</span>);<span class="comment">%puma1沿直线移动</span></span><br><span class="line">T6 = transl(<span class="number">0</span>,<span class="number">0.5</span>,-d);<span class="comment">%puma2沿直线移动                                                         </span></span><br><span class="line">m=ctraj(T2,T5,<span class="number">50</span>);</span><br><span class="line">n=ctraj(T4,T6,<span class="built_in">length</span>(t));</span><br><span class="line">y=p560_1.ikine6s(m);</span><br><span class="line">f=p560_2.ikine6s(n);</span><br><span class="line"><span class="comment">%画图</span></span><br><span class="line">p560_1.<span class="built_in">plot</span>(q);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">p560_2.<span class="built_in">plot</span>(s);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">p560_1.<span class="built_in">plot</span>(y);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">p560_2.<span class="built_in">plot</span>(f);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br></pre></td></tr></table></figure>
       
     </div>
@@ -724,7 +728,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -746,7 +750,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -856,7 +860,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">33.1k</span>
+    <span title="Site words total count">34.2k</span>
   
 </div>
 

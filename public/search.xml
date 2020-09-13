@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Literature reading]]></title>
-    <url>%2F%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB1.html</url>
-    <content type="text"><![CDATA[Life at Low Reynolds NumberLiterature download链接：https://pan.baidu.com/s/1onguEQnRPxsBlIuPy38JUQ 提取码：n3ao Some points extracted from the paper Introduce the concept of viscosity Introduce the concept of Reynolds number and Consider a low Reynolds number environment. In a low Reynolds number environment, the viscous force plays a major role, and the inertial force can be ignored. For small-sized microorganisms, the Reynolds number can be as small as 10 ^ -5. They are also the research objects of this paper. For them, inertial force does not work. Next, the author wants to explore two questions, how and why do microorganisms move? How do microbes move? The author first denied reciprocal motion. Such as scallops, it is immobile in a low Reynolds number environment. The author cites two examples of exercise, which are flexible oar and corkscrew. The corkscrew is what the author wants to discuss. There are examples of similar models in the biological world, such as E. coli. The author is interested in how the flagellum works. There is an instrument that can track the trajectory of E. coli, and it has been proved that the flagella of E. coli rotates instead of swinging. Of course this is not easy to explain biologically. At low Reynolds number, everything is linear, so the author use matrix to describe the force. The author also pointed out that the matrix should be symmetrical. According to calculations, the efficiency of this model is very low, only 1%, but the author believes that low efficiency does not affect its feasibility, especially for biological. After that, the author started to discuss why it should move, and introduced the concept of diffusion. The author believes that for low Reynolds numbers, exercise does not increase access to food. This seems to contradict the results obtained, but the author believes that the actual reason for its movement is to find areas with higher nutrient density, that is, to find along the density gradient. But he found a contradiction that the interval between the gradient and the gradient is the same. The author did not give a reasonable explanation. The final conclusion E. coli model is a relatively effective motion model in a low Reynolds number environment. The reason for the movement of microorganisms is to find a high-density nutritional environment. My doubts I can’t figure out the origin of this formula $\frac{\eta^2}{\rho}=force$ There are a few formulas that I did n’t understand, such as figure 14 and figure 15. About what the author said, in order to find a high-density environment, microorganisms will move. I think the author ’s argument is not sufficient. It may be just a guess, but it may not be related to the design of a micro robot. It ’s not the point. Further thinkingAfter reading it also caused me to think. Obviously, it is not the only form of E. coli, the author just focused on this kind of research, what is the other situation? This article talks about this kind of efficiency is very low, it may be no problem for biology, but it is a problem that needs to be considered for the design of a micro robot. What kind of structure will be more efficient? According to the author, the swing of the tail is not feasible, that is, we can not consider the problem of the micro world according to the movement of the tadpoles, should I understand it like this? Considering the actual robot, what kind of material is better to make such flagella?]]></content>
+    <title><![CDATA[你好，我的朋友 / Hello, my friend]]></title>
+    <url>%2F%E7%95%99%E8%A8%80%E9%A1%B5.html</url>
+    <content type="text"><![CDATA[你好，我的朋友！无论你以什么方式来到我的博客，请在本博文下留言让我知道有人在看，谢谢！ Hello my friend!No matter how you come to my blog, please leave a message under this blog post.Let me know if someone is watching, thanks! 钱泓勃2020.9.13]]></content>
       <categories>
-        <category>文献阅读</category>
+        <category>随笔</category>
       </categories>
+      <tags>
+        <tag>目标</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[文献如何精读]]></title>
@@ -17,17 +20,6 @@
       </categories>
       <tags>
         <tag>阅读文献</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[别混了！]]></title>
-    <url>%2F%E5%88%AB%E6%B7%B7%E4%BA%86%EF%BC%81.html</url>
-    <content type="text"><![CDATA[很高兴自己能有这么一个平台，一个属于自己的天地，可以肆意的发一些我的想法，我的心里话。不用像是在朋友圈一样过多地去考虑别人的感受。毕竟我这个博客也真的没有人看。 有一个多月了，沉浸于新闻，游戏等事情上，学习也不再上心，自责！有时就在想，如果能把生活当成游戏，自己当成游戏里的主角，是不是我就可以像是沉迷于游戏中一样爱生活呢。于是我就产生了做一个以自己为主角的挂机游戏，虽然我没查，但我觉得这个概念一定是有人做过的，怎么能吸引人让玩游戏的人真实的体会到养成自己的快乐，还是值得深思的。 我觉得还是有必要总结一下我最近玩的游戏和看的直播。虽然说都是浪费时间，但我还是有点体会的。 目前的游戏环境还是十分恶劣的，也可以说是网络环境。网络喷子很多，我也承认我有的时候也会忍不住喷人，可能当人们在网络的匿名包裹下，都丢失了曾经的包容与友善吧，展示出了人内心深处最真实的一面？本来是一个用来放松的方式，但由于戾气太重，也就丢失了它本身的快乐吧。 游戏，仔细想来就是一种模式，我疲惫与在生活中的既定模式，却沉浸于在游戏中规定好的模式，又是因为什么呢？可能是享受于在游戏里找到的那么一丁点存在感吧，生活中学习写作业很累很无聊，但在游戏里可以“更简单”的学习游戏的玩法以及“更容易”的取得胜利（但我最近的体会并非如此，实际上并不容易），可能最重要的是就算输了，玩的不好也没什么影响，顶多被别人喷两句，更何况还可以喷回去。既然想明白了这一点，想要摆脱游戏就应该想到怎么在现实生活中获得满足感，让自己的努力有反馈，让自己有动力坚持下去。这点的确需要我去思考。 习惯的力量真的大到让人无可奈何，我习惯了玩游戏时的高多巴胺产生，每天一到某个时间，没有同样量的多巴胺刺激就会不舒服，就会忍不住去玩游戏看直播…可能忍一下习惯了低多巴胺的每天就不会再沉迷游戏了吧。 今天的日记就写到这里吧，去学习咯。]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>Diary</tag>
       </tags>
   </entry>
   <entry>

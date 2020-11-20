@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.qianhongbo.com/"/>
-  <updated>2020-10-24T15:08:24.950Z</updated>
+  <updated>2020-11-20T15:49:26.580Z</updated>
   <id>https://www.qianhongbo.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>托福备考指北</title>
+    <link href="https://www.qianhongbo.com/%E6%89%98%E7%A6%8F%E5%A4%87%E8%80%83%E6%8C%87%E5%8C%97.html"/>
+    <id>https://www.qianhongbo.com/托福备考指北.html</id>
+    <published>2020-11-20T14:36:41.000Z</published>
+    <updated>2020-11-20T15:49:26.580Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="成绩"><a href="#成绩" class="headerlink" title="成绩"></a>成绩</h2><p>说来惭愧，考了3年托福，一共四次，最终还是在临近申请前的不到一个月考出的分，而且分数也只是刚刚过百（见下图），尽管最终成绩很低，但我也有一些经验和心得与各位分享，当然，也会有一些我认为比较好的学习资源通过百度云的方式供大家学习。</p><p><img src="https://tvax3.sinaimg.cn/large/006BuM4Jly1gkw0pe0b9pj30r70b8q5w.jpg" alt="TOEFLGRADE"></p><h2 id="学习顺序与学习时间"><a href="#学习顺序与学习时间" class="headerlink" title="学习顺序与学习时间"></a>学习顺序与学习时间</h2><p>对于理工科学生，强烈建议先学习GRE。理由有以下几点：</p><ol><li>GRE的数学对于理工科学生难度不高，不需要太多准备；</li><li>GRE的verbal部分以背单词为主，这部分单词并不需要托福单词为基础，如果这部分单词搞定了，学托福难度会明显降低不少；</li><li>GRE提分较快，只要刷题就会看到成效，不存在原地踏步的情况，适合初期准备。</li></ol><p>但无论是托福和GRE我的建议都是利用暑假、寒假大块时间准备，切忌将学习英语的时间与上课/实习等杂糅在一起，这样不但英语能力不会很快见效，而且还会影响课内的学习成绩。总之用一个1-2个月的空闲时间全力学习英语之后考试一定是最高效的。</p><h2 id="托福单词"><a href="#托福单词" class="headerlink" title="托福单词"></a>托福单词</h2><p>回归到托福学习。学习英语无论怎样最重要的还是背单词，单词积累的到位了，看文章听听力等自然得心应手，我比较明显的体会是在我单词掌握不扎实的时候看托福阅读都是不知所云的，仿佛在看一段加了密的文字，但在我学习GRE后，单词量得到了较大的提升，看托福阅读速度明显加快，读了一遍后内容也达到了其义自见的程度（再次说明先学GRE的好处），但不能忽视的是，很多GRE的单词书并不涵盖托福需要掌握的重点词汇，更不能轻视的是很多重要的四六级词汇，它们既不会出现在托福单词书中也不会出现在GRE单词书中，但它们的出现频率却惊人的高，这些单词一定要及时弥补！</p><p>分享两个比较好的单词书（pdf），提取码见评论区：</p><p><a href="https://pan.baidu.com/s/1cR1FpD2a8BIvRQCyUYYsYg" target="_blank" rel="noopener">托福救命800词&amp;四六级救命800词</a></p><p><a href="https://pan.baidu.com/s/11h-2epNIy0UFbNkKuLa_ug" target="_blank" rel="noopener">7天搞定托福单词</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;成绩&quot;&gt;&lt;a href=&quot;#成绩&quot; class=&quot;headerlink&quot; title=&quot;成绩&quot;&gt;&lt;/a&gt;成绩&lt;/h2&gt;&lt;p&gt;说来惭愧，考了3年托福，一共四次，最终还是在临近申请前的不到一个月考出的分，而且分数也只是刚刚过百（见下图），尽管最终成绩很低，但我也有一些
+      
+    
+    </summary>
+    
+      <category term="出国经验分享" scheme="https://www.qianhongbo.com/categories/%E5%87%BA%E5%9B%BD%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="托福" scheme="https://www.qianhongbo.com/tags/%E6%89%98%E7%A6%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>希望所有的烦恼都能随风而去</title>
@@ -522,31 +547,6 @@
       
         &lt;h1 id=&quot;NVIC中断介绍&quot;&gt;&lt;a href=&quot;#NVIC中断介绍&quot; class=&quot;headerlink&quot; title=&quot;NVIC中断介绍&quot;&gt;&lt;/a&gt;NVIC中断介绍&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;CM3内核支持256个中断，其中包含了16个内核中断和240个外部中断，并且具有
-      
-    
-    </summary>
-    
-      <category term="STM32" scheme="https://www.qianhongbo.com/categories/STM32/"/>
-    
-    
-      <category term="STM32" scheme="https://www.qianhongbo.com/tags/STM32/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【STM32】端口复用</title>
-    <link href="https://www.qianhongbo.com/%E3%80%90STM32%E3%80%91%E7%AB%AF%E5%8F%A3%E5%A4%8D%E7%94%A8.html"/>
-    <id>https://www.qianhongbo.com/【STM32】端口复用.html</id>
-    <published>2019-08-19T06:31:53.000Z</published>
-    <updated>2019-08-21T12:57:04.013Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="什么是端口复用"><a href="#什么是端口复用" class="headerlink" title="什么是端口复用"></a>什么是端口复用</h1><p>STM32有很多的内置外设，这些外设的外部引脚都是与GPIO复用的。也就是说，一个GPIO如果可以复用为内置外设的功能引脚，那么当这个GPIO作为内置外设使用的时候，就叫做复用。</p><blockquote><p> 例如串口1 的发送接收引脚是PA9,PA10，当我们把PA9,PA10不用作GPIO，而用做复用功能串口1的发送接收引脚的时候，叫端口复用。</p></blockquote><h1 id="端口复用配置过程"><a href="#端口复用配置过程" class="headerlink" title="端口复用配置过程"></a>端口复用配置过程</h1><p>以PA9,PA10配置为串口1为例</p><ul><li><p>GPIO端口时钟使能。<code>RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);</code></p></li><li><p>复用外设时钟使能。比如你要将端口PA9,PA10复用为串口，所以要使能串口时钟。<code>RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);</code></p></li><li><p>端口模式配置。 GPIO_Init（）函数。查表：《STM32中文参考手册V10》P110的表格“8.1.11外设的GPIO配置”</p></li></ul><p><img src="http://ws1.sinaimg.cn/large/006BuM4Jgy1g67l5tal6nj30pb07qq4w.jpg" alt="图片4"></p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);<span class="comment">//①IO时钟使能</span></span><br><span class="line"></span><br><span class="line">RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);<span class="comment">//②外设时钟使能</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//③初始化IO为对应的模式</span></span><br><span class="line">GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9; <span class="comment">//PA.9//复用推挽输出</span></span><br><span class="line">GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP; </span><br><span class="line">GPIO_Init(GPIOA, &amp;GPIO_InitStructure);</span><br><span class="line">  </span><br><span class="line">GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;<span class="comment">//PA10 PA.10 浮空输入</span></span><br><span class="line">GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;<span class="comment">//浮空输入</span></span><br><span class="line">GPIO_Init(GPIOA, &amp;GPIO_InitStructure);</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;什么是端口复用&quot;&gt;&lt;a href=&quot;#什么是端口复用&quot; class=&quot;headerlink&quot; title=&quot;什么是端口复用&quot;&gt;&lt;/a&gt;什么是端口复用&lt;/h1&gt;&lt;p&gt;STM32有很多的内置外设，这些外设的外部引脚都是与GPIO复用的。也就是说，一个GPIO如果可以复
       
     
     </summary>

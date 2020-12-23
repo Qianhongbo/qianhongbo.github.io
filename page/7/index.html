@@ -352,6 +352,208 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/【STM32】用GCC编译Keil5的代码，了解GCC工具链.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/【STM32】用GCC编译Keil5的代码，了解GCC工具链.html" itemprop="url">用GCC编译Keil5的代码，了解GCC工具链</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-07T18:14:18+08:00">
+                2019-08-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/STM32/" itemprop="url" rel="index">
+                    <span itemprop="name">STM32</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/【STM32】用GCC编译Keil5的代码，了解GCC工具链.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="【STM32】用GCC编译Keil5的代码，了解GCC工具链.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  560 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="用GCC编译Keil5的代码，了解GCC工具链"><a href="#用GCC编译Keil5的代码，了解GCC工具链" class="headerlink" title="用GCC编译Keil5的代码，了解GCC工具链"></a>用GCC编译Keil5的代码，了解GCC工具链</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>本周接到任务，首先是熟悉<code>STM32cubemx</code>，既然是熟悉框也就不做太高的要求，毕竟也只是一个提升效率的工具，我就按照教程新建了一个简单地模板，算是知道怎么用<code>cubemx</code>从头开始建一个工程了。</p>
+<p>而本周的第二个任务就是研究用<code>GCC</code>工具链编译<code>Keil5</code>的代码，这个的确对我来说难度不小，算是卡了我将近三天的时间，而出现这个问题的原因就是我基础不够牢靠，<code>Keil5</code>软件最基本的知识没有掌握，导致找不到问题的原因所在。还好我中途没有放弃，一直在尝试，也一直在找可能的原因，最终找到了，也算功夫不负有心人吧。</p>
+<p>特此记录一下，因为我在出现这些问题之后并不能在网上找到答案，借此机会来帮助之后和我一样基础不好的小白吧。</p>
+<h2 id="问题产生"><a href="#问题产生" class="headerlink" title="问题产生"></a>问题产生</h2><p>在研究用<code>GCC</code>编译<code>Keil5</code>的代码的时候，我在网上找到了<a href="https://blog.csdn.net/weixin_39871788/article/details/78858791" target="_blank" rel="noopener">CSDN上的一个教程</a>，讲解的还是十分详细的。</p>
+<p>但我按照教程，把我用<code>cubemx</code>建的工程搞了一遍却出现了很多很多的bug，具体如下：</p>
+<p><img src="http://ww4.sinaimg.cn/large/006tNc79gy1g5r9pg9gfxj314o0m2dpg.jpg" alt></p>
+<p>遇到这个问题之后我也查了一下，并没有找到原因，多数是说我没有定义，但我也不知道应该怎么定义呀！</p>
+<h2 id="寻找问题"><a href="#寻找问题" class="headerlink" title="寻找问题"></a>寻找问题</h2><p>我的直觉觉得问题可能出在教程中配置的部分，但同样的配置为什么会出现不同的结果呢？</p>
+<p>我于是按照正点原子的教程从头开始看了一下怎么配置一个用<code>armcc</code>编译的流水灯模板，因为之前我没自己搞过模板，于是发现了很多我之前不知道的细节，比如添加添加定义，头文件，修改<code>output输出</code>文件夹，而我出现的问题就是<code>define</code>没有添加，导致未定义。</p>
+<p><img src="http://ww3.sinaimg.cn/large/006tNc79gy1g5r9pg5syoj30lq0g9778.jpg" alt></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在图中define一定要添加</span></span><br><span class="line">Define: USE_HAL_DRIVER,STM32F103xE,USE_HAL_DRIVER,STM32F103xE</span><br></pre></td></tr></table></figure>
+
+<p>解决之后成功编译！</p>
+<p><img src="http://ww4.sinaimg.cn/large/006tNc79gy1g5r9pfzuh2j31hc0u0jwv.jpg" alt></p>
+<p><a href="https://download.csdn.net/download/weixin_42559298/11493634" target="_blank" rel="noopener">附上可编译模板的链接</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/【从零入门Qt】开发一款属于自己的串口调试助手.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1264,197 +1466,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/我在大学各学期大致课外学习规划.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/我在大学各学期大致课外学习规划.html" itemprop="url">我在大学各学期大致课外学习规划</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-14T21:18:55+08:00">
-                2019-06-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/我在大学各学期大致课外学习规划.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="我在大学各学期大致课外学习规划.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  75 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>大二下学期：学控制，以Arduino为主，可能学不完，学不透，暑假继续</p>
-<p>大三上学期：转去学机器人学（Matlab），也算是为之后去参加数模美赛做基础</p>
-<p>大三下学期：如果有精力可以去学Linux，ROS</p>
-<p>大四：Linux，ROS，Python，Tensorflow…</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1507,7 +1518,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">48</span>
+                  <span class="site-state-item-count">49</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1529,7 +1540,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1623,7 +1634,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">35.5k</span>
+    <span title="Site words total count">35.8k</span>
   
 </div>
 

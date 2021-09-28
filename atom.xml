@@ -5,9 +5,9 @@
   <subtitle>Look! Who is here! Welcome~~</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://www.qianhongbo.top/"/>
-  <updated>2019-07-31T09:44:40.455Z</updated>
-  <id>https://www.qianhongbo.top/</id>
+  <link href="https://www.qianhongbo.com/"/>
+  <updated>2021-09-28T06:55:27.977Z</updated>
+  <id>https://www.qianhongbo.com/</id>
   
   <author>
     <name>Qian Hongbo</name>
@@ -17,521 +17,554 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>【从零入门Qt】开发一款属于自己的串口调试助手</title>
-    <link href="https://www.qianhongbo.top/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E3%80%90%E4%BB%8E%E9%9B%B6%E5%85%A5%E9%97%A8Qt%E3%80%91%E5%BC%80%E5%8F%91%E4%B8%80%E6%AC%BE%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%B2%E5%8F%A3%E8%B0%83%E8%AF%95%E5%8A%A9%E6%89%8B/"/>
-    <id>https://www.qianhongbo.top/学习笔记/【从零入门Qt】开发一款属于自己的串口调试助手/</id>
-    <published>2019-07-31T09:22:58.000Z</published>
-    <updated>2019-07-31T09:44:40.455Z</updated>
+    <title>四学期课程安排</title>
+    <link href="https://www.qianhongbo.com/%E5%9B%9B%E5%AD%A6%E6%9C%9F%E8%AF%BE%E7%A8%8B%E5%AE%89%E6%8E%92.html"/>
+    <id>https://www.qianhongbo.com/四学期课程安排.html</id>
+    <published>2021-09-27T15:41:25.000Z</published>
+    <updated>2021-09-28T06:55:27.977Z</updated>
     
-    <content type="html"><![CDATA[<p>暑假来深圳这边实习，做的是嵌入式方向，负责人分配给我的第一个任务是用Qt写一个串口调试助手。这个任务总体来讲难度适中，尽管我没接触过Qt，但能查到很多很多的资料，甚至包括别人写好的源代码，所以有很多的学习资源。</p><p>我第一天在同学的推荐下，看了一个入门的文档，<a href="https://www.devbean.net/2012/08/qt-study-road-2-catelog/" target="_blank" rel="noopener">《Qt 学习之路 2》</a>，其中内容讲的比较基础，基本可以理解，算是能对Qt的语法了解个大概。而且如果实在不懂，也可以参看b站上的视频教程，是<a href="https://www.bilibili.com/video/av20446734" target="_blank" rel="noopener">黑马程序员的教程</a>，视频内容比较冗长，但对于初学者来说可能更好理解，各取所需，看个人选择。</p><p>因为负责人只给了我三天的时间，所以我也就花了一天左右的时间看教程，就开始看我在网上看的一份源码了。当时我的进度是黑马程序员看了不到10个视频，《Qt 学习之路 2》看了不到20节教程，虽然说看了不少，但我当时还是很慌的，对于我这种小白来说，还是不知道源代码是什么意思，但这个时候我能大概明白每个函数要做什么功能了，也就是我看懂了函数名，但函数里的句子我看不懂。</p><p>然后我就选择了按照这份代码自己复刻一份，算是尝试着自己写一下。</p><p>于是我新建了一个<code>project</code>，名字是<code>Myserialport</code>，发现源代码中<code>main.cpp</code>完全一样，也就是一个窗体的显示功能，很好理解，直接略去~</p><p>上面的<code>mainwindow.h</code>文件里面有很多库函数的引用，函数的声明，我姑且认为不重要，暂时略去</p><p>而代码最多的就集中在<code>mainwindow.cpp</code>文件里了，也是我最需要解决的部分！</p><p>这是我新建工程后的代码：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"mainwindow.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"ui_mainwindow.h"</span></span></span><br><span class="line"></span><br><span class="line">MainWindow::MainWindow(QWidget *parent) :</span><br><span class="line">    QMainWindow(parent),</span><br><span class="line">    ui(<span class="keyword">new</span> Ui::MainWindow)</span><br><span class="line">&#123;</span><br><span class="line">    ui-&gt;setupUi(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MainWindow::~MainWindow()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">delete</span> ui;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>而源代码在<code>MainWindow::MainWindow(QWidget *parent)</code>中添加了很多窗体生成的初始化语句</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">MainWindow::MainWindow(QWidget *parent) :</span><br><span class="line">    QMainWindow(parent),</span><br><span class="line">    ui(<span class="keyword">new</span> Ui::MainWindow)</span><br><span class="line">&#123;</span><br><span class="line">    ui-&gt;setupUi(<span class="keyword">this</span>);</span><br><span class="line">    textstate_receive = <span class="literal">false</span>;                 <span class="comment">//初始化发送窗口状态为文本模式</span></span><br><span class="line">    textstate_send = <span class="literal">false</span>;                    <span class="comment">//初始化接收窗口状态为文本模式</span></span><br><span class="line">    serialport = <span class="keyword">new</span> QSerialPort;              <span class="comment">//创建QSerialPort类，需要在头文件中添加#include &lt;QSerialPort&gt;</span></span><br><span class="line">    ui-&gt;send_button-&gt;setEnabled(<span class="literal">false</span>);        <span class="comment">//初始化接收按钮不可用</span></span><br><span class="line">    ui-&gt;close_port-&gt;setEnabled(<span class="literal">false</span>);         <span class="comment">//初始化接收按钮不可用</span></span><br><span class="line">    ui-&gt;Receive_text_window-&gt;setReadOnly(<span class="literal">true</span>);<span class="comment">//讲接收窗口设置为只读窗口</span></span><br><span class="line">    setWindowTitle(<span class="string">"串口调试助手"</span>);              <span class="comment">//设置程序的标题</span></span><br><span class="line">    setWindowIcon(QIcon(<span class="string">":/images/exe.jpg"</span>));  <span class="comment">//设置程序左上角图标</span></span><br><span class="line">    find_port();                               <span class="comment">//查找可用串口函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>以上语句还是比较好理解的，每句话我都进行了注释。</p><p>下面的代码就是定义各个函数，而.h文件里的很多函数声明也就很好理解了，也就是在.h文件里定义一下各个函数</p><p>比如以下很重要的两个函数，用于实现数据的发送和接收</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//发送数据</span></span><br><span class="line"><span class="keyword">void</span> MainWindow::on_send_button_clicked()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(textstate_send == <span class="literal">false</span>)  <span class="comment">//文本模式</span></span><br><span class="line">    &#123;</span><br><span class="line">        serialport-&gt;write(ui-&gt;Send_text_window-&gt;toPlainText().toUtf8());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(textstate_send == <span class="literal">true</span>)     <span class="comment">//hex模式</span></span><br><span class="line">    &#123;</span><br><span class="line">        QString str = ui-&gt;Send_text_window-&gt;toPlainText();</span><br><span class="line">        <span class="keyword">int</span> num = str.toInt();</span><br><span class="line">        str = str.setNum(num,<span class="number">16</span>);</span><br><span class="line">        ui-&gt;Send_text_window-&gt;clear();</span><br><span class="line">        ui-&gt;Send_text_window-&gt;append(str);</span><br><span class="line">        serialport-&gt;write(ui-&gt;Send_text_window-&gt;toPlainText().toLatin1());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//窗口显示串口传来的数据</span></span><br><span class="line"><span class="keyword">void</span> MainWindow::Read_Data()</span><br><span class="line">&#123;</span><br><span class="line">    QByteArray buf;</span><br><span class="line">    buf = serialport-&gt;readAll();</span><br><span class="line">    <span class="keyword">if</span>(!buf.isEmpty())          <span class="comment">//将数据显示到文本串口</span></span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(textstate_receive == <span class="literal">false</span>)   <span class="comment">//文本模式</span></span><br><span class="line">        &#123;</span><br><span class="line">            QString str = ui-&gt;Receive_text_window-&gt;toPlainText();</span><br><span class="line">            str += tr(buf);</span><br><span class="line">            ui-&gt;Receive_text_window-&gt;clear();</span><br><span class="line">            ui-&gt;Receive_text_window-&gt;append(str);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(textstate_receive == <span class="literal">true</span>)   <span class="comment">//hex模式</span></span><br><span class="line">        &#123;</span><br><span class="line">            QString str = ui-&gt;Receive_text_window-&gt;toPlainText();</span><br><span class="line">            <span class="comment">// byteArray 转 16进制</span></span><br><span class="line">            QByteArray temp = buf.toHex().toUpper();</span><br><span class="line">            str += tr(temp);</span><br><span class="line">            ui-&gt;Receive_text_window-&gt;clear();</span><br><span class="line">            ui-&gt;Receive_text_window-&gt;append(str);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    buf.clear();    <span class="comment">//清空缓存区</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>最后实现了以下的界面，以及文本模式和16进制（hex模式）两种模式转换的数据收发</p><p>p.s.：尝试了很久想要解决中文无法显示的问题，最终无果…</p><p><img src="http://ww1.sinaimg.cn/large/006tNc79gy1g5j5oshorpj30kc0k5769.jpg" alt></p><p><a href="https://download.csdn.net/download/weixin_42559298/11457836" target="_blank" rel="noopener">有需要的话可以在这个链接下载嗷~</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;暑假来深圳这边实习，做的是嵌入式方向，负责人分配给我的第一个任务是用Qt写一个串口调试助手。这个任务总体来讲难度适中，尽管我没接触过Qt，但能查到很多很多的资料，甚至包括别人写好的源代码，所以有很多的学习资源。&lt;/p&gt;
-&lt;p&gt;我第一天在同学的推荐下，看了一个入门的文档，&lt;a
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="https://www.qianhongbo.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Qt" scheme="https://www.qianhongbo.top/tags/Qt/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>嵌入式开发学习笔记</title>
-    <link href="https://www.qianhongbo.top/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>https://www.qianhongbo.top/学习笔记/嵌入式开发学习笔记/</id>
-    <published>2019-07-04T05:24:53.000Z</published>
-    <updated>2019-07-06T10:09:24.450Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Linux-distribution-linux的发行版本"><a href="#Linux-distribution-linux的发行版本" class="headerlink" title="Linux distribution (linux的发行版本)"></a>Linux distribution (linux的发行版本)</h2><p>软件，shell 保护层，kernel内核，硬件</p><p>linux系统，完整的分层模型</p><p>RedHat：server 服务器 面向企业用户 具有license</p><p>CentOS：已经被红帽子收购，开源免费版本，区别于企业版，比较稳定</p><p>以上两款界面不好看，不追求绚丽的东西</p><p>Ubuntu：稳定性不如上面两个，但适用于普通用户，中文支持，软件支持做的都比较好</p><h2 id="ubuntu操作"><a href="#ubuntu操作" class="headerlink" title="ubuntu操作"></a>ubuntu操作</h2><ol><li>sudo 为普通命令提升权限</li><li>sudo  passwd root </li><li>su - 切换到系统的身份</li><li>apt-get update更新源，用于下载新的安装包（如果是普通用于，记得在前面加sudo</li><li>尽量用命令行的方式来学习linux</li><li>vim安装 apt-get install vim-nox</li><li>vi已经安装，是一个编辑软件的记事本</li><li>vim回车，进入</li><li>退出，敲：q（不知道要不要加！）</li><li>vim全键盘操作，效率很高</li><li>cd /    根目录  </li><li>c—change  d—directory 目录</li><li>ls</li><li>不要在根目录里面操作</li><li>回去 cd</li><li>vi /etc/</li><li>vi 命令模式，编辑模式，用 i 切换模式，esc键退出</li><li>ssh-secure shell</li><li>SecureCRT安装 </li><li>sshd回车</li><li>apt-get install openssh-server</li><li>ifconfig</li><li>net add:</li><li>rz zmodem r:receive</li><li>sz zmodem s:send</li><li>samba</li><li>apt-get install samba</li></ol>]]></content>
+    <content type="html"><![CDATA[<table><thead><tr><th>SEASON</th><th>CLASS_1</th><th>CLASS_2</th><th>CLASS_3</th></tr></thead><tbody><tr><td>FALL</td><td>ECE269</td><td>CSE252A</td><td>CSE202</td></tr><tr><td>WINTER</td><td>ECE276A</td><td>ECE141A</td><td>CSE224</td></tr><tr><td>SPRING</td><td>ECE272A</td><td>ECE141B</td><td>ECE250</td></tr><tr><td>FALL</td><td>ECE271A</td><td>CSE250</td><td>CSE120</td></tr></tbody></table>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;Linux-distribution-linux的发行版本&quot;&gt;&lt;a href=&quot;#Linux-distribution-linux的发行版本&quot; class=&quot;headerlink&quot; title=&quot;Linux distribution (linux的发行版本)&quot;&gt;&lt;
+        &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;SEASON&lt;/th&gt;
+&lt;th&gt;CLASS_1&lt;/th&gt;
+&lt;th&gt;CLASS_2&lt;/th&gt;
+&lt;th&gt;CLASS_3&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;FALL&lt;/td&gt;
+&lt;td&gt;ECE269&lt;
       
     
     </summary>
     
-      <category term="学习笔记" scheme="https://www.qianhongbo.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="嵌入式开发" scheme="https://www.qianhongbo.top/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/"/>
-    
-      <category term="Linux" scheme="https://www.qianhongbo.top/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>机器人学 学习笔记</title>
-    <link href="https://www.qianhongbo.top/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>https://www.qianhongbo.top/学习笔记/机器人学 学习笔记/</id>
-    <published>2019-07-03T10:51:33.000Z</published>
-    <updated>2019-07-08T09:36:07.364Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="第二章-空间描述和变换"><a href="#第二章-空间描述和变换" class="headerlink" title="第二章 空间描述和变换"></a>第二章 空间描述和变换</h2><h3 id="位置描述："><a href="#位置描述：" class="headerlink" title="位置描述："></a>位置描述：</h3><p>我们用一个位置矢量来描述空间中点的位置</p><script type="math/tex; mode=display">^AP = \left[\begin{matrix}1\\\\  2\\\\3\end{matrix}\right]\tag1</script><h3 id="姿态描述："><a href="#姿态描述：" class="headerlink" title="姿态描述："></a>姿态描述：</h3><p>物体的姿态可用固定在物体上的坐标系来描述。我们用$X_B,Y_B,Z_B$来描述坐标系B主轴方向的单位矢量，当用坐标系A的坐标表达时，它们被写为$^AX_B,^AY_B,^AZ_B$。我们可以吧这三个单位矢量按照顺序排成一个3x3的矩阵，我们称这个矩阵为<strong>旋转矩阵</strong>，并且这个矩阵是坐标系B相对于坐标系A的表达，所以我们用符号$^A_BR$来表示</p><script type="math/tex; mode=display">^A_BR = [^AX_B\ ^AY_B\ ^AZ_B] = \left[\begin{matrix}X_B · X_A & Y_B · X_A & Z_B · X_A\\\\X_B · Y_A & Y_B · Y_A & Z_B · Y_A\\\\X_B · Z_A & Y_B · Z_A & Z_B · Z_A\end{matrix}\right]=\left[\begin{matrix}^BX^T_A\\\\^BY^T_A\\\\^BZ^T_A\end{matrix}\right] = \ ^B_AR^T\tag2</script><p>其中最右边矩阵为两坐标的点积，来表示投影。</p><h3 id="坐标系描述："><a href="#坐标系描述：" class="headerlink" title="坐标系描述："></a>坐标系描述：</h3><p>完整描述操作手位姿的信息为位置和姿态。我们可以任选一点来描述位置，为方便起见，选择远点。我们将位置和姿态的组合称作坐标系，四个矢量为一组，表示了位置和姿态的信息。</p><script type="math/tex; mode=display">{B} = {^A_BR, \ ^AP_{BORG}}\tag4</script><h3 id="映射："><a href="#映射：" class="headerlink" title="映射："></a>映射：</h3><ol><li><p>平移映射</p><script type="math/tex; mode=display">^A P = \ ^B P + \ ^A P_{BORG}\tag5</script></li><li><p>旋转映射</p><script type="math/tex; mode=display">^AP = \ ^A_BR\ ^BP\tag6</script><p>引入符号可以看出，正好是左下标消掉了后面变量的左上标</p></li><li><p>关于一般坐标系的映射</p><script type="math/tex; mode=display">^AP = \ ^A_BR\ ^BP + \ ^AP_{BORG}\tag7</script><p>引入新的概念</p><script type="math/tex; mode=display">^A P = \ ^A_BT\ ^BP\tag8</script><p>即用一个矩阵的形式的算子来表示从一个从一个坐标系到另一个坐标系的映射，定义一个$4 <em> 4$的矩阵算子并使用了$4 </em> 1$的位置向量</p><script type="math/tex; mode=display">\left[\begin{matrix}^A P \\\\ 1 \end{matrix} \right] = \left[\begin{array}{c|c}^A_BR & ^A P_{BORG} \\\\ 0\ 0\ 0 & 1 \end{array}\right] \left[\begin{matrix} ^B P \\\\ 1 \end{matrix} \right] \tag9</script><p>上式中的$4 <em> 4$矩阵被称为<em>*齐次变换矩阵</em></em></p></li></ol><h3 id="算子："><a href="#算子：" class="headerlink" title="算子："></a>算子：</h3><ol><li><p>平移算子：</p><script type="math/tex; mode=display">^AP_2 = \ ^AP_1 + \ ^AQ</script><p>用矩阵算子写出平移变换，有：</p><script type="math/tex; mode=display">^AP_2 = D_Q(q)^AP_1</script><p>其中，q是沿矢量Q方向的数量，它是有符号的。算子可以堪称一种特殊形式的齐次变换：</p><script type="math/tex; mode=display">D_Q(q)=\left[\begin{matrix} 1 & 0 & 0& q_x\\\\  0 & 1 & 0 & q_y\\\\  0 & 0 & 1 & q_z\\\\  0 & 0 & 0 & 1\end{matrix}\right]</script><p>其中$q_x, q_y, q_z$是平移矢量Q的分量</p></li><li><p>旋转算子：</p><script type="math/tex; mode=display">^AP_2 = R^AP_1</script><p>用矩阵算子写出旋转变换，有：</p><script type="math/tex; mode=display">^AP_2 = R_K(\theta)\ ^AP_1</script><p>其中R表示一个旋转算子，它表示绕K轴旋转$\theta$角度</p><script type="math/tex; mode=display">R_Z(\theta)=\left[\begin{matrix} cos\theta & sin\theta & 0& 0\\\\  sin\theta & cos\theta & 0 & 0\\\\  0 & 0 & 1 & 0\\\\  0 & 0 & 0 & 1\end{matrix}\right]</script></li><li><p>变换算子：</p><script type="math/tex; mode=display">^AP_2 = T^AP_1</script></li></ol><h3 id="变换算法"><a href="#变换算法" class="headerlink" title="变换算法"></a>变换算法</h3><ol><li><p>混合变换：</p><script type="math/tex; mode=display">^AP =\  ^A_BT\ ^B_CT\ ^CP\\  ^A_CT = ^A_BT\ ^B_CT</script><p>即：</p><script type="math/tex; mode=display">^A_CT =\left[\begin{array}{c|c}^A_BR\ ^B_CR & ^A_BR\ ^BP_{CORG} + \ ^AP_{BORG} \\\\ 0\ 0\ 0 & 1 \end{array}\right]</script></li><li><p>逆变换：</p><p>…</p></li></ol><h2 id="第三章-操作臂运动学"><a href="#第三章-操作臂运动学" class="headerlink" title="第三章 操作臂运动学"></a>第三章 操作臂运动学</h2><h3 id="连杆描述"><a href="#连杆描述" class="headerlink" title="连杆描述"></a>连杆描述</h3><p>连杆长度，连杆转角</p><h3 id="连杆连接的描述"><a href="#连杆连接的描述" class="headerlink" title="连杆连接的描述"></a>连杆连接的描述</h3><ol><li><p>连杆链中的中间连杆</p><p>连杆偏距，关节角</p></li><li><p>对于运动链中的末端连杆，其参数习惯设定为0</p><p>即$a_0 = a_n = 0.0, \alpha_0 = \alpha_n =0.0$</p><p>之所以采用了这种规定，是因为当一个参数可以人喜选取时，把另一个参数设定为0，可以使计算变得简便。</p></li><li><p>连杆参数：每个连杆可以用四个运动学参数来描述，其中两个参数用于描述连杆本身，另外两个参数用于描述连杆之间的连接关系。</p><p>对于转动关节，$\theta$为关节变量，其他三个连杆参数是固定不变的</p><p>对于移动关节了，d为关节变量，其他三个连杆参数是固定不变的。</p><p>这种两岸参数描述规则称为Denavit-Hartenberg参数</p><p>根据以上方法，，对于一个六关节的机器人，需要用18个参数就可以完全描述这些固定的运动学参数。</p></li><li><p>对连杆附加坐标系的规定</p><p>固连在连杆i上的固连坐标系称为坐标系{i}</p><p>z轴和关节轴重合</p><p>坐标系原点位于关节轴和公垂线的交点处</p><p>x轴沿着公垂线方向，指向下一个关节</p><p>y轴由右手定则确定</p><p><img src="https://upload-images.jianshu.io/upload_images/17194236-9eb722452ff0bcda.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="机器人学1.png"></p></li><li></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;第二章-空间描述和变换&quot;&gt;&lt;a href=&quot;#第二章-空间描述和变换&quot; class=&quot;headerlink&quot; title=&quot;第二章 空间描述和变换&quot;&gt;&lt;/a&gt;第二章 空间描述和变换&lt;/h2&gt;&lt;h3 id=&quot;位置描述：&quot;&gt;&lt;a href=&quot;#位置描述：&quot; class
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="https://www.qianhongbo.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="机器人学" scheme="https://www.qianhongbo.top/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>c语言学习笔记</title>
-    <link href="https://www.qianhongbo.top/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>https://www.qianhongbo.top/学习笔记/C语言学习笔记/</id>
-    <published>2019-06-26T07:23:15.000Z</published>
-    <updated>2019-07-03T10:55:11.123Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="我为什么要学习C语言"><a href="#我为什么要学习C语言" class="headerlink" title="我为什么要学习C语言"></a>我为什么要学习C语言</h2><p>说来惭愧，作为一个工科学生，我竟然没有学过C语言，只在大一的时候学过一学期的VB，虽然语言这种东西说起来都差不多，但毕竟也是将近三年前的事了，早就忘光了。</p><p>可是不掌握C语言真的很麻烦，这尤其体现在做单片机上，单片机要求我们使用C语言，我当时连那些代码都看不懂，更别谈让我自己去写了。</p><p>正好，最近时间比较充沛。拿出时间来把C语言好好学学</p><p>p.s. 突然想起来我初中好像就学过C++了，但只是皮毛</p><h2 id="我用什么工具学习C语言"><a href="#我用什么工具学习C语言" class="headerlink" title="我用什么工具学习C语言"></a>我用什么工具学习C语言</h2><p>书籍：C程序设计语言（第二版 新版）→ 纸质</p><p>软件：VS2017, Xcode</p><p>其它：Google，CSDN，Baidu</p><h2 id="20190626"><a href="#20190626" class="headerlink" title="20190626"></a>20190626</h2><h3 id="我的第一段代码"><a href="#我的第一段代码" class="headerlink" title="我的第一段代码"></a>我的第一段代码</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"hello, world.\n"</span>);</span><br><span class="line">system(<span class="string">"pause"</span>);</span><br><span class="line"><span class="comment">//return 0;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol><li>main函数：main是一个特殊的函数名——每个程序都从main函数的起点开始执行。main函数通常会调用其它函数来帮助完成某些工作</li><li>本例中main函数不需要任何参数</li><li>用双引号括起来的字符序列称为字符串或字符串常量</li><li>\n 表示换行符</li></ol><h3 id="第二段代码"><a href="#第二段代码" class="headerlink" title="第二段代码"></a>第二段代码</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="comment">/* 当fatr = 0,20,...,300时，分别打印华氏温度与摄氏温度对照表 */</span></span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">int</span> fahr, celsius;</span><br><span class="line"><span class="keyword">int</span> lower, upper, step;</span><br><span class="line"></span><br><span class="line">lower = <span class="number">0</span>; <span class="comment">/* 温度表的上限 */</span></span><br><span class="line">upper = <span class="number">300</span>; <span class="comment">/* 温度表的下限 */</span></span><br><span class="line">step = <span class="number">20</span>; <span class="comment">/* 步长 */</span></span><br><span class="line"></span><br><span class="line">fahr = lower;</span><br><span class="line"><span class="keyword">while</span> (fahr &lt;= upper) &#123;</span><br><span class="line">celsius = <span class="number">5</span> * (fahr - <span class="number">32</span>) / <span class="number">9</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d\t%d\n"</span>, fahr, celsius);</span><br><span class="line">fahr = fahr + step;</span><br><span class="line">&#125;</span><br><span class="line">system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol><li>其中，int表示其后所列的变量为整数，与之对应的float表示浮点数（即可以带有小数部分）</li><li>为什么不用5/9？因为C语言存在舍位，小数部分都会被舍弃</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;我为什么要学习C语言&quot;&gt;&lt;a href=&quot;#我为什么要学习C语言&quot; class=&quot;headerlink&quot; title=&quot;我为什么要学习C语言&quot;&gt;&lt;/a&gt;我为什么要学习C语言&lt;/h2&gt;&lt;p&gt;说来惭愧，作为一个工科学生，我竟然没有学过C语言，只在大一的时候学过一学期的
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="https://www.qianhongbo.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="C" scheme="https://www.qianhongbo.top/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>脸上各部位长痘痘的原因及调理方法汇总</title>
-    <link href="https://www.qianhongbo.top/%E7%9F%A5%E8%AF%86%E7%A7%AF%E7%B4%AF/%E8%84%B8%E4%B8%8A%E5%90%84%E9%83%A8%E4%BD%8D%E9%95%BF%E7%97%98%E7%97%98%E7%9A%84%E5%8E%9F%E5%9B%A0%E5%8F%8A%E8%B0%83%E7%90%86%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB/"/>
-    <id>https://www.qianhongbo.top/知识积累/脸上各部位长痘痘的原因及调理方法汇总/</id>
-    <published>2019-06-26T01:24:31.000Z</published>
-    <updated>2019-06-26T01:45:30.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>额头痘状况：</strong>有可能是压力太大，容易脾气不好，造成心火和血液循环有问题。</p><p>改善：应养成早睡早起的习惯，让睡眠充足，并多喝水。</p><p><strong>印堂痘状况：</strong>出现在两眉正中间的痘痘，通常有胸闷、心律不整、<a href="http://www.med66.com/jibing/xinji/" target="_blank" rel="noopener">心悸</a>等毛病。</p><p>改善：不要尝试太过激烈的运动，要避免烟、酒等刺激性的食品。</p><p><strong>发髻痘状况：</strong>因为卸妆没有卸干净，造成毛孔堵塞河污染，容易在较闷的发髻或眉间形成细小痘痘。</p><p>改善：加强卸妆和清洁的工作，一定要彻底搓揉干净，每星期做一次去角质工作，报纸皮脂腺顺畅。</p><p><strong>鼻翼痘状况：</strong>突然冒出的肿大痘痘，可能是卵巢机能或者生殖系统有关。</p><p>改善：不要过度纵欲或禁欲，尽量走出户外，享受降的自然环境。</p><p><strong>鼻头痘状况：</strong>可能是胃火过大，消化系统异常。</p><p>改善：少吃冰冷食物，寒性食品容易引起胃酸分泌，造成胃火过大。</p><p><strong>眼头痘状况：</strong>K近鼻子和眼头区域的痘痘，通常是肝机能不好所引起。</p><p>改善：生活作息要正常，避免熬夜，尽量在11点前上床睡觉。</p><p><strong>唇周痘状况：</strong><a href="http://www.med66.com/jibing/bianmi/" target="_blank" rel="noopener">便秘</a>导致体内毒素累计，或者是使用含氟过量的牙膏，都是造成唇周痘痘的主因。</p><p>改善：多吃高纤维的蔬菜水果，调整饮食习惯，刷牙漱口要彻底。</p><p><strong>下巴痘状况：</strong>通常是月经要来的前几天，造成<a href="http://www.med66.com/jibing/neifenmishitiao/" target="_blank" rel="noopener">内分泌失调</a>所引起的。</p><p>改善：少吃冰冷的东西，月经期间可用消炎镇定的保养品。</p><p><strong>右边脸颊痘状况：</strong>可能是肺部功能失常，手脚冰冷，或是容易敏感的体质，也有可能是<a href="http://www.med66.com/jibing/ganmao/" target="_blank" rel="noopener">感冒</a>前兆。</p><p>改善：平时注意呼吸道的保养，尽量避免芒果、芋头、海鲜甲壳类易过敏的食物。</p><p><strong>左边脸颊痘状况：</strong>可能是肝功能不顺畅，如肝脏的分泌、解毒或造血等功能出了状况。</p><p>改善：作息正常，保持心情愉快，该吹冷气就吹冷气，不要让身体处在过度闷热。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;strong&gt;额头痘状况：&lt;/strong&gt;有可能是压力太大，容易脾气不好，造成心火和血液循环有问题。&lt;/p&gt;
-&lt;p&gt;改善：应养成早睡早起的习惯，让睡眠充足，并多喝水。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;印堂痘状况：&lt;/strong&gt;出现在两眉正中间的痘痘，通常有胸闷、心律不
-      
-    
-    </summary>
-    
-      <category term="知识积累" scheme="https://www.qianhongbo.top/categories/%E7%9F%A5%E8%AF%86%E7%A7%AF%E7%B4%AF/"/>
+      <category term="随笔" scheme="https://www.qianhongbo.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
   </entry>
   
   <entry>
-    <title>我在大学各学期大致课外学习规划</title>
-    <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/%E6%88%91%E5%9C%A8%E5%A4%A7%E5%AD%A6%E5%90%84%E5%AD%A6%E6%9C%9F%E5%A4%A7%E8%87%B4%E8%AF%BE%E5%A4%96%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/"/>
-    <id>https://www.qianhongbo.top/随笔/我在大学各学期大致课外学习规划/</id>
-    <published>2019-06-14T13:18:55.000Z</published>
-    <updated>2019-07-31T09:44:10.088Z</updated>
+    <title>LAIOFEER公开课</title>
+    <link href="https://www.qianhongbo.com/LAIOFEER%E5%85%AC%E5%BC%80%E8%AF%BE.html"/>
+    <id>https://www.qianhongbo.com/LAIOFEER公开课.html</id>
+    <published>2020-12-22T01:57:40.000Z</published>
+    <updated>2021-04-12T13:21:12.646Z</updated>
     
-    <content type="html"><![CDATA[<p>大二下学期：学控制，以Arduino为主，可能学不完，学不透，暑假继续</p><p>大三上学期：转去学机器人学（Matlab），也算是为之后去参加数模美赛做基础</p><p>大三下学期：如果有精力可以去学Linux，ROS</p><p>大四：Linux，ROS，Python，Tensorflow…</p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>Always put yourself in other people’s shoes. 换位思考</p><p>Critical thinking 任何事情并不是非黑即白</p></blockquote><h2 id="BQ-question-1"><a href="#BQ-question-1" class="headerlink" title="BQ question 1"></a>BQ question 1</h2><p>Tell me about yourself:</p><ol><li>Name, Education, Background</li><li>Skills: Primary programming language, Projects experience, intern experience</li><li>Thank you</li></ol><p>Variants:</p><ol><li>Tell me your weakness(e.g. 多任务同时处理，优先级问题) 承认自己的问题，尽量真实</li><li>Key points: How to avoid/address the same problems in the future.</li></ol><h2 id="BQ-question-2"><a href="#BQ-question-2" class="headerlink" title="BQ question 2"></a>BQ question 2</h2><p>When you have different opinions from your colleagues</p><ol><li>Scenarios</li><li>Communication: 1 on 1 不在公共场合批评别人; How/When/Where</li></ol><h2 id="BQ-question-3"><a href="#BQ-question-3" class="headerlink" title="BQ question 3"></a>BQ question 3</h2><p>When you have limited time available to finish your project. Quality vs Speed</p><p>分情况讨论，用项目举例</p><p>Variant 1:Provide an example scenario in which you made a quick decision under pressure</p><p>Variant 2: Write an email to your manager on how to explain why you missed the deadline</p><h2 id="BQ-question-4"><a href="#BQ-question-4" class="headerlink" title="BQ question 4"></a>BQ question 4</h2><p>What is your career plan for the next 5 years?</p><p>现在有什么，未来期待什么，怎么做？</p><p>concrete example</p><h2 id="BQ-question-5"><a href="#BQ-question-5" class="headerlink" title="BQ question 5"></a>BQ question 5</h2><p>How do you define a good manager? Or what do you expect from your manager?</p><p>grow path</p><h2 id="BQ-question-6"><a href="#BQ-question-6" class="headerlink" title="BQ question 6"></a>BQ question 6</h2><p>Please tell me one of the most challenging projects you have accomplished.</p><p>Why is it challenging？</p><ol><li>Technical </li><li>Human resource </li><li>Operational complexity/ cost</li><li>Novelty</li><li>Time constraints</li></ol><p>How did you solve it?</p><p>How did you evaluate the results? Scope/Impact</p><blockquote><p>择高处立，就平处坐，向宽处行；立上等志，行中等事，享下等福。</p></blockquote>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;大二下学期：学控制，以Arduino为主，可能学不完，学不透，暑假继续&lt;/p&gt;
-&lt;p&gt;大三上学期：转去学机器人学（Matlab），也算是为之后去参加数模美赛做基础&lt;/p&gt;
-&lt;p&gt;大三下学期：如果有精力可以去学Linux，ROS&lt;/p&gt;
-&lt;p&gt;大四：Linux，ROS，Pyt
+        &lt;blockquote&gt;
+&lt;p&gt;Always put yourself in other people’s shoes. 换位思考&lt;/p&gt;
+&lt;p&gt;Critical thinking 任何事情并不是非黑即白&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;BQ-question
       
     
     </summary>
     
-      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="学习笔记" scheme="https://www.qianhongbo.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="目标" scheme="https://www.qianhongbo.top/tags/%E7%9B%AE%E6%A0%87/"/>
+      <category term="找工作" scheme="https://www.qianhongbo.com/tags/%E6%89%BE%E5%B7%A5%E4%BD%9C/"/>
     
   </entry>
   
   <entry>
-    <title>专业导论课最后一节个人认为比较有价值内容整理</title>
-    <link href="https://www.qianhongbo.top/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/%E4%B8%93%E4%B8%9A%E5%AF%BC%E8%AE%BA%E8%AF%BE%E6%9C%80%E5%90%8E%E4%B8%80%E8%8A%82%E4%B8%AA%E4%BA%BA%E8%AE%A4%E4%B8%BA%E6%AF%94%E8%BE%83%E6%9C%89%E4%BB%B7%E5%80%BC%E5%86%85%E5%AE%B9%E6%95%B4%E7%90%86/"/>
-    <id>https://www.qianhongbo.top/华科机械学习资料分享/专业导论课最后一节个人认为比较有价值内容整理/</id>
-    <published>2019-06-14T04:07:11.000Z</published>
-    <updated>2019-06-14T04:39:54.000Z</updated>
+    <title>托福备考指北</title>
+    <link href="https://www.qianhongbo.com/%E6%89%98%E7%A6%8F%E5%A4%87%E8%80%83%E6%8C%87%E5%8C%97.html"/>
+    <id>https://www.qianhongbo.com/托福备考指北.html</id>
+    <published>2020-11-20T14:36:41.000Z</published>
+    <updated>2021-04-12T13:21:12.646Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="机械工程伦理"><a href="#机械工程伦理" class="headerlink" title="机械工程伦理"></a>机械工程伦理</h2><h3 id="问问自己："><a href="#问问自己：" class="headerlink" title="问问自己："></a>问问自己：</h3><p>内心世界?</p><p>存在的意义?</p><p>为何要多一点形而上?</p><p>你的价值感?</p><p>你的技术创造的欲求?</p><p>技术工作者/工程师的责任?</p><p>你对未来技术的感觉?</p><h2 id="知识、能力与素质的区别和联系"><a href="#知识、能力与素质的区别和联系" class="headerlink" title="知识、能力与素质的区别和联系"></a>知识、能力与素质的区别和联系</h2><div class="table-container"><table><thead><tr><th style="text-align:left"></th><th style="text-align:center">核心</th><th style="text-align:center">t特点</th></tr></thead><tbody><tr><td style="text-align:left">知识</td><td style="text-align:center">人类认识的成果</td><td style="text-align:center">形成能力，素质的基础</td></tr><tr><td style="text-align:left">能力</td><td style="text-align:center">完成一定活动的本领</td><td style="text-align:center">对知识的运用，是知识发挥作用的实践条件，具“外显性”</td></tr><tr><td style="text-align:left">素养</td><td style="text-align:center">基本品质或基础条件</td><td style="text-align:center">人在活动过程中所塑造成的内在升华，具“内凝性”</td></tr></tbody></table></div><h2 id="专业教育组成"><a href="#专业教育组成" class="headerlink" title="专业教育组成"></a>专业教育组成</h2><p>数学类和自然科学类总计最少为450学时</p><p>工程科学类、工程设计与实践类两者总计最少1000学时</p><p>人文和社会科学不少于400学时</p><h2 id="机械专业教育知识体系包含如下5个知识领域"><a href="#机械专业教育知识体系包含如下5个知识领域" class="headerlink" title="机械专业教育知识体系包含如下5个知识领域"></a>机械专业教育知识体系包含如下5个知识领域</h2><ol><li>机械设计的原理与方法</li><li>机械制造工程原理与技术</li><li>机械系统中的传动和控制</li><li>计算机应用技术</li><li>热流体</li></ol><h2 id="中国加入《华盛顿协议》"><a href="#中国加入《华盛顿协议》" class="headerlink" title="中国加入《华盛顿协议》"></a>中国加入《华盛顿协议》</h2><p>国内本科生获得的文凭，在国际上都会被认可</p><h2 id="企业对毕业生能力的评价"><a href="#企业对毕业生能力的评价" class="headerlink" title="企业对毕业生能力的评价"></a>企业对毕业生能力的评价</h2><ol><li>独立性强、思路开阔、时尚;</li><li>知识面广;</li><li>不够踏实、团队协作意识弱;</li><li>不能承受较大压力,工作责任心、事业心弱,急功近利;</li><li>熟悉、胜任本职工作需要的时间较长,须在企业工作3-4年左右才能完全胜任工作。</li></ol><h2 id="企业对毕业生能力的期待"><a href="#企业对毕业生能力的期待" class="headerlink" title="企业对毕业生能力的期待"></a>企业对毕业生能力的期待</h2><ol><li>除专业能力外,最基本的要求是踏实、勤奋、敬业、忠诚、合作;</li><li>感兴趣的主要不是学习成绩,更注重处理问题的能力、解决问题的能力以及工作中的综合性能</li><li>很看重学生的整体素质和品德.</li></ol>]]></content>
+    <content type="html"><![CDATA[<h2 id="成绩"><a href="#成绩" class="headerlink" title="成绩"></a>成绩</h2><p>说来惭愧，考了3年托福，一共四次，最终还是在临近申请前的不到一个月考出的分，而且分数也只是刚刚过百（见下图），尽管最终成绩很低，但我也有一些经验和心得与各位分享，当然，也会有一些我认为比较好的学习资源通过百度云的方式供大家学习。</p><p><img src="https://tvax3.sinaimg.cn/large/006BuM4Jly1gkw0pe0b9pj30r70b8q5w.jpg" alt="TOEFLGRADE"></p><h2 id="学习顺序与学习时间"><a href="#学习顺序与学习时间" class="headerlink" title="学习顺序与学习时间"></a>学习顺序与学习时间</h2><p>对于理工科学生，强烈建议先学习GRE。理由有以下几点：</p><ol><li>GRE的数学对于理工科学生难度不高，不需要太多准备；</li><li>GRE的verbal部分以背单词为主，这部分单词并不需要托福单词为基础，如果这部分单词搞定了，学托福难度会明显降低不少；</li><li>GRE提分较快，只要刷题就会看到成效，不存在原地踏步的情况，适合初期准备。</li></ol><p>但无论是托福和GRE我的建议都是利用暑假、寒假大块时间准备，切忌将学习英语的时间与上课/实习等杂糅在一起，这样不但英语能力不会很快见效，而且还会影响课内的学习成绩。总之用一个1-2个月的空闲时间全力学习英语之后考试一定是最高效的。</p><h2 id="托福单词"><a href="#托福单词" class="headerlink" title="托福单词"></a>托福单词</h2><p>回归到托福学习。学习英语无论怎样最重要的还是背单词，单词积累的到位了，看文章听听力等自然得心应手，我比较明显的体会是在我单词掌握不扎实的时候看托福阅读都是不知所云的，仿佛在看一段加了密的文字，但在我学习GRE后，单词量得到了较大的提升，看托福阅读速度明显加快，读了一遍后内容也达到了其义自见的程度（再次说明先学GRE的好处），但不能忽视的是，很多GRE的单词书并不涵盖托福需要掌握的重点词汇，更不能轻视的是很多重要的四六级词汇，它们既不会出现在托福单词书中也不会出现在GRE单词书中，但它们的出现频率却惊人的高，这些单词一定要及时弥补！</p><p>分享两个比较好的单词书（pdf），提取码见评论区：</p><p><a href="https://pan.baidu.com/s/1cR1FpD2a8BIvRQCyUYYsYg" target="_blank" rel="noopener">托福救命800词&amp;四六级救命800词</a></p><p><a href="https://pan.baidu.com/s/11h-2epNIy0UFbNkKuLa_ug" target="_blank" rel="noopener">7天搞定托福单词</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;机械工程伦理&quot;&gt;&lt;a href=&quot;#机械工程伦理&quot; class=&quot;headerlink&quot; title=&quot;机械工程伦理&quot;&gt;&lt;/a&gt;机械工程伦理&lt;/h2&gt;&lt;h3 id=&quot;问问自己：&quot;&gt;&lt;a href=&quot;#问问自己：&quot; class=&quot;headerlink&quot; title=
+        &lt;h2 id=&quot;成绩&quot;&gt;&lt;a href=&quot;#成绩&quot; class=&quot;headerlink&quot; title=&quot;成绩&quot;&gt;&lt;/a&gt;成绩&lt;/h2&gt;&lt;p&gt;说来惭愧，考了3年托福，一共四次，最终还是在临近申请前的不到一个月考出的分，而且分数也只是刚刚过百（见下图），尽管最终成绩很低，但我也有一些
       
     
     </summary>
     
-      <category term="华科机械学习资料分享" scheme="https://www.qianhongbo.top/categories/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/"/>
+      <category term="出国经验分享" scheme="https://www.qianhongbo.com/categories/%E5%87%BA%E5%9B%BD%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/"/>
     
+    
+      <category term="托福" scheme="https://www.qianhongbo.com/tags/%E6%89%98%E7%A6%8F/"/>
     
   </entry>
   
   <entry>
-    <title>关于项目的几个想法</title>
-    <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/%E5%85%B3%E4%BA%8E%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%87%A0%E4%B8%AA%E6%83%B3%E6%B3%95/"/>
-    <id>https://www.qianhongbo.top/随笔/关于项目的几个想法/</id>
-    <published>2019-06-13T12:08:37.000Z</published>
-    <updated>2019-06-26T01:10:18.000Z</updated>
+    <title>希望所有的烦恼都能随风而去</title>
+    <link href="https://www.qianhongbo.com/%E7%94%9F%E6%97%A0%E6%89%80%E6%81%AF.html"/>
+    <id>https://www.qianhongbo.com/生无所息.html</id>
+    <published>2020-10-24T14:27:33.000Z</published>
+    <updated>2020-10-27T13:16:31.898Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="关于项目的几个想法"><a href="#关于项目的几个想法" class="headerlink" title="关于项目的几个想法"></a>关于项目的几个想法</h1><h2 id="手机app："><a href="#手机app：" class="headerlink" title="手机app："></a>手机app：</h2><p>百词斩手部控制器</p><p>备忘录锁屏提醒</p><h2 id="实物："><a href="#实物：" class="headerlink" title="实物："></a>实物：</h2><p>AGV跟随小车：用来背书包，也可背在身上</p><p>可折叠快递柜</p><p>自动洗头机器人</p>]]></content>
+    <content type="html"><![CDATA[<p>该经历的总要经历，想躲也躲不过。</p><p>该坚持的一定要坚持，坚持下去准没错。</p><p>该放手的尽快放手，省着被折磨。</p><p>最近很喜欢听周深的《无限》，可惜网易云音乐的外链无法分享。</p><p>“当风吹来，我会回来”</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;关于项目的几个想法&quot;&gt;&lt;a href=&quot;#关于项目的几个想法&quot; class=&quot;headerlink&quot; title=&quot;关于项目的几个想法&quot;&gt;&lt;/a&gt;关于项目的几个想法&lt;/h1&gt;&lt;h2 id=&quot;手机app：&quot;&gt;&lt;a href=&quot;#手机app：&quot; class=&quot;head
-      
-    
-    </summary>
-    
-      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="目标" scheme="https://www.qianhongbo.top/tags/%E7%9B%AE%E6%A0%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ROS入门</title>
-    <link href="https://www.qianhongbo.top/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/ROS%E5%85%A5%E9%97%A8/"/>
-    <id>https://www.qianhongbo.top/华科机械学习资料分享/ROS入门/</id>
-    <published>2019-06-13T10:29:31.000Z</published>
-    <updated>2019-07-08T09:21:20.465Z</updated>
-    
-    <content type="html"><![CDATA[<p>鸟哥私房菜1 2 3章作为了解，第4 5 6章随书操作一遍，这样大家对Linux系统的基本操作会有一个大致的认识。注意，鸟哥书中系统与我们不同，因此不要太纠结于必须每一步结果都与书中一样。另外，遇到问题的话，把问题复制下来直接百度，绝大多数问题是有解决方法的。</p><p>ROS_Robot_Programming_CN电子书1、2章粗略浏览，3~7章重点学习，后续章节以后再说。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;鸟哥私房菜1 2 3章作为了解，第4 5 6章随书操作一遍，这样大家对Linux系统的基本操作会有一个大致的认识。注意，鸟哥书中系统与我们不同，因此不要太纠结于必须每一步结果都与书中一样。另外，遇到问题的话，把问题复制下来直接百度，绝大多数问题是有解决方法的。&lt;/p&gt;
-&lt;p
-      
-    
-    </summary>
-    
-      <category term="华科机械学习资料分享" scheme="https://www.qianhongbo.top/categories/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Laplace拉氏变换公式表</title>
-    <link href="https://www.qianhongbo.top/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Laplace%E6%8B%89%E6%B0%8F%E5%8F%98%E6%8D%A2%E5%85%AC%E5%BC%8F%E8%A1%A8/"/>
-    <id>https://www.qianhongbo.top/学习笔记/Laplace拉氏变换公式表/</id>
-    <published>2019-06-13T09:41:02.000Z</published>
-    <updated>2019-06-13T09:51:12.000Z</updated>
-    
-    <content type="html"><![CDATA[<div class="row">    <embed src="http://pso1yp87m.bkt.clouddn.com/Laplace%E6%8B%89%E6%B0%8F%E5%8F%98%E6%8D%A2%E5%85%AC%E5%BC%8F%E8%A1%A8.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        
-
-	&lt;div class=&quot;row&quot;&gt;
-    &lt;embed src=&quot;http://pso1yp87m.bkt.clouddn.com/Laplace%E6%8B%89%E6%B0%8F%E5%8F%98%E6%8D%A2%E5%85%AC%E5%BC%8F%E8%A1%A8
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="https://www.qianhongbo.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Laplace" scheme="https://www.qianhongbo.top/tags/Laplace/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我在大学毕业前的愿望和目标</title>
-    <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/%E6%88%91%E5%9C%A8%E5%A4%A7%E5%AD%A6%E6%AF%95%E4%B8%9A%E5%89%8D%E7%9A%84%E6%84%BF%E6%9C%9B%E5%92%8C%E7%9B%AE%E6%A0%87/"/>
-    <id>https://www.qianhongbo.top/随笔/我在大学毕业前的愿望和目标/</id>
-    <published>2019-06-13T00:54:21.000Z</published>
-    <updated>2019-07-31T09:44:10.088Z</updated>
-    
-    <content type="html"><![CDATA[<ul><li>[x]   建一个自己的博客</li><li>[ ]   毕业季去一次云南，玩很久的那种</li><li>[ ]   在b站发一个点击量上千的视频</li><li>[ ]   自己的博客每天有人看</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;ul&gt;
-&lt;li&gt;[x]   建一个自己的博客&lt;/li&gt;
-&lt;li&gt;[ ]   毕业季去一次云南，玩很久的那种&lt;/li&gt;
-&lt;li&gt;[ ]   在b站发一个点击量上千的视频&lt;/li&gt;
-&lt;li&gt;[ ]   自己的博客每天有人看&lt;/li&gt;
-&lt;/ul&gt;
+        &lt;p&gt;该经历的总要经历，想躲也躲不过。&lt;/p&gt;
+&lt;p&gt;该坚持的一定要坚持，坚持下去准没错。&lt;/p&gt;
+&lt;p&gt;该放手的尽快放手，省着被折磨。&lt;/p&gt;
+&lt;p&gt;最近很喜欢听周深的《无限》，可惜网易云音乐的外链无法分享。&lt;/p&gt;
+&lt;p&gt;“当风吹来，我会回来”&lt;/p&gt;
 
       
     
     </summary>
     
-      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://www.qianhongbo.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="目标" scheme="https://www.qianhongbo.top/tags/%E7%9B%AE%E6%A0%87/"/>
+      <category term="目标" scheme="https://www.qianhongbo.com/tags/%E7%9B%AE%E6%A0%87/"/>
     
   </entry>
   
   <entry>
-    <title>华科机械学院大二下学习资料分享</title>
-    <link href="https://www.qianhongbo.top/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%A4%A7%E4%BA%8C%E4%B8%8B%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"/>
-    <id>https://www.qianhongbo.top/华科机械学习资料分享/华科机械大二下学习资料/</id>
-    <published>2019-06-11T13:40:27.000Z</published>
-    <updated>2019-06-11T13:47:02.000Z</updated>
+    <title>文献如何精读</title>
+    <link href="https://www.qianhongbo.com/%E6%96%87%E7%8C%AE%E5%A6%82%E4%BD%95%E7%B2%BE%E8%AF%BB.html"/>
+    <id>https://www.qianhongbo.com/文献如何精读.html</id>
+    <published>2020-05-13T11:40:25.000Z</published>
+    <updated>2020-09-13T13:21:37.659Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="链接：https://pan.baidu.com/s/1dHzxPkSfFQhlM11DN1waoA">各科目课件百度网盘链接</a></p><p>提取码：y8iy </p>]]></content>
+    <content type="html"><![CDATA[<h2 id="第一遍：需5-10分钟"><a href="#第一遍：需5-10分钟" class="headerlink" title="第一遍：需5-10分钟"></a>第一遍：需5-10分钟</h2><p>快速浏览整篇论文，对其有个大概的了解。你也可以自己决定是否需要进一步阅读。该阶段分下面的几个步骤组成：</p><ol><li>仔细阅读题目、摘要和引言；</li><li>阅读标题和小节标题，标题下的内容不必看。</li><li>阅读结论</li><li>看看参考文献，也许有你读过的论文。</li></ol><p>在第一遍完成后，你应该可以回答以下五个问题：</p><ol><li>类别：这篇论文是什么类型？测试类？对现有系统进行分析的？对原型系统进行描述的？</li><li>内容：在你读过的论文中与其相关的有哪些？使用哪些理论基础来分析文章？</li><li>正确性：结论是否有效？</li><li>创新：该论文的主要创新是什么？</li><li>清晰度：该论文是否条理清晰？</li></ol><p>回答出以上问题，你便清楚是否有必要继续阅读该论文，这也许与你的兴趣或研究领域有关，也可能是作者的结论不正确使之没必要再继续阅读。这也再次提醒你，在你写论文的时候，希望有人看你的论文，那么简明扼要的标题及摘要是非常重要的，无论是读者还是审稿人在用五分钟过一遍你的论文后，看不到文章的亮点也就对你的论文失去读下去的兴趣了。</p><h2 id="第二遍：需1小时左右"><a href="#第二遍：需1小时左右" class="headerlink" title="第二遍：需1小时左右"></a>第二遍：需1小时左右</h2><p>第二遍要仔细阅读论文，但忽略掉诸如证明之类的细节。 阅读过程中做好笔记记录重点，或在论文空白处标注出来。</p><ol><li>仔细阅读论文中的数字、图表和其他插图。 尤其要注意图表： 轴标签是否正确？ 标示的结果是否有误差线？ 这些常见的错误能区分出该论文是粗制滥造的还是经过尽心做研究后的结果。</li><li>为了了解更多关于该论文的背景，记得要标记未读过的参考文献供进一步阅读。通过第二步的阅读，你应该能够掌握论文的主要内容。你也应该可以把论文的主旨及论据总结给别人。对于你感兴趣的论文，读到这个程度就可以了，但是对于那些在你研究领域内的论文来时，还远远不够。</li></ol><p>有些情况你在读到第二步结束时仍然难以理解论文，可能的原因是主旨对你来说是全新的，还有不熟悉的术语和缩略词。也可能论文作者使用您不明白的论据或实验技术，导致大部分论文内容无法理解。除此之外，有些论文可能写得很差，也导致你无法理解该篇论文。亦或者可能是深夜，你很累了。如果是这样，你可以选择：（1）把论文放到一边，期望着在你走向事业成功的路上不需要理解它，（b）在了解了相关背景知识后，过段时间再回头读，或者（c）坚持不懈继续阅读。</p><h2 id="第三遍：数小时"><a href="#第三遍：数小时" class="headerlink" title="第三遍：数小时"></a>第三遍：数小时</h2><p>要充分了解一篇论文，尤其你是审稿人时，需要进行第三步。第三步的关键是：在脑中勾勒出整篇论文，作出与作者相同的假设，重新创作。通过将这种重新创作与实际文章进行比较，您可以轻松地验证出论文的创新之处，也可以轻松找出一些不易察觉的缺陷和假设。</p><p>这一步需要读者精读论文，完成这一步读者便可验证论文中每一个假设是否成立，并且同时思考如果自己是本文作者的话会如何去体现自己的idea ，这种假设自己是作者的方法可以加深你对该论文论据及表述技巧上的理解，并且能从中学到这些技巧。在完成第三步的过程中，你应该时刻留意对于未来研究工作的新想法。</p><p>第三步是最耗费时间的，对于初学者来说可能要数小时，即便是有经验的学者也至少要一两个小时。当完成这一步后，你应该可以在脑海中重现构造论文的整个架构，同时能确定论文中哪些是好的，哪些是一般的论点。特别地，你也应该能明确指出论文中不清晰的假设、漏掉引用的相关工作以及论文中试验和分析的手段潜在的缺点。</p><blockquote><p>以上内容参考<a href="https://www.zhihu.com/question/50973300/answer/737010046" target="_blank" rel="noopener">知乎文章</a></p></blockquote><p>延伸阅读：</p><p><a href="https://www.cs.jhu.edu/~jason/advice/how-to-read-a-paper.html" target="_blank" rel="noopener">How to read a technical paper (JHU)</a></p><p><a href="https://towardsdatascience.com/guide-to-reading-academic-research-papers-c69c21619de6" target="_blank" rel="noopener">How to read an academic paper</a></p><p><a href="https://www.eecs.harvard.edu/~michaelm/postscripts/ReadPaper.pdf" target="_blank" rel="noopener">Harvard EECS research guide</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;a href=&quot;链接：https://pan.baidu.com/s/1dHzxPkSfFQhlM11DN1waoA&quot;&gt;各科目课件百度网盘链接&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;提取码：y8iy &lt;/p&gt;
+        &lt;h2 id=&quot;第一遍：需5-10分钟&quot;&gt;&lt;a href=&quot;#第一遍：需5-10分钟&quot; class=&quot;headerlink&quot; title=&quot;第一遍：需5-10分钟&quot;&gt;&lt;/a&gt;第一遍：需5-10分钟&lt;/h2&gt;&lt;p&gt;快速浏览整篇论文，对其有个大概的了解。你也可以自己决定是否需要进一步
+      
+    
+    </summary>
+    
+      <category term="远程科研" scheme="https://www.qianhongbo.com/categories/%E8%BF%9C%E7%A8%8B%E7%A7%91%E7%A0%94/"/>
+    
+    
+      <category term="阅读文献" scheme="https://www.qianhongbo.com/tags/%E9%98%85%E8%AF%BB%E6%96%87%E7%8C%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>注册了新域名啦！</title>
+    <link href="https://www.qianhongbo.com/%E6%B3%A8%E5%86%8C%E4%BA%86%E6%96%B0%E5%9F%9F%E5%90%8D%E5%95%A6%EF%BC%81.html"/>
+    <id>https://www.qianhongbo.com/注册了新域名啦！.html</id>
+    <published>2020-05-10T16:18:34.000Z</published>
+    <updated>2020-09-13T13:21:37.660Z</updated>
+    
+    <content type="html"><![CDATA[ <font size="3" face="楷体"> 一年时间说长也长说短也短，去年的5月份我注册了"www.qianhongbo.top"这个域名，从零开始搭建自己的博客，那段时间很辛苦却也学到了不少，最近很少更新博客了，也正值之前的域名一年期限到期，注册了一个新的域名"www.qianhongbo.com"，之前没有注册.com域名的原因是不确定自己会不会坚持做下去，就没选那么贵的，选了一个便宜的，既然我已经坚持了这么久，而且做得还算可以，就注册一个更专业的.com吧！<p>然而比较可惜的是注册了新域名后，站点底部的记录访问人数和人次的记录清零了，也就是一切都要从头再来，可惜！</p><p>之后多写写博客吧！<br></p></font><p></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+         &lt;font size=&quot;3&quot; face=&quot;楷体&quot;&gt;
+ 一年时间说长也长说短也短，去年的5月份我注册了&quot;www.qianhongbo.top&quot;这个域名，从零开始搭建自己的博客，那段时间很辛苦却也学到了不少，最近很少更新博客了，也正值之前的域名一年期限到期，注册了一个新的域名&quot;ww
+      
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://www.qianhongbo.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="Diary" scheme="https://www.qianhongbo.com/tags/Diary/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Matlab机器人工具箱（Robotic Toolbox）仿真双六轴机械臂对侧打磨加工</title>
+    <link href="https://www.qianhongbo.com/Matlab%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%B7%A5%E5%85%B7%E7%AE%B1%EF%BC%88Robotic%20Toolbox%EF%BC%89%E4%BB%BF%E7%9C%9F%E5%8F%8C%E5%85%AD%E8%BD%B4%E6%9C%BA%E6%A2%B0%E8%87%82%E5%AF%B9%E4%BE%A7%E6%89%93%E7%A3%A8%E5%8A%A0%E5%B7%A5.html"/>
+    <id>https://www.qianhongbo.com/Matlab机器人工具箱（Robotic Toolbox）仿真双六轴机械臂对侧打磨加工.html</id>
+    <published>2020-05-10T13:36:49.000Z</published>
+    <updated>2020-09-13T13:21:37.653Z</updated>
+    
+    <content type="html"><![CDATA[<p>本任务为完成大三下学期机器人学课程讨论是所做<br>实际上也是在之前做的双机仿真的基础上进行了修改。</p><p>最终结果如下：</p><p><a href="https://www.bilibili.com/video/BV1t541147vs/" target="_blank" rel="noopener">B站视频地址</a></p><iframe src="//player.bilibili.com/player.html?aid=455552595&bvid=BV1t541147vs&cid=189565321&page=1" scrolling="no" border="0" frameborder="no" width="95%" height="600"> </iframe><blockquote><p>使用的机器人工具箱版本为10.3.1版本</p><p>修改了工具箱自带的函数mdl_puma560，要使用代码需要在函数开头加上function p560 = mdl_puma560，结尾加上end以实现调用功能。</p></blockquote><p>代码：</p><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%%</span></span><br><span class="line">close all</span><br><span class="line">clear;</span><br><span class="line">d = <span class="number">0.2</span>;</span><br><span class="line"><span class="built_in">plot3</span>([<span class="number">0</span> <span class="number">0</span>],[<span class="number">-1</span> <span class="number">1</span>],[<span class="number">0</span> <span class="number">0</span>])</span><br><span class="line">p560_1 = mdl_puma560;</span><br><span class="line">p560_1.name = <span class="string">'puma1'</span>;</span><br><span class="line">p560_1.base = [<span class="number">-0.8</span> <span class="number">0</span> <span class="number">0</span>];</span><br><span class="line">p560_2 = mdl_puma560;</span><br><span class="line">p560_2.name = <span class="string">'puma2'</span>;</span><br><span class="line">p560_2.base = [<span class="number">0.8</span> <span class="number">0</span> <span class="number">0</span>];</span><br><span class="line">t=<span class="number">0</span>:<span class="number">0.05</span>:<span class="number">2</span>;</span><br><span class="line"><span class="comment">%计算puma1机械臂移动到指定点，并将z轴指向朝前的齐次变换矩阵</span></span><br><span class="line">T1 = transl(<span class="number">-0.4</span>,<span class="number">0.2</span>,<span class="number">0.1</span>);</span><br><span class="line">T2 = transl(<span class="number">0</span>-d,<span class="number">-0.4</span>,<span class="number">0</span>)*troty(<span class="number">90</span>);</span><br><span class="line"><span class="comment">%计算puma2机械臂移动到指定点，z轴指向朝后的齐次变换矩阵</span></span><br><span class="line">T3 = transl(<span class="number">0.3</span>,<span class="number">-0.3</span>,<span class="number">0</span>)*troty(<span class="number">-90</span>);</span><br><span class="line">T4 = transl(<span class="number">0</span>+d,<span class="number">-0.4</span>,<span class="number">0</span>)*troty(<span class="number">-90</span>);</span><br><span class="line"><span class="comment">%利用ctraj函数让两个机械臂运动到指定点</span></span><br><span class="line">m1=ctraj(T1,T2,<span class="built_in">length</span>(t)/<span class="number">2</span>);</span><br><span class="line">n1=ctraj(T3,T4,<span class="built_in">length</span>(t)/<span class="number">2</span>);</span><br><span class="line">q1=p560_1.ikine6s(m1);</span><br><span class="line">s1=p560_2.ikine6s(n1);</span><br><span class="line"><span class="comment">%移动到指定点后沿直线移动</span></span><br><span class="line">T5 = transl(<span class="number">0</span>-d,<span class="number">0.5</span>,<span class="number">0</span>)*troty(<span class="number">90</span>);<span class="comment">%puma1沿直线移动</span></span><br><span class="line">T6 = transl(<span class="number">0</span>+d,<span class="number">0.5</span>,<span class="number">0</span>)*troty(<span class="number">-90</span>);<span class="comment">%puma2沿直线移动                                                         </span></span><br><span class="line">m2=ctraj(T2,T5,<span class="built_in">length</span>(t));</span><br><span class="line">n2=ctraj(T4,T6,<span class="built_in">length</span>(t));</span><br><span class="line">y1=p560_1.ikine6s(m2);</span><br><span class="line">f1=p560_2.ikine6s(n2);</span><br><span class="line"><span class="comment">%重复</span></span><br><span class="line">T7 = transl(<span class="number">0</span>-d,<span class="number">0.5</span>,<span class="number">0.2</span>)*troty(<span class="number">90</span>);</span><br><span class="line">T8 = transl(<span class="number">0</span>+d,<span class="number">0.5</span>,<span class="number">0.2</span>)*troty(<span class="number">-90</span>); </span><br><span class="line">m3=ctraj(T5,T7,<span class="built_in">length</span>(t)/<span class="number">2</span>);</span><br><span class="line">n3=ctraj(T6,T8,<span class="built_in">length</span>(t)/<span class="number">2</span>);</span><br><span class="line">q2=p560_1.ikine6s(m3);</span><br><span class="line">s2=p560_2.ikine6s(n3);</span><br><span class="line">T9 = transl(<span class="number">0</span>-d,<span class="number">-0.4</span>,<span class="number">0.2</span>)*troty(<span class="number">90</span>);</span><br><span class="line">T10 = transl(<span class="number">0</span>+d,<span class="number">-0.4</span>,<span class="number">0.2</span>)*troty(<span class="number">-90</span>);</span><br><span class="line">m4=ctraj(T7,T9,<span class="built_in">length</span>(t));</span><br><span class="line">n4=ctraj(T8,T10,<span class="built_in">length</span>(t));</span><br><span class="line">y2=p560_1.ikine6s(m4);</span><br><span class="line">f2=p560_2.ikine6s(n4);</span><br><span class="line"><span class="comment">%画图</span></span><br><span class="line">p560_1.<span class="built_in">plot</span>(q1);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">p560_2.<span class="built_in">plot</span>(s1);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">p560_1.<span class="built_in">plot</span>(y1);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">p560_2.<span class="built_in">plot</span>(f1);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line"><span class="built_in">plot3</span>([<span class="number">0</span> <span class="number">0</span>],[<span class="number">-1</span> <span class="number">1</span>],[<span class="number">0.2</span> <span class="number">0.2</span>])</span><br><span class="line">p560_1.<span class="built_in">plot</span>(q2);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">p560_2.<span class="built_in">plot</span>(s2);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">p560_1.<span class="built_in">plot</span>(y2);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">p560_2.<span class="built_in">plot</span>(f2);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br></pre></td></tr></table></figure><p>由于Matlab无法实现双线程编程，所以并不是同步运动，所以考虑用循环的方式来实现“同步运动”，但本质上仍然不同步。</p><p>代码如下：</p><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%%</span></span><br><span class="line">close all</span><br><span class="line">clear;</span><br><span class="line">d = <span class="number">0.2</span>;</span><br><span class="line"><span class="built_in">plot3</span>([<span class="number">0</span> <span class="number">0</span>],[<span class="number">-1</span> <span class="number">1</span>],[<span class="number">0</span> <span class="number">0</span>])</span><br><span class="line">p560_1 = mdl_puma560;</span><br><span class="line">p560_1.name = <span class="string">'puma1'</span>;</span><br><span class="line">p560_1.base = [<span class="number">-0.8</span> <span class="number">0</span> <span class="number">0</span>];</span><br><span class="line">p560_2 = mdl_puma560;</span><br><span class="line">p560_2.name = <span class="string">'puma2'</span>;</span><br><span class="line">p560_2.base = [<span class="number">0.8</span> <span class="number">0</span> <span class="number">0</span>];</span><br><span class="line">t=<span class="number">0</span>:<span class="number">0.05</span>:<span class="number">2</span>;</span><br><span class="line"><span class="comment">%计算puma1机械臂移动到指定点，并将z轴指向朝下的齐次变换矩阵</span></span><br><span class="line">T1 = transl(<span class="number">-0.4</span>,<span class="number">0.2</span>,<span class="number">0.1</span>);</span><br><span class="line">T2 = transl(<span class="number">0</span>-d,<span class="number">-0.4</span>,<span class="number">0</span>)*troty(<span class="number">90</span>);</span><br><span class="line"><span class="comment">%计算puma2机械臂移动到指定点，z轴指向朝上的齐次变换矩阵</span></span><br><span class="line">T3 = transl(<span class="number">0.3</span>,<span class="number">-0.3</span>,<span class="number">0</span>)*troty(<span class="number">-90</span>);</span><br><span class="line">T4 = transl(<span class="number">0</span>+d,<span class="number">-0.4</span>,<span class="number">0</span>)*troty(<span class="number">-90</span>);</span><br><span class="line"><span class="comment">%利用jtraj函数让两个机械臂运动到指定点</span></span><br><span class="line">m1=ctraj(T1,T2,<span class="built_in">length</span>(t)/<span class="number">2</span>);</span><br><span class="line">n1=ctraj(T3,T4,<span class="built_in">length</span>(t)/<span class="number">2</span>);</span><br><span class="line">q1=p560_1.ikine6s(m1);</span><br><span class="line">s1=p560_2.ikine6s(n1);</span><br><span class="line"><span class="comment">%移动到指定点后沿直线移动</span></span><br><span class="line">T5 = transl(<span class="number">0</span>-d,<span class="number">0.5</span>,<span class="number">0</span>)*troty(<span class="number">90</span>);<span class="comment">%puma1沿直线移动</span></span><br><span class="line">T6 = transl(<span class="number">0</span>+d,<span class="number">0.5</span>,<span class="number">0</span>)*troty(<span class="number">-90</span>);<span class="comment">%puma2沿直线移动                                                         </span></span><br><span class="line">m2=ctraj(T2,T5,<span class="built_in">length</span>(t));</span><br><span class="line">n2=ctraj(T4,T6,<span class="built_in">length</span>(t));</span><br><span class="line">y1=p560_1.ikine6s(m2);</span><br><span class="line">f1=p560_2.ikine6s(n2);</span><br><span class="line"><span class="comment">%重复</span></span><br><span class="line">T7 = transl(<span class="number">0</span>-d,<span class="number">0.5</span>,<span class="number">0.2</span>)*troty(<span class="number">90</span>);</span><br><span class="line">T8 = transl(<span class="number">0</span>+d,<span class="number">0.5</span>,<span class="number">0.2</span>)*troty(<span class="number">-90</span>); </span><br><span class="line">m3=ctraj(T5,T7,<span class="built_in">length</span>(t)/<span class="number">2</span>);</span><br><span class="line">n3=ctraj(T6,T8,<span class="built_in">length</span>(t)/<span class="number">2</span>);</span><br><span class="line">q2=p560_1.ikine6s(m3);</span><br><span class="line">s2=p560_2.ikine6s(n3);</span><br><span class="line">T9 = transl(<span class="number">0</span>-d,<span class="number">-0.4</span>,<span class="number">0.2</span>)*troty(<span class="number">90</span>);</span><br><span class="line">T10 = transl(<span class="number">0</span>+d,<span class="number">-0.4</span>,<span class="number">0.2</span>)*troty(<span class="number">-90</span>);</span><br><span class="line">m4=ctraj(T7,T9,<span class="built_in">length</span>(t));</span><br><span class="line">n4=ctraj(T8,T10,<span class="built_in">length</span>(t));</span><br><span class="line">y2=p560_1.ikine6s(m4);</span><br><span class="line">f2=p560_2.ikine6s(n4);</span><br><span class="line"><span class="comment">%画图</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="built_in">length</span>(t)/<span class="number">2</span></span><br><span class="line">p560_1.<span class="built_in">plot</span>(q1(<span class="built_in">i</span>,:));</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">p560_2.<span class="built_in">plot</span>(s1(<span class="built_in">i</span>,:));</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="built_in">length</span>(t)</span><br><span class="line">p560_1.<span class="built_in">plot</span>(y1(<span class="built_in">i</span>,:));</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">p560_2.<span class="built_in">plot</span>(f1(<span class="built_in">i</span>,:));</span><br><span class="line"><span class="built_in">hold</span> on</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="built_in">plot3</span>([<span class="number">0</span> <span class="number">0</span>],[<span class="number">-1</span> <span class="number">1</span>],[<span class="number">0.2</span> <span class="number">0.2</span>])</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="built_in">length</span>(t)/<span class="number">2</span></span><br><span class="line">p560_1.<span class="built_in">plot</span>(q2(<span class="built_in">i</span>,:));</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">p560_2.<span class="built_in">plot</span>(s2(<span class="built_in">i</span>,:));</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="built_in">length</span>(t)</span><br><span class="line">p560_1.<span class="built_in">plot</span>(y2(<span class="built_in">i</span>,:));</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">p560_2.<span class="built_in">plot</span>(f2(<span class="built_in">i</span>,:));</span><br><span class="line"><span class="built_in">hold</span> on</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;本任务为完成大三下学期机器人学课程讨论是所做&lt;br&gt;实际上也是在之前做的双机仿真的基础上进行了修改。&lt;/p&gt;
+&lt;p&gt;最终结果如下：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.bilibili.com/video/BV1t541147vs/&quot; target=&quot;_
+      
+    
+    </summary>
+    
+      <category term="机器人学" scheme="https://www.qianhongbo.com/categories/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6/"/>
+    
+    
+      <category term="Robotic Toolbox" scheme="https://www.qianhongbo.com/tags/Robotic-Toolbox/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linear Algebra by 3Blue1Brown</title>
+    <link href="https://www.qianhongbo.com/Linear%20Algebra%20by%203Blue1Brown.html"/>
+    <id>https://www.qianhongbo.com/Linear Algebra by 3Blue1Brown.html</id>
+    <published>2020-04-08T08:09:16.000Z</published>
+    <updated>2020-09-13T13:21:37.652Z</updated>
+    
+    <content type="html"><![CDATA[<p>B站视频链接：<a href="https://www.bilibili.com/video/BV1ys411472E/?p=5" target="_blank" rel="noopener">up主 3Blue1Brown</a></p><h1 id="线性变换"><a href="#线性变换" class="headerlink" title="线性变换"></a>线性变换</h1><p>个人认为是最核心的一个视频，也是我当时学线代的时候完全忽略掉的内容</p><ol><li>什么是线性变换？变换后仍是直线，并且原点位置不变。也即保持网格线平行且等距离分布。</li><li>记录下两个基向量的变化，就可以表示出所有向量的变化</li></ol><p><img src="//tvax2.sinaimg.cn/large/006BuM4Jly1gdmfxo7p84j31400p0dlc.jpg" alt="image-20200408161303007"></p><h1 id="矩阵乘法"><a href="#矩阵乘法" class="headerlink" title="矩阵乘法"></a>矩阵乘法</h1><h2 id="矩阵乘法的初衷"><a href="#矩阵乘法的初衷" class="headerlink" title="矩阵乘法的初衷"></a>矩阵乘法的初衷</h2><p><img src="//tva2.sinaimg.cn/large/006BuM4Jly1gdmfzkfpe7j31400p0jyj.jpg" alt="TIM截图20200408163212"></p><h2 id="利用上一节的知识，对基向量进行运算得到结果"><a href="#利用上一节的知识，对基向量进行运算得到结果" class="headerlink" title="利用上一节的知识，对基向量进行运算得到结果"></a>利用上一节的知识，对基向量进行运算得到结果</h2><p><img src="//tva4.sinaimg.cn/large/006BuM4Jly1gdmg1o2wqoj31400p078i.jpg" alt="TIM截图20200408163419"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;B站视频链接：&lt;a href=&quot;https://www.bilibili.com/video/BV1ys411472E/?p=5&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;up主 3Blue1Brown&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;线性变换&quot;&gt;&lt;a
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://www.qianhongbo.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Linear Algebra" scheme="https://www.qianhongbo.com/tags/Linear-Algebra/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何理解欧拉角中的pitch,roll,yaw</title>
+    <link href="https://www.qianhongbo.com/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E6%AC%A7%E6%8B%89%E8%A7%92%E4%B8%AD%E7%9A%84roll%EF%BC%8Cpitch%EF%BC%8Cyaw.html"/>
+    <id>https://www.qianhongbo.com/如何理解欧拉角中的roll，pitch，yaw.html</id>
+    <published>2020-03-15T01:44:19.000Z</published>
+    <updated>2020-09-13T13:21:37.658Z</updated>
+    
+    <content type="html"><![CDATA[<p>欧拉角也就是绕着固定轴x,y,z旋转</p><p>在资料中关于x,y,z和三个角度的方向和对应关系定义的并不是很明确，我认为可能是这个并没有一个严格的规定，但是pitch,roll,yaw三个角度的含义定义还是很明确的。具体定义如下：</p><h2 id="pitch"><a href="#pitch" class="headerlink" title="pitch"></a>pitch</h2><p>pitch在英文中的意思是倾斜，坠落的含义，因此就是以翅膀所在的直线为轴发生旋转</p><p><img src="//tva1.sinaimg.cn/large/006BuM4Jly1gcufkbno87g30dy0b87dz.gif" alt="pitch"></p><h2 id="roll"><a href="#roll" class="headerlink" title="roll"></a>roll</h2><p>roll在英文中的意思是翻滚，就是绕着机身所在的那个轴</p><p><img src="//tva2.sinaimg.cn/large/006BuM4Jly1gcuflbey7gg30e00bbdpp.gif" alt="roll"></p><h2 id="yaw"><a href="#yaw" class="headerlink" title="yaw"></a>yaw</h2><p>yaw在英文中是yaw是（火箭、飞机、宇宙飞船等）偏航的意思，也就是绕着重力方向为轴旋转</p><p><img src="//tvax4.sinaimg.cn/large/006BuM4Jly1gcuff4nhx5g30e00b7122.gif" alt="0_1303867644Dzds"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;欧拉角也就是绕着固定轴x,y,z旋转&lt;/p&gt;
+&lt;p&gt;在资料中关于x,y,z和三个角度的方向和对应关系定义的并不是很明确，我认为可能是这个并没有一个严格的规定，但是pitch,roll,yaw三个角度的含义定义还是很明确的。具体定义如下：&lt;/p&gt;
+&lt;h2 id=&quot;pitch&quot;
+      
+    
+    </summary>
+    
+      <category term="机器人学" scheme="https://www.qianhongbo.com/categories/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6/"/>
+    
+    
+      <category term="机器人学" scheme="https://www.qianhongbo.com/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Matlab机器人工具箱（Robotic Toolbox）</title>
+    <link href="https://www.qianhongbo.com/Matlab%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%B7%A5%E5%85%B7%E7%AE%B1.html"/>
+    <id>https://www.qianhongbo.com/Matlab机器人工具箱.html</id>
+    <published>2020-03-10T12:50:12.000Z</published>
+    <updated>2020-09-13T13:21:37.653Z</updated>
+    
+    <content type="html"><![CDATA[<p>Matlab机器人工具箱是我们在学习机器人学时候的一个非常好的工具，不但可以帮助我们计算，也可以做图形化的输出。</p><p>在此就不多谈安装问题，主要介绍各个函数的使用方法。</p><h2 id="启动机器人工具箱"><a href="#启动机器人工具箱" class="headerlink" title="启动机器人工具箱"></a>启动机器人工具箱</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">startup_rvc;</span><br></pre></td></tr></table></figure><h2 id="绕xyz轴的旋转变化矩阵"><a href="#绕xyz轴的旋转变化矩阵" class="headerlink" title="绕xyz轴的旋转变化矩阵"></a>绕xyz轴的旋转变化矩阵</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rotx(<span class="number">30</span>*<span class="built_in">pi</span>/<span class="number">180</span>) <span class="comment">%用弧度</span></span><br><span class="line">rotx(<span class="number">30</span>,<span class="string">'deg'</span>) <span class="comment">%用角度</span></span><br><span class="line">roty(<span class="number">30</span>,<span class="string">'deg'</span>)</span><br><span class="line">rotz(<span class="number">30</span>,<span class="string">'deg'</span>)</span><br></pre></td></tr></table></figure><h2 id="绕xyz轴旋转的齐次变换矩阵"><a href="#绕xyz轴旋转的齐次变换矩阵" class="headerlink" title="绕xyz轴旋转的齐次变换矩阵"></a>绕xyz轴旋转的齐次变换矩阵</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">trotx(<span class="number">30</span>*<span class="built_in">pi</span>/<span class="number">180</span>) <span class="comment">%用弧度</span></span><br><span class="line">trotx(<span class="number">30</span>,<span class="string">'deg'</span>) <span class="comment">%用角度</span></span><br><span class="line">troty(<span class="number">30</span>,<span class="string">'deg'</span>)</span><br><span class="line">trotz(<span class="number">30</span>,<span class="string">'deg'</span>)</span><br></pre></td></tr></table></figure><h2 id="平移齐次变换矩阵"><a href="#平移齐次变换矩阵" class="headerlink" title="平移齐次变换矩阵"></a>平移齐次变换矩阵</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">transl([<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>])</span><br></pre></td></tr></table></figure><h2 id="旋转变换的连续乘积"><a href="#旋转变换的连续乘积" class="headerlink" title="旋转变换的连续乘积"></a>旋转变换的连续乘积</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">trotx(<span class="number">30</span>,<span class="string">'deg'</span>)*troty(<span class="number">30</span>,<span class="string">'deg'</span>)*trotz(<span class="number">30</span>,<span class="string">'deg'</span>)</span><br></pre></td></tr></table></figure><h2 id="rpy角"><a href="#rpy角" class="headerlink" title="rpy角"></a>rpy角</h2><h3 id="旋转矩阵"><a href="#旋转矩阵" class="headerlink" title="旋转矩阵"></a>旋转矩阵</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">roll=<span class="number">10</span>*<span class="built_in">pi</span>/<span class="number">180</span>; pitch=<span class="number">20</span>*<span class="built_in">pi</span>/<span class="number">180</span>; yaw=<span class="number">30</span>*<span class="built_in">pi</span>/<span class="number">180</span>;</span><br><span class="line">rpy2r(roll,pitch,yaw)</span><br><span class="line">rpy2r(roll,pitch,yaw,<span class="string">'zyx'</span>)</span><br><span class="line">rpy2r(roll,pitch,yaw,<span class="string">'xyz'</span>)</span><br></pre></td></tr></table></figure><blockquote><p>需要说名的是，rpy2r这个函数在不同的工具箱版本的函数并不一样，使用的角度顺序发生了改变，具体内容可以看具体版本的rpy2r.m文件。</p></blockquote><p>在此附上机器人工具箱中关于各个参数option的定义，仅提供10版本</p><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> opt.order</span><br><span class="line">        <span class="keyword">case</span> &#123;<span class="string">'xyz'</span>, <span class="string">'arm'</span>&#125;</span><br><span class="line">            <span class="comment">% XYZ order</span></span><br><span class="line">            <span class="keyword">if</span> numrows(roll) == <span class="number">1</span></span><br><span class="line">                R = rotx(yaw) * roty(pitch) * rotz(roll);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                R = <span class="built_in">zeros</span>(<span class="number">3</span>,<span class="number">3</span>,numrows(roll));</span><br><span class="line">                <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:numrows(roll)</span><br><span class="line">                    R(:,:,<span class="built_in">i</span>) = rotx(yaw(<span class="built_in">i</span>)) * roty(pitch(<span class="built_in">i</span>)) * rotz(roll(<span class="built_in">i</span>));</span><br><span class="line">                <span class="keyword">end</span></span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">case</span> &#123;<span class="string">'zyx'</span>, <span class="string">'vehicle'</span>&#125;</span><br><span class="line">            <span class="comment">% ZYX order</span></span><br><span class="line">            <span class="keyword">if</span> numrows(roll) == <span class="number">1</span></span><br><span class="line">                R = rotz(yaw) * roty(pitch) * rotx(roll);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                R = <span class="built_in">zeros</span>(<span class="number">3</span>,<span class="number">3</span>,numrows(roll));</span><br><span class="line">                <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:numrows(roll)</span><br><span class="line">                    R(:,:,<span class="built_in">i</span>) = rotz(yaw(<span class="built_in">i</span>)) * roty(pitch(<span class="built_in">i</span>)) * rotx(roll(<span class="built_in">i</span>));</span><br><span class="line">                <span class="keyword">end</span></span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">            </span><br><span class="line">        <span class="keyword">case</span> &#123;<span class="string">'yxz'</span>, <span class="string">'camera'</span>&#125;</span><br><span class="line">            <span class="comment">% YXZ order</span></span><br><span class="line">            <span class="keyword">if</span> numrows(roll) == <span class="number">1</span></span><br><span class="line">                R = roty(yaw) * rotx(pitch) * rotz(roll);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                R = <span class="built_in">zeros</span>(<span class="number">3</span>,<span class="number">3</span>,numrows(roll));</span><br><span class="line">                <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:numrows(roll)</span><br><span class="line">                    R(:,:,<span class="built_in">i</span>) = roty(yaw(<span class="built_in">i</span>)) * rotx(pitch(<span class="built_in">i</span>)) * rotz(roll(<span class="built_in">i</span>));</span><br><span class="line">                <span class="keyword">end</span></span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><h3 id="检验"><a href="#检验" class="headerlink" title="检验"></a>检验</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rotx(yaw)*roty(pitch)*rotz(roll)</span><br><span class="line">rotz(roll)*roty(pitch)*rotx(yaw)</span><br><span class="line">rotx(roll)*roty(pitch)*rotz(yaw)</span><br><span class="line">rotz(yaw)*roty(pitch)*rotx(roll)</span><br></pre></td></tr></table></figure><h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%以下二者结果相同</span></span><br><span class="line">rpy2r(roll,pitch,yaw,<span class="string">'zyx'</span>)</span><br><span class="line">rotz(yaw)*roty(pitch)*rotx(roll)</span><br><span class="line"><span class="comment">%以下二者结果相同</span></span><br><span class="line">rpy2r(roll,pitch,yaw,<span class="string">'xyz'</span>)</span><br><span class="line">rotx(yaw)*roty(pitch)*rotz(roll)</span><br></pre></td></tr></table></figure><blockquote><p>个人认为没必要背下来，也没必要理解，只要想用的时候能知道它是怎么算的就好。</p></blockquote><h2 id="Euler角"><a href="#Euler角" class="headerlink" title="Euler角"></a>Euler角</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%Euler角 旋转矩阵</span></span><br><span class="line">alpha=<span class="number">10</span>*<span class="built_in">pi</span>/<span class="number">180</span>; <span class="built_in">beta</span>=<span class="number">20</span>*<span class="built_in">pi</span>/<span class="number">180</span>; gama=<span class="number">30</span>*<span class="built_in">pi</span>/<span class="number">180</span>;</span><br><span class="line">eul2r(alpha,<span class="built_in">beta</span>,gama)</span><br><span class="line"><span class="comment">%检验</span></span><br><span class="line">rotz(alpha)*roty(<span class="built_in">beta</span>)*rotz(gama)</span><br></pre></td></tr></table></figure><h2 id="齐次变换函数homtrans"><a href="#齐次变换函数homtrans" class="headerlink" title="齐次变换函数homtrans"></a>齐次变换函数<code>homtrans</code></h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">V=[<span class="number">30</span>,<span class="number">40</span>,<span class="number">60</span>];T=trotx(<span class="number">30</span>*<span class="built_in">pi</span>/<span class="number">180</span>);</span><br><span class="line">V=[V';<span class="number">1</span>];</span><br><span class="line">homtrans(T,V)</span><br><span class="line"><span class="comment">%检验</span></span><br><span class="line">T*V</span><br></pre></td></tr></table></figure><h2 id="绕任意轴旋转函数"><a href="#绕任意轴旋转函数" class="headerlink" title="绕任意轴旋转函数"></a>绕任意轴旋转函数</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%绕任意轴旋转函数</span></span><br><span class="line">theta=<span class="number">30</span>*<span class="built_in">pi</span>/<span class="number">180</span>; k=[<span class="number">1</span>;<span class="number">0</span>;<span class="number">0</span>];</span><br><span class="line">angvec2r(theta,k)</span><br></pre></td></tr></table></figure><h2 id="建立连杆坐标系"><a href="#建立连杆坐标系" class="headerlink" title="建立连杆坐标系"></a>建立连杆坐标系</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">L(<span class="number">1</span>)=Link(<span class="string">'revolute'</span>,<span class="string">'a'</span>,<span class="number">0</span>,<span class="string">'alpha'</span>,<span class="number">0</span>,<span class="string">'d'</span>,<span class="number">0</span>);</span><br><span class="line">L(<span class="number">1</span>).mdh=<span class="number">1</span>;</span><br><span class="line">L(<span class="number">2</span>)=Link(<span class="string">'revolute'</span>,<span class="string">'a'</span>,<span class="number">10</span>,<span class="string">'alpha'</span>,<span class="built_in">pi</span>/<span class="number">2</span>,<span class="string">'d'</span>,<span class="number">0</span>);</span><br><span class="line">L(<span class="number">2</span>).mdh=<span class="number">1</span>;</span><br><span class="line">L(<span class="number">3</span>)=Link(<span class="string">'revolute'</span>,<span class="string">'a'</span>,<span class="number">6</span>,<span class="string">'alpha'</span>,<span class="number">0</span>,<span class="string">'d'</span>,<span class="number">0</span>);</span><br><span class="line">L(<span class="number">3</span>).mdh=<span class="number">1</span>;</span><br><span class="line">R=SerialLink(L,<span class="string">'name'</span>,<span class="string">'3RRR'</span>)</span><br><span class="line"><span class="comment">%改变一些参数</span></span><br><span class="line">R.base=transl([<span class="number">-10</span> <span class="number">0</span> <span class="number">0</span>]);</span><br><span class="line">R.tool=transl([<span class="number">4</span> <span class="number">0</span> <span class="number">0</span>]);</span><br><span class="line">q0=[<span class="number">0</span> <span class="number">0</span> <span class="number">0</span>];</span><br><span class="line">R.<span class="built_in">plot</span>(q0)</span><br></pre></td></tr></table></figure><h2 id="让连杆坐标系运动起来"><a href="#让连杆坐标系运动起来" class="headerlink" title="让连杆坐标系运动起来"></a>让连杆坐标系运动起来</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">L(<span class="number">1</span>)=Link(<span class="string">'revolute'</span>,<span class="string">'a'</span>,<span class="number">0</span>,<span class="string">'alpha'</span>,<span class="number">0</span>,<span class="string">'d'</span>,<span class="number">0</span>);</span><br><span class="line">L(<span class="number">1</span>).mdh=<span class="number">1</span>;</span><br><span class="line">L(<span class="number">2</span>)=Link(<span class="string">'revolute'</span>,<span class="string">'a'</span>,<span class="number">10</span>,<span class="string">'alpha'</span>,<span class="built_in">pi</span>/<span class="number">2</span>,<span class="string">'d'</span>,<span class="number">0</span>);</span><br><span class="line">L(<span class="number">2</span>).mdh=<span class="number">1</span>;</span><br><span class="line">L(<span class="number">3</span>)=Link(<span class="string">'revolute'</span>,<span class="string">'a'</span>,<span class="number">6</span>,<span class="string">'alpha'</span>,<span class="number">0</span>,<span class="string">'d'</span>,<span class="number">0</span>);</span><br><span class="line">L(<span class="number">3</span>).mdh=<span class="number">1</span>;</span><br><span class="line">R=SerialLink(L,<span class="string">'name'</span>,<span class="string">'3RRR'</span>)</span><br><span class="line">q1=<span class="built_in">linspace</span>(<span class="number">0</span>,<span class="built_in">pi</span>/<span class="number">2</span>,<span class="number">100</span>)';</span><br><span class="line">q2=<span class="built_in">linspace</span>(<span class="number">0</span>,<span class="built_in">pi</span>/<span class="number">2</span>,<span class="number">100</span>)';</span><br><span class="line">q3=<span class="built_in">linspace</span>(<span class="number">0</span>,<span class="built_in">pi</span>/<span class="number">2</span>,<span class="number">100</span>)';</span><br><span class="line">Q=[q1,q2,q3];</span><br><span class="line"><span class="built_in">figure</span>(<span class="number">2</span>)</span><br><span class="line">R.<span class="built_in">plot</span>(Q)</span><br><span class="line">R.fkine(Q(<span class="keyword">end</span>,:))</span><br></pre></td></tr></table></figure><h1 id="实操任务"><a href="#实操任务" class="headerlink" title="实操任务"></a>实操任务</h1><ol><li>建立两个机器人，机器人基座的相对位置可调。（实际环境中，机器人位置可能发生变动，需要进行修改）</li><li>建立一个一条线段（一系列散点），线段的位置可调。（此线段即为机器人末端需要走的xyz轨迹点。实际环境中，轨迹位置随着工件安装位置而变换）</li><li>针对线段上的任意一个点，使某一机器人末端以某种姿态到达该点。（为xyz轨迹点加上姿态，一般的，机械臂末端z轴应当和工件表面垂直。这里只有一条线段，可指定rpy为pi/4,0,0)</li><li>针对线段上的任意一个点，使某一机器人末端以某种姿态，到达距离该点z向（末端坐标系下的z向）距离为某值的点。(此处表达的是待加工平板有一定厚度，而线段位于平板中部的情况。)</li><li>在4的基础上，使得两个机器人末端z 向正对（xy不作要求），且两个机器人末端距离可调b</li></ol><h2 id="Matlab仿真结果图"><a href="#Matlab仿真结果图" class="headerlink" title="Matlab仿真结果图"></a>Matlab仿真结果图</h2><p><img src="https://tvax3.sinaimg.cn/large/006BuM4Jly1gd2tp522waj30ji0hgq42.jpg" alt="19"></p><blockquote><p>使用的机器人工具箱版本为10.3.1版本</p><p>修改了工具箱自带的函数mdl_puma560，要使用代码需要在函数开头加上function p560 = mdl_puma560，结尾加上end以实现调用功能。</p></blockquote><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">close all</span><br><span class="line">clear;</span><br><span class="line">d = <span class="number">0.1</span>;</span><br><span class="line"><span class="built_in">plot3</span>([<span class="number">0</span> <span class="number">0</span>],[<span class="number">-1</span> <span class="number">1</span>],[<span class="number">0</span> <span class="number">0</span>])</span><br><span class="line">p560_1 = mdl_puma560;</span><br><span class="line">p560_1.name = <span class="string">'puma1'</span>;</span><br><span class="line">p560_1.base = [<span class="number">-0.6</span> <span class="number">0</span> <span class="number">0</span>];</span><br><span class="line">p560_2 = mdl_puma560;</span><br><span class="line">p560_2.name = <span class="string">'puma2'</span>;</span><br><span class="line">p560_2.base = [<span class="number">0.6</span> <span class="number">0</span> <span class="number">0</span>];</span><br><span class="line">t=<span class="number">0</span>:<span class="number">0.05</span>:<span class="number">2</span>;</span><br><span class="line"><span class="comment">%计算puma1机械臂移动到指定点，并将z轴指向朝下的齐次变换矩阵</span></span><br><span class="line">T1 = transl(<span class="number">-0.4</span>,<span class="number">0.2</span>,<span class="number">0.1</span>);</span><br><span class="line">T2 = transl(<span class="number">0</span>,<span class="number">-0.4</span>,d)*trotx(<span class="number">180</span>);</span><br><span class="line"><span class="comment">%计算puma2机械臂移动到指定点，z轴指向朝上的齐次变换矩阵</span></span><br><span class="line">T3 = transl(<span class="number">0.2</span>,<span class="number">-0.2</span>,<span class="number">-0.1</span>);</span><br><span class="line">T4 = transl(<span class="number">0</span>,<span class="number">-0.4</span>,-d);</span><br><span class="line"><span class="comment">%利用jtraj函数让两个机械臂运动到指定点</span></span><br><span class="line">q=p560_1.jtraj(T1,T2,t);</span><br><span class="line">s=p560_2.jtraj(T3,T4,t);</span><br><span class="line"><span class="comment">%移动到指定点后沿直线移动</span></span><br><span class="line">T5 = transl(<span class="number">0</span>,<span class="number">0.5</span>,d)*trotx(<span class="number">180</span>);<span class="comment">%puma1沿直线移动</span></span><br><span class="line">T6 = transl(<span class="number">0</span>,<span class="number">0.5</span>,-d);<span class="comment">%puma2沿直线移动                                                         </span></span><br><span class="line">m=ctraj(T2,T5,<span class="number">50</span>);</span><br><span class="line">n=ctraj(T4,T6,<span class="built_in">length</span>(t));</span><br><span class="line">y=p560_1.ikine6s(m);</span><br><span class="line">f=p560_2.ikine6s(n);</span><br><span class="line"><span class="comment">%画图</span></span><br><span class="line">p560_1.<span class="built_in">plot</span>(q);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">p560_2.<span class="built_in">plot</span>(s);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">p560_1.<span class="built_in">plot</span>(y);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">p560_2.<span class="built_in">plot</span>(f);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Matlab机器人工具箱是我们在学习机器人学时候的一个非常好的工具，不但可以帮助我们计算，也可以做图形化的输出。&lt;/p&gt;
+&lt;p&gt;在此就不多谈安装问题，主要介绍各个函数的使用方法。&lt;/p&gt;
+&lt;h2 id=&quot;启动机器人工具箱&quot;&gt;&lt;a href=&quot;#启动机器人工具箱&quot; class
+      
+    
+    </summary>
+    
+      <category term="机器人学" scheme="https://www.qianhongbo.com/categories/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6/"/>
+    
+    
+      <category term="Robotic Toolbox" scheme="https://www.qianhongbo.com/tags/Robotic-Toolbox/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>疫情原因宅家一个半月后出门有感</title>
+    <link href="https://www.qianhongbo.com/%E7%96%AB%E6%83%85%E5%8E%9F%E5%9B%A0%E5%AE%85%E5%AE%B6%E4%B8%80%E4%B8%AA%E5%8D%8A%E6%9C%88%E5%90%8E%E5%87%BA%E9%97%A8%E6%9C%89%E6%84%9F.html"/>
+    <id>https://www.qianhongbo.com/疫情原因宅家一个半月后出门有感.html</id>
+    <published>2020-03-10T12:23:41.000Z</published>
+    <updated>2020-09-13T13:21:37.660Z</updated>
+    
+    <content type="html"><![CDATA[ <font size="3" face="楷体"><p> 新冠病毒疫情原因，自从年前回家后，就没怎么出过门，出去两次也只是出门随便走走，没和陌生人说过话。目前疫情有较大好转，加之我头发太长，自从元旦那天在武汉剪了之后就没再动过，用理发店老板的话来讲，我这个“鸟巢”再不处理就可能要招来鸟了。</p><p>宅在家这么多天，除了偶尔的颈椎酸痛，大体上都很开心，主要是和父母沟通为主，为数不多的和别人交流也都是通过网络，感觉少了很多不必要的烦恼。自己每天做着自己认为该做的事，准备比赛也好，看看直播也罢，都让自己觉得自己还活着，没在虚度自己的光阴，和上学唯一的区别就是，我可以随意的掌控我自己的时间，至于效果怎么样，我也不得而知，但自由总是最宝贵的。</p><p>今天出门却感到有些伤感，不知道是因为在家呆的太久了对外面陌生的世界多了一份畏惧，还是在受疫情影响的社会背景下被气氛所感染，突然感觉到外面的世界并不是我曾经所认为的那么充满活力，相反，是一种死气沉沉的感觉。我对外面的一切都感到陌生，仿佛自己是一个关在监狱里5年的人，刚走出来，没有太多喜悦，反而是莫名的恐慌。</p><p>在家呆久了，每天依靠着网络，可以看到全世界各地的新闻，和天南海北的人聊天，不出门以为自己拥有了全世界。出了门才发现，原来我还是我，世界不知道还是不是之前的那个世界，但可以肯定的是我只不过是这个世界的一个过客罢了，开心就好。</p></font>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+         &lt;font size=&quot;3&quot; face=&quot;楷体&quot;&gt;
 
+&lt;p&gt; 新冠病毒疫情原因，自从年前回家后，就没怎么出过门，出去两次也只是出门随便走走，没和陌生人说过话。目前疫情有较大好转，加之我头发太长，自从元旦那天在武汉剪了之后就没再动过，用理发店老板的话来讲，我这个“鸟巢”再不处理就
       
     
     </summary>
     
-      <category term="华科机械学习资料分享" scheme="https://www.qianhongbo.top/categories/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/"/>
+      <category term="随笔" scheme="https://www.qianhongbo.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
+    
+      <category term="Diary" scheme="https://www.qianhongbo.com/tags/Diary/"/>
     
   </entry>
   
   <entry>
-    <title>梦里花落知多少</title>
-    <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/%E6%A2%A6%E9%87%8C%E8%8A%B1%E8%90%BD%E7%9F%A5%E5%A4%9A%E5%B0%91/"/>
-    <id>https://www.qianhongbo.top/随笔/梦里花落知多少/</id>
-    <published>2019-06-10T03:32:45.000Z</published>
-    <updated>2019-07-12T10:55:17.810Z</updated>
+    <title>2020美赛有感</title>
+    <link href="https://www.qianhongbo.com/2020%E7%BE%8E%E8%B5%9B%E6%9C%89%E6%84%9F.html"/>
+    <id>https://www.qianhongbo.com/2020美赛有感.html</id>
+    <published>2020-03-10T06:32:33.000Z</published>
+    <updated>2020-09-13T13:21:37.651Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="20190609"><a href="#20190609" class="headerlink" title="20190609"></a>20190609</h1><p>该结束的课程终于都结束了，剩下的就是两个期末考试了。最近也是十分的空虚和无聊，呜呜。</p><p>昨天和黄智威出去吃饭，也是觉得自己突然刷新了自己对生活的认识，或许想在这个社会上生存，不能只想着简简单单的一个人打拼，在几个人的小团体里活着。想要在这个社会上获得你的地位，需要建立自己的人脉网，才能在走入社会后吃得开，显然，我目前并不是这样的人，我喜欢呆在自己极小的圈子，甚至在这个小圈子里我也很少和周围的人沟通交流，我也明白这样是不对的，慢慢去改变吧。</p><h1 id="20190610"><a href="#20190610" class="headerlink" title="20190610"></a>20190610</h1><p>今天早上起来之后就觉得不对头，脖子不是很舒服，像是落枕了。</p><p>这几天也没有好好休息，听了别人说每晚要早点睡觉，自己也在暗下决心，可是每晚躺倒床上就打起了精神，想要看会儿手机再睡，这一看就不是一会儿两会儿能解决的事情了，往往会熬夜到后半夜才会睡觉，周末利用空闲时间还想玩玩游戏，我应该知道自己颈椎不好不要总是低头玩手机用笔记本，但内心的躁动总是难以压抑，每次之后内心又充满了后悔。这就是太过放纵自己的结果。</p><p>身体最重要！永远不要和自己的身体开玩笑，永远不要做有害自己身体的事情，不然后悔都来不及</p><h1 id="20190614"><a href="#20190614" class="headerlink" title="20190614"></a>20190614</h1><p>感觉自己距离实习、工作还有好大的一段距离啊，真的要抓紧要努力了</p><p>自己没事做做眼保健操，保护眼睛</p><h1 id="20190626"><a href="#20190626" class="headerlink" title="20190626"></a>20190626</h1><p>今天没事闲的，在百度上搜索了一下自己，发现一个文档，是16年吉林一中所有毕业生的去向。说实话，这个表格我从没打开过，也没看过，所以我也不知道自己在这么一批人中到底处于一个什么层次什么位置。无奈，手贱点开了，内心难免升起波澜。我想如果我当年看了这个表格的话，我应该会选择复读吧。不是很好的学校的最差专业，这个报考也是很不明智。难怪我觉得来到这个学校和我期待的大学不一样，因为我的确没有去上我所期待的大学啊。</p><p>最开始来到这里之后先是觉得不适应，觉得自己不属于这里，后来慢慢适应了，也习惯这里的一切，后来自己又变成了这一批人里的中游，想想还是蛮扎心的。</p><p>今天看到这个也算给自己一个警示，我不该这么消沉，我应该去追求属于我自己的未来。包括来到大学，我也不是很努力，我一直都不是一个努力型人格，喜欢放纵自己，跟着自己的性子来，这样的话，等到大学毕业，我可能还是同样的结局，真是活该啊！</p><p>人应该今早认识到一点：人这一生，靠的不光是实力，也看运气，运气也是实力的一种</p><h1 id="20190702"><a href="#20190702" class="headerlink" title="20190702"></a>20190702</h1><p>考完试啦，也把博客搬迁到我的mac上了，还是蛮简单的</p><p>遇到了点小问题但是都解决了，蛮好</p><p>Everything we can just google it!</p><h1 id="20190703"><a href="#20190703" class="headerlink" title="20190703"></a>20190703</h1><h2 id="整理一下思路"><a href="#整理一下思路" class="headerlink" title="整理一下思路"></a>整理一下思路</h2><ul><li>为实习做准备需要学习：c, linux, arm</li><li>为下学期机器人学做准备需要学习：机器人学, Matlab</li><li>为出国做准备需要学习：toefl</li><li>为下学期课程做准备应该学习：机械原理等课程</li><li>为未来接触更新的知识做准备应该学习：python, tensorflow</li><li>为了更好的身体我应该：每天坚持健身</li></ul><p>那么，到底是应该每天一个部分学一点还是应该阶段性的学习一个内容呢？</p><h1 id="20190706"><a href="#20190706" class="headerlink" title="20190706"></a>20190706</h1><p>凡事应该谨言慎行，不可草率啊。事不过三，事不过三</p><p>我觉得我就是一个宅男，屌丝。。至少目前阶段是的，我承认。。要改吗？能改吗？，，我倒是很希望自己能成为一个技术控，人总是要有自己的一点特长的啊</p><p>昨晚看了个电影，蜘蛛侠英雄远征，个人觉得比较一般，以后最好不要看这种电影了</p><p>今天是最后一天休息了，明天开始生活就要走上正轨了，准确的说今天也不应该休息的。作为学生，每天必须要有八个小时的学习时间。这几天都没达到吧。。</p><h1 id="20190707"><a href="#20190707" class="headerlink" title="20190707"></a>20190707</h1><p>哥伦比亚大学门口的雕塑是女神雅典娜，还藏了一只猫头鹰，象征着智慧。</p><p>大学要培养的是可迁移的能力</p><p>没事多听听ted什么的别看直播了！</p><p>科研项目并不是学校的那种科研，而是国外背景的科研</p><p>我第一喜欢的lpl输了，呜呜呜，以后不看比赛了，扎心呀</p><p>好好学习，报效祖国～～</p><h1 id="20190712"><a href="#20190712" class="headerlink" title="20190712"></a>20190712</h1><p>原来变强是一定要付出代价的，健身也好，学英语也好，都是一个循序渐进的过程，不会有立竿见影的效果，但每天的练习一定会内化到身体里成为你的一种力量！无论什么时候都要顶住，顶住压力，坚持下去✊</p>]]></content>
+    <content type="html"><![CDATA[ <font size="3" face="楷体"><p>为了出国，提升背景为目的，我在大三报名了美赛，机缘巧合在一个留学交流群里，看到一个同学问有没有人有参加数模美赛的意向，要求是会写代码，我想着就去问问，毕竟我一个从小对数学无感，并且考了几次托福都上不了90的垃圾来说，除了写写代码还能干点什么呢？我就去说明了下自己的情况，他们考虑后也同意了，他们两个是同学，都是在经济学院，男生数学好，微积分什么的都接近满分，女生英语好，托福首考105，我了解到他们的情况之后压力还是很大的，毕竟我也只是一个懂$Matlab$语法的小白啊，数学建模这个词在我的印象里简直就像是“量子力学”一样的神秘（滑稽）。后来我们三个见面聊了聊，互相了解了下情况，我们都没有太多的数学建模基础，情况类似，之后也就没再多聊。</p><p>直到考试前，我们关于建模的事情聊得都不多，感觉我们三个都是比较内敛的人，我还算是其中比较外向的了，很多时候如果我不说话，估计群里就不会有人说话了。赶在寒假前期末考试后，我打算好好准备一下，虽然感觉毫无头绪，不知道从哪个高深的算法开始学起，但还是硬着头皮上，买了个课，每天听一听，后来就去北京学GRE了，数模什么的也就暂且搁置了，直到比赛前几周，才继续学一些知识。忘记说了，今年比较特殊的是，受疫情影响，美赛从一次改成了两次，一次是2月份，一次是3月份，我们当时想着或许3月能开学，就去搞3月的比赛（我实际上是觉得自己啥也不会，能拖几天是几天，拖，就恩拖）</p><p>然而躲得过初一却躲不过十五，3月份的比赛马上就到了，我们采用的是腾讯会议的方式线上交流。第一天早上起得很早，六点多就看赛题了，没记错的话，我3点多就醒了一次，估计是没准备太紧张了吧…拿到赛题，用词典把B题翻译了下，了解了题意，大概就是问想在海边建沙堡的话，怎么剪最好，我当时看了就觉得，这不就是开脑洞胡思乱想嘛，一个从小都没怎么去过海边的中国人，沙堡？别搞笑了，你问我怎么做汉堡好吃还差不多。</p><p>但当我用翻译软件把B题翻译了之后我才发现，或许B题是唯一一个我能理解的题目了，这就像是养龙，你说咋养就咋养，你说怎么搭沙堡就怎么搭，没有硬性规定，全靠你自己的理解，这种还算好的，毕竟只要说服了自己，就觉得没问题不是。在和两个队友商量后，也一致认为B题比较好理解，虽然暂时没有太明确的思路，但至少能靠脑子想想，编，就恩编。第一天，我们最开始思路很乱，没搞清楚应该从哪个点入手，毕竟对一个沙堡要分析的东西还是很多的，没有限定条件随便扯总不是一个事，搞数学的同学想从含水量的角度出发，我想从力的角度考虑，但奈何我的流体力学也只是学了一个皮毛，现在一个公式都想不起来的我，想从力学出发未免太难了点，搞数学的同学倒是想出了个思路，还写了不少式子，到了下午，搞数学的同学竟然已经写出了一个模型，虽然忽略了很多因素，但听起来觉得很有道理，达到了“自圆其说”的作用，于是我们就照着这个方向继续研究，提出问题，否决问题，提出方案，改正方案…就这样我慢慢觉得这个模型有搞头，至少我开始有了点思路。当晚搞数学的同学给我提出了一个难题，让我求一个函数的最小值，单求最小值不要紧，毕竟我还是上了点网课的，懂一点算法，但这函数也太复杂了，迭代套迭代，简直就是一个套娃，我完全没有思路。当晚我们还说明天要不要讨论一下F题，毕竟如果这个式子不能解决，可能这个思路就没法继续下去了。实在不行，我们就去做文字建模。。。</p><p>那晚我也没怎么睡好，因为我真的不知道这个“套娃”怎么解决，第二天早上起来我就自学了下可能能解决的办法–蒙特卡洛模拟，试着化简一下式子，再写写代码，听着两个队友在腾讯会议里讨论F题的题意，我得到了一个看起来“不错”的结果，我就在里面和他们说，如果我得到了第二问的结果，你们是觉得做F题还是B题？在我的语言诱导下，我们又开始脑洞大开建沙堡。可能是算出了个结果，有了信心，我们逐渐攻克各个难题，一起讨论，我认为我们仨合作还是很愉快的，总之就是在自圆其说的道路上越走越远233。</p><p>我们每天也不熬夜，大概10点左右就收工，早上八点集合，第三天，大部分问题也都已经想好。最后一天，该算的也算完了，我就给自己找点事做，下了个Latex（真的是作死），最后一天把我搞得死去活来，硬是坐在电脑前一天，从零入门Latex还好我有点Markdown基础，搞这个上手也比较快，我们改了又改，填了又填，最后在后半夜两点，在我们三个人一同的见证下交上了论文，4天的美赛到此结束，圆满收工。</p><p>这次美赛，收获很多，首先感谢我的两个队友，都很靠谱！我自己也算尽心尽力了，虽然基础差，但在这几天现学了不少东西，总之还是那句话，“尽吾志也而不能至者，可以无悔矣。”</p></font>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;20190609&quot;&gt;&lt;a href=&quot;#20190609&quot; class=&quot;headerlink&quot; title=&quot;20190609&quot;&gt;&lt;/a&gt;20190609&lt;/h1&gt;&lt;p&gt;该结束的课程终于都结束了，剩下的就是两个期末考试了。最近也是十分的空虚和无聊，呜呜。&lt;/p&gt;
-      
-    
-    </summary>
-    
-      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="Diary" scheme="https://www.qianhongbo.top/tags/Diary/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>写在2019年高考前</title>
-    <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/%E5%86%99%E5%9C%A82019%E5%B9%B4%E9%AB%98%E8%80%83%E5%89%8D/"/>
-    <id>https://www.qianhongbo.top/随笔/写在2019年高考前/</id>
-    <published>2019-06-06T16:24:31.000Z</published>
-    <updated>2019-06-07T04:28:56.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>我对高考的记忆真的剩下的很少了</p><p>我记不起来那天发生了什么，也记不起来我的任何分数，更记不起来考了什么题目</p><p>我能记起来的，只有发成绩那天我妈的泪水。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;我对高考的记忆真的剩下的很少了&lt;/p&gt;
-&lt;p&gt;我记不起来那天发生了什么，也记不起来我的任何分数，更记不起来考了什么题目&lt;/p&gt;
-&lt;p&gt;我能记起来的，只有发成绩那天我妈的泪水。&lt;/p&gt;
+         &lt;font size=&quot;3&quot; face=&quot;楷体&quot;&gt;
 
+&lt;p&gt;为了出国，提升背景为目的，我在大三报名了美赛，机缘巧合在一个留学交流群里，看到一个同学问有没有人有参加数模美赛的意向，要求是会写代码，我想着就去问问，毕竟我一个从小对数学无感，并且考了几次托福都上不了90的垃圾来说，除
       
     
     </summary>
     
-      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://www.qianhongbo.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="Diary" scheme="https://www.qianhongbo.top/tags/Diary/"/>
+      <category term="Diary" scheme="https://www.qianhongbo.com/tags/Diary/"/>
     
   </entry>
   
   <entry>
-    <title>手机惊云（二）</title>
-    <link href="https://www.qianhongbo.top/%E5%B0%8F%E8%AF%B4/%E6%89%8B%E6%9C%BA%E6%83%8A%E4%BA%91%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
-    <id>https://www.qianhongbo.top/小说/手机惊云（二）/</id>
-    <published>2019-06-06T14:18:28.000Z</published>
-    <updated>2019-06-06T14:19:36.000Z</updated>
+    <title>Bit,Byte,K,M之间的换算问题</title>
+    <link href="https://www.qianhongbo.com/Bit,Byte,K,M%E4%B9%8B%E9%97%B4%E7%9A%84%E6%8D%A2%E7%AE%97%E9%97%AE%E9%A2%98.html"/>
+    <id>https://www.qianhongbo.com/Bit,Byte,K,M之间的换算问题.html</id>
+    <published>2020-02-22T11:13:09.000Z</published>
+    <updated>2020-09-13T13:21:37.651Z</updated>
     
-    <content type="html"><![CDATA[<p>电梯很长，人也不少，除了地铁口我就看到了一个穿着粉色t恤，年级估摸着有将近五十岁，个子不是很高的中年人，有一点油腻，猥琐的气质，但看起来不像是坏人</p><p>我故作镇定的走过去，和他说：”你为什么上来了？“</p><p>他说：”我没做地铁来，我那里没有地铁，我骑车过来的。“</p><p>wdnmd…武汉哪里没地铁我是不信的</p><p>算了算了，你骑车就骑车吧，直接验货（滑稽）</p><p>我就找了个地方，从书包里掏出了我的手机</p><p>他说：”我没用过苹果手机，你这个手机咋用啊？”</p><p>我心想：哎呦，遇到外行了</p><p>他随便操作了几下，鬼知道他怎么操作的，竟然操作到了多任务栏，他尝试上滑关掉应用，竟然没关掉？？？</p><p>我当时也懵了，这个情况我也没遇见过啊，我好几周都没用过这个手机了，我心里也不是很确定，不会是坏了吧？</p><p>我就自己拿过来操作了几下，发现的确不行，我心里开始发慌，还好他也没有说什么</p><p>于是我就开始解释，手上还是在操作，想着是不是什么设置没打开？</p><p>就在我调的时候他手机响了，我瞄了一眼，这TM不就是苹果手机吗？？？你跟我说你没用过苹果手机不会用？</p><p>wdnmd，你这有什么骗我的</p><p>内心暗自怀疑</p><hr><p>我继续在那里试怎么关不掉多任务</p><p>也不知道我怎么按的，就长按了屏幕，左上角出现了一个红色的关闭按钮，我点了一下应用就关掉了</p><p>wdnmd！这什么智障设计，苹果真的不如我手里的安卓好用啊，这个设计也太脑残了吧。。。</p><p>暗自感叹了一下之后，心想：还好度过了难关，手机肯定没问题，你随便验</p><p>他又调了几下铃声什么的，发现都没问题</p><p>他又问我：“你带针没？我把卡插进去试一下。”</p><p>。。。</p><p>我带这玩意儿干啥，我哪知道您这么急啊</p><p>我说：“我没有，但肯定没问题，我用的好好的，你就放心吧。”</p><p>他的表情明显告诉我他不相信，他说他想试试话筒，他说他的手机话筒坏了</p><p>但他看是在是没法子，就说：“那就这样吧，有问题我给你打电话联系你。”</p><p>我说好</p><p>之后就开始转账了，我打开了我的支付宝收钱，</p><p>他很快扫了我的码，很果断的付了钱，谁知道我没收到提示</p><p>我心想原来你是用这种不付钱的骗术来骗我</p><p>哼，也太低级了吧，我早就听说过这种骗术了</p><p>别想用这种方法骗到我！</p><p>我手里死死的握着我的手机不放，谁知道他开始急了</p><p>他说：“你咋没收到呢？我都付过去了啊？“</p><p>我看着他手机上的账单，的确是这样，显示的已付款</p><p>难道这又是什么新型骗术吗？</p><p>我手机疯狂刷新，还是没有，唉？咋回事</p><p>我看到我手机上的信号突然没了，半天之后才有，也就听到了那熟悉的：”支付宝到账…“</p><p>突然心里一阵舒爽，这下落袋为安了哈哈</p><p>我就开学的走了，走之前回头看了他一眼，我看他急匆匆的往地铁站走，像是要去坐地铁</p><p>我心想，你TM不是做不了地铁吗？</p><p>算了，管他呢，反正也结束了</p><p>看着他那粉色t恤的背影，我也回头往学校走，脑子里还在想着晚上吃点什么的问题</p><p>可谁又知道，事情才刚刚开始……</p><center><未完待续></未完待续></center>]]></content>
+    <content type="html"><![CDATA[<p>Bit意为“位”或“比特”，是计算机运算的基础，属于二进制的范畴；<br>Byte意为“字节”，是计算机文件大小的基本计算单位；<br>换算： </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1 Byte = 8 Bits </span><br><span class="line"></span><br><span class="line">1 KB = 1024 Bytes </span><br><span class="line"></span><br><span class="line">1 MB = 1024 KB </span><br><span class="line"></span><br><span class="line">1 GB = 1024 MB</span><br></pre></td></tr></table></figure><p>Byte简写为B，而bit简写为b；1B=8b；<br>一个数字与一个字母都是占1B；一个汉字占两个字节。</p><p>问题：计算机硬盘64G，每个块的大小为4K，用位示图来管理硬盘的空间，则位示图的大小为多少字节？</p><ul><li><input disabled type="checkbox"> 16M</li><li><input disabled type="checkbox"> 4M</li><li><input checked disabled type="checkbox"> 2M</li><li><input disabled type="checkbox"> 1M</li></ul><p>解答：<br>$$<br>\frac{64G}{4K}=\frac{64\times1024\times1024K}{4K}次(bit)=\frac{16\times1024\times1024}{8\times1024\times1024}=2M<br>$$</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;电梯很长，人也不少，除了地铁口我就看到了一个穿着粉色t恤，年级估摸着有将近五十岁，个子不是很高的中年人，有一点油腻，猥琐的气质，但看起来不像是坏人&lt;/p&gt;
-&lt;p&gt;我故作镇定的走过去，和他说：”你为什么上来了？“&lt;/p&gt;
-&lt;p&gt;他说：”我没做地铁来，我那里没有地铁，我骑车过来
+        &lt;p&gt;Bit意为“位”或“比特”，是计算机运算的基础，属于二进制的范畴；&lt;br&gt;Byte意为“字节”，是计算机文件大小的基本计算单位；&lt;br&gt;换算： &lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter
       
     
     </summary>
     
-      <category term="小说" scheme="https://www.qianhongbo.top/categories/%E5%B0%8F%E8%AF%B4/"/>
+      <category term="知识积累" scheme="https://www.qianhongbo.com/categories/%E7%9F%A5%E8%AF%86%E7%A7%AF%E7%B4%AF/"/>
     
+    
+      <category term="操作系统" scheme="https://www.qianhongbo.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
-    <title>手机惊云（一）</title>
-    <link href="https://www.qianhongbo.top/%E5%B0%8F%E8%AF%B4/%E6%89%8B%E6%9C%BA%E6%83%8A%E4%BA%91%EF%BC%88%E4%B8%80%EF%BC%89/"/>
-    <id>https://www.qianhongbo.top/小说/手机惊云（一）/</id>
-    <published>2019-06-06T13:12:19.000Z</published>
-    <updated>2019-06-06T14:19:34.000Z</updated>
+    <title>你凭什么上北大？ 作者:贺舒婷</title>
+    <link href="https://www.qianhongbo.com/%E4%BD%A0%E5%87%AD%E4%BB%80%E4%B9%88%E4%B8%8A%E5%8C%97%E5%A4%A7%EF%BC%9F.html"/>
+    <id>https://www.qianhongbo.com/你凭什么上北大？.html</id>
+    <published>2020-02-21T01:33:42.000Z</published>
+    <updated>2020-09-13T13:21:37.657Z</updated>
     
-    <content type="html"><![CDATA[<hr><p>爸妈给换了个新手机，Huawei的，用着还挺顺手，用了好几年的iphone6sp就扔在寝室不用了。</p><p>旧手机在寝室放着一直看的挺烦的，也不是烦，就是想让每个东西都能有它们自己的归宿吧，不想让它们闲着。于是我就挂到了咸鱼上去，定了一个蛮高的价格，想着这么心爱的手机不想它这么就卖出去了…</p><p>果不其然，两天了没人来找我问，我心想，看来价格合适，不是那种贱卖的价格。我也没继续理它，反正我也不急着用这笔钱。</p><p>没想到今天下午我收到一个人的消息，他说他想买手机，还说他就在武汉，离我学校还挺近，说一会儿能不能当面交易，让我定一个地方。剧情发展的太快我根本没反应过来，而且他的果断和紧急让我更加的警觉，我在怀疑是不是什么骗局，毕竟闲鱼上的骗局还是很多的。</p><p>于是我马上追问：“在哪里交易？”（交易这个词怎么觉得怪怪的）</p><p>他说：“你定一个地方吧，我到时候直接给你现金。”</p><p>现金？？？</p><p>我看到了一个关键词，立马勾起了我的警觉心。我马上在脑海里构想了各种可能的诈骗方式，比如什么钱是假钱，或者是他会以验机为名直接拿着我的手机跑路？…… </p><p>越想越后怕，我马上回：我不收现金，只接受转账。</p><p>我本以为他会因为我这么一说直接放弃这笔交易</p><p>没想到他直接回：没事，我们去银行门口见面，没问题的话我直接去ATM存钱，我手机里没钱！</p><p>事情发展的更加扑朔迷离</p><p>奈何我一天下来也蛮累的，不如就用这个晚饭是时间休息下，把这个事情搞个明白，我倒是要看看这个人到底是个什么底细！</p><hr><p>紧接着我就挑了一个离学校在最近的地铁站，给他发了过去</p><p>我心想：地铁站人多而且有监控，就算你有问题，我也可以找别人来帮忙啊</p><p>我想着他会不会因为地点问题再次放弃交易</p><p>没想到，他又回了一句：我查查</p><p>真是出乎我的意料，难道他真的是要买手机？那为什么偏偏选择了我这个嘞？</p><p>还没等我多考虑，他就回复我：”好的，我这就出门。“</p><p>。。。</p><p>我当时人还在教室里呢，手机还在寝室躺着呢！</p><p>心想：你是真急啊，你急的我害怕！…</p><p>我也来不及多想，收拾东西就往寝室走，因为我手机还没清理，里面还有好几10G的照片没删呢，还好我前几天把它们全上传到我的百度云里了。</p><p>回到寝室后，把手机刷掉，完全格式化，不想留下任何和我有关的信息</p><p>我在路上又想了一下，想到了更可怕的事情…他会不会用武力解决我并拿走我的手机…</p><p>虽然很离谱，但这种想法的确在我的脑子里的浮现过，而且当时脑子里的画面不是他一个人，是他带着他的一帮弟兄一起过来的，就像是那种黑帮电影里的感觉，一群光着膀子的大汉一排走过来…我是不是想象力太丰富了…</p><p>收拾的差不多，拿上了充电线就出门了，想着我耽误了这么久，他也该到了吧，临走前我还拿上了周二工程实训刚做好的喵喵锤。想着防身用hhh</p><p>然后我就往地铁站走了</p><hr><p>到了地铁站，特意选了个出战的检票口，想着这旁边保安多得很，这下我的人身安全肯定没问题了吧</p><p>突然觉得自己真的机智，于是就找了个地方休息，也没再想什么有的没的。</p><p>过了十分钟他还是没消息，我心想，这该不会是不想买，但是要骗我时间的吧</p><p>话说我自己觉得我的时间宝贵，应该他不觉得吧</p><p>于是我就闲鱼给他发了个消息，说：你到了没？</p><p>他过了半天才说：在路上，一刻钟到</p><p>一刻钟？？？我这么多年都没用过这个词，这个此时啥意思？是十五分钟的意思吗？</p><p>我脑子里觉得是十五分钟，但还是不确定，我还特意去查了一下确认</p><p>哎，么得办法，买点东西是不容易啊，又冒着生命危险，又要浪费时间</p><p>可是我的书包也重的很啊，我还背着一个电脑，我总不能在这里傻站着等吧</p><p>关键是他说是十五分钟，到底是不是，谁知道啊？</p><p>于是我就找了一个地方做了下去，刷起了手机。</p><p>刷手机时间还是过得快啊，大概不到二十分钟，他给我来了个电话</p><p>说他到了，没看到我。</p><p>我说：”我在地上坐着呢，你看到我没？“</p><p>他说：”没有啊，你人呢？“</p><p>我说：”我就在这个检票口出口啊。“</p><p>他说：”我在上面，没在下面。“</p><p>。。。</p><p>完了，之前的计划全部泡汤</p><p>但听他的声音，好像也不是很凶的样子，我就想着行吧，我上去会会你，反正我有小锤锤护身</p><p>然后我就上了电梯，往地铁口走</p><center><未完待续></未完待续></center>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>这是一篇陪伴我走过初中，高中的文章</p><p>在我无数次的怀疑自己，自暴自弃之后给予我力量</p><p>现在我已经来到了大学，重读此篇，来找回曾经的自己。</p></blockquote><font size="3" face="楷体"><p>未名湖边的桃花开了，就在前几天。</p><p>我曾无数次梦想过，陌上开花的时候湖边折柳的人群里会有自己的身影。那个时候，我的心思和大家一样单纯而迫切，我的目光却是比你们更加迷茫和彷徨。</p><p>那年高三。</p><p>十年磨一剑，我得到的却几乎只是一块废铁。</p><p>高一那年，我真的差点把自己废成了一块废铁。上课睡觉，聊天，看漫画，吃零食，跟着后面那些男生大呼小叫，把年轻的女老师气得眼圈含泪，然后自鸣得意而洋洋之。那真是一段不堪回首的日子，像色彩斑斓的黑洞，看上去奇观异彩，鬼魅般的吸引力却在不知不觉中一点点把你拉向无敌的深渊。于是下滑，堕落，而更加难过的是明明知道自己在堕落却无力去改变。习惯的力量的确大道了让我无可奈何，于是我放弃了最后的挣扎与努力。现在想想，那只是懦弱，那只是懒惰，那只是给自己自甘堕落所找的一个看似冠冕堂皇的理由，一切是自欺欺人。</p><p>可当时没有任何人来指着我的鼻尖骂我，说你是不是就想这样破罐子破摔，就像这样玩完你的一辈子，也许他们已经放弃了我，有时候我想，然后是极其嘲讽般的不屑，不屑以及自以为是的洒脱——谁稀罕谁。其实，那个时候真的是应该有一个人，就像很多人曾经经历过的那样，指着我的鼻尖，戳着我的脊梁说，你知不知道自己在做什么，请不清楚自己想要什么，请不清楚自己的明天会是什么。</p><p>可是，在无所谓的人也会有自己的底线的。正如再深的涧谷也会有它的低谷。一切就像滑楼梯，一路上放肆张扬地笑了下来，最后终于重重的摔在了下面，头破血流。</p><p>也许，人只有在痛的时候，才会认认真真反省自己走错了哪一步吧，总要摔些跟头，才能学会绕着道走。而这条再简单不过的路，我却付出了整整一年的青春时光才真正明白。一年，365天，可以让居里夫人发现镭，可以让爱因斯坦证出E=mc2，一年可以让一个婴儿学会跌跌撞撞走向母亲的怀抱，一年可以让一段轰轰烈烈的爱情开始和终了。可是这一年，我只得到了那一句话。所幸，并不亏，也并不晚</p><p>高二分科，我选了文科。你无法想象我所在的中学有着怎样烂的文科班——本科上线只有三人，本科上线三人是个什么概念？当我现在大学同学颇为自得的告诉我他们中学的班级北大清华一走几十个的时候，我轻轻的笑了笑。我所在的文科班，是一个本科上线三人的文科班，更具有讽刺意味的是，三个人全是复读生。我就是在大家或无奈或讽刺或无谓的目光里，毅然决绝地在文科报名表上写上了自己的名字，那真是我一生中写得最好看的一次。</p><p>我只是突然间觉醒了，觉得自己的一辈子不能就那样过。时候很多人问我怎么回事，也许他们是想在我这里听到一个传奇般的浪子回头的故事，而我当时所能想到的解释就只有这一句，我只是觉得，我的一辈子不应该就这样吊儿郎当的过去。</p><p>可我还是低估了过去那一年给我带来的影响。第一次月考，我考了年级第12名，也许这是一个听上去差强人意的成绩，可是，仅有的理智还是足以提醒我，那是一个本科上线三人的文科班，如果你不能把所有的人远远甩在后面，12名和120有什么区别？</p><p>至今我还记得那次考了第一的那个女生，是一个不见经传的女孩子，瘦瘦小小，戴副厚厚的黑边眼镜，趴伏在书桌上的身影常常有些佝偻。而这个印象的得来，是因为所有的人永远只能看到她趴在桌上的身影。她一直是班里第一个来最后一个走的人。我一直对那种学生持有一种莫名的排斥和抵触情绪，总想你们有什么了不起，不就是死读书嘛，我要是像你们这样刻苦努力早是市里第一了。事实上直到那次考试成绩出来以后我仍然对她不屑     一顾。然后，我迎来了一生中最重要的一次班会。</p><p>我不知道要用怎样的分量去感谢那个班主任，因为如果不是她的那席话，现如今的我在哪里都不一定。班会上，她说：“这次考试非常能说明问题，该考好的人都考好了。”然后她扫了我一眼，我明白她的潜台词，也就是说在她看来我属于是没有理由考好的的那一堆人里的。奇怪，我居然没有脸红。不知道是太久的堕落已经在不知不觉中磨光了原本敏感的自尊，还是下意识里仍然对她的话不置可否，我当时面无表情的迎上了她的目光。她的眼睛只是平静地扫过我那里，然后继续：“我知道有些人自以为很聪明很有才气，看不起那些认真学习刻苦努力的同学，总觉得人家是笨鸟先飞是先天不足。可是我想说，你只是懦弱！你是不敢尝试，你只是不敢像他们一样去努力去刻苦，因为你怕自己即使刻苦了也比不上他们，刻苦了也考不了第一，反而遭人耻笑，你宁可不去尝试，只是因为有失败的风险，而你甚至连这一点风险都承担不起，因为，在你心底，你对自己根本就没有把握……”后面她又说了什么我已经想不起来了，我承认当时我是完完全全懵在那儿了，因为她说的那几句话。“你只是懦弱……”当时的感觉是雷轰一样把我整个人震住了，反反复复回荡在脑子里就只有那么一句话：“你只是懦弱。”</p><p>她是正确的。</p><p>那种突然觉醒的震撼是言语无法描述的，也是我不想用文字去表达的。你只能通过结果来想象，也只需要通过借结果来想象。那晚我在日记里写，试试吧。试一试自己那样刻苦那样努力的去学上一个月会不会见效。当时我根本不敢对自己承诺什么结果，也的却承诺不起。我只是抱着一个念头，试一试。</p><p>然后迎来了一生中最戏剧性的一个月。之所以说它戏剧性，只因为就像难以想象唐僧不再啰嗦孙悟空不再好斗猪八戒不再贪吃一样，我简直不敢相信那个早晨六点早自习上课到晚上十点晚自习下课一动也不动坐在位置上安安稳稳踏踏实实的人可以是我自己。其实并没有说起来那么简单的。我去一点一点地做的时候就已经发现了：要想在几天里改变365天来形成的习惯，太难；而要想在一个月里创造出令人瞠目结舌的奇迹来，也太难。习惯成自然啊。就像那句话说的，“心思平原放马，易放难收”，野惯了的心要想一下子收回来，谈何容易？常常做着做着就忍不住了，心开始浮躁，眼神也开始飘离，好几次差一点就要放弃。只是，在那个最危险的边缘晃荡的时候我总是压一压，告诉自己，忍不住的时候，再忍一下，其实说白了也就那么一句话：忍不住的时候，再忍一下。我承认自己是一个骨子里相当傲气的人，我就是不相信我刻苦起来会不如哪个人，我就是不信我真的去做一件事情的时候会做不到，我就是不信这世上真的有什么不可能的事。I believe that nothing is impossible.</p><p>然后，我迎来了那次期待已久的期中考试，至今我仍记得考完之后的感觉。抱着书走在回家的路上，茫茫的看着车水马龙人来人往，恍惚想真的考完了吗？为什么心里空空的没有着落？那的确是我一生中最特殊的一次考试，因为它关系着我此后的方向和道路选择，风险太大，我怎么安得下心？其实。考试结果想必大家已经猜到了。我的的确确让所有的人真正瞠目结舌了一次。是的，我考了第一，全市第一。</p><p>你永远无法想象那个结果于我而言有多么重要。知道成绩是我出乎寻常的平静。那时我才明白原来激扬和呐喊的冲动到了极点只是平静。当名字出现在了成绩单的第一行时，我默默地对自己说：记住了，这世上没有什么事情是不可能的。</p><p>从此我再也没有去改变过那种态度和方法。其实所有的方法说白了都是没有方法的，只有一个词：刻苦。</p><p>我坚守着那些不是方法的方法，也坚守着我的名字在成绩单上的位置，一直到高考前的最后一次考试，我始终是第一名。但是，真正的挑战还没有开始。即使我可以牢牢占据第一名的位置，即使我可以每次都把第二名甩下几十分，我知道，北大离我还是太远，远的连在梦里都看的不真切。所有的老师都坚信我将会是学校有史以来考得最好的一个文科生，而在他们的概念里，考得最好的文科生，意味着你可以上山大，运气好点儿的话也许可以伸伸手还能够上复旦甚至人大的门槛。而我只要北大。我从来没有对任何人讲起过我的志愿——如果可以称之为志愿的话。我只想把所有的力量都积蓄起来。</p><p>高三第二学期，我们搬进了刚刚落成的教学楼。搬迁的那天，楼道里吵得很，拖桌子拉板凳的声音在走廊里不绝于耳。我一个人不言不语的跳过窗子，踏上了二楼窗外那个大大的平台。对面是操场，初雪未融，空气湿冷，光秃秃的树枝直直的刺向天空。雪天的阳光凉凉的透过睫毛洒在眼睛里。眼睛静静的看着远远的天空。我默默在心里说：“等着吧，我要你见证一个奇迹。”我知道，这世上的确没有什么不可能的事情。</p><p>我从来不知道压力达到一定程度居然可以把人的潜能激发到那种地步的。我是一个极其不安分的人，可是那段时间我表现得无比耐心沉稳，踏实得像头老黄牛。事实上无数次我都面临崩溃的边缘了。高中5本历史书我翻来覆去背了整整六遍。当你把一本书也背上6遍的时候你就知道那是什么感觉了，只是，忍不住的时候，再忍一下。坚持的确是世上最伟大的一种品质。那段时间我唯一的休息方式就是站在走廊里看远处的天空。后来发现在对面的建筑墙壁上有一行大大的红字，是学校用来激励学生的吧。我不确定。可就是那句话陪我走过了高三最后的日子——意志的力量，是决定成败的力量。我用我所有的经历和体会去实践而且证明了这句话：意志的力量，是决定成败的力量。</p><p>呼啸而过的风卷着漫天的黄沙，在那个北方的春天里，我们一个个头发蓬乱，皮肤粗糙。死寂和喧嚣交替如同美国的执政党，规律的让人怀疑冥冥之中可有双奇异而魔力无穷的手。惶然而又茫然的我们在敬畏与期待中迎来又送走了一模，二模乃至N模。每根神经都被冷酷无情的事实锤炼的坚不可摧，无论是吟惯了杨柳岸晓风残月的诗情，还是习惯了信手涂鸦的画意。在这个来去匆匆的季节里，一切敏感纤细都奢侈的如同凯撒大帝的绸衣，徒留无数次的希望在无数次的失望前撞得粉身碎骨，无数次的激扬在无数次的颓丧下摔得头破血流。每个人都比昨天更加明白理想和现实之间那道不可逾越的鸿沟，同时也比昨天更加拼命努力挣扎，试图挤过那道窄窄的独木桥，哪怕明知是徒劳。</p><p>——会是徒劳吗？</p><p>当这个锥心的问号在夜阑人静的时候一次次猛烈叩击起了心门，每个人都难以承受那潮涌而至的恐慌和迷惘，于是逼着自己埋进去，埋进书本，埋进试卷，埋进密不透风的黑茧里——为的是有朝一日的破茧成蝶。青黑的眼圈，浮肿的眼袋，干燥的手指，焦虑的起了水泡的嘴角。那个春天我不知道流行的是粉蓝果绿还是黛紫银灰。小镜子被悄悄收起，因为不忍见到自己憔悴的面容和黯淡的眼睛，因为怕有什么会在汪洋恣意般在干旱已久的脸上纵横开来——上帝，我是个女孩子啊！</p><p>上帝无言。无言微笑。微笑告诉我，你，心甘情愿。是的。我心甘情愿我不悔初衷我自己选择了这条路，平坦也好崎岖也罢我得走下去。我要走下去。我会走下去。</p><p>于是所有的呐喊被咽下去，所有的豪情被收起来。我像一头二月黄牛，默默踏步，无声前行。当拼搏被拼命所取代时，香格里拉已经幻化成心中恒远而朦胧的梦想，而所有的努力也只是为了让这梦想不再“美人如花隔去端”，哪怕青冥长天，纵然绿水波澜。</p><p>踏入考场的时候我很平静，“尽吾志也而不能至者，可以无悔矣”事实上我从来没有想过自己会考入北大以外的哪所学校。与其说这是一种自信，莫如说这是一种预感。我只是想，哪怕北大只招一个名额，为什么不可能是我？这世上没有什么事情是真正不可能发生的。</p><p>考完后走在回家的路上，看着依然匆匆的人群，心里依然空无着落。眼睛因为泪雾而模糊，视野里的东西却越发清晰。这在科学上有解释，我却宁愿相信是因为一切真实的感知都要以泪水和苦痛作为代价。是的，我们总是要学会放弃一些东西，在能得到另外一些东西。如果你所在乎的东西值得你为了它而付出一切，那么所有的放弃只是分娩前的阵痛。总要有所取舍的，蝴蝶的生命之所以如此短暂，是因为它的翅膀太过精致了。有时候，放弃是为了更好的得到，关键看你想要的究竟是什么，以及为了这想要的东西你愿意付出多大的代价。上帝对每一个人都是平等的。</p><p>事实上我怀念那段日子，而且永远感激它。不只是因为在那段时间里我完成了自己的过渡与蜕变，更是因为那时的一切深深烙在了我正处于可塑期的性格中，成为这一生永远的财富。那真的是多少钱都买不来的财富。人生中再也不会有哪个时期像那时一样专一地，单纯地，坚决地，几近顽固而又饱含信仰和希冀地，心无旁骛乃至与世隔绝地，为了一个认定的目标而奋斗。当你在若干年后某个悠闲的下午，回想起自己曾经的努力和放弃，曾经的坚忍和毅力，曾经的执着和付出，曾经的汗水和泪水，那会是怎样一种感动和庆幸，怎样一种欣慰和尊重+尊敬你自己。真的，在这个过程中，请允许我重复一遍，最重要的，是你自己。我感谢父母感谢老师感谢同学感谢朋友感谢所有关心我帮助我的人，但我最感谢的，是我自己。Nothing is impossible.这是我在一点一滴的努力与尝试中得到的东西。而且我也相信，这也将会是使我终身受益的东西。在这里，我把自己最信仰的一句话送给大家：Nothing is impossible.</p></font><blockquote><p>分享此文给所有正在奋斗拼搏的你！</p></blockquote>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;hr&gt;
-&lt;p&gt;爸妈给换了个新手机，Huawei的，用着还挺顺手，用了好几年的iphone6sp就扔在寝室不用了。&lt;/p&gt;
-&lt;p&gt;旧手机在寝室放着一直看的挺烦的，也不是烦，就是想让每个东西都能有它们自己的归宿吧，不想让它们闲着。于是我就挂到了咸鱼上去，定了一个蛮高的价格，想着这么
+        &lt;blockquote&gt;
+&lt;p&gt;这是一篇陪伴我走过初中，高中的文章&lt;/p&gt;
+&lt;p&gt;在我无数次的怀疑自己，自暴自弃之后给予我力量&lt;/p&gt;
+&lt;p&gt;现在我已经来到了大学，重读此篇，来找回曾经的自己。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;font size=&quot;3&quot; face=&quot;楷体&quot;&gt;
       
     
     </summary>
     
-      <category term="小说" scheme="https://www.qianhongbo.top/categories/%E5%B0%8F%E8%AF%B4/"/>
+      <category term="随笔" scheme="https://www.qianhongbo.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
+    
+      <category term="励志" scheme="https://www.qianhongbo.com/tags/%E5%8A%B1%E5%BF%97/"/>
     
   </entry>
   
   <entry>
-    <title>那些你可能不知道的知识</title>
-    <link href="https://www.qianhongbo.top/%E7%9F%A5%E8%AF%86%E7%A7%AF%E7%B4%AF/%E9%82%A3%E4%BA%9B%E4%BD%A0%E5%8F%AF%E8%83%BD%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E7%9F%A5%E8%AF%86/"/>
-    <id>https://www.qianhongbo.top/知识积累/那些你可能不知道的知识/</id>
-    <published>2019-06-06T13:09:44.000Z</published>
-    <updated>2019-07-31T09:44:10.089Z</updated>
+    <title>华科机械学院综合测控实验</title>
+    <link href="https://www.qianhongbo.com/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E9%99%A2%E7%BB%BC%E5%90%88%E6%B5%8B%E6%8E%A7%E5%AE%9E%E9%AA%8C.html"/>
+    <id>https://www.qianhongbo.com/华科机械学院综合测控实验.html</id>
+    <published>2020-02-19T04:10:39.000Z</published>
+    <updated>2020-09-13T13:21:37.657Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="游戏里的SSR-SR-R-UR，N都是什么意思？"><a href="#游戏里的SSR-SR-R-UR，N都是什么意思？" class="headerlink" title="游戏里的SSR, SR, R, UR，N都是什么意思？"></a>游戏里的SSR, SR, R, UR，N都是什么意思？</h2><ol><li><strong>SSR</strong>：全称为superior super rare，表示特级超稀有;</li><li><strong>UR</strong>:  全称是Ultra Rare，表示极度稀有;</li><li><strong>SR</strong>:   全称是Super Rare，表示超稀有；</li><li><strong>R</strong>:   即Rare，表示稀有;</li><li><strong>N</strong>:   是Normal的缩写，表示普通;</li></ol><hr><h2 id="64位是什么意思？"><a href="#64位是什么意思？" class="headerlink" title="64位是什么意思？"></a>64位是什么意思？</h2><p>一个 64 位的 CPU，内部可能有外部数据总线或不同大小的<a href="https://baike.baidu.com/item/地址总线" target="_blank" rel="noopener">地址总线</a>，可能比较大或比较小；术语“64位”也常用于描述这些总线的大小</p><p>在计算机架构中，64位<a href="https://baike.baidu.com/item/整数/1293937" target="_blank" rel="noopener">整数</a>、<a href="https://baike.baidu.com/item/内存地址/7354236" target="_blank" rel="noopener">内存地址</a>或其他<a href="https://baike.baidu.com/item/数据单元/1415766" target="_blank" rel="noopener">数据单元</a>，是指它们最高达到64位（8<a href="https://baike.baidu.com/item/字节/1096318" target="_blank" rel="noopener">字节</a>）宽。</p><h2 id="API是什么？"><a href="#API是什么？" class="headerlink" title="API是什么？"></a>API是什么？</h2><p>API（Application Programming Interface，应用程序编程接口）</p><p>对于浏览器来说（这也是所谓的客户端），Facebook的服务器就是一个应用程序编程接口。这意味着每当你在互联网上访问一个页面的时候，你都在与某个远程服务器的API发生交互。</p><p>API并不完全等同于远程服务器——它其实是服务器的一部分，负责接收请求并发送响应。</p><h2 id="IDE是什么"><a href="#IDE是什么" class="headerlink" title="IDE是什么"></a>IDE是什么</h2><p>integreted development environment 即集成开发环境</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="实验一"><a href="#实验一" class="headerlink" title="实验一"></a>实验一</h1><p>现在布置自学同学第一周的任务：</p><ol><li>用MATLAB产生0-100hz的方波信号，可以在数字框或者滚动条上改变方波频率。</li><li>用时域过零检测方法测量你产生的方波信号，测量误差越小越好，0.2hz以内打100分，0.5hz以内95分，1hz以内90分，5hz以内85分，10hz以内80分，以上评分标准是初步设的，不满意可以提</li><li>在你产生的方波信号上添加一直流分量，比如500-1000，如何保证你的程序也正常测量。</li><li>注意初始信号值如果全为0的情况下，如何保证你的程序也正常测量。</li></ol><p>仿真做好了，把上学期编写的采集代码替换仿真数据即完成第一次实验，第一次实验最终通过测量信号发生器的信号频率来评分。<br>学有余力的同学可以看看实验指导书的实验六编码器模式，另外一种通过硬件测量信号频率的方法，有一定难度。</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;游戏里的SSR-SR-R-UR，N都是什么意思？&quot;&gt;&lt;a href=&quot;#游戏里的SSR-SR-R-UR，N都是什么意思？&quot; class=&quot;headerlink&quot; title=&quot;游戏里的SSR, SR, R, UR，N都是什么意思？&quot;&gt;&lt;/a&gt;游戏里的SSR, SR
+        &lt;h1 id=&quot;实验一&quot;&gt;&lt;a href=&quot;#实验一&quot; class=&quot;headerlink&quot; title=&quot;实验一&quot;&gt;&lt;/a&gt;实验一&lt;/h1&gt;&lt;p&gt;现在布置自学同学第一周的任务：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;用MATLAB产生0-100hz的方波信号，可以在数字框或者滚动条上改变方
       
     
     </summary>
     
-      <category term="知识积累" scheme="https://www.qianhongbo.top/categories/%E7%9F%A5%E8%AF%86%E7%A7%AF%E7%B4%AF/"/>
+      <category term="华科机械学习资料分享" scheme="https://www.qianhongbo.com/categories/%E5%8D%8E%E7%A7%91%E6%9C%BA%E6%A2%B0%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/"/>
     
     
-      <category term="English" scheme="https://www.qianhongbo.top/tags/English/"/>
+      <category term="综合测控实验" scheme="https://www.qianhongbo.com/tags/%E7%BB%BC%E5%90%88%E6%B5%8B%E6%8E%A7%E5%AE%9E%E9%AA%8C/"/>
     
   </entry>
   
   <entry>
-    <title>我的Hexo博客搭建经历</title>
-    <link href="https://www.qianhongbo.top/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%80%BB%E7%BB%93/"/>
-    <id>https://www.qianhongbo.top/学习笔记/我的个人博客搭建总结/</id>
-    <published>2019-06-06T06:37:27.000Z</published>
-    <updated>2019-07-25T07:06:32.811Z</updated>
+    <title>大三上学期总结</title>
+    <link href="https://www.qianhongbo.com/%E5%A4%A7%E4%B8%89%E4%B8%8A%E5%AD%A6%E6%9C%9F%E6%80%BB%E7%BB%93.html"/>
+    <id>https://www.qianhongbo.com/大三上学期总结.html</id>
+    <published>2020-02-17T07:38:19.000Z</published>
+    <updated>2020-09-13T13:21:37.657Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="为什么要做自己的博客？"><a href="#为什么要做自己的博客？" class="headerlink" title="为什么要做自己的博客？"></a>为什么要做自己的博客？</h1><p>说到为什么要这么做，这个想法也是已经有很久了。当时的起因是我想通过互联网上的某个平台来记录自己的学习笔记或者自己的一些思考。在知乎等搜索了很多，都没有找到太合适的，其中包括公众号，简书，csdn等等。我觉得不合适的原因有的是因为网站太过烟火气，对我来说我觉得不够“干净”。有的是因为我觉得和我的圈子不符合，有的是因为我个人的喜好，最终都没有选择。有一天就突然萌生了做一个自己的博客的想法！</p><p>但问题来了，怎么做呢？我完全摸不到头脑。我就去知乎查了一下看到了蛮多科普的帖子，但一翻，好长好长，其中也包括很多很多的代码。对于一个机械专业的学生来说，看到这些内心是恐惧的。于是…我就把那篇帖子收藏了，打算等我有时间再做…当时可能觉得的时间是大四…可是这个想法实际上一直深深的埋在我的心里。</p><p>上周，这学期该忙的事情几乎结束，剩下的就是为了期末考试做准备了，我向来是一个喜欢拖延的人，不到考试前一周应该是打不起学习的兴趣的。我就在教室看着电脑，可能又萌生了写点东西的想法，奈何没有平台给我发挥。于是突然决定，就现在！把博客给我搞出来</p><h1 id="我花了多少时间？"><a href="#我花了多少时间？" class="headerlink" title="我花了多少时间？"></a>我花了多少时间？</h1><p>总共时长大概是3天白天的时间，对于我这个毫无基础的IT小白来说还是可以接受的（毕竟如果我不是搞这个的话估计也不会学习吧）</p><h1 id="我是怎么做出来的？"><a href="#我是怎么做出来的？" class="headerlink" title="我是怎么做出来的？"></a>我是怎么做出来的？</h1><p>遇到了很多问题，也查了很多资料，通过别人的教程一步一步完善自己的博客</p><p>推荐链接：<a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener"><strong>知乎上的一篇文章，我的启蒙</strong></a> </p><p>看了这个博客之后大部分操作就都可以完成了，当然你可能会像我一样，遇到很多的问题，那么怎么办呢？当然是自己查！而且很容易查到你想要的解决方法</p><p><a href="[https://slanceli.top/2019/02/18/%E6%B7%B1%E5%BA%A6%E7%BE%8E%E5%8C%96Hexo%EF%BC%88NexT%E4%B8%BB%E9%A2%98%EF%BC%89/](https://slanceli.top/2019/02/18/深度美化Hexo（NexT主题）/"><strong>这篇博客是我的努力目标，当时就是朝着这个方向努力完善</strong></a>)</p><p><a href="[http://shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html](http://shenzekun.cn/hexo的next主题个性化配置教程.html"><strong>这篇博客讲了很多博客美化的内容，我都是自己一步一步搞的</strong></a>)</p><p>以上部分完成了，你的博客基本就完成啦！如果你遇到了什么问题，都可以去google，相信你能得到你想要的答案~</p><h2 id="会不会出教程？"><a href="#会不会出教程？" class="headerlink" title="会不会出教程？"></a>会不会出教程？</h2><p>应该不会，教程太多了，我还没那么牛，等我再学习学习吧…</p><h2 id="如果换电脑了，想在新电脑上写博客，怎么迁移"><a href="#如果换电脑了，想在新电脑上写博客，怎么迁移" class="headerlink" title="如果换电脑了，想在新电脑上写博客，怎么迁移"></a>如果换电脑了，想在新电脑上写博客，怎么迁移</h2><p><a href="https://showcc.github.io/2017/06/08/Change%20the%20computer%20update%20the%20hexo%20blog/" target="_blank" rel="noopener"><strong>一个比较好的教程</strong></a></p><h2 id="想在两台电脑上同时写博客的方法"><a href="#想在两台电脑上同时写博客的方法" class="headerlink" title="想在两台电脑上同时写博客的方法"></a>想在两台电脑上同时写博客的方法</h2><p>利用git的分支功能！</p><p>把生成的静态网页上传到master分支，把写的原文件上传到新建的hexo分支</p><p>每次在另一台电脑上写博客前，先<code>git pull</code>将本地文件更新，而在写好文章后要记得用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add . </span><br><span class="line">git commit -m &quot;&quot;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure><p>参考了知乎上的一篇答案，十分详细，对新手小白十分友好，<a href="https://www.zhihu.com/question/21193762/answer/489124966" target="_blank" rel="noopener"><strong>点击跳转</strong></a></p><p>做完这个对git的分支功能有了更深刻的认识~</p>]]></content>
+    <content type="html"><![CDATA[ <font size="3" face="楷体">这是我看似很努力的一个学期，结果也还说得过去，但这些与我预想的都还差了太多，我用20分钟的时间做了一个反思，试图找出我存在的问题。<ol><li><p>我的努力程度不够，我是一个自制力很差的人，向来如此，总是禁不住诱惑，无论是手机还是游戏，都是一沾上就会上瘾，所以这一学期我尽管花了不少时间在学习上，但相比于其他同学，可能还是不够吧，毕竟很多人可能是花费自己的全部时间去学习了。</p></li><li><p>我对某些并不感兴趣的学科没有学的认真，比如机械原理，热工基础。我并没有抱着一个为了得高分的心态，而是自认为学的够了就不学了，但很显然，这种学习程度对于达到90+以上的分数是不太可能的。</p></li><li><p>学习方法，自从上了大学，我好想对于学习方法就已经不再要求自己了，学得再也不聪明，总是以一种比较笨，低效的方式在学习，这也不是一个聪明人应该做的事情。</p></li></ol><p>希望在最后的学期，我能逐渐克服这些问题，尽管GPA可能已经不会有太大的改观，但这学期对我来说尤为重要，我要考出GRE和TOEFL，我希望我能在这两项成绩的考试中证明自己，考出高分！也算不让自己的大学留下遗憾吧。<br></p></font><p></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;为什么要做自己的博客？&quot;&gt;&lt;a href=&quot;#为什么要做自己的博客？&quot; class=&quot;headerlink&quot; title=&quot;为什么要做自己的博客？&quot;&gt;&lt;/a&gt;为什么要做自己的博客？&lt;/h1&gt;&lt;p&gt;说到为什么要这么做，这个想法也是已经有很久了。当时的起因是我想通过互
+         &lt;font size=&quot;3&quot; face=&quot;楷体&quot;&gt;
+这是我看似很努力的一个学期，结果也还说得过去，但这些与我预想的都还差了太多，我用20分钟的时间做了一个反思，试图找出我存在的问题。
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;我的努力程度不够，我是一个自制力很差的人，向来如此，总是禁不住诱惑，
       
     
     </summary>
     
-      <category term="学习笔记" scheme="https://www.qianhongbo.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="随笔" scheme="https://www.qianhongbo.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="Hexo" scheme="https://www.qianhongbo.top/tags/Hexo/"/>
+      <category term="Diary" scheme="https://www.qianhongbo.com/tags/Diary/"/>
     
   </entry>
   
   <entry>
-    <title>Markdown 语法总结整理</title>
-    <link href="https://www.qianhongbo.top/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Markdown-%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93%E6%95%B4%E7%90%86/"/>
-    <id>https://www.qianhongbo.top/学习笔记/Markdown-语法总结整理/</id>
-    <published>2019-06-06T06:18:55.000Z</published>
-    <updated>2019-07-31T09:44:10.088Z</updated>
+    <title>一切都是最好的安排</title>
+    <link href="https://www.qianhongbo.com/%E4%B8%80%E5%88%87%E9%83%BD%E6%98%AF%E6%9C%80%E5%A5%BD%E7%9A%84%E5%AE%89%E6%8E%92.html"/>
+    <id>https://www.qianhongbo.com/一切都是最好的安排.html</id>
+    <published>2020-02-11T11:51:46.000Z</published>
+    <updated>2020-09-13T13:21:37.655Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Markdown文本学习"><a href="#Markdown文本学习" class="headerlink" title="Markdown文本学习"></a>Markdown文本学习</h1><p>就不总结了</p><p>直接上传一个我觉得不错的链接吧</p><p><a href="https://list.yinxiang.com/markdown/eef42447-db3f-48ee-827b-1bb34c03eb83.php" target="_blank" rel="noopener">印象笔记Markdown文本入门指南</a></p><h1 id="Markdown文本公式写法"><a href="#Markdown文本公式写法" class="headerlink" title="Markdown文本公式写法"></a>Markdown文本公式写法</h1><p><a href="https://blog.csdn.net/mingzhuo_126/article/details/82722455" target="_blank" rel="noopener">超全公式指南，简单易懂</a></p><p>hhh ，比如：</p><script type="math/tex; mode=display">E=mc^2</script><p>然而用这个写法在Hexo Next主题下网页上并不会显示出公式，我查了一下</p><p><a href="https://blog.csdn.net/yexiaohhjk/article/details/82526604" target="_blank" rel="noopener">这个教程不错</a></p><p><a href="https://jdhao.github.io/2017/10/06/hexo-markdown-latex-equation/" target="_blank" rel="noopener">打矩阵的时候你会发现无法多行显示，这个教程告诉了我们解决办法</a></p><h1 id="Markdown代码块的使用方法"><a href="#Markdown代码块的使用方法" class="headerlink" title="Markdown代码块的使用方法"></a>Markdown代码块的使用方法</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#include1 &lt;iostream&gt;</span><br></pre></td></tr></table></figure><p>在句首加”” ```” 即可，即键盘左上角</p><h1 id="Markdown引用的方法"><a href="#Markdown引用的方法" class="headerlink" title="Markdown引用的方法"></a>Markdown引用的方法</h1><blockquote><p>引用内容</p></blockquote><p>引用方法在句首‘ &gt; ’加空格即可</p>]]></content>
+    <content type="html"><![CDATA[ <font size="3" face="楷体">今天偶然想到几位曾经的高中同学，也就想起了很多高中的事，虽然大部分事情已经记得不是很清晰，也就只记得个大概。但涌上心头的不仅仅是对于回忆的伤感，更多的是一种对曾经的遗憾，毕竟当时的我还年少轻狂，对未来还有这无数的幻想，内心难免掀起波澜。<p>希望我能带着今天的情绪继续前行下去，不辜负家人的期待，和自己的期待，2020是决定我人生轨迹的一年，或许多年以后我回望今天，也注定会有所不同吧。</p><p>干就完了，奥利给！<br></p></font><p></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;Markdown文本学习&quot;&gt;&lt;a href=&quot;#Markdown文本学习&quot; class=&quot;headerlink&quot; title=&quot;Markdown文本学习&quot;&gt;&lt;/a&gt;Markdown文本学习&lt;/h1&gt;&lt;p&gt;就不总结了&lt;/p&gt;
-&lt;p&gt;直接上传一个我觉得不错的链接吧&lt;/
+         &lt;font size=&quot;3&quot; face=&quot;楷体&quot;&gt;
+今天偶然想到几位曾经的高中同学，也就想起了很多高中的事，虽然大部分事情已经记得不是很清晰，也就只记得个大概。但涌上心头的不仅仅是对于回忆的伤感，更多的是一种对曾经的遗憾，毕竟当时的我还年少轻狂，对未来还有这无数的幻想，内心难免
       
     
     </summary>
     
-      <category term="学习笔记" scheme="https://www.qianhongbo.top/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="随笔" scheme="https://www.qianhongbo.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="Markdown" scheme="https://www.qianhongbo.top/tags/Markdown/"/>
+      <category term="Diary" scheme="https://www.qianhongbo.com/tags/Diary/"/>
     
   </entry>
   
   <entry>
-    <title>I finally succeeded!</title>
-    <link href="https://www.qianhongbo.top/%E9%9A%8F%E7%AC%94/I-finally-succeeded/"/>
-    <id>https://www.qianhongbo.top/随笔/I-finally-succeeded/</id>
-    <published>2019-06-04T04:27:43.000Z</published>
-    <updated>2019-06-05T09:52:30.000Z</updated>
+    <title>计算机四级知识点</title>
+    <link href="https://www.qianhongbo.com/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%9B%E7%BA%A7%E7%9F%A5%E8%AF%86%E7%82%B9.html"/>
+    <id>https://www.qianhongbo.com/计算机四级知识点.html</id>
+    <published>2020-02-03T10:19:45.000Z</published>
+    <updated>2020-09-13T13:21:37.662Z</updated>
     
-    <content type="html"><![CDATA[<p>It is really complicated. Fortunately, I get it.</p><p>But I also have a long way to go…</p><p>yes…</p><p>It cost me three days to complete it.</p><p>我现在真的感觉好累好累啊</p><p>脖子痛，肌肉也紧张的很</p><p>呜呼</p><p>但也很满足啦</p><p>看到这几天自己的成果还是非常开心的~</p>]]></content>
+    <content type="html"><![CDATA[<p>时钟分为硬件时钟和软件时钟</p><p>目态：用户态 – 一般指令</p><p>管态：系统态 – 特权指令</p><h1 id="第三章：进程线程模型"><a href="#第三章：进程线程模型" class="headerlink" title="第三章：进程线程模型"></a>第三章：进程线程模型</h1><ol><li>顺序执行：顺序性；封闭性；程序结果确定性；程序结果可再现性</li><li>多道程序系统：同时处理多个具有独立功能的程序，提高利用率/ 独立性；随机性；资源共享性</li><li>程序的并发执行：并发程序相互制约；程序与计算不再一一对应；并发程序结果不可再现</li></ol><blockquote><p>多道程序系统属于各种操作系统，是一种思想（实时系统、分布系统）</p><p>并发不等于同时运行</p></blockquote><h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><ol><li>进程是正在执行的程序，包括程序，数据，进程控制块</li><li>并发性；动态性；独立性；交往性；异步性</li><li>三状态模型：就绪状态，运行状态，等待状态<ol><li>就绪状态：进程分配到除CPU之外的一切资源；排成就绪队列</li><li>运行状态：就绪状态的程序获得CPU的使用权，单处理器同一时间只能有一个程序处于运行状态</li><li>等待状态/阻塞状态：进程请求输入输出、申请额外空间；不浪费CPU</li></ol></li><li>创建状态，结束状态（完成、未完成）</li><li>挂起状态，激活状态（内存、外存转换）</li><li>新状态–&gt;就绪状态：就绪队列可以接纳新的进程</li><li>就绪状态–&gt;执行状态：按照算法分配；执行状态的进程称为当前进程</li><li>执行状态–&gt;就绪状态：时间片结束、优先权较低</li><li>执行状态–&gt;阻塞状态：IO请求等</li><li>阻塞状态需要先进入就绪状态再进入运行状态</li></ol><p><img src="//tvax4.sinaimg.cn/large/006BuM4Jly1gbhtnod40pj30qo0f7k0k.jpg" alt="TIM截图20200202095653"></p><h2 id="PCB：进程控制块"><a href="#PCB：进程控制块" class="headerlink" title="PCB：进程控制块"></a>PCB：进程控制块</h2><p>组织方式</p><ol><li>线性方式：需要扫描所有的</li><li>索引方式：需要额外的空间</li><li>链接方式：相同状态的进程排列在一起</li></ol><h2 id="Unix的fork-函数"><a href="#Unix的fork-函数" class="headerlink" title="Unix的fork()函数"></a>Unix的<code>fork()</code>函数</h2><p>父进程通过<code>fork()</code>创建子进程</p><p>特点：只被执行一次，返回<strong>两次</strong>结果，父进程返回的是子进程的<code>PID</code>，子进程中<code>fork</code>返回0</p><blockquote><p>代码中有几个fork()就会输出2^n次</p></blockquote><h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><p>线程是进程的一个实体，是被系统独立调度和执行的基本单位</p><p>线程基本上不拥有系统资源，但它可以与同属于一个进程的其他线程共享所拥有的全部资源</p><p>一个线程可以创建和撤销另一个线程，多个线程之间可以并发执行，因此运行中可以呈现出异步性，因此线程同样有就绪，执行，阻塞三个状态</p><blockquote><p>进程是拥有资源的基本单位</p></blockquote><blockquote><p>不同进程之间可以并发执行，一个进程中的多个线程也可以并发执行</p><p>QQ和音乐播放可以同时运行（多进程），QQ里可以多个人同时聊天（多线程）</p><p>线程的引入增加了并发性！</p></blockquote><blockquote><p>一个程序至少有一个进程，一个进程至少有一个线程</p></blockquote><p>用户级线程，内核级线程，混合级线程</p><h2 id="调度"><a href="#调度" class="headerlink" title="调度"></a>调度</h2><ol><li>低级调度：内核用一定的调度算法从就绪队列选出一进程</li><li>中级调度：调度算法将等待状态的进程调至外存中</li></ol><h2 id="调度算法"><a href="#调度算法" class="headerlink" title="调度算法"></a>调度算法</h2><ol><li>先来先服务调度算法 FCFS：最简单，非抢占式，有利于长进程，不利于短进程。</li><li>最短作业优先算法 SPF：优先处理运行时间最短的进程，降低平均等待时间，提高吞吐量，非抢占式，对长进程不利。</li><li>最短剩余时间优先调度算法 SRT：抢占式的动态版本。</li></ol><p><img src="//tvax3.sinaimg.cn/large/006BuM4Jly1gblan566baj30qc0eedoa.jpg" alt="TIM截图20200205100110"></p><ol start="4"><li>时间片轮转调度算法RR：在分时系统中，队首进程执行一个时间片，之后计时器发生一个时钟终端，并将它放到对尾，继续执行。适合于交互进程的调度。</li><li>最高优先级调度算法：为了照顾紧迫型的进程</li><li>多级反馈队列调度算法MLF：主流使用调度算法</li></ol><p><img src="//tvax3.sinaimg.cn/large/006BuM4Jly1gbotzhu7lnj30m80fm452.jpg" alt="TIM截图20200208112701"></p><ol start="7"><li>实时系统的调度算法：速率单调调度算法，最早最终时限优先调度</li></ol><blockquote><p>进程和程序的本质区别是：进程是动态的，程序是静态的</p><p>进程和程序的其它区别是：进程是在内存，程序是在外存</p></blockquote><h1 id="第四章-并发与同步"><a href="#第四章-并发与同步" class="headerlink" title="第四章 并发与同步"></a>第四章 并发与同步</h1><p>资源共享程度的三个层次：互斥、死锁、饥饿</p><p>临界资源：资源在一段时间内只允许一个进程访问和使用</p><p>进程同步机制应该遵循的原则：</p><ol><li>空闲让进</li><li>忙则等待</li><li>有限等待：以免进入“死等”</li><li>让权等待：以免进入“忙等”</li></ol><p>软件互斥的四种算法：</p><ol><li>单标志算法</li><li>双标志、先检查算法</li><li>双标识、后检查算法</li><li>先修改、后检查、后修改者等待算法</li></ol><p>进程互斥的硬件方法：</p><ol><li>TS指令</li><li>Swap指令</li></ol><p>整型信号量：</p><ol><li>大于0，表示系统中可用资源的数目</li><li>小于0，表示被阻塞的进程数目</li><li>等于0，系统资源已经用完，并没有因资源而被阻塞的进程</li></ol><p>PV操作</p><p> P操作用于申请资源</p><p>V操作用于释放资源</p><p><img src="//tva3.sinaimg.cn/large/006BuM4Jly1gbqb4zsslpj30qn0ey14e.jpg" alt="111111111"></p><p><img src="//tva1.sinaimg.cn/large/006BuM4Jly1gbqb54k2rgj30qk0emgvz.jpg" alt="222222222222222222"></p><p><img src="//tva3.sinaimg.cn/large/006BuM4Jly1gbsqjtggywj30qv0i1qd4.jpg" alt="TIM截图20200211203024"></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;It is really complicated. Fortunately, I get it.&lt;/p&gt;
-&lt;p&gt;But I also have a long way to go…&lt;/p&gt;
-&lt;p&gt;yes…&lt;/p&gt;
-&lt;p&gt;It cost me three days to com
+        &lt;p&gt;时钟分为硬件时钟和软件时钟&lt;/p&gt;
+&lt;p&gt;目态：用户态 – 一般指令&lt;/p&gt;
+&lt;p&gt;管态：系统态 – 特权指令&lt;/p&gt;
+&lt;h1 id=&quot;第三章：进程线程模型&quot;&gt;&lt;a href=&quot;#第三章：进程线程模型&quot; class=&quot;headerlink&quot; title=&quot;第三章：进程线程模
       
     
     </summary>
     
-      <category term="随笔" scheme="https://www.qianhongbo.top/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="学习笔记" scheme="https://www.qianhongbo.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Diary" scheme="https://www.qianhongbo.top/tags/Diary/"/>
+      <category term="计算机四级" scheme="https://www.qianhongbo.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%9B%E7%BA%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第5讲.相关系数</title>
+    <link href="https://www.qianhongbo.com/%E7%AC%AC5%E8%AE%B2.%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0.html"/>
+    <id>https://www.qianhongbo.com/第5讲.相关系数.html</id>
+    <published>2020-02-01T14:15:26.000Z</published>
+    <updated>2020-09-13T13:21:37.660Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol><li>非线性也会使得线性相关系数很大</li><li>离群点对相关系数的影响也很大</li><li>如果两个变量的相关系数很大，也不能说明两者相关</li><li>两个变量的相关系数结果为0，只能说明不是线性相关，但可能会有更复杂的相关关系</li></ol><p>所以在建模时，先画出散点图！看出趋势，如果有线性关系，就可以用皮尔逊相关系数计算相关性的大小</p><h2 id="EXCEL-跳转"><a href="#EXCEL-跳转" class="headerlink" title="EXCEL 跳转"></a>EXCEL 跳转</h2><ol><li>ctrl + -&gt; 跳转到最后一列</li><li>ctrl + &lt;- 跳转到第一列</li><li>ctrl + shift + -&gt; 选中这一行</li><li>ctrl + shift + -&gt; + 下 选中所有的数据</li><li>ctrl + shift + -&gt; + 空格 选中所有的数据</li></ol><h2 id="描述性统计"><a href="#描述性统计" class="headerlink" title="描述性统计"></a>描述性统计</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%% 统计描述</span></span><br><span class="line">MIN = <span class="built_in">min</span>(Test);  <span class="comment">% 每一列的最小值</span></span><br><span class="line">MAX = <span class="built_in">max</span>(Test);   <span class="comment">% 每一列的最大值</span></span><br><span class="line">MEAN = <span class="built_in">mean</span>(Test);  <span class="comment">% 每一列的均值</span></span><br><span class="line">MEDIAN = median(Test);  <span class="comment">%每一列的中位数</span></span><br><span class="line">SKEWNESS = skewness(Test); <span class="comment">%每一列的偏度</span></span><br><span class="line">KURTOSIS = kurtosis(Test);  <span class="comment">%每一列的峰度</span></span><br><span class="line">STD = std(Test);  <span class="comment">% 每一列的标准差</span></span><br><span class="line">RESULT = [MIN;MAX;MEAN;MEDIAN;SKEWNESS;KURTOSIS;STD]  <span class="comment">%将这些统计量放到一个矩阵中中表示</span></span><br></pre></td></tr></table></figure><h2 id="皮尔逊相关系数计算"><a href="#皮尔逊相关系数计算" class="headerlink" title="皮尔逊相关系数计算"></a>皮尔逊相关系数计算</h2><p>皮尔逊相关系数是用于度量两个变量X和Y之间的相关（线性相关），其值介于-1与1之间。绝对值越大，线性相关程度越大，大于零为正相关，小于零为负相关。</p><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">R = corrcoef(Test)   <span class="comment">% correlation coefficient</span></span><br></pre></td></tr></table></figure><h2 id="用皮尔逊相关系数进行假设检验"><a href="#用皮尔逊相关系数进行假设检验" class="headerlink" title="用皮尔逊相关系数进行假设检验"></a>用皮尔逊相关系数进行假设检验</h2><p>p值判断法：</p><ol><li><p>p&lt;0.05，说明在95%的置信水平上拒绝原假设</p></li><li><p>p&gt;0.05，说明在95%的置信水平上无法拒绝原假设</p></li></ol><h2 id="检验数据是否是正态分布"><a href="#检验数据是否是正态分布" class="headerlink" title="检验数据是否是正态分布"></a>检验数据是否是正态分布</h2><ol><li>JB检验（大样本 n&gt;30）</li><li>Shapiro-Wilk检验（小样本 3&lt;n&lt;50）</li><li>Q-Q图（样本数量极大）</li></ol><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">x = normrnd(<span class="number">2</span>,<span class="number">3</span>,<span class="number">100</span>,<span class="number">1</span>);   <span class="comment">% 生成100*1的随机向量，每个元素是均值为2，标准差为3的正态分布</span></span><br><span class="line">skewness(x)  <span class="comment">%偏度</span></span><br><span class="line">kurtosis(x)  <span class="comment">%峰度</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 检验第一列数据是否为正态分布</span></span><br><span class="line">[h,p] = jbtest(Test(:,<span class="number">1</span>),<span class="number">0.05</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">% Q-Q图</span></span><br><span class="line">qqplot(Test(:,<span class="number">1</span>))</span><br></pre></td></tr></table></figure><h2 id="斯皮尔曼相关系数"><a href="#斯皮尔曼相关系数" class="headerlink" title="斯皮尔曼相关系数"></a>斯皮尔曼相关系数</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">X = [<span class="number">3</span> <span class="number">8</span> <span class="number">4</span> <span class="number">7</span> <span class="number">2</span>]'  <span class="comment">% 一定要是列向量</span></span><br><span class="line">Y = [<span class="number">5</span> <span class="number">10</span> <span class="number">9</span> <span class="number">10</span> <span class="number">6</span>]'</span><br><span class="line"></span><br><span class="line">coeff = corr(X , Y , <span class="string">'type'</span> , <span class="string">'Spearman'</span>)</span><br><span class="line"><span class="comment">% 等价于：</span></span><br><span class="line">RX = [<span class="number">2</span> <span class="number">5</span> <span class="number">3</span> <span class="number">4</span> <span class="number">1</span>]</span><br><span class="line">RY = [<span class="number">1</span> <span class="number">4.5</span> <span class="number">3</span> <span class="number">4.5</span> <span class="number">2</span>]</span><br><span class="line">R = corrcoef(RX,RY)</span><br><span class="line">[R,P]=corr(Test, <span class="string">'type'</span> , <span class="string">'Spearman'</span>)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;注意事项&quot;&gt;&lt;a href=&quot;#注意事项&quot; class=&quot;headerlink&quot; title=&quot;注意事项&quot;&gt;&lt;/a&gt;注意事项&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;非线性也会使得线性相关系数很大&lt;/li&gt;
+&lt;li&gt;离群点对相关系数的影响也很大&lt;/li&gt;
+&lt;li&gt;如果两个变量的
+      
+    
+    </summary>
+    
+      <category term="数模美赛" scheme="https://www.qianhongbo.com/categories/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B/"/>
+    
+    
+      <category term="数模" scheme="https://www.qianhongbo.com/tags/%E6%95%B0%E6%A8%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【STM32】外部中断实验</title>
+    <link href="https://www.qianhongbo.com/%E3%80%90STM32%E3%80%91%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD%E5%AE%9E%E9%AA%8C.html"/>
+    <id>https://www.qianhongbo.com/【STM32】外部中断实验.html</id>
+    <published>2019-08-28T13:12:38.000Z</published>
+    <updated>2019-08-29T03:31:46.737Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="外部中断概述"><a href="#外部中断概述" class="headerlink" title="外部中断概述"></a>外部中断概述</h1><ol><li><p>STM32的每个IO都可以作为外部中断输入。</p></li><li><p>STM32的中断控制器支持19个外部中断/事件请求：</p></li></ol><ul><li>线0~15：对应外部IO口的输入中断。</li><li>线16：连接到PVD输出。</li><li>线17：连接到RTC闹钟事件。</li><li>线18：连接到USB唤醒事件。</li></ul><ol start="3"><li><p>每个外部中断线可以独立的配置触发方式（上升沿，下降沿或者双边沿触发），触发/屏蔽，专用的状态位。</p></li><li><p>从上面可以看出，STM32供IO使用的中断线只有16个，但是STM32F10x系列的IO口多达上百个，那么中断线怎么跟io口对应呢？</p></li></ol><ul><li>GPIOx.0映射到EXTI0</li><li>GPIOx.1映射到EXTI1</li><li>…</li><li>GPIOx.15映射到EXTI15</li></ul><ol start="5"><li>IO口外部中断在中断向量表中只分配了7个中断向量，也就是<br>只能使用7个中断服务函数<blockquote><p>从表中可以看出，外部中断线5<del>9分配一个中断向量，共用一个服务函数，外部中断线10</del>15分配一个中断向量，共用一个中断服务函数。</p></blockquote></li></ol><h1 id="外部中断常用库函数"><a href="#外部中断常用库函数" class="headerlink" title="外部中断常用库函数"></a>外部中断常用库函数</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//exti.c文件</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">GPIO_EXTILineConfig</span><span class="params">(<span class="keyword">uint8_t</span> GPIO_PortSource, <span class="keyword">uint8_t</span> GPIO_PinSource)</span></span>;</span><br><span class="line"><span class="comment">//设置IO口与中断线的映射关系</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">exp</span>:  GPIO_EXTILineConfig(GPIO_PortSourceGPIOE,GPIO_PinSource2);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EXTI_Init</span><span class="params">(EXTI_InitTypeDef* EXTI_InitStruct)</span></span>;</span><br><span class="line"> <span class="comment">//初始化中断线：触发方式等</span></span><br><span class="line"></span><br><span class="line"><span class="function">ITStatus <span class="title">EXTI_GetITStatus</span><span class="params">(<span class="keyword">uint32_t</span> EXTI_Line)</span></span>;</span><br><span class="line"><span class="comment">//判断中断线中断状态，是否发生</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EXTI_ClearITPendingBit</span><span class="params">(<span class="keyword">uint32_t</span> EXTI_Line)</span></span>;</span><br><span class="line"><span class="comment">//清除中断线上的中断标志位</span></span><br></pre></td></tr></table></figure><h1 id="实际代码"><a href="#实际代码" class="headerlink" title="实际代码"></a>实际代码</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"exti.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stm32f10x.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"key.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"delay.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"led.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EXTIX_Init</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">EXTI_InitTypeDef  EXTI_InitStruct;</span><br><span class="line">NVIC_InitTypeDef  NVIC_InitStruct;</span><br><span class="line"></span><br><span class="line">KEY_Init();</span><br><span class="line"></span><br><span class="line">RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO,ENABLE);</span><br><span class="line"></span><br><span class="line">GPIO_EXTILineConfig(GPIO_PortSourceGPIOE,GPIO_PinSource4);</span><br><span class="line"></span><br><span class="line">EXTI_InitStruct.EXTI_Line = EXTI_Line4;</span><br><span class="line">EXTI_InitStruct.EXTI_LineCmd = ENABLE;</span><br><span class="line">EXTI_InitStruct.EXTI_Mode = EXTI_Mode_Interrupt;</span><br><span class="line">EXTI_InitStruct.EXTI_Trigger = EXTI_Trigger_Falling;</span><br><span class="line">EXTI_Init(&amp;EXTI_InitStruct);</span><br><span class="line"></span><br><span class="line">NVIC_InitStruct.NVIC_IRQChannel = EXTI4_IRQn;</span><br><span class="line">NVIC_InitStruct.NVIC_IRQChannelCmd = ENABLE;</span><br><span class="line">NVIC_InitStruct.NVIC_IRQChannelPreemptionPriority = <span class="number">2</span>;</span><br><span class="line">NVIC_InitStruct.NVIC_IRQChannelSubPriority = <span class="number">2</span>;</span><br><span class="line">NVIC_Init(&amp;NVIC_InitStruct);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EXTI4_IRQHandler</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">delay_ms(<span class="number">10</span>);</span><br><span class="line"><span class="keyword">if</span>(KEY0 == <span class="number">0</span>)&#123;</span><br><span class="line">LED0 = !LED0;</span><br><span class="line">LED1 = !LED1;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//手动清除中断标志位</span></span><br><span class="line">EXTI_ClearITPendingBit(EXTI_Line4);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//main.c文件</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stm32f10x.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"led.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"beep.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"key.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"sys.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"delay.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"exti.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"usart.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">delay_init();      <span class="comment">//延时函数初始化  </span></span><br><span class="line">NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);</span><br><span class="line"> LED_Init();      <span class="comment">//LED端口初始化</span></span><br><span class="line">KEY_Init();           <span class="comment">//初始化与按键连接的硬件接口</span></span><br><span class="line">EXTIX_Init();</span><br><span class="line">LED0 = <span class="number">0</span>;    <span class="comment">//先点亮红灯</span></span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"OK\r\n"</span>);</span><br><span class="line">&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;外部中断概述&quot;&gt;&lt;a href=&quot;#外部中断概述&quot; class=&quot;headerlink&quot; title=&quot;外部中断概述&quot;&gt;&lt;/a&gt;外部中断概述&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;STM32的每个IO都可以作为外部中断输入。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;STM32
+      
+    
+    </summary>
+    
+      <category term="STM32" scheme="https://www.qianhongbo.com/categories/STM32/"/>
+    
+    
+      <category term="STM32" scheme="https://www.qianhongbo.com/tags/STM32/"/>
     
   </entry>
   

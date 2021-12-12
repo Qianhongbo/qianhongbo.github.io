@@ -62,7 +62,7 @@ get_font_family(config) {
 }
 
 // Font families.
-$font-family-chinese      = "PingFang SC", "Microsoft YaHei"
+$font-family-chinese      = "STFangsong", "Microsoft YaHei"
 
 $font-family-base         = $font-family-chinese, sans-serif
 $font-family-base         = get_font_family('global'), $font-family-chinese, sans-serif if get_font_family('global')
@@ -70,7 +70,7 @@ $font-family-base         = get_font_family('global'), $font-family-chinese, san
 $font-family-logo         = $font-family-base
 $font-family-logo         = get_font_family('logo'), $font-family-base if get_font_family('logo')
 
-$font-family-headings     = $font-family-base
+$font-family-headings     = "STKaiti", "Microsoft YaHei" // $font-family-base
 $font-family-headings     = get_font_family('headings'), $font-family-base if get_font_family('headings')
 
 $font-family-posts        = $font-family-base
@@ -101,7 +101,7 @@ $font-size-larger         = $font-size-base + 4px
 
 // Headings font size
 $font-size-headings-step    = 2px
-$font-size-headings-base    = 26px   //修改以前是24，我改成了26
+$font-size-headings-base    = 28px   //修改以前是24，我改成了26
 $font-size-headings-base    = unit(hexo-config('font.headings.size'), px) if hexo-config('font.headings.size') is a 'unit'
 $font-size-headings-small   = $font-size-headings-base - $font-size-headings-step
 $font-size-headings-smaller = $font-size-headings-small - $font-size-headings-step

@@ -54,9 +54,6 @@
   
 
   
-    
-    
-  
 
   
 
@@ -66,8 +63,6 @@
 
   
     
-      
-    
 
     
   
@@ -75,7 +70,7 @@
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -338,6 +333,201 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/如何理解欧拉角中的roll，pitch，yaw.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/如何理解欧拉角中的roll，pitch，yaw.html" itemprop="url">如何理解欧拉角中的pitch,roll,yaw</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-15T09:44:19+08:00">
+                2020-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器人学/" itemprop="url" rel="index">
+                    <span itemprop="name">机器人学</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/如何理解欧拉角中的roll，pitch，yaw.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="如何理解欧拉角中的roll，pitch，yaw.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  182 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>欧拉角也就是绕着固定轴x,y,z旋转</p>
+<p>在资料中关于x,y,z和三个角度的方向和对应关系定义的并不是很明确，我认为可能是这个并没有一个严格的规定，但是pitch,roll,yaw三个角度的含义定义还是很明确的。具体定义如下：</p>
+<h2 id="pitch"><a href="#pitch" class="headerlink" title="pitch"></a>pitch</h2><p>pitch在英文中的意思是倾斜，坠落的含义，因此就是以翅膀所在的直线为轴发生旋转</p>
+<p><img src="//tva1.sinaimg.cn/large/006BuM4Jly1gcufkbno87g30dy0b87dz.gif" alt="pitch"></p>
+<h2 id="roll"><a href="#roll" class="headerlink" title="roll"></a>roll</h2><p>roll在英文中的意思是翻滚，就是绕着机身所在的那个轴</p>
+<p><img src="//tva2.sinaimg.cn/large/006BuM4Jly1gcuflbey7gg30e00bbdpp.gif" alt="roll"></p>
+<h2 id="yaw"><a href="#yaw" class="headerlink" title="yaw"></a>yaw</h2><p>yaw在英文中是yaw是（火箭、飞机、宇宙飞船等）偏航的意思，也就是绕着重力方向为轴旋转</p>
+<p><img src="//tvax4.sinaimg.cn/large/006BuM4Jly1gcuff4nhx5g30e00b7122.gif" alt="0_1303867644Dzds"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1163,235 +1353,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/你凭什么上北大？.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/你凭什么上北大？.html" itemprop="url">你凭什么上北大？ 作者:贺舒婷</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-21T09:33:42+08:00">
-                2020-02-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/你凭什么上北大？.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="你凭什么上北大？.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  4.6k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  15 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>这是一篇陪伴我走过初中，高中的文章</p>
-<p>在我无数次的怀疑自己，自暴自弃之后给予我力量</p>
-<p>现在我已经来到了大学，重读此篇，来找回曾经的自己。</p>
-</blockquote>
-<font size="3" face="楷体">
-
-<p>未名湖边的桃花开了，就在前几天。</p>
-<p>我曾无数次梦想过，陌上开花的时候湖边折柳的人群里会有自己的身影。那个时候，我的心思和大家一样单纯而迫切，我的目光却是比你们更加迷茫和彷徨。</p>
-<p>那年高三。</p>
-<p>十年磨一剑，我得到的却几乎只是一块废铁。</p>
-<p>高一那年，我真的差点把自己废成了一块废铁。上课睡觉，聊天，看漫画，吃零食，跟着后面那些男生大呼小叫，把年轻的女老师气得眼圈含泪，然后自鸣得意而洋洋之。那真是一段不堪回首的日子，像色彩斑斓的黑洞，看上去奇观异彩，鬼魅般的吸引力却在不知不觉中一点点把你拉向无敌的深渊。于是下滑，堕落，而更加难过的是明明知道自己在堕落却无力去改变。习惯的力量的确大道了让我无可奈何，于是我放弃了最后的挣扎与努力。现在想想，那只是懦弱，那只是懒惰，那只是给自己自甘堕落所找的一个看似冠冕堂皇的理由，一切是自欺欺人。</p>
-<p>可当时没有任何人来指着我的鼻尖骂我，说你是不是就想这样破罐子破摔，就像这样玩完你的一辈子，也许他们已经放弃了我，有时候我想，然后是极其嘲讽般的不屑，不屑以及自以为是的洒脱——谁稀罕谁。其实，那个时候真的是应该有一个人，就像很多人曾经经历过的那样，指着我的鼻尖，戳着我的脊梁说，你知不知道自己在做什么，请不清楚自己想要什么，请不清楚自己的明天会是什么。</p>
-<p>可是，在无所谓的人也会有自己的底线的。正如再深的涧谷也会有它的低谷。一切就像滑楼梯，一路上放肆张扬地笑了下来，最后终于重重的摔在了下面，头破血流。</p>
-<p>也许，人只有在痛的时候，才会认认真真反省自己走错了哪一步吧，总要摔些跟头，才能学会绕着道走。而这条再简单不过的路，我却付出了整整一年的青春时光才真正明白。一年，365天，可以让居里夫人发现镭，可以让爱因斯坦证出E=mc2，一年可以让一个婴儿学会跌跌撞撞走向母亲的怀抱，一年可以让一段轰轰烈烈的爱情开始和终了。可是这一年，我只得到了那一句话。所幸，并不亏，也并不晚</p>
-<p>高二分科，我选了文科。你无法想象我所在的中学有着怎样烂的文科班——本科上线只有三人，本科上线三人是个什么概念？当我现在大学同学颇为自得的告诉我他们中学的班级北大清华一走几十个的时候，我轻轻的笑了笑。我所在的文科班，是一个本科上线三人的文科班，更具有讽刺意味的是，三个人全是复读生。我就是在大家或无奈或讽刺或无谓的目光里，毅然决绝地在文科报名表上写上了自己的名字，那真是我一生中写得最好看的一次。</p>
-<p>我只是突然间觉醒了，觉得自己的一辈子不能就那样过。时候很多人问我怎么回事，也许他们是想在我这里听到一个传奇般的浪子回头的故事，而我当时所能想到的解释就只有这一句，我只是觉得，我的一辈子不应该就这样吊儿郎当的过去。</p>
-<p>可我还是低估了过去那一年给我带来的影响。第一次月考，我考了年级第12名，也许这是一个听上去差强人意的成绩，可是，仅有的理智还是足以提醒我，那是一个本科上线三人的文科班，如果你不能把所有的人远远甩在后面，12名和120有什么区别？</p>
-<p>至今我还记得那次考了第一的那个女生，是一个不见经传的女孩子，瘦瘦小小，戴副厚厚的黑边眼镜，趴伏在书桌上的身影常常有些佝偻。而这个印象的得来，是因为所有的人永远只能看到她趴在桌上的身影。她一直是班里第一个来最后一个走的人。我一直对那种学生持有一种莫名的排斥和抵触情绪，总想你们有什么了不起，不就是死读书嘛，我要是像你们这样刻苦努力早是市里第一了。事实上直到那次考试成绩出来以后我仍然对她不屑     一顾。然后，我迎来了一生中最重要的一次班会。</p>
-<p>我不知道要用怎样的分量去感谢那个班主任，因为如果不是她的那席话，现如今的我在哪里都不一定。班会上，她说：“这次考试非常能说明问题，该考好的人都考好了。”然后她扫了我一眼，我明白她的潜台词，也就是说在她看来我属于是没有理由考好的的那一堆人里的。奇怪，我居然没有脸红。不知道是太久的堕落已经在不知不觉中磨光了原本敏感的自尊，还是下意识里仍然对她的话不置可否，我当时面无表情的迎上了她的目光。她的眼睛只是平静地扫过我那里，然后继续：“我知道有些人自以为很聪明很有才气，看不起那些认真学习刻苦努力的同学，总觉得人家是笨鸟先飞是先天不足。可是我想说，你只是懦弱！你是不敢尝试，你只是不敢像他们一样去努力去刻苦，因为你怕自己即使刻苦了也比不上他们，刻苦了也考不了第一，反而遭人耻笑，你宁可不去尝试，只是因为有失败的风险，而你甚至连这一点风险都承担不起，因为，在你心底，你对自己根本就没有把握……”后面她又说了什么我已经想不起来了，我承认当时我是完完全全懵在那儿了，因为她说的那几句话。“你只是懦弱……”当时的感觉是雷轰一样把我整个人震住了，反反复复回荡在脑子里就只有那么一句话：“你只是懦弱。”</p>
-<p>她是正确的。</p>
-<p>那种突然觉醒的震撼是言语无法描述的，也是我不想用文字去表达的。你只能通过结果来想象，也只需要通过借结果来想象。那晚我在日记里写，试试吧。试一试自己那样刻苦那样努力的去学上一个月会不会见效。当时我根本不敢对自己承诺什么结果，也的却承诺不起。我只是抱着一个念头，试一试。</p>
-<p>然后迎来了一生中最戏剧性的一个月。之所以说它戏剧性，只因为就像难以想象唐僧不再啰嗦孙悟空不再好斗猪八戒不再贪吃一样，我简直不敢相信那个早晨六点早自习上课到晚上十点晚自习下课一动也不动坐在位置上安安稳稳踏踏实实的人可以是我自己。其实并没有说起来那么简单的。我去一点一点地做的时候就已经发现了：要想在几天里改变365天来形成的习惯，太难；而要想在一个月里创造出令人瞠目结舌的奇迹来，也太难。习惯成自然啊。就像那句话说的，“心思平原放马，易放难收”，野惯了的心要想一下子收回来，谈何容易？常常做着做着就忍不住了，心开始浮躁，眼神也开始飘离，好几次差一点就要放弃。只是，在那个最危险的边缘晃荡的时候我总是压一压，告诉自己，忍不住的时候，再忍一下，其实说白了也就那么一句话：忍不住的时候，再忍一下。我承认自己是一个骨子里相当傲气的人，我就是不相信我刻苦起来会不如哪个人，我就是不信我真的去做一件事情的时候会做不到，我就是不信这世上真的有什么不可能的事。I believe that nothing is impossible.</p>
-<p>然后，我迎来了那次期待已久的期中考试，至今我仍记得考完之后的感觉。抱着书走在回家的路上，茫茫的看着车水马龙人来人往，恍惚想真的考完了吗？为什么心里空空的没有着落？那的确是我一生中最特殊的一次考试，因为它关系着我此后的方向和道路选择，风险太大，我怎么安得下心？其实。考试结果想必大家已经猜到了。我的的确确让所有的人真正瞠目结舌了一次。是的，我考了第一，全市第一。</p>
-<p>你永远无法想象那个结果于我而言有多么重要。知道成绩是我出乎寻常的平静。那时我才明白原来激扬和呐喊的冲动到了极点只是平静。当名字出现在了成绩单的第一行时，我默默地对自己说：记住了，这世上没有什么事情是不可能的。</p>
-<p>从此我再也没有去改变过那种态度和方法。其实所有的方法说白了都是没有方法的，只有一个词：刻苦。</p>
-<p>我坚守着那些不是方法的方法，也坚守着我的名字在成绩单上的位置，一直到高考前的最后一次考试，我始终是第一名。但是，真正的挑战还没有开始。即使我可以牢牢占据第一名的位置，即使我可以每次都把第二名甩下几十分，我知道，北大离我还是太远，远的连在梦里都看的不真切。所有的老师都坚信我将会是学校有史以来考得最好的一个文科生，而在他们的概念里，考得最好的文科生，意味着你可以上山大，运气好点儿的话也许可以伸伸手还能够上复旦甚至人大的门槛。而我只要北大。我从来没有对任何人讲起过我的志愿——如果可以称之为志愿的话。我只想把所有的力量都积蓄起来。</p>
-<p>高三第二学期，我们搬进了刚刚落成的教学楼。搬迁的那天，楼道里吵得很，拖桌子拉板凳的声音在走廊里不绝于耳。我一个人不言不语的跳过窗子，踏上了二楼窗外那个大大的平台。对面是操场，初雪未融，空气湿冷，光秃秃的树枝直直的刺向天空。雪天的阳光凉凉的透过睫毛洒在眼睛里。眼睛静静的看着远远的天空。我默默在心里说：“等着吧，我要你见证一个奇迹。”我知道，这世上的确没有什么不可能的事情。</p>
-<p>我从来不知道压力达到一定程度居然可以把人的潜能激发到那种地步的。我是一个极其不安分的人，可是那段时间我表现得无比耐心沉稳，踏实得像头老黄牛。事实上无数次我都面临崩溃的边缘了。高中5本历史书我翻来覆去背了整整六遍。当你把一本书也背上6遍的时候你就知道那是什么感觉了，只是，忍不住的时候，再忍一下。坚持的确是世上最伟大的一种品质。那段时间我唯一的休息方式就是站在走廊里看远处的天空。后来发现在对面的建筑墙壁上有一行大大的红字，是学校用来激励学生的吧。我不确定。可就是那句话陪我走过了高三最后的日子——意志的力量，是决定成败的力量。我用我所有的经历和体会去实践而且证明了这句话：意志的力量，是决定成败的力量。</p>
-<p>呼啸而过的风卷着漫天的黄沙，在那个北方的春天里，我们一个个头发蓬乱，皮肤粗糙。死寂和喧嚣交替如同美国的执政党，规律的让人怀疑冥冥之中可有双奇异而魔力无穷的手。惶然而又茫然的我们在敬畏与期待中迎来又送走了一模，二模乃至N模。每根神经都被冷酷无情的事实锤炼的坚不可摧，无论是吟惯了杨柳岸晓风残月的诗情，还是习惯了信手涂鸦的画意。在这个来去匆匆的季节里，一切敏感纤细都奢侈的如同凯撒大帝的绸衣，徒留无数次的希望在无数次的失望前撞得粉身碎骨，无数次的激扬在无数次的颓丧下摔得头破血流。每个人都比昨天更加明白理想和现实之间那道不可逾越的鸿沟，同时也比昨天更加拼命努力挣扎，试图挤过那道窄窄的独木桥，哪怕明知是徒劳。</p>
-<p>——会是徒劳吗？</p>
-<p>当这个锥心的问号在夜阑人静的时候一次次猛烈叩击起了心门，每个人都难以承受那潮涌而至的恐慌和迷惘，于是逼着自己埋进去，埋进书本，埋进试卷，埋进密不透风的黑茧里——为的是有朝一日的破茧成蝶。青黑的眼圈，浮肿的眼袋，干燥的手指，焦虑的起了水泡的嘴角。那个春天我不知道流行的是粉蓝果绿还是黛紫银灰。小镜子被悄悄收起，因为不忍见到自己憔悴的面容和黯淡的眼睛，因为怕有什么会在汪洋恣意般在干旱已久的脸上纵横开来——上帝，我是个女孩子啊！</p>
-<p>上帝无言。无言微笑。微笑告诉我，你，心甘情愿。是的。我心甘情愿我不悔初衷我自己选择了这条路，平坦也好崎岖也罢我得走下去。我要走下去。我会走下去。</p>
-<p>于是所有的呐喊被咽下去，所有的豪情被收起来。我像一头二月黄牛，默默踏步，无声前行。当拼搏被拼命所取代时，香格里拉已经幻化成心中恒远而朦胧的梦想，而所有的努力也只是为了让这梦想不再“美人如花隔去端”，哪怕青冥长天，纵然绿水波澜。</p>
-<p>踏入考场的时候我很平静，“尽吾志也而不能至者，可以无悔矣”事实上我从来没有想过自己会考入北大以外的哪所学校。与其说这是一种自信，莫如说这是一种预感。我只是想，哪怕北大只招一个名额，为什么不可能是我？这世上没有什么事情是真正不可能发生的。</p>
-<p>考完后走在回家的路上，看着依然匆匆的人群，心里依然空无着落。眼睛因为泪雾而模糊，视野里的东西却越发清晰。这在科学上有解释，我却宁愿相信是因为一切真实的感知都要以泪水和苦痛作为代价。是的，我们总是要学会放弃一些东西，在能得到另外一些东西。如果你所在乎的东西值得你为了它而付出一切，那么所有的放弃只是分娩前的阵痛。总要有所取舍的，蝴蝶的生命之所以如此短暂，是因为它的翅膀太过精致了。有时候，放弃是为了更好的得到，关键看你想要的究竟是什么，以及为了这想要的东西你愿意付出多大的代价。上帝对每一个人都是平等的。</p>
-<p>事实上我怀念那段日子，而且永远感激它。不只是因为在那段时间里我完成了自己的过渡与蜕变，更是因为那时的一切深深烙在了我正处于可塑期的性格中，成为这一生永远的财富。那真的是多少钱都买不来的财富。人生中再也不会有哪个时期像那时一样专一地，单纯地，坚决地，几近顽固而又饱含信仰和希冀地，心无旁骛乃至与世隔绝地，为了一个认定的目标而奋斗。当你在若干年后某个悠闲的下午，回想起自己曾经的努力和放弃，曾经的坚忍和毅力，曾经的执着和付出，曾经的汗水和泪水，那会是怎样一种感动和庆幸，怎样一种欣慰和尊重+尊敬你自己。真的，在这个过程中，请允许我重复一遍，最重要的，是你自己。我感谢父母感谢老师感谢同学感谢朋友感谢所有关心我帮助我的人，但我最感谢的，是我自己。Nothing is impossible.这是我在一点一滴的努力与尝试中得到的东西。而且我也相信，这也将会是使我终身受益的东西。在这里，我把自己最信仰的一句话送给大家：Nothing is impossible.</p>
-</font>
-
-<blockquote>
-<p>分享此文给所有正在奋斗拼搏的你！</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1455,7 +1416,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1560,7 +1521,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">35.8k</span>
+    <span title="Site words total count">37.9k</span>
   
 </div>
 

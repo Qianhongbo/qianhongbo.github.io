@@ -54,9 +54,6 @@
   
 
   
-    
-    
-  
 
   
 
@@ -66,8 +63,6 @@
 
   
     
-      
-    
 
     
   
@@ -75,7 +70,7 @@
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -338,6 +333,230 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/使用VScode写博客.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/使用VScode写博客.html" itemprop="url">使用VSCode写博客</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-13T11:24:09+08:00">
+                2019-08-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/使用VScode写博客.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="使用VScode写博客.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="使用原因"><a href="#使用原因" class="headerlink" title="使用原因"></a>使用原因</h1><p>偶然之间看到一篇文章推荐使用VSCode，对于它我也是早有耳闻，一个开源的代码编辑器，但是之前觉得麻烦，觉得自己已经有了Visual Studio 2017就没必要再下一个代码编辑器了，当时以为VSCode不带有编译功能。</p>
+<p>昨晚没事干，就下了个尝试一下啊，果然耳目一新，觉得从颜值也好，使用上也好都很舒服，但在配置的时候也遇到了问题，研究了好久才终于解决，特此记录！</p>
+<h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><ul>
+<li>从官网安装VSCode</li>
+<li>安装MinGW64,并将bin文件添加到Path路径中</li>
+<li>安装插件</li>
+<li>成功运行代码！</li>
+</ul>
+<h1 id="具体过程"><a href="#具体过程" class="headerlink" title="具体过程"></a>具体过程</h1><h2 id="从官网安装VSCode"><a href="#从官网安装VSCode" class="headerlink" title="从官网安装VSCode"></a>从官网安装VSCode</h2><p>过程比较简单，从Google搜索VSCode进入官方网站，下载Windows的版本，运行即可。</p>
+<h2 id="安装MinGW64"><a href="#安装MinGW64" class="headerlink" title="安装MinGW64"></a>安装MinGW64</h2><p>由于想在VSCode里跑C代码，最开始下了个C/C++的扩展程序，以为就可以用<code>Fn+F5</code>正常运行，实则不然，遇到报错！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">提示这个内容：lauch:program does not exist</span><br></pre></td></tr></table></figure>
+
+<p>并要求我修改<code>launch.json</code>文件，可是我怎么修改也不管用…<br>逐渐开始进入崩溃状态，想要直接写在这**的VSCode…<br>可是作为一个颜控的我沉迷于VSCode的颜值无法自拔，决定再试试…</p>
+<p>最终发现问题出现在没有安装MinGW64无法调试，于是搜索教程，前往官网下载，并将bin文件的目录添加到<code>path</code>路径中去。</p>
+<p>并最终用<code>gcc -v</code>测试是否安装成功，要注意在<code>cmd</code>里测试，不要像我一样，在<code>cmder</code>里怎么测试都不成功…</p>
+<p>安装具体教程点击这个<a href="https://www.cnblogs.com/findumars/p/8289454.html" target="_blank" rel="noopener">链接</a></p>
+<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p>VSCode不安装插件是没有灵魂的…</p>
+<p>我目前还不是很懂，也只是安装了一下几个插件</p>
+<ul>
+<li>C/C++</li>
+<li>C++ Intellisense</li>
+<li>Chinese Language</li>
+<li>Code Runner</li>
+<li>Seti-theme</li>
+</ul>
+<h2 id="运行代码"><a href="#运行代码" class="headerlink" title="运行代码"></a>运行代码</h2><p>最终用配置好的环境跑了一下<code>hello，world</code>成功编译！<br><font color="#006600"></font></p>
+<h2 id="问题补充（修改于19-8-14）"><a href="#问题补充（修改于19-8-14）" class="headerlink" title="问题补充（修改于19.8.14）"></a>问题补充（修改于19.8.14）</h2><p>再次出现问题！之前成功编译只是通过了代码右上角的“播放”按键，也就是插件<code>Code Runner</code>，然而<code>F5</code>依然无法通过！</p>
+<p>继续查阅资料，查到一篇比较详细的教程，<a href="https://blog.csdn.net/bat67/article/details/76095813#commentBox" target="_blank" rel="noopener">地址请点击</a></p>
+<p>简单来讲就是还要修改<code>.vscode</code>文件夹里的<code>launch.json</code>和<code>tasks.json</code>文件。</p>
+<p>而我是将<code>launch.json</code>修改为，其中<code>gdb.exe</code>的路径需要自己进行修改一下<br><br> </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&#123;  </span><br><span class="line">    <span class="string">"version"</span>: <span class="string">"0.2.0"</span>,  </span><br><span class="line">    <span class="string">"configurations"</span>: [  </span><br><span class="line">        &#123;  </span><br><span class="line">            <span class="string">"name"</span>: <span class="string">"(gdb) Launch"</span>, <span class="comment">// 配置名称，将会在启动配置的下拉菜单中显示  </span></span><br><span class="line">            <span class="string">"type"</span>: <span class="string">"cppdbg"</span>,       <span class="comment">// 配置类型，这里只能为cppdbg  </span></span><br><span class="line">            <span class="string">"request"</span>: <span class="string">"launch"</span>,    <span class="comment">// 请求配置类型，可以为launch（启动）或attach（附加）  </span></span><br><span class="line">            <span class="string">"program"</span>: <span class="string">"$&#123;workspaceFolder&#125;/$&#123;fileBasenameNoExtension&#125;.exe"</span>,<span class="comment">// 将要进行调试的程序的路径  </span></span><br><span class="line">            <span class="string">"args"</span>: [],             <span class="comment">// 程序调试时传递给程序的命令行参数，一般设为空即可  </span></span><br><span class="line">            <span class="string">"stopAtEntry"</span>: <span class="keyword">false</span>,   <span class="comment">// 设为true时程序将暂停在程序入口处，一般设置为false  </span></span><br><span class="line">            <span class="string">"cwd"</span>: <span class="string">"$&#123;workspaceFolder&#125;"</span>, <span class="comment">// 调试程序时的工作目录，一般为$&#123;workspaceFolder&#125;即代码所在目录  </span></span><br><span class="line">            <span class="string">"environment"</span>: [],  </span><br><span class="line">            <span class="string">"externalConsole"</span>: <span class="keyword">true</span>, <span class="comment">// 调试时是否显示控制台窗口，一般设置为true显示控制台  </span></span><br><span class="line">            <span class="string">"MIMode"</span>: <span class="string">"gdb"</span>,  </span><br><span class="line">            <span class="string">"miDebuggerPath"</span>: <span class="string">"D:\\MinGW64\\mingw64\\bin\\gdb.exe"</span>, <span class="comment">// miDebugger的路径，注意这里要与MinGw的路径对应  </span></span><br><span class="line">            <span class="string">"preLaunchTask"</span>: <span class="string">"g++"</span>, <span class="comment">// 调试会话开始前执行的任务，一般为编译程序，c++为g++, c为gcc  </span></span><br><span class="line">            <span class="string">"setupCommands"</span>: [  </span><br><span class="line">                &#123;   </span><br><span class="line">		    <span class="string">"description"</span>: <span class="string">"Enable pretty-printing for gdb"</span>,  </span><br><span class="line">                    <span class="string">"text"</span>: <span class="string">"-enable-pretty-printing"</span>,  </span><br><span class="line">                    <span class="string">"ignoreFailures"</span>: <span class="keyword">true</span>  </span><br><span class="line">                &#125;  </span><br><span class="line">            ]  </span><br><span class="line">        &#125;  </span><br><span class="line">    ]  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>将<code>tasks.json</code>修改为</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"version"</span>: <span class="string">"2.0.0"</span>,</span><br><span class="line">    <span class="string">"command"</span>: <span class="string">"g++"</span>,</span><br><span class="line">    <span class="string">"args"</span>: [<span class="string">"-g"</span>,<span class="string">"$&#123;file&#125;"</span>,<span class="string">"-o"</span>,<span class="string">"$&#123;fileBasenameNoExtension&#125;.exe"</span>],    <span class="comment">// 编译命令参数</span></span><br><span class="line">    <span class="string">"problemMatcher"</span>: &#123;</span><br><span class="line">        <span class="string">"owner"</span>: <span class="string">"cpp"</span>,</span><br><span class="line">        <span class="string">"fileLocation"</span>: [<span class="string">"relative"</span>, <span class="string">"$&#123;workspaceFolder&#125;"</span>],</span><br><span class="line">        <span class="string">"pattern"</span>: &#123;</span><br><span class="line">            <span class="string">"regexp"</span>: <span class="string">"^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$"</span>,</span><br><span class="line">            <span class="string">"file"</span>: <span class="number">1</span>,</span><br><span class="line">            <span class="string">"line"</span>: <span class="number">2</span>,</span><br><span class="line">            <span class="string">"column"</span>: <span class="number">3</span>,</span><br><span class="line">            <span class="string">"severity"</span>: <span class="number">4</span>,</span><br><span class="line">            <span class="string">"message"</span>: <span class="number">5</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="最终实现F5调试"><a href="#最终实现F5调试" class="headerlink" title="最终实现F5调试"></a>最终实现<code>F5</code>调试</h2><p>并且可以实现断点debug等功能</p>
+<h1 id="使用VSCode编辑博客"><a href="#使用VSCode编辑博客" class="headerlink" title="使用VSCode编辑博客"></a>使用VSCode编辑博客</h1><p>VSCode让我比较喜欢的一点是在于可以直接打开文件夹，并且继承了终端处理，git等，很多功能我还没有发掘出来，之后会深度体验一下VSCode！</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1237,291 +1456,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/【C】C语言学习笔记.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/【C】C语言学习笔记.html" itemprop="url">c语言学习笔记</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-26T15:23:15+08:00">
-                2019-06-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/【C】C语言学习笔记.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="【C】C语言学习笔记.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.3k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="我为什么要学习C语言"><a href="#我为什么要学习C语言" class="headerlink" title="我为什么要学习C语言"></a>我为什么要学习C语言</h1><p>说来惭愧，作为一个工科学生，我竟然没有学过C语言，只在大一的时候学过一学期的VB，虽然语言这种东西说起来都差不多，但毕竟也是将近三年前的事了，早就忘光了。</p>
-<p>可是不掌握C语言真的很麻烦，这尤其体现在做单片机上，单片机要求我们使用C语言，我当时连那些代码都看不懂，更别谈让我自己去写了。</p>
-<p>正好，最近时间比较充沛。拿出时间来把C语言好好学学</p>
-<p>p.s. 突然想起来我初中好像就学过C++了，但只是皮毛</p>
-<h1 id="我用什么工具学习C语言"><a href="#我用什么工具学习C语言" class="headerlink" title="我用什么工具学习C语言"></a>我用什么工具学习C语言</h1><p>书籍：C程序设计语言（第二版 新版）→ 纸质</p>
-<p>软件：VS2017, Xcode</p>
-<p>其它：Google，CSDN，Baidu</p>
-<h1 id="我的第一段代码"><a href="#我的第一段代码" class="headerlink" title="我的第一段代码"></a>我的第一段代码</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"hello, world.\n"</span>);</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	<span class="comment">//return 0;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li>main函数：main是一个特殊的函数名——每个程序都从main函数的起点开始执行。main函数通常会调用其它函数来帮助完成某些工作</li>
-<li>本例中main函数不需要任何参数</li>
-<li>用双引号括起来的字符序列称为字符串或字符串常量</li>
-<li>\n 表示换行符</li>
-</ol>
-<h1 id="第二段代码"><a href="#第二段代码" class="headerlink" title="第二段代码"></a>第二段代码</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="comment">/* 当fatr = 0,20,...,300时，分别打印华氏温度与摄氏温度对照表 */</span></span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> fahr, celsius;</span><br><span class="line">	<span class="keyword">int</span> lower, upper, step;</span><br><span class="line"></span><br><span class="line">	lower = <span class="number">0</span>; <span class="comment">/* 温度表的上限 */</span></span><br><span class="line">	upper = <span class="number">300</span>; <span class="comment">/* 温度表的下限 */</span></span><br><span class="line">	step = <span class="number">20</span>; <span class="comment">/* 步长 */</span></span><br><span class="line"></span><br><span class="line">	fahr = lower;</span><br><span class="line">	<span class="keyword">while</span> (fahr &lt;= upper) &#123;</span><br><span class="line">		celsius = <span class="number">5</span> * (fahr - <span class="number">32</span>) / <span class="number">9</span>;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\t%d\n"</span>, fahr, celsius);</span><br><span class="line">		fahr = fahr + step;</span><br><span class="line">	&#125;</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li>其中，int表示其后所列的变量为整数，与之对应的float表示浮点数（即可以带有小数部分）</li>
-<li>为什么不用5/9？因为C语言存在舍位，小数部分都会被舍弃</li>
-</ol>
-<h1 id="Bit-amp-Byte"><a href="#Bit-amp-Byte" class="headerlink" title="Bit &amp; Byte"></a>Bit &amp; Byte</h1><ul>
-<li><p>字节(Byte): 通常将可表示常用英文字符8位二进制称为一字节</p>
-</li>
-<li><p>比特(Bit)，亦称二进制位 ，1比特就是1位</p>
-</li>
-<li><p>1字节(Byte） = 8位(bit) </p>
-</li>
-<li><p>在ASCII码中，一个英文字母(不分大小写)占一个字节的空间，一个中文汉字占两个字节的空间</p>
-</li>
-<li><p>符号：英文标点占一个字节，中文标点占两个字节</p>
-</li>
-</ul>
-<ul>
-<li><p>1千吉字节（TB,Terabyte）=1024吉字节（2的40次方字节）（1TB=1024GB）</p>
-</li>
-<li><p>1吉字节（GB,Gigabyte）=1024兆字节（2的30次方字节）（1GB=1024MB）</p>
-</li>
-<li><p>1兆字节（MB,Megabyte）=1024千字节（2的20次方字节）（1MB=1024KB）</p>
-</li>
-<li><p>1千字节（KB,Kilobyte）=1024字节（2的10次方字节）（1KB=1024B）</p>
-</li>
-<li><p>1字节（Byte）= 8位（bit）</p>
-</li>
-</ul>
-<blockquote>
-<p>  计算机中的位</p>
-<pre><code>二进制数系统中，每个0或1就是一个位(bit)，位是数据存储的最小单位。其中8bit就称为一个字节（Byte）。计算机中的CPU位数指的是CPU一次能处理的最大位数。例如32位计算机的CPU一次最多能处理32位数据。  </code></pre></blockquote>
-<blockquote>
-<p>所以char类型的存储大小为1个字节，也就是8位，这8位代表8位二进制，</p>
-</blockquote>
-<h1 id="浮点类型"><a href="#浮点类型" class="headerlink" title="浮点类型"></a>浮点类型</h1><table>
-<thead>
-<tr>
-<th>类型</th>
-<th>存储大小</th>
-<th>精度</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>float</td>
-<td>4 字节</td>
-<td>6 位小数</td>
-</tr>
-<tr>
-<td>double</td>
-<td>8 字节</td>
-<td>15 位小数</td>
-</tr>
-<tr>
-<td>long double</td>
-<td>16 字节</td>
-<td>19 位小数</td>
-</tr>
-</tbody></table>
-<h1 id="void类型"><a href="#void类型" class="headerlink" title="void类型"></a>void类型</h1><table>
-<thead>
-<tr>
-<th>序号</th>
-<th>类型与描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td><strong>函数返回为空</strong><br>C 中有各种函数都不返回值，或者您可以说它们返回空。不返回值的函数的返回类型为空。例如 <strong>void exit (int status);</strong></td>
-</tr>
-<tr>
-<td>2</td>
-<td><strong>函数参数为空</strong><br>C 中有各种函数不接受任何参数。不带参数的函数可以接受一个 void。例如 <strong>int rand(void);</strong></td>
-</tr>
-<tr>
-<td>3</td>
-<td><strong>指针指向 void</strong><br>类型为 void * 的指针代表对象的地址，而不是类型。例如，内存分配函数 <strong>void *malloc( size_t size );</strong> 返回指向 void 的指针，可以转换为任何数据类型。</td>
-</tr>
-</tbody></table>
-<h1 id="printf-输出"><a href="#printf-输出" class="headerlink" title="printf 输出"></a><code>printf</code> 输出</h1><p>```<br>%a  浮点数、十六进制数字和p-记数法（c99<br>%A  浮点数、十六进制数字和p-记法（c99）<br>%c  一个字符(char)<br>%C  一个ISO宽字符<br>%d  有符号十进制整数(int)（%ld、%Ld：长整型数据(long),%hd：输出短整形。）　<br>%e  浮点数、e-记数法<br>%E  浮点数、E-记数法<br>%f  单精度浮点数(默认float)、十进制记数法（%.nf  这里n表示精确到小数位后n位.十进制计数）<br>%g  根据数值不同自动选择%f或%e．<br>%G  根据数值不同自动选择%f或%e.<br>%i  有符号十进制数（与%d相同）<br>%o  无符号八进制整数<br>%p  指针<br>%s  对应字符串char<em>（%s = %hs = %hS 输出 窄字符）<br>%S  对应宽字符串WCAHR</em>（%ws = %S 输出宽字符串）<br>%u  无符号十进制整数(unsigned int)<br>%x  使用十六进制数字0xf的无符号十六进制整数　<br>%X  使用十六进制数字0xf的无符号十六进制整数<br>%%  打印一个百分号</p>
-<p>%I64d 用于INT64 或者 long long<br>%I64u 用于UINT64 或者 unsigned long long<br>%I64x 用于64位16进制数据</p>
-<p>​　</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1585,7 +1519,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1690,7 +1624,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">35.8k</span>
+    <span title="Site words total count">37.9k</span>
   
 </div>
 

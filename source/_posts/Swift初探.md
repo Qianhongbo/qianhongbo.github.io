@@ -133,6 +133,16 @@ case 1: print(“January”)
 case 2: print(“February”)
 // ...
 }
+
+let meal = "breakfast"
+
+switch meal
+{
+    case "breakfast": print("Good morning!")
+    case "lunch": print("Good afternoon!")
+    case "dinner": print("Good evening!")
+    default: print("none")
+}
 ```
 
 ```swift

@@ -488,7 +488,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="//tva1.sinaimg.cn/large/006BuM4Jly1gc1kfywsvyj30zk0qou0x.jpg" rel="gallery_ckx2x8vuj003suaptkn27xwcj" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="//tva1.sinaimg.cn/large/006BuM4Jly1gc1kfywsvyj30zk0qou0x.jpg" rel="gallery_ckxffv0ev003lrmptey5nuecz" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="//tva1.sinaimg.cn/large/006BuM4Jly1gc1kfywsvyj30zk0qou0x.jpg" itemprop="contentUrl">
               </a>
             
@@ -503,6 +503,488 @@
         
           
             <p> 很喜欢何炅说的一段话：要得到你必须要付出，要付出你还要学会坚持，如果你真的觉得很难，那你就放弃，但你放弃了就不要抱怨，我觉得人生就是这样，世界真的是公平的，每个人都是通过自己的努力，去决定自己生活的样子！</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Delegate-in-iOS-Develop.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Delegate-in-iOS-Develop.html" itemprop="url">Delegate in iOS Develop</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-12-20T17:37:39+08:00">
+                2021-12-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Delegate-in-iOS-Develop.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Delegate-in-iOS-Develop.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  991 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Defination"><a href="#Defination" class="headerlink" title="Defination"></a>Defination</h2><p>The delegate is an object(Control Object) that executes a group of methods on behalf of another object.</p>
+<blockquote>
+<p>Control object is designed to pass user input to a data model.</p>
+</blockquote>
+<p>We want view classes to be used as is, and then we want control and model classes to have the freedom to customize those views. The delegate pattern allows for this.</p>
+<p>The key to the delegate pattern, is that the view establishes the questions that it needs answered and encodes them in a protocol.</p>
+<blockquote>
+<p>A protocol is a list of methods that a delegate must implement.</p>
+<p>Any object that fulfills the protocol can become a delegate.</p>
+</blockquote>
+<h2 id="UITextFieldDelegate-protocol"><a href="#UITextFieldDelegate-protocol" class="headerlink" title="UITextFieldDelegate protocol"></a><code>UITextFieldDelegate</code> protocol</h2><p>Let’s take a closer look at the protocol we’ll implement next, the <code>UITextFieldDelegate</code> protocol. We’ve listed its methods below. For each of the seven methods, consult the documentation and provide an example implementation. Post one or two of your examples to the discussion forum.</p>
+<p><em>Editing lifecycle methods:</em><br><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619601-textfieldshouldbeginediting" target="_blank" rel="noopener"><code>textFieldShouldBeginEditing(_:)</code></a><br><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619590-textfielddidbeginediting" target="_blank" rel="noopener"><code>textFieldDidBeginEditing(_:)</code></a><br><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619592-textfieldshouldendediting" target="_blank" rel="noopener"><code>textFieldShouldEndEditing(_:)</code></a><br><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619591-textfielddidendediting" target="_blank" rel="noopener"><code>textFieldDidEndEditing(_:)</code></a></p>
+<blockquote>
+<p><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619601-textfieldshouldbeginediting" target="_blank" rel="noopener"><code>textFieldShouldBeginEditing(_:)</code></a></p>
+<p>You could use this method to prevent the user from editing the text field’s contents more than once.</p>
+</blockquote>
+<blockquote>
+<p><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619590-textfielddidbeginediting" target="_blank" rel="noopener"><code>textFieldDidBeginEditing(_:)</code></a></p>
+<p>You might use this method to show overlay views that are visible only while editing.</p>
+</blockquote>
+<blockquote>
+<p><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619592-textfieldshouldendediting" target="_blank" rel="noopener"><code>textFieldShouldEndEditing(_:)</code></a></p>
+<p>The text field calls this method when it is asked to resign the first responder status. This can happen when the user selects another control or when you call the text field’s <a href="https://developer.apple.com/documentation/uikit/uiresponder/1621097-resignfirstresponder" target="_blank" rel="noopener"><code>resignFirstResponder()</code></a> method. Before the focus change occurs, however, the text field calls this method and gives you a chance to prevent the change from happening. </p>
+<p>Normally, you would return <code>true</code> from this method to allow the text field to resign the first responder status. You might return <code>false</code>, however, in cases where your delegate detects invalid contents in the text field. Returning <code>false</code> prevents the user from switching to another control until the text field contains a valid value. </p>
+<p>If you use this method to validate the contents of the text field, you might also want to use an overlay view to provide feedback to that effect. For example, you might display a small icon indicating the text is invalid.</p>
+</blockquote>
+<blockquote>
+<p><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619591-textfielddidendediting" target="_blank" rel="noopener"><code>textFieldDidEndEditing(_:)</code></a></p>
+<p>This method is called after the text field resigns its first responder status. You can use this method to update your delegate’s state information. For example, you might use this method to hide overlay views that should be visible only while editing.</p>
+</blockquote>
+<p><em>The primary method for controlling text:</em><br><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619599-textfield" target="_blank" rel="noopener"><code>textField(_:shouldChangeCharactersIn:replacementString:)</code></a></p>
+<blockquote>
+<ul>
+<li><code>textField</code></li>
+</ul>
+<p>The text field containing the text.</p>
+<ul>
+<li><code>range</code></li>
+</ul>
+<p>The range of characters to be replaced.</p>
+<ul>
+<li><code>string</code></li>
+</ul>
+<p>The replacement string for the specified range. During typing, this parameter normally contains only the single new character that was typed, but it may contain more characters if the user is pasting text. When the user deletes one or more characters, the replacement string is empty.</p>
+<ul>
+<li>The text field calls this method whenever user actions cause its text to change. Use this method to validate text as it is typed by the user. For example, you could use this method to prevent the user from entering anything but numerical values.</li>
+</ul>
+</blockquote>
+<p><em>The clear button (the ‘x’ on the right side of some text fields):</em><br><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619594-textfieldshouldclear" target="_blank" rel="noopener"><code>textFieldShouldClear(_:)</code></a></p>
+<blockquote>
+<p>The text field calls this method in response to the user pressing the built-in clear button. (This button is not shown by default but can be enabled by changing the value in the <a href="https://developer.apple.com/documentation/uikit/uitextfield/1619622-clearbuttonmode" target="_blank" rel="noopener"><code>clearButtonMode</code></a> property of the text field.) This method is also called when editing begins and the <a href="https://developer.apple.com/documentation/uikit/uitextfield/1619639-clearsonbeginediting" target="_blank" rel="noopener"><code>clearsOnBeginEditing</code></a> property of the text field is set to <code>true</code>.</p>
+<p>If you do not implement this method, the text field clears the text as if the method had returned <code>true</code>.</p>
+</blockquote>
+<p><em>The return key in the keyboard:</em><br><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619603-textfieldshouldreturn" target="_blank" rel="noopener"><code>textFieldShouldReturn(_:)</code></a></p>
+<blockquote>
+<p>The default implementation returns <code>true</code>, resigning first responder status. You can override this method in your custom responders to update your object’s state or perform other actions, such as removing the highlight from a selection. You can also return <code>false</code>, refusing to relinquish first responder status. If you override this method, you must call <code>super</code> (the superclass implementation) at some point in your code.</p>
+</blockquote>
+<h2 id="Control-Flow-Walk-trough"><a href="#Control-Flow-Walk-trough" class="headerlink" title="Control Flow Walk-trough"></a>Control Flow Walk-trough</h2><ol>
+<li><p>User taps keyboard</p>
+</li>
+<li><p>Textfield realizes text will change</p>
+</li>
+<li><p>Textfield invokes …</p>
+<blockquote>
+<p><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619599-textfield" target="_blank" rel="noopener"><code>textField(_:shouldChangeCharactersIn:replacementString:)</code></a></p>
+</blockquote>
+</li>
+<li><p>VC receives invocation</p>
+</li>
+<li><p>VC assembles the new text</p>
+</li>
+<li><p>VC updates the label</p>
+</li>
+<li><p>VC returns “true” to allow change</p>
+</li>
+</ol>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// MARK: Text Field Delegate Methods</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Step 4</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">textField</span><span class="params">(<span class="number">_</span> textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">		</span><br><span class="line">  	<span class="comment">// Step 5 </span></span><br><span class="line">    <span class="comment">// Figure out what the new text will be, if we return true</span></span><br><span class="line">    <span class="keyword">var</span> newText = textField.text! <span class="keyword">as</span> <span class="type">NSString</span></span><br><span class="line">    newText = newText.replacingCharacters(<span class="keyword">in</span>: range, with: string) <span class="keyword">as</span> <span class="type">NSString</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// hide the label if the newText will be an empty string</span></span><br><span class="line">    <span class="keyword">self</span>.characterCountLabel.isHidden = (newText.length == <span class="number">0</span>)</span><br><span class="line">		</span><br><span class="line">  	<span class="comment">// Step 6</span></span><br><span class="line">    <span class="comment">// Write the length of newText into the label</span></span><br><span class="line">    <span class="keyword">self</span>.characterCountLabel.text = <span class="type">String</span>(newText.length)</span><br><span class="line"></span><br><span class="line">  	<span class="comment">// Step 7</span></span><br><span class="line">    <span class="comment">// returning true gives the text field permission to change its text</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>We can’t see the first three steps.</p>
+</blockquote>
+<h2 id="Emoji-Textfield"><a href="#Emoji-Textfield" class="headerlink" title="Emoji Textfield"></a>Emoji Textfield</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">textField</span><span class="params">(<span class="number">_</span> textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">var</span> replacedAnEmoji = <span class="literal">false</span></span><br><span class="line">        <span class="keyword">var</span> emojiStringRange: <span class="type">NSRange</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Construct the text that will be in the field if this change is accepted</span></span><br><span class="line">        <span class="keyword">var</span> newText = textField.text! <span class="keyword">as</span> <span class="type">NSString</span></span><br><span class="line">        newText = newText.replacingCharacters(<span class="keyword">in</span>: range, with: string) <span class="keyword">as</span> <span class="type">NSString</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// For each dictionary entry in translations, pull out a string to </span></span><br><span class="line">        <span class="comment">// search for an emoji to replace it with</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (emojiString, emoji) <span class="keyword">in</span> translations &#123;</span><br><span class="line">          </span><br><span class="line">            <span class="comment">// Search for all occurances of key (ie. "dog"), </span></span><br><span class="line">            <span class="comment">// and replace with emoji (ie. 🐶)</span></span><br><span class="line">            <span class="comment">// repeat-while loop</span></span><br><span class="line">            <span class="keyword">repeat</span> &#123;</span><br><span class="line">                emojiStringRange = newText.range(of: emojiString, options: .caseInsensitive)</span><br><span class="line">            </span><br><span class="line">                <span class="comment">// found one</span></span><br><span class="line">                <span class="keyword">if</span> emojiStringRange.location != <span class="type">NSNotFound</span> &#123;</span><br><span class="line">                    newText = newText.replacingCharacters(<span class="keyword">in</span>: emojiStringRange, with: emoji) <span class="keyword">as</span> <span class="type">NSString</span></span><br><span class="line">                    replacedAnEmoji = <span class="literal">true</span></span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">            &#125; <span class="keyword">while</span> emojiStringRange.location != <span class="type">NSNotFound</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// If we have replaced an emoji, then we directly edit the text field</span></span><br><span class="line">        <span class="comment">// Otherwise we allow the proposed edit.</span></span><br><span class="line">        <span class="keyword">if</span> replacedAnEmoji &#123;</span><br><span class="line">            textField.text = newText <span class="keyword">as</span> <span class="type">String</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Xcode快捷键.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Xcode快捷键.html" itemprop="url">Xcode快捷键</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-12-13T16:44:35+08:00">
+                2021-12-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Xcode快捷键.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Xcode快捷键.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  159 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Xcode-Shortcuts"><a href="#Xcode-Shortcuts" class="headerlink" title="Xcode Shortcuts"></a>Xcode Shortcuts</h1><p>Xcode has numerous keyboard shortcuts that are worth learning. Knowing them can help speed up your iOS development, and it saves you from having to reach over to the mouse or trackpad.</p>
+<p>On the Navigator Panel on the left side, the following keyboard shortcuts cycle through the different navigators.</p>
+<ul>
+<li>⌘ + 0 = Show or Hide the Navigator Panel</li>
+<li>⌘ + 1 = Project</li>
+<li>⌘ + 2 = Source Control</li>
+<li>⌘ + 3 = Symbol</li>
+<li>⌘ + 4 = Find</li>
+<li>⌘ + 5 = Issue</li>
+<li>⌘ + 6 = Test</li>
+<li>⌘ + 7 = Debug</li>
+<li>⌘ + 8 = Breakpoint</li>
+<li>⌘ + 9 = Report</li>
+</ul>
+<p>The Utility Area on the right side of Xcode can also be toggled with the following keyboard shortcuts:</p>
+<ul>
+<li>⌥ + ⌘ + 0 = Show or Hide the Utility Area</li>
+<li>⌥ + ⌘ + 1 = File Inspector</li>
+<li>⌥ + ⌘ + 2 = Quick Help Inspector</li>
+<li>⌥ + ⌘ + 3 = Identity Inspector</li>
+<li>⌥ + ⌘ + 4 = Attributes Inspector</li>
+<li>⌥ + ⌘ + 5 = Size Inspector</li>
+<li>⌥ + ⌘ + 6 = Connections Inspector</li>
+</ul>
+<p>If you right click (control click) on the Storyboard in the editor, then you can select a zoom level. You can also use 2 finger pinch in your Mac’s trackpad to zoom in and out of the Storyboard.</p>
 
           
         
@@ -1083,7 +1565,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  840 字
+                  896 字
                 </span>
               
 
@@ -1212,6 +1694,10 @@
 
 <h1 id="Operators-and-Expressions"><a href="#Operators-and-Expressions" class="headerlink" title="Operators and Expressions"></a>Operators and Expressions</h1><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5</span> / <span class="number">3</span> <span class="comment">// The result is 1</span></span><br><span class="line"></span><br><span class="line"><span class="number">5</span> / <span class="number">3.0</span> <span class="comment">// The result is 1.66666667</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> hello = <span class="string">"Hello"</span></span><br><span class="line"><span class="keyword">var</span> world = <span class="string">"world!"</span></span><br><span class="line"><span class="keyword">let</span> greeting = hello + <span class="string">" "</span> + world</span><br></pre></td></tr></table></figure>
 
+<h1 id="Ternary-Operators"><a href="#Ternary-Operators" class="headerlink" title="Ternary Operators"></a>Ternary Operators</h1><p><strong>Ternary operator</strong> : an operator that is applied to three operands</p>
+<p>Ternary operators are much less common than binary operators, but one of the most common ternary operators is the <strong>ternary conditional operator</strong>. It is used to choose between two values based on a truth (Boolean) value, and it uses the following syntax:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">trueOrFalseValue ? useThisIfTrue : useThisIfFalse</span><br></pre></td></tr></table></figure>
+
 <h1 id="Control-Flow"><a href="#Control-Flow" class="headerlink" title="Control Flow"></a>Control Flow</h1><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> onGuestList &amp;&amp; age &gt;= <span class="number">21</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(name), come party with us!"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> !onGuestList || age &lt; <span class="number">21</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Sorry, \(name), maybe you can go play Bingo with the Android team."</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> breakfast &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Good morning!"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> lunch &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Good afternoon!"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> dinner &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Good evening!"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Hello!"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> month &#123;</span><br><span class="line"><span class="keyword">case</span> <span class="number">1</span>: <span class="built_in">print</span>(“<span class="type">January</span>”)</span><br><span class="line"><span class="keyword">case</span> <span class="number">2</span>: <span class="built_in">print</span>(“<span class="type">February</span>”)</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> meal = <span class="string">"breakfast"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> meal</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">"breakfast"</span>: <span class="built_in">print</span>(<span class="string">"Good morning!"</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="string">"lunch"</span>: <span class="built_in">print</span>(<span class="string">"Good afternoon!"</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="string">"dinner"</span>: <span class="built_in">print</span>(<span class="string">"Good evening!"</span>)</span><br><span class="line">    <span class="keyword">default</span>: <span class="built_in">print</span>(<span class="string">"none"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>...<span class="number">10</span> <span class="comment">// 1, 2, 3, 4, 5, 6, 7, 8, 9, 10.</span></span><br><span class="line"><span class="number">1</span>..&lt;<span class="number">10</span> <span class="comment">// 1, 2, 3, 4, 5, 6, 7, 8, 9.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>...<span class="number">10</span>&#123;</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> i = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (i&lt;<span class="number">1001</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span> (i % <span class="number">2</span>) == <span class="number">0</span>&#123;</span><br><span class="line">        <span class="built_in">print</span>(i)</span><br><span class="line">    &#125;</span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// repeat-while loop</span></span><br><span class="line"><span class="keyword">var</span> i = <span class="number">1</span></span><br><span class="line"><span class="keyword">repeat</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Hello, world!"</span>)</span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line">&#125; <span class="keyword">while</span> i &lt; <span class="number">0</span></span><br></pre></td></tr></table></figure>
@@ -1259,463 +1745,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/四学期课程安排.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/四学期课程安排.html" itemprop="url">UCSD EC80 选课</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-09-27T23:41:25+08:00">
-                2021-09-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/UCSD/" itemprop="url" rel="index">
-                    <span itemprop="name">UCSD</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/四学期课程安排.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="四学期课程安排.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  362 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <table>
-<thead>
-<tr>
-<th>SEASON</th>
-<th>CLASS_1</th>
-<th>CLASS_2</th>
-<th>CLASS_3</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>FALL</td>
-<td>ECE269</td>
-<td>CSE252A</td>
-<td>CSE258</td>
-</tr>
-<tr>
-<td>WINTER</td>
-<td>ECE276A</td>
-<td>ECE141A</td>
-<td>ECE143</td>
-</tr>
-<tr>
-<td>SPRING</td>
-<td>ECE272A</td>
-<td>ECE141B</td>
-<td>CSE240</td>
-</tr>
-<tr>
-<td>FALL</td>
-<td>ECE271A</td>
-<td>CSE250</td>
-<td>ECE250</td>
-</tr>
-</tbody></table>
-<h1 id="FALL-2021"><a href="#FALL-2021" class="headerlink" title="FALL 2021:"></a>FALL 2021:</h1><h2 id="ECE-269-Linear-Algebra-and-Application-Piya-Pal"><a href="#ECE-269-Linear-Algebra-and-Application-Piya-Pal" class="headerlink" title="ECE 269: Linear Algebra and Application (Piya Pal)"></a>ECE 269: Linear Algebra and Application (Piya Pal)</h2><p>Class GPA:  ( students)<br>Stats: A+ (0%), A (5.9%, 11), A- (7.5%, 14), B+ (23.7%,44), B (16.1%, 30), B- (30.6%, 57), C+ (9.7%, 18) …<br>Weights: Quiz (20%), Final (35%), Assignments (45%)<br>Comments:<br>由于EC80的专业特性，毕业要求四门核心课，所以如果想要在一学期之内毕业，就必须要每学期选一门。根据往届的信息，ECE269这门课是所有四门课程中相对简单的，毕竟本科都有点线性代数的基础（对于我来说等于没学）。<br>作为第一学期的核心课，我自认为还是比较认真的，上课次次不落，discussion也每次都去，课后也会复习笔记，因为有些内容真的没有完全听懂。作业的话由于自己马虎，加上有些题目确实不会，导致分数也不理想，都在medium附近徘徊。两个quiz，第一个quiz难度还算可以，第二个quiz难度飙升，三道题目就对了一个。到了期末就更惨了，6道题只会两个半道，到现在我还不知道能打多少分。毕竟这门课是个comprehensive的课程，要达到一定标准才能毕业，再加上GPA 3.0才能达到毕业要求，让这个等待出分的我非常的慌张。</p>
-<h2 id="CSE252A-Computer-Vision-I-Ben-Ochoa"><a href="#CSE252A-Computer-Vision-I-Ben-Ochoa" class="headerlink" title="CSE252A: Computer Vision I (Ben Ochoa)"></a>CSE252A: Computer Vision I (Ben Ochoa)</h2>
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/LAIOFEER公开课.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/LAIOFEER公开课.html" itemprop="url">LAIOFEER公开课</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-12-22T09:57:40+08:00">
-                2020-12-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/LAIOFEER公开课.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="LAIOFEER公开课.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  282 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>Always put yourself in other people’s shoes. 换位思考</p>
-<p>Critical thinking 任何事情并不是非黑即白</p>
-</blockquote>
-<h2 id="BQ-question-1"><a href="#BQ-question-1" class="headerlink" title="BQ question 1"></a>BQ question 1</h2><p>Tell me about yourself:</p>
-<ol>
-<li>Name, Education, Background</li>
-<li>Skills: Primary programming language, Projects experience, intern experience</li>
-<li>Thank you</li>
-</ol>
-<p>Variants:</p>
-<ol>
-<li>Tell me your weakness(e.g. 多任务同时处理，优先级问题) 承认自己的问题，尽量真实</li>
-<li>Key points: How to avoid/address the same problems in the future.</li>
-</ol>
-<h2 id="BQ-question-2"><a href="#BQ-question-2" class="headerlink" title="BQ question 2"></a>BQ question 2</h2><p>When you have different opinions from your colleagues</p>
-<ol>
-<li>Scenarios</li>
-<li>Communication: 1 on 1 不在公共场合批评别人; How/When/Where</li>
-</ol>
-<h2 id="BQ-question-3"><a href="#BQ-question-3" class="headerlink" title="BQ question 3"></a>BQ question 3</h2><p>When you have limited time available to finish your project. Quality vs Speed</p>
-<p>分情况讨论，用项目举例</p>
-<p>Variant 1:Provide an example scenario in which you made a quick decision under pressure</p>
-<p>Variant 2: Write an email to your manager on how to explain why you missed the deadline</p>
-<h2 id="BQ-question-4"><a href="#BQ-question-4" class="headerlink" title="BQ question 4"></a>BQ question 4</h2><p>What is your career plan for the next 5 years?</p>
-<p>现在有什么，未来期待什么，怎么做？</p>
-<p>concrete example</p>
-<h2 id="BQ-question-5"><a href="#BQ-question-5" class="headerlink" title="BQ question 5"></a>BQ question 5</h2><p>How do you define a good manager? Or what do you expect from your manager?</p>
-<p>grow path</p>
-<h2 id="BQ-question-6"><a href="#BQ-question-6" class="headerlink" title="BQ question 6"></a>BQ question 6</h2><p>Please tell me one of the most challenging projects you have accomplished.</p>
-<p>Why is it challenging？</p>
-<ol>
-<li>Technical </li>
-<li>Human resource </li>
-<li>Operational complexity/ cost</li>
-<li>Novelty</li>
-<li>Time constraints</li>
-</ol>
-<p>How did you solve it?</p>
-<p>How did you evaluate the results? Scope/Impact</p>
-<blockquote>
-<p>择高处立，就平处坐，向宽处行；立上等志，行中等事，享下等福。</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1763,7 +1797,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-count">52</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1879,7 +1913,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">40.9k</span>
+    <span title="Site words total count">42.1k</span>
   
 </div>
 

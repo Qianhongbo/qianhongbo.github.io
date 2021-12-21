@@ -106,6 +106,16 @@ var world = "world!"
 let greeting = hello + " " + world
 ```
 
+# Ternary Operators
+
+**Ternary operator** : an operator that is applied to three operands
+
+Ternary operators are much less common than binary operators, but one of the most common ternary operators is the **ternary conditional operator**. It is used to choose between two values based on a truth (Boolean) value, and it uses the following syntax:
+
+```swift
+trueOrFalseValue ? useThisIfTrue : useThisIfFalse
+```
+
 # Control Flow
 
 ```swift

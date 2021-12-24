@@ -347,6 +347,435 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Matlab机器人工具箱.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Matlab机器人工具箱.html" itemprop="url">Matlab机器人工具箱（Robotic Toolbox）</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-10T20:50:12+08:00">
+                2020-03-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器人学/" itemprop="url" rel="index">
+                    <span itemprop="name">机器人学</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Matlab机器人工具箱.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Matlab机器人工具箱.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.3k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Matlab机器人工具箱是我们在学习机器人学时候的一个非常好的工具，不但可以帮助我们计算，也可以做图形化的输出。</p>
+<p>在此就不多谈安装问题，主要介绍各个函数的使用方法。</p>
+<h2 id="启动机器人工具箱"><a href="#启动机器人工具箱" class="headerlink" title="启动机器人工具箱"></a>启动机器人工具箱</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">startup_rvc;</span><br></pre></td></tr></table></figure>
+
+<h2 id="绕xyz轴的旋转变化矩阵"><a href="#绕xyz轴的旋转变化矩阵" class="headerlink" title="绕xyz轴的旋转变化矩阵"></a>绕xyz轴的旋转变化矩阵</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rotx(<span class="number">30</span>*<span class="built_in">pi</span>/<span class="number">180</span>) <span class="comment">%用弧度</span></span><br><span class="line">rotx(<span class="number">30</span>,<span class="string">'deg'</span>) <span class="comment">%用角度</span></span><br><span class="line">roty(<span class="number">30</span>,<span class="string">'deg'</span>)</span><br><span class="line">rotz(<span class="number">30</span>,<span class="string">'deg'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="绕xyz轴旋转的齐次变换矩阵"><a href="#绕xyz轴旋转的齐次变换矩阵" class="headerlink" title="绕xyz轴旋转的齐次变换矩阵"></a>绕xyz轴旋转的齐次变换矩阵</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">trotx(<span class="number">30</span>*<span class="built_in">pi</span>/<span class="number">180</span>) <span class="comment">%用弧度</span></span><br><span class="line">trotx(<span class="number">30</span>,<span class="string">'deg'</span>) <span class="comment">%用角度</span></span><br><span class="line">troty(<span class="number">30</span>,<span class="string">'deg'</span>)</span><br><span class="line">trotz(<span class="number">30</span>,<span class="string">'deg'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="平移齐次变换矩阵"><a href="#平移齐次变换矩阵" class="headerlink" title="平移齐次变换矩阵"></a>平移齐次变换矩阵</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">transl([<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>])</span><br></pre></td></tr></table></figure>
+
+<h2 id="旋转变换的连续乘积"><a href="#旋转变换的连续乘积" class="headerlink" title="旋转变换的连续乘积"></a>旋转变换的连续乘积</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">trotx(<span class="number">30</span>,<span class="string">'deg'</span>)*troty(<span class="number">30</span>,<span class="string">'deg'</span>)*trotz(<span class="number">30</span>,<span class="string">'deg'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="rpy角"><a href="#rpy角" class="headerlink" title="rpy角"></a>rpy角</h2><h3 id="旋转矩阵"><a href="#旋转矩阵" class="headerlink" title="旋转矩阵"></a>旋转矩阵</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">roll=<span class="number">10</span>*<span class="built_in">pi</span>/<span class="number">180</span>; pitch=<span class="number">20</span>*<span class="built_in">pi</span>/<span class="number">180</span>; yaw=<span class="number">30</span>*<span class="built_in">pi</span>/<span class="number">180</span>;</span><br><span class="line">rpy2r(roll,pitch,yaw)</span><br><span class="line">rpy2r(roll,pitch,yaw,<span class="string">'zyx'</span>)</span><br><span class="line">rpy2r(roll,pitch,yaw,<span class="string">'xyz'</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>需要说名的是，rpy2r这个函数在不同的工具箱版本的函数并不一样，使用的角度顺序发生了改变，具体内容可以看具体版本的rpy2r.m文件。</p>
+</blockquote>
+<p>在此附上机器人工具箱中关于各个参数option的定义，仅提供10版本</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> opt.order</span><br><span class="line">        <span class="keyword">case</span> &#123;<span class="string">'xyz'</span>, <span class="string">'arm'</span>&#125;</span><br><span class="line">            <span class="comment">% XYZ order</span></span><br><span class="line">            <span class="keyword">if</span> numrows(roll) == <span class="number">1</span></span><br><span class="line">                R = rotx(yaw) * roty(pitch) * rotz(roll);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                R = <span class="built_in">zeros</span>(<span class="number">3</span>,<span class="number">3</span>,numrows(roll));</span><br><span class="line">                <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:numrows(roll)</span><br><span class="line">                    R(:,:,<span class="built_in">i</span>) = rotx(yaw(<span class="built_in">i</span>)) * roty(pitch(<span class="built_in">i</span>)) * rotz(roll(<span class="built_in">i</span>));</span><br><span class="line">                <span class="keyword">end</span></span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">case</span> &#123;<span class="string">'zyx'</span>, <span class="string">'vehicle'</span>&#125;</span><br><span class="line">            <span class="comment">% ZYX order</span></span><br><span class="line">            <span class="keyword">if</span> numrows(roll) == <span class="number">1</span></span><br><span class="line">                R = rotz(yaw) * roty(pitch) * rotx(roll);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                R = <span class="built_in">zeros</span>(<span class="number">3</span>,<span class="number">3</span>,numrows(roll));</span><br><span class="line">                <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:numrows(roll)</span><br><span class="line">                    R(:,:,<span class="built_in">i</span>) = rotz(yaw(<span class="built_in">i</span>)) * roty(pitch(<span class="built_in">i</span>)) * rotx(roll(<span class="built_in">i</span>));</span><br><span class="line">                <span class="keyword">end</span></span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">            </span><br><span class="line">        <span class="keyword">case</span> &#123;<span class="string">'yxz'</span>, <span class="string">'camera'</span>&#125;</span><br><span class="line">            <span class="comment">% YXZ order</span></span><br><span class="line">            <span class="keyword">if</span> numrows(roll) == <span class="number">1</span></span><br><span class="line">                R = roty(yaw) * rotx(pitch) * rotz(roll);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                R = <span class="built_in">zeros</span>(<span class="number">3</span>,<span class="number">3</span>,numrows(roll));</span><br><span class="line">                <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:numrows(roll)</span><br><span class="line">                    R(:,:,<span class="built_in">i</span>) = roty(yaw(<span class="built_in">i</span>)) * rotx(pitch(<span class="built_in">i</span>)) * rotz(roll(<span class="built_in">i</span>));</span><br><span class="line">                <span class="keyword">end</span></span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="检验"><a href="#检验" class="headerlink" title="检验"></a>检验</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rotx(yaw)*roty(pitch)*rotz(roll)</span><br><span class="line">rotz(roll)*roty(pitch)*rotx(yaw)</span><br><span class="line">rotx(roll)*roty(pitch)*rotz(yaw)</span><br><span class="line">rotz(yaw)*roty(pitch)*rotx(roll)</span><br></pre></td></tr></table></figure>
+
+<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%以下二者结果相同</span></span><br><span class="line">rpy2r(roll,pitch,yaw,<span class="string">'zyx'</span>)</span><br><span class="line">rotz(yaw)*roty(pitch)*rotx(roll)</span><br><span class="line"><span class="comment">%以下二者结果相同</span></span><br><span class="line">rpy2r(roll,pitch,yaw,<span class="string">'xyz'</span>)</span><br><span class="line">rotx(yaw)*roty(pitch)*rotz(roll)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>个人认为没必要背下来，也没必要理解，只要想用的时候能知道它是怎么算的就好。</p>
+</blockquote>
+<h2 id="Euler角"><a href="#Euler角" class="headerlink" title="Euler角"></a>Euler角</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%Euler角 旋转矩阵</span></span><br><span class="line">alpha=<span class="number">10</span>*<span class="built_in">pi</span>/<span class="number">180</span>; <span class="built_in">beta</span>=<span class="number">20</span>*<span class="built_in">pi</span>/<span class="number">180</span>; gama=<span class="number">30</span>*<span class="built_in">pi</span>/<span class="number">180</span>;</span><br><span class="line">eul2r(alpha,<span class="built_in">beta</span>,gama)</span><br><span class="line"><span class="comment">%检验</span></span><br><span class="line">rotz(alpha)*roty(<span class="built_in">beta</span>)*rotz(gama)</span><br></pre></td></tr></table></figure>
+
+<h2 id="齐次变换函数homtrans"><a href="#齐次变换函数homtrans" class="headerlink" title="齐次变换函数homtrans"></a>齐次变换函数<code>homtrans</code></h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">V=[<span class="number">30</span>,<span class="number">40</span>,<span class="number">60</span>];T=trotx(<span class="number">30</span>*<span class="built_in">pi</span>/<span class="number">180</span>);</span><br><span class="line">V=[V';<span class="number">1</span>];</span><br><span class="line">homtrans(T,V)</span><br><span class="line"><span class="comment">%检验</span></span><br><span class="line">T*V</span><br></pre></td></tr></table></figure>
+
+<h2 id="绕任意轴旋转函数"><a href="#绕任意轴旋转函数" class="headerlink" title="绕任意轴旋转函数"></a>绕任意轴旋转函数</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%绕任意轴旋转函数</span></span><br><span class="line">theta=<span class="number">30</span>*<span class="built_in">pi</span>/<span class="number">180</span>; k=[<span class="number">1</span>;<span class="number">0</span>;<span class="number">0</span>];</span><br><span class="line">angvec2r(theta,k)</span><br></pre></td></tr></table></figure>
+
+<h2 id="建立连杆坐标系"><a href="#建立连杆坐标系" class="headerlink" title="建立连杆坐标系"></a>建立连杆坐标系</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">L(<span class="number">1</span>)=Link(<span class="string">'revolute'</span>,<span class="string">'a'</span>,<span class="number">0</span>,<span class="string">'alpha'</span>,<span class="number">0</span>,<span class="string">'d'</span>,<span class="number">0</span>);</span><br><span class="line">L(<span class="number">1</span>).mdh=<span class="number">1</span>;</span><br><span class="line">L(<span class="number">2</span>)=Link(<span class="string">'revolute'</span>,<span class="string">'a'</span>,<span class="number">10</span>,<span class="string">'alpha'</span>,<span class="built_in">pi</span>/<span class="number">2</span>,<span class="string">'d'</span>,<span class="number">0</span>);</span><br><span class="line">L(<span class="number">2</span>).mdh=<span class="number">1</span>;</span><br><span class="line">L(<span class="number">3</span>)=Link(<span class="string">'revolute'</span>,<span class="string">'a'</span>,<span class="number">6</span>,<span class="string">'alpha'</span>,<span class="number">0</span>,<span class="string">'d'</span>,<span class="number">0</span>);</span><br><span class="line">L(<span class="number">3</span>).mdh=<span class="number">1</span>;</span><br><span class="line">R=SerialLink(L,<span class="string">'name'</span>,<span class="string">'3RRR'</span>)</span><br><span class="line"><span class="comment">%改变一些参数</span></span><br><span class="line">R.base=transl([<span class="number">-10</span> <span class="number">0</span> <span class="number">0</span>]);</span><br><span class="line">R.tool=transl([<span class="number">4</span> <span class="number">0</span> <span class="number">0</span>]);</span><br><span class="line">q0=[<span class="number">0</span> <span class="number">0</span> <span class="number">0</span>];</span><br><span class="line">R.<span class="built_in">plot</span>(q0)</span><br></pre></td></tr></table></figure>
+
+<h2 id="让连杆坐标系运动起来"><a href="#让连杆坐标系运动起来" class="headerlink" title="让连杆坐标系运动起来"></a>让连杆坐标系运动起来</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">L(<span class="number">1</span>)=Link(<span class="string">'revolute'</span>,<span class="string">'a'</span>,<span class="number">0</span>,<span class="string">'alpha'</span>,<span class="number">0</span>,<span class="string">'d'</span>,<span class="number">0</span>);</span><br><span class="line">L(<span class="number">1</span>).mdh=<span class="number">1</span>;</span><br><span class="line">L(<span class="number">2</span>)=Link(<span class="string">'revolute'</span>,<span class="string">'a'</span>,<span class="number">10</span>,<span class="string">'alpha'</span>,<span class="built_in">pi</span>/<span class="number">2</span>,<span class="string">'d'</span>,<span class="number">0</span>);</span><br><span class="line">L(<span class="number">2</span>).mdh=<span class="number">1</span>;</span><br><span class="line">L(<span class="number">3</span>)=Link(<span class="string">'revolute'</span>,<span class="string">'a'</span>,<span class="number">6</span>,<span class="string">'alpha'</span>,<span class="number">0</span>,<span class="string">'d'</span>,<span class="number">0</span>);</span><br><span class="line">L(<span class="number">3</span>).mdh=<span class="number">1</span>;</span><br><span class="line">R=SerialLink(L,<span class="string">'name'</span>,<span class="string">'3RRR'</span>)</span><br><span class="line">q1=<span class="built_in">linspace</span>(<span class="number">0</span>,<span class="built_in">pi</span>/<span class="number">2</span>,<span class="number">100</span>)';</span><br><span class="line">q2=<span class="built_in">linspace</span>(<span class="number">0</span>,<span class="built_in">pi</span>/<span class="number">2</span>,<span class="number">100</span>)';</span><br><span class="line">q3=<span class="built_in">linspace</span>(<span class="number">0</span>,<span class="built_in">pi</span>/<span class="number">2</span>,<span class="number">100</span>)';</span><br><span class="line">Q=[q1,q2,q3];</span><br><span class="line"><span class="built_in">figure</span>(<span class="number">2</span>)</span><br><span class="line">R.<span class="built_in">plot</span>(Q)</span><br><span class="line">R.fkine(Q(<span class="keyword">end</span>,:))</span><br></pre></td></tr></table></figure>
+
+<h1 id="实操任务"><a href="#实操任务" class="headerlink" title="实操任务"></a>实操任务</h1><ol>
+<li>建立两个机器人，机器人基座的相对位置可调。（实际环境中，机器人位置可能发生变动，需要进行修改）</li>
+<li>建立一个一条线段（一系列散点），线段的位置可调。（此线段即为机器人末端需要走的xyz轨迹点。实际环境中，轨迹位置随着工件安装位置而变换）</li>
+<li>针对线段上的任意一个点，使某一机器人末端以某种姿态到达该点。（为xyz轨迹点加上姿态，一般的，机械臂末端z轴应当和工件表面垂直。这里只有一条线段，可指定rpy为pi/4,0,0)</li>
+<li>针对线段上的任意一个点，使某一机器人末端以某种姿态，到达距离该点z向（末端坐标系下的z向）距离为某值的点。(此处表达的是待加工平板有一定厚度，而线段位于平板中部的情况。)</li>
+<li>在4的基础上，使得两个机器人末端z 向正对（xy不作要求），且两个机器人末端距离可调b</li>
+</ol>
+<h2 id="Matlab仿真结果图"><a href="#Matlab仿真结果图" class="headerlink" title="Matlab仿真结果图"></a>Matlab仿真结果图</h2><p><img src="https://tvax3.sinaimg.cn/large/006BuM4Jly1gd2tp522waj30ji0hgq42.jpg" alt="19"></p>
+<blockquote>
+<p>使用的机器人工具箱版本为10.3.1版本</p>
+<p>修改了工具箱自带的函数mdl_puma560，要使用代码需要在函数开头加上function p560 = mdl_puma560，结尾加上end以实现调用功能。</p>
+</blockquote>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">close all</span><br><span class="line">clear;</span><br><span class="line">d = <span class="number">0.1</span>;</span><br><span class="line"><span class="built_in">plot3</span>([<span class="number">0</span> <span class="number">0</span>],[<span class="number">-1</span> <span class="number">1</span>],[<span class="number">0</span> <span class="number">0</span>])</span><br><span class="line">p560_1 = mdl_puma560;</span><br><span class="line">p560_1.name = <span class="string">'puma1'</span>;</span><br><span class="line">p560_1.base = [<span class="number">-0.6</span> <span class="number">0</span> <span class="number">0</span>];</span><br><span class="line">p560_2 = mdl_puma560;</span><br><span class="line">p560_2.name = <span class="string">'puma2'</span>;</span><br><span class="line">p560_2.base = [<span class="number">0.6</span> <span class="number">0</span> <span class="number">0</span>];</span><br><span class="line">t=<span class="number">0</span>:<span class="number">0.05</span>:<span class="number">2</span>;</span><br><span class="line"><span class="comment">%计算puma1机械臂移动到指定点，并将z轴指向朝下的齐次变换矩阵</span></span><br><span class="line">T1 = transl(<span class="number">-0.4</span>,<span class="number">0.2</span>,<span class="number">0.1</span>);</span><br><span class="line">T2 = transl(<span class="number">0</span>,<span class="number">-0.4</span>,d)*trotx(<span class="number">180</span>);</span><br><span class="line"><span class="comment">%计算puma2机械臂移动到指定点，z轴指向朝上的齐次变换矩阵</span></span><br><span class="line">T3 = transl(<span class="number">0.2</span>,<span class="number">-0.2</span>,<span class="number">-0.1</span>);</span><br><span class="line">T4 = transl(<span class="number">0</span>,<span class="number">-0.4</span>,-d);</span><br><span class="line"><span class="comment">%利用jtraj函数让两个机械臂运动到指定点</span></span><br><span class="line">q=p560_1.jtraj(T1,T2,t);</span><br><span class="line">s=p560_2.jtraj(T3,T4,t);</span><br><span class="line"><span class="comment">%移动到指定点后沿直线移动</span></span><br><span class="line">T5 = transl(<span class="number">0</span>,<span class="number">0.5</span>,d)*trotx(<span class="number">180</span>);<span class="comment">%puma1沿直线移动</span></span><br><span class="line">T6 = transl(<span class="number">0</span>,<span class="number">0.5</span>,-d);<span class="comment">%puma2沿直线移动                                                         </span></span><br><span class="line">m=ctraj(T2,T5,<span class="number">50</span>);</span><br><span class="line">n=ctraj(T4,T6,<span class="built_in">length</span>(t));</span><br><span class="line">y=p560_1.ikine6s(m);</span><br><span class="line">f=p560_2.ikine6s(n);</span><br><span class="line"><span class="comment">%画图</span></span><br><span class="line">p560_1.<span class="built_in">plot</span>(q);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">p560_2.<span class="built_in">plot</span>(s);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">p560_1.<span class="built_in">plot</span>(y);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">p560_2.<span class="built_in">plot</span>(f);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/疫情原因宅家一个半月后出门有感.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/疫情原因宅家一个半月后出门有感.html" itemprop="url">疫情原因宅家一个半月后出门有感</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-10T20:23:41+08:00">
+                2020-03-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/随笔/" itemprop="url" rel="index">
+                    <span itemprop="name">随笔</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/疫情原因宅家一个半月后出门有感.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="疫情原因宅家一个半月后出门有感.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  501 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+             <font size="3" face="楷体">
+
+<p> 新冠病毒疫情原因，自从年前回家后，就没怎么出过门，出去两次也只是出门随便走走，没和陌生人说过话。目前疫情有较大好转，加之我头发太长，自从元旦那天在武汉剪了之后就没再动过，用理发店老板的话来讲，我这个“鸟巢”再不处理就可能要招来鸟了。</p>
+<p>宅在家这么多天，除了偶尔的颈椎酸痛，大体上都很开心，主要是和父母沟通为主，为数不多的和别人交流也都是通过网络，感觉少了很多不必要的烦恼。自己每天做着自己认为该做的事，准备比赛也好，看看直播也罢，都让自己觉得自己还活着，没在虚度自己的光阴，和上学唯一的区别就是，我可以随意的掌控我自己的时间，至于效果怎么样，我也不得而知，但自由总是最宝贵的。</p>
+<p>今天出门却感到有些伤感，不知道是因为在家呆的太久了对外面陌生的世界多了一份畏惧，还是在受疫情影响的社会背景下被气氛所感染，突然感觉到外面的世界并不是我曾经所认为的那么充满活力，相反，是一种死气沉沉的感觉。我对外面的一切都感到陌生，仿佛自己是一个关在监狱里5年的人，刚走出来，没有太多喜悦，反而是莫名的恐慌。</p>
+<p>在家呆久了，每天依靠着网络，可以看到全世界各地的新闻，和天南海北的人聊天，不出门以为自己拥有了全世界。出了门才发现，原来我还是我，世界不知道还是不是之前的那个世界，但可以肯定的是我只不过是这个世界的一个过客罢了，开心就好。</p>
+</font>
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/2020美赛有感.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -958,405 +1387,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/华科机械学院综合测控实验.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/华科机械学院综合测控实验.html" itemprop="url">华科机械学院综合测控实验</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-19T12:10:39+08:00">
-                2020-02-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/华科机械学习资料分享/" itemprop="url" rel="index">
-                    <span itemprop="name">华科机械学习资料分享</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/华科机械学院综合测控实验.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="华科机械学院综合测控实验.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  276 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="实验一"><a href="#实验一" class="headerlink" title="实验一"></a>实验一</h1><p>现在布置自学同学第一周的任务：</p>
-<ol>
-<li>用MATLAB产生0-100hz的方波信号，可以在数字框或者滚动条上改变方波频率。</li>
-<li>用时域过零检测方法测量你产生的方波信号，测量误差越小越好，0.2hz以内打100分，0.5hz以内95分，1hz以内90分，5hz以内85分，10hz以内80分，以上评分标准是初步设的，不满意可以提</li>
-<li>在你产生的方波信号上添加一直流分量，比如500-1000，如何保证你的程序也正常测量。</li>
-<li>注意初始信号值如果全为0的情况下，如何保证你的程序也正常测量。</li>
-</ol>
-<p>仿真做好了，把上学期编写的采集代码替换仿真数据即完成第一次实验，第一次实验最终通过测量信号发生器的信号频率来评分。<br>学有余力的同学可以看看实验指导书的实验六编码器模式，另外一种通过硬件测量信号频率的方法，有一定难度。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/大三上学期总结.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/大三上学期总结.html" itemprop="url">大三上学期总结</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-17T15:38:19+08:00">
-                2020-02-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/大三上学期总结.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="大三上学期总结.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  400 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-             <font size="3" face="楷体">
-这是我看似很努力的一个学期，结果也还说得过去，但这些与我预想的都还差了太多，我用20分钟的时间做了一个反思，试图找出我存在的问题。
-
-<ol>
-<li><p>我的努力程度不够，我是一个自制力很差的人，向来如此，总是禁不住诱惑，无论是手机还是游戏，都是一沾上就会上瘾，所以这一学期我尽管花了不少时间在学习上，但相比于其他同学，可能还是不够吧，毕竟很多人可能是花费自己的全部时间去学习了。</p>
-</li>
-<li><p>我对某些并不感兴趣的学科没有学的认真，比如机械原理，热工基础。我并没有抱着一个为了得高分的心态，而是自认为学的够了就不学了，但很显然，这种学习程度对于达到90+以上的分数是不太可能的。</p>
-</li>
-<li><p>学习方法，自从上了大学，我好想对于学习方法就已经不再要求自己了，学得再也不聪明，总是以一种比较笨，低效的方式在学习，这也不是一个聪明人应该做的事情。</p>
-</li>
-</ol>
-<p>希望在最后的学期，我能逐渐克服这些问题，尽管GPA可能已经不会有太大的改观，但这学期对我来说尤为重要，我要考出GRE和TOEFL，我希望我能在这两项成绩的考试中证明自己，考出高分！也算不让自己的大学留下遗憾吧。<br></p></font><p></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1404,7 +1439,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">49</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1426,7 +1461,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1520,7 +1555,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">42.1k</span>
+    <span title="Site words total count">40.4k</span>
   
 </div>
 

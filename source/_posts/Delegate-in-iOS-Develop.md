@@ -2,9 +2,7 @@
 title: Delegate in iOS Develop
 date: 2021-12-20 17:37:39
 categories: 
-- 学习笔记
-tags: 
-- Swift
+- iOS
 ---
 
 ## Defination

@@ -2,9 +2,7 @@
 title: Xcode快捷键
 date: 2021-12-13 16:44:35
 categories: 
-- 学习笔记
-tags: 
-- Swift
+- iOS
 ---
 
 # Xcode Shortcuts

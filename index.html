@@ -488,7 +488,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="//tva1.sinaimg.cn/large/006BuM4Jly1gc1kfywsvyj30zk0qou0x.jpg" rel="gallery_ckxkyy0ix003lhnptkok9gq30" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="//tva1.sinaimg.cn/large/006BuM4Jly1gc1kfywsvyj30zk0qou0x.jpg" rel="gallery_ckxrubrlr003hq1ptvroriame" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="//tva1.sinaimg.cn/large/006BuM4Jly1gc1kfywsvyj30zk0qou0x.jpg" itemprop="contentUrl">
               </a>
             
@@ -553,7 +553,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/MVC-Pattern.html">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Guard.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Qian Hongbo">
@@ -572,7 +572,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/MVC-Pattern.html" itemprop="url">MVC Pattern</a></h2>
+                <a class="post-title-link" href="/Guard.html" itemprop="url">Guard</a></h2>
         
 
         <div class="post-meta">
@@ -584,8 +584,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-12-24T11:57:49+08:00">
-                2021-12-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-12-29T08:52:53+08:00">
+                2021-12-29
               </time>
             
 
@@ -627,8 +627,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/MVC-Pattern.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="MVC-Pattern.html" itemprop="commentCount"></span>
+                <a href="/Guard.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Guard.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -650,202 +650,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  467 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="http://tva1.sinaimg.cn/large/006gJ2jvgy1gxpk2581unj32ta1fc7jw.jpg" alt="MVC Pattern"></p>
-<h2 id="Model-Objects"><a href="#Model-Objects" class="headerlink" title="Model Objects"></a>Model Objects</h2><p>Model objects encapsulate the data specific to an application and define the logic and computation that manipulate and process that data. For example, a model object might represent a character in a game or a contact in an address book. A model object can have to-one and to-many relationships with other model objects, and so sometimes the model layer of an application effectively is one or more object graphs. Much of the data that is part of the persistent state of the application (whether that persistent state is stored in files or databases) should reside in the model objects after the data is loaded into the application. Because model objects represent knowledge and expertise related to a specific problem domain, they can be reused in similar problem domains. Ideally, a model object should have no explicit connection to the view objects that present its data and allow users to edit that data—it should not be concerned with user-interface and presentation issues.</p>
-<p><strong>Communication</strong>: User actions in the view layer that create or modify data are communicated through a controller object and result in the creation or updating of a model object. When a model object changes (for example, new data is received over a network connection), it notifies a controller object, which updates the appropriate view objects.</p>
-<h2 id="View-Objects"><a href="#View-Objects" class="headerlink" title="View Objects"></a>View Objects</h2><p>A view object is an object in an application that users can see. A view object knows how to draw itself and can respond to user actions. A major purpose of view objects is to display data from the application’s model objects and to enable the editing of that data. Despite this, view objects are typically decoupled from model objects in an MVC application.</p>
-<p>Because you typically reuse and reconfigure them, view objects provide consistency between applications. Both the UIKit and AppKit frameworks provide collections of view classes, and Interface Builder offers dozens of view objects in its Library.</p>
-<p><strong>Communication</strong>: View objects learn about changes in model data through the application’s controller objects and communicate user-initiated changes—for example, text entered in a text field—through controller objects to an application’s model objects.</p>
-<h2 id="Controller-Objects"><a href="#Controller-Objects" class="headerlink" title="Controller Objects"></a>Controller Objects</h2><p>A controller object acts as an intermediary between one or more of an application’s view objects and one or more of its model objects. Controller objects are thus a conduit through which view objects learn about changes in model objects and vice versa. Controller objects can also perform setup and coordinating tasks for an application and manage the life cycles of other objects.</p>
-<p><strong>Communication</strong>: A controller object interprets user actions made in view objects and communicates new or changed data to the model layer. When model objects change, a controller object communicates that new model data to the view objects so that they can display it.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/ClickCounter.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/ClickCounter.html" itemprop="url">ClickCounter</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-12-21T21:44:04+08:00">
-                2021-12-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/ClickCounter.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="ClickCounter.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  151 字
+                  235 字
                 </span>
               
 
@@ -885,13 +690,18 @@
       
         
           
-            <h2 id="Use-code-to-generate-UI-components"><a href="#Use-code-to-generate-UI-components" class="headerlink" title="Use code to generate UI components"></a>Use code to generate UI components</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> label = <span class="type">UILabel</span>()</span><br><span class="line"><span class="comment">// Use "CGRect" to set the position of the label.</span></span><br><span class="line">label.frame = <span class="type">CGRect</span>(x: <span class="number">150</span>, y: <span class="number">150</span>, width: <span class="number">60</span>, height: <span class="number">60</span>) <span class="comment">// position</span></span><br><span class="line">label.text = <span class="string">"0"</span></span><br><span class="line"><span class="comment">// show the label in the view</span></span><br><span class="line">view.addSubview(label)</span><br></pre></td></tr></table></figure>
+            <h1 id="Guard-statement"><a href="#Guard-statement" class="headerlink" title="Guard statement"></a>Guard statement</h1><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">takeOff</span><span class="params">(passengersSeated: Bool, crewReady: Bool, runwayClear: Bool)</span></span> &#123;</span><br><span class="line">    <span class="keyword">guard</span> passengersSeated <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">    <span class="keyword">guard</span> crewReady <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">    <span class="keyword">guard</span> runwayClear <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"✈️ Lifts off runway"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// the runway isn't clear, the airplane cannot take off</span></span><br><span class="line">takeOff(passengersSeated: <span class="literal">true</span>, crewReady: <span class="literal">true</span>, runwayClear: <span class="literal">false</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// The same</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">takeOffCombineGuards</span><span class="params">(passengersSeated: Bool, crewReady: Bool, runwayClear: Bool)</span></span> &#123;</span><br><span class="line">    <span class="keyword">guard</span> passengersSeated, crewReady, runwayClear <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"✈️ Lifts off runway"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Add sth</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">takeOffGuardWithCode</span><span class="params">(passengersSeated: Bool, crewReady: Bool, runwayClear: Bool)</span></span> &#123;</span><br><span class="line">    <span class="keyword">guard</span> passengersSeated, crewReady, runwayClear <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"tell passengers there will be a delay"</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"✈️ Lifts off runway"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="Use-code-to-connect-label-with-view"><a href="#Use-code-to-connect-label-with-view" class="headerlink" title="Use code to connect label with view"></a>Use code to connect label with view</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> label: <span class="type">UILabel!</span> <span class="comment">// have to add "!", because it is nil before the compiling.</span></span><br><span class="line"><span class="keyword">self</span>.label = label</span><br></pre></td></tr></table></figure>
-
-<h2 id="Combine-the-click-action-with-the-incrementCount-function"><a href="#Combine-the-click-action-with-the-incrementCount-function" class="headerlink" title="Combine the click action with the incrementCount function"></a>Combine the click action with the incrementCount function</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// We use this function</span></span><br><span class="line">button.addTarget(<span class="keyword">self</span>, action: #selector(<span class="type">ViewController</span>.incrementCount), <span class="keyword">for</span>: <span class="type">UIControl</span>.<span class="type">Event</span>.touchUpInside)</span><br><span class="line"></span><br><span class="line"><span class="comment">// have to add @obj</span></span><br><span class="line"><span class="meta">@objc</span> <span class="function"><span class="keyword">func</span> <span class="title">incrementCount</span><span class="params">()</span></span> &#123;</span><br><span class="line">  <span class="keyword">self</span>.<span class="built_in">count</span> += <span class="number">1</span></span><br><span class="line">  <span class="keyword">self</span>.label.text = <span class="string">"\(self.count)"</span></span><br><span class="line">  <span class="keyword">self</span>.label2.text = <span class="keyword">self</span>.label.text</span><br><span class="line">  changeBackgroundColr() <span class="comment">// change the background color randomly</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Generate-random-color"><a href="#Generate-random-color" class="headerlink" title="Generate random color"></a>Generate random color</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">changeBackgroundColr</span><span class="params">()</span></span> &#123;</span><br><span class="line">  <span class="keyword">let</span> <span class="type">R</span> = <span class="type">CGFloat</span>(arc4random()%<span class="number">256</span>)/<span class="number">255.0</span></span><br><span class="line">  <span class="keyword">let</span> <span class="type">G</span> = <span class="type">CGFloat</span>(arc4random()%<span class="number">256</span>)/<span class="number">255.0</span></span><br><span class="line">  <span class="keyword">let</span> <span class="type">B</span> = <span class="type">CGFloat</span>(arc4random()%<span class="number">256</span>)/<span class="number">255.0</span></span><br><span class="line">  <span class="keyword">self</span>.view.backgroundColor = <span class="type">UIColor</span>(red: <span class="type">R</span>, green: <span class="type">G</span>, blue: <span class="type">B</span>, alpha: <span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Guard-versus-If"><a href="#Guard-versus-If" class="headerlink" title="Guard versus If"></a>Guard versus If</h1><p>The <code>guard</code> and <code>if</code> keywords can serve similar purposes in Swift, but they should not be used interchangeably. Instead, use the following guidelines to decide when to use guard versus if:</p>
+<ul>
+<li><code>guard</code> should be used to check for preconditions and early exit</li>
+<li><code>if</code> should be used to change execution path based on some condition(s)</li>
+</ul>
+<blockquote>
+<p>Guard: whether the credit card is validand whether the order is scheduled</p>
+<p>If: wether the user enter a discount code</p>
+</blockquote>
+<h1 id="Guard-with-Optionals"><a href="#Guard-with-Optionals" class="headerlink" title="Guard with Optionals"></a>Guard with Optionals</h1><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">takeOffGuardVar</span><span class="params">(passengersSeated: Bool, crewReady: Bool, runwayClear: Bool, crewLeader: String?)</span></span> &#123;</span><br><span class="line">    <span class="keyword">guard</span> passengersSeated, crewReady, runwayClear <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">    <span class="keyword">guard</span> <span class="keyword">var</span> crewLeaderVariable = crewLeader <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// modify the crew leader</span></span><br><span class="line">    crewLeaderVariable = crewLeaderVariable.uppercased()</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(crewLeaderVariable): \"Takeoff checks complete!\""</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"✈️ Lifts off runway"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">takeOffGuardVar(passengersSeated: <span class="literal">true</span>, crewReady: <span class="literal">true</span>, runwayClear: <span class="literal">true</span>, crewLeader: <span class="string">"👩🏻‍✈️ Natalie"</span>)</span><br></pre></td></tr></table></figure>
 
 
           
@@ -943,7 +753,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Delegate-in-iOS-Develop.html">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Binary-Search-Tree.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Qian Hongbo">
@@ -962,7 +772,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/Delegate-in-iOS-Develop.html" itemprop="url">Delegate in iOS Develop</a></h2>
+                <a class="post-title-link" href="/Binary-Search-Tree.html" itemprop="url">Binary Search Tree</a></h2>
         
 
         <div class="post-meta">
@@ -974,8 +784,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-12-20T17:37:39+08:00">
-                2021-12-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-12-28T17:24:37+08:00">
+                2021-12-28
               </time>
             
 
@@ -997,8 +807,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
+                  <a href="/categories/Data-Structure/" itemprop="url" rel="index">
+                    <span itemprop="name">Data Structure</span>
                   </a>
                 </span>
 
@@ -1017,8 +827,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/Delegate-in-iOS-Develop.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Delegate-in-iOS-Develop.html" itemprop="commentCount"></span>
+                <a href="/Binary-Search-Tree.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Binary-Search-Tree.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1040,7 +850,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  991 字
+                  935 字
                 </span>
               
 
@@ -1056,7 +866,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6 分钟
+                  5 分钟
                 </span>
               
             </div>
@@ -1080,88 +890,50 @@
       
         
           
-            <h2 id="Defination"><a href="#Defination" class="headerlink" title="Defination"></a>Defination</h2><p>The delegate is an object(Control Object) that executes a group of methods on behalf of another object.</p>
+            <h1 id="BST-Construction"><a href="#BST-Construction" class="headerlink" title="BST Construction"></a>BST Construction</h1><p>Write a BST class for a Binary Search Tree. The class should support:</p>
+<ol>
+<li>Inserting values</li>
+<li>Removing values</li>
+<li>Searching for values/ Contain</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BST</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, value)</span>:</span></span><br><span class="line">        self.value = value</span><br><span class="line">        self.left = <span class="literal">None</span></span><br><span class="line">        self.right = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Average: O(log(n)) time | O(1) space</span></span><br><span class="line">    <span class="comment"># Worst: O(n) time | O(1) space</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">insert</span><span class="params">(self, value)</span>:</span></span><br><span class="line">        currentNode = self</span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            <span class="keyword">if</span> value &lt; currentNode.value:</span><br><span class="line">                <span class="keyword">if</span> currentNode.left <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">                    currentNode.left = BST(value)</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    currentNode = currentNode.left</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> currentNode.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">                    currentNode.right = BST(value)</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    currentNode = currentNode.right</span><br><span class="line">        <span class="keyword">return</span> self</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Average: O(log(n)) time | O(1) space</span></span><br><span class="line">    <span class="comment"># Worst: O(n) time | O(1) space</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">contains</span><span class="params">(self, value)</span>:</span></span><br><span class="line">        currentNode = self</span><br><span class="line">        <span class="keyword">while</span> currentNode <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">if</span> value &lt; currentNode.value:</span><br><span class="line">                currentNode = currentNode.left</span><br><span class="line">            <span class="keyword">elif</span> value &gt; currentNode.value:</span><br><span class="line">                currentNode = currentNode.right</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Average: O(log(n)) time | O(1) space</span></span><br><span class="line">    <span class="comment"># Worst: O(n) time | O(1) space</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">remove</span><span class="params">(self, value, parrentNode=None)</span>:</span></span><br><span class="line">        currentNode = self</span><br><span class="line">        <span class="keyword">while</span> currentNode <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">if</span> value &lt; currentNode.value:</span><br><span class="line">                parrentNode = currentNode</span><br><span class="line">                currentNode = currentNode.left</span><br><span class="line">            <span class="keyword">elif</span> value &gt; currentNode.value:</span><br><span class="line">                parrentNode = currentNode</span><br><span class="line">                currentNode = currentNode.right</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">              	<span class="comment"># Circumstance 1</span></span><br><span class="line">                <span class="keyword">if</span> currentNode.left <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">and</span> currentNode.right <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">                    currentNode.value = currentNode.right.getMinValue()</span><br><span class="line">                    currentNode.right.remove(currentNode.value, currentNode)</span><br><span class="line">                <span class="comment"># Circumstance 2.2</span></span><br><span class="line">                <span class="keyword">elif</span> parrentNode <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">                    <span class="keyword">if</span> currentNode.left <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">                        currentNode.value = currentNode.left.value</span><br><span class="line">                        currentNode.right = currentNode.left.right</span><br><span class="line">                        currentNode.left = currentNode.left.left</span><br><span class="line">                    <span class="keyword">elif</span> currentNode.right <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">                        currentNode.value = currentNode.right.value</span><br><span class="line">                        currentNode.left = currentNode.right.left</span><br><span class="line">                        currentNode.right = currentNode.right.right</span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        <span class="keyword">pass</span></span><br><span class="line">                <span class="comment"># Circumstance 2.1</span></span><br><span class="line">                <span class="keyword">elif</span> currentNode == parrentNode.left:</span><br><span class="line">                    parrentNode.left = currentNode.left <span class="keyword">if</span> currentNode.left <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">else</span> currentNode.right</span><br><span class="line">                <span class="comment"># Circumstance 2.1</span></span><br><span class="line">                <span class="keyword">elif</span> currentNode == parrentNode.right:</span><br><span class="line">                    parrentNode.right = currentNode.left <span class="keyword">if</span> currentNode.left <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">else</span> currentNode.right</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">return</span> self</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getMinValue</span><span class="params">(self)</span>:</span></span><br><span class="line">    currentNode = self</span><br><span class="line">    <span class="keyword">while</span> currentNode.left <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        currentNode = currentNode.left</span><br><span class="line">    <span class="keyword">return</span> currentNode.value</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p>Control object is designed to pass user input to a data model.</p>
-</blockquote>
-<p>We want view classes to be used as is, and then we want control and model classes to have the freedom to customize those views. The delegate pattern allows for this.</p>
-<p>The key to the delegate pattern, is that the view establishes the questions that it needs answered and encodes them in a protocol.</p>
-<blockquote>
-<p>A protocol is a list of methods that a delegate must implement.</p>
-<p>Any object that fulfills the protocol can become a delegate.</p>
-</blockquote>
-<h2 id="UITextFieldDelegate-protocol"><a href="#UITextFieldDelegate-protocol" class="headerlink" title="UITextFieldDelegate protocol"></a><code>UITextFieldDelegate</code> protocol</h2><p>Let’s take a closer look at the protocol we’ll implement next, the <code>UITextFieldDelegate</code> protocol. We’ve listed its methods below. For each of the seven methods, consult the documentation and provide an example implementation. Post one or two of your examples to the discussion forum.</p>
-<p><em>Editing lifecycle methods:</em><br><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619601-textfieldshouldbeginediting" target="_blank" rel="noopener"><code>textFieldShouldBeginEditing(_:)</code></a><br><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619590-textfielddidbeginediting" target="_blank" rel="noopener"><code>textFieldDidBeginEditing(_:)</code></a><br><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619592-textfieldshouldendediting" target="_blank" rel="noopener"><code>textFieldShouldEndEditing(_:)</code></a><br><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619591-textfielddidendediting" target="_blank" rel="noopener"><code>textFieldDidEndEditing(_:)</code></a></p>
-<blockquote>
-<p><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619601-textfieldshouldbeginediting" target="_blank" rel="noopener"><code>textFieldShouldBeginEditing(_:)</code></a></p>
-<p>You could use this method to prevent the user from editing the text field’s contents more than once.</p>
-</blockquote>
-<blockquote>
-<p><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619590-textfielddidbeginediting" target="_blank" rel="noopener"><code>textFieldDidBeginEditing(_:)</code></a></p>
-<p>You might use this method to show overlay views that are visible only while editing.</p>
-</blockquote>
-<blockquote>
-<p><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619592-textfieldshouldendediting" target="_blank" rel="noopener"><code>textFieldShouldEndEditing(_:)</code></a></p>
-<p>The text field calls this method when it is asked to resign the first responder status. This can happen when the user selects another control or when you call the text field’s <a href="https://developer.apple.com/documentation/uikit/uiresponder/1621097-resignfirstresponder" target="_blank" rel="noopener"><code>resignFirstResponder()</code></a> method. Before the focus change occurs, however, the text field calls this method and gives you a chance to prevent the change from happening. </p>
-<p>Normally, you would return <code>true</code> from this method to allow the text field to resign the first responder status. You might return <code>false</code>, however, in cases where your delegate detects invalid contents in the text field. Returning <code>false</code> prevents the user from switching to another control until the text field contains a valid value. </p>
-<p>If you use this method to validate the contents of the text field, you might also want to use an overlay view to provide feedback to that effect. For example, you might display a small icon indicating the text is invalid.</p>
-</blockquote>
-<blockquote>
-<p><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619591-textfielddidendediting" target="_blank" rel="noopener"><code>textFieldDidEndEditing(_:)</code></a></p>
-<p>This method is called after the text field resigns its first responder status. You can use this method to update your delegate’s state information. For example, you might use this method to hide overlay views that should be visible only while editing.</p>
-</blockquote>
-<p><em>The primary method for controlling text:</em><br><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619599-textfield" target="_blank" rel="noopener"><code>textField(_:shouldChangeCharactersIn:replacementString:)</code></a></p>
-<blockquote>
-<ul>
-<li><code>textField</code></li>
+<p>There are three circumstances for remove </p>
+<ol>
+<li>have both left child and right child</li>
+<li>only have left child or right child or no child<ul>
+<li>have parent node</li>
+<li>don’t have parent node</li>
 </ul>
-<p>The text field containing the text.</p>
-<ul>
-<li><code>range</code></li>
-</ul>
-<p>The range of characters to be replaced.</p>
-<ul>
-<li><code>string</code></li>
-</ul>
-<p>The replacement string for the specified range. During typing, this parameter normally contains only the single new character that was typed, but it may contain more characters if the user is pasting text. When the user deletes one or more characters, the replacement string is empty.</p>
-<ul>
-<li>The text field calls this method whenever user actions cause its text to change. Use this method to validate text as it is typed by the user. For example, you could use this method to prevent the user from entering anything but numerical values.</li>
-</ul>
-</blockquote>
-<p><em>The clear button (the ‘x’ on the right side of some text fields):</em><br><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619594-textfieldshouldclear" target="_blank" rel="noopener"><code>textFieldShouldClear(_:)</code></a></p>
-<blockquote>
-<p>The text field calls this method in response to the user pressing the built-in clear button. (This button is not shown by default but can be enabled by changing the value in the <a href="https://developer.apple.com/documentation/uikit/uitextfield/1619622-clearbuttonmode" target="_blank" rel="noopener"><code>clearButtonMode</code></a> property of the text field.) This method is also called when editing begins and the <a href="https://developer.apple.com/documentation/uikit/uitextfield/1619639-clearsonbeginediting" target="_blank" rel="noopener"><code>clearsOnBeginEditing</code></a> property of the text field is set to <code>true</code>.</p>
-<p>If you do not implement this method, the text field clears the text as if the method had returned <code>true</code>.</p>
-</blockquote>
-<p><em>The return key in the keyboard:</em><br><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619603-textfieldshouldreturn" target="_blank" rel="noopener"><code>textFieldShouldReturn(_:)</code></a></p>
-<blockquote>
-<p>The default implementation returns <code>true</code>, resigning first responder status. You can override this method in your custom responders to update your object’s state or perform other actions, such as removing the highlight from a selection. You can also return <code>false</code>, refusing to relinquish first responder status. If you override this method, you must call <code>super</code> (the superclass implementation) at some point in your code.</p>
-</blockquote>
-<h2 id="Control-Flow-Walk-trough"><a href="#Control-Flow-Walk-trough" class="headerlink" title="Control Flow Walk-trough"></a>Control Flow Walk-trough</h2><ol>
-<li><p>User taps keyboard</p>
-</li>
-<li><p>Textfield realizes text will change</p>
-</li>
-<li><p>Textfield invokes …</p>
-<blockquote>
-<p><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619599-textfield" target="_blank" rel="noopener"><code>textField(_:shouldChangeCharactersIn:replacementString:)</code></a></p>
-</blockquote>
-</li>
-<li><p>VC receives invocation</p>
-</li>
-<li><p>VC assembles the new text</p>
-</li>
-<li><p>VC updates the label</p>
-</li>
-<li><p>VC returns “true” to allow change</p>
 </li>
 </ol>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// MARK: Text Field Delegate Methods</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Step 4</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">textField</span><span class="params">(<span class="number">_</span> textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">		</span><br><span class="line">  	<span class="comment">// Step 5 </span></span><br><span class="line">    <span class="comment">// Figure out what the new text will be, if we return true</span></span><br><span class="line">    <span class="keyword">var</span> newText = textField.text! <span class="keyword">as</span> <span class="type">NSString</span></span><br><span class="line">    newText = newText.replacingCharacters(<span class="keyword">in</span>: range, with: string) <span class="keyword">as</span> <span class="type">NSString</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// hide the label if the newText will be an empty string</span></span><br><span class="line">    <span class="keyword">self</span>.characterCountLabel.isHidden = (newText.length == <span class="number">0</span>)</span><br><span class="line">		</span><br><span class="line">  	<span class="comment">// Step 6</span></span><br><span class="line">    <span class="comment">// Write the length of newText into the label</span></span><br><span class="line">    <span class="keyword">self</span>.characterCountLabel.text = <span class="type">String</span>(newText.length)</span><br><span class="line"></span><br><span class="line">  	<span class="comment">// Step 7</span></span><br><span class="line">    <span class="comment">// returning true gives the text field permission to change its text</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>We can’t see the first three steps.</p>
 </blockquote>
-<h2 id="Emoji-Textfield"><a href="#Emoji-Textfield" class="headerlink" title="Emoji Textfield"></a>Emoji Textfield</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">textField</span><span class="params">(<span class="number">_</span> textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">var</span> replacedAnEmoji = <span class="literal">false</span></span><br><span class="line">        <span class="keyword">var</span> emojiStringRange: <span class="type">NSRange</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Construct the text that will be in the field if this change is accepted</span></span><br><span class="line">        <span class="keyword">var</span> newText = textField.text! <span class="keyword">as</span> <span class="type">NSString</span></span><br><span class="line">        newText = newText.replacingCharacters(<span class="keyword">in</span>: range, with: string) <span class="keyword">as</span> <span class="type">NSString</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// For each dictionary entry in translations, pull out a string to </span></span><br><span class="line">        <span class="comment">// search for an emoji to replace it with</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (emojiString, emoji) <span class="keyword">in</span> translations &#123;</span><br><span class="line">          </span><br><span class="line">            <span class="comment">// Search for all occurances of key (ie. "dog"), </span></span><br><span class="line">            <span class="comment">// and replace with emoji (ie. 🐶)</span></span><br><span class="line">            <span class="comment">// repeat-while loop</span></span><br><span class="line">            <span class="keyword">repeat</span> &#123;</span><br><span class="line">                emojiStringRange = newText.range(of: emojiString, options: .caseInsensitive)</span><br><span class="line">            </span><br><span class="line">                <span class="comment">// found one</span></span><br><span class="line">                <span class="keyword">if</span> emojiStringRange.location != <span class="type">NSNotFound</span> &#123;</span><br><span class="line">                    newText = newText.replacingCharacters(<span class="keyword">in</span>: emojiStringRange, with: emoji) <span class="keyword">as</span> <span class="type">NSString</span></span><br><span class="line">                    replacedAnEmoji = <span class="literal">true</span></span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">            &#125; <span class="keyword">while</span> emojiStringRange.location != <span class="type">NSNotFound</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// If we have replaced an emoji, then we directly edit the text field</span></span><br><span class="line">        <span class="comment">// Otherwise we allow the proposed edit.</span></span><br><span class="line">        <span class="keyword">if</span> replacedAnEmoji &#123;</span><br><span class="line">            textField.text = newText <span class="keyword">as</span> <span class="type">String</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Validate-BST"><a href="#Validate-BST" class="headerlink" title="Validate BST"></a>Validate BST</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(n) time | O(d) space</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">validateBst</span><span class="params">(tree)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> validateBstHelper(tree, float(<span class="string">"-inf"</span>), float(<span class="string">"inf"</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">validateBstHelper</span><span class="params">(tree, minValue, maxValue)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> tree <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">if</span> tree.value &lt; minValue <span class="keyword">or</span> tree.value &gt;= maxValue:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    leftIsValid = validateBstHelper(tree.left, minValue, tree.value)</span><br><span class="line">    rightIsValid = validateBstHelper(tree.right, tree.value, maxValue)</span><br><span class="line">    <span class="keyword">return</span> leftIsValid <span class="keyword">and</span> rightIsValid</span><br></pre></td></tr></table></figure>
+
+<h1 id="BST-Traversal"><a href="#BST-Traversal" class="headerlink" title="BST Traversal"></a>BST Traversal</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">tree = 10</span><br><span class="line">       / \ </span><br><span class="line">      5   15</span><br><span class="line">     / \    \</span><br><span class="line">    2   5    22</span><br><span class="line">  /</span><br><span class="line"> 1</span><br><span class="line"> </span><br><span class="line"> inOrderTraverse: [1, 2, 5, 5, 10, 15, 22]</span><br><span class="line"> preOrderTraverse: [10, 5, 2, 1, 5, 15, 22]</span><br><span class="line"> postOrderTraverse: [1, 2, 5, 5, 22, 15, 10]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(n) time | O(n) space</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">inOrderTraverse</span><span class="params">(tree, array)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> tree <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        inOrderTraverse(tree.left, array)</span><br><span class="line">        array.append(tree.value)</span><br><span class="line">        inOrderTraverse(tree.right, array)</span><br><span class="line">    <span class="keyword">return</span> array</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># O(n) time | O(n) space</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">preOrderTraverse</span><span class="params">(tree, array)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> tree <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        array.append(tree.value)</span><br><span class="line">        preOrderTraverse(tree.left, array)</span><br><span class="line">        preOrderTraverse(tree.right, array)</span><br><span class="line">    <span class="keyword">return</span> array</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># O(n) time | O(n) space</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">postOrderTraverse</span><span class="params">(tree, array)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> tree <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        postOrderTraverse(tree.left, array)</span><br><span class="line">        postOrderTraverse(tree.right, array)</span><br><span class="line">        array.append(tree.value)</span><br><span class="line">    <span class="keyword">return</span> array</span><br></pre></td></tr></table></figure>
+
+<h1 id="Min-Height-BST"><a href="#Min-Height-BST" class="headerlink" title="Min Height BST"></a>Min Height BST</h1><p>Write a function that takes in a sorted array of distince integers. Construct a BST from the integers, and return the root of the BST.</p>
+<p>Recursive!</p>
+<ol>
+<li>Use the insert function of Class BST</li>
+<li>Write the insert function by ourselves</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(nlogn) time | O(n) space</span></span><br><span class="line"><span class="comment"># insert O(logn) time * n elements</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">minHeightBst</span><span class="params">(array)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> constructMinHeightBst(array, <span class="literal">None</span>, <span class="number">0</span>, len(array) - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">constructMinHeightBst</span><span class="params">(array, bst, startIdx, endIdx)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> startIdx &gt; endIdx:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    midIdx = (startIdx + endIdx) // <span class="number">2</span></span><br><span class="line">    midValue = array[midIdx]</span><br><span class="line">    <span class="keyword">if</span> bst <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        bst = BST(midValue)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        bst.insert(midValue)</span><br><span class="line"></span><br><span class="line">    constructMinHeightBst(array, bst, startIdx, midIdx - <span class="number">1</span>)</span><br><span class="line">    constructMinHeightBst(array, bst, midIdx + <span class="number">1</span>, endIdx)</span><br><span class="line">    <span class="keyword">return</span> bst</span><br></pre></td></tr></table></figure>
+
+<p>In order to optimize the program, the built-in insert function is not practical, and there is no need to start from the root node. Directly compare and insert.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(n) time | O(n) space</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">minHeightBst</span><span class="params">(array)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> constructMinHeightBst(array, <span class="literal">None</span>, <span class="number">0</span>, len(array) - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">constructMinHeightBst</span><span class="params">(array, bst, startIdx, endIdx)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> startIdx &gt; endIdx:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    midIdx = (startIdx + endIdx) // <span class="number">2</span></span><br><span class="line">    newBstNode = BST(array[midIdx])</span><br><span class="line">    <span class="keyword">if</span> bst <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        bst = newBstNode</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">      <span class="comment"># Don't need to traverse elements from the root node.</span></span><br><span class="line">        <span class="keyword">if</span> bst.value &gt; array[midIdx]:</span><br><span class="line">            bst.left = newBstNode</span><br><span class="line">            bst = bst.left</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            bst.right = newBstNode</span><br><span class="line">            bst = bst.right</span><br><span class="line"></span><br><span class="line">    constructMinHeightBst(array, bst, startIdx, midIdx - <span class="number">1</span>)</span><br><span class="line">    constructMinHeightBst(array, bst, midIdx + <span class="number">1</span>, endIdx)</span><br><span class="line">    <span class="keyword">return</span> bst</span><br></pre></td></tr></table></figure>
+
+<p>Make a few changes to the above code.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">constructMinHeightBst</span><span class="params">(array, startIdx, endIdx)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> startIdx &gt; endIdx:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    midIdx = (startIdx + endIdx) // <span class="number">2</span></span><br><span class="line">    bst = BST(array[midIdx])</span><br><span class="line">    bst.left = constructMinHeightBst(array, startIdx, midIdx - <span class="number">1</span>)</span><br><span class="line">    bst.right = constructMinHeightBst(array, midIdx + <span class="number">1</span>, endIdx)</span><br><span class="line">    <span class="keyword">return</span> bst</span><br></pre></td></tr></table></figure>
+
+<h1 id="Find-Kth-Largest-Value-in-BST"><a href="#Find-Kth-Largest-Value-in-BST" class="headerlink" title="Find Kth Largest Value in BST"></a>Find Kth Largest Value in BST</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BST</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, value, left=None, right=None)</span>:</span></span><br><span class="line">        self.value = value</span><br><span class="line">        self.left = left</span><br><span class="line">        self.right = right</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(N) time, O(N) space</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">findKthLargestValueInBst</span><span class="params">(tree, k)</span>:</span></span><br><span class="line">    array = []</span><br><span class="line">    array = reverseInorderTraverse(tree, array)</span><br><span class="line">    <span class="keyword">return</span> array[k - <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverseInorderTraverse</span><span class="params">(tree, array)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> tree <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        reverseInorderTraverse(tree.right, array)</span><br><span class="line">        array.append(tree.value)</span><br><span class="line">        reverseInorderTraverse(tree.left, array)</span><br><span class="line">    <span class="keyword">return</span> array</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeInfo</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, numberOfNodesVisited, latestVisitedNodeValue)</span>:</span></span><br><span class="line">        self.numberOfNodesVisited = numberOfNodesVisited</span><br><span class="line">        self.latestVisitedNodeValue = latestVisitedNodeValue</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># O(h + k) time, O(h) space</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">findKthLargestValueInBst</span><span class="params">(tree, k)</span>:</span></span><br><span class="line">    treeInfo = TreeInfo(<span class="number">0</span>, <span class="number">-1</span>)</span><br><span class="line">    reverseInorderTraverse(tree, k, treeInfo)</span><br><span class="line">    <span class="keyword">return</span> treeInfo.latestVisitedNodeValue</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverseInorderTraverse</span><span class="params">(node, k, treeInfo)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> node <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">or</span> treeInfo.numberOfNodesVisited &gt;= k:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    reverseInorderTraverse(node.right, k, treeInfo)</span><br><span class="line">    <span class="keyword">if</span> treeInfo.numberOfNodesVisited &lt; k:</span><br><span class="line">        treeInfo.latestVisitedNodeValue = node.value</span><br><span class="line">        treeInfo.numberOfNodesVisited += <span class="number">1</span></span><br><span class="line">        reverseInorderTraverse(node.left, k, treeInfo)</span><br></pre></td></tr></table></figure>
 
 
           
@@ -1213,7 +985,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Xcode快捷键.html">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Associated-Value.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Qian Hongbo">
@@ -1232,7 +1004,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/Xcode快捷键.html" itemprop="url">Xcode快捷键</a></h2>
+                <a class="post-title-link" href="/Associated-Value.html" itemprop="url">Associated Value</a></h2>
         
 
         <div class="post-meta">
@@ -1244,8 +1016,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-12-13T16:44:35+08:00">
-                2021-12-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-12-28T14:27:30+08:00">
+                2021-12-28
               </time>
             
 
@@ -1287,8 +1059,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/Xcode快捷键.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Xcode快捷键.html" itemprop="commentCount"></span>
+                <a href="/Associated-Value.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Associated-Value.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1310,7 +1082,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  159 字
+                  1.7k 字
                 </span>
               
 
@@ -1326,7 +1098,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  10 分钟
                 </span>
               
             </div>
@@ -1350,31 +1122,277 @@
       
         
           
-            <h1 id="Xcode-Shortcuts"><a href="#Xcode-Shortcuts" class="headerlink" title="Xcode Shortcuts"></a>Xcode Shortcuts</h1><p>Xcode has numerous keyboard shortcuts that are worth learning. Knowing them can help speed up your iOS development, and it saves you from having to reach over to the mouse or trackpad.</p>
-<p>On the Navigator Panel on the left side, the following keyboard shortcuts cycle through the different navigators.</p>
-<ul>
-<li>⌘ + 0 = Show or Hide the Navigator Panel</li>
-<li>⌘ + 1 = Project</li>
-<li>⌘ + 2 = Source Control</li>
-<li>⌘ + 3 = Symbol</li>
-<li>⌘ + 4 = Find</li>
-<li>⌘ + 5 = Issue</li>
-<li>⌘ + 6 = Test</li>
-<li>⌘ + 7 = Debug</li>
-<li>⌘ + 8 = Breakpoint</li>
-<li>⌘ + 9 = Report</li>
+            <h1 id="Review-about-“enum”"><a href="#Review-about-“enum”" class="headerlink" title="Review about “enum”"></a>Review about “enum”</h1><p>Enums can have raw values and associated values. A raw value is a string, character, or number (integer or floating-point) that can represent an enum case.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Position</span>: <span class="title">Int</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> first = <span class="number">1</span></span><br><span class="line">    <span class="keyword">case</span> second = <span class="number">2</span></span><br><span class="line">    <span class="keyword">case</span> third = <span class="number">3</span></span><br><span class="line">    <span class="keyword">case</span> fourth = <span class="number">4</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>The example above defines a <code>Position</code> enum and uses type annotation to specify that all cases must have a raw integer value.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ": Int" is the type annotation</span></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Position</span>: <span class="title">Int</span> </span>&#123;</span><br></pre></td></tr></table></figure>
+
+<p>Then, for each case, a raw integer value is explicitly defined after the case name.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> first = <span class="number">1</span></span><br><span class="line"><span class="keyword">case</span> second = <span class="number">2</span></span><br><span class="line"><span class="keyword">case</span> third = <span class="number">3</span></span><br><span class="line"><span class="keyword">case</span> fourth = <span class="number">4</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Raw-Value-to-Enum"><a href="#Raw-Value-to-Enum" class="headerlink" title="Raw Value to Enum"></a>Raw Value to Enum</h1><p>Raw values enable developers to convert values into enum cases, and vice versa. Let’s keep working with the <code>Position</code> enum.</p>
+<p>To convert an enum case into its raw value, use its <code>rawValue</code> property:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// convert a Position into a raw integer value</span></span><br><span class="line"><span class="keyword">let</span> myPosition = <span class="type">Position</span>.first</span><br><span class="line"><span class="keyword">let</span> myPositionNumber = myPosition.rawValue</span><br><span class="line"><span class="built_in">print</span>(myPositionNumber) <span class="comment">// prints "1"</span></span><br></pre></td></tr></table></figure>
+
+<p>To convert a raw value to its respective enum case, use the initializer that takes a <code>rawValue</code> argument.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// convert an integer into a Position</span></span><br><span class="line"><span class="keyword">let</span> rivalPositionNumber = <span class="number">4</span></span><br><span class="line"><span class="keyword">let</span> rivalPosition = <span class="type">Position</span>(rawValue: rivalPositionNumber)</span><br><span class="line"><span class="built_in">print</span>(rivalPosition == .fourth) <span class="comment">// prints "true"</span></span><br></pre></td></tr></table></figure>
+
+<p>Since there is no guarantee that a raw value has a corresponding case, any attempt to create an enum from a raw value will return an optional. To be safe, use <code>if let</code> to create enums from raw values.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> randomNumber = <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// safely create enums from raw values</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> newPosition = <span class="type">Position</span>(rawValue: randomNumber) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"created \(newPosition) from raw value"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"cannot create position from raw value"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Implicit-Raw-Values"><a href="#Implicit-Raw-Values" class="headerlink" title="Implicit Raw Values"></a>Implicit Raw Values</h1><p>In certain situations, the Swift compiler can infer raw values for enum cases.</p>
+<p>If an enum uses raw string values, then each case is implicitly assigned a raw string value equal to the case’s name.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">AudioRate</span>: <span class="title">String</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> slow, normal, fast, custom</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="type">AudioRate</span>.slow.rawValue) <span class="comment">// prints "slow"</span></span><br><span class="line"><span class="built_in">print</span>(<span class="type">AudioRate</span>.custom.rawValue) <span class="comment">// prints "custom"</span></span><br></pre></td></tr></table></figure>
+
+<p>If an enum uses raw integer values, then the compiler assigns zero to the first case, and increases the raw value for subsequent cases by one.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Endurance</span>: <span class="title">Int</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> worst, abysmal, poor, medium, strong</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="type">Endurance</span>.poor.rawValue) <span class="comment">// prints "2"</span></span><br><span class="line"><span class="built_in">print</span>(<span class="type">Endurance</span>.strong.rawValue) <span class="comment">// prints "4"</span></span><br></pre></td></tr></table></figure>
+
+<p>It is also possible to define an enum with implicitly and explicitly defined raw values; all implicitly defined raw integer values will be one greater than the previous raw integer value. If no previous raw integer value exists, then the compiler will assign zero to the enum case.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">SkewedEndurance</span>: <span class="title">Int</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> worst, abysmal = <span class="number">10</span>, poor, medium, strong = <span class="number">30</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="type">SkewedEndurance</span>.worst.rawValue) <span class="comment">// prints "0"</span></span><br><span class="line"><span class="built_in">print</span>(<span class="type">SkewedEndurance</span>.poor.rawValue) <span class="comment">// prints "11"</span></span><br><span class="line"><span class="built_in">print</span>(<span class="type">SkewedEndurance</span>.medium.rawValue) <span class="comment">// prints "12"</span></span><br><span class="line"><span class="built_in">print</span>(<span class="type">SkewedEndurance</span>.strong.rawValue) <span class="comment">// prints "30"</span></span><br></pre></td></tr></table></figure>
+
+<p>You can mix and match implicit and explicit raw string values too:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Axis</span>: <span class="title">String</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> x</span><br><span class="line">    <span class="keyword">case</span> y</span><br><span class="line">    <span class="keyword">case</span> z = <span class="string">"zed"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="type">Axis</span>.y.rawValue) <span class="comment">// prints "y"</span></span><br><span class="line"><span class="built_in">print</span>(<span class="type">Axis</span>.z.rawValue) <span class="comment">// prints "zed"</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Associated-values"><a href="#Associated-values" class="headerlink" title="Associated values"></a>Associated values</h1><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//: Associated values are defined alongside enum cases. Associated values are not required; some enum cases may have an associated value while others do not. In the example below, `LibraryFee` has three cases with associated values and a case without an associated value.</span></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">LibraryFee</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> overdueBook(<span class="type">Int</span>)</span><br><span class="line">    <span class="keyword">case</span> lostBook(<span class="type">Double</span>)</span><br><span class="line">    <span class="keyword">case</span> lostLibraryCard(<span class="type">Int</span>)</span><br><span class="line">    <span class="keyword">case</span> annualDues</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> fee = <span class="type">LibraryFee</span>.overdueBook(<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//: It can be very helpful to name associated values so that their intent is easily understood.</span></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">DescriptiveLibraryFee</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> overdueBook(days: <span class="type">Int</span>)</span><br><span class="line">    <span class="keyword">case</span> lostBook(price: <span class="type">Double</span>)</span><br><span class="line">    <span class="keyword">case</span> lostLibraryCard(timesLost: <span class="type">Int</span>)</span><br><span class="line">    <span class="keyword">case</span> annualDues</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> weekLateFee = <span class="type">DescriptiveLibraryFee</span>.overdueBook(days: <span class="number">7</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//: Associated values are actually tuples. Therefore, an associated value can contain mutliple values.</span></span><br><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">ImageFilter</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> sepia</span><br><span class="line">    <span class="keyword">case</span> verticalGradient(from: <span class="type">UIColor</span>, to: <span class="type">UIColor</span>)</span><br><span class="line">    <span class="keyword">case</span> horizontalGradient(from: <span class="type">UIColor</span>, to: <span class="type">UIColor</span>)</span><br><span class="line">    <span class="keyword">case</span> sketch(penThickness: <span class="type">Double?</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> fadeToBlack = <span class="type">ImageFilter</span>.horizontalGradient(from: .gray, to: .black)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//: - Callout(Watch Out!):</span></span><br><span class="line"><span class="comment">//: If all enum cases have an associated value of the same type, and it is static, then you might consider using a raw value instead.</span></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">AudioRateAssociated</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> slow(value: <span class="type">Int</span>)</span><br><span class="line">    <span class="keyword">case</span> normal(value: <span class="type">Int</span>)</span><br><span class="line">    <span class="keyword">case</span> fast(value: <span class="type">Int</span>)</span><br><span class="line">    <span class="keyword">case</span> custom(value: <span class="type">Int</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// the associated values for `AudioRateAssociated` should be raw values</span></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">AudioRateRaw</span>: <span class="title">Int</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> slow, normal, fast, custom</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Exact-the-associated-value-with-switch"><a href="#Exact-the-associated-value-with-switch" class="headerlink" title="Exact the associated value with switch"></a>Exact the associated value with switch</h1><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">ImageFilter</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> sepia</span><br><span class="line">    <span class="keyword">case</span> verticalGradient(from: <span class="type">UIColor</span>, to: <span class="type">UIColor</span>)</span><br><span class="line">    <span class="keyword">case</span> horizontalGradient(from: <span class="type">UIColor</span>, to: <span class="type">UIColor</span>)</span><br><span class="line">    <span class="keyword">case</span> sketch(penThickness: <span class="type">Double?</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> filter1 = <span class="type">ImageFilter</span>.horizontalGradient(from: .gray, to: .black)</span><br><span class="line"><span class="keyword">let</span> filter2 = <span class="type">ImageFilter</span>.horizontalGradient(from: .white, to: .black)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Switch"><a href="#Switch" class="headerlink" title="Switch"></a>Switch</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//: Most often, associated values are extracted in a switch block. For cases that have an associated value, the `let` keyword followed by a name will extract each  value from an associated value.</span></span><br><span class="line"><span class="keyword">switch</span> filter1 &#123;</span><br><span class="line"><span class="keyword">case</span> .sepia:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"sepia"</span>)</span><br><span class="line"><span class="keyword">case</span> .verticalGradient(<span class="keyword">let</span> color1, <span class="keyword">let</span> color2):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"vertical gradient with \(color1) and \(color2)"</span>)</span><br><span class="line"><span class="keyword">case</span> .horizontalGradient(<span class="keyword">let</span> color1, <span class="keyword">let</span> color2):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"horizontal gradient with \(color1) and \(color2)"</span>)</span><br><span class="line"><span class="keyword">case</span> .sketch(<span class="keyword">let</span> penThickness):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> thickness = penThickness &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"sketch using \(thickness) thickness"</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"sketch using default thickness"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//: Associated values can also be extracted as variables using the `var` keyword. Values extracted as variables are only available in the case where they are declared.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> filter1 &#123;</span><br><span class="line"><span class="keyword">case</span> .horizontalGradient(<span class="keyword">var</span> color1, <span class="keyword">let</span> color2):</span><br><span class="line">    color1 = .blue</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"horizontal gradient with \(color1) and \(color2)"</span>)</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//: To extract all values from an associated value as constants, use the `case let` syntax.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> filter1 &#123;</span><br><span class="line"><span class="keyword">case</span> <span class="keyword">let</span> .horizontalGradient(color1, color2):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"horizontal gradient with \(color1) and \(color2)"</span>)</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//: To extract all values from an associated value as variables, use the `case var` syntax.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> filter1 &#123;</span><br><span class="line"><span class="keyword">case</span> <span class="keyword">var</span> .horizontalGradient(color1, color2):</span><br><span class="line">    color1 = .red</span><br><span class="line">    color2 = .blue</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"horizontal gradient with \(color1) and \(color2)"</span>)</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Watch-out"><a href="#Watch-out" class="headerlink" title="Watch out!"></a>Watch out!</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//: - Callout(Watch Out!):</span></span><br><span class="line"><span class="comment">//: Remember, switch statements must be exhaustive or Xcode will complain.</span></span><br><span class="line"><span class="comment">// uncomment the switch statement below to see Xcode complain about a non-exhaustive switch statement.</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> switch filter1 &#123;</span></span><br><span class="line"><span class="comment"> case .horizontalGradient(var color1, let color2):</span></span><br><span class="line"><span class="comment"> color1 = .blue</span></span><br><span class="line"><span class="comment"> print("horizontal gradient with \(color1) and \(color2)")</span></span><br><span class="line"><span class="comment"> &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//: If it is possible to treat two cases exactly the same, even when they have associated values, then you can combine cases. Note, the associated values must be the same type.</span></span><br><span class="line"><span class="keyword">switch</span> filter1 &#123;</span><br><span class="line"><span class="keyword">case</span> .verticalGradient(<span class="keyword">let</span> color1, <span class="keyword">let</span> color2), .horizontalGradient(<span class="keyword">let</span> color1, <span class="keyword">let</span> color2):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"a gradient from \(color1) to \(color2)"</span>)</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//: - Callout(Watch Out!):</span></span><br><span class="line"><span class="comment">//: If two cases are specified with a single case statement, then the tuple element names must match.</span></span><br><span class="line"> <span class="keyword">switch</span> filter1 &#123;</span><br><span class="line">    <span class="comment">// uncomment the case statement below to see Xcode complain that `color2` and `color3` must be used in every pattern (i.e. the tuple element names don't match)</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    case .verticalGradient(let color1, let color3), .horizontalGradient(let color1, let color2):</span></span><br><span class="line"><span class="comment">        print("a gradient from \(color1) to \(color2)")</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"> <span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//: If associated values are not needed for computation, then they can be ignored. The example below ignores the associated value for the horizontal gradient.</span></span><br><span class="line"><span class="keyword">switch</span> filter1 &#123;</span><br><span class="line"><span class="keyword">case</span> .horizontalGradient:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"the filter is a horizontal gradient!"</span>)</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//: It is also possible to partially ignore values in an associated value, while extracting others.</span></span><br><span class="line"><span class="keyword">switch</span> filter1 &#123;</span><br><span class="line"><span class="keyword">case</span> .horizontalGradient(<span class="keyword">let</span> color1, <span class="number">_</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"the horizontal gradient's first color is \(color1)"</span>)</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="“where”-keyword"><a href="#“where”-keyword" class="headerlink" title="“where” keyword"></a>“where” keyword</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//: Associated values may also be extracted based on conditions specified using the `where` keyword. If all conditions are held, then the values are extracted and the case statement is executed.</span></span><br><span class="line"><span class="keyword">switch</span> filter1 &#123;</span><br><span class="line"><span class="keyword">case</span> .horizontalGradient(<span class="keyword">let</span> color1, <span class="number">_</span>) <span class="keyword">where</span> color1 == .white:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"the horizontal gradient's first color is white"</span>)</span><br><span class="line"><span class="keyword">case</span> .horizontalGradient(<span class="number">_</span>, <span class="keyword">let</span> color2) <span class="keyword">where</span> color2 == .black:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"the horizontal gradient's second color is black"</span>)</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Computed-properties"><a href="#Computed-properties" class="headerlink" title="Computed properties"></a>Computed properties</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//: Associated values can be extracted using computed properties. By using a computed property, you may avoid duplicate switch statements.</span></span><br><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">ImageFilter</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> colors: (from: <span class="type">UIColor</span>, to: <span class="type">UIColor</span>)? &#123;</span><br><span class="line">        <span class="keyword">switch</span> <span class="keyword">self</span> &#123;</span><br><span class="line">        <span class="keyword">case</span> .verticalGradient(<span class="keyword">let</span> from, <span class="keyword">let</span> to),</span><br><span class="line">             .horizontalGradient(<span class="keyword">let</span> from, <span class="keyword">let</span> to):</span><br><span class="line">            <span class="keyword">return</span> (from, to)</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> penThickness: <span class="type">Double?</span> &#123;</span><br><span class="line">        <span class="keyword">switch</span> <span class="keyword">self</span> &#123;</span><br><span class="line">        <span class="keyword">case</span> .sketch(<span class="keyword">let</span> penThickness):</span><br><span class="line">            <span class="keyword">return</span> penThickness</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> filter3 = <span class="type">ImageFilter</span>.sketch(penThickness: <span class="number">4.0</span>)</span><br><span class="line"></span><br><span class="line">filter1.colors</span><br><span class="line">filter1.colors?.from</span><br><span class="line">filter1.colors?.to</span><br><span class="line">filter3.colors <span class="comment">// nil </span></span><br><span class="line"></span><br><span class="line">filter1.penThickness <span class="comment">// nil</span></span><br><span class="line">filter3.penThickness <span class="comment">// 4</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Extract-with-if"><a href="#Extract-with-if" class="headerlink" title="Extract with if"></a>Extract with if</h1><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">ImageFilter</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> sepia</span><br><span class="line">    <span class="keyword">case</span> verticalGradient(from: <span class="type">UIColor</span>, to: <span class="type">UIColor</span>)</span><br><span class="line">    <span class="keyword">case</span> horizontalGradient(from: <span class="type">UIColor</span>, to: <span class="type">UIColor</span>)</span><br><span class="line">    <span class="keyword">case</span> sketch(penThickness: <span class="type">Double?</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> filter1 = <span class="type">ImageFilter</span>.horizontalGradient(from: .gray, to: .black)</span><br><span class="line"><span class="keyword">let</span> filter2 = <span class="type">ImageFilter</span>.horizontalGradient(from: .white, to: .black)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//: `if case` works alongside the equals operator (=) to check and extract an associated value from an enum. While the syntax may look strange, the equals operator still behaves in an intuitive way; that is, the associated value on the left-hand side (containing `color1` and `color2`) is set equal to the associated value for the enum on the right-hand side (`filter1`).</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">case</span> <span class="type">ImageFilter</span>.horizontalGradient(<span class="keyword">let</span> color1, <span class="keyword">var</span> color2) = filter1 &#123;</span><br><span class="line">    color2 = .red</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"horizontal gradient with \(color1) and \(color2)"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//: To extract all values as constants use `if case let`.</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">case</span> <span class="keyword">let</span> <span class="type">ImageFilter</span>.horizontalGradient(color1, color2) = filter1 &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"horizontal gradient with \(color1) and \(color2)"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//: Complex conditionals can be formed using `if case` and conditional statements separated by commas. If the conditional statements are held true, then the values are extracted and usable from within the `if case` block.</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">case</span> <span class="keyword">let</span> <span class="type">ImageFilter</span>.horizontalGradient(<span class="number">_</span>, color2) = filter1, color2 == .black &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"the horizontal gradient's second color is \(color2)"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//: A single associated value can also be extracted as a computed property. By using a computed property, you may avoid duplicate `if case` statements.</span></span><br><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">ImageFilter</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> hasHeavyPenThickness: <span class="type">Bool</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">case</span> <span class="keyword">let</span> <span class="type">ImageFilter</span>.sketch(penThickness) = <span class="keyword">self</span>, <span class="keyword">let</span> thickness = penThickness, thickness &gt; <span class="number">5.0</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">filter1.hasHeavyPenThickness</span><br></pre></td></tr></table></figure>
+
+<h1 id="Enums-with-Enums"><a href="#Enums-with-Enums" class="headerlink" title="Enums with Enums"></a>Enums with Enums</h1><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">ShirtSize</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> extraSmall</span><br><span class="line">    <span class="keyword">case</span> small</span><br><span class="line">    <span class="keyword">case</span> medium</span><br><span class="line">    <span class="keyword">case</span> large</span><br><span class="line">    <span class="keyword">case</span> extraLarge</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Search</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> forShirts(sizes: [<span class="type">ShirtSize</span>])</span><br><span class="line">    <span class="keyword">case</span> forName(name: <span class="type">String</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> searchForBigShirts = <span class="type">Search</span>.forShirts(sizes: [.large, .extraLarge])</span><br><span class="line"><span class="keyword">let</span> searchForHenleys = <span class="type">Search</span>.forName(name: <span class="string">"henley"</span>)</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/UITableView.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/UITableView.html" itemprop="url">UITableView and Navigation</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-12-26T10:38:48+08:00">
+                2021-12-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/UITableView.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="UITableView.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  842 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Create-UITabelView"><a href="#Create-UITabelView" class="headerlink" title="Create UITabelView"></a>Create UITabelView</h2><blockquote>
+<p>We need to link two delegates(datasource &amp; delegate) from the tabelview in the storyboard to the ViewController.</p>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span>, <span class="title">UITableViewDataSource</span>, <span class="title">UITableViewDelegate</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// MARK: Properties</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Get ahold of some villains, for the table</span></span><br><span class="line">    <span class="comment">// This is an array of Villain instances</span></span><br><span class="line">    <span class="keyword">let</span> allVillains = <span class="type">Villain</span>.allVillains</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// MARK: Table View Data Source</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// The number of rows</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">tableView</span><span class="params">(<span class="number">_</span> tableView: UITableView, numberOfRowsInSection section: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">self</span>.allVillains.<span class="built_in">count</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// The text of every row</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">tableView</span><span class="params">(<span class="number">_</span> tableView: UITableView, cellForRowAt indexPath: IndexPath)</span></span> -&gt; <span class="type">UITableViewCell</span> &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">let</span> cell = tableView.dequeueReusableCell(withIdentifier: <span class="string">"VillainCell"</span>)!</span><br><span class="line">        <span class="keyword">let</span> villain = <span class="keyword">self</span>.allVillains[(indexPath <span class="keyword">as</span> <span class="type">NSIndexPath</span>).row]</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Set the name and image</span></span><br><span class="line">        cell.textLabel?.text = villain.name</span><br><span class="line">        cell.imageView?.image = <span class="type">UIImage</span>(named: villain.imageName)</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// If the cell has a detail label, we will put the evil scheme in.</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">let</span> detailTextLabel = cell.detailTextLabel &#123;</span><br><span class="line">            detailTextLabel.text = <span class="string">"Scheme: \(villain.evilScheme)"</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> cell</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">tableView</span><span class="params">(<span class="number">_</span> tableView: UITableView, canEditRowAt indexPath: IndexPath)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">  	<span class="comment">// Use navigationController to show the corresponding page of each row </span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">tableView</span><span class="params">(<span class="number">_</span> tableView: UITableView, didSelectRowAt indexPath: IndexPath)</span></span> &#123;</span><br><span class="line">        <span class="keyword">let</span> detailController = storyboard?.instantiateViewController(withIdentifier: <span class="string">"VillainDetailViewController"</span>) <span class="keyword">as</span>! <span class="type">VillainDetailViewController</span></span><br><span class="line">        detailController.villain = <span class="keyword">self</span>.allVillains[indexPath.row]</span><br><span class="line">        navigationController?.pushViewController(detailController, animated: <span class="literal">true</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h3 id="Creating-and-preparing-the-DetailViewController"><a href="#Creating-and-preparing-the-DetailViewController" class="headerlink" title="Creating and preparing the DetailViewController"></a>Creating and preparing the DetailViewController</h3><ul>
+<li>Create a <code>VillainDetailViewController</code> with a 100x80 image view, and a label</li>
+<li>Give the <code>VillainDetailViewController</code> a Storyboard ID</li>
+<li>Give the <code>VillainDetailViewController</code> a villain property</li>
+<li>Write the <code>viewWillAppear</code> method in the <code>VillainDetailViewController</code> so that it sets the image and label</li>
 </ul>
-<p>The Utility Area on the right side of Xcode can also be toggled with the following keyboard shortcuts:</p>
+</blockquote>
+<h2 id="Create-the-Villain-struct"><a href="#Create-the-Villain-struct" class="headerlink" title="Create the Villain struct"></a>Create the Villain struct</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Villain</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// MARK: Properties</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> name: <span class="type">String</span></span><br><span class="line">    <span class="keyword">let</span> evilScheme: <span class="type">String</span></span><br><span class="line">    <span class="keyword">let</span> imageName: <span class="type">String</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> <span class="type">NameKey</span> = <span class="string">"NameKey"</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> <span class="type">EvilSchemeKey</span> = <span class="string">"EvilScheme"</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> <span class="type">ImageNameKey</span> = <span class="string">"ImageNameKey"</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// MARK: Initializer</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Generate a Villain from a three entry dictionary</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">init</span>(dictionary: [<span class="type">String</span> : <span class="type">String</span>]) &#123;</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">self</span>.name = dictionary[<span class="type">Villain</span>.<span class="type">NameKey</span>]!</span><br><span class="line">        <span class="keyword">self</span>.evilScheme = dictionary[<span class="type">Villain</span>.<span class="type">EvilSchemeKey</span>]!</span><br><span class="line">        <span class="keyword">self</span>.imageName = dictionary[<span class="type">Villain</span>.<span class="type">ImageNameKey</span>]!</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// MARK: - Villain (All Villians)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* This extension adds static variable allVillains. An array of Villain objects</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">Villain</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Generate an array full of all of the villains in</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">var</span> allVillains: [<span class="type">Villain</span>] &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">var</span> villainArray = [<span class="type">Villain</span>]()</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> d <span class="keyword">in</span> <span class="type">Villain</span>.localVillainData() &#123;</span><br><span class="line">            villainArray.append(<span class="type">Villain</span>(dictionary: d))</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> villainArray</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">localVillainData</span><span class="params">()</span></span> -&gt; [[<span class="type">String</span> : <span class="type">String</span>]] &#123;</span><br><span class="line">        <span class="keyword">return</span> [</span><br><span class="line">            [<span class="type">Villain</span>.<span class="type">NameKey</span> : <span class="string">"Mr. Big"</span>, <span class="type">Villain</span>.<span class="type">EvilSchemeKey</span> : <span class="string">"Smuggle herion."</span>,  <span class="type">Villain</span>.<span class="type">ImageNameKey</span> : <span class="string">"Big"</span>],</span><br><span class="line">            [<span class="type">Villain</span>.<span class="type">NameKey</span> : <span class="string">"Ernest Blofeld"</span>, <span class="type">Villain</span>.<span class="type">EvilSchemeKey</span> : <span class="string">"Many, many, schemes."</span>,  <span class="type">Villain</span>.<span class="type">ImageNameKey</span> : <span class="string">"Blofeld"</span>],</span><br><span class="line">            [<span class="type">Villain</span>.<span class="type">NameKey</span> : <span class="string">"Sir Hugo Drax"</span>, <span class="type">Villain</span>.<span class="type">EvilSchemeKey</span> : <span class="string">"Nerve gass Earth, from the Moon."</span>,  <span class="type">Villain</span>.<span class="type">ImageNameKey</span> : <span class="string">"Drax"</span>],</span><br><span class="line">            [<span class="type">Villain</span>.<span class="type">NameKey</span> : <span class="string">"Jaws"</span>, <span class="type">Villain</span>.<span class="type">EvilSchemeKey</span> : <span class="string">"Kill Bond with huge metal teeth."</span>,  <span class="type">Villain</span>.<span class="type">ImageNameKey</span> : <span class="string">"Jaws"</span>],</span><br><span class="line">            [<span class="type">Villain</span>.<span class="type">NameKey</span> : <span class="string">"Rosa Klebb"</span>, <span class="type">Villain</span>.<span class="type">EvilSchemeKey</span> : <span class="string">"Humiliate MI6"</span>,  <span class="type">Villain</span>.<span class="type">ImageNameKey</span> : <span class="string">"Klebb"</span>],</span><br><span class="line">            [<span class="type">Villain</span>.<span class="type">NameKey</span> : <span class="string">"Emilio Largo"</span>, <span class="type">Villain</span>.<span class="type">EvilSchemeKey</span> : <span class="string">"Steal nuclear weapons"</span>, <span class="type">Villain</span>.<span class="type">ImageNameKey</span> : <span class="string">"EmilioLargo"</span>],</span><br><span class="line">            [<span class="type">Villain</span>.<span class="type">NameKey</span> : <span class="string">"Le Chiffre"</span>, <span class="type">Villain</span>.<span class="type">EvilSchemeKey</span> : <span class="string">"Beat bond at poker."</span>,  <span class="type">Villain</span>.<span class="type">ImageNameKey</span> : <span class="string">"Lechiffre"</span>],</span><br><span class="line">            [<span class="type">Villain</span>.<span class="type">NameKey</span> : <span class="string">"Odd Job"</span>, <span class="type">Villain</span>.<span class="type">EvilSchemeKey</span> : <span class="string">"Kill Bond with razor hat."</span>,  <span class="type">Villain</span>.<span class="type">ImageNameKey</span> : <span class="string">"OddJob"</span>],</span><br><span class="line">            [<span class="type">Villain</span>.<span class="type">NameKey</span> : <span class="string">"Francisco Scaramanga"</span>, <span class="type">Villain</span>.<span class="type">EvilSchemeKey</span> : <span class="string">"Kill Bond after assembling a golden gun."</span>,  <span class="type">Villain</span>.<span class="type">ImageNameKey</span> : <span class="string">"Scaramanga"</span>],</span><br><span class="line">            [<span class="type">Villain</span>.<span class="type">NameKey</span> : <span class="string">"Raoul Silva"</span>, <span class="type">Villain</span>.<span class="type">EvilSchemeKey</span> : <span class="string">"Kill M."</span>,  <span class="type">Villain</span>.<span class="type">ImageNameKey</span> : <span class="string">"Silva"</span>],</span><br><span class="line">            [<span class="type">Villain</span>.<span class="type">NameKey</span> : <span class="string">"Alec Trevelyan"</span>, <span class="type">Villain</span>.<span class="type">EvilSchemeKey</span> : <span class="string">"Nuke London, after killing Bond."</span>,  <span class="type">Villain</span>.<span class="type">ImageNameKey</span> : <span class="string">"Trevelyan"</span>],</span><br><span class="line">            [<span class="type">Villain</span>.<span class="type">NameKey</span> : <span class="string">"Auric Goldfinger"</span>, <span class="type">Villain</span>.<span class="type">EvilSchemeKey</span> : <span class="string">"Nuke Fort Knox."</span>,  <span class="type">Villain</span>.<span class="type">ImageNameKey</span> : <span class="string">"Goldfinger"</span>],</span><br><span class="line">            [<span class="type">Villain</span>.<span class="type">NameKey</span> : <span class="string">"Max Zorin"</span>, <span class="type">Villain</span>.<span class="type">EvilSchemeKey</span> : <span class="string">"Destroy Silicon Valley with an earthquake and flood."</span>,  <span class="type">Villain</span>.<span class="type">ImageNameKey</span> : <span class="string">"Zorin"</span>]</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="How-to-create-a-Navigation-ViewController"><a href="#How-to-create-a-Navigation-ViewController" class="headerlink" title="How to create a Navigation ViewController"></a>How to create a Navigation ViewController</h2><p><strong>Step 1:</strong> Create a new single view application</p>
+<p><strong>Step 2:</strong> Delete the single view controller (You can delete this view controller by selecting the yellow icon and then tapping the delete button)</p>
+<p><strong>Step 3:</strong> Drag a <code>UINavigationController</code> into the storyboard from the object library.</p>
+<p><strong>Step 4:</strong> Delete the automatically generated root view controller and drag in a new view controller. To reset the Navigation Controller’s Root View Controller property control click on the Navigation Controller’s round yellow icon and drag a line from the root view controller triggered segue to your new view controller.</p>
+<h2 id="Implement-the-StartOver-button"><a href="#Implement-the-StartOver-button" class="headerlink" title="Implement the StartOver button"></a>Implement the StartOver button</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MYOAViewController</span>: <span class="title">UIViewController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line">        navigationItem.rightBarButtonItem = <span class="type">UIBarButtonItem</span>(</span><br><span class="line">          title: <span class="string">"Start Over"</span>, </span><br><span class="line">          style: .plain, </span><br><span class="line">          target: <span class="keyword">self</span>, </span><br><span class="line">          action: #selector(startOver))</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">startOver</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">let</span> navigationController = navigationController &#123;</span><br><span class="line">            navigationController.popToRootViewController(animated: <span class="literal">true</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>The Navigation Controller is a stack data structure.</p>
+</blockquote>
+<h2 id="How-to-Update-the-Rock-Paper-Scissors-App-with-Navigation"><a href="#How-to-Update-the-Rock-Paper-Scissors-App-with-Navigation" class="headerlink" title="How to Update the Rock Paper Scissors App with Navigation"></a>How to Update the Rock Paper Scissors App with Navigation</h2><p><strong>Step 1.</strong> Drag a navigation controller into the storyboard and set its root view controller property to the <code>RockPaperScissorsViewController</code>.</p>
+<p><strong>Step 2.</strong> Change each of the three segues one at a time.</p>
 <ul>
-<li>⌥ + ⌘ + 0 = Show or Hide the Utility Area</li>
-<li>⌥ + ⌘ + 1 = File Inspector</li>
-<li>⌥ + ⌘ + 2 = Quick Help Inspector</li>
-<li>⌥ + ⌘ + 3 = Identity Inspector</li>
-<li>⌥ + ⌘ + 4 = Attributes Inspector</li>
-<li>⌥ + ⌘ + 5 = Size Inspector</li>
-<li>⌥ + ⌘ + 6 = Connections Inspector</li>
+<li>Scissors is easiest: Just change the type to “show” instead of “modal”. Note the invocation of <code>prepare(for:sender:)</code>.</li>
+<li>Paper is essentially the same, but follow the invocation in the view controller and note the invocations of an IBAction, and the <code>performSegue(withIdentifier:sender:)</code> method.</li>
+<li>Rock is always the hard way. Read the documentation for <code>UINavigationController</code> to see how to programmatically push the results controller onto the navigation controller. Remember that the <code>RockPaperScissorsViewController</code> will have a navigation controller property that you can use in the action.</li>
 </ul>
-<p>If you right click (control click) on the Storyboard in the editor, then you can select a zoom level. You can also use 2 finger pinch in your Mac’s trackpad to zoom in and out of the Storyboard.</p>
+<p><strong>Step 3.</strong> Edit the <code>playAgainButtonPressed</code> method so that the “Play Again” button behaves similarly to the “Start Over” button in Make Your Own Adventure.</p>
 
           
         
@@ -1416,7 +1434,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1464,7 +1482,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">52</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1475,7 +1493,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1580,7 +1598,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">40.4k</span>
+    <span title="Site words total count">44k</span>
   
 </div>
 

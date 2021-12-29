@@ -347,6 +347,739 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/【C】C语言学习笔记.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/【C】C语言学习笔记.html" itemprop="url">c语言学习笔记</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-26T15:23:15+08:00">
+                2019-06-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/【C】C语言学习笔记.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="【C】C语言学习笔记.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.3k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="我为什么要学习C语言"><a href="#我为什么要学习C语言" class="headerlink" title="我为什么要学习C语言"></a>我为什么要学习C语言</h1><p>说来惭愧，作为一个工科学生，我竟然没有学过C语言，只在大一的时候学过一学期的VB，虽然语言这种东西说起来都差不多，但毕竟也是将近三年前的事了，早就忘光了。</p>
+<p>可是不掌握C语言真的很麻烦，这尤其体现在做单片机上，单片机要求我们使用C语言，我当时连那些代码都看不懂，更别谈让我自己去写了。</p>
+<p>正好，最近时间比较充沛。拿出时间来把C语言好好学学</p>
+<p>p.s. 突然想起来我初中好像就学过C++了，但只是皮毛</p>
+<h1 id="我用什么工具学习C语言"><a href="#我用什么工具学习C语言" class="headerlink" title="我用什么工具学习C语言"></a>我用什么工具学习C语言</h1><p>书籍：C程序设计语言（第二版 新版）→ 纸质</p>
+<p>软件：VS2017, Xcode</p>
+<p>其它：Google，CSDN，Baidu</p>
+<h1 id="我的第一段代码"><a href="#我的第一段代码" class="headerlink" title="我的第一段代码"></a>我的第一段代码</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"hello, world.\n"</span>);</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	<span class="comment">//return 0;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>main函数：main是一个特殊的函数名——每个程序都从main函数的起点开始执行。main函数通常会调用其它函数来帮助完成某些工作</li>
+<li>本例中main函数不需要任何参数</li>
+<li>用双引号括起来的字符序列称为字符串或字符串常量</li>
+<li>\n 表示换行符</li>
+</ol>
+<h1 id="第二段代码"><a href="#第二段代码" class="headerlink" title="第二段代码"></a>第二段代码</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="comment">/* 当fatr = 0,20,...,300时，分别打印华氏温度与摄氏温度对照表 */</span></span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> fahr, celsius;</span><br><span class="line">	<span class="keyword">int</span> lower, upper, step;</span><br><span class="line"></span><br><span class="line">	lower = <span class="number">0</span>; <span class="comment">/* 温度表的上限 */</span></span><br><span class="line">	upper = <span class="number">300</span>; <span class="comment">/* 温度表的下限 */</span></span><br><span class="line">	step = <span class="number">20</span>; <span class="comment">/* 步长 */</span></span><br><span class="line"></span><br><span class="line">	fahr = lower;</span><br><span class="line">	<span class="keyword">while</span> (fahr &lt;= upper) &#123;</span><br><span class="line">		celsius = <span class="number">5</span> * (fahr - <span class="number">32</span>) / <span class="number">9</span>;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\t%d\n"</span>, fahr, celsius);</span><br><span class="line">		fahr = fahr + step;</span><br><span class="line">	&#125;</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>其中，int表示其后所列的变量为整数，与之对应的float表示浮点数（即可以带有小数部分）</li>
+<li>为什么不用5/9？因为C语言存在舍位，小数部分都会被舍弃</li>
+</ol>
+<h1 id="Bit-amp-Byte"><a href="#Bit-amp-Byte" class="headerlink" title="Bit &amp; Byte"></a>Bit &amp; Byte</h1><ul>
+<li><p>字节(Byte): 通常将可表示常用英文字符8位二进制称为一字节</p>
+</li>
+<li><p>比特(Bit)，亦称二进制位 ，1比特就是1位</p>
+</li>
+<li><p>1字节(Byte） = 8位(bit) </p>
+</li>
+<li><p>在ASCII码中，一个英文字母(不分大小写)占一个字节的空间，一个中文汉字占两个字节的空间</p>
+</li>
+<li><p>符号：英文标点占一个字节，中文标点占两个字节</p>
+</li>
+</ul>
+<ul>
+<li><p>1千吉字节（TB,Terabyte）=1024吉字节（2的40次方字节）（1TB=1024GB）</p>
+</li>
+<li><p>1吉字节（GB,Gigabyte）=1024兆字节（2的30次方字节）（1GB=1024MB）</p>
+</li>
+<li><p>1兆字节（MB,Megabyte）=1024千字节（2的20次方字节）（1MB=1024KB）</p>
+</li>
+<li><p>1千字节（KB,Kilobyte）=1024字节（2的10次方字节）（1KB=1024B）</p>
+</li>
+<li><p>1字节（Byte）= 8位（bit）</p>
+</li>
+</ul>
+<blockquote>
+<p>  计算机中的位</p>
+<pre><code>二进制数系统中，每个0或1就是一个位(bit)，位是数据存储的最小单位。其中8bit就称为一个字节（Byte）。计算机中的CPU位数指的是CPU一次能处理的最大位数。例如32位计算机的CPU一次最多能处理32位数据。  </code></pre></blockquote>
+<blockquote>
+<p>所以char类型的存储大小为1个字节，也就是8位，这8位代表8位二进制，</p>
+</blockquote>
+<h1 id="浮点类型"><a href="#浮点类型" class="headerlink" title="浮点类型"></a>浮点类型</h1><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>存储大小</th>
+<th>精度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>float</td>
+<td>4 字节</td>
+<td>6 位小数</td>
+</tr>
+<tr>
+<td>double</td>
+<td>8 字节</td>
+<td>15 位小数</td>
+</tr>
+<tr>
+<td>long double</td>
+<td>16 字节</td>
+<td>19 位小数</td>
+</tr>
+</tbody></table>
+<h1 id="void类型"><a href="#void类型" class="headerlink" title="void类型"></a>void类型</h1><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>类型与描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><strong>函数返回为空</strong><br>C 中有各种函数都不返回值，或者您可以说它们返回空。不返回值的函数的返回类型为空。例如 <strong>void exit (int status);</strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>函数参数为空</strong><br>C 中有各种函数不接受任何参数。不带参数的函数可以接受一个 void。例如 <strong>int rand(void);</strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>指针指向 void</strong><br>类型为 void * 的指针代表对象的地址，而不是类型。例如，内存分配函数 <strong>void *malloc( size_t size );</strong> 返回指向 void 的指针，可以转换为任何数据类型。</td>
+</tr>
+</tbody></table>
+<h1 id="printf-输出"><a href="#printf-输出" class="headerlink" title="printf 输出"></a><code>printf</code> 输出</h1><p>```<br>%a  浮点数、十六进制数字和p-记数法（c99<br>%A  浮点数、十六进制数字和p-记法（c99）<br>%c  一个字符(char)<br>%C  一个ISO宽字符<br>%d  有符号十进制整数(int)（%ld、%Ld：长整型数据(long),%hd：输出短整形。）　<br>%e  浮点数、e-记数法<br>%E  浮点数、E-记数法<br>%f  单精度浮点数(默认float)、十进制记数法（%.nf  这里n表示精确到小数位后n位.十进制计数）<br>%g  根据数值不同自动选择%f或%e．<br>%G  根据数值不同自动选择%f或%e.<br>%i  有符号十进制数（与%d相同）<br>%o  无符号八进制整数<br>%p  指针<br>%s  对应字符串char<em>（%s = %hs = %hS 输出 窄字符）<br>%S  对应宽字符串WCAHR</em>（%ws = %S 输出宽字符串）<br>%u  无符号十进制整数(unsigned int)<br>%x  使用十六进制数字0xf的无符号十六进制整数　<br>%X  使用十六进制数字0xf的无符号十六进制整数<br>%%  打印一个百分号</p>
+<p>%I64d 用于INT64 或者 long long<br>%I64u 用于UINT64 或者 unsigned long long<br>%I64x 用于64位16进制数据</p>
+<p>​　</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/脸上各部位长痘痘的原因及调理方法汇总.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/脸上各部位长痘痘的原因及调理方法汇总.html" itemprop="url">脸上各部位长痘痘的原因及调理方法汇总</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-26T09:24:31+08:00">
+                2019-06-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/知识积累/" itemprop="url" rel="index">
+                    <span itemprop="name">知识积累</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/脸上各部位长痘痘的原因及调理方法汇总.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="脸上各部位长痘痘的原因及调理方法汇总.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  582 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>额头痘状况：</strong>有可能是压力太大，容易脾气不好，造成心火和血液循环有问题。</p>
+<p>改善：应养成早睡早起的习惯，让睡眠充足，并多喝水。</p>
+<p><strong>印堂痘状况：</strong>出现在两眉正中间的痘痘，通常有胸闷、心律不整、<a href="http://www.med66.com/jibing/xinji/" target="_blank" rel="noopener">心悸</a>等毛病。</p>
+<p>改善：不要尝试太过激烈的运动，要避免烟、酒等刺激性的食品。</p>
+<p><strong>发髻痘状况：</strong>因为卸妆没有卸干净，造成毛孔堵塞河污染，容易在较闷的发髻或眉间形成细小痘痘。</p>
+<p>改善：加强卸妆和清洁的工作，一定要彻底搓揉干净，每星期做一次去角质工作，报纸皮脂腺顺畅。</p>
+<p><strong>鼻翼痘状况：</strong>突然冒出的肿大痘痘，可能是卵巢机能或者生殖系统有关。</p>
+<p>改善：不要过度纵欲或禁欲，尽量走出户外，享受降的自然环境。</p>
+<p><strong>鼻头痘状况：</strong>可能是胃火过大，消化系统异常。</p>
+<p>改善：少吃冰冷食物，寒性食品容易引起胃酸分泌，造成胃火过大。</p>
+<p><strong>眼头痘状况：</strong>K近鼻子和眼头区域的痘痘，通常是肝机能不好所引起。</p>
+<p>改善：生活作息要正常，避免熬夜，尽量在11点前上床睡觉。</p>
+<p><strong>唇周痘状况：</strong><a href="http://www.med66.com/jibing/bianmi/" target="_blank" rel="noopener">便秘</a>导致体内毒素累计，或者是使用含氟过量的牙膏，都是造成唇周痘痘的主因。</p>
+<p>改善：多吃高纤维的蔬菜水果，调整饮食习惯，刷牙漱口要彻底。</p>
+<p><strong>下巴痘状况：</strong>通常是月经要来的前几天，造成<a href="http://www.med66.com/jibing/neifenmishitiao/" target="_blank" rel="noopener">内分泌失调</a>所引起的。</p>
+<p>改善：少吃冰冷的东西，月经期间可用消炎镇定的保养品。</p>
+<p><strong>右边脸颊痘状况：</strong>可能是肺部功能失常，手脚冰冷，或是容易敏感的体质，也有可能是<a href="http://www.med66.com/jibing/ganmao/" target="_blank" rel="noopener">感冒</a>前兆。</p>
+<p>改善：平时注意呼吸道的保养，尽量避免芒果、芋头、海鲜甲壳类易过敏的食物。</p>
+<p><strong>左边脸颊痘状况：</strong>可能是肝功能不顺畅，如肝脏的分泌、解毒或造血等功能出了状况。</p>
+<p>改善：作息正常，保持心情愉快，该吹冷气就吹冷气，不要让身体处在过度闷热。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/专业导论课最后一节个人认为比较有价值内容整理.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/专业导论课最后一节个人认为比较有价值内容整理.html" itemprop="url">专业导论课最后一节个人认为比较有价值内容整理</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-14T12:07:11+08:00">
+                2019-06-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/华科机械学习资料分享/" itemprop="url" rel="index">
+                    <span itemprop="name">华科机械学习资料分享</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/专业导论课最后一节个人认为比较有价值内容整理.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="专业导论课最后一节个人认为比较有价值内容整理.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  487 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="机械工程伦理"><a href="#机械工程伦理" class="headerlink" title="机械工程伦理"></a>机械工程伦理</h2><h3 id="问问自己："><a href="#问问自己：" class="headerlink" title="问问自己："></a>问问自己：</h3><p>内心世界?</p>
+<p>存在的意义?</p>
+<p>为何要多一点形而上?</p>
+<p>你的价值感?</p>
+<p>你的技术创造的欲求?</p>
+<p>技术工作者/工程师的责任?</p>
+<p>你对未来技术的感觉?</p>
+<h2 id="知识、能力与素质的区别和联系"><a href="#知识、能力与素质的区别和联系" class="headerlink" title="知识、能力与素质的区别和联系"></a>知识、能力与素质的区别和联系</h2><table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="center">核心</th>
+<th align="center">t特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">知识</td>
+<td align="center">人类认识的成果</td>
+<td align="center">形成能力，素质的基础</td>
+</tr>
+<tr>
+<td align="left">能力</td>
+<td align="center">完成一定活动的本领</td>
+<td align="center">对知识的运用，是知识发挥作用的实践条件，具“外显性”</td>
+</tr>
+<tr>
+<td align="left">素养</td>
+<td align="center">基本品质或基础条件</td>
+<td align="center">人在活动过程中所塑造成的内在升华，具“内凝性”</td>
+</tr>
+</tbody></table>
+<h2 id="专业教育组成"><a href="#专业教育组成" class="headerlink" title="专业教育组成"></a>专业教育组成</h2><p>数学类和自然科学类总计最少为450学时</p>
+<p>工程科学类、工程设计与实践类两者总计最少1000学时</p>
+<p>人文和社会科学不少于400学时</p>
+<h2 id="机械专业教育知识体系包含如下5个知识领域"><a href="#机械专业教育知识体系包含如下5个知识领域" class="headerlink" title="机械专业教育知识体系包含如下5个知识领域"></a>机械专业教育知识体系包含如下5个知识领域</h2><ol>
+<li>机械设计的原理与方法</li>
+<li>机械制造工程原理与技术</li>
+<li>机械系统中的传动和控制</li>
+<li>计算机应用技术</li>
+<li>热流体</li>
+</ol>
+<h2 id="中国加入《华盛顿协议》"><a href="#中国加入《华盛顿协议》" class="headerlink" title="中国加入《华盛顿协议》"></a>中国加入《华盛顿协议》</h2><p>国内本科生获得的文凭，在国际上都会被认可</p>
+<h2 id="企业对毕业生能力的评价"><a href="#企业对毕业生能力的评价" class="headerlink" title="企业对毕业生能力的评价"></a>企业对毕业生能力的评价</h2><ol>
+<li>独立性强、思路开阔、时尚;</li>
+<li>知识面广;</li>
+<li>不够踏实、团队协作意识弱;</li>
+<li>不能承受较大压力,工作责任心、事业心弱,急功近利;</li>
+<li>熟悉、胜任本职工作需要的时间较长,须在企业工作3-4年左右才能完全胜任工作。</li>
+</ol>
+<h2 id="企业对毕业生能力的期待"><a href="#企业对毕业生能力的期待" class="headerlink" title="企业对毕业生能力的期待"></a>企业对毕业生能力的期待</h2><ol>
+<li>除专业能力外,最基本的要求是踏实、勤奋、敬业、忠诚、合作;</li>
+<li>感兴趣的主要不是学习成绩,更注重处理问题的能力、解决问题的能力以及工作中的综合性能</li>
+<li>很看重学生的整体素质和品德.</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/华科机械大二下学习资料.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -746,685 +1479,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/写在2019年高考前.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/写在2019年高考前.html" itemprop="url">写在2019年高考前</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-07T00:24:31+08:00">
-                2019-06-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/写在2019年高考前.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="写在2019年高考前.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  67 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>我对高考的记忆真的剩下的很少了</p>
-<p>我记不起来那天发生了什么，也记不起来我的任何分数，更记不起来考了什么题目</p>
-<p>我能记起来的，只有发成绩那天我妈的泪水。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/手机惊云（二）.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/手机惊云（二）.html" itemprop="url">手机惊云（二）</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-06T22:18:28+08:00">
-                2019-06-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/小说/" itemprop="url" rel="index">
-                    <span itemprop="name">小说</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/手机惊云（二）.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="手机惊云（二）.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  972 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>电梯很长，人也不少，除了地铁口我就看到了一个穿着粉色t恤，年级估摸着有将近五十岁，个子不是很高的中年人，有一点油腻，猥琐的气质，但看起来不像是坏人</p>
-<p>我故作镇定的走过去，和他说：”你为什么上来了？“</p>
-<p>他说：”我没做地铁来，我那里没有地铁，我骑车过来的。“</p>
-<p>wdnmd…武汉哪里没地铁我是不信的</p>
-<p>算了算了，你骑车就骑车吧，直接验货（滑稽）</p>
-<p>我就找了个地方，从书包里掏出了我的手机</p>
-<p>他说：”我没用过苹果手机，你这个手机咋用啊？”</p>
-<p>我心想：哎呦，遇到外行了</p>
-<p>他随便操作了几下，鬼知道他怎么操作的，竟然操作到了多任务栏，他尝试上滑关掉应用，竟然没关掉？？？</p>
-<p>我当时也懵了，这个情况我也没遇见过啊，我好几周都没用过这个手机了，我心里也不是很确定，不会是坏了吧？</p>
-<p>我就自己拿过来操作了几下，发现的确不行，我心里开始发慌，还好他也没有说什么</p>
-<p>于是我就开始解释，手上还是在操作，想着是不是什么设置没打开？</p>
-<p>就在我调的时候他手机响了，我瞄了一眼，这TM不就是苹果手机吗？？？你跟我说你没用过苹果手机不会用？</p>
-<p>wdnmd，你这有什么骗我的</p>
-<p>内心暗自怀疑</p>
-<hr>
-<p>我继续在那里试怎么关不掉多任务</p>
-<p>也不知道我怎么按的，就长按了屏幕，左上角出现了一个红色的关闭按钮，我点了一下应用就关掉了</p>
-<p>wdnmd！这什么智障设计，苹果真的不如我手里的安卓好用啊，这个设计也太脑残了吧。。。</p>
-<p>暗自感叹了一下之后，心想：还好度过了难关，手机肯定没问题，你随便验</p>
-<p>他又调了几下铃声什么的，发现都没问题</p>
-<p>他又问我：“你带针没？我把卡插进去试一下。”</p>
-<p>。。。</p>
-<p>我带这玩意儿干啥，我哪知道您这么急啊</p>
-<p>我说：“我没有，但肯定没问题，我用的好好的，你就放心吧。”</p>
-<p>他的表情明显告诉我他不相信，他说他想试试话筒，他说他的手机话筒坏了</p>
-<p>但他看是在是没法子，就说：“那就这样吧，有问题我给你打电话联系你。”</p>
-<p>我说好</p>
-<p>之后就开始转账了，我打开了我的支付宝收钱，</p>
-<p>他很快扫了我的码，很果断的付了钱，谁知道我没收到提示</p>
-<p>我心想原来你是用这种不付钱的骗术来骗我</p>
-<p>哼，也太低级了吧，我早就听说过这种骗术了</p>
-<p>别想用这种方法骗到我！</p>
-<p>我手里死死的握着我的手机不放，谁知道他开始急了</p>
-<p>他说：“你咋没收到呢？我都付过去了啊？“</p>
-<p>我看着他手机上的账单，的确是这样，显示的已付款</p>
-<p>难道这又是什么新型骗术吗？</p>
-<p>我手机疯狂刷新，还是没有，唉？咋回事</p>
-<p>我看到我手机上的信号突然没了，半天之后才有，也就听到了那熟悉的：”支付宝到账…“</p>
-<p>突然心里一阵舒爽，这下落袋为安了哈哈</p>
-<p>我就开学的走了，走之前回头看了他一眼，我看他急匆匆的往地铁站走，像是要去坐地铁</p>
-<p>我心想，你TM不是做不了地铁吗？</p>
-<p>算了，管他呢，反正也结束了</p>
-<p>看着他那粉色t恤的背影，我也回头往学校走，脑子里还在想着晚上吃点什么的问题</p>
-<p>可谁又知道，事情才刚刚开始……</p>
-<center><未完待续></未完待续></center>
-
-
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/手机惊云（一）.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/手机惊云（一）.html" itemprop="url">手机惊云（一）</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-06T21:12:19+08:00">
-                2019-06-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/小说/" itemprop="url" rel="index">
-                    <span itemprop="name">小说</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/手机惊云（一）.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="手机惊云（一）.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.4k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <hr>
-<p>爸妈给换了个新手机，Huawei的，用着还挺顺手，用了好几年的iphone6sp就扔在寝室不用了。</p>
-<p>旧手机在寝室放着一直看的挺烦的，也不是烦，就是想让每个东西都能有它们自己的归宿吧，不想让它们闲着。于是我就挂到了咸鱼上去，定了一个蛮高的价格，想着这么心爱的手机不想它这么就卖出去了…</p>
-<p>果不其然，两天了没人来找我问，我心想，看来价格合适，不是那种贱卖的价格。我也没继续理它，反正我也不急着用这笔钱。</p>
-<p>没想到今天下午我收到一个人的消息，他说他想买手机，还说他就在武汉，离我学校还挺近，说一会儿能不能当面交易，让我定一个地方。剧情发展的太快我根本没反应过来，而且他的果断和紧急让我更加的警觉，我在怀疑是不是什么骗局，毕竟闲鱼上的骗局还是很多的。</p>
-<p>于是我马上追问：“在哪里交易？”（交易这个词怎么觉得怪怪的）</p>
-<p>他说：“你定一个地方吧，我到时候直接给你现金。”</p>
-<p>现金？？？</p>
-<p>我看到了一个关键词，立马勾起了我的警觉心。我马上在脑海里构想了各种可能的诈骗方式，比如什么钱是假钱，或者是他会以验机为名直接拿着我的手机跑路？…… </p>
-<p>越想越后怕，我马上回：我不收现金，只接受转账。</p>
-<p>我本以为他会因为我这么一说直接放弃这笔交易</p>
-<p>没想到他直接回：没事，我们去银行门口见面，没问题的话我直接去ATM存钱，我手机里没钱！</p>
-<p>事情发展的更加扑朔迷离</p>
-<p>奈何我一天下来也蛮累的，不如就用这个晚饭是时间休息下，把这个事情搞个明白，我倒是要看看这个人到底是个什么底细！</p>
-<hr>
-<p>紧接着我就挑了一个离学校在最近的地铁站，给他发了过去</p>
-<p>我心想：地铁站人多而且有监控，就算你有问题，我也可以找别人来帮忙啊</p>
-<p>我想着他会不会因为地点问题再次放弃交易</p>
-<p>没想到，他又回了一句：我查查</p>
-<p>真是出乎我的意料，难道他真的是要买手机？那为什么偏偏选择了我这个嘞？</p>
-<p>还没等我多考虑，他就回复我：”好的，我这就出门。“</p>
-<p>。。。</p>
-<p>我当时人还在教室里呢，手机还在寝室躺着呢！</p>
-<p>心想：你是真急啊，你急的我害怕！…</p>
-<p>我也来不及多想，收拾东西就往寝室走，因为我手机还没清理，里面还有好几10G的照片没删呢，还好我前几天把它们全上传到我的百度云里了。</p>
-<p>回到寝室后，把手机刷掉，完全格式化，不想留下任何和我有关的信息</p>
-<p>我在路上又想了一下，想到了更可怕的事情…他会不会用武力解决我并拿走我的手机…</p>
-<p>虽然很离谱，但这种想法的确在我的脑子里的浮现过，而且当时脑子里的画面不是他一个人，是他带着他的一帮弟兄一起过来的，就像是那种黑帮电影里的感觉，一群光着膀子的大汉一排走过来…我是不是想象力太丰富了…</p>
-<p>收拾的差不多，拿上了充电线就出门了，想着我耽误了这么久，他也该到了吧，临走前我还拿上了周二工程实训刚做好的喵喵锤。想着防身用hhh</p>
-<p>然后我就往地铁站走了</p>
-<hr>
-<p>到了地铁站，特意选了个出战的检票口，想着这旁边保安多得很，这下我的人身安全肯定没问题了吧</p>
-<p>突然觉得自己真的机智，于是就找了个地方休息，也没再想什么有的没的。</p>
-<p>过了十分钟他还是没消息，我心想，这该不会是不想买，但是要骗我时间的吧</p>
-<p>话说我自己觉得我的时间宝贵，应该他不觉得吧</p>
-<p>于是我就闲鱼给他发了个消息，说：你到了没？</p>
-<p>他过了半天才说：在路上，一刻钟到</p>
-<p>一刻钟？？？我这么多年都没用过这个词，这个此时啥意思？是十五分钟的意思吗？</p>
-<p>我脑子里觉得是十五分钟，但还是不确定，我还特意去查了一下确认</p>
-<p>哎，么得办法，买点东西是不容易啊，又冒着生命危险，又要浪费时间</p>
-<p>可是我的书包也重的很啊，我还背着一个电脑，我总不能在这里傻站着等吧</p>
-<p>关键是他说是十五分钟，到底是不是，谁知道啊？</p>
-<p>于是我就找了一个地方做了下去，刷起了手机。</p>
-<p>刷手机时间还是过得快啊，大概不到二十分钟，他给我来了个电话</p>
-<p>说他到了，没看到我。</p>
-<p>我说：”我在地上坐着呢，你看到我没？“</p>
-<p>他说：”没有啊，你人呢？“</p>
-<p>我说：”我就在这个检票口出口啊。“</p>
-<p>他说：”我在上面，没在下面。“</p>
-<p>。。。</p>
-<p>完了，之前的计划全部泡汤</p>
-<p>但听他的声音，好像也不是很凶的样子，我就想着行吧，我上去会会你，反正我有小锤锤护身</p>
-<p>然后我就上了电梯，往地铁口走</p>
-<center><未完待续></未完待续></center>
-
-
-
-
-
-
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1472,7 +1531,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">52</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1483,7 +1542,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1588,7 +1647,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">40.4k</span>
+    <span title="Site words total count">44k</span>
   
 </div>
 

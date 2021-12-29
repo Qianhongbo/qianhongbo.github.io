@@ -119,7 +119,7 @@
 <meta property="og:site_name" content="Blog | Qian Homeberg">
 <meta property="og:description" content="Use code to generate UI components123456let label = UILabel()// Use &quot;CGRect&quot; to set the position of the label.label.frame = CGRect(x: 150, y: 150, width: 60, height: 60) // positionlabel.text = &quot;0&quot;//">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-12-22T08:31:42.343Z">
+<meta property="og:updated_time" content="2021-12-25T01:17:58.235Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ClickCounter">
 <meta name="twitter:description" content="Use code to generate UI components123456let label = UILabel()// Use &quot;CGRect&quot; to set the position of the label.label.frame = CGRect(x: 150, y: 150, width: 60, height: 60) // positionlabel.text = &quot;0&quot;//">
@@ -447,7 +447,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  151 字
+                  166 字
                 </span>
               
 
@@ -489,6 +489,10 @@
 
 <h2 id="Use-code-to-connect-label-with-view"><a href="#Use-code-to-connect-label-with-view" class="headerlink" title="Use code to connect label with view"></a>Use code to connect label with view</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> label: <span class="type">UILabel!</span> <span class="comment">// have to add "!", because it is nil before the compiling.</span></span><br><span class="line"><span class="keyword">self</span>.label = label</span><br></pre></td></tr></table></figure>
 
+<blockquote>
+<p>A very good website explains why the IBOutlet must be nil.</p>
+<p><a href="https://cocoacasts.com/should-outlets-be-optionals-or-implicitly-unwrapped-optionals" target="_blank" rel="noopener">Website 1</a>, <a href="https://stackoverflow.com/questions/38565859/in-swift-why-is-uilabel-optional" target="_blank" rel="noopener">Website 2</a></p>
+</blockquote>
 <h2 id="Combine-the-click-action-with-the-incrementCount-function"><a href="#Combine-the-click-action-with-the-incrementCount-function" class="headerlink" title="Combine the click action with the incrementCount function"></a>Combine the click action with the incrementCount function</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// We use this function</span></span><br><span class="line">button.addTarget(<span class="keyword">self</span>, action: #selector(<span class="type">ViewController</span>.incrementCount), <span class="keyword">for</span>: <span class="type">UIControl</span>.<span class="type">Event</span>.touchUpInside)</span><br><span class="line"></span><br><span class="line"><span class="comment">// have to add @obj</span></span><br><span class="line"><span class="meta">@objc</span> <span class="function"><span class="keyword">func</span> <span class="title">incrementCount</span><span class="params">()</span></span> &#123;</span><br><span class="line">  <span class="keyword">self</span>.<span class="built_in">count</span> += <span class="number">1</span></span><br><span class="line">  <span class="keyword">self</span>.label.text = <span class="string">"\(self.count)"</span></span><br><span class="line">  <span class="keyword">self</span>.label2.text = <span class="keyword">self</span>.label.text</span><br><span class="line">  changeBackgroundColr() <span class="comment">// change the background color randomly</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="Generate-random-color"><a href="#Generate-random-color" class="headerlink" title="Generate random color"></a>Generate random color</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">changeBackgroundColr</span><span class="params">()</span></span> &#123;</span><br><span class="line">  <span class="keyword">let</span> <span class="type">R</span> = <span class="type">CGFloat</span>(arc4random()%<span class="number">256</span>)/<span class="number">255.0</span></span><br><span class="line">  <span class="keyword">let</span> <span class="type">G</span> = <span class="type">CGFloat</span>(arc4random()%<span class="number">256</span>)/<span class="number">255.0</span></span><br><span class="line">  <span class="keyword">let</span> <span class="type">B</span> = <span class="type">CGFloat</span>(arc4random()%<span class="number">256</span>)/<span class="number">255.0</span></span><br><span class="line">  <span class="keyword">self</span>.view.backgroundColor = <span class="type">UIColor</span>(red: <span class="type">R</span>, green: <span class="type">G</span>, blue: <span class="type">B</span>, alpha: <span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -573,8 +577,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Delegate-in-iOS-Develop.html" rel="next" title="Delegate in iOS Develop">
-                <i class="fa fa-chevron-left"></i> Delegate in iOS Develop
+              <a href="/Delegate.html" rel="next" title="Delegate">
+                <i class="fa fa-chevron-left"></i> Delegate
               </a>
             
           </div>
@@ -674,7 +678,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">52</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -685,7 +689,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -806,7 +810,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">40.4k</span>
+    <span title="Site words total count">44k</span>
   
 </div>
 

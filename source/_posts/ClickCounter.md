@@ -23,6 +23,10 @@ var label: UILabel! // have to add "!", because it is nil before the compiling.
 self.label = label
 ```
 
+> A very good website explains why the IBOutlet must be nil.
+>
+> [Website 1](https://cocoacasts.com/should-outlets-be-optionals-or-implicitly-unwrapped-optionals), [Website 2](https://stackoverflow.com/questions/38565859/in-swift-why-is-uilabel-optional)
+
 ## Combine the click action with the incrementCount function
 
 ```swift

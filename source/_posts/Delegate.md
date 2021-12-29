@@ -1,5 +1,5 @@
 ---
-title: Delegate in iOS Develop
+title: Delegate
 date: 2021-12-20 17:37:39
 categories: 
 - iOS

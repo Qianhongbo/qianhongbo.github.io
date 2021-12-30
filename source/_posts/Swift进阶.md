@@ -153,7 +153,7 @@ if let tailLength = animal.tail?.length{
 
 We already used optional chaining to avoid nesting `if let`s, but what if all we want to do is provide `tailLength` with a default value if the optional chaining fails? Swift provides a useful operator, for situations like these, the **nil coalescing operator**, `??`.
 
-```
+```swift
 <optional expression> ?? <default case>
 ```
 
@@ -561,6 +561,8 @@ trees.count
 
 # Class
 
+
+
 ```swift
 class Movie {
     let title: String
@@ -600,46 +602,51 @@ archive.filterByYear(year: 1935)
 archive.movies
 ```
 
-One important difference between structs and classes in Swift is how they're handled in the computer or phone's memory. Structs are **passed by value** while classes are **passed by reference**. Let's see what this means with a simple example.
+## The difference between class and struct
+
+One important difference between structs and classes in Swift is how they're handled in the computer or phone's memory. Structs are **passed by value** while classes are **passed by reference**. 
+
+> 引用类型：将一个对象赋值给另一个对象时，系统不会对此对象进行拷贝，而会将指向这个对象的指针赋值给另一个对象，当修改其中一个对象的值时，另一个对象的值会随之改变。
+>
+> 值类型：将一个对象赋值给另一个对象时，会对此对象进行拷贝，复制出一份副本给另一个对象，在修改其中一个对象的值时，不影响另外一个对象。
+
+> Array is a type of Struct. Use array as an example.
+
+Each array has an independent value that includes the values of all of its elements. For simple types such as integers and other structures, this means that when you change a value in one array, the value of that element does not change in any copies of the array. For example:
 
 ```swift
-class Musician {
-    var instrument: Instrument
-    
-    init(instrument: Instrument) {
-        self.instrument = instrument
-    }
-}
-let duo = [Musician(instrument: .fiddle), Musician(instrument: .banjo)]
-
-//: Alternately, we could define a struct
-struct MusicianStruct {
-    var instrument: Instrument
-}
-let structDuo = [MusicianStruct(instrument: .fiddle), MusicianStruct(instrument: .banjo)]
-
-func prepareForDuelingBanjos(musician: Musician) {
-    //var musicianCopy = musician
-    //musicianCopy.instrument = .banjo
-    musician.instrument = .banjo
-}
-
-func prepareForDuelingBanjos(musician: MusicianStruct) {
-    var musicianCopy = musician
-    musicianCopy.instrument = .banjo
-}
-
-//: instances of classes are passed by reference
-let fiddler = duo[0]
-prepareForDuelingBanjos(musician: fiddler)
-fiddler.instrument // banjo
-//: instances of structs are passed by value
-let fiddlerStruct = structDuo[0]
-prepareForDuelingBanjos(musician: fiddlerStruct)
-fiddlerStruct.instrument // fiddle
+var numbers = [1, 2, 3, 4, 5]
+var numbersCopy = numbers
+numbers[0] = 100
+print(numbers)
+// Prints "[100, 2, 3, 4, 5]"
+print(numbersCopy)
+// Prints "[1, 2, 3, 4, 5]"
 ```
 
+If the elements in an array are instances of a class, the semantics are the same, though they might appear different at first. In this case, the values stored in the array are references to objects that live outside the array. If you change a reference to an object in one array, only that array has a reference to the new object. However, if two arrays contain references to the same object, you can observe changes to that object’s properties from both arrays. For example:
 
+```swift
+// An integer type with reference semantics
+class IntegerReference {
+    var value = 10
+}
+var firstIntegers = [IntegerReference(), IntegerReference()]
+var secondIntegers = firstIntegers
+
+// Modifications to an instance are visible from either array
+firstIntegers[0].value = 100
+print(secondIntegers[0].value)
+// Prints "100"
+
+// Replacements, additions, and removals are still visible
+// only in the modified array
+firstIntegers[0] = IntegerReference()
+print(firstIntegers[0].value)
+// Prints "10"
+print(secondIntegers[0].value)
+// Prints "100"
+```
 
 ## Class Inheritance
 
@@ -674,7 +681,7 @@ class ElectricGuitar: Guitar {
 
 Now we have a new class, `ElectricGuitar` that has all the properties of `Guitar` with the additional properties for volume and tone.
 
-|              |                                                              |
+| Class        | Description                                                  |
 | :----------- | :----------------------------------------------------------- |
 | superclass   | A class that is inherited from                               |
 | subclass     | A class that inherits from another class (the superclass)    |

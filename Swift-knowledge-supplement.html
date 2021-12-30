@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="OgElj4o9DCjKj3vLsPSXYe8He24OJKxYy0ejEmUrsy8">
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="obU5HKXSi3">
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/Me.JPG?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/ironman.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/Me_16x16.JPG?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Blog | Qian Homeberg" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="Associated ValueEnums can have raw values and associated values. A raw value is a string, character, or number (integer or floating-point) that can represent an enum case. 123456enum Position: Int &amp;#1">
+<meta name="keywords" content="WoW">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Swift knowledge supplement">
+<meta property="og:url" content="https://www.qianhongbo.com/Swift-knowledge-supplement.html">
+<meta property="og:site_name" content="Blog | Qian Homeberg">
+<meta property="og:description" content="Associated ValueEnums can have raw values and associated values. A raw value is a string, character, or number (integer or floating-point) that can represent an enum case. 123456enum Position: Int &amp;#1">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-12-30T05:32:11.453Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Swift knowledge supplement">
+<meta name="twitter:description" content="Associated ValueEnums can have raw values and associated values. A raw value is a string, character, or number (integer or floating-point) that can represent an enum case. 123456enum Position: Int &amp;#1">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+
+
+
+
+  <title>Swift knowledge supplement | Blog | Qian Homeberg</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	
+	<a href="https://github.com/Qianhongbo" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+	
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Blog | Qian Homeberg</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Look! Who is here! Welcome~~</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+            
+            阅读
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-movies">
+          <a href="/movies/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-video-camera"></i> <br>
+            
+            电影
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Swift-knowledge-supplement.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Swift knowledge supplement</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-12-28T14:27:30+08:00">
+                2021-12-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Swift-knowledge-supplement.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Swift-knowledge-supplement.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4.1k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  25 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Associated-Value"><a href="#Associated-Value" class="headerlink" title="Associated Value"></a>Associated Value</h1><p>Enums can have raw values and associated values. A raw value is a string, character, or number (integer or floating-point) that can represent an enum case.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Position</span>: <span class="title">Int</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> first = <span class="number">1</span></span><br><span class="line">    <span class="keyword">case</span> second = <span class="number">2</span></span><br><span class="line">    <span class="keyword">case</span> third = <span class="number">3</span></span><br><span class="line">    <span class="keyword">case</span> fourth = <span class="number">4</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>The example above defines a <code>Position</code> enum and uses type annotation to specify that all cases must have a raw integer value.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ": Int" is the type annotation</span></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Position</span>: <span class="title">Int</span> </span>&#123;</span><br></pre></td></tr></table></figure>
+
+<p>Then, for each case, a raw integer value is explicitly defined after the case name.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> first = <span class="number">1</span></span><br><span class="line"><span class="keyword">case</span> second = <span class="number">2</span></span><br><span class="line"><span class="keyword">case</span> third = <span class="number">3</span></span><br><span class="line"><span class="keyword">case</span> fourth = <span class="number">4</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Raw-Value-to-Enum"><a href="#Raw-Value-to-Enum" class="headerlink" title="Raw Value to Enum"></a>Raw Value to Enum</h2><p>Raw values enable developers to convert values into enum cases, and vice versa. Let’s keep working with the <code>Position</code> enum.</p>
+<p>To convert an enum case into its raw value, use its <code>rawValue</code> property:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// convert a Position into a raw integer value</span></span><br><span class="line"><span class="keyword">let</span> myPosition = <span class="type">Position</span>.first</span><br><span class="line"><span class="keyword">let</span> myPositionNumber = myPosition.rawValue</span><br><span class="line"><span class="built_in">print</span>(myPositionNumber) <span class="comment">// prints "1"</span></span><br></pre></td></tr></table></figure>
+
+<p>To convert a raw value to its respective enum case, use the initializer that takes a <code>rawValue</code> argument.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// convert an integer into a Position</span></span><br><span class="line"><span class="keyword">let</span> rivalPositionNumber = <span class="number">4</span></span><br><span class="line"><span class="keyword">let</span> rivalPosition = <span class="type">Position</span>(rawValue: rivalPositionNumber)</span><br><span class="line"><span class="built_in">print</span>(rivalPosition == .fourth) <span class="comment">// prints "true"</span></span><br></pre></td></tr></table></figure>
+
+<p>Since there is no guarantee that a raw value has a corresponding case, any attempt to create an enum from a raw value will return an optional. To be safe, use <code>if let</code> to create enums from raw values.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> randomNumber = <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// safely create enums from raw values</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> newPosition = <span class="type">Position</span>(rawValue: randomNumber) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"created \(newPosition) from raw value"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"cannot create position from raw value"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Implicit-Raw-Values"><a href="#Implicit-Raw-Values" class="headerlink" title="Implicit Raw Values"></a>Implicit Raw Values</h2><p>In certain situations, the Swift compiler can infer raw values for enum cases.</p>
+<p>If an enum uses raw string values, then each case is implicitly assigned a raw string value equal to the case’s name.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">AudioRate</span>: <span class="title">String</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> slow, normal, fast, custom</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="type">AudioRate</span>.slow.rawValue) <span class="comment">// prints "slow"</span></span><br><span class="line"><span class="built_in">print</span>(<span class="type">AudioRate</span>.custom.rawValue) <span class="comment">// prints "custom"</span></span><br></pre></td></tr></table></figure>
+
+<p>If an enum uses raw integer values, then the compiler assigns zero to the first case, and increases the raw value for subsequent cases by one.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Endurance</span>: <span class="title">Int</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> worst, abysmal, poor, medium, strong</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="type">Endurance</span>.poor.rawValue) <span class="comment">// prints "2"</span></span><br><span class="line"><span class="built_in">print</span>(<span class="type">Endurance</span>.strong.rawValue) <span class="comment">// prints "4"</span></span><br></pre></td></tr></table></figure>
+
+<p>It is also possible to define an enum with implicitly and explicitly defined raw values; all implicitly defined raw integer values will be one greater than the previous raw integer value. If no previous raw integer value exists, then the compiler will assign zero to the enum case.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">SkewedEndurance</span>: <span class="title">Int</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> worst, abysmal = <span class="number">10</span>, poor, medium, strong = <span class="number">30</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="type">SkewedEndurance</span>.worst.rawValue) <span class="comment">// prints "0"</span></span><br><span class="line"><span class="built_in">print</span>(<span class="type">SkewedEndurance</span>.poor.rawValue) <span class="comment">// prints "11"</span></span><br><span class="line"><span class="built_in">print</span>(<span class="type">SkewedEndurance</span>.medium.rawValue) <span class="comment">// prints "12"</span></span><br><span class="line"><span class="built_in">print</span>(<span class="type">SkewedEndurance</span>.strong.rawValue) <span class="comment">// prints "30"</span></span><br></pre></td></tr></table></figure>
+
+<p>You can mix and match implicit and explicit raw string values too:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Axis</span>: <span class="title">String</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> x</span><br><span class="line">    <span class="keyword">case</span> y</span><br><span class="line">    <span class="keyword">case</span> z = <span class="string">"zed"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="type">Axis</span>.y.rawValue) <span class="comment">// prints "y"</span></span><br><span class="line"><span class="built_in">print</span>(<span class="type">Axis</span>.z.rawValue) <span class="comment">// prints "zed"</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Associated-values"><a href="#Associated-values" class="headerlink" title="Associated values"></a>Associated values</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//: Associated values are defined alongside enum cases. Associated values are not required; some enum cases may have an associated value while others do not. In the example below, `LibraryFee` has three cases with associated values and a case without an associated value.</span></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">LibraryFee</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> overdueBook(<span class="type">Int</span>)</span><br><span class="line">    <span class="keyword">case</span> lostBook(<span class="type">Double</span>)</span><br><span class="line">    <span class="keyword">case</span> lostLibraryCard(<span class="type">Int</span>)</span><br><span class="line">    <span class="keyword">case</span> annualDues</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> fee = <span class="type">LibraryFee</span>.overdueBook(<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//: It can be very helpful to name associated values so that their intent is easily understood.</span></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">DescriptiveLibraryFee</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> overdueBook(days: <span class="type">Int</span>)</span><br><span class="line">    <span class="keyword">case</span> lostBook(price: <span class="type">Double</span>)</span><br><span class="line">    <span class="keyword">case</span> lostLibraryCard(timesLost: <span class="type">Int</span>)</span><br><span class="line">    <span class="keyword">case</span> annualDues</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> weekLateFee = <span class="type">DescriptiveLibraryFee</span>.overdueBook(days: <span class="number">7</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//: Associated values are actually tuples. Therefore, an associated value can contain mutliple values.</span></span><br><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">ImageFilter</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> sepia</span><br><span class="line">    <span class="keyword">case</span> verticalGradient(from: <span class="type">UIColor</span>, to: <span class="type">UIColor</span>)</span><br><span class="line">    <span class="keyword">case</span> horizontalGradient(from: <span class="type">UIColor</span>, to: <span class="type">UIColor</span>)</span><br><span class="line">    <span class="keyword">case</span> sketch(penThickness: <span class="type">Double?</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> fadeToBlack = <span class="type">ImageFilter</span>.horizontalGradient(from: .gray, to: .black)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//: - Callout(Watch Out!):</span></span><br><span class="line"><span class="comment">//: If all enum cases have an associated value of the same type, and it is static, then you might consider using a raw value instead.</span></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">AudioRateAssociated</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> slow(value: <span class="type">Int</span>)</span><br><span class="line">    <span class="keyword">case</span> normal(value: <span class="type">Int</span>)</span><br><span class="line">    <span class="keyword">case</span> fast(value: <span class="type">Int</span>)</span><br><span class="line">    <span class="keyword">case</span> custom(value: <span class="type">Int</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// the associated values for `AudioRateAssociated` should be raw values</span></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">AudioRateRaw</span>: <span class="title">Int</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> slow, normal, fast, custom</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Extract-the-associated-value-with-switch"><a href="#Extract-the-associated-value-with-switch" class="headerlink" title="Extract the associated value with switch"></a>Extract the associated value with switch</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">ImageFilter</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> sepia</span><br><span class="line">    <span class="keyword">case</span> verticalGradient(from: <span class="type">UIColor</span>, to: <span class="type">UIColor</span>)</span><br><span class="line">    <span class="keyword">case</span> horizontalGradient(from: <span class="type">UIColor</span>, to: <span class="type">UIColor</span>)</span><br><span class="line">    <span class="keyword">case</span> sketch(penThickness: <span class="type">Double?</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> filter1 = <span class="type">ImageFilter</span>.horizontalGradient(from: .gray, to: .black)</span><br><span class="line"><span class="keyword">let</span> filter2 = <span class="type">ImageFilter</span>.horizontalGradient(from: .white, to: .black)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Switch"><a href="#Switch" class="headerlink" title="Switch"></a>Switch</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//: Most often, associated values are extracted in a switch block. For cases that have an associated value, the `let` keyword followed by a name will extract each  value from an associated value.</span></span><br><span class="line"><span class="keyword">switch</span> filter1 &#123;</span><br><span class="line"><span class="keyword">case</span> .sepia:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"sepia"</span>)</span><br><span class="line"><span class="keyword">case</span> .verticalGradient(<span class="keyword">let</span> color1, <span class="keyword">let</span> color2):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"vertical gradient with \(color1) and \(color2)"</span>)</span><br><span class="line"><span class="keyword">case</span> .horizontalGradient(<span class="keyword">let</span> color1, <span class="keyword">let</span> color2):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"horizontal gradient with \(color1) and \(color2)"</span>)</span><br><span class="line"><span class="keyword">case</span> .sketch(<span class="keyword">let</span> penThickness):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> thickness = penThickness &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"sketch using \(thickness) thickness"</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"sketch using default thickness"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//: Associated values can also be extracted as variables using the `var` keyword. Values extracted as variables are only available in the case where they are declared.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> filter1 &#123;</span><br><span class="line"><span class="keyword">case</span> .horizontalGradient(<span class="keyword">var</span> color1, <span class="keyword">let</span> color2):</span><br><span class="line">    color1 = .blue</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"horizontal gradient with \(color1) and \(color2)"</span>)</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//: To extract all values from an associated value as constants, use the `case let` syntax.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> filter1 &#123;</span><br><span class="line"><span class="keyword">case</span> <span class="keyword">let</span> .horizontalGradient(color1, color2):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"horizontal gradient with \(color1) and \(color2)"</span>)</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//: To extract all values from an associated value as variables, use the `case var` syntax.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> filter1 &#123;</span><br><span class="line"><span class="keyword">case</span> <span class="keyword">var</span> .horizontalGradient(color1, color2):</span><br><span class="line">    color1 = .red</span><br><span class="line">    color2 = .blue</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"horizontal gradient with \(color1) and \(color2)"</span>)</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Watch-out"><a href="#Watch-out" class="headerlink" title="Watch out!"></a>Watch out!</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//: - Callout(Watch Out!):</span></span><br><span class="line"><span class="comment">//: Remember, switch statements must be exhaustive or Xcode will complain.</span></span><br><span class="line"><span class="comment">// uncomment the switch statement below to see Xcode complain about a non-exhaustive switch statement.</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> switch filter1 &#123;</span></span><br><span class="line"><span class="comment"> case .horizontalGradient(var color1, let color2):</span></span><br><span class="line"><span class="comment"> color1 = .blue</span></span><br><span class="line"><span class="comment"> print("horizontal gradient with \(color1) and \(color2)")</span></span><br><span class="line"><span class="comment"> &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//: If it is possible to treat two cases exactly the same, even when they have associated values, then you can combine cases. Note, the associated values must be the same type.</span></span><br><span class="line"><span class="keyword">switch</span> filter1 &#123;</span><br><span class="line"><span class="keyword">case</span> .verticalGradient(<span class="keyword">let</span> color1, <span class="keyword">let</span> color2), .horizontalGradient(<span class="keyword">let</span> color1, <span class="keyword">let</span> color2):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"a gradient from \(color1) to \(color2)"</span>)</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//: - Callout(Watch Out!):</span></span><br><span class="line"><span class="comment">//: If two cases are specified with a single case statement, then the tuple element names must match.</span></span><br><span class="line"> <span class="keyword">switch</span> filter1 &#123;</span><br><span class="line">    <span class="comment">// uncomment the case statement below to see Xcode complain that `color2` and `color3` must be used in every pattern (i.e. the tuple element names don't match)</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    case .verticalGradient(let color1, let color3), .horizontalGradient(let color1, let color2):</span></span><br><span class="line"><span class="comment">        print("a gradient from \(color1) to \(color2)")</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"> <span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//: If associated values are not needed for computation, then they can be ignored. The example below ignores the associated value for the horizontal gradient.</span></span><br><span class="line"><span class="keyword">switch</span> filter1 &#123;</span><br><span class="line"><span class="keyword">case</span> .horizontalGradient:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"the filter is a horizontal gradient!"</span>)</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//: It is also possible to partially ignore values in an associated value, while extracting others.</span></span><br><span class="line"><span class="keyword">switch</span> filter1 &#123;</span><br><span class="line"><span class="keyword">case</span> .horizontalGradient(<span class="keyword">let</span> color1, <span class="number">_</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"the horizontal gradient's first color is \(color1)"</span>)</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="“where”-keyword"><a href="#“where”-keyword" class="headerlink" title="“where” keyword"></a>“where” keyword</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//: Associated values may also be extracted based on conditions specified using the `where` keyword. If all conditions are held, then the values are extracted and the case statement is executed.</span></span><br><span class="line"><span class="keyword">switch</span> filter1 &#123;</span><br><span class="line"><span class="keyword">case</span> .horizontalGradient(<span class="keyword">let</span> color1, <span class="number">_</span>) <span class="keyword">where</span> color1 == .white:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"the horizontal gradient's first color is white"</span>)</span><br><span class="line"><span class="keyword">case</span> .horizontalGradient(<span class="number">_</span>, <span class="keyword">let</span> color2) <span class="keyword">where</span> color2 == .black:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"the horizontal gradient's second color is black"</span>)</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Computed-properties"><a href="#Computed-properties" class="headerlink" title="Computed properties"></a>Computed properties</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//: Associated values can be extracted using computed properties. By using a computed property, you may avoid duplicate switch statements.</span></span><br><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">ImageFilter</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> colors: (from: <span class="type">UIColor</span>, to: <span class="type">UIColor</span>)? &#123;</span><br><span class="line">        <span class="keyword">switch</span> <span class="keyword">self</span> &#123;</span><br><span class="line">        <span class="keyword">case</span> .verticalGradient(<span class="keyword">let</span> from, <span class="keyword">let</span> to),</span><br><span class="line">             .horizontalGradient(<span class="keyword">let</span> from, <span class="keyword">let</span> to):</span><br><span class="line">            <span class="keyword">return</span> (from, to)</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> penThickness: <span class="type">Double?</span> &#123;</span><br><span class="line">        <span class="keyword">switch</span> <span class="keyword">self</span> &#123;</span><br><span class="line">        <span class="keyword">case</span> .sketch(<span class="keyword">let</span> penThickness):</span><br><span class="line">            <span class="keyword">return</span> penThickness</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> filter3 = <span class="type">ImageFilter</span>.sketch(penThickness: <span class="number">4.0</span>)</span><br><span class="line"></span><br><span class="line">filter1.colors</span><br><span class="line">filter1.colors?.from</span><br><span class="line">filter1.colors?.to</span><br><span class="line">filter3.colors <span class="comment">// nil </span></span><br><span class="line"></span><br><span class="line">filter1.penThickness <span class="comment">// nil</span></span><br><span class="line">filter3.penThickness <span class="comment">// 4</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Extract-with-if"><a href="#Extract-with-if" class="headerlink" title="Extract with if"></a>Extract with if</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">ImageFilter</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> sepia</span><br><span class="line">    <span class="keyword">case</span> verticalGradient(from: <span class="type">UIColor</span>, to: <span class="type">UIColor</span>)</span><br><span class="line">    <span class="keyword">case</span> horizontalGradient(from: <span class="type">UIColor</span>, to: <span class="type">UIColor</span>)</span><br><span class="line">    <span class="keyword">case</span> sketch(penThickness: <span class="type">Double?</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> filter1 = <span class="type">ImageFilter</span>.horizontalGradient(from: .gray, to: .black)</span><br><span class="line"><span class="keyword">let</span> filter2 = <span class="type">ImageFilter</span>.horizontalGradient(from: .white, to: .black)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//: `if case` works alongside the equals operator (=) to check and extract an associated value from an enum. While the syntax may look strange, the equals operator still behaves in an intuitive way; that is, the associated value on the left-hand side (containing `color1` and `color2`) is set equal to the associated value for the enum on the right-hand side (`filter1`).</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">case</span> <span class="type">ImageFilter</span>.horizontalGradient(<span class="keyword">let</span> color1, <span class="keyword">var</span> color2) = filter1 &#123;</span><br><span class="line">    color2 = .red</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"horizontal gradient with \(color1) and \(color2)"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//: To extract all values as constants use `if case let`.</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">case</span> <span class="keyword">let</span> <span class="type">ImageFilter</span>.horizontalGradient(color1, color2) = filter1 &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"horizontal gradient with \(color1) and \(color2)"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//: Complex conditionals can be formed using `if case` and conditional statements separated by commas. If the conditional statements are held true, then the values are extracted and usable from within the `if case` block.</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">case</span> <span class="keyword">let</span> <span class="type">ImageFilter</span>.horizontalGradient(<span class="number">_</span>, color2) = filter1, color2 == .black &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"the horizontal gradient's second color is \(color2)"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//: A single associated value can also be extracted as a computed property. By using a computed property, you may avoid duplicate `if case` statements.</span></span><br><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">ImageFilter</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> hasHeavyPenThickness: <span class="type">Bool</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">case</span> <span class="keyword">let</span> <span class="type">ImageFilter</span>.sketch(penThickness) = <span class="keyword">self</span>, <span class="keyword">let</span> thickness = penThickness, thickness &gt; <span class="number">5.0</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">filter1.hasHeavyPenThickness</span><br></pre></td></tr></table></figure>
+
+<h2 id="Enums-with-Enums"><a href="#Enums-with-Enums" class="headerlink" title="Enums with Enums"></a>Enums with Enums</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">ShirtSize</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> extraSmall</span><br><span class="line">    <span class="keyword">case</span> small</span><br><span class="line">    <span class="keyword">case</span> medium</span><br><span class="line">    <span class="keyword">case</span> large</span><br><span class="line">    <span class="keyword">case</span> extraLarge</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Search</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> forShirts(sizes: [<span class="type">ShirtSize</span>])</span><br><span class="line">    <span class="keyword">case</span> forName(name: <span class="type">String</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> searchForBigShirts = <span class="type">Search</span>.forShirts(sizes: [.large, .extraLarge])</span><br><span class="line"><span class="keyword">let</span> searchForHenleys = <span class="type">Search</span>.forName(name: <span class="string">"henley"</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="Guard"><a href="#Guard" class="headerlink" title="Guard"></a>Guard</h1><h2 id="Guard-statement"><a href="#Guard-statement" class="headerlink" title="Guard statement"></a>Guard statement</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">takeOff</span><span class="params">(passengersSeated: Bool, crewReady: Bool, runwayClear: Bool)</span></span> &#123;</span><br><span class="line">    <span class="keyword">guard</span> passengersSeated <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">    <span class="keyword">guard</span> crewReady <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">    <span class="keyword">guard</span> runwayClear <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"✈️ Lifts off runway"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// the runway isn't clear, the airplane cannot take off</span></span><br><span class="line">takeOff(passengersSeated: <span class="literal">true</span>, crewReady: <span class="literal">true</span>, runwayClear: <span class="literal">false</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// The same</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">takeOffCombineGuards</span><span class="params">(passengersSeated: Bool, crewReady: Bool, runwayClear: Bool)</span></span> &#123;</span><br><span class="line">    <span class="keyword">guard</span> passengersSeated, crewReady, runwayClear <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"✈️ Lifts off runway"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Add sth</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">takeOffGuardWithCode</span><span class="params">(passengersSeated: Bool, crewReady: Bool, runwayClear: Bool)</span></span> &#123;</span><br><span class="line">    <span class="keyword">guard</span> passengersSeated, crewReady, runwayClear <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"tell passengers there will be a delay"</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"✈️ Lifts off runway"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Guard-versus-If"><a href="#Guard-versus-If" class="headerlink" title="Guard versus If"></a>Guard versus If</h2><p>The <code>guard</code> and <code>if</code> keywords can serve similar purposes in Swift, but they should not be used interchangeably. Instead, use the following guidelines to decide when to use guard versus if:</p>
+<ul>
+<li><code>guard</code> should be used to check for preconditions and early exit</li>
+<li><code>if</code> should be used to change execution path based on some condition(s)</li>
+</ul>
+<blockquote>
+<p>Guard: whether the credit card is validate and whether the order is scheduled</p>
+<p>If: wether the user enter a discount code</p>
+</blockquote>
+<h2 id="Guard-with-Optionals"><a href="#Guard-with-Optionals" class="headerlink" title="Guard with Optionals"></a>Guard with Optionals</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">takeOffGuardVar</span><span class="params">(passengersSeated: Bool, crewReady: Bool, runwayClear: Bool, crewLeader: String?)</span></span> &#123;</span><br><span class="line">    <span class="keyword">guard</span> passengersSeated, crewReady, runwayClear <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">    <span class="keyword">guard</span> <span class="keyword">var</span> crewLeaderVariable = crewLeader <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// modify the crew leader</span></span><br><span class="line">    crewLeaderVariable = crewLeaderVariable.uppercased()</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(crewLeaderVariable): \"Takeoff checks complete!\""</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"✈️ Lifts off runway"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">takeOffGuardVar(passengersSeated: <span class="literal">true</span>, crewReady: <span class="literal">true</span>, runwayClear: <span class="literal">true</span>, crewLeader: <span class="string">"👩🏻‍✈️ Natalie"</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span></span><br><span class="line">    <span class="keyword">var</span> grades: [<span class="type">Double</span>]</span><br><span class="line">    <span class="keyword">var</span> average: <span class="type">Double</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> grades.<span class="built_in">reduce</span>(<span class="number">0</span>) &#123; <span class="keyword">return</span> $<span class="number">0</span> + $<span class="number">1</span> &#125; / <span class="type">Double</span>(grades.<span class="built_in">count</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">passStudent</span><span class="params">(<span class="number">_</span> student: Student?)</span></span> &#123;</span><br><span class="line">    <span class="keyword">guard</span> <span class="keyword">let</span> student = student, student.average &gt;= <span class="number">75</span> <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(student.name) passed!"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">passStudent(<span class="type">Student</span>(name: <span class="string">"Sam"</span>, grades: [<span class="number">70</span>, <span class="number">90</span>, <span class="number">84</span>, <span class="number">62</span>, <span class="number">88</span>]))</span><br></pre></td></tr></table></figure>
+
+<h4 id="The-reduce-funtion"><a href="#The-reduce-funtion" class="headerlink" title="The reduce funtion"></a>The reduce funtion</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line"><span class="keyword">let</span> numberSum = numbers.<span class="built_in">reduce</span>(<span class="number">0</span>, &#123; x, y <span class="keyword">in</span></span><br><span class="line">x + y</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// numberSum == 10</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="https://developer.apple.com/documentation/swift/array/2298686-reduce" target="_blank" rel="noopener">One website.</a>.</p>
+<p> <a href="https://stackoverflow.com/questions/56034602/what-does-the-reduce-function-do-in-swift" target="_blank" rel="noopener">Another website</a>.</p>
+<h4 id="Swift-in-keyword"><a href="#Swift-in-keyword" class="headerlink" title="Swift in keyword."></a>Swift <code>in</code> keyword.</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; /parameters and type/ <span class="keyword">in</span> /function body/ &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="0-and-1"><a href="#0-and-1" class="headerlink" title="$0 and $1"></a><code>$0</code> and <code>$1</code></h4><p><code>$0</code> is the first parameter passed into the closure. <code>$1</code> is the second parameter, etc. </p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">add = &#123; arg1, arg2 <span class="keyword">in</span></span><br><span class="line">arg1 + arg2</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">add = &#123;</span><br><span class="line">$<span class="number">0</span> + $<span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> result = add(<span class="number">20</span>, <span class="number">20</span>) <span class="comment">// 40</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span></span><br><span class="line">    <span class="keyword">var</span> grades: [<span class="type">Double</span>]</span><br><span class="line">    <span class="keyword">var</span> topPassingGrade: <span class="type">Double?</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> passingGrades = grades.<span class="built_in">filter</span> &#123; <span class="keyword">return</span> $<span class="number">0</span> &gt;= <span class="number">75</span> &#125;</span><br><span class="line">        <span class="keyword">return</span> passingGrades.<span class="built_in">max</span>() <span class="comment">// It can be "nil".</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">notifyUser</span><span class="params">(<span class="number">_</span> student: Student)</span></span> &#123;</span><br><span class="line">    <span class="keyword">guard</span> <span class="keyword">let</span> <span class="number">_</span> = student.topPassingGrade <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"you've passed!"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">notifyUser(<span class="type">Student</span>(name: <span class="string">"Ulysses"</span>, grades: [<span class="number">70</span>, <span class="number">60</span>, <span class="number">74</span>, <span class="number">76</span>, <span class="number">63</span>]))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><a href="https://developer.apple.com/documentation/swift/sequence/3018365-filter" target="_blank" rel="noopener">The filter function</a></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="keyword">let</span> cast = [<span class="string">"Vivien"</span>, <span class="string">"Marlon"</span>, <span class="string">"Kim"</span>, <span class="string">"Karl"</span>]</span><br><span class="line">&gt; <span class="keyword">let</span> shortNames = cast.<span class="built_in">filter</span> &#123; $<span class="number">0</span>.<span class="built_in">count</span> &lt; <span class="number">5</span> &#125;</span><br><span class="line">&gt; <span class="built_in">print</span>(shortNames)</span><br><span class="line">&gt; <span class="comment">// Prints "["Kim", "Karl"]"</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="Guard-let-Versus-If-let"><a href="#Guard-let-Versus-If-let" class="headerlink" title="Guard let Versus If let"></a>Guard let Versus If let</h2><ul>
+<li>When optional values are used with <code>guard let</code> (or <code>guard var</code>) they are bound as non-optional values and available in the rest of the scope where the guard statement appears.</li>
+<li>This differs from how optionals work with <code>if let</code>. With <code>if let</code>, optionals are bound as non-optional constants, and they are only available in the body of the <code>if let</code> statement.</li>
+</ul>
+<blockquote>
+<p>After the ‘guard let’ judgement, the optional is transformed to a variable or constant.</p>
+</blockquote>
+<h1 id="Errors"><a href="#Errors" class="headerlink" title="Errors"></a>Errors</h1><p>The errors referred to by “error handling” are not like warnings or issues raised by Xcode and the compiler. They are also not software bugs. Instead, these errors are either intentionally caused or generated in situations where correct behavior cannot be fully guaranteed.</p>
+<ul>
+<li><p>a compile-time error (or warning) can be generated by the compiler, before code is run</p>
+</li>
+<li><p>a run-time error (sometimes called a logic error) is caused by code that is syntactically correct, but logically incorrect or causes a crash when code is running</p>
+</li>
+</ul>
+<p>These kinds of errors can be fixed.</p>
+<p>The errors in “error handling” can happen even when code is syntactically correct.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// When a catch block is executed, it automatically defines a constant called "error". </span></span><br><span class="line"><span class="comment">// This constant is of type `Error` and it has a localized description property with helpful information about the cause of the problem.</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> fileURL = <span class="type">Bundle</span>.main.url(forResource: <span class="string">"swift"</span>, withExtension: <span class="string">"png"</span>) &#123;</span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> content = <span class="keyword">try</span> <span class="type">String</span>(contentsOf: fileURL, encoding: .utf8)</span><br><span class="line">        <span class="built_in">print</span>(content)</span><br><span class="line">    &#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(error) <span class="comment">// notice, error is implicitly defined</span></span><br><span class="line">        <span class="built_in">print</span>(error.localizedDescription)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//: For readability, the "error" constant can be explicitly defined using `catch let error`.</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> fileURL = <span class="type">Bundle</span>.main.url(forResource: <span class="string">"swift"</span>, withExtension: <span class="string">"png"</span>) &#123;</span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> content = <span class="keyword">try</span> <span class="type">String</span>(contentsOf: fileURL, encoding: .utf8)</span><br><span class="line">        <span class="built_in">print</span>(content)</span><br><span class="line">    &#125; <span class="keyword">catch</span> <span class="keyword">let</span> error &#123;</span><br><span class="line">        <span class="built_in">print</span>(error) <span class="comment">// error is defined and available for use in the catch block</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Types-of-error"><a href="#Types-of-error" class="headerlink" title="Types of error"></a>Types of error</h2><p>We can use <code>do catch</code> to handle different type of the error. </p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> fileURL = <span class="type">Bundle</span>.main.url(forResource: <span class="string">"swift"</span>, withExtension: <span class="string">"png"</span>) &#123;</span><br><span class="line">    <span class="comment">// create a url that does not exist</span></span><br><span class="line">    <span class="keyword">let</span> erroneousURL = fileURL.appendingPathComponent(<span class="string">"unknown-path"</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> content = <span class="keyword">try</span> <span class="type">String</span>(contentsOf: erroneousURL, encoding: .utf8)</span><br><span class="line">        <span class="built_in">print</span>(content)</span><br><span class="line">    &#125; <span class="keyword">catch</span> <span class="type">CocoaError</span>.fileReadInapplicableStringEncoding &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"cannot read file into a string"</span>)</span><br><span class="line">    &#125; <span class="keyword">catch</span> <span class="type">CocoaError</span>.fileReadUnknown &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"file unknown, cannot read"</span>)</span><br><span class="line">    &#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"\(error)"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>How can we get the error type?</p>
+<p>Use the <a href="https://osstatus.com/" target="_blank" rel="noopener">website</a> to search the error code.</p>
+</blockquote>
+<h3 id="Catch-is"><a href="#Catch-is" class="headerlink" title="Catch is"></a>Catch is</h3><p>Alternatively, errors can be caught by type using the <code>catch is</code> syntax. As seen before, all errors implement the <code>Error</code> protocol. Additionally, all errors extend from <code>NSError</code> which provides more information for troubleshooting like a string property called “domain” that classifies the origin of an error. An error’s domain may also suggest if the error can be casted into a more specific type like <code>CocoaError</code>, <code>POSIXError</code>, or <code>MachError</code>. See <a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ErrorHandlingCocoa/ErrorObjectsDomains/ErrorObjectsDomains.html" target="_blank" rel="noopener">Apple’s documentation on error objects, domains, and codes</a> to learn more.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> fileURL = <span class="type">Bundle</span>.main.url(forResource: <span class="string">"swift"</span>, withExtension: <span class="string">"png"</span>) &#123;</span><br><span class="line">    <span class="comment">// create a url that does not exist</span></span><br><span class="line">    <span class="keyword">let</span> erroneousURL = fileURL.appendingPathComponent(<span class="string">"unknown-path"</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> content = <span class="keyword">try</span> <span class="type">String</span>(contentsOf: erroneousURL, encoding: .utf8)</span><br><span class="line">        <span class="built_in">print</span>(content)</span><br><span class="line">    &#125; <span class="keyword">catch</span> <span class="keyword">is</span> <span class="type">CocoaError</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"this error is a CocoaError"</span>)</span><br><span class="line">    &#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"\(error)"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Catch-let-…-as-…"><a href="#Catch-let-…-as-…" class="headerlink" title="Catch let … as …"></a>Catch let … as …</h3><p>To catch and cast an error by type, combine <code>catch let error</code> with a type cast. In the example below, an error is casted into <code>CocoaError</code> which exposes common error codes generated by core Apple frameworks.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> fileURL = <span class="type">Bundle</span>.main.url(forResource: <span class="string">"swift"</span>, withExtension: <span class="string">"png"</span>) &#123;</span><br><span class="line">    <span class="comment">// create a url that does not exist</span></span><br><span class="line">    <span class="keyword">let</span> erroneousURL = fileURL.appendingPathComponent(<span class="string">"unknown-path"</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> content = <span class="keyword">try</span> <span class="type">String</span>(contentsOf: erroneousURL, encoding: .utf8)</span><br><span class="line">        <span class="built_in">print</span>(content)</span><br><span class="line">    &#125; <span class="keyword">catch</span> <span class="keyword">let</span> error <span class="keyword">as</span> <span class="type">CocoaError</span> &#123; <span class="comment">/* handle if error can be casted into a `CocoaError` */</span></span><br><span class="line">        <span class="keyword">switch</span> error.errorCode &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="type">CocoaError</span>.fileReadInapplicableStringEncoding.rawValue:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"cannot read file into a string"</span>)</span><br><span class="line">        <span class="keyword">case</span> <span class="type">CocoaError</span>.fileReadUnknown.rawValue:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"file unknown, cannot read"</span>)</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"cocoa error with code: \(error.errorCode)"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"\(error)"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Propogate-error"><a href="#Propogate-error" class="headerlink" title="Propogate error"></a>Propogate error</h2><p>To propagate all possible errors to the calling site, start by removing the <code>do</code>-<code>catch</code> statement and adding <code>throws</code> to the signature of the function which calls the error-prone code.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// add "trows" to the function</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">readFileIntoStringWithThrows</span><span class="params">(fileName: String, fileExtension: String)</span></span> <span class="keyword">throws</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> fileURL = <span class="type">Bundle</span>.main.url(forResource: fileName, withExtension: fileExtension) &#123;</span><br><span class="line">        <span class="keyword">let</span> content = <span class="keyword">try</span> <span class="type">String</span>(contentsOf: fileURL, encoding: .utf8)</span><br><span class="line">        <span class="built_in">print</span>(content)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Now, any code that calls `readFileIntoStringWithThrows` is responsible for handling any errors it generates.</span></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> readFileIntoStringWithThrows(fileName: <span class="string">"swift"</span>, fileExtension: <span class="string">"png"</span>)</span><br><span class="line">&#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"the error was propagated to me, and I handled it!"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Sometimes it is appropriate to handle some errors immediately while propagating others for further processing. To propagate a specific error, use the <code>throw</code> keyword.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">readFileIntoStringHandleAndThrow</span><span class="params">(fileName: String, fileExtension: String)</span></span> <span class="keyword">throws</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> fileURL = <span class="type">Bundle</span>.main.url(forResource: fileName, withExtension: fileExtension) &#123;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            <span class="keyword">let</span> content = <span class="keyword">try</span> <span class="type">String</span>(contentsOf: fileURL, encoding: .utf8)</span><br><span class="line">            <span class="built_in">print</span>(content)</span><br><span class="line">        &#125; <span class="keyword">catch</span> <span class="type">CocoaError</span>.fileReadUnknown &#123;</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"file unknown, cannot read"</span>)</span><br><span class="line">        &#125; <span class="keyword">catch</span> <span class="keyword">let</span> error &#123;</span><br><span class="line">            <span class="keyword">throw</span> error <span class="comment">/* throw (propagate) this error to the call site */</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> readFileIntoStringHandleAndThrow(fileName: <span class="string">"swift"</span>, fileExtension: <span class="string">"png"</span>)</span><br><span class="line">&#125; <span class="keyword">catch</span> <span class="keyword">let</span> error &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"handling error: \(error.localizedDescription)"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="try-and-try"><a href="#try-and-try" class="headerlink" title="try? and try!"></a><code>try?</code> and <code>try!</code></h2><p>Try comes in two other forms: <code>try?</code> and <code>try!</code>. <code>try?</code> executes error-prone code, and if any error is generated, then it is converted into an optional where the underlying value has the same type as the error-prone function or intializer’s return type. This can simplify code, but the ability to analyze errors is lost.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">printFileContentsTry</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> fileURL = <span class="type">Bundle</span>.main.url(forResource: <span class="string">"swift"</span>, withExtension: <span class="string">"png"</span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> content = <span class="keyword">try</span>? <span class="type">String</span>(contentsOf: fileURL, encoding: .utf8)</span><br><span class="line">        <span class="built_in">print</span>(content ?? <span class="string">"content is nil"</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// preferably, combine `if let` with `try?`; it's easier to read</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">let</span> content = <span class="keyword">try</span>? <span class="type">String</span>(contentsOf: fileURL, encoding: .utf8) &#123;</span><br><span class="line">            <span class="built_in">print</span>(content)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"could not read contents of file into string"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>try!</code> executes error-prone code while foregoing any opportunity to safely handle an error. If an error-prone function is called using <code>try!</code> and it fails, then the entire app or playground crashes.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// try! should only be used if there is no risk of error; generally, this is not advised</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> fileURL = <span class="type">Bundle</span>.main.url(forResource: <span class="string">"swift"</span>, withExtension: <span class="string">"txt"</span>) &#123;</span><br><span class="line">     <span class="keyword">let</span> content = <span class="keyword">try</span>! <span class="type">String</span>(contentsOf: fileURL, encoding: .utf8)</span><br><span class="line">     <span class="built_in">print</span>(content)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Error-handle-summary"><a href="#Error-handle-summary" class="headerlink" title="Error handle summary"></a>Error handle summary</h2><p>There are four ways to handle the error.</p>
+<ol>
+<li>Handle Error with <code>Do</code>-<code>Catch</code></li>
+<li>Convert Error to Optional with <code>try?</code></li>
+<li>Ignore Error with <code>try!</code></li>
+<li>Propagate Error</li>
+</ol>
+<h2 id="Create-custom-error"><a href="#Create-custom-error" class="headerlink" title="Create custom error"></a>Create custom error</h2><p>To create a custom error, define a type that inherits from the <code>Error</code> protocol. Often, enums are used for this purpose.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">SimplePurchaseError</span>: <span class="title">Error</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> invalidAddress</span><br><span class="line">    <span class="keyword">case</span> cardRejected</span><br><span class="line">    <span class="keyword">case</span> cartWeightLimitExceeded</span><br><span class="line">    <span class="keyword">case</span> insufficientStock</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">makeBadPurchase</span><span class="params">()</span></span> <span class="keyword">throws</span> &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="type">SimplePurchaseError</span>.cardRejected <span class="comment">// throw a custom error</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> makeBadPurchase()</span><br><span class="line">&#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(error) <span class="comment">// Result: cardRejected</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>When using an enum to define a custom error, use associated values to add helpful debugging information.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">ComplexPurchaseError</span>: <span class="title">Error</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> invalidAddress</span><br><span class="line">    <span class="keyword">case</span> cardRejected</span><br><span class="line">    <span class="keyword">case</span> cartWeightLimitExceeded(<span class="type">Double</span>)</span><br><span class="line">    <span class="keyword">case</span> insufficientStock(<span class="type">String</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">attemptPurchase</span><span class="params">(withWeight weight: Double)</span></span> <span class="keyword">throws</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> weight &gt; <span class="number">100</span> &#123;</span><br><span class="line">        <span class="comment">// throw a custom error with an associated value</span></span><br><span class="line">        <span class="keyword">throw</span> <span class="type">ComplexPurchaseError</span>.cartWeightLimitExceeded(-<span class="number">1</span> * (<span class="number">100</span> - weight))</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"purchase succeeded!"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> attemptPurchase(withWeight: <span class="number">125.6</span>)</span><br><span class="line">&#125; <span class="keyword">catch</span> <span class="keyword">let</span> error <span class="keyword">as</span> <span class="type">ComplexPurchaseError</span> &#123;</span><br><span class="line">    <span class="keyword">switch</span> error &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">let</span> .cartWeightLimitExceeded(weight): <span class="comment">/* extract the associated value */</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"purchase failed. weight exceeds limit by: \(weight)"</span>)</span><br><span class="line">      	<span class="comment">// Result: purchase failed. weight exceeds limit by: 25.599</span></span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="built_in">print</span>(error)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(error)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Describe-custom-error"><a href="#Describe-custom-error" class="headerlink" title="Describe custom error"></a>Describe custom error</h2><p>You can add extra debugging information to a custom error by also implementing the <code>LocalizedError</code> and <code>CustomNSError</code> protocols.</p>
+<h3 id="LocalizedError"><a href="#LocalizedError" class="headerlink" title="LocalizedError"></a><code>LocalizedError</code></h3><p><code>LocalizedError</code> includes properties which should be used to provide localized information about an error.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/// Describes an error that provides localized messages describing why</span></span><br><span class="line"><span class="comment">/// an error occurred and provides more information about the error.</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">protocol</span> <span class="title">LocalizedError</span> : <span class="title">Error</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/// A localized message describing what error occurred.</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">var</span> errorDescription: <span class="type">String?</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/// A localized message describing the reason for the failure.</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">var</span> failureReason: <span class="type">String?</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/// A localized message describing how one might recover from the failure.</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">var</span> recoverySuggestion: <span class="type">String?</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/// A localized message providing "help" text if the user requests help.</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">var</span> helpAnchor: <span class="type">String?</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>The following example describes the <code>failureReason</code> for a <code>PurchaseError</code>. For brevity, the other properties have been excluded.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">PurchaseError</span>: <span class="title">LocalizedError</span> </span>&#123;   </span><br><span class="line">    <span class="keyword">var</span> failureReason: <span class="type">String?</span> &#123;</span><br><span class="line">        <span class="keyword">switch</span> <span class="keyword">self</span> &#123;</span><br><span class="line">        <span class="keyword">case</span> .invalidAddress:</span><br><span class="line">            <span class="keyword">return</span> <span class="type">NSLocalizedString</span>(<span class="string">"address contained invalid or empty fields"</span>, comment: <span class="string">""</span>)</span><br><span class="line">        <span class="keyword">case</span> .cardRejected:</span><br><span class="line">            <span class="keyword">return</span> <span class="type">NSLocalizedString</span>(<span class="string">"card number or csv code is invalid"</span>, comment: <span class="string">""</span>)</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">let</span> .cartWeightLimitExceeded(amount):</span><br><span class="line">            <span class="keyword">return</span> <span class="type">NSLocalizedString</span>(<span class="string">"weight limit was by exceeded \(amount)"</span>, comment: <span class="string">""</span>)</span><br><span class="line">        <span class="keyword">case</span> .insufficientStock:</span><br><span class="line">            <span class="keyword">return</span> <span class="type">NSLocalizedString</span>(<span class="string">"insufficient stock"</span>, comment: <span class="string">""</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> makeBadPurchase() <span class="comment">// a fictitious function that might throw an error</span></span><br><span class="line">&#125; <span class="keyword">catch</span> <span class="keyword">let</span> error <span class="keyword">as</span> <span class="type">LocalizedError</span> &#123; <span class="comment">// cast error to `LocalizedError`</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> description = error.errorDescription &#123; <span class="built_in">print</span>(description) &#125;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> failureReason = error.failureReason &#123; <span class="built_in">print</span>(failureReason) &#125;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> recoverySuggestion = error.recoverySuggestion &#123; <span class="built_in">print</span>(recoverySuggestion) &#125;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> helpAnchor = error.helpAnchor &#123; <span class="built_in">print</span>(helpAnchor) &#125;</span><br><span class="line">&#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(error)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>Note</strong>: Comment is left blank for each <code>NSLocalizedString</code>. Again, this is for brevity. In practice, you should use comments that provide sufficient context about a localized string so that translators can produce more accurate translations. Failure to do so may result in vastly different translations.</p>
+</blockquote>
+<h3 id="CustomNSError"><a href="#CustomNSError" class="headerlink" title="CustomNSError"></a><code>CustomNSError</code></h3><p>Recall, all errors extend from <code>NSError</code>. By default, the properties of <code>NSError</code>, like domain, have inferred values. To provide more accurate values for <code>NSError</code> properties, implement <code>CustomNSError</code>.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/// Describes an error type that specifically provides a domain, code,</span></span><br><span class="line"><span class="comment">/// and user-info dictionary.</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">protocol</span> <span class="title">CustomNSError</span> : <span class="title">Error</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/// The domain of the error.</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">var</span> errorDomain: <span class="type">String</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/// The error code within the given domain.</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">var</span> errorCode: <span class="type">Int</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/// The user-info dictionary.</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">var</span> errorUserInfo: [<span class="type">String</span> : <span class="type">Any</span>] &#123; <span class="keyword">get</span> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>If an error implements <code>CustomNSError</code>, then when casted to an <code>NSError</code>, it will contain the values provided by the protocol implementation.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">PurchaseError</span>: <span class="title">CustomNSError</span> </span>&#123;</span><br><span class="line">    <span class="comment">// domain and error code...</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/// The user-info dictionary.</span></span><br><span class="line">    <span class="keyword">var</span> errorUserInfo: [<span class="type">String</span>: <span class="type">Any</span>] &#123;</span><br><span class="line">        <span class="keyword">switch</span> <span class="keyword">self</span> &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">let</span> .cartWeightLimitExceeded(amount):</span><br><span class="line">            <span class="keyword">return</span> [</span><br><span class="line">                <span class="string">"weightLimit"</span>: <span class="number">100.0</span>,</span><br><span class="line">                <span class="string">"weightExceeded"</span>: amount</span><br><span class="line">            ]</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">let</span> .insufficientStock(items):</span><br><span class="line">            <span class="keyword">return</span> [</span><br><span class="line">                <span class="string">"itemsOutOfStock"</span>: items</span><br><span class="line">            ]</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">return</span> [:]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> attemptPurchase(withWeight: <span class="number">125.6</span>) <span class="comment">// a fictitious function that might throw an error</span></span><br><span class="line">&#125; <span class="keyword">catch</span> <span class="keyword">let</span> error <span class="keyword">as</span> <span class="type">NSError</span> &#123; <span class="comment">// cast error to `NSError`</span></span><br><span class="line">    <span class="built_in">print</span>(error.domain)</span><br><span class="line">    <span class="built_in">print</span>(error.code)</span><br><span class="line">    <span class="built_in">print</span>(error.userInfo) <span class="comment">// prints "["weightExceeded": 25.599999999999994, "weightLimit": 100.0]"</span></span><br><span class="line">&#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(error)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="defer"><a href="#defer" class="headerlink" title="defer"></a><code>defer</code></h2><p>The last topic related to errors is the <code>defer</code> keyword. While uncommon, you may find it coupled with error handling because it can be used to execute a block of code before an error-generating scope is exited.</p>
+<p>Typically, a defer block is provided near the top of a function. It cannot contain any code that changes the flow of control, like a break or return statement, or throwing an error. Also, multiple defer blocks may be defined, but they are executed in reverse order of when they appear.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">attemptPurchaseWithMultipleDefers</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// before this function exits, execute this defer block</span></span><br><span class="line">    <span class="keyword">defer</span> &#123; <span class="built_in">print</span>(<span class="string">"then, close the secure purchase session"</span>) &#125;</span><br><span class="line">    <span class="keyword">defer</span> &#123; <span class="built_in">print</span>(<span class="string">"first, clear order"</span>) &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> processOrder()</span><br><span class="line">    &#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"\(error)"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">attemptPurchaseWithMultipleDefers()</span><br><span class="line"></span><br><span class="line"><span class="comment">// before `attemptPurchaseWithMultipleDefers` exits, it prints…</span></span><br><span class="line"><span class="comment">// "first, clear order"</span></span><br><span class="line"><span class="comment">// "then, close the secure purchase session"</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+	
+	
+      <div>
+          
+    <div style="text-align:center;color: #ccc;font-size:14px;">
+        ------ 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
+    
+      </div>
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果觉得不错，可以打赏喔~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Qian Hongbo 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Qian Hongbo 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Qian Hongbo
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.qianhongbo.com/Swift-knowledge-supplement.html" title="Swift knowledge supplement">https://www.qianhongbo.com/Swift-knowledge-supplement.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/UITableView.html" rel="next" title="UITableView and Navigation">
+                <i class="fa fa-chevron-left"></i> UITableView and Navigation
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Binary-Search-Tree.html" rel="prev" title="Binary Search Tree">
+                Binary Search Tree <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/Me.JPG" alt="Qian Hongbo">
+            
+              <p class="site-author-name" itemprop="name">Qian Hongbo</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">48</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Qianhongbo" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="/images/wechat.jpg" target="_blank" title="Wechat">
+                      
+                        <i class="fa fa-fw fa-weixin"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="/images/QQ.jpg" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/Qianhongbo" target="_blank" title="Zhihu">
+                      
+                        <i class="fa fa-fw fa-heart"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://music.163.com/#/user/home?id=411692137" target="_blank" title="music163">
+                      
+                        <i class="fa fa-fw fa-music"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+	<br>
+
+	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=413831247&auto=1&height=66"></iframe>
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Associated-Value"><span class="nav-number">1.</span> <span class="nav-text">Associated Value</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Raw-Value-to-Enum"><span class="nav-number">1.1.</span> <span class="nav-text">Raw Value to Enum</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Implicit-Raw-Values"><span class="nav-number">1.2.</span> <span class="nav-text">Implicit Raw Values</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Associated-values"><span class="nav-number">1.3.</span> <span class="nav-text">Associated values</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Extract-the-associated-value-with-switch"><span class="nav-number">1.4.</span> <span class="nav-text">Extract the associated value with switch</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Switch"><span class="nav-number">1.4.1.</span> <span class="nav-text">Switch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Watch-out"><span class="nav-number">1.4.2.</span> <span class="nav-text">Watch out!</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#“where”-keyword"><span class="nav-number">1.4.3.</span> <span class="nav-text">“where” keyword</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Computed-properties"><span class="nav-number">1.4.4.</span> <span class="nav-text">Computed properties</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Extract-with-if"><span class="nav-number">1.5.</span> <span class="nav-text">Extract with if</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Enums-with-Enums"><span class="nav-number">1.6.</span> <span class="nav-text">Enums with Enums</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Guard"><span class="nav-number">2.</span> <span class="nav-text">Guard</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Guard-statement"><span class="nav-number">2.1.</span> <span class="nav-text">Guard statement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Guard-versus-If"><span class="nav-number">2.2.</span> <span class="nav-text">Guard versus If</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Guard-with-Optionals"><span class="nav-number">2.3.</span> <span class="nav-text">Guard with Optionals</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-1"><span class="nav-number">2.3.1.</span> <span class="nav-text">Example 1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#The-reduce-funtion"><span class="nav-number">2.3.1.1.</span> <span class="nav-text">The reduce funtion</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Swift-in-keyword"><span class="nav-number">2.3.1.2.</span> <span class="nav-text">Swift in keyword.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#0-and-1"><span class="nav-number">2.3.1.3.</span> <span class="nav-text">$0 and $1</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example-2"><span class="nav-number">2.3.2.</span> <span class="nav-text">Example 2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Guard-let-Versus-If-let"><span class="nav-number">2.4.</span> <span class="nav-text">Guard let Versus If let</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Errors"><span class="nav-number">3.</span> <span class="nav-text">Errors</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Types-of-error"><span class="nav-number">3.1.</span> <span class="nav-text">Types of error</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Catch-is"><span class="nav-number">3.1.1.</span> <span class="nav-text">Catch is</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Catch-let-…-as-…"><span class="nav-number">3.1.2.</span> <span class="nav-text">Catch let … as …</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Propogate-error"><span class="nav-number">3.2.</span> <span class="nav-text">Propogate error</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#try-and-try"><span class="nav-number">3.3.</span> <span class="nav-text">try? and try!</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Error-handle-summary"><span class="nav-number">3.4.</span> <span class="nav-text">Error handle summary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Create-custom-error"><span class="nav-number">3.5.</span> <span class="nav-text">Create custom error</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Describe-custom-error"><span class="nav-number">3.6.</span> <span class="nav-text">Describe custom error</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LocalizedError"><span class="nav-number">3.6.1.</span> <span class="nav-text">LocalizedError</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CustomNSError"><span class="nav-number">3.6.2.</span> <span class="nav-text">CustomNSError</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#defer"><span class="nav-number">3.7.</span> <span class="nav-text">defer</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Qian Hongbo</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">45k</span>
+  
+</div>
+
+
+
+
+
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("06/04/2019 12:27:43");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://qianhongbo.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://www.qianhongbo.com/Swift-knowledge-supplement.html';
+          this.page.identifier = 'Swift-knowledge-supplement.html';
+          this.page.title = 'Swift knowledge supplement';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://qianhongbo.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "./public/search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":166,"height":200},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+</html>

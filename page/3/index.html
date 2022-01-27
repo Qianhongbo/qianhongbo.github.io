@@ -54,6 +54,11 @@
   
 
   
+    
+    
+  
+
+  
 
   
 
@@ -63,14 +68,8 @@
 
   
     
-
     
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=EB Garamond:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -347,7 +346,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/四学期课程安排.html">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/ClickCounter.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Qian Hongbo">
@@ -366,7 +365,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/四学期课程安排.html" itemprop="url">UCSD EC80 选课</a></h2>
+                <a class="post-title-link" href="/ClickCounter.html" itemprop="url">ClickCounter</a></h2>
         
 
         <div class="post-meta">
@@ -378,8 +377,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-09-27T23:41:25+08:00">
-                2021-09-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-12-21T21:44:04+08:00">
+                2021-12-21
               </time>
             
 
@@ -401,8 +400,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/UCSD/" itemprop="url" rel="index">
-                    <span itemprop="name">UCSD</span>
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
                   </a>
                 </span>
 
@@ -421,8 +420,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/四学期课程安排.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="四学期课程安排.html" itemprop="commentCount"></span>
+                <a href="/ClickCounter.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="ClickCounter.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -444,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  362 字
+                  166 字
                 </span>
               
 
@@ -484,271 +483,944 @@
       
         
           
-            <table>
+            <h2 id="Use-code-to-generate-UI-components"><a href="#Use-code-to-generate-UI-components" class="headerlink" title="Use code to generate UI components"></a>Use code to generate UI components</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> label = <span class="type">UILabel</span>()</span><br><span class="line"><span class="comment">// Use "CGRect" to set the position of the label.</span></span><br><span class="line">label.frame = <span class="type">CGRect</span>(x: <span class="number">150</span>, y: <span class="number">150</span>, width: <span class="number">60</span>, height: <span class="number">60</span>) <span class="comment">// position</span></span><br><span class="line">label.text = <span class="string">"0"</span></span><br><span class="line"><span class="comment">// show the label in the view</span></span><br><span class="line">view.addSubview(label)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Use-code-to-connect-label-with-view"><a href="#Use-code-to-connect-label-with-view" class="headerlink" title="Use code to connect label with view"></a>Use code to connect label with view</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> label: <span class="type">UILabel!</span> <span class="comment">// have to add "!", because it is nil before the compiling.</span></span><br><span class="line"><span class="keyword">self</span>.label = label</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>A very good website explains why the IBOutlet must be nil.</p>
+<p><a href="https://cocoacasts.com/should-outlets-be-optionals-or-implicitly-unwrapped-optionals" target="_blank" rel="noopener">Website 1</a>, <a href="https://stackoverflow.com/questions/38565859/in-swift-why-is-uilabel-optional" target="_blank" rel="noopener">Website 2</a></p>
+</blockquote>
+<h2 id="Combine-the-click-action-with-the-incrementCount-function"><a href="#Combine-the-click-action-with-the-incrementCount-function" class="headerlink" title="Combine the click action with the incrementCount function"></a>Combine the click action with the incrementCount function</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// We use this function</span></span><br><span class="line">button.addTarget(<span class="keyword">self</span>, action: #selector(<span class="type">ViewController</span>.incrementCount), <span class="keyword">for</span>: <span class="type">UIControl</span>.<span class="type">Event</span>.touchUpInside)</span><br><span class="line"></span><br><span class="line"><span class="comment">// have to add @obj</span></span><br><span class="line"><span class="meta">@objc</span> <span class="function"><span class="keyword">func</span> <span class="title">incrementCount</span><span class="params">()</span></span> &#123;</span><br><span class="line">  <span class="keyword">self</span>.<span class="built_in">count</span> += <span class="number">1</span></span><br><span class="line">  <span class="keyword">self</span>.label.text = <span class="string">"\(self.count)"</span></span><br><span class="line">  <span class="keyword">self</span>.label2.text = <span class="keyword">self</span>.label.text</span><br><span class="line">  changeBackgroundColr() <span class="comment">// change the background color randomly</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Generate-random-color"><a href="#Generate-random-color" class="headerlink" title="Generate random color"></a>Generate random color</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">changeBackgroundColr</span><span class="params">()</span></span> &#123;</span><br><span class="line">  <span class="keyword">let</span> <span class="type">R</span> = <span class="type">CGFloat</span>(arc4random()%<span class="number">256</span>)/<span class="number">255.0</span></span><br><span class="line">  <span class="keyword">let</span> <span class="type">G</span> = <span class="type">CGFloat</span>(arc4random()%<span class="number">256</span>)/<span class="number">255.0</span></span><br><span class="line">  <span class="keyword">let</span> <span class="type">B</span> = <span class="type">CGFloat</span>(arc4random()%<span class="number">256</span>)/<span class="number">255.0</span></span><br><span class="line">  <span class="keyword">self</span>.view.backgroundColor = <span class="type">UIColor</span>(red: <span class="type">R</span>, green: <span class="type">G</span>, blue: <span class="type">B</span>, alpha: <span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Delegate.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Delegate.html" itemprop="url">Delegate</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-12-20T17:37:39+08:00">
+                2021-12-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Delegate.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Delegate.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  991 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Defination"><a href="#Defination" class="headerlink" title="Defination"></a>Defination</h2><p>The delegate is an object(Control Object) that executes a group of methods on behalf of another object.</p>
+<blockquote>
+<p>Control object is designed to pass user input to a data model.</p>
+</blockquote>
+<p>We want view classes to be used as is, and then we want control and model classes to have the freedom to customize those views. The delegate pattern allows for this.</p>
+<p>The key to the delegate pattern, is that the view establishes the questions that it needs answered and encodes them in a protocol.</p>
+<blockquote>
+<p>A protocol is a list of methods that a delegate must implement.</p>
+<p>Any object that fulfills the protocol can become a delegate.</p>
+</blockquote>
+<h2 id="UITextFieldDelegate-protocol"><a href="#UITextFieldDelegate-protocol" class="headerlink" title="UITextFieldDelegate protocol"></a><code>UITextFieldDelegate</code> protocol</h2><p>Let’s take a closer look at the protocol we’ll implement next, the <code>UITextFieldDelegate</code> protocol. We’ve listed its methods below. For each of the seven methods, consult the documentation and provide an example implementation. Post one or two of your examples to the discussion forum.</p>
+<p><em>Editing lifecycle methods:</em><br><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619601-textfieldshouldbeginediting" target="_blank" rel="noopener"><code>textFieldShouldBeginEditing(_:)</code></a><br><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619590-textfielddidbeginediting" target="_blank" rel="noopener"><code>textFieldDidBeginEditing(_:)</code></a><br><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619592-textfieldshouldendediting" target="_blank" rel="noopener"><code>textFieldShouldEndEditing(_:)</code></a><br><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619591-textfielddidendediting" target="_blank" rel="noopener"><code>textFieldDidEndEditing(_:)</code></a></p>
+<blockquote>
+<p><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619601-textfieldshouldbeginediting" target="_blank" rel="noopener"><code>textFieldShouldBeginEditing(_:)</code></a></p>
+<p>You could use this method to prevent the user from editing the text field’s contents more than once.</p>
+</blockquote>
+<blockquote>
+<p><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619590-textfielddidbeginediting" target="_blank" rel="noopener"><code>textFieldDidBeginEditing(_:)</code></a></p>
+<p>You might use this method to show overlay views that are visible only while editing.</p>
+</blockquote>
+<blockquote>
+<p><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619592-textfieldshouldendediting" target="_blank" rel="noopener"><code>textFieldShouldEndEditing(_:)</code></a></p>
+<p>The text field calls this method when it is asked to resign the first responder status. This can happen when the user selects another control or when you call the text field’s <a href="https://developer.apple.com/documentation/uikit/uiresponder/1621097-resignfirstresponder" target="_blank" rel="noopener"><code>resignFirstResponder()</code></a> method. Before the focus change occurs, however, the text field calls this method and gives you a chance to prevent the change from happening. </p>
+<p>Normally, you would return <code>true</code> from this method to allow the text field to resign the first responder status. You might return <code>false</code>, however, in cases where your delegate detects invalid contents in the text field. Returning <code>false</code> prevents the user from switching to another control until the text field contains a valid value. </p>
+<p>If you use this method to validate the contents of the text field, you might also want to use an overlay view to provide feedback to that effect. For example, you might display a small icon indicating the text is invalid.</p>
+</blockquote>
+<blockquote>
+<p><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619591-textfielddidendediting" target="_blank" rel="noopener"><code>textFieldDidEndEditing(_:)</code></a></p>
+<p>This method is called after the text field resigns its first responder status. You can use this method to update your delegate’s state information. For example, you might use this method to hide overlay views that should be visible only while editing.</p>
+</blockquote>
+<p><em>The primary method for controlling text:</em><br><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619599-textfield" target="_blank" rel="noopener"><code>textField(_:shouldChangeCharactersIn:replacementString:)</code></a></p>
+<blockquote>
+<ul>
+<li><code>textField</code></li>
+</ul>
+<p>The text field containing the text.</p>
+<ul>
+<li><code>range</code></li>
+</ul>
+<p>The range of characters to be replaced.</p>
+<ul>
+<li><code>string</code></li>
+</ul>
+<p>The replacement string for the specified range. During typing, this parameter normally contains only the single new character that was typed, but it may contain more characters if the user is pasting text. When the user deletes one or more characters, the replacement string is empty.</p>
+<ul>
+<li>The text field calls this method whenever user actions cause its text to change. Use this method to validate text as it is typed by the user. For example, you could use this method to prevent the user from entering anything but numerical values.</li>
+</ul>
+</blockquote>
+<p><em>The clear button (the ‘x’ on the right side of some text fields):</em><br><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619594-textfieldshouldclear" target="_blank" rel="noopener"><code>textFieldShouldClear(_:)</code></a></p>
+<blockquote>
+<p>The text field calls this method in response to the user pressing the built-in clear button. (This button is not shown by default but can be enabled by changing the value in the <a href="https://developer.apple.com/documentation/uikit/uitextfield/1619622-clearbuttonmode" target="_blank" rel="noopener"><code>clearButtonMode</code></a> property of the text field.) This method is also called when editing begins and the <a href="https://developer.apple.com/documentation/uikit/uitextfield/1619639-clearsonbeginediting" target="_blank" rel="noopener"><code>clearsOnBeginEditing</code></a> property of the text field is set to <code>true</code>.</p>
+<p>If you do not implement this method, the text field clears the text as if the method had returned <code>true</code>.</p>
+</blockquote>
+<p><em>The return key in the keyboard:</em><br><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619603-textfieldshouldreturn" target="_blank" rel="noopener"><code>textFieldShouldReturn(_:)</code></a></p>
+<blockquote>
+<p>The default implementation returns <code>true</code>, resigning first responder status. You can override this method in your custom responders to update your object’s state or perform other actions, such as removing the highlight from a selection. You can also return <code>false</code>, refusing to relinquish first responder status. If you override this method, you must call <code>super</code> (the superclass implementation) at some point in your code.</p>
+</blockquote>
+<h2 id="Control-Flow-Walk-trough"><a href="#Control-Flow-Walk-trough" class="headerlink" title="Control Flow Walk-trough"></a>Control Flow Walk-trough</h2><ol>
+<li><p>User taps keyboard</p>
+</li>
+<li><p>Textfield realizes text will change</p>
+</li>
+<li><p>Textfield invokes …</p>
+<blockquote>
+<p><a href="https://developer.apple.com/reference/uikit/uitextfielddelegate/1619599-textfield" target="_blank" rel="noopener"><code>textField(_:shouldChangeCharactersIn:replacementString:)</code></a></p>
+</blockquote>
+</li>
+<li><p>VC receives invocation</p>
+</li>
+<li><p>VC assembles the new text</p>
+</li>
+<li><p>VC updates the label</p>
+</li>
+<li><p>VC returns “true” to allow change</p>
+</li>
+</ol>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// MARK: Text Field Delegate Methods</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Step 4</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">textField</span><span class="params">(<span class="number">_</span> textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">		</span><br><span class="line">  	<span class="comment">// Step 5 </span></span><br><span class="line">    <span class="comment">// Figure out what the new text will be, if we return true</span></span><br><span class="line">    <span class="keyword">var</span> newText = textField.text! <span class="keyword">as</span> <span class="type">NSString</span></span><br><span class="line">    newText = newText.replacingCharacters(<span class="keyword">in</span>: range, with: string) <span class="keyword">as</span> <span class="type">NSString</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// hide the label if the newText will be an empty string</span></span><br><span class="line">    <span class="keyword">self</span>.characterCountLabel.isHidden = (newText.length == <span class="number">0</span>)</span><br><span class="line">		</span><br><span class="line">  	<span class="comment">// Step 6</span></span><br><span class="line">    <span class="comment">// Write the length of newText into the label</span></span><br><span class="line">    <span class="keyword">self</span>.characterCountLabel.text = <span class="type">String</span>(newText.length)</span><br><span class="line"></span><br><span class="line">  	<span class="comment">// Step 7</span></span><br><span class="line">    <span class="comment">// returning true gives the text field permission to change its text</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>We can’t see the first three steps.</p>
+</blockquote>
+<h2 id="Emoji-Textfield"><a href="#Emoji-Textfield" class="headerlink" title="Emoji Textfield"></a>Emoji Textfield</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">textField</span><span class="params">(<span class="number">_</span> textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">var</span> replacedAnEmoji = <span class="literal">false</span></span><br><span class="line">        <span class="keyword">var</span> emojiStringRange: <span class="type">NSRange</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Construct the text that will be in the field if this change is accepted</span></span><br><span class="line">        <span class="keyword">var</span> newText = textField.text! <span class="keyword">as</span> <span class="type">NSString</span></span><br><span class="line">        newText = newText.replacingCharacters(<span class="keyword">in</span>: range, with: string) <span class="keyword">as</span> <span class="type">NSString</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// For each dictionary entry in translations, pull out a string to </span></span><br><span class="line">        <span class="comment">// search for an emoji to replace it with</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (emojiString, emoji) <span class="keyword">in</span> translations &#123;</span><br><span class="line">          </span><br><span class="line">            <span class="comment">// Search for all occurances of key (ie. "dog"), </span></span><br><span class="line">            <span class="comment">// and replace with emoji (ie. 🐶)</span></span><br><span class="line">            <span class="comment">// repeat-while loop</span></span><br><span class="line">            <span class="keyword">repeat</span> &#123;</span><br><span class="line">                emojiStringRange = newText.range(of: emojiString, options: .caseInsensitive)</span><br><span class="line">            </span><br><span class="line">                <span class="comment">// found one</span></span><br><span class="line">                <span class="keyword">if</span> emojiStringRange.location != <span class="type">NSNotFound</span> &#123;</span><br><span class="line">                    newText = newText.replacingCharacters(<span class="keyword">in</span>: emojiStringRange, with: emoji) <span class="keyword">as</span> <span class="type">NSString</span></span><br><span class="line">                    replacedAnEmoji = <span class="literal">true</span></span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">            &#125; <span class="keyword">while</span> emojiStringRange.location != <span class="type">NSNotFound</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// If we have replaced an emoji, then we directly edit the text field</span></span><br><span class="line">        <span class="comment">// Otherwise we allow the proposed edit.</span></span><br><span class="line">        <span class="keyword">if</span> replacedAnEmoji &#123;</span><br><span class="line">            textField.text = newText <span class="keyword">as</span> <span class="type">String</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Xcode快捷键.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Xcode快捷键.html" itemprop="url">Xcode快捷键</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-12-13T16:44:35+08:00">
+                2021-12-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Xcode快捷键.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Xcode快捷键.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  159 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Xcode-Shortcuts"><a href="#Xcode-Shortcuts" class="headerlink" title="Xcode Shortcuts"></a>Xcode Shortcuts</h1><p>Xcode has numerous keyboard shortcuts that are worth learning. Knowing them can help speed up your iOS development, and it saves you from having to reach over to the mouse or trackpad.</p>
+<p>On the Navigator Panel on the left side, the following keyboard shortcuts cycle through the different navigators.</p>
+<ul>
+<li>⌘ + 0 = Show or Hide the Navigator Panel</li>
+<li>⌘ + 1 = Project</li>
+<li>⌘ + 2 = Source Control</li>
+<li>⌘ + 3 = Symbol</li>
+<li>⌘ + 4 = Find</li>
+<li>⌘ + 5 = Issue</li>
+<li>⌘ + 6 = Test</li>
+<li>⌘ + 7 = Debug</li>
+<li>⌘ + 8 = Breakpoint</li>
+<li>⌘ + 9 = Report</li>
+</ul>
+<p>The Utility Area on the right side of Xcode can also be toggled with the following keyboard shortcuts:</p>
+<ul>
+<li>⌥ + ⌘ + 0 = Show or Hide the Utility Area</li>
+<li>⌥ + ⌘ + 1 = File Inspector</li>
+<li>⌥ + ⌘ + 2 = Quick Help Inspector</li>
+<li>⌥ + ⌘ + 3 = Identity Inspector</li>
+<li>⌥ + ⌘ + 4 = Attributes Inspector</li>
+<li>⌥ + ⌘ + 5 = Size Inspector</li>
+<li>⌥ + ⌘ + 6 = Connections Inspector</li>
+</ul>
+<p>If you right click (control click) on the Storyboard in the editor, then you can select a zoom level. You can also use 2 finger pinch in your Mac’s trackpad to zoom in and out of the Storyboard.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Swift进阶.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Swift进阶.html" itemprop="url">Swift进阶</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-12-11T20:09:37+08:00">
+                2021-12-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Swift进阶.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Swift进阶.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4.4k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  27 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Optionals"><a href="#Optionals" class="headerlink" title="Optionals"></a>Optionals</h1><h2 id="Nil-value"><a href="#Nil-value" class="headerlink" title="Nil value"></a>Nil value</h2><p>The Nil value is the same as null in some other languages.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> z: <span class="type">Int?</span></span><br><span class="line"><span class="keyword">var</span> s: <span class="type">String</span></span><br><span class="line">s = <span class="string">"123"</span></span><br><span class="line">z = <span class="type">Int</span>(s)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> zee: <span class="type">Int?</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> string: <span class="type">String</span></span><br><span class="line"><span class="keyword">let</span> randomNumber = <span class="type">Int</span>(arc4random() % <span class="number">2</span>)</span><br><span class="line"><span class="keyword">if</span> randomNumber == <span class="number">1</span> &#123;</span><br><span class="line">    string = <span class="string">"123"</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123; <span class="comment">// always 0</span></span><br><span class="line">    string = <span class="string">"ABC"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">zee = <span class="type">Int</span>(string)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> intValue = zee &#123;</span><br><span class="line">  intValue * <span class="number">2</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="string">"No value"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Another-Example-With-Nested-Structures"><a href="#Another-Example-With-Nested-Structures" class="headerlink" title="Another Example With Nested Structures"></a>Another Example With Nested Structures</h2><p>Safely unwrapping optionals is a fundamental Swift skill and one can’t have too much practice. Let’s walk through another example using the following enum and structures.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Genre</span>: <span class="title">String</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> country, blues, folk</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Artist</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> name: <span class="type">String</span></span><br><span class="line">    <span class="keyword">var</span> primaryGenre: <span class="type">Genre?</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Song</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> title: <span class="type">String</span></span><br><span class="line">    <span class="keyword">let</span> released: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">let</span> artist: <span class="type">Artist?</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>The <code>Song</code> struct contains a property <code>artist</code> of optional type <code>Artist?</code>. Then, the <code>Artist</code> struct as a <code>primaryGenre</code> property of optional type <code>Genre?</code>. <code>Genre</code> is a simple enumeration with only three cases for simplicity.</p>
+<p>Now imagine we have the following instances of the <code>Artist</code> and <code>Song</code> structs. Here, <code>johnny</code> is assigned to the <code>Artist</code> property of <code>walkTheLine</code>.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> johnny = <span class="type">Artist</span>(name: <span class="string">"Johnny Cash"</span>, primaryGenre: <span class="type">Genre</span>.country)</span><br><span class="line"><span class="keyword">var</span> walkTheLine = <span class="type">Song</span>(title: <span class="string">"I Walk the Line"</span>, released: <span class="number">1956</span>, artist: johnny)</span><br></pre></td></tr></table></figure>
+
+<p>If we only had access to the the <code>Song</code> instance <code>walkTheLine</code> and we wanted to determine the <code>primaryGenre</code> of the song’s artist, we’d need some <code>if let</code>s.</p>
+<p>First, we’d need to get the artist.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> artist = walkTheLine.artist &#123;</span><br><span class="line">  <span class="built_in">print</span>(artist.name)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Artist unknown"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>And within the first <code>if let</code>, we’d use another to get the <code>primaryGenre</code>.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> artist = walkTheLine.artist &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> genre = artist.primaryGenre &#123;</span><br><span class="line">      <span class="comment">// If there is no value for enum, it wll be "country"</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Primary genre: \(genre.rawValue)"</span>) </span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"Primary genre unknown"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Artist unknown"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>If the <code>genre</code> property of <code>artist</code> is not <code>nil</code>, we know it has a value and can safely print out the genre.</p>
+<h2 id="Example-Animals-With-and-Without-Tails"><a href="#Example-Animals-With-and-Without-Tails" class="headerlink" title="Example: Animals With and Without Tails"></a>Example: Animals With and Without Tails</h2><p>Here’s another example: let’s say we have a struct called Animal. The Animal struct has a tail property and the tail property is an optional — not all animals have tails.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Tail</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> length: <span class="type">String</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">init</span>(length: <span class="type">Int</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.length = <span class="string">"\(length)"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name:<span class="type">String</span></span><br><span class="line">    <span class="keyword">var</span> species: <span class="type">String</span> = <span class="string">"homo sapiens"</span></span><br><span class="line">    <span class="keyword">var</span> tail: <span class="type">Tail?</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">init</span>(name: <span class="type">String</span>, species: <span class="type">String</span>, tailLength:<span class="type">Int?</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.name = name</span><br><span class="line">        <span class="keyword">self</span>.species = species</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">let</span> tailLength = tailLength &#123;</span><br><span class="line">            <span class="keyword">self</span>.tail = <span class="type">Tail</span>(length: tailLength)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">self</span>.tail = <span class="literal">nil</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> animal = <span class="type">Animal</span>(name: <span class="string">"Lenny"</span>, species: <span class="string">"lemur"</span>, tailLength: <span class="number">12</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> tailLength = animal.tail?.length&#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"\(animal.name)'s tail is \(tailLength) cm long"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"\(animal.name) doesn't have a tail."</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// "Lenny's tail is 12 cm long\n"</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> animal = <span class="type">Animal</span>(name: <span class="string">"Gilbert"</span>, species: <span class="string">"Gorilla"</span>, tailLength: <span class="literal">nil</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> tailLength = animal.tail?.length&#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"\(animal.name)'s tail is \(tailLength) cm long"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"\(animal.name) doesn't have a tail."</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// "Gilbert doesn't have a tail.\n"</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Nil-Coalescing-Operator"><a href="#Nil-Coalescing-Operator" class="headerlink" title="Nil Coalescing Operator"></a>Nil Coalescing Operator</h2><p>We already used optional chaining to avoid nesting <code>if let</code>s, but what if all we want to do is provide <code>tailLength</code> with a default value if the optional chaining fails? Swift provides a useful operator, for situations like these, the <strong>nil coalescing operator</strong>, <code>??</code>.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">optional</span> expression&gt; ?? &lt;<span class="keyword">default</span> <span class="keyword">case</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>To use the operator, simply place <code>??</code> after the optional chaining expression, and then put a default value after the <code>??</code>.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> tailLength = animal.tail?.length ?? <span class="string">"0"</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"tail length: \(tailLength)"</span>)</span><br><span class="line"><span class="comment">// tail length: 0</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Your-Turn"><a href="#Your-Turn" class="headerlink" title="Your Turn"></a>Your Turn</h2><p>Assume the following structs and enum are defined.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Genre</span>: <span class="title">String</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> country, blues, folk</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Artist</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> name: <span class="type">String</span></span><br><span class="line">    <span class="keyword">var</span> primaryGenre: <span class="type">Genre?</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Song</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> title: <span class="type">String</span></span><br><span class="line">    <span class="keyword">let</span> released: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">var</span> artist: <span class="type">Artist?</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Using the enums and structures, implement the <code>getArtistGenre()</code> function. Given a <code>Song</code> as input, return the raw value of the artist’s primary genre. If either the <code>artist</code> is <code>nil</code> or the <code>primaryGenre</code> is <code>nil</code>, then return an empty string. You must use optional chaining and the nil coalescing operator (<code>??</code>).</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Genre</span>: <span class="title">String</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> country, blues, folk</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Artist</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> name: <span class="type">String</span></span><br><span class="line">    <span class="keyword">var</span> primaryGenre: <span class="type">Genre?</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Song</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> title: <span class="type">String</span></span><br><span class="line">    <span class="keyword">let</span> released: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">var</span> artist: <span class="type">Artist?</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">getArtistGenre</span><span class="params">(song: Song)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> songGenre = song.artist?.primaryGenre &#123;</span><br><span class="line">        <span class="keyword">return</span> songGenre.rawValue</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> songGenre = song.artist?.primaryGenre?.rawValue ?? <span class="string">""</span></span><br><span class="line">        <span class="keyword">return</span> songGenre</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> artisTest = <span class="type">Artist</span>(name: <span class="string">"name"</span>, primaryGenre: <span class="literal">nil</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> test = <span class="type">Song</span>(title: <span class="string">"title"</span>, released: <span class="number">2021</span>, artist: artisTest)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(getArtistGenre(song: test))</span><br></pre></td></tr></table></figure>
+
+<h2 id="Example-Revisiting-the-Int-Initializer-Method"><a href="#Example-Revisiting-the-Int-Initializer-Method" class="headerlink" title="Example: Revisiting the Int() Initializer Method"></a>Example: Revisiting the <code>Int()</code> Initializer Method</h2><p>Let’s say we’re using the <code>Int()</code> initializer method and invoking it on a variable that we are confident can be converted to an Int.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> w = <span class="type">Int</span>(<span class="string">"123"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>We know this method is going to return the Int, 123, so in this case, unwrapping with the exclamation point is appropriate. We know there is little risk of a fatal error being thrown. We can place the exclamation point after w, like this:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">w! * <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>Or we could unwrap the return value directly, like this:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> w = <span class="type">Int</span>(<span class="string">"123"</span>)!</span><br><span class="line">w * <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>In this second case the value assigned to w will be a plain old Int.</p>
+<h2 id="Implicitly-Unwrapped-Optionals-Revisiting-the-Villain-struct"><a href="#Implicitly-Unwrapped-Optionals-Revisiting-the-Villain-struct" class="headerlink" title="Implicitly Unwrapped Optionals: Revisiting the Villain struct"></a>Implicitly Unwrapped Optionals: Revisiting the Villain struct</h2><p>What about declaring implicitly unwrapped optionals? When is an appropriate time to be so bold? Well, remember the <code>evilScheme</code> property of the <code>Villain</code> struct? We wanted the ability to create instances of <code>Villain</code> with the option of not providing an <code>evilScheme</code> at first. However, once we know that the <code>evilScheme</code> has been set, we can access the property as if it were a regular non-optional type.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Villain</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> name: <span class="type">String</span></span><br><span class="line">    <span class="comment">// exclamation point means implicitly unwrapped</span></span><br><span class="line">    <span class="keyword">var</span> evilScheme: <span class="type">String!</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">performScheme</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="comment">// no unwrapping necessary</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"And now, I will \(evilScheme!)"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> villain = <span class="type">Villain</span>(name: <span class="string">"Billy"</span>, evilScheme: <span class="literal">nil</span>)</span><br><span class="line">villain.evilScheme = <span class="string">"steal from the cookie jar"</span></span><br><span class="line"><span class="comment">// we know for sure the scheme has been set</span></span><br><span class="line">villain.performScheme()</span><br></pre></td></tr></table></figure>
+
+<p>There are a few things to note in the example above.</p>
+<ul>
+<li>The <code>evilScheme</code> property is now declared as an <strong>implicitly unwrapped optional</strong>. It’s type is written as <code>String!</code> instead of <code>String?</code>.</li>
+<li>In the <code>performScheme()</code> method, we reference <code>evilScheme</code> as any other property, without unwrapping.</li>
+<li>We call <code>performScheme()</code> once we know for a fact that <code>evilScheme</code> was set. The function assumes that <code>evilScheme</code> is not <code>nil</code>. If we treat an implicitly unwrapped optional that contains nil as if it contained a value, bad things can happen - including crashes!</li>
+</ul>
+<h2 id="Difference-between-upwrapping-an-with-with-and-with-implicit-unwrapping"><a href="#Difference-between-upwrapping-an-with-with-and-with-implicit-unwrapping" class="headerlink" title="Difference between upwrapping an with ?, with ! and with implicit unwrapping?"></a>Difference between upwrapping an with <code>?</code>, with <code>!</code> and with implicit unwrapping?</h2><p>Unwrapping with <code>?</code> is useful if you’re accessing nested properties or want some default behavior to occur if a value is nil.</p>
+<p>Using <code>!</code> does not require providing a default value and is useful if you know that a value won’t be <code>nil</code>. However, if it is <code>nil</code>, the program will crash.</p>
+<p>Implicitly unwrapping optionals is also useful when you know a value won’t be <code>nil</code>, but you can use the same syntax as a normal property. However, unintended behavior and crashes can occur if it is <code>nil</code>.</p>
+<h1 id="Strings"><a href="#Strings" class="headerlink" title="Strings"></a>Strings</h1><h2 id="A-String-is-a-Struct"><a href="#A-String-is-a-Struct" class="headerlink" title="A String is a Struct"></a>A String is a Struct</h2><p>You just saw how a string can be initialized without a string literal.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> stringWithPotential = <span class="type">String</span>()</span><br></pre></td></tr></table></figure>
+
+<h2 id="Counting-Characters"><a href="#Counting-Characters" class="headerlink" title="Counting Characters"></a>Counting Characters</h2><p>Let’s start with something straightforward. If you want to know how many characters are in a string, you use the count property.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"Meet me in St. Louis!"</span></span><br><span class="line"><span class="string">"The string is \(str.count) characters long"</span></span><br></pre></td></tr></table></figure>
+
+<p>Many real apps rely on counting characters - for example, a Twitter client that ensures a user is restricted to typing 140 or fewer characters.</p>
+<h2 id="Accessing-specific-characters"><a href="#Accessing-specific-characters" class="headerlink" title="Accessing specific characters"></a>Accessing specific characters</h2><p>We can also conveniently access the characters at the beginning and end of a string.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> firstLetter = str.first</span><br><span class="line"><span class="keyword">let</span> isExcited = str.last == <span class="string">"!"</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Checking-for-Substrings"><a href="#Checking-for-Substrings" class="headerlink" title="Checking for Substrings"></a>Checking for Substrings</h2><p>A <strong>substring</strong> is the term programmers use for any string that occurs within another string. We can check for the presence of a substring in different cases as shown below.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str.<span class="built_in">contains</span>(<span class="string">"Lou"</span>)</span><br><span class="line">str.hasPrefix(<span class="string">"Me"</span>)</span><br><span class="line">str.hasSuffix(<span class="string">"in"</span>)</span><br></pre></td></tr></table></figure>
+
+<p><code>contains()</code> simply checks if the substring occurs anywhere in <code>str</code>. <code>hasPrefix()</code> and <code>hasSuffix()</code> are more specialized and check if the substring occurs at the beginning and end of the string respectively.</p>
+<h2 id="Creating-Variations-of-Strings"><a href="#Creating-Variations-of-Strings" class="headerlink" title="Creating Variations of Strings"></a>Creating Variations of Strings</h2><p>We can also use some string methods to generate different strings.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str.lowercased()</span><br><span class="line">str.uppercased()</span><br><span class="line"><span class="type">String</span>(str.reversed())</span><br></pre></td></tr></table></figure>
+
+<p>Converting strings to all-lowercase or all-uppercase is great when you want user input to be case-insensitive. And reversing a string is useful if you want to see if two strings are <a href="https://en.wikipedia.org/wiki/Palindrome" target="_blank" rel="noopener">palindromes</a>.</p>
+<p>Note in the last example, we need to use <code>str.reversed()</code> with a <code>String</code> initializer. If you look closely at the <a href="https://developer.apple.com/documentation/swift/string/2893808-reversed" target="_blank" rel="noopener">documentation for reversed()</a>, you’ll see that it actually returns a <code>ReversedCollection</code> instead of a <code>String</code>. You won’t need to use this type directly, but just know that Swift uses it “under the hood” for efficiency. You can simply use the <code>String()</code> initializer to convert the result into a usable string.</p>
+<h2 id="Appending-Two-Strings"><a href="#Appending-Two-Strings" class="headerlink" title="Appending Two Strings"></a>Appending Two Strings</h2><p>Similar to concatenation, <code>String</code> also has an <code>append()</code> method that takes a string as an argument and attaches it to the string you’re mutating.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> hello = <span class="string">"hello "</span></span><br><span class="line"><span class="keyword">let</span> world = <span class="string">"world!"</span></span><br><span class="line">hello.append(world)</span><br></pre></td></tr></table></figure>
+
+<p>Is the equivalent of</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hello = hello + world</span><br></pre></td></tr></table></figure>
+
+<p>or</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hello += world</span><br></pre></td></tr></table></figure>
+
+<p>With <code>append()</code> you don’t need to reassign <code>hello</code> a new value, and you’ll find the code is much more readable.</p>
+<h2 id="Trimming-characters"><a href="#Trimming-characters" class="headerlink" title="Trimming characters"></a>Trimming characters</h2><p>In addition to <code>append()</code>, we can also remove characters from the end of a string. For example, you may want to remove all whitespace characters from the end of a user’s input.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> message = <span class="string">"   Be back later!        "</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> message.last == <span class="string">" "</span> &#123;</span><br><span class="line">    message.removeLast()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>And the same can be done at the beginning.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> message.first == <span class="string">" "</span> &#123;</span><br><span class="line">    message.removeFirst()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Replacing-Substrings"><a href="#Replacing-Substrings" class="headerlink" title="Replacing Substrings"></a>Replacing Substrings</h2><p>We can also modify the middle of strings. A common manipulation method is <code>replacingOccurrences(of: String, with: String)</code>, which allows us to swap out one substring with another.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> verbose = <span class="string">"We hope you are very excited to learn Swift. It's a very fun and very useful skill. Soon enough, you'll be writing your very own app!"</span></span><br><span class="line"><span class="keyword">let</span> better = verbose.replacingOccurrences(of: <span class="string">"very "</span>, with: <span class="string">""</span>)</span><br></pre></td></tr></table></figure>
+
+<p>This method might come in handy for implementing a Find and Replace feature, a profanity filter, and many other cases, and is great to have in your string manipulation bag of tricks.</p>
+<p><strong>Note:</strong> To use the <code>replaceOccurrences()</code> method, you will need to add <code>import Foundation</code> to the top of your file. <code>Foundation</code> is a <strong>framework</strong>, which is just a name for a collection of commonly used code. Apple provides frameworks like Foundation so that developers, like you, don’t need to reinvent the wheel for common tasks like string manipulation. We’ve already imported Foundation in the playground, so you can just follow along with the examples.</p>
+<h1 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h1><h2 id="Initialize"><a href="#Initialize" class="headerlink" title="Initialize"></a>Initialize</h2> <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//: ## Initializing Arrays</span></span><br><span class="line"><span class="comment">//: The verbose way</span></span><br><span class="line"><span class="keyword">var</span> numbers = <span class="type">Array</span>&lt;<span class="type">Double</span>&gt;()</span><br><span class="line"><span class="comment">//: More often you will see ...</span></span><br><span class="line"><span class="keyword">var</span> moreNumbers = [<span class="type">Double</span>]()</span><br><span class="line">moreNumbers = [<span class="number">85.0</span>, <span class="number">90.0</span>, <span class="number">95.0</span>]</span><br><span class="line"><span class="comment">//: Array literal syntax</span></span><br><span class="line"><span class="keyword">let</span> differentNumbers = [<span class="number">97.5</span>, <span class="number">98.5</span>, <span class="number">99.0</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">//: Array concatenation is super convenient in Swift</span></span><br><span class="line">moreNumbers += differentNumbers</span><br><span class="line"></span><br><span class="line"><span class="comment">//: ## Swift Arrays have types</span></span><br><span class="line"><span class="comment">//: An array can hold any type of object</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">LightSwitch</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> on: <span class="type">Bool</span> = <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> circuit = [<span class="type">LightSwitch</span>]()</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> livingRoomSwitch = <span class="type">LightSwitch</span>()</span><br><span class="line"><span class="keyword">var</span> kitchenSwitch = <span class="type">LightSwitch</span>()</span><br><span class="line"><span class="keyword">var</span> bathroomSwitch = <span class="type">LightSwitch</span>()</span><br><span class="line"></span><br><span class="line">circuit = [livingRoomSwitch, kitchenSwitch, bathroomSwitch]</span><br></pre></td></tr></table></figure>
+
+<p><strong>Append</strong></p>
+<p>Here is an array of type <code>String</code>, listing musicians we want to play in the car on our upcoming road trip. To add an item to the end of an array we can use the append method, like this:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> musicians = [<span class="string">"Neil Young"</span>, <span class="string">"Kendrick Lamar"</span>, <span class="string">"Flo Rida"</span>, <span class="string">"Fetty Wap"</span>]</span><br><span class="line">musicians.append(<span class="string">"Rae Sremmurd"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>The array now looks like this:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">"Neil Young"</span>, <span class="string">"Kendrick Lamar"</span>, <span class="string">"Flo Rida"</span>, <span class="string">"Fetty Wap"</span>, <span class="string">"Rae Sremmurd"</span>]</span><br></pre></td></tr></table></figure>
+
+<p><strong>Insert</strong></p>
+<p>To add an item to a specific place in an array we can use the method, <em>insert(at:)</em>. So, to add in “Dej Loaf” at index 2 we would write the following:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">musicians.insert(<span class="string">"Dej Loaf"</span>, at: <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<p>The array now looks like this:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">"Neil Young"</span>, <span class="string">"Kendrick Lamar"</span>, <span class="string">"Dej Loaf"</span>, <span class="string">"Flo Rida"</span>, <span class="string">"Fetty Wap"</span>, <span class="string">"Rae Sremmurd"</span>]</span><br></pre></td></tr></table></figure>
+
+<p><strong>Remove</strong></p>
+<p>We can use a method called <code>remove(at:)</code> to remove an item at a particular index. If we remove the item at index 3, you can see that “Flo Rida” is removed:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">musicians.remove(at: <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>Subscripting</strong></p>
+<p>Finally, if you want to retrieve an item at a particular index, you can use subscript syntax. Simply put the index in-between brackets after the array name, like so:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> musician = musician[<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+
+<h1 id="Dictionary"><a href="#Dictionary" class="headerlink" title="Dictionary"></a>Dictionary</h1><h2 id="Initialize-1"><a href="#Initialize-1" class="headerlink" title="Initialize"></a>Initialize</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Initializer syntax</span></span><br><span class="line"><span class="keyword">var</span> groupDict = [<span class="type">String</span>:<span class="type">String</span>]()</span><br><span class="line"></span><br><span class="line"><span class="comment">// Dictionary literal</span></span><br><span class="line"><span class="keyword">var</span> animalGroupDict = [<span class="string">"whales"</span>:<span class="string">"pod"</span>, <span class="string">"geese"</span>:<span class="string">"flock"</span>, <span class="string">"lions"</span>: <span class="string">"pride"</span>]</span><br></pre></td></tr></table></figure>
+
+  <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//: ## Dictionary operations</span></span><br><span class="line"><span class="comment">//: insert, count, remove, update, retrieve</span></span><br><span class="line"><span class="keyword">var</span> animalGroupsDict = [<span class="string">"whales"</span>:<span class="string">"pod"</span>, <span class="string">"geese"</span>:<span class="string">"flock"</span>, <span class="string">"lions"</span>: <span class="string">"pride"</span>]</span><br><span class="line"><span class="comment">//: Adding items to a dictionary</span></span><br><span class="line">animalGroupsDict[<span class="string">"crows"</span>] = <span class="string">"murder"</span></span><br><span class="line">animalGroupsDict[<span class="string">"monkeys"</span>] = <span class="string">"troop"</span></span><br><span class="line"><span class="comment">//: The count method is available to all collections.</span></span><br><span class="line">animalGroupsDict.<span class="built_in">count</span> <span class="comment">// 5</span></span><br><span class="line"><span class="built_in">print</span>(animalGroupsDict)</span><br><span class="line"><span class="comment">//: Removing items from a dictionary</span></span><br><span class="line">animalGroupsDict[<span class="string">"crows"</span>] = <span class="literal">nil</span></span><br><span class="line">animalGroupsDict</span><br><span class="line"><span class="comment">//: Updating a value</span></span><br><span class="line">animalGroupsDict[<span class="string">"monkeys"</span>] = <span class="string">"barrel"</span></span><br><span class="line"><span class="keyword">var</span> group = animalGroupsDict.updateValue(<span class="string">"gaggle"</span>, forKey: <span class="string">"geese"</span>)</span><br><span class="line">type(of: group)</span><br><span class="line"></span><br><span class="line">animalGroupsDict.updateValue(<span class="string">"crash"</span>, forKey: <span class="string">"rhinoceroses"</span>)</span><br><span class="line"><span class="built_in">print</span>(animalGroupsDict)</span><br><span class="line"><span class="comment">//: ## Example</span></span><br><span class="line"><span class="comment">//: Retrieving the value for a particular key</span></span><br><span class="line"><span class="keyword">let</span> groupOfWhales = animalGroupsDict[<span class="string">"whales"</span>]</span><br><span class="line"><span class="comment">//: Why would the code below return an optional?</span></span><br><span class="line"><span class="comment">//:</span></span><br><span class="line"><span class="comment">//:     animalGroupsDict["whales"]</span></span><br><span class="line"><span class="comment">//: We unwrap a value returned from a dictionary just like we would unwrap any other optional.</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> groupOfWhales = animalGroupsDict[<span class="string">"whales"</span>] &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"We saw a \(groupOfWhales) of whales from the boat."</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"No value found for that key."</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//: What happens if the key isn't found?</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> groupOfSasquatches = animalGroupsDict[<span class="string">"Sasquatches"</span>] &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"We saw a \(groupOfSasquatches) of Sasquatches on our hike."</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"No value found for that key."</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Here we use the <code>removeValueForKey()</code> method to remove the value for the string, “George Bush”. Since <code>removeValueForKey()</code> returns the value removed, we can reset the value of the new key, “George H. W. Bush” to be the previously returned value, “Miss Beazley.”</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oldValue = presidentialPetsDict.removeValueForKey(<span class="string">"George Bush"</span>)</span><br><span class="line">presidentialPetsDict[<span class="string">"George W. Bush"</span>] = oldValue</span><br></pre></td></tr></table></figure>
+
+<p>We unwrap the retrieved value using <code>if let</code> and then use string interpolation to insert “Bo” into the string. The string is printed out as a part of the if block.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> dog = presidentialDogs[<span class="string">"Barack Obama"</span>] &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Michele Obama walks \(dog) evey morning."</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"No value found."</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Sets"><a href="#Sets" class="headerlink" title="Sets"></a>Sets</h1><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//: ## Sets</span></span><br><span class="line"><span class="comment">//: Literal syntax</span></span><br><span class="line"><span class="keyword">var</span> cutlery: <span class="type">Set</span> = [<span class="string">"fork"</span>, <span class="string">"knife"</span>, <span class="string">"spoon"</span>]</span><br><span class="line"><span class="keyword">var</span> flowers:<span class="type">Set</span>&lt;<span class="type">Character</span>&gt; = [<span class="string">"🌷"</span>,<span class="string">"🌹"</span>,<span class="string">"🌸"</span>]</span><br><span class="line"><span class="comment">//: Initializer syntax</span></span><br><span class="line"><span class="keyword">var</span> utensils = <span class="type">Set</span>&lt;<span class="type">String</span>&gt;()</span><br><span class="line"><span class="keyword">var</span> trees = <span class="type">Set</span>&lt;<span class="type">Character</span>&gt;()</span><br><span class="line"><span class="comment">//: ## Set operations</span></span><br><span class="line"><span class="comment">//: Insert, Remove, Count</span></span><br><span class="line">trees.insert(<span class="string">"🌲"</span>)</span><br><span class="line">trees.insert(<span class="string">"🌳"</span>)</span><br><span class="line">trees.insert(<span class="string">"🌵"</span>)</span><br><span class="line"></span><br><span class="line">trees.remove(<span class="string">"🌵"</span>)</span><br><span class="line">trees.<span class="built_in">count</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h1><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Movie</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> title: <span class="type">String</span></span><br><span class="line">    <span class="keyword">let</span> director: <span class="type">String</span></span><br><span class="line">    <span class="keyword">let</span> releaseYear: <span class="type">Int</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>(title: <span class="type">String</span>, director: <span class="type">String</span>, releaseYear: <span class="type">Int</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.title = title</span><br><span class="line">        <span class="keyword">self</span>.director = director</span><br><span class="line">        <span class="keyword">self</span>.releaseYear = releaseYear</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MovieArchive</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> movies: [<span class="type">Movie</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">filterByYear</span><span class="params">(year: Int)</span></span> -&gt; [<span class="type">Movie</span>] &#123;</span><br><span class="line">        <span class="keyword">var</span> filteredArray = [<span class="type">Movie</span>]()</span><br><span class="line">        <span class="keyword">for</span> movie <span class="keyword">in</span> <span class="keyword">self</span>.movies &#123;</span><br><span class="line">            <span class="keyword">if</span> movie.releaseYear == year &#123;</span><br><span class="line">                filteredArray.append(movie)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> filteredArray</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>(movies: [<span class="type">Movie</span>]) &#123;</span><br><span class="line">        <span class="keyword">self</span>.movies = movies</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> movie1 = <span class="type">Movie</span>(title: <span class="string">"Bride of Frankenstein"</span>, director: <span class="string">"James Whale"</span>, releaseYear: <span class="number">1935</span>)</span><br><span class="line"><span class="keyword">let</span> movie2 = <span class="type">Movie</span>(title: <span class="string">"The Night Walker"</span>, director: <span class="string">"William Castle"</span>, releaseYear: <span class="number">1964</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> archive = <span class="type">MovieArchive</span>(movies: [movie1, movie2])</span><br><span class="line">archive.filterByYear(year: <span class="number">1935</span>)</span><br><span class="line">archive.movies</span><br></pre></td></tr></table></figure>
+
+<h2 id="The-difference-between-class-and-struct"><a href="#The-difference-between-class-and-struct" class="headerlink" title="The difference between class and struct"></a>The difference between class and struct</h2><p>One important difference between structs and classes in Swift is how they’re handled in the computer or phone’s memory. Structs are <strong>passed by value</strong> while classes are <strong>passed by reference</strong>. </p>
+<blockquote>
+<p>引用类型：将一个对象赋值给另一个对象时，系统不会对此对象进行拷贝，而会将指向这个对象的指针赋值给另一个对象，当修改其中一个对象的值时，另一个对象的值会随之改变。</p>
+<p>值类型：将一个对象赋值给另一个对象时，会对此对象进行拷贝，复制出一份副本给另一个对象，在修改其中一个对象的值时，不影响另外一个对象。</p>
+</blockquote>
+<blockquote>
+<p>Array is a type of Struct. Use array as an example.</p>
+</blockquote>
+<p>Each array has an independent value that includes the values of all of its elements. For simple types such as integers and other structures, this means that when you change a value in one array, the value of that element does not change in any copies of the array. For example:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"><span class="keyword">var</span> numbersCopy = numbers</span><br><span class="line">numbers[<span class="number">0</span>] = <span class="number">100</span></span><br><span class="line"><span class="built_in">print</span>(numbers)</span><br><span class="line"><span class="comment">// Prints "[100, 2, 3, 4, 5]"</span></span><br><span class="line"><span class="built_in">print</span>(numbersCopy)</span><br><span class="line"><span class="comment">// Prints "[1, 2, 3, 4, 5]"</span></span><br></pre></td></tr></table></figure>
+
+<p>If the elements in an array are instances of a class, the semantics are the same, though they might appear different at first. In this case, the values stored in the array are references to objects that live outside the array. If you change a reference to an object in one array, only that array has a reference to the new object. However, if two arrays contain references to the same object, you can observe changes to that object’s properties from both arrays. For example:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// An integer type with reference semantics</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IntegerReference</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> value = <span class="number">10</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> firstIntegers = [<span class="type">IntegerReference</span>(), <span class="type">IntegerReference</span>()]</span><br><span class="line"><span class="keyword">var</span> secondIntegers = firstIntegers</span><br><span class="line"></span><br><span class="line"><span class="comment">// Modifications to an instance are visible from either array</span></span><br><span class="line">firstIntegers[<span class="number">0</span>].value = <span class="number">100</span></span><br><span class="line"><span class="built_in">print</span>(secondIntegers[<span class="number">0</span>].value)</span><br><span class="line"><span class="comment">// Prints "100"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Replacements, additions, and removals are still visible</span></span><br><span class="line"><span class="comment">// only in the modified array</span></span><br><span class="line">firstIntegers[<span class="number">0</span>] = <span class="type">IntegerReference</span>()</span><br><span class="line"><span class="built_in">print</span>(firstIntegers[<span class="number">0</span>].value)</span><br><span class="line"><span class="comment">// Prints "10"</span></span><br><span class="line"><span class="built_in">print</span>(secondIntegers[<span class="number">0</span>].value)</span><br><span class="line"><span class="comment">// Prints "100"</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Class-Inheritance"><a href="#Class-Inheritance" class="headerlink" title="Class Inheritance"></a>Class Inheritance</h2><p>One powerful feature of classes not available to structs is inheritance. Inheritance allows one class to take on the properties and methods of another class, as well as add its own functionality.</p>
+<p>To start, let’s say we have a <code>Guitar</code> class defined as the following.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Guitar</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> strings: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">let</span> frets: <span class="type">Int</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">init</span>(strings: <span class="type">Int</span>, frets: <span class="type">Int</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.strings = strings</span><br><span class="line">        <span class="keyword">self</span>.frets = frets</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">pluckString</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"twang"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>This is a great start, but what if we then wanted to model an electric guitar. The electric guitar is a “kind of” guitar, but with a few differences. For example, the electric guitar has electronics for modifying the volume and tone of its output (check out the knobs on the lower body). We could define a new <code>ElectricGuitar</code> class by copy-pasting the <code>GuitarClass</code> and adding these different properties, but we can do much better. Instead, if we place a colon after the the class name and then specify the class we want to inherit from, the <code>ElectricGuitar</code> automatically has all the properties and methods of a guitar.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ElectricGuitar</span>: <span class="title">Guitar</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> volumeLevel: <span class="type">Float</span> = <span class="number">1.0</span></span><br><span class="line">    <span class="keyword">var</span> toneLevel: <span class="type">Float</span> = <span class="number">1.0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Now we have a new class, <code>ElectricGuitar</code> that has all the properties of <code>Guitar</code> with the additional properties for volume and tone.</p>
+<table>
 <thead>
 <tr>
-<th>SEASON</th>
-<th>CLASS_1</th>
-<th>CLASS_2</th>
-<th>CLASS_3</th>
+<th align="left">Class</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>FALL</td>
-<td>ECE269</td>
-<td>CSE252A</td>
-<td>CSE258</td>
+<td align="left">superclass</td>
+<td align="left">A class that is inherited from</td>
 </tr>
 <tr>
-<td>WINTER</td>
-<td>ECE276A</td>
-<td>ECE141A</td>
-<td>ECE143</td>
+<td align="left">subclass</td>
+<td align="left">A class that inherits from another class (the superclass)</td>
 </tr>
 <tr>
-<td>SPRING</td>
-<td>ECE272A</td>
-<td>ECE141B</td>
-<td>CSE240</td>
+<td align="left">parent class</td>
+<td align="left">A class’s superclass</td>
 </tr>
 <tr>
-<td>FALL</td>
-<td>ECE271A</td>
-<td>CSE250</td>
-<td>ECE250</td>
+<td align="left">child class</td>
+<td align="left">A class that descended (inherited directly) from a parent class.</td>
+</tr>
+<tr>
+<td align="left">descendant</td>
+<td align="left">A class that inherited from an ancestor</td>
+</tr>
+<tr>
+<td align="left">ancestor</td>
+<td align="left">A class that has child or descendent classes</td>
+</tr>
+<tr>
+<td align="left">root class</td>
+<td align="left">A class with no superclass</td>
+</tr>
+<tr>
+<td align="left">leaf class</td>
+<td align="left">A class with no subclasses</td>
+</tr>
+<tr>
+<td align="left">hierarchy</td>
+<td align="left">A tree of inheritance relationships</td>
 </tr>
 </tbody></table>
-<h1 id="FALL-2021"><a href="#FALL-2021" class="headerlink" title="FALL 2021:"></a>FALL 2021:</h1><h2 id="ECE-269-Linear-Algebra-and-Application-Piya-Pal"><a href="#ECE-269-Linear-Algebra-and-Application-Piya-Pal" class="headerlink" title="ECE 269: Linear Algebra and Application (Piya Pal)"></a>ECE 269: Linear Algebra and Application (Piya Pal)</h2><p>Class GPA:  ( students)<br>Stats: A+ (0%), A (5.9%, 11), A- (7.5%, 14), B+ (23.7%,44), B (16.1%, 30), B- (30.6%, 57), C+ (9.7%, 18) …<br>Weights: Quiz (20%), Final (35%), Assignments (45%)<br>Comments:<br>由于EC80的专业特性，毕业要求四门核心课，所以如果想要在一学期之内毕业，就必须要每学期选一门。根据往届的信息，ECE269这门课是所有四门课程中相对简单的，毕竟本科都有点线性代数的基础（对于我来说等于没学）。<br>作为第一学期的核心课，我自认为还是比较认真的，上课次次不落，discussion也每次都去，课后也会复习笔记，因为有些内容真的没有完全听懂。作业的话由于自己马虎，加上有些题目确实不会，导致分数也不理想，都在medium附近徘徊。两个quiz，第一个quiz难度还算可以，第二个quiz难度飙升，三道题目就对了一个。到了期末就更惨了，6道题只会两个半道，到现在我还不知道能打多少分。毕竟这门课是个comprehensive的课程，要达到一定标准才能毕业，再加上GPA 3.0才能达到毕业要求，让这个等待出分的我非常的慌张。</p>
-<h2 id="CSE252A-Computer-Vision-I-Ben-Ochoa"><a href="#CSE252A-Computer-Vision-I-Ben-Ochoa" class="headerlink" title="CSE252A: Computer Vision I (Ben Ochoa)"></a>CSE252A: Computer Vision I (Ben Ochoa)</h2>
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
+<h2 id="Overriding-Methods"><a href="#Overriding-Methods" class="headerlink" title="Overriding Methods"></a>Overriding Methods</h2><p>Inheritance doesn’t just let you add to a class - you can also override its behavior. For example, since an electric guitar’s volume affects its sound, we can provide some custom functionality to the <code>pluck()</code> method.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">pluckString</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> volumeLevel &gt; <span class="number">0.7</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"🎸🎸🎸 DRAOWWW"</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> volumeLevel &gt; <span class="number">0</span> &#123;</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"🎸 twang"</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123; <span class="comment">// volumeLevel is 0</span></span><br><span class="line">        <span class="comment">// Guitar's implementation of pluckString()</span></span><br><span class="line">        <span class="keyword">super</span>.pluckString()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    
+<p>Overriding a method is as simple as redeclaring it and adding the <code>override</code> keyword before <code>func</code>. And if you ever need to fall back to the original functionality, as we do in the case when the volume is 0, the old implementation can be called <code>super</code> keyword. <code>super</code> just refers to the superclass (the <code>Guitar</code> class we’re inheriting from) so <code>super.pluck()</code> will call the <code>pluck() method of the</code>Guitar` class which will print “twang”.</p>
+<h2 id="Polymorphism"><a href="#Polymorphism" class="headerlink" title="Polymorphism"></a>Polymorphism</h2><p>Inheritance, or the ability of one class to take on the properties and methods of a superclass, leads us to the next topic - <strong>polymorphism</strong>.</p>
+<p>Polymorphism means “many forms.” It is a programming language feature by which a type can be substituted for another type. For example, since it inherits from a <code>Guitar</code>, an <code>ElectricGuitar</code> can be substituted anywhere that a <code>Guitar</code> would be used. In other words, an <code>ElectricGuitar</code> is a form of <code>Guitar</code>.</p>
+<p>Polymorphism allows for simpler code that avoids unnecessary specificity, and code that is flexible and expandable because it’s applicable to more than one type. If we were to add additional subclasses of <code>Guitar</code>, we could still use any of these types where a <code>Guitar</code> is used.</p>
+<p><code>override</code> is used to indicate that a subclass’s method implementation will be substituted for a superclass’s method implementation. This is an aspect of polymorphism through inheritance.</p>
+<p>We saw an example of polymorphism previously when we used <code>override</code> to refer to a single <code>Guitar</code> type, and produced different behavior by substituting in an <code>ElectricGuitar</code> instead of a <code>Guitar</code>.</p>
+<p>We can see an example of polymorphism in action below. Because <code>anyGuitar</code>‘s type is <code>Guitar</code> we can assign any subclass of <code>Guitar</code>, including an <code>ElectricGuitar</code> to that variable.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> anyGuitar: <span class="type">Guitar</span> = <span class="type">Guitar</span>(strings: <span class="number">6</span>, frets: <span class="number">20</span>)</span><br><span class="line">anyGuitar.pluckString()</span><br><span class="line"></span><br><span class="line">anyGuitar = <span class="type">ElectricGuitar</span>(strings: <span class="number">6</span>, frets: <span class="number">20</span>)</span><br><span class="line">anyGuitar.pluckString()</span><br></pre></td></tr></table></figure>
 
-    
+<p>Even though <code>anyGuitar()</code>‘s type is still <code>Guitar</code>, calling <code>pluckString()</code> will call the custom method we defined for <code>ElectricGuitar</code>. As a result, we can keep our code involving <code>Guitar</code> instances reusable, without sacrificing the functionality of any subclasses that happen to override a method.</p>
+<h2 id="Type-Casting"><a href="#Type-Casting" class="headerlink" title="Type Casting"></a>Type Casting</h2><p>Finally, if we know that <code>anyGuitar</code> is assigned an <code>ElectricGuitar</code> and we want to access the <code>toneLevel</code> property, we can convert the types with a special keyword: <code>as</code>. When using the <code>as</code> keyword the variable you want to convert goes on the left and the type you’re converting to goes on the right.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">result = variableToConvert as NewType</span><br><span class="line">// forcibly convert the types with &quot;as!&quot;</span><br><span class="line">let electricGuitar = anyGuitar as! ElectricGuitar</span><br><span class="line">electricGuitar.toneLevel</span><br><span class="line">// or safely convert with &quot;if let&quot; with &quot;as?&quot;</span><br><span class="line">if let electricGuitar = anyGuitar as? ElectricGuitar &#123;</span><br><span class="line">    electricGuitar.toneLevel</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    
+<p>You’ll also notice the use of <code>as!</code> and <code>as?</code> in this example. This may seem complicated but it’s really the same concept you learned about unwrapping optionals. Since there’s no guarantee that <code>anyGuitar</code> will actually be an <code>ElectricGuitar</code>, casting to an <code>ElectricGuitar</code> returns an optional of type <code>Guitar?</code>. To forcibly unwrap the result, we use <code>as!</code> and to conditionally unwrap with <code>if let</code>, we use <code>as?</code>.</p>
+<h2 id="Defining-Terms"><a href="#Defining-Terms" class="headerlink" title="Defining Terms"></a>Defining Terms</h2><p>There’s some terminology to cover, and then we’ll describe what happens when a method is called on a type that is defined as a <code>class</code>.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Term</th>
+<th align="left">Example</th>
+<th align="left">Definition</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">instance</td>
+<td align="left">Guitar()</td>
+<td align="left">A class or type that we have initialized. Can be referred to with a constant or variable, and refers to its own instance with <code>self</code></td>
+</tr>
+<tr>
+<td align="left">override</td>
+<td align="left">override func pluckString() { }</td>
+<td align="left">Used to indicate that this method implementation should supersede the superclass’s method implementation</td>
+</tr>
+<tr>
+<td align="left">super</td>
+<td align="left">super.someMethod()</td>
+<td align="left">Used to retrieve and invoke a method implementation that has been overridden</td>
+</tr>
+</tbody></table>
+<h1 id="Protocols"><a href="#Protocols" class="headerlink" title="Protocols"></a>Protocols</h1><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Init</span></span><br><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">Souschef</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">chop</span><span class="params">(vegetable: String)</span></span> -&gt; <span class="type">String</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">rinse</span><span class="params">(vegetable: String)</span></span> -&gt; <span class="type">String</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Roommate</span>: <span class="title">Souschef</span>, <span class="title">Equatable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> hungry = <span class="literal">true</span></span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>(hungry: <span class="type">Bool</span>, name: <span class="type">String</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.hungry = hungry</span><br><span class="line">        <span class="keyword">self</span>.name = name</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">chop</span><span class="params">(vegetable: String)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"She's choppin' \(vegetable)!"</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">rinse</span><span class="params">(vegetable: String)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"The \(vegetable) is so fresh and so clean"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// implete the function outside the class</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> ==<span class="params">(lhs: Roommate, rhs: Roommate)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> lhs.name == rhs.name &amp;&amp; lhs.hungry == rhs.hungry</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> roomie = <span class="type">Roommate</span>(hungry: <span class="literal">true</span>, name: <span class="string">"Jennifer"</span>)</span><br><span class="line"><span class="keyword">var</span> theBestRoomie = <span class="type">Roommate</span>(hungry: <span class="literal">true</span>, name: <span class="string">"Jennifer"</span>)</span><br><span class="line"></span><br><span class="line">roomie == theBestRoomie</span><br><span class="line"><span class="comment">//: ## A protocol is also a type, any class that adopts this protocol</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DinnerCrew</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> members: [<span class="type">Souschef</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>(members: [<span class="type">Souschef</span>]) &#123;</span><br><span class="line">        <span class="keyword">self</span>.members = members</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RandomPasserby</span>: <span class="title">Souschef</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>(name: <span class="type">String</span>) &#123;</span><br><span class="line">        <span class="keyword">self</span>.name = name</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">chop</span><span class="params">(vegetable: String)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"She's choppin' \(vegetable)!"</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">rinse</span><span class="params">(vegetable: String)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"The \(vegetable) is so fresh and so clean"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> newFriend = <span class="type">RandomPasserby</span>(name: <span class="string">"Dave"</span>)</span><br><span class="line"><span class="keyword">var</span> motleyDinnerCrew = <span class="type">DinnerCrew</span>(members: [newFriend, roomie])</span><br></pre></td></tr></table></figure>
 
-    <footer class="post-footer">
-      
+<h2 id="Extensions"><a href="#Extensions" class="headerlink" title="Extensions"></a>Extensions</h2><p>One more powerful feature of Swift types is the ability to add new methods and properties through <strong>extensions</strong>. You’ll see extensions in action as you start building the Pitch Perfect app, so let’s take a look at an example before wrapping up with object oriented programming.</p>
+<p>To extend a class, simply use the <code>extension</code> keyword, followed by the type name.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">SomeClass</span> </span>&#123; ... &#125;</span><br></pre></td></tr></table></figure>
 
-      
+<p>Additionally, you can also add a colon after the type name followed by any number of protocols you’d like the type to conform to. Let’s rewrite the <code>Roommate</code> example so that it uses an extension to conform to <code>Souschef</code>.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">Roommate</span>: <span class="title">Souschef</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">chop</span><span class="params">(vegetable: String)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"She's choppin' \(vegetable)!"</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">rinse</span><span class="params">(vegetable: String)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"The \(vegetable) is so fresh and so clean"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/LAIOFEER公开课.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/LAIOFEER公开课.html" itemprop="url">LAIOFEER公开课</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-12-22T09:57:40+08:00">
-                2020-12-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/LAIOFEER公开课.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="LAIOFEER公开课.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  282 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>Always put yourself in other people’s shoes. 换位思考</p>
-<p>Critical thinking 任何事情并不是非黑即白</p>
-</blockquote>
-<h2 id="BQ-question-1"><a href="#BQ-question-1" class="headerlink" title="BQ question 1"></a>BQ question 1</h2><p>Tell me about yourself:</p>
-<ol>
-<li>Name, Education, Background</li>
-<li>Skills: Primary programming language, Projects experience, intern experience</li>
-<li>Thank you</li>
-</ol>
-<p>Variants:</p>
-<ol>
-<li>Tell me your weakness(e.g. 多任务同时处理，优先级问题) 承认自己的问题，尽量真实</li>
-<li>Key points: How to avoid/address the same problems in the future.</li>
-</ol>
-<h2 id="BQ-question-2"><a href="#BQ-question-2" class="headerlink" title="BQ question 2"></a>BQ question 2</h2><p>When you have different opinions from your colleagues</p>
-<ol>
-<li>Scenarios</li>
-<li>Communication: 1 on 1 不在公共场合批评别人; How/When/Where</li>
-</ol>
-<h2 id="BQ-question-3"><a href="#BQ-question-3" class="headerlink" title="BQ question 3"></a>BQ question 3</h2><p>When you have limited time available to finish your project. Quality vs Speed</p>
-<p>分情况讨论，用项目举例</p>
-<p>Variant 1:Provide an example scenario in which you made a quick decision under pressure</p>
-<p>Variant 2: Write an email to your manager on how to explain why you missed the deadline</p>
-<h2 id="BQ-question-4"><a href="#BQ-question-4" class="headerlink" title="BQ question 4"></a>BQ question 4</h2><p>What is your career plan for the next 5 years?</p>
-<p>现在有什么，未来期待什么，怎么做？</p>
-<p>concrete example</p>
-<h2 id="BQ-question-5"><a href="#BQ-question-5" class="headerlink" title="BQ question 5"></a>BQ question 5</h2><p>How do you define a good manager? Or what do you expect from your manager?</p>
-<p>grow path</p>
-<h2 id="BQ-question-6"><a href="#BQ-question-6" class="headerlink" title="BQ question 6"></a>BQ question 6</h2><p>Please tell me one of the most challenging projects you have accomplished.</p>
-<p>Why is it challenging？</p>
-<ol>
-<li>Technical </li>
-<li>Human resource </li>
-<li>Operational complexity/ cost</li>
-<li>Novelty</li>
-<li>Time constraints</li>
-</ol>
-<p>How did you solve it?</p>
-<p>How did you evaluate the results? Scope/Impact</p>
-<blockquote>
-<p>择高处立，就平处坐，向宽处行；立上等志，行中等事，享下等福。</p>
-</blockquote>
+<p>Isn’t this the same as the previous example? It is, but with extensions, you don’t even need access to the original class definition for <code>Roommate</code>. As you begin your journey into iOS development, you’ll be working with many classes provided by Apple in which you do not have direct access to the code. However, with extensions you can add functionality to these types without ever modifying the original class definition.</p>
+<h1 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h1><p>Something that is passed by value such as an instance of a struct is copied when it’s assigned to a variable or passed to a function. Changing a property on the instance will only apply to the copy, and the original instance will remain unchanged.</p>
+<p>Values that are passed by reference, such as instances of classes, are not copied. Changing a value on a copy will also modify the original instance, since the copy is simply referencing the original.</p>
 
           
         
@@ -799,7 +1471,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/托福备考指北.html">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Swift初探.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Qian Hongbo">
@@ -818,7 +1490,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/托福备考指北.html" itemprop="url">托福备考指北</a></h2>
+                <a class="post-title-link" href="/Swift初探.html" itemprop="url">Swift初探</a></h2>
         
 
         <div class="post-meta">
@@ -830,8 +1502,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-11-20T22:36:41+08:00">
-                2020-11-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-12-10T20:12:53+08:00">
+                2021-12-10
               </time>
             
 
@@ -853,8 +1525,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/出国经验分享/" itemprop="url" rel="index">
-                    <span itemprop="name">出国经验分享</span>
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
                   </a>
                 </span>
 
@@ -873,8 +1545,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/托福备考指北.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="托福备考指北.html" itemprop="commentCount"></span>
+                <a href="/Swift初探.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Swift初探.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -896,7 +1568,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  629 字
+                  896 字
                 </span>
               
 
@@ -912,7 +1584,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  5 分钟
                 </span>
               
             </div>
@@ -936,444 +1608,109 @@
       
         
           
-            <h2 id="成绩"><a href="#成绩" class="headerlink" title="成绩"></a>成绩</h2><p>说来惭愧，考了3年托福，一共四次，最终还是在临近申请前的不到一个月考出的分，而且分数也只是刚刚过百（见下图），尽管最终成绩很低，但我也有一些经验和心得与各位分享，当然，也会有一些我认为比较好的学习资源通过百度云的方式供大家学习。</p>
-<p><img src="https://tvax3.sinaimg.cn/large/006BuM4Jly1gkw0pe0b9pj30r70b8q5w.jpg" alt="TOEFLGRADE"></p>
-<h2 id="学习顺序与学习时间"><a href="#学习顺序与学习时间" class="headerlink" title="学习顺序与学习时间"></a>学习顺序与学习时间</h2><p>对于理工科学生，强烈建议先学习GRE。理由有以下几点：</p>
-<ol>
-<li>GRE的数学对于理工科学生难度不高，不需要太多准备；</li>
-<li>GRE的verbal部分以背单词为主，这部分单词并不需要托福单词为基础，如果这部分单词搞定了，学托福难度会明显降低不少；</li>
-<li>GRE提分较快，只要刷题就会看到成效，不存在原地踏步的情况，适合初期准备。</li>
-</ol>
-<p>但无论是托福和GRE我的建议都是利用暑假、寒假大块时间准备，切忌将学习英语的时间与上课/实习等杂糅在一起，这样不但英语能力不会很快见效，而且还会影响课内的学习成绩。总之用一个1-2个月的空闲时间全力学习英语之后考试一定是最高效的。</p>
-<h2 id="托福单词"><a href="#托福单词" class="headerlink" title="托福单词"></a>托福单词</h2><p>回归到托福学习。学习英语无论怎样最重要的还是背单词，单词积累的到位了，看文章听听力等自然得心应手，我比较明显的体会是在我单词掌握不扎实的时候看托福阅读都是不知所云的，仿佛在看一段加了密的文字，但在我学习GRE后，单词量得到了较大的提升，看托福阅读速度明显加快，读了一遍后内容也达到了其义自见的程度（再次说明先学GRE的好处），但不能忽视的是，很多GRE的单词书并不涵盖托福需要掌握的重点词汇，更不能轻视的是很多重要的四六级词汇，它们既不会出现在托福单词书中也不会出现在GRE单词书中，但它们的出现频率却惊人的高，这些单词一定要及时弥补！</p>
-<p>分享两个比较好的单词书（pdf），提取码见评论区：</p>
-<p><a href="https://pan.baidu.com/s/1cR1FpD2a8BIvRQCyUYYsYg" target="_blank" rel="noopener">托福救命800词&amp;四六级救命800词</a></p>
-<p><a href="https://pan.baidu.com/s/11h-2epNIy0UFbNkKuLa_ug" target="_blank" rel="noopener">7天搞定托福单词</a></p>
+            <h1 id="Variables-and-Types"><a href="#Variables-and-Types" class="headerlink" title="Variables and Types"></a>Variables and Types</h1><h2 id="Hello-world"><a href="#Hello-world" class="headerlink" title="Hello world!"></a>Hello world!</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> question = <span class="string">"Hello world!"</span></span><br><span class="line"><span class="built_in">print</span>(question)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Comments"><a href="#Comments" class="headerlink" title="Comments"></a>Comments</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// this is a comment</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* this is a </span></span><br><span class="line"><span class="comment">   multiline comment */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">print("neither will this")</span></span><br><span class="line"><span class="comment">print("or this")</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Data-types"><a href="#Data-types" class="headerlink" title="Data types"></a>Data types</h2><table>
+<thead>
+<tr>
+<th>Type</th>
+<th align="left">Description</th>
+<th>Example Values</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Int</td>
+<td align="left">whole number values</td>
+<td>0, 2, -2, 100, …</td>
+</tr>
+<tr>
+<td>Float</td>
+<td align="left">floating-point (decimal) numbers that require no more than 6 decimal digits (32-bit)</td>
+<td>3.14, 5.693, -12.321, …</td>
+</tr>
+<tr>
+<td>Double</td>
+<td align="left">floating-point (decimal) numbers that require more precision—guaranteed 15 decimal digits (64-bit)</td>
+<td>3.14, 5.693, -12.321, …</td>
+</tr>
+<tr>
+<td>Bool</td>
+<td align="left">a Boolean truth value</td>
+<td>true, false</td>
+</tr>
+<tr>
+<td>Character</td>
+<td align="left">a single letter, digit, symbol, or code</td>
+<td>“a”, “+”, “q”, …</td>
+</tr>
+<tr>
+<td>String</td>
+<td align="left">combinations of characters</td>
+<td>“swift”, “I Love Swift”, “ “, “:)”, …</td>
+</tr>
+</tbody></table>
+<h2 id="Creating-variables"><a href="#Creating-variables" class="headerlink" title="Creating variables"></a>Creating variables</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numberOfWheels: <span class="type">Int</span> = <span class="number">4</span></span><br><span class="line"><span class="keyword">var</span> centimetersOfRainfall: <span class="type">Float</span> = <span class="number">5.5</span></span><br><span class="line"><span class="keyword">var</span> pi: <span class="type">Double</span> = <span class="number">3.14159265359</span></span><br><span class="line"><span class="keyword">var</span> letterOfTheDay: <span class="type">Character</span> = <span class="string">"z"</span></span><br><span class="line"><span class="keyword">var</span> myFavoriteAnimal: <span class="type">String</span>  = <span class="string">"octopus"</span></span><br><span class="line"><span class="keyword">var</span> rainingOutside: <span class="type">Bool</span>  = <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>The code below is also okay, because Siwft can infer what is the type of the variable.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> firstName = <span class="string">"Aisha"</span></span><br></pre></td></tr></table></figure>
+
+<p>Change the value of the variable, but we can’t change the type of the vcariable.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// initial declaration of petsAge</span></span><br><span class="line"><span class="keyword">var</span> petsAge = <span class="number">12</span></span><br><span class="line"></span><br><span class="line">petsAge = <span class="number">13</span></span><br></pre></td></tr></table></figure>
+
+<p>Constant.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> encouragement = <span class="string">"You can do it!"</span></span><br><span class="line"><span class="keyword">var</span> customizedEncouragement = <span class="string">"You can do it, Stephanie!"</span></span><br><span class="line">customizedEncouragement = <span class="string">"You can do it, Ryder!"</span></span><br></pre></td></tr></table></figure>
+
+<p>String.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> emailSignature = <span class="string">"Aliyah Smith\nVP, Sales\n(555) - 555 - 5555"</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Character</strong></th>
+<th align="left"><strong>Usage</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">\n</td>
+<td align="left">Newline / line feed</td>
+</tr>
+<tr>
+<td align="left">\t</td>
+<td align="left">Horizontal tab</td>
+</tr>
+<tr>
+<td align="left">&quot;</td>
+<td align="left">Double quotation mark, using <code>&quot;</code> alone signifies the end of a string</td>
+</tr>
+<tr>
+<td align="left">&#39;</td>
+<td align="left">Single quotation mark</td>
+</tr>
+<tr>
+<td align="left">\</td>
+<td align="left">Backslash, using “&quot; alone escapes the next character</td>
+</tr>
+</tbody></table>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">"Happy birthday, \("</span><span class="type">Maverick</span><span class="string">")!"</span></span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
+
+<h1 id="Operators-and-Expressions"><a href="#Operators-and-Expressions" class="headerlink" title="Operators and Expressions"></a>Operators and Expressions</h1><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5</span> / <span class="number">3</span> <span class="comment">// The result is 1</span></span><br><span class="line"></span><br><span class="line"><span class="number">5</span> / <span class="number">3.0</span> <span class="comment">// The result is 1.66666667</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> hello = <span class="string">"Hello"</span></span><br><span class="line"><span class="keyword">var</span> world = <span class="string">"world!"</span></span><br><span class="line"><span class="keyword">let</span> greeting = hello + <span class="string">" "</span> + world</span><br></pre></td></tr></table></figure>
+
+<h1 id="Ternary-Operators"><a href="#Ternary-Operators" class="headerlink" title="Ternary Operators"></a>Ternary Operators</h1><p><strong>Ternary operator</strong> : an operator that is applied to three operands</p>
+<p>Ternary operators are much less common than binary operators, but one of the most common ternary operators is the <strong>ternary conditional operator</strong>. It is used to choose between two values based on a truth (Boolean) value, and it uses the following syntax:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">trueOrFalseValue ? useThisIfTrue : useThisIfFalse</span><br></pre></td></tr></table></figure>
+
+<h1 id="Control-Flow"><a href="#Control-Flow" class="headerlink" title="Control Flow"></a>Control Flow</h1><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> onGuestList &amp;&amp; age &gt;= <span class="number">21</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"\(name), come party with us!"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> !onGuestList || age &lt; <span class="number">21</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Sorry, \(name), maybe you can go play Bingo with the Android team."</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> breakfast &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Good morning!"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> lunch &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Good afternoon!"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> dinner &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Good evening!"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Hello!"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> month &#123;</span><br><span class="line"><span class="keyword">case</span> <span class="number">1</span>: <span class="built_in">print</span>(“<span class="type">January</span>”)</span><br><span class="line"><span class="keyword">case</span> <span class="number">2</span>: <span class="built_in">print</span>(“<span class="type">February</span>”)</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> meal = <span class="string">"breakfast"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> meal</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">"breakfast"</span>: <span class="built_in">print</span>(<span class="string">"Good morning!"</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="string">"lunch"</span>: <span class="built_in">print</span>(<span class="string">"Good afternoon!"</span>)</span><br><span class="line">    <span class="keyword">case</span> <span class="string">"dinner"</span>: <span class="built_in">print</span>(<span class="string">"Good evening!"</span>)</span><br><span class="line">    <span class="keyword">default</span>: <span class="built_in">print</span>(<span class="string">"none"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>...<span class="number">10</span> <span class="comment">// 1, 2, 3, 4, 5, 6, 7, 8, 9, 10.</span></span><br><span class="line"><span class="number">1</span>..&lt;<span class="number">10</span> <span class="comment">// 1, 2, 3, 4, 5, 6, 7, 8, 9.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>...<span class="number">10</span>&#123;</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> i = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (i&lt;<span class="number">1001</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span> (i % <span class="number">2</span>) == <span class="number">0</span>&#123;</span><br><span class="line">        <span class="built_in">print</span>(i)</span><br><span class="line">    &#125;</span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// repeat-while loop</span></span><br><span class="line"><span class="keyword">var</span> i = <span class="number">1</span></span><br><span class="line"><span class="keyword">repeat</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Hello, world!"</span>)</span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line">&#125; <span class="keyword">while</span> i &lt; <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h1><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">printLove</span><span class="params">(s: String)</span></span>&#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"I love \(s)"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">printLove(s: <span class="string">"Swift"</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">printLove</span><span class="params">(s: String)</span></span>&#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"I love"</span> + s)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">printLove(s: <span class="string">"Swift"</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">areaOfRectangle</span><span class="params">(length: Int, width: Int)</span></span>&#123;</span><br><span class="line">    <span class="built_in">print</span>(length * width)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">areaOfRectangle(length: <span class="number">2</span>, width: <span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">calculateTip</span><span class="params">(priceOfMeal: Double)</span></span> -&gt; <span class="type">Double</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> priceOfMeal * <span class="number">0.15</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">isPastBedtime</span><span class="params">(hour: Int)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> hour &gt; <span class="number">9</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">addValues</span><span class="params">(value1 x: Int, value2 y: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="comment">// internally, use `x` and `y`</span></span><br><span class="line">    <span class="keyword">return</span> x + y</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// externally, use `value1` and `value2`</span></span><br><span class="line">addValues(value1: <span class="number">5</span>, value2: <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">addExcitementToString</span><span class="params">(<span class="number">_</span> string: String)</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> string + <span class="string">"!"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">addExcitementToString(<span class="string">"Swift"</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="Structures-and-Enums"><a href="#Structures-and-Enums" class="headerlink" title="Structures and Enums"></a>Structures and Enums</h1><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> name: <span class="type">String</span></span><br><span class="line">    <span class="keyword">var</span> age: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">var</span> school: <span class="type">String</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ayush = <span class="type">Student</span>(name: <span class="string">"Ayush Saraswat"</span>, age: <span class="number">19</span>, school: <span class="string">"Udacity"</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Beaker</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> volumeMilliliters: <span class="type">Double</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">canContainContents</span><span class="params">(otherBeaker: Beaker)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> volumeMilliliters &gt;= otherBeaker.volumeMilliliters</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> beaker1 = <span class="type">Beaker</span>(volumeMilliliters: <span class="number">500</span>)</span><br><span class="line"><span class="keyword">let</span> beaker2 = <span class="type">Beaker</span>(volumeMilliliters: <span class="number">1000</span>)</span><br><span class="line"><span class="keyword">let</span> canContainContents: <span class="type">Bool</span> = beaker1.canContainContents(otherBeaker: beaker2)</span><br><span class="line"></span><br><span class="line"><span class="comment">// If, however, a method tries to modify (or mutate) one of the struct's properties, then the mutating keyword must be added before func. For example</span></span><br><span class="line"><span class="keyword">mutating</span> <span class="function"><span class="keyword">func</span> <span class="title">increaseCapacity</span><span class="params">()</span></span> &#123;</span><br><span class="line">    volumeMilliliters += <span class="number">500</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Beaker</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> volumeMilliliters: <span class="type">Double</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">var</span> madeIn = <span class="string">"China"</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// These are US ounces</span></span><br><span class="line">    <span class="keyword">var</span> volumeOunces: <span class="type">Double</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> volumeMilliliters * <span class="number">0.033814</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">canContainContents</span><span class="params">(otherBeaker: Beaker)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> volumeMilliliters &gt;= otherBeaker.volumeMilliliters</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// In fact, when we change the value of a static property with dot notation, we reference the type name and not a specific instance (Beaker.madeIn).</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">PrimaryColor</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> red</span><br><span class="line">    <span class="keyword">case</span> blue</span><br><span class="line">    <span class="keyword">case</span> yellow</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Aunties</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> aime, billie, diane, gail, janie, pam</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">DrinkSize</span>: <span class="title">Int</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> small = <span class="number">12</span></span><br><span class="line">    <span class="keyword">case</span> medium = <span class="number">16</span></span><br><span class="line">    <span class="keyword">case</span> large = <span class="number">20</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// rawValue</span></span><br><span class="line"><span class="type">Var</span> sugar = <span class="string">"A \(DrinkSize.small.rawValue) oz Coke has 33 g of sugar"</span></span><br><span class="line"><span class="comment">// "A 12 oz Coke has 33 g of sugar"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Using 'enum' with 'switch'</span></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Finger</span>: <span class="title">Int</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> thumb = <span class="number">1</span></span><br><span class="line">    <span class="keyword">case</span> index = <span class="number">2</span></span><br><span class="line">    <span class="keyword">case</span> middle = <span class="number">3</span></span><br><span class="line">    <span class="keyword">case</span> ring = <span class="number">4</span></span><br><span class="line">    <span class="keyword">case</span> pinky = <span class="number">5</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> destination = <span class="type">Finger</span>.thumb</span><br><span class="line"><span class="keyword">var</span> test = <span class="type">Finger</span>(rawValue: <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// switch destination</span></span><br><span class="line"><span class="keyword">switch</span> test &#123;</span><br><span class="line">    <span class="keyword">case</span> .thumb:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"thumb"</span>)</span><br><span class="line">    <span class="keyword">case</span> .index:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"index"</span>)</span><br><span class="line">    <span class="keyword">case</span> .middle:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"middle"</span>)</span><br><span class="line">    <span class="keyword">case</span> .ring:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"ring"</span>)</span><br><span class="line">    <span class="keyword">case</span> .pinky:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"pinky"</span>)</span><br><span class="line">  <span class="comment">// We need to use none for 'test'</span></span><br><span class="line">    <span class="keyword">case</span> .<span class="keyword">none</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"None!"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/生无所息.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/生无所息.html" itemprop="url">希望所有的烦恼都能随风而去</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-10-24T22:27:33+08:00">
-                2020-10-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/生无所息.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="生无所息.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  76 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-          
-          
-            <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="//tvax1.sinaimg.cn/large/006BuM4Jly1gk0tn7l7xjj30go0b0wek.jpg" rel="gallery_ckxsiliye003kp7pttx7rocli" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="//tvax1.sinaimg.cn/large/006BuM4Jly1gk0tn7l7xjj30go0b0wek.jpg" itemprop="contentUrl">
-              </a>
-            
-          
-
-          
-          </div>
-        </div>
-      
-
-      
-        
-          
-            <p>该经历的总要经历，想躲也躲不过。</p>
-<p>该坚持的一定要坚持，坚持下去准没错。</p>
-<p>该放手的尽快放手，省着被折磨。</p>
-<p>最近很喜欢听周深的《无限》，可惜网易云音乐的外链无法分享。</p>
-<p>“当风吹来，我会回来”</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/文献如何精读.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/文献如何精读.html" itemprop="url">文献如何精读</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-13T19:40:25+08:00">
-                2020-05-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/远程科研/" itemprop="url" rel="index">
-                    <span itemprop="name">远程科研</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/文献如何精读.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="文献如何精读.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.2k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="第一遍：需5-10分钟"><a href="#第一遍：需5-10分钟" class="headerlink" title="第一遍：需5-10分钟"></a>第一遍：需5-10分钟</h2><p>快速浏览整篇论文，对其有个大概的了解。你也可以自己决定是否需要进一步阅读。该阶段分下面的几个步骤组成：</p>
-<ol>
-<li>仔细阅读题目、摘要和引言；</li>
-<li>阅读标题和小节标题，标题下的内容不必看。</li>
-<li>阅读结论</li>
-<li>看看参考文献，也许有你读过的论文。</li>
-</ol>
-<p>在第一遍完成后，你应该可以回答以下五个问题：</p>
-<ol>
-<li>类别：这篇论文是什么类型？测试类？对现有系统进行分析的？对原型系统进行描述的？</li>
-<li>内容：在你读过的论文中与其相关的有哪些？使用哪些理论基础来分析文章？</li>
-<li>正确性：结论是否有效？</li>
-<li>创新：该论文的主要创新是什么？</li>
-<li>清晰度：该论文是否条理清晰？</li>
-</ol>
-<p>回答出以上问题，你便清楚是否有必要继续阅读该论文，这也许与你的兴趣或研究领域有关，也可能是作者的结论不正确使之没必要再继续阅读。这也再次提醒你，在你写论文的时候，希望有人看你的论文，那么简明扼要的标题及摘要是非常重要的，无论是读者还是审稿人在用五分钟过一遍你的论文后，看不到文章的亮点也就对你的论文失去读下去的兴趣了。</p>
-<h2 id="第二遍：需1小时左右"><a href="#第二遍：需1小时左右" class="headerlink" title="第二遍：需1小时左右"></a>第二遍：需1小时左右</h2><p>第二遍要仔细阅读论文，但忽略掉诸如证明之类的细节。 阅读过程中做好笔记记录重点，或在论文空白处标注出来。</p>
-<ol>
-<li>仔细阅读论文中的数字、图表和其他插图。 尤其要注意图表： 轴标签是否正确？ 标示的结果是否有误差线？ 这些常见的错误能区分出该论文是粗制滥造的还是经过尽心做研究后的结果。</li>
-<li>为了了解更多关于该论文的背景，记得要标记未读过的参考文献供进一步阅读。通过第二步的阅读，你应该能够掌握论文的主要内容。你也应该可以把论文的主旨及论据总结给别人。对于你感兴趣的论文，读到这个程度就可以了，但是对于那些在你研究领域内的论文来时，还远远不够。</li>
-</ol>
-<p>有些情况你在读到第二步结束时仍然难以理解论文，可能的原因是主旨对你来说是全新的，还有不熟悉的术语和缩略词。也可能论文作者使用您不明白的论据或实验技术，导致大部分论文内容无法理解。除此之外，有些论文可能写得很差，也导致你无法理解该篇论文。亦或者可能是深夜，你很累了。如果是这样，你可以选择：（1）把论文放到一边，期望着在你走向事业成功的路上不需要理解它，（b）在了解了相关背景知识后，过段时间再回头读，或者（c）坚持不懈继续阅读。</p>
-<h2 id="第三遍：数小时"><a href="#第三遍：数小时" class="headerlink" title="第三遍：数小时"></a>第三遍：数小时</h2><p>要充分了解一篇论文，尤其你是审稿人时，需要进行第三步。第三步的关键是：在脑中勾勒出整篇论文，作出与作者相同的假设，重新创作。通过将这种重新创作与实际文章进行比较，您可以轻松地验证出论文的创新之处，也可以轻松找出一些不易察觉的缺陷和假设。</p>
-<p>这一步需要读者精读论文，完成这一步读者便可验证论文中每一个假设是否成立，并且同时思考如果自己是本文作者的话会如何去体现自己的idea ，这种假设自己是作者的方法可以加深你对该论文论据及表述技巧上的理解，并且能从中学到这些技巧。在完成第三步的过程中，你应该时刻留意对于未来研究工作的新想法。</p>
-<p>第三步是最耗费时间的，对于初学者来说可能要数小时，即便是有经验的学者也至少要一两个小时。当完成这一步后，你应该可以在脑海中重现构造论文的整个架构，同时能确定论文中哪些是好的，哪些是一般的论点。特别地，你也应该能明确指出论文中不清晰的假设、漏掉引用的相关工作以及论文中试验和分析的手段潜在的缺点。</p>
-<blockquote>
-<p>以上内容参考<a href="https://www.zhihu.com/question/50973300/answer/737010046" target="_blank" rel="noopener">知乎文章</a></p>
-</blockquote>
-<p>延伸阅读：</p>
-<p><a href="https://www.cs.jhu.edu/~jason/advice/how-to-read-a-paper.html" target="_blank" rel="noopener">How to read a technical paper (JHU)</a></p>
-<p><a href="https://towardsdatascience.com/guide-to-reading-academic-research-papers-c69c21619de6" target="_blank" rel="noopener">How to read an academic paper</a></p>
-<p><a href="https://www.eecs.harvard.edu/~michaelm/postscripts/ReadPaper.pdf" target="_blank" rel="noopener">Harvard EECS research guide</a></p>
 
           
         
@@ -1415,7 +1752,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1463,7 +1800,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">48</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1474,7 +1811,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1485,7 +1822,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1565,7 +1902,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -1579,7 +1916,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">45k</span>
+    <span title="Site words total count">51.9k</span>
   
 </div>
 

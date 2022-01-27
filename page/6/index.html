@@ -54,6 +54,11 @@
   
 
   
+    
+    
+  
+
+  
 
   
 
@@ -63,14 +68,8 @@
 
   
     
-
     
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=EB Garamond:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -347,7 +346,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/【STM32】串口通信基本原理.html">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/2020美赛有感.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Qian Hongbo">
@@ -366,7 +365,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/【STM32】串口通信基本原理.html" itemprop="url">【STM32】串口通信基本原理</a></h2>
+                <a class="post-title-link" href="/2020美赛有感.html" itemprop="url">2020美赛有感</a></h2>
         
 
         <div class="post-meta">
@@ -378,8 +377,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-19T16:56:38+08:00">
-                2019-08-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-10T14:32:33+08:00">
+                2020-03-10
               </time>
             
 
@@ -401,8 +400,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/STM32/" itemprop="url" rel="index">
-                    <span itemprop="name">STM32</span>
+                  <a href="/categories/随笔/" itemprop="url" rel="index">
+                    <span itemprop="name">随笔</span>
                   </a>
                 </span>
 
@@ -421,8 +420,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/【STM32】串口通信基本原理.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="【STM32】串口通信基本原理.html" itemprop="commentCount"></span>
+                <a href="/2020美赛有感.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020美赛有感.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -444,278 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  927 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="处理器与外部设备通信的两种方式"><a href="#处理器与外部设备通信的两种方式" class="headerlink" title="处理器与外部设备通信的两种方式"></a>处理器与外部设备通信的两种方式</h1><ol>
-<li><p>并行通信</p>
-<ul>
-<li>传输原理：数据各个位同时传输。</li>
-<li>优点：速度快</li>
-<li>缺点：占用引脚资源多</li>
-</ul>
-</li>
-<li><p>串行通信</p>
-<ul>
-<li>传输原理：数据按位顺序传输。</li>
-<li>优点：占用引脚资源少</li>
-<li>缺点：速度相对较慢</li>
-</ul>
-</li>
-</ol>
-<h1 id="串行通信"><a href="#串行通信" class="headerlink" title="串行通信"></a>串行通信</h1><h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>按照数据传送方向，分为：</p>
-<ol>
-<li><p>单工：数据传输只支持数据在<strong>一个方向上</strong>传输</p>
-</li>
-<li><p>半双工：允许数据在两个方向上传输，但是，在某一时刻，只允许数据在一个方向上传输，它实际上是一种<strong>切换方向</strong>的单工通信；</p>
-</li>
-<li><p>全双工：允许数据同时在两个方向上传输，因此，全双工通信是两个单工通信方式的结合，它要求发送设备和接收设备都有<strong>独立的</strong>接收和发送能力。 </p>
-</li>
-</ol>
-<h2 id="串行通信的通信方式"><a href="#串行通信的通信方式" class="headerlink" title="串行通信的通信方式"></a>串行通信的通信方式</h2><ol>
-<li><p>同步通信：<strong>带时钟同步信号</strong>传输。-SPI，IIC通信接口</p>
-</li>
-<li><p>异步通信：<strong>不带时钟同步信号</strong>。-<code>UART</code>(通用异步收发器),单总线（必须约定波特率，按照相同的速度发送和读取）</p>
-</li>
-</ol>
-<h1 id="常见的串行通信接口"><a href="#常见的串行通信接口" class="headerlink" title="常见的串行通信接口"></a>常见的串行通信接口</h1><p><img src="http://wx1.sinaimg.cn/large/006BuM4Jgy1g653m0aqzgj30ml0acdgt.jpg" alt="图片6"></p>
-<p>STM32的串口通信接口</p>
-<ul>
-<li>UART:通用异步收发器</li>
-<li>USART:通用同步异步收发器</li>
-</ul>
-<p>大容量STM32F10x系列芯片，包含3个USART和2个UART</p>
-<h1 id="UART异步通信方式引脚连接方法"><a href="#UART异步通信方式引脚连接方法" class="headerlink" title="UART异步通信方式引脚连接方法"></a>UART异步通信方式引脚连接方法</h1><ul>
-<li>RXD:数据输入引脚。数据接受。</li>
-<li>TXD:数据发送引脚。数据发送。</li>
-</ul>
-<p><img src="http://wx2.sinaimg.cn/large/006BuM4Jgy1g653v4l3u9j309g05hjrm.jpg" alt="图片7"></p>
-<p><img src="http://wx2.sinaimg.cn/large/006BuM4Jgy1g653vfp7wtj30d4059gm0.jpg" alt="图片8"></p>
-<p><img src="http://wx2.sinaimg.cn/large/006BuM4Jgy1g653wqh5f9j30j4071aa5.jpg" alt="图片9"></p>
-<h1 id="UART异步通信方式特点"><a href="#UART异步通信方式特点" class="headerlink" title="UART异步通信方式特点"></a>UART异步通信方式特点</h1><ul>
-<li>全双工异步通信。</li>
-<li>分数波特率发生器系统，提供精确的波特率。</li>
-<li>发送和接受共用的可编程波特率，最高可达4.5Mbits/s</li>
-<li>可编程的数据字长度（8位或者9位）；</li>
-<li>可配置的停止位（支持1或者2位停止位）；</li>
-<li>可配置的使用DMA多缓冲器通信。</li>
-<li>单独的发送器和接收器使能位。</li>
-<li>检测标志：① 接受缓冲器  ②发送缓冲器空 ③传输结束标志</li>
-<li>多个带标志的中断源。触发中断。</li>
-<li>其他：校验控制，四个错误检测标志。</li>
-</ul>
-<h1 id="STM32串口异步通信需要定义的参数"><a href="#STM32串口异步通信需要定义的参数" class="headerlink" title="STM32串口异步通信需要定义的参数"></a>STM32串口异步通信需要定义的参数</h1><ul>
-<li>起始位，通信双方约定从空闲位开始</li>
-<li>数据位（8位或者9位），第九位就是奇偶校验位</li>
-<li>奇偶校验位（第9位），偶校验：使1的数量为偶数；奇校验：使1的数量为奇数</li>
-<li>停止位（1,15,2位）</li>
-<li>波特率设置</li>
-</ul>
-<h1 id="常用的串口相关寄存器"><a href="#常用的串口相关寄存器" class="headerlink" title="常用的串口相关寄存器"></a>常用的串口相关寄存器</h1><ul>
-<li>USART_SR状态寄存器</li>
-<li>USART_DR数据寄存器</li>
-<li>USART_BRR波特率寄存器 </li>
-</ul>
-<h1 id="波特率计算方法"><a href="#波特率计算方法" class="headerlink" title="波特率计算方法"></a>波特率计算方法</h1><p><img src="http://wx1.sinaimg.cn/large/006BuM4Jgy1g654k6970sj30lv0d90z4.jpg" alt="图片11"></p>
-<h1 id="串口操作相关库函数"><a href="#串口操作相关库函数" class="headerlink" title="串口操作相关库函数"></a>串口操作相关库函数</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_Init</span><span class="params">()</span></span>; <span class="comment">//串口初始化：波特率，数据字长，奇偶校验，硬件流控以及收发使能</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_Cmd</span><span class="params">()</span></span>;<span class="comment">//使能串口</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_ITConfig</span><span class="params">()</span></span>;<span class="comment">//使能相关中断</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_SendData</span><span class="params">()</span></span>;<span class="comment">//发送数据到串口，DR</span></span><br><span class="line"><span class="keyword">uint16_t</span> USART_ReceiveData();<span class="comment">//接受数据，从DR读取接受到的数据</span></span><br><span class="line"></span><br><span class="line"><span class="function">FlagStatus <span class="title">USART_GetFlagStatus</span><span class="params">()</span></span>;<span class="comment">//获取状态标志位</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_ClearFlag</span><span class="params">()</span></span>;<span class="comment">//清除状态标志位</span></span><br><span class="line"><span class="function">ITStatus <span class="title">USART_GetITStatus</span><span class="params">()</span></span>;<span class="comment">//获取中断状态标志位</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_ClearITPendingBit</span><span class="params">()</span></span>;<span class="comment">//清除中断状态标志位</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="串口配置的一般步骤"><a href="#串口配置的一般步骤" class="headerlink" title="串口配置的一般步骤"></a>串口配置的一般步骤</h1><ol>
-<li>串口时钟使能，GPIO时钟使能:<code>RCC_APB2PeriphClockCmd();</code></li>
-<li>串口复位:<code>USART_DeInit()</code>; 这一步不是必须的</li>
-<li>GPIO端口模式设置:<code>GPIO_Init();</code> 模式设置为<code>GPIO_Mode_AF_PP</code></li>
-<li>串口参数初始化：<code>USART_Init();</code></li>
-<li>开启中断并且初始化NVIC（如果需要开启中断才需要这个步骤）<code>NVIC_Init();``USART_ITConfig();</code></li>
-<li>使能串口:<code>USART_Cmd();</code></li>
-<li>编写中断处理函数：<code>USARTx_IRQHandler();</code></li>
-<li>串口数据收发：<br><code>void USART_SendData();//发送数据到串口，DR</code>, <code>uint16_t USART_ReceiveData();//接受数据，从DR读取接受到的数据</code></li>
-<li>串口传输状态获取：<br><code>FlagStatus USART_GetFlagStatus(USART_TypeDef* USARTx, uint16_t USART_FLAG);
-void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/【STM32】NVIC中断优先级管理.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/【STM32】NVIC中断优先级管理.html" itemprop="url">【STM32】NVIC中断优先级管理</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-19T14:39:35+08:00">
-                2019-08-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/STM32/" itemprop="url" rel="index">
-                    <span itemprop="name">STM32</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/【STM32】NVIC中断优先级管理.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="【STM32】NVIC中断优先级管理.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.3k 字
+                  1.7k 字
                 </span>
               
 
@@ -755,84 +483,16 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></
       
         
           
-            <h1 id="NVIC中断介绍"><a href="#NVIC中断介绍" class="headerlink" title="NVIC中断介绍"></a>NVIC中断介绍</h1><ul>
-<li>CM3内核支持256个中断，其中包含了16个内核中断和240个外部中断，并且具有256级的可编程中断设置。</li>
-<li>STM32并没有使用CM3内核的全部东西，而是只用了它的一部分。</li>
-<li>STM32有84个中断，包括16个内核中断和68个可屏蔽中断，具有16级可编程的中断优先级。</li>
-<li>STM32F103系列上面，又只有60个可屏蔽中断（在107系列才有68个）</li>
-</ul>
-<h1 id="中断管理方法"><a href="#中断管理方法" class="headerlink" title="中断管理方法"></a>中断管理方法</h1><p>首先，对STM32中断进行分组，组0~4。同时，对每个中断设置一个抢占优先级和一个响应优先级值。</p>
-<p>分组配置是在寄存器SCB-&gt;AIRCR中配置：</p>
-<p><img src="http://ws3.sinaimg.cn/large/006BuM4Jgy1g67l4p94d5j30jf073t8r.jpg" alt="图片5"></p>
-<h1 id="抢占优先级-amp-响应优先级区别"><a href="#抢占优先级-amp-响应优先级区别" class="headerlink" title="抢占优先级 &amp; 响应优先级区别"></a>抢占优先级 &amp; 响应优先级区别</h1><ul>
-<li>高优先级的抢占优先级是可以打断正在进行的低抢占优先级中断的。</li>
-<li>抢占优先级相同的中断，高响应优先级不可以打断低响应优先级的中断。</li>
-<li>抢占优先级相同的中断，当两个中断同时发生的情况下，哪个响应优先级高，哪个先执行。</li>
-<li>如果两个中断的抢占优先级和响应优先级都是一样的话，则看哪个中断先发生就先执行；</li>
-</ul>
-<h1 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h1><p>假定设置中断优先级组为2，然后设置中断3(RTC中断)的抢占优先级为2，响应优先级为1。  中断6（外部中断0）的抢占优先级为3，响应优先级为0。中断7（外部中断1）的抢占优先级为2，响应优先级为0。</p>
-<p>那么这3个中断的优先级顺序为：中断7&gt;中断3&gt;中断6。 </p>
-<h1 id="特别说明"><a href="#特别说明" class="headerlink" title="特别说明"></a>特别说明</h1><p>一般情况下，系统代码执行过程中，只设置一次中断优先级分组，比如分组2，设置好分组之后一般不会再改变分组。随意改变分组会导致中断管理混乱，程序出现意想不到的执行结果。</p>
-<h1 id="中断优先级分组函数"><a href="#中断优先级分组函数" class="headerlink" title="中断优先级分组函数"></a>中断优先级分组函数</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">NVIC_PriorityGroupConfig</span><span class="params">(<span class="keyword">uint32_t</span> NVIC_PriorityGroup)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  assert_param(IS_NVIC_PRIORITY_GROUP(NVIC_PriorityGroup));</span><br><span class="line">  SCB-&gt;AIRCR = AIRCR_VECTKEY_MASK | NVIC_PriorityGroup;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//比如：</span></span><br><span class="line">NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);</span><br></pre></td></tr></table></figure>
+             <font size="3" face="楷体">
 
-<h1 id="中断设置相关寄存器"><a href="#中断设置相关寄存器" class="headerlink" title="中断设置相关寄存器"></a>中断设置相关寄存器</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">__IO <span class="keyword">uint8_t</span>  IP[<span class="number">240</span>]; <span class="comment">//中断优先级控制的寄存器组</span></span><br><span class="line">__IO <span class="keyword">uint32_t</span> ISER[<span class="number">8</span>]; <span class="comment">//中断使能寄存器组</span></span><br><span class="line">__IO <span class="keyword">uint32_t</span> ICER[<span class="number">8</span>]; <span class="comment">//中断失能寄存器组</span></span><br><span class="line">__IO <span class="keyword">uint32_t</span> ISPR[<span class="number">8</span>]; <span class="comment">//中断挂起寄存器组</span></span><br><span class="line">__IO <span class="keyword">uint32_t</span> ICPR[<span class="number">8</span>]; <span class="comment">//中断解挂寄存器组</span></span><br><span class="line">__IO <span class="keyword">uint32_t</span> IABR[<span class="number">8</span>]; <span class="comment">//中断激活标志位寄存器组</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="MDK中NVIC寄存器结构体"><a href="#MDK中NVIC寄存器结构体" class="headerlink" title="MDK中NVIC寄存器结构体"></a>MDK中NVIC寄存器结构体</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> ISER[<span class="number">8</span>];             </span><br><span class="line">       <span class="keyword">uint32_t</span> RESERVED0[<span class="number">24</span>];                                   </span><br><span class="line">  __IO <span class="keyword">uint32_t</span> ICER[<span class="number">8</span>];                    </span><br><span class="line">       <span class="keyword">uint32_t</span> RSERVED1[<span class="number">24</span>];                                    </span><br><span class="line">  __IO <span class="keyword">uint32_t</span> ISPR[<span class="number">8</span>];                     </span><br><span class="line">       <span class="keyword">uint32_t</span> RESERVED2[<span class="number">24</span>];                                   </span><br><span class="line">  __IO <span class="keyword">uint32_t</span> ICPR[<span class="number">8</span>];                   </span><br><span class="line">       <span class="keyword">uint32_t</span> RESERVED3[<span class="number">24</span>];                                   </span><br><span class="line">  __IO <span class="keyword">uint32_t</span> IABR[<span class="number">8</span>];                     </span><br><span class="line">       <span class="keyword">uint32_t</span> RESERVED4[<span class="number">56</span>];                                   </span><br><span class="line">  __IO <span class="keyword">uint8_t</span>  IP[<span class="number">240</span>];                     </span><br><span class="line">       <span class="keyword">uint32_t</span> RESERVED5[<span class="number">644</span>];                                  </span><br><span class="line">  __O  <span class="keyword">uint32_t</span> STIR;                         </span><br><span class="line">&#125;  NVIC_Type;</span><br></pre></td></tr></table></figure>
-
-<h1 id="对于每个中断怎么设置优先级"><a href="#对于每个中断怎么设置优先级" class="headerlink" title="对于每个中断怎么设置优先级"></a>对于每个中断怎么设置优先级</h1><h2 id="中断优先级控制的寄存器组：IP-240"><a href="#中断优先级控制的寄存器组：IP-240" class="headerlink" title="中断优先级控制的寄存器组：IP[240]"></a>中断优先级控制的寄存器组：IP[240]</h2><ul>
-<li><p>全称是：Interrupt Priority Registers</p>
-</li>
-<li><p>240个8位寄存器，每个中断使用一个寄存器来确定优先级。STM32F10x系列一共60个可屏蔽中断，使用IP[59]~IP[0]。</p>
-</li>
-<li><p>每个IP寄存器的高4位用来设置抢占和响应优先级（根据分组），低4位没有用到。</p>
-</li>
-<li><p><code>void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct);</code></p>
-</li>
-</ul>
-<h2 id="中断使能寄存器组：ISER-8"><a href="#中断使能寄存器组：ISER-8" class="headerlink" title="中断使能寄存器组：ISER[8]"></a>中断使能寄存器组：ISER[8]</h2><ul>
-<li><p>作用：用来使能中断</p>
-</li>
-<li><p>32位寄存器，每个位控制一个中断的使能。STM32F10x只有60个可屏蔽中断，所以只使用了其中的ISER[0]和ISER[1]。</p>
-</li>
-<li><p>ISER[0]的<code>bit0-bit31</code>分别对应中断<code>0-31</code>。ISER[1]的<code>bit0-27</code>对应中断<code>32~59</code>；</p>
-</li>
-<li><p><code>void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct);</code></p>
-</li>
-</ul>
-<h2 id="中断失能寄存器组：ICER-8"><a href="#中断失能寄存器组：ICER-8" class="headerlink" title="中断失能寄存器组：ICER[8]"></a>中断失能寄存器组：ICER[8]</h2><ul>
-<li><p>作用：只读，通过它可以知道当前在执行的中断是哪一个</p>
-</li>
-<li><p>32位寄存器，每个位控制一个中断的失能。STM32F10x只有60个可屏蔽中断，所以只使用了其中的ICER[0]和ICER[1]。</p>
-</li>
-<li><p>ICER[0]的<code>bit0~bit31</code>分别对应中断<code>0~31</code>。ICER[1]的<code>bit0~27</code>对应中断<code>32~59</code>；</p>
-</li>
-<li><p>配置方法跟ISER一样<br><code>static __INLINE uint32_t NVIC_GetActive(IRQn_Type IRQn)</code></p>
-</li>
-</ul>
-<h2 id="中断挂起控制寄存器组：ISPR-8"><a href="#中断挂起控制寄存器组：ISPR-8" class="headerlink" title="中断挂起控制寄存器组：ISPR[8]"></a>中断挂起控制寄存器组：ISPR[8]</h2><ul>
-<li>作用：用来挂起中断</li>
-</ul>
-<h2 id="中断解挂控制寄存器组：ICPR-8"><a href="#中断解挂控制寄存器组：ICPR-8" class="headerlink" title="中断解挂控制寄存器组：ICPR[8]"></a>中断解挂控制寄存器组：ICPR[8]</h2><ul>
-<li>作用：用来解挂中断</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">static __INLINE void NVIC_SetPendingIRQ(IRQn_Type IRQn)；</span><br><span class="line">static __INLINE uint32_t NVIC_GetPendingIRQ(IRQn_Type IRQn)；</span><br><span class="line"><span class="keyword">static</span> __<span class="function">INLINE <span class="keyword">void</span> <span class="title">NVIC_ClearPendingIRQ</span><span class="params">(IRQn_Type IRQn)</span></span></span><br></pre></td></tr></table></figure>
-
-<h2 id="中断激活标志位寄存器组：IABR-8"><a href="#中断激活标志位寄存器组：IABR-8" class="headerlink" title="中断激活标志位寄存器组：IABR [8]"></a>中断激活标志位寄存器组：IABR [8]</h2><ul>
-<li><p>作用：只读，通过它可以知道当前在执行的中断是哪一个</p>
-</li>
-<li><p>如果对应位为1，说明该中断正在执行。</p>
-</li>
-<li><p><code>static __INLINE uint32_t NVIC_GetActive(IRQn_Type IRQn)</code></p>
-</li>
-</ul>
-<h1 id="中断参数初始化函数"><a href="#中断参数初始化函数" class="headerlink" title="中断参数初始化函数"></a>中断参数初始化函数</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">NVIC_Init</span><span class="params">(NVIC_InitTypeDef* NVIC_InitStruct)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  <span class="keyword">uint8_t</span> NVIC_IRQChannel; <span class="comment">//设置中断通道</span></span><br><span class="line">  <span class="keyword">uint8_t</span> NVIC_IRQChannelPreemptionPriority;<span class="comment">//设置响应优先级</span></span><br><span class="line">  <span class="keyword">uint8_t</span> NVIC_IRQChannelSubPriority; <span class="comment">//设置抢占优先级</span></span><br><span class="line">  FunctionalState NVIC_IRQChannelCmd; <span class="comment">//使能/使能</span></span><br><span class="line">&#125; NVIC_InitTypeDef;</span><br><span class="line"></span><br><span class="line">NVIC_InitTypeDef   NVIC_InitStructure;</span><br><span class="line">NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;<span class="comment">//串口1中断</span></span><br><span class="line">NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=<span class="number">1</span> ;<span class="comment">// 抢占优先级为1</span></span><br><span class="line">NVIC_InitStructure.NVIC_IRQChannelSubPriority = <span class="number">2</span>;<span class="comment">// 子优先级位2</span></span><br><span class="line">NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;<span class="comment">//IRQ通道使能</span></span><br><span class="line">NVIC_Init(&amp;NVIC_InitStructure);	<span class="comment">//根据上面指定的参数初始化NVIC寄存器</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="中断优先级设置步骤"><a href="#中断优先级设置步骤" class="headerlink" title="中断优先级设置步骤"></a>中断优先级设置步骤</h1><ul>
-<li>系统运行后先设置中断优先级分组。调用函数：<br><code>void NVIC_PriorityGroupConfig(uint32_t NVIC_PriorityGroup);</code>整个系统执行过程中，只设置一次中断分组。</li>
-<li>针对每个中断，设置对应的抢占优先级和响应优先级：<br><code>void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct);</code></li>
-<li>如果需要挂起/解挂，查看中断当前激活状态，分别调用相关函数即可。</li>
-</ul>
-
+<p>为了出国，提升背景为目的，我在大三报名了美赛，机缘巧合在一个留学交流群里，看到一个同学问有没有人有参加数模美赛的意向，要求是会写代码，我想着就去问问，毕竟我一个从小对数学无感，并且考了几次托福都上不了90的垃圾来说，除了写写代码还能干点什么呢？我就去说明了下自己的情况，他们考虑后也同意了，他们两个是同学，都是在经济学院，男生数学好，微积分什么的都接近满分，女生英语好，托福首考105，我了解到他们的情况之后压力还是很大的，毕竟我也只是一个懂$Matlab$语法的小白啊，数学建模这个词在我的印象里简直就像是“量子力学”一样的神秘（滑稽）。后来我们三个见面聊了聊，互相了解了下情况，我们都没有太多的数学建模基础，情况类似，之后也就没再多聊。</p>
+<p>直到考试前，我们关于建模的事情聊得都不多，感觉我们三个都是比较内敛的人，我还算是其中比较外向的了，很多时候如果我不说话，估计群里就不会有人说话了。赶在寒假前期末考试后，我打算好好准备一下，虽然感觉毫无头绪，不知道从哪个高深的算法开始学起，但还是硬着头皮上，买了个课，每天听一听，后来就去北京学GRE了，数模什么的也就暂且搁置了，直到比赛前几周，才继续学一些知识。忘记说了，今年比较特殊的是，受疫情影响，美赛从一次改成了两次，一次是2月份，一次是3月份，我们当时想着或许3月能开学，就去搞3月的比赛（我实际上是觉得自己啥也不会，能拖几天是几天，拖，就恩拖）</p>
+<p>然而躲得过初一却躲不过十五，3月份的比赛马上就到了，我们采用的是腾讯会议的方式线上交流。第一天早上起得很早，六点多就看赛题了，没记错的话，我3点多就醒了一次，估计是没准备太紧张了吧…拿到赛题，用词典把B题翻译了下，了解了题意，大概就是问想在海边建沙堡的话，怎么剪最好，我当时看了就觉得，这不就是开脑洞胡思乱想嘛，一个从小都没怎么去过海边的中国人，沙堡？别搞笑了，你问我怎么做汉堡好吃还差不多。</p>
+<p>但当我用翻译软件把B题翻译了之后我才发现，或许B题是唯一一个我能理解的题目了，这就像是养龙，你说咋养就咋养，你说怎么搭沙堡就怎么搭，没有硬性规定，全靠你自己的理解，这种还算好的，毕竟只要说服了自己，就觉得没问题不是。在和两个队友商量后，也一致认为B题比较好理解，虽然暂时没有太明确的思路，但至少能靠脑子想想，编，就恩编。第一天，我们最开始思路很乱，没搞清楚应该从哪个点入手，毕竟对一个沙堡要分析的东西还是很多的，没有限定条件随便扯总不是一个事，搞数学的同学想从含水量的角度出发，我想从力的角度考虑，但奈何我的流体力学也只是学了一个皮毛，现在一个公式都想不起来的我，想从力学出发未免太难了点，搞数学的同学倒是想出了个思路，还写了不少式子，到了下午，搞数学的同学竟然已经写出了一个模型，虽然忽略了很多因素，但听起来觉得很有道理，达到了“自圆其说”的作用，于是我们就照着这个方向继续研究，提出问题，否决问题，提出方案，改正方案…就这样我慢慢觉得这个模型有搞头，至少我开始有了点思路。当晚搞数学的同学给我提出了一个难题，让我求一个函数的最小值，单求最小值不要紧，毕竟我还是上了点网课的，懂一点算法，但这函数也太复杂了，迭代套迭代，简直就是一个套娃，我完全没有思路。当晚我们还说明天要不要讨论一下F题，毕竟如果这个式子不能解决，可能这个思路就没法继续下去了。实在不行，我们就去做文字建模。。。</p>
+<p>那晚我也没怎么睡好，因为我真的不知道这个“套娃”怎么解决，第二天早上起来我就自学了下可能能解决的办法–蒙特卡洛模拟，试着化简一下式子，再写写代码，听着两个队友在腾讯会议里讨论F题的题意，我得到了一个看起来“不错”的结果，我就在里面和他们说，如果我得到了第二问的结果，你们是觉得做F题还是B题？在我的语言诱导下，我们又开始脑洞大开建沙堡。可能是算出了个结果，有了信心，我们逐渐攻克各个难题，一起讨论，我认为我们仨合作还是很愉快的，总之就是在自圆其说的道路上越走越远233。</p>
+<p>我们每天也不熬夜，大概10点左右就收工，早上八点集合，第三天，大部分问题也都已经想好。最后一天，该算的也算完了，我就给自己找点事做，下了个Latex（真的是作死），最后一天把我搞得死去活来，硬是坐在电脑前一天，从零入门Latex还好我有点Markdown基础，搞这个上手也比较快，我们改了又改，填了又填，最后在后半夜两点，在我们三个人一同的见证下交上了论文，4天的美赛到此结束，圆满收工。</p>
+<p>这次美赛，收获很多，首先感谢我的两个队友，都很靠谱！我自己也算尽心尽力了，虽然基础差，但在这几天现学了不少东西，总之还是那句话，“尽吾志也而不能至者，可以无悔矣。”</p>
+</font>
           
         
       
@@ -882,7 +542,7 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/【STM32】端口复用.html">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Bit,Byte,K,M之间的换算问题.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Qian Hongbo">
@@ -901,7 +561,7 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/【STM32】端口复用.html" itemprop="url">【STM32】端口复用</a></h2>
+                <a class="post-title-link" href="/Bit,Byte,K,M之间的换算问题.html" itemprop="url">Bit,Byte,K,M之间的换算问题</a></h2>
         
 
         <div class="post-meta">
@@ -913,8 +573,8 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-19T14:31:53+08:00">
-                2019-08-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-22T19:13:09+08:00">
+                2020-02-22
               </time>
             
 
@@ -936,8 +596,8 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/STM32/" itemprop="url" rel="index">
-                    <span itemprop="name">STM32</span>
+                  <a href="/categories/知识积累/" itemprop="url" rel="index">
+                    <span itemprop="name">知识积累</span>
                   </a>
                 </span>
 
@@ -956,8 +616,8 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/【STM32】端口复用.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="【STM32】端口复用.html" itemprop="commentCount"></span>
+                <a href="/Bit,Byte,K,M之间的换算问题.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Bit,Byte,K,M之间的换算问题.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -979,7 +639,7 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  285 字
+                  159 字
                 </span>
               
 
@@ -1019,242 +679,247 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></
       
         
           
-            <h1 id="什么是端口复用"><a href="#什么是端口复用" class="headerlink" title="什么是端口复用"></a>什么是端口复用</h1><p>STM32有很多的内置外设，这些外设的外部引脚都是与GPIO复用的。也就是说，一个GPIO如果可以复用为内置外设的功能引脚，那么当这个GPIO作为内置外设使用的时候，就叫做复用。</p>
-<blockquote>
-<p> 例如串口1 的发送接收引脚是PA9,PA10，当我们把PA9,PA10不用作GPIO，而用做复用功能串口1的发送接收引脚的时候，叫端口复用。</p>
+            <p>Bit意为“位”或“比特”，是计算机运算的基础，属于二进制的范畴；<br>Byte意为“字节”，是计算机文件大小的基本计算单位；<br>换算： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1 Byte = 8 Bits </span><br><span class="line"></span><br><span class="line">1 KB = 1024 Bytes </span><br><span class="line"></span><br><span class="line">1 MB = 1024 KB </span><br><span class="line"></span><br><span class="line">1 GB = 1024 MB</span><br></pre></td></tr></table></figure>
+
+<p>Byte简写为B，而bit简写为b；1B=8b；<br>一个数字与一个字母都是占1B；一个汉字占两个字节。</p>
+<p>问题：计算机硬盘64G，每个块的大小为4K，用位示图来管理硬盘的空间，则位示图的大小为多少字节？</p>
+<ul>
+<li><input disabled type="checkbox"> 16M</li>
+<li><input disabled type="checkbox"> 4M</li>
+<li><input checked disabled type="checkbox"> 2M</li>
+<li><input disabled type="checkbox"> 1M</li>
+</ul>
+<p>解答：<br>$$<br>\frac{64G}{4K}=\frac{64\times1024\times1024K}{4K}次(bit)=\frac{16\times1024\times1024}{8\times1024\times1024}=2M<br>$$</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/你凭什么上北大？.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/你凭什么上北大？.html" itemprop="url">你凭什么上北大？ 作者:贺舒婷</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-21T09:33:42+08:00">
+                2020-02-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/随笔/" itemprop="url" rel="index">
+                    <span itemprop="name">随笔</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/你凭什么上北大？.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="你凭什么上北大？.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4.6k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  15 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>这是一篇陪伴我走过初中，高中的文章</p>
+<p>在我无数次的怀疑自己，自暴自弃之后给予我力量</p>
+<p>现在我已经来到了大学，重读此篇，来找回曾经的自己。</p>
 </blockquote>
-<h1 id="端口复用配置过程"><a href="#端口复用配置过程" class="headerlink" title="端口复用配置过程"></a>端口复用配置过程</h1><p>以PA9,PA10配置为串口1为例</p>
-<ul>
-<li><p>GPIO端口时钟使能。<code>RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);</code></p>
-</li>
-<li><p>复用外设时钟使能。比如你要将端口PA9,PA10复用为串口，所以要使能串口时钟。<code>RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);</code></p>
-</li>
-<li><p>端口模式配置。 GPIO_Init（）函数。查表：《STM32中文参考手册V10》P110的表格“8.1.11外设的GPIO配置”</p>
-</li>
-</ul>
-<p><img src="http://ws1.sinaimg.cn/large/006BuM4Jgy1g67l5tal6nj30pb07qq4w.jpg" alt="图片4"></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);<span class="comment">//①IO时钟使能</span></span><br><span class="line"></span><br><span class="line">RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);<span class="comment">//②外设时钟使能</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//③初始化IO为对应的模式</span></span><br><span class="line">GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9; <span class="comment">//PA.9//复用推挽输出</span></span><br><span class="line">GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP; </span><br><span class="line">GPIO_Init(GPIOA, &amp;GPIO_InitStructure);</span><br><span class="line">  </span><br><span class="line">GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;<span class="comment">//PA10 PA.10 浮空输入</span></span><br><span class="line">GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;<span class="comment">//浮空输入</span></span><br><span class="line">GPIO_Init(GPIOA, &amp;GPIO_InitStructure);</span><br></pre></td></tr></table></figure>
+<font size="3" face="楷体">
 
+<p>未名湖边的桃花开了，就在前几天。</p>
+<p>我曾无数次梦想过，陌上开花的时候湖边折柳的人群里会有自己的身影。那个时候，我的心思和大家一样单纯而迫切，我的目光却是比你们更加迷茫和彷徨。</p>
+<p>那年高三。</p>
+<p>十年磨一剑，我得到的却几乎只是一块废铁。</p>
+<p>高一那年，我真的差点把自己废成了一块废铁。上课睡觉，聊天，看漫画，吃零食，跟着后面那些男生大呼小叫，把年轻的女老师气得眼圈含泪，然后自鸣得意而洋洋之。那真是一段不堪回首的日子，像色彩斑斓的黑洞，看上去奇观异彩，鬼魅般的吸引力却在不知不觉中一点点把你拉向无敌的深渊。于是下滑，堕落，而更加难过的是明明知道自己在堕落却无力去改变。习惯的力量的确大道了让我无可奈何，于是我放弃了最后的挣扎与努力。现在想想，那只是懦弱，那只是懒惰，那只是给自己自甘堕落所找的一个看似冠冕堂皇的理由，一切是自欺欺人。</p>
+<p>可当时没有任何人来指着我的鼻尖骂我，说你是不是就想这样破罐子破摔，就像这样玩完你的一辈子，也许他们已经放弃了我，有时候我想，然后是极其嘲讽般的不屑，不屑以及自以为是的洒脱——谁稀罕谁。其实，那个时候真的是应该有一个人，就像很多人曾经经历过的那样，指着我的鼻尖，戳着我的脊梁说，你知不知道自己在做什么，请不清楚自己想要什么，请不清楚自己的明天会是什么。</p>
+<p>可是，在无所谓的人也会有自己的底线的。正如再深的涧谷也会有它的低谷。一切就像滑楼梯，一路上放肆张扬地笑了下来，最后终于重重的摔在了下面，头破血流。</p>
+<p>也许，人只有在痛的时候，才会认认真真反省自己走错了哪一步吧，总要摔些跟头，才能学会绕着道走。而这条再简单不过的路，我却付出了整整一年的青春时光才真正明白。一年，365天，可以让居里夫人发现镭，可以让爱因斯坦证出E=mc2，一年可以让一个婴儿学会跌跌撞撞走向母亲的怀抱，一年可以让一段轰轰烈烈的爱情开始和终了。可是这一年，我只得到了那一句话。所幸，并不亏，也并不晚</p>
+<p>高二分科，我选了文科。你无法想象我所在的中学有着怎样烂的文科班——本科上线只有三人，本科上线三人是个什么概念？当我现在大学同学颇为自得的告诉我他们中学的班级北大清华一走几十个的时候，我轻轻的笑了笑。我所在的文科班，是一个本科上线三人的文科班，更具有讽刺意味的是，三个人全是复读生。我就是在大家或无奈或讽刺或无谓的目光里，毅然决绝地在文科报名表上写上了自己的名字，那真是我一生中写得最好看的一次。</p>
+<p>我只是突然间觉醒了，觉得自己的一辈子不能就那样过。时候很多人问我怎么回事，也许他们是想在我这里听到一个传奇般的浪子回头的故事，而我当时所能想到的解释就只有这一句，我只是觉得，我的一辈子不应该就这样吊儿郎当的过去。</p>
+<p>可我还是低估了过去那一年给我带来的影响。第一次月考，我考了年级第12名，也许这是一个听上去差强人意的成绩，可是，仅有的理智还是足以提醒我，那是一个本科上线三人的文科班，如果你不能把所有的人远远甩在后面，12名和120有什么区别？</p>
+<p>至今我还记得那次考了第一的那个女生，是一个不见经传的女孩子，瘦瘦小小，戴副厚厚的黑边眼镜，趴伏在书桌上的身影常常有些佝偻。而这个印象的得来，是因为所有的人永远只能看到她趴在桌上的身影。她一直是班里第一个来最后一个走的人。我一直对那种学生持有一种莫名的排斥和抵触情绪，总想你们有什么了不起，不就是死读书嘛，我要是像你们这样刻苦努力早是市里第一了。事实上直到那次考试成绩出来以后我仍然对她不屑     一顾。然后，我迎来了一生中最重要的一次班会。</p>
+<p>我不知道要用怎样的分量去感谢那个班主任，因为如果不是她的那席话，现如今的我在哪里都不一定。班会上，她说：“这次考试非常能说明问题，该考好的人都考好了。”然后她扫了我一眼，我明白她的潜台词，也就是说在她看来我属于是没有理由考好的的那一堆人里的。奇怪，我居然没有脸红。不知道是太久的堕落已经在不知不觉中磨光了原本敏感的自尊，还是下意识里仍然对她的话不置可否，我当时面无表情的迎上了她的目光。她的眼睛只是平静地扫过我那里，然后继续：“我知道有些人自以为很聪明很有才气，看不起那些认真学习刻苦努力的同学，总觉得人家是笨鸟先飞是先天不足。可是我想说，你只是懦弱！你是不敢尝试，你只是不敢像他们一样去努力去刻苦，因为你怕自己即使刻苦了也比不上他们，刻苦了也考不了第一，反而遭人耻笑，你宁可不去尝试，只是因为有失败的风险，而你甚至连这一点风险都承担不起，因为，在你心底，你对自己根本就没有把握……”后面她又说了什么我已经想不起来了，我承认当时我是完完全全懵在那儿了，因为她说的那几句话。“你只是懦弱……”当时的感觉是雷轰一样把我整个人震住了，反反复复回荡在脑子里就只有那么一句话：“你只是懦弱。”</p>
+<p>她是正确的。</p>
+<p>那种突然觉醒的震撼是言语无法描述的，也是我不想用文字去表达的。你只能通过结果来想象，也只需要通过借结果来想象。那晚我在日记里写，试试吧。试一试自己那样刻苦那样努力的去学上一个月会不会见效。当时我根本不敢对自己承诺什么结果，也的却承诺不起。我只是抱着一个念头，试一试。</p>
+<p>然后迎来了一生中最戏剧性的一个月。之所以说它戏剧性，只因为就像难以想象唐僧不再啰嗦孙悟空不再好斗猪八戒不再贪吃一样，我简直不敢相信那个早晨六点早自习上课到晚上十点晚自习下课一动也不动坐在位置上安安稳稳踏踏实实的人可以是我自己。其实并没有说起来那么简单的。我去一点一点地做的时候就已经发现了：要想在几天里改变365天来形成的习惯，太难；而要想在一个月里创造出令人瞠目结舌的奇迹来，也太难。习惯成自然啊。就像那句话说的，“心思平原放马，易放难收”，野惯了的心要想一下子收回来，谈何容易？常常做着做着就忍不住了，心开始浮躁，眼神也开始飘离，好几次差一点就要放弃。只是，在那个最危险的边缘晃荡的时候我总是压一压，告诉自己，忍不住的时候，再忍一下，其实说白了也就那么一句话：忍不住的时候，再忍一下。我承认自己是一个骨子里相当傲气的人，我就是不相信我刻苦起来会不如哪个人，我就是不信我真的去做一件事情的时候会做不到，我就是不信这世上真的有什么不可能的事。I believe that nothing is impossible.</p>
+<p>然后，我迎来了那次期待已久的期中考试，至今我仍记得考完之后的感觉。抱着书走在回家的路上，茫茫的看着车水马龙人来人往，恍惚想真的考完了吗？为什么心里空空的没有着落？那的确是我一生中最特殊的一次考试，因为它关系着我此后的方向和道路选择，风险太大，我怎么安得下心？其实。考试结果想必大家已经猜到了。我的的确确让所有的人真正瞠目结舌了一次。是的，我考了第一，全市第一。</p>
+<p>你永远无法想象那个结果于我而言有多么重要。知道成绩是我出乎寻常的平静。那时我才明白原来激扬和呐喊的冲动到了极点只是平静。当名字出现在了成绩单的第一行时，我默默地对自己说：记住了，这世上没有什么事情是不可能的。</p>
+<p>从此我再也没有去改变过那种态度和方法。其实所有的方法说白了都是没有方法的，只有一个词：刻苦。</p>
+<p>我坚守着那些不是方法的方法，也坚守着我的名字在成绩单上的位置，一直到高考前的最后一次考试，我始终是第一名。但是，真正的挑战还没有开始。即使我可以牢牢占据第一名的位置，即使我可以每次都把第二名甩下几十分，我知道，北大离我还是太远，远的连在梦里都看的不真切。所有的老师都坚信我将会是学校有史以来考得最好的一个文科生，而在他们的概念里，考得最好的文科生，意味着你可以上山大，运气好点儿的话也许可以伸伸手还能够上复旦甚至人大的门槛。而我只要北大。我从来没有对任何人讲起过我的志愿——如果可以称之为志愿的话。我只想把所有的力量都积蓄起来。</p>
+<p>高三第二学期，我们搬进了刚刚落成的教学楼。搬迁的那天，楼道里吵得很，拖桌子拉板凳的声音在走廊里不绝于耳。我一个人不言不语的跳过窗子，踏上了二楼窗外那个大大的平台。对面是操场，初雪未融，空气湿冷，光秃秃的树枝直直的刺向天空。雪天的阳光凉凉的透过睫毛洒在眼睛里。眼睛静静的看着远远的天空。我默默在心里说：“等着吧，我要你见证一个奇迹。”我知道，这世上的确没有什么不可能的事情。</p>
+<p>我从来不知道压力达到一定程度居然可以把人的潜能激发到那种地步的。我是一个极其不安分的人，可是那段时间我表现得无比耐心沉稳，踏实得像头老黄牛。事实上无数次我都面临崩溃的边缘了。高中5本历史书我翻来覆去背了整整六遍。当你把一本书也背上6遍的时候你就知道那是什么感觉了，只是，忍不住的时候，再忍一下。坚持的确是世上最伟大的一种品质。那段时间我唯一的休息方式就是站在走廊里看远处的天空。后来发现在对面的建筑墙壁上有一行大大的红字，是学校用来激励学生的吧。我不确定。可就是那句话陪我走过了高三最后的日子——意志的力量，是决定成败的力量。我用我所有的经历和体会去实践而且证明了这句话：意志的力量，是决定成败的力量。</p>
+<p>呼啸而过的风卷着漫天的黄沙，在那个北方的春天里，我们一个个头发蓬乱，皮肤粗糙。死寂和喧嚣交替如同美国的执政党，规律的让人怀疑冥冥之中可有双奇异而魔力无穷的手。惶然而又茫然的我们在敬畏与期待中迎来又送走了一模，二模乃至N模。每根神经都被冷酷无情的事实锤炼的坚不可摧，无论是吟惯了杨柳岸晓风残月的诗情，还是习惯了信手涂鸦的画意。在这个来去匆匆的季节里，一切敏感纤细都奢侈的如同凯撒大帝的绸衣，徒留无数次的希望在无数次的失望前撞得粉身碎骨，无数次的激扬在无数次的颓丧下摔得头破血流。每个人都比昨天更加明白理想和现实之间那道不可逾越的鸿沟，同时也比昨天更加拼命努力挣扎，试图挤过那道窄窄的独木桥，哪怕明知是徒劳。</p>
+<p>——会是徒劳吗？</p>
+<p>当这个锥心的问号在夜阑人静的时候一次次猛烈叩击起了心门，每个人都难以承受那潮涌而至的恐慌和迷惘，于是逼着自己埋进去，埋进书本，埋进试卷，埋进密不透风的黑茧里——为的是有朝一日的破茧成蝶。青黑的眼圈，浮肿的眼袋，干燥的手指，焦虑的起了水泡的嘴角。那个春天我不知道流行的是粉蓝果绿还是黛紫银灰。小镜子被悄悄收起，因为不忍见到自己憔悴的面容和黯淡的眼睛，因为怕有什么会在汪洋恣意般在干旱已久的脸上纵横开来——上帝，我是个女孩子啊！</p>
+<p>上帝无言。无言微笑。微笑告诉我，你，心甘情愿。是的。我心甘情愿我不悔初衷我自己选择了这条路，平坦也好崎岖也罢我得走下去。我要走下去。我会走下去。</p>
+<p>于是所有的呐喊被咽下去，所有的豪情被收起来。我像一头二月黄牛，默默踏步，无声前行。当拼搏被拼命所取代时，香格里拉已经幻化成心中恒远而朦胧的梦想，而所有的努力也只是为了让这梦想不再“美人如花隔去端”，哪怕青冥长天，纵然绿水波澜。</p>
+<p>踏入考场的时候我很平静，“尽吾志也而不能至者，可以无悔矣”事实上我从来没有想过自己会考入北大以外的哪所学校。与其说这是一种自信，莫如说这是一种预感。我只是想，哪怕北大只招一个名额，为什么不可能是我？这世上没有什么事情是真正不可能发生的。</p>
+<p>考完后走在回家的路上，看着依然匆匆的人群，心里依然空无着落。眼睛因为泪雾而模糊，视野里的东西却越发清晰。这在科学上有解释，我却宁愿相信是因为一切真实的感知都要以泪水和苦痛作为代价。是的，我们总是要学会放弃一些东西，在能得到另外一些东西。如果你所在乎的东西值得你为了它而付出一切，那么所有的放弃只是分娩前的阵痛。总要有所取舍的，蝴蝶的生命之所以如此短暂，是因为它的翅膀太过精致了。有时候，放弃是为了更好的得到，关键看你想要的究竟是什么，以及为了这想要的东西你愿意付出多大的代价。上帝对每一个人都是平等的。</p>
+<p>事实上我怀念那段日子，而且永远感激它。不只是因为在那段时间里我完成了自己的过渡与蜕变，更是因为那时的一切深深烙在了我正处于可塑期的性格中，成为这一生永远的财富。那真的是多少钱都买不来的财富。人生中再也不会有哪个时期像那时一样专一地，单纯地，坚决地，几近顽固而又饱含信仰和希冀地，心无旁骛乃至与世隔绝地，为了一个认定的目标而奋斗。当你在若干年后某个悠闲的下午，回想起自己曾经的努力和放弃，曾经的坚忍和毅力，曾经的执着和付出，曾经的汗水和泪水，那会是怎样一种感动和庆幸，怎样一种欣慰和尊重+尊敬你自己。真的，在这个过程中，请允许我重复一遍，最重要的，是你自己。我感谢父母感谢老师感谢同学感谢朋友感谢所有关心我帮助我的人，但我最感谢的，是我自己。Nothing is impossible.这是我在一点一滴的努力与尝试中得到的东西。而且我也相信，这也将会是使我终身受益的东西。在这里，我把自己最信仰的一句话送给大家：Nothing is impossible.</p>
+</font>
 
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/【STM32】SysTick定时器.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/【STM32】SysTick定时器.html" itemprop="url">【STM32】SysTick定时器</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-19T10:33:47+08:00">
-                2019-08-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/STM32/" itemprop="url" rel="index">
-                    <span itemprop="name">STM32</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/【STM32】SysTick定时器.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="【STM32】SysTick定时器.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.2k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  5 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Systick定时器是什么"><a href="#Systick定时器是什么" class="headerlink" title="Systick定时器是什么"></a>Systick定时器是什么</h1><ul>
-<li><p>Systick定时器，是一个简单的定时器，对于CM3,CM4内核芯片，都有Systick定时器。</p>
-</li>
-<li><p>Systick定时器常用来做延时，或者实时系统的心跳时钟。这样可以节省MCU资源，不用浪费一个定时器。比如UCOS中，分时复用，需要一个最小的时间戳，一般在STM32+UCOS系统中，都采用Systick做UCOS心跳时钟。</p>
-</li>
-<li><p>Systick定时器就是系统滴答定时器，一个24 位的倒计数定时器，计到0 时，将从RELOAD 寄存器中自动重装载定时初值。只要不把它在SysTick 控制及状态寄存器中的使能位清除，就永不停息，即使在睡眠模式下也能工作。</p>
-</li>
-<li><p>SysTick定时器被捆绑在NVIC中，用于产生SYSTICK异常（异常号：15）</p>
-</li>
-<li><p>Systick中断的优先级也可以设置。</p>
-</li>
-</ul>
-<h1 id="Systick相关寄存器"><a href="#Systick相关寄存器" class="headerlink" title="Systick相关寄存器"></a>Systick相关寄存器</h1><ul>
-<li><p>CTRL             SysTick 控制和状态寄存器  LOAD<br><img src="https://wx4.sinaimg.cn/large/006BuM4Jgy1g64su5lcdnj30oo02ngm8.jpg" alt="图片2"></p>
-</li>
-<li><p>SysTick       自动重装载除值寄存器<br><img src="https://wx3.sinaimg.cn/large/006BuM4Jgy1g64sme60v6j30oh07wad1.jpg" alt="图片1"><br>对于STM32，外部时钟源是 HCLK(AHB总线时钟）的1/8内核时钟是 HCLK时钟,配置函数：SysTick_CLKSourceConfig()</p>
-</li>
-<li><p>VAL                SysTick 当前值寄存器<br><img src="https://wx3.sinaimg.cn/large/006BuM4Jgy1g64svteyv1j30od04aq4c.jpg" alt="图片3"></p>
-</li>
-<li><p>CALIB            SysTick 校准值寄存器</p>
-</li>
-</ul>
-<h1 id="Systick库函数"><a href="#Systick库函数" class="headerlink" title="Systick库函数"></a>Systick库函数</h1><p>固件库中的Systick相关函数：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SysTick_CLKSourceConfig()    <span class="comment">//Systick时钟源选择  misc.c文件中</span></span><br><span class="line">SysTick_Config(<span class="keyword">uint32_t</span> ticks) </span><br><span class="line"><span class="comment">//初始化systick,时钟为HCLK,并开启中断</span></span><br><span class="line"><span class="comment">//core_cm3.h/core_cm4.h文件中</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Systick中断服务函数：</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SysTick_Handler</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//SysTick_CLKSourceConfig函数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SysTick_CLKSourceConfig</span><span class="params">(<span class="keyword">uint32_t</span> SysTick_CLKSource)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="comment">/* Check the parameters */</span></span><br><span class="line">  assert_param(IS_SYSTICK_CLK_SOURCE(SysTick_CLKSource));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (SysTick_CLKSource == SysTick_CLKSource_HCLK)</span><br><span class="line">  &#123;</span><br><span class="line">    SysTick-&gt;CTRL |= SysTick_CLKSource_HCLK;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  &#123;</span><br><span class="line">    SysTick-&gt;CTRL &amp;= SysTick_CLKSource_HCLK_Div8;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//SysTick_CLKSourceConfig函数</span></span><br><span class="line"><span class="keyword">static</span> __<span class="function">INLINE uint32_t <span class="title">SysTick_Config</span><span class="params">(<span class="keyword">uint32_t</span> ticks)</span></span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">  <span class="keyword">if</span> (ticks &gt; SysTick_LOAD_RELOAD_Msk)  <span class="keyword">return</span> (<span class="number">1</span>);         <span class="comment">/* Reload value impossible */</span></span><br><span class="line">   </span><br><span class="line"> <span class="comment">/* set reload register */</span>                                                            </span><br><span class="line">  SysTick-&gt;LOAD  = (ticks &amp; SysTick_LOAD_RELOAD_Msk) - <span class="number">1</span>; </span><br><span class="line"><span class="comment">/* set Priority for Cortex-M0 System Interrupts */</span></span><br><span class="line">  NVIC_SetPriority (SysTick_IRQn, (<span class="number">1</span>&lt;&lt;__NVIC_PRIO_BITS) - <span class="number">1</span>); </span><br><span class="line">  SysTick-&gt;VAL   = <span class="number">0</span>;                                        <span class="comment">/* Load the SysTick Counter Value */</span></span><br><span class="line">  SysTick-&gt;CTRL  = SysTick_CTRL_CLKSOURCE_Msk | </span><br><span class="line">                   SysTick_CTRL_TICKINT_Msk   | </span><br><span class="line">                   SysTick_CTRL_ENABLE_Msk;     <span class="comment">/* Enable SysTick IRQ and SysTick Timer */</span></span><br><span class="line">  <span class="keyword">return</span> (<span class="number">0</span>);                                                  <span class="comment">/* Function successful */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//用中断的方式实现delay延时</span></span><br><span class="line"><span class="keyword">static</span> __IO <span class="keyword">uint32_t</span> TimingDelay;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Delay</span><span class="params">(__IO <span class="keyword">uint32_t</span> nTime)</span></span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">   TimingDelay = nTime;</span><br><span class="line">   <span class="keyword">while</span>(TimingDelay != <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SysTick_Handler</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (TimingDelay != <span class="number">0x00</span>) </span><br><span class="line">     &#123; </span><br><span class="line">       TimingDelay--;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"> <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"> </span>&#123;  …</span><br><span class="line">    <span class="keyword">if</span> (SysTick_Config(SystemCoreClock / <span class="number">1000</span>)) <span class="comment">//systick时钟为HCLK，中断时间间隔1ms</span></span><br><span class="line">     &#123;</span><br><span class="line">     <span class="keyword">while</span> (<span class="number">1</span>);</span><br><span class="line">     &#125;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">     &#123; Delay(<span class="number">200</span>);<span class="comment">//2ms</span></span><br><span class="line">     … </span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay_init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> SYSTEM_SUPPORT_OS  							<span class="comment">//如果需要支持OS.</span></span></span><br><span class="line">	u32 reload;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">	SysTick_CLKSourceConfig(SysTick_CLKSource_HCLK_Div8);	<span class="comment">//选择外部时钟  HCLK/8</span></span><br><span class="line">	fac_us=SystemCoreClock/<span class="number">8000000</span>;				<span class="comment">//为系统时钟的1/8  </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> SYSTEM_SUPPORT_OS  							<span class="comment">//如果需要支持OS.</span></span></span><br><span class="line">	reload=SystemCoreClock/<span class="number">8000000</span>;				<span class="comment">//每秒钟的计数次数 单位为K	   </span></span><br><span class="line">	reload*=<span class="number">1000000</span>/delay_ostickspersec;		<span class="comment">//根据delay_ostickspersec设定溢出时间</span></span><br><span class="line">												<span class="comment">//reload为24位寄存器,最大值:16777216,在72M下,约合1.86s左右	</span></span><br><span class="line">	fac_ms=<span class="number">1000</span>/delay_ostickspersec;			<span class="comment">//代表OS可以延时的最少单位	   </span></span><br><span class="line"></span><br><span class="line">	SysTick-&gt;CTRL|=SysTick_CTRL_TICKINT_Msk;   	<span class="comment">//开启SYSTICK中断</span></span><br><span class="line">	SysTick-&gt;LOAD=reload; 						<span class="comment">//每1/delay_ostickspersec秒中断一次	</span></span><br><span class="line">	SysTick-&gt;CTRL|=SysTick_CTRL_ENABLE_Msk;   	<span class="comment">//开启SYSTICK    </span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">	fac_ms=(u16)fac_us*<span class="number">1000</span>;					<span class="comment">//非OS下,代表每个ms需要的systick时钟数   </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">&#125;								    </span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> SYSTEM_SUPPORT_OS  							<span class="comment">//如果需要支持OS.</span></span></span><br><span class="line"><span class="comment">//延时nus</span></span><br><span class="line"><span class="comment">//nus为要延时的us数.		    								   </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay_us</span><span class="params">(u32 nus)</span></span></span><br><span class="line"><span class="function"></span>&#123;		</span><br><span class="line">	u32 ticks;</span><br><span class="line">	u32 told,tnow,tcnt=<span class="number">0</span>;</span><br><span class="line">	u32 reload=SysTick-&gt;LOAD;					<span class="comment">//LOAD的值	    	 </span></span><br><span class="line">	ticks=nus*fac_us; 							<span class="comment">//需要的节拍数	  		 </span></span><br><span class="line">	tcnt=<span class="number">0</span>;</span><br><span class="line">	delay_osschedlock();						<span class="comment">//阻止OS调度，防止打断us延时</span></span><br><span class="line">	told=SysTick-&gt;VAL;        					<span class="comment">//刚进入时的计数器值</span></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		tnow=SysTick-&gt;VAL;	</span><br><span class="line">		<span class="keyword">if</span>(tnow!=told)</span><br><span class="line">		&#123;	    </span><br><span class="line">			<span class="keyword">if</span>(tnow&lt;told)tcnt+=told-tnow;		<span class="comment">//这里注意一下SYSTICK是一个递减的计数器就可以了.</span></span><br><span class="line">			<span class="keyword">else</span> tcnt+=reload-tnow+told;	    </span><br><span class="line">			told=tnow;</span><br><span class="line">			<span class="keyword">if</span>(tcnt&gt;=ticks)<span class="keyword">break</span>;				<span class="comment">//时间超过/等于要延迟的时间,则退出.</span></span><br><span class="line">		&#125;  </span><br><span class="line">	&#125;;</span><br><span class="line">	delay_osschedunlock();						<span class="comment">//恢复OS调度									    </span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//延时nms</span></span><br><span class="line"><span class="comment">//nms:要延时的ms数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay_ms</span><span class="params">(u16 nms)</span></span></span><br><span class="line"><span class="function"></span>&#123;	</span><br><span class="line">	<span class="keyword">if</span>(delay_osrunning&amp;&amp;delay_osintnesting==<span class="number">0</span>)	<span class="comment">//如果OS已经在跑了,并且不是在中断里面(中断里面不能任务调度)	    </span></span><br><span class="line">	&#123;		 </span><br><span class="line">		<span class="keyword">if</span>(nms&gt;=fac_ms)							<span class="comment">//延时的时间大于OS的最少时间周期 </span></span><br><span class="line">		&#123; </span><br><span class="line">   			delay_ostimedly(nms/fac_ms);		<span class="comment">//OS延时</span></span><br><span class="line">		&#125;</span><br><span class="line">		nms%=fac_ms;							<span class="comment">//OS已经无法提供这么小的延时了,采用普通方式延时    </span></span><br><span class="line">	&#125;</span><br><span class="line">	delay_us((u32)(nms*<span class="number">1000</span>));					<span class="comment">//普通方式延时  </span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span> <span class="comment">//不用OS时</span></span></span><br><span class="line"><span class="comment">//延时nus</span></span><br><span class="line"><span class="comment">//nus为要延时的us数.		    								   </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay_us</span><span class="params">(u32 nus)</span></span></span><br><span class="line"><span class="function"></span>&#123;		</span><br><span class="line">	u32 temp;	    	 </span><br><span class="line">	SysTick-&gt;LOAD=nus*fac_us; 					<span class="comment">//时间加载	  		 </span></span><br><span class="line">	SysTick-&gt;VAL=<span class="number">0x00</span>;        					<span class="comment">//清空计数器</span></span><br><span class="line">	SysTick-&gt;CTRL|=SysTick_CTRL_ENABLE_Msk ;	<span class="comment">//开始倒数	  </span></span><br><span class="line">	<span class="keyword">do</span></span><br><span class="line">	&#123;</span><br><span class="line">		temp=SysTick-&gt;CTRL;</span><br><span class="line">	&#125;<span class="keyword">while</span>((temp&amp;<span class="number">0x01</span>)&amp;&amp;!(temp&amp;(<span class="number">1</span>&lt;&lt;<span class="number">16</span>)));		<span class="comment">//等待时间到达   </span></span><br><span class="line">	SysTick-&gt;CTRL&amp;=~SysTick_CTRL_ENABLE_Msk;	<span class="comment">//关闭计数器</span></span><br><span class="line">	SysTick-&gt;VAL =<span class="number">0X00</span>;      					 <span class="comment">//清空计数器	 </span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//延时nms</span></span><br><span class="line"><span class="comment">//注意nms的范围</span></span><br><span class="line"><span class="comment">//SysTick-&gt;LOAD为24位寄存器,所以,最大延时为:</span></span><br><span class="line"><span class="comment">//nms&lt;=0xffffff*8*1000/SYSCLK</span></span><br><span class="line"><span class="comment">//SYSCLK单位为Hz,nms单位为ms</span></span><br><span class="line"><span class="comment">//对72M条件下,nms&lt;=1864 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay_ms</span><span class="params">(u16 nms)</span></span></span><br><span class="line"><span class="function"></span>&#123;	 		  	  </span><br><span class="line">	u32 temp;		   </span><br><span class="line">	SysTick-&gt;LOAD=(u32)nms*fac_ms;				<span class="comment">//时间加载(SysTick-&gt;LOAD为24bit)</span></span><br><span class="line">	SysTick-&gt;VAL =<span class="number">0x00</span>;							<span class="comment">//清空计数器</span></span><br><span class="line">	SysTick-&gt;CTRL|=SysTick_CTRL_ENABLE_Msk ;	<span class="comment">//开始倒数  </span></span><br><span class="line">	<span class="keyword">do</span></span><br><span class="line">	&#123;</span><br><span class="line">		temp=SysTick-&gt;CTRL;</span><br><span class="line">	&#125;<span class="keyword">while</span>((temp&amp;<span class="number">0x01</span>)&amp;&amp;!(temp&amp;(<span class="number">1</span>&lt;&lt;<span class="number">16</span>)));		<span class="comment">//等待时间到达   </span></span><br><span class="line">	SysTick-&gt;CTRL&amp;=~SysTick_CTRL_ENABLE_Msk;	<span class="comment">//关闭计数器</span></span><br><span class="line">	SysTick-&gt;VAL =<span class="number">0X00</span>;       					<span class="comment">//清空计数器	  	    </span></span><br><span class="line">&#125; </span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
-
+<blockquote>
+<p>分享此文给所有正在奋斗拼搏的你！</p>
+</blockquote>
 
           
         
@@ -1305,7 +970,7 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/【STM32】STM32时钟系统.html">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/大三上学期总结.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Qian Hongbo">
@@ -1324,7 +989,7 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/【STM32】STM32时钟系统.html" itemprop="url">【STM32】STM32时钟系统和时钟系统初始化函数</a></h2>
+                <a class="post-title-link" href="/大三上学期总结.html" itemprop="url">大三上学期总结</a></h2>
         
 
         <div class="post-meta">
@@ -1336,8 +1001,207 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-15T15:49:16+08:00">
-                2019-08-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-17T15:38:19+08:00">
+                2020-02-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/随笔/" itemprop="url" rel="index">
+                    <span itemprop="name">随笔</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/大三上学期总结.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="大三上学期总结.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  400 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+             <font size="3" face="楷体">
+这是我看似很努力的一个学期，结果也还说得过去，但这些与我预想的都还差了太多，我用20分钟的时间做了一个反思，试图找出我存在的问题。
+
+<ol>
+<li><p>我的努力程度不够，我是一个自制力很差的人，向来如此，总是禁不住诱惑，无论是手机还是游戏，都是一沾上就会上瘾，所以这一学期我尽管花了不少时间在学习上，但相比于其他同学，可能还是不够吧，毕竟很多人可能是花费自己的全部时间去学习了。</p>
+</li>
+<li><p>我对某些并不感兴趣的学科没有学的认真，比如机械原理，热工基础。我并没有抱着一个为了得高分的心态，而是自认为学的够了就不学了，但很显然，这种学习程度对于达到90+以上的分数是不太可能的。</p>
+</li>
+<li><p>学习方法，自从上了大学，我好想对于学习方法就已经不再要求自己了，学得再也不聪明，总是以一种比较笨，低效的方式在学习，这也不是一个聪明人应该做的事情。</p>
+</li>
+</ol>
+<p>希望在最后的学期，我能逐渐克服这些问题，尽管GPA可能已经不会有太大的改观，但这学期对我来说尤为重要，我要考出GRE和TOEFL，我希望我能在这两项成绩的考试中证明自己，考出高分！也算不让自己的大学留下遗憾吧。<br></p></font><p></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/【STM32】外部中断实验.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/【STM32】外部中断实验.html" itemprop="url">【STM32】外部中断实验</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-28T21:12:38+08:00">
+                2019-08-28
               </time>
             
 
@@ -1379,8 +1243,8 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/【STM32】STM32时钟系统.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="【STM32】STM32时钟系统.html" itemprop="commentCount"></span>
+                <a href="/【STM32】外部中断实验.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="【STM32】外部中断实验.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1402,7 +1266,7 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.2k 字
+                  526 字
                 </span>
               
 
@@ -1418,7 +1282,7 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -1438,65 +1302,45 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></
 
       
       
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-          
-          
-            <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://ws3.sinaimg.cn/large/006BuM4Jgy1g60eusarn7j30mw0f2gqp.jpg" rel="gallery_ckxsiliwq0015p7ptscz4kzxq" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="https://ws3.sinaimg.cn/large/006BuM4Jgy1g60eusarn7j30mw0f2gqp.jpg" itemprop="contentUrl">
-              </a>
-            
-          
-
-          
-          </div>
-        </div>
-      
 
       
         
           
-            <h1 id="时钟系统知识总结"><a href="#时钟系统知识总结" class="headerlink" title="时钟系统知识总结"></a>时钟系统知识总结</h1><ol>
-<li>STM32 有5个时钟源:HSI、HSE、LSI、LSE、PLL。</li>
+            <h1 id="外部中断概述"><a href="#外部中断概述" class="headerlink" title="外部中断概述"></a>外部中断概述</h1><ol>
+<li><p>STM32的每个IO都可以作为外部中断输入。</p>
+</li>
+<li><p>STM32的中断控制器支持19个外部中断/事件请求：</p>
+</li>
 </ol>
 <ul>
-<li>HSI是高速内部时钟，RC振荡器，频率为8MHz，精度不高。</li>
-<li>HSE是高速外部时钟，可接石英/陶瓷谐振器，或者接外部时钟源，频率范围为4MHz~16MHz。</li>
-<li>LSI是低速内部时钟，RC振荡器，频率为40kHz，提供低功耗时钟。WDG</li>
-<li>LSE是低速外部时钟，接频率为32.768kHz的石英晶体。RTC </li>
-<li>PLL为锁相环倍频输出，其时钟输入源可选择为HSI/2、HSE或者HSE/2倍频可选择为2~16倍，但是其输出频率最大不得超过72MHz。</li>
-</ul>
-<ol start="2">
-<li>系统时钟SYSCLK可来源于三个时钟源：       </li>
-</ol>
-<ul>
-<li>HSI振荡器时钟</li>
-<li>HSE振荡器时钟</li>
-<li>PLL时钟</li>
+<li>线0~15：对应外部IO口的输入中断。</li>
+<li>线16：连接到PVD输出。</li>
+<li>线17：连接到RTC闹钟事件。</li>
+<li>线18：连接到USB唤醒事件。</li>
 </ul>
 <ol start="3">
-<li><p>STM32可以选择一个时钟信号输出到MCO脚(PA8)上，可以选择为PLL<br>输出的2分频、HSI、HSE、或者系统时钟。</p>
+<li><p>每个外部中断线可以独立的配置触发方式（上升沿，下降沿或者双边沿触发），触发/屏蔽，专用的状态位。</p>
 </li>
-<li><p>任何一个外设在使用之前，必须首先使能其相应的时钟。</p>
+<li><p>从上面可以看出，STM32供IO使用的中断线只有16个，但是STM32F10x系列的IO口多达上百个，那么中断线怎么跟io口对应呢？</p>
 </li>
 </ol>
-<p>几个重要的时钟：</p>
 <ul>
-<li>SYSCLK(系统时钟) :</li>
-<li>AHB总线时钟</li>
-<li>APB1总线时钟(低速): 速度最高36MHz</li>
-<li>APB2总线时钟(高速): 速度最高72MHz</li>
-<li>PLL时钟</li>
+<li>GPIOx.0映射到EXTI0</li>
+<li>GPIOx.1映射到EXTI1</li>
+<li>…</li>
+<li>GPIOx.15映射到EXTI15</li>
 </ul>
-<h1 id="RCC相关配置寄存器"><a href="#RCC相关配置寄存器" class="headerlink" title="RCC相关配置寄存器"></a>RCC相关配置寄存器</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> CR;    <span class="comment">//HSI,HSE,CSS,PLL等的使能和就绪标志位 </span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> CFGR;     <span class="comment">//PLL等的时钟源选择，分频系数设定</span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> CIR;       <span class="comment">// 清除/使能 时钟就绪中断</span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> APB2RSTR;  <span class="comment">//APB2线上外设复位寄存器</span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> APB1RSTR;   <span class="comment">//APB1线上外设复位寄存器</span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> AHBENR;    <span class="comment">//DMA，SDIO等时钟使能</span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> APB2ENR;   <span class="comment">//APB2线上外设时钟使能</span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> APB1ENR;   <span class="comment">//APB1线上外设时钟使能</span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> BDCR;        <span class="comment">//备份域控制寄存器</span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> CSR;           <span class="comment">//控制状态寄存器</span></span><br><span class="line">&#125; RCC_TypeDef;</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>IO口外部中断在中断向量表中只分配了7个中断向量，也就是<br>只能使用7个中断服务函数<blockquote>
+<p>从表中可以看出，外部中断线5<del>9分配一个中断向量，共用一个服务函数，外部中断线10</del>15分配一个中断向量，共用一个中断服务函数。</p>
+</blockquote>
+</li>
+</ol>
+<h1 id="外部中断常用库函数"><a href="#外部中断常用库函数" class="headerlink" title="外部中断常用库函数"></a>外部中断常用库函数</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//exti.c文件</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">GPIO_EXTILineConfig</span><span class="params">(<span class="keyword">uint8_t</span> GPIO_PortSource, <span class="keyword">uint8_t</span> GPIO_PinSource)</span></span>;</span><br><span class="line"><span class="comment">//设置IO口与中断线的映射关系</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">exp</span>:  GPIO_EXTILineConfig(GPIO_PortSourceGPIOE,GPIO_PinSource2);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EXTI_Init</span><span class="params">(EXTI_InitTypeDef* EXTI_InitStruct)</span></span>;</span><br><span class="line"> <span class="comment">//初始化中断线：触发方式等</span></span><br><span class="line"></span><br><span class="line"><span class="function">ITStatus <span class="title">EXTI_GetITStatus</span><span class="params">(<span class="keyword">uint32_t</span> EXTI_Line)</span></span>;</span><br><span class="line"><span class="comment">//判断中断线中断状态，是否发生</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EXTI_ClearITPendingBit</span><span class="params">(<span class="keyword">uint32_t</span> EXTI_Line)</span></span>;</span><br><span class="line"><span class="comment">//清除中断线上的中断标志位</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="SystemInit源代码"><a href="#SystemInit源代码" class="headerlink" title="SystemInit源代码"></a>SystemInit源代码</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SystemInit</span> <span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="comment">/* Reset the RCC clock configuration to the default reset state(for debug purpose) */</span></span><br><span class="line">  <span class="comment">/* Set HSION bit */</span></span><br><span class="line">  RCC-&gt;CR |= (<span class="keyword">uint32_t</span>)<span class="number">0x00000001</span>;</span><br><span class="line">  <span class="comment">//或等于，也就是将最低位设置为1，其它位不变</span></span><br><span class="line">  <span class="comment">//将最低位设置为1，HSION：内部高速时钟使能</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Reset SW, HPRE, PPRE1, PPRE2, ADCPRE and MCO bits */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> STM32F10X_CL</span></span><br><span class="line">  RCC-&gt;CFGR &amp;= (<span class="keyword">uint32_t</span>)<span class="number">0xF8FF0000</span>;</span><br><span class="line">  <span class="comment">//并未定义STM32F10X_CL</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">  RCC-&gt;CFGR &amp;= (<span class="keyword">uint32_t</span>)<span class="number">0xF0FF0000</span>;</span><br><span class="line">  <span class="comment">//将0-15位置零，将24-27置零</span></span><br><span class="line">  <span class="comment">//查表可知，低四位为零目的是使SW, HPRE, PPRE1, PPRE2, ADCPRE, MCO几个寄存器复位。</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* STM32F10X_CL */</span>   </span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">/* Reset HSEON, CSSON and PLLON bits */</span></span><br><span class="line">  RCC-&gt;CR &amp;= (<span class="keyword">uint32_t</span>)<span class="number">0xFEF6FFFF</span>;</span><br><span class="line">  <span class="comment">//将16-19位与0110运算，也就是16,19位置零</span></span><br><span class="line">  <span class="comment">//将24-27位与1110运算，也就是24位置零</span></span><br><span class="line">  <span class="comment">//查表可知，目的是将HSEON, CSSON and PLLON几个寄存器复位</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Reset HSEBYP bit */</span></span><br><span class="line">  RCC-&gt;CR &amp;= (<span class="keyword">uint32_t</span>)<span class="number">0xFFFBFFFF</span>;</span><br><span class="line">  <span class="comment">//16-19位为B，也就是1011</span></span><br><span class="line">  <span class="comment">//与运算，也就是将18位置零</span></span><br><span class="line">  <span class="comment">//查表可知，目的是将HSEBYP复位</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Reset PLLSRC, PLLXTPRE, PLLMUL and USBPRE/OTGFSPRE bits */</span></span><br><span class="line">  RCC-&gt;CFGR &amp;= (<span class="keyword">uint32_t</span>)<span class="number">0xFF80FFFF</span>;</span><br><span class="line">  <span class="comment">//16-19位为与运算0000</span></span><br><span class="line">  <span class="comment">//20-23位为与运算1000</span></span><br><span class="line">  <span class="comment">//也就是将16-19位置零，20-23位置零</span></span><br><span class="line">  <span class="comment">//查表可知，目的是将PLLSRC, PLLXTPRE, PLLMUL and USBPRE/OTGFSPRE 复位</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> STM32F10X_CL   <span class="comment">//并未定义</span></span></span><br><span class="line">  <span class="comment">/* Reset PLL2ON and PLL3ON bits */</span></span><br><span class="line">  RCC-&gt;CR &amp;= (<span class="keyword">uint32_t</span>)<span class="number">0xEBFFFFFF</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Disable all interrupts and clear pending bits  */</span></span><br><span class="line">  RCC-&gt;CIR = <span class="number">0x00FF0000</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Reset CFGR2 register */</span></span><br><span class="line">  RCC-&gt;CFGR2 = <span class="number">0x00000000</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">elif</span> defined (STM32F10X_LD_VL) || defined (STM32F10X_MD_VL) || (defined STM32F10X_HD_VL)</span></span><br><span class="line">  <span class="comment">/* Disable all interrupts and clear pending bits  */</span></span><br><span class="line">  RCC-&gt;CIR = <span class="number">0x009F0000</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Reset CFGR2 register */</span></span><br><span class="line">  RCC-&gt;CFGR2 = <span class="number">0x00000000</span>;      </span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">  <span class="comment">/* Disable all interrupts and clear pending bits  */</span></span><br><span class="line">  RCC-&gt;CIR = <span class="number">0x009F0000</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* STM32F10X_CL */</span></span></span><br><span class="line">    </span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> defined (STM32F10X_HD) || (defined STM32F10X_XL) || (defined STM32F10X_HD_VL)           <span class="comment">//定义了STM32F10X_HD</span></span></span><br><span class="line">  <span class="meta">#<span class="meta-keyword">ifdef</span> DATA_IN_ExtSRAM</span></span><br><span class="line">    SystemInit_ExtMemCtl(); </span><br><span class="line">  <span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* DATA_IN_ExtSRAM */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> </span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Configure the System clock frequency, HCLK, PCLK2 and PCLK1 prescalers */</span></span><br><span class="line">  <span class="comment">/* Configure the Flash Latency cycles and enable prefetch buffer */</span></span><br><span class="line">  SetSysClock();</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> VECT_TAB_SRAM</span></span><br><span class="line">  SCB-&gt;VTOR = SRAM_BASE | VECT_TAB_OFFSET; <span class="comment">/* Vector Table Relocation in Internal SRAM. */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">  SCB-&gt;VTOR = FLASH_BASE | VECT_TAB_OFFSET; <span class="comment">/* Vector Table Relocation in Internal FLASH. */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="实际代码"><a href="#实际代码" class="headerlink" title="实际代码"></a>实际代码</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"exti.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stm32f10x.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"key.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"delay.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"led.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EXTIX_Init</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	EXTI_InitTypeDef  EXTI_InitStruct;</span><br><span class="line">	NVIC_InitTypeDef  NVIC_InitStruct;</span><br><span class="line">	</span><br><span class="line">	KEY_Init();</span><br><span class="line">	</span><br><span class="line">	RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO,ENABLE);</span><br><span class="line">	</span><br><span class="line">	GPIO_EXTILineConfig(GPIO_PortSourceGPIOE,GPIO_PinSource4);</span><br><span class="line">	</span><br><span class="line">	EXTI_InitStruct.EXTI_Line = EXTI_Line4;</span><br><span class="line">	EXTI_InitStruct.EXTI_LineCmd = ENABLE;</span><br><span class="line">	EXTI_InitStruct.EXTI_Mode = EXTI_Mode_Interrupt;</span><br><span class="line">	EXTI_InitStruct.EXTI_Trigger = EXTI_Trigger_Falling;</span><br><span class="line">	EXTI_Init(&amp;EXTI_InitStruct);</span><br><span class="line">	</span><br><span class="line">	NVIC_InitStruct.NVIC_IRQChannel = EXTI4_IRQn;</span><br><span class="line">	NVIC_InitStruct.NVIC_IRQChannelCmd = ENABLE;</span><br><span class="line">	NVIC_InitStruct.NVIC_IRQChannelPreemptionPriority = <span class="number">2</span>;</span><br><span class="line">	NVIC_InitStruct.NVIC_IRQChannelSubPriority = <span class="number">2</span>;</span><br><span class="line">	NVIC_Init(&amp;NVIC_InitStruct);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EXTI4_IRQHandler</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	delay_ms(<span class="number">10</span>);</span><br><span class="line">	<span class="keyword">if</span>(KEY0 == <span class="number">0</span>)&#123;</span><br><span class="line">		LED0 = !LED0;</span><br><span class="line">		LED1 = !LED1;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//手动清除中断标志位</span></span><br><span class="line">	EXTI_ClearITPendingBit(EXTI_Line4);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">SetSysClock</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> SYSCLK_FREQ_HSE</span></span><br><span class="line">  SetSysClockToHSE();</span><br><span class="line"><span class="meta">#<span class="meta-keyword">elif</span> defined SYSCLK_FREQ_24MHz</span></span><br><span class="line">  SetSysClockTo24();</span><br><span class="line"><span class="meta">#<span class="meta-keyword">elif</span> defined SYSCLK_FREQ_36MHz</span></span><br><span class="line">  SetSysClockTo36();</span><br><span class="line"><span class="meta">#<span class="meta-keyword">elif</span> defined SYSCLK_FREQ_48MHz</span></span><br><span class="line">  SetSysClockTo48();</span><br><span class="line"><span class="meta">#<span class="meta-keyword">elif</span> defined SYSCLK_FREQ_56MHz</span></span><br><span class="line">  SetSysClockTo56();  </span><br><span class="line"><span class="meta">#<span class="meta-keyword">elif</span> defined SYSCLK_FREQ_72MHz</span></span><br><span class="line">  SetSysClockTo72();</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">SetSysClockTo72</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  __IO <span class="keyword">uint32_t</span> StartUpCounter = <span class="number">0</span>, HSEStatus = <span class="number">0</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">/* SYSCLK, HCLK, PCLK2 and PCLK1 configuration ---------------------------*/</span>    </span><br><span class="line">  <span class="comment">/* Enable HSE */</span>    </span><br><span class="line">  RCC-&gt;CR |= ((<span class="keyword">uint32_t</span>)RCC_CR_HSEON);</span><br><span class="line"> </span><br><span class="line">  <span class="comment">/* Wait till HSE is ready and if Time out is reached exit */</span></span><br><span class="line">  <span class="keyword">do</span></span><br><span class="line">  &#123;</span><br><span class="line">    HSEStatus = RCC-&gt;CR &amp; RCC_CR_HSERDY;</span><br><span class="line">    StartUpCounter++;  </span><br><span class="line">  &#125; <span class="keyword">while</span>((HSEStatus == <span class="number">0</span>) &amp;&amp; (StartUpCounter != HSE_STARTUP_TIMEOUT));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> ((RCC-&gt;CR &amp; RCC_CR_HSERDY) != RESET)</span><br><span class="line">  &#123;</span><br><span class="line">    HSEStatus = (<span class="keyword">uint32_t</span>)<span class="number">0x01</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  &#123;</span><br><span class="line">    HSEStatus = (<span class="keyword">uint32_t</span>)<span class="number">0x00</span>;</span><br><span class="line">  &#125;  </span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (HSEStatus == (<span class="keyword">uint32_t</span>)<span class="number">0x01</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">/* Enable Prefetch Buffer */</span></span><br><span class="line">    FLASH-&gt;ACR |= FLASH_ACR_PRFTBE;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Flash 2 wait state */</span></span><br><span class="line">    FLASH-&gt;ACR &amp;= (<span class="keyword">uint32_t</span>)((<span class="keyword">uint32_t</span>)~FLASH_ACR_LATENCY);</span><br><span class="line">    FLASH-&gt;ACR |= (<span class="keyword">uint32_t</span>)FLASH_ACR_LATENCY_2;    </span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">    <span class="comment">/* HCLK = SYSCLK */</span></span><br><span class="line">    RCC-&gt;CFGR |= (<span class="keyword">uint32_t</span>)RCC_CFGR_HPRE_DIV1;</span><br><span class="line">      </span><br><span class="line">    <span class="comment">/* PCLK2 = HCLK */</span></span><br><span class="line">    RCC-&gt;CFGR |= (<span class="keyword">uint32_t</span>)RCC_CFGR_PPRE2_DIV1;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/* PCLK1 = HCLK */</span></span><br><span class="line">    RCC-&gt;CFGR |= (<span class="keyword">uint32_t</span>)RCC_CFGR_PPRE1_DIV2;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> STM32F10X_CL</span></span><br><span class="line">    <span class="comment">/* Configure PLLs ------------------------------------------------------*/</span></span><br><span class="line">    <span class="comment">/* PLL2 configuration: PLL2CLK = (HSE / 5) * 8 = 40 MHz */</span></span><br><span class="line">    <span class="comment">/* PREDIV1 configuration: PREDIV1CLK = PLL2 / 5 = 8 MHz */</span></span><br><span class="line">        </span><br><span class="line">    RCC-&gt;CFGR2 &amp;= (<span class="keyword">uint32_t</span>)~(RCC_CFGR2_PREDIV2 | RCC_CFGR2_PLL2MUL |</span><br><span class="line">                              RCC_CFGR2_PREDIV1 | RCC_CFGR2_PREDIV1SRC);</span><br><span class="line">    RCC-&gt;CFGR2 |= (<span class="keyword">uint32_t</span>)(RCC_CFGR2_PREDIV2_DIV5 | RCC_CFGR2_PLL2MUL8 |</span><br><span class="line">                             RCC_CFGR2_PREDIV1SRC_PLL2 | RCC_CFGR2_PREDIV1_DIV5);</span><br><span class="line">  </span><br><span class="line">    <span class="comment">/* Enable PLL2 */</span></span><br><span class="line">    RCC-&gt;CR |= RCC_CR_PLL2ON;</span><br><span class="line">    <span class="comment">/* Wait till PLL2 is ready */</span></span><br><span class="line">    <span class="keyword">while</span>((RCC-&gt;CR &amp; RCC_CR_PLL2RDY) == <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">   </span><br><span class="line">    <span class="comment">/* PLL configuration: PLLCLK = PREDIV1 * 9 = 72 MHz */</span> </span><br><span class="line">    RCC-&gt;CFGR &amp;= (<span class="keyword">uint32_t</span>)~(RCC_CFGR_PLLXTPRE | RCC_CFGR_PLLSRC | RCC_CFGR_PLLMULL);</span><br><span class="line">    RCC-&gt;CFGR |= (<span class="keyword">uint32_t</span>)(RCC_CFGR_PLLXTPRE_PREDIV1 | RCC_CFGR_PLLSRC_PREDIV1 | </span><br><span class="line">                            RCC_CFGR_PLLMULL9); </span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span>    </span></span><br><span class="line">    <span class="comment">/*  PLL configuration: PLLCLK = HSE * 9 = 72 MHz */</span></span><br><span class="line">    RCC-&gt;CFGR &amp;= (<span class="keyword">uint32_t</span>)((<span class="keyword">uint32_t</span>)~(RCC_CFGR_PLLSRC | RCC_CFGR_PLLXTPRE |</span><br><span class="line">                                        RCC_CFGR_PLLMULL));</span><br><span class="line">    RCC-&gt;CFGR |= (<span class="keyword">uint32_t</span>)(RCC_CFGR_PLLSRC_HSE | RCC_CFGR_PLLMULL9);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* STM32F10X_CL */</span></span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Enable PLL */</span></span><br><span class="line">    RCC-&gt;CR |= RCC_CR_PLLON;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Wait till PLL is ready */</span></span><br><span class="line">    <span class="keyword">while</span>((RCC-&gt;CR &amp; RCC_CR_PLLRDY) == <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/* Select PLL as system clock source */</span></span><br><span class="line">    RCC-&gt;CFGR &amp;= (<span class="keyword">uint32_t</span>)((<span class="keyword">uint32_t</span>)~(RCC_CFGR_SW));</span><br><span class="line">    RCC-&gt;CFGR |= (<span class="keyword">uint32_t</span>)RCC_CFGR_SW_PLL;    </span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Wait till PLL is used as system clock source */</span></span><br><span class="line">    <span class="keyword">while</span> ((RCC-&gt;CFGR &amp; (<span class="keyword">uint32_t</span>)RCC_CFGR_SWS) != (<span class="keyword">uint32_t</span>)<span class="number">0x08</span>)</span><br><span class="line">    &#123;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  &#123; <span class="comment">/* If HSE fails to start-up, the application will have wrong clock </span></span><br><span class="line"><span class="comment">         configuration. User can add here some code to deal with this error */</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
-
-
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//main.c文件</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stm32f10x.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"led.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"beep.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"key.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"sys.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"delay.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"exti.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"usart.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	delay_init();	    	  <span class="comment">//延时函数初始化	  </span></span><br><span class="line">	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);</span><br><span class="line"> 	LED_Init();			      <span class="comment">//LED端口初始化</span></span><br><span class="line">	KEY_Init();           <span class="comment">//初始化与按键连接的硬件接口</span></span><br><span class="line">	EXTIX_Init();</span><br><span class="line">	LED0 = <span class="number">0</span>;					    <span class="comment">//先点亮红灯</span></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"OK\r\n"</span>);</span><br><span class="line">	&#125;	 </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           
         
       
@@ -1537,7 +1381,7 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1585,7 +1429,7 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">48</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1596,7 +1440,7 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1607,7 +1451,7 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1687,7 +1531,7 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -1701,7 +1545,7 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">45k</span>
+    <span title="Site words total count">51.9k</span>
   
 </div>
 

@@ -290,7 +290,7 @@ custom_logo:
 # Available value:
 #    normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: normal
+highlight_theme: night
 
 
 # ---------------------------------------------------------------
@@ -319,7 +319,7 @@ font:
   # Global font settings used on <body> element.
   global:
     external: true
-    family:
+    family: 'EB Garamond'
     size:
 
   # Font settings for Headlines (h1, h2, h3, h4, h5, h6).
@@ -345,7 +345,7 @@ font:
   # Font settings for <code> and code blocks.
   codes:
     external: true
-    family: Roboto Mono
+    family:
     size:
 
 

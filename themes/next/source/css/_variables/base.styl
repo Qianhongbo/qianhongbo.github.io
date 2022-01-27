@@ -62,15 +62,15 @@ get_font_family(config) {
 }
 
 // Font families.
-$font-family-chinese      = "EB Garamond", "STFangsong", "Microsoft YaHei"
+$font-family-chinese      = "Noto Serif SC", "STFangsong", "Microsoft YaHei"
 
-$font-family-base         = "EB Garamond", $font-family-chinese, sans-serif 
+$font-family-base         = EB Garamond //sans-serif
 $font-family-base         = get_font_family('global'), $font-family-chinese, sans-serif if get_font_family('global')
 
 $font-family-logo         = $font-family-base
 $font-family-logo         = get_font_family('logo'), $font-family-base if get_font_family('logo')
 
-$font-family-headings     = "STKaiti", "Microsoft YaHei" // $font-family-base
+$font-family-headings     = $font-family-base
 $font-family-headings     = get_font_family('headings'), $font-family-base if get_font_family('headings')
 
 $font-family-posts        = $font-family-base

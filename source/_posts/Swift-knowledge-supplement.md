@@ -944,3 +944,326 @@ attemptPurchaseWithMultipleDefers()
 // "first, clear order"
 // "then, close the secure purchase session"
 ```
+
+# Generics
+
+## Array are Generic
+
+Upon first glance, many do not realize that Swift arrays use generics. Specifically, the type that a Swift array stores is generic — it can be anything. When declaring an array using its more longhand syntax, this becomes apparent.
+
+```swift
+var intArray = Array<Int>()
+var stringArray: Array<String> = ["one", "two", "three"]
+```
+
+The type specified in the brackets (ex. "<String>") is called a "concrete type". When specified, the concrete type takes the place of a generic type. Because Swift arrays use generics, they behave the same, regardless of the concrete type.
+
+## Generic Function
+
+Generics can be applied to functions and types. To write a generic function, specify a generic type after the function name using the bracket notation (ex. `func myFunction<Type>`). Then, for any arguments that should be generic, use the generic type instead of a concrete type. Below, the generic type is called `Type`; `Type` can represent any type.
+
+```swift
+func printTypeWithNamedGenericType<Type>(_ argument: Type) {
+    print(type(of: argument))
+}
+
+printTypeWithNamedGenericType(4) // Int 
+printTypeWithNamedGenericType("udacity") // String
+```
+
+> Now, the type is for any type. We can't implement some functions for this value.
+>
+> For example, we can't use "Plus" function, so we should specify a type for it.
+
+A generic type can be bound or constrained such that it can only represent concrete types which adhere to some protocol or inherit from a certain class. In the example below, the generic type is constrained such that it can only represent types which implement the `UnsignedInteger` protocol — essentially, non-negative integers.
+
+```swift
+func printUIntTypes<Type: UnsignedInteger>(_ argument: Type) {
+    print(type(of: argument))
+}
+
+let unsignedInt: UInt = 4
+let unsignedInt8: UInt8 = 4
+let unsignedInt16: UInt16 = 4
+
+printUIntTypes(unsignedInt)
+printUIntTypes(unsignedInt8)
+printUIntTypes(unsignedInt16)
+// When a generic type is constrained, any concrete types that do not adhere to the constraint will cause Xcode to complain.
+//printUIntTypes(4) /* `Int` is not unsigned because it can store negative values */
+//printUIntTypes(-4)
+//printUIntTypes("abc")
+```
+
+## Multiple generic function
+
+Generic functions and types can specify multiple generic types, simply use a comma to separate them.
+
+```swift
+func combineUInt<Type1: UnsignedInteger, Type2>(_ int: Type1, withString string: Type2) -> String {
+    return "\(int) \(string)"
+}
+
+let unsignedInt: UInt = 4
+print(combineUInt(unsignedInt, withString: "zebras"))
+```
+
+## Generic Type
+
+Generics can be applied to an object's properties to create what is known as a generic type. Similar to generic functions, a generic type is created by specifying the object's name followed by a generic type using the bracket notation (ex. `struct MyType<Type>`). Then, for any properties that should be generic, use the generic type instead of a concrete type.
+
+```swift
+struct TypeAnalyzer<T> {
+    let value: T
+    
+    // represents the sub-structure of the generic type
+    var mirror: Mirror {
+        return Mirror(reflecting: value)
+    }
+    
+    // print information about the type
+    func analyze() {
+        print("Type: \(type(of: value))")
+        print("Value: \(value)")
+        if let superClassMirror = mirror.superclassMirror {
+            print("Superclass: \(superClassMirror.subjectType)")
+        }
+    }
+}
+
+let x = TypeAnalyzer(value: 2)
+x.analyze()
+// Type: Int
+// Value: 2
+
+let view = TypeAnalyzer<UIView>(value: UIView(frame: CGRect.zero))
+view.analyze()
+// Type: UIView
+// Value: <UIView: 0x7f82c0a0dfc0; frame = (0 0; 0 0); layer = <CALayer: 0x6000035e6140>>
+// Superclass: UIResponder
+```
+
+Like generic functions, the generic type can be named and constained. In the example below, `ZooExhibit` is defined where its animals property is generic and constrained to any type that implements the `Animal` protocol.
+
+```swift
+protocol Animal {
+    var name: String { get }
+    static var commonName: String { get }
+    static var emoji: String { get }
+}
+
+struct Whale: Animal {
+    let name: String
+    static let commonName = "Whale"
+    static let emoji = "🐳"
+}
+
+struct Dolphin: Animal {
+    let name: String
+    static let commonName = "Dolphin"
+    static let emoji = "🐬"
+}
+
+struct ZooExhibit<AnimalType: Animal> {
+    let animals: [AnimalType]
+
+    func tourTheExhibit() {
+        print("Welcome to the \(AnimalType.commonName) Exhibit \(AnimalType.emoji)!")
+        for animal in animals {
+            print("Say hello to \(animal.name) \(AnimalType.emoji).")
+        }
+    }
+}
+
+let exhibit1 = ZooExhibit(animals: [Whale(name: "Wendy"), Whale(name: "Wu")])
+exhibit1.tourTheExhibit()
+// Welcome to the Whale Exhibit 🐳!
+// Say hello to Wendy 🐳.
+// Say hello to Wu 🐳.
+
+// the longhand syntax can be used to specify the concrete type
+let exhibit2 = ZooExhibit<Dolphin>(animals: [Dolphin(name: "Dilbert"), Dolphin(name: "Dezeri")])
+exhibit2.tourTheExhibit()
+// Welcome to the Dolphin Exhibit 🐬!
+// Say hello to Dilbert 🐬.
+// Say hello to Dezeri 🐬.
+```
+
+A single generic type can only be substituted with one concrete type. If Xcode is unable to determine the concrete type that should be substituted for a generic type, it will complain.
+
+```swift
+// let exhibit3 = ZooExhibit(animals: [Whale(name: "Wilber"), Dolphin(name: "Daphnie")])
+```
+
+Extensions can be combined with generics for truly powerful effects. With an extension, it is possible to specify functionality that should only apply to a generic type when the concrete type meets inherits from a specific protocol.
+
+```swift
+protocol Feedable {
+    static var favoriteFood: String { get }
+}
+
+extension Dolphin: Feedable {
+    static let favoriteFood = "🐟"
+}
+
+extension ZooExhibit where AnimalType: Feedable {
+    func feedTheAnimals() {
+        for animal in animals {
+            print("You feed \(animal.name) \(AnimalType.emoji) some \(AnimalType.favoriteFood).")
+        }
+    }
+}
+
+exhibit2.feedTheAnimals()
+
+// because `Whale` is not `Feedable`, the `feedTheAnimals()` function doesn't exist for the whale exhibit
+//exhibit1.feedTheAnimals()
+```
+
+## Subclass a Generic Type
+
+A generic type can be subclassed, assuming it is a class and not a struct. To demonstrate an example of subclassing a generic type, the `Animal`, `Whale`, and `ZooExhibit` types are defined:
+
+```swift
+protocol Animal {
+    var name: String { get }
+    static var commonName: String { get }
+}
+
+struct Whale: Animal {
+    let name: String
+    static let commonName = "Whale"
+}
+
+class ZooExhibit<AnimalType: Animal> {
+    let animals: [AnimalType]
+
+    init(animals: [AnimalType]) {
+        self.animals = animals
+    }
+
+    func tourTheExhibit() {
+        print("Welcome to the \(AnimalType.commonName) Exhibit!")
+        for animal in animals {
+            print("Say hello to \(animal.name).")
+        }
+    }
+}
+```
+
+To subclass the generic type `ZooExhibit`, one must define a new class with a generic type that can be substituted for `AnimalType` (any type that implements the `Animal` protocol). In the subclass below, the generic type `A` is constrained such that it must implement the `Animal` protocol. Hence, when `ZooExhibit` is specified as the superclass, the type `A` can be used without error.
+
+```swift
+class TravelingExhibit<A: Animal>: ZooExhibit<A> {
+    var location: String
+
+    init(location: String, animals: [A]) {
+        self.location = location
+        super.init(animals: animals)
+    }
+
+    override func tourTheExhibit() {
+        print("Welcome to the \(A.commonName) Exhibit at \(location)!")
+        for animal in animals {
+            print("Say hello to \(animal.name).")
+        }
+    }
+}
+```
+
+But, if a subclass tries to specify a generic type that does not satisfy the constraints from the parent class, then Xcode will generate an error.
+
+```swift
+// this generates an error because `B` does not conform to `Animal` protocol
+class TankExhibit<B>: ZooExhibit<B> { 
+    let volume: Double
+
+    init(volume: Double, animals: [B]) {
+        self.volume = volume
+        super.init(animals: animals)
+    }
+}
+```
+
+Once a generic type is subclassed, it can be created and used in a manner similar to the base class.
+
+```swift
+// exhibit is of type `TravelingExhibit<Whale>`
+let exhibit = TravelingExhibit(location: "Oakland Zoo", animals: [Whale(name: "Watson"), Whale(name: "Wren")])
+exhibit.tourTheExhibit()
+
+// change exhibit location
+exhibit.location = "San Francisco Zoo"
+exhibit.tourTheExhibit()
+```
+
+# Closure
+
+## Create a closure
+
+```swift
+let closures = [f,
+               { (x:Int) -> Int in return x * 2 },
+               { x in return x - 8 },
+               { x in x * x },
+               { $0 * 42 }]
+
+for fn in closures {
+  fn(42) // 5 results
+}
+```
+
+## Closure and Function
+
+```swift
+let f = {(x: Int) -> Int
+        in
+        return x + 42}
+
+f(9) // 51
+f("99") // error
+
+// this function is the same as the closure
+func foo(x: Int) -> Int {
+  return x + 42
+}
+```
+
+## alias
+
+```swift
+typealias Integer = Int
+
+let z: Integer = 42
+let zz: Int = 42
+
+// (Int) -> Int
+typealias IntToInt = (Int) -> Int
+```
+
+```swift
+typealias IntMaker = (Void) -> Int
+
+// the function returns another function/closure
+func makeCounter() -> IntMaker {
+  var n = 0
+  
+  func adder() -> Int {
+    n = n + 1
+    return n
+  }
+  
+  return adder
+}
+
+let counter1 = makeCounter() // counter 1 is equal to the adder function
+let counter2 = makeCounter()
+
+counter1() // 1
+counter1() // 2
+counter1() // 3
+
+// the "n" is not the same for difference instance
+counter2() // 1
+```
+

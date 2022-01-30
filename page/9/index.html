@@ -346,6 +346,764 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/【STM32】按键输入实验.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/【STM32】按键输入实验.html" itemprop="url">【STM32】按键输入实验</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-13T14:07:34+08:00">
+                2019-08-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/STM32/" itemprop="url" rel="index">
+                    <span itemprop="name">STM32</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/【STM32】按键输入实验.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="【STM32】按键输入实验.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.9k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="GPIO操作复习"><a href="#GPIO操作复习" class="headerlink" title="GPIO操作复习"></a>GPIO操作复习</h1><ul>
+<li>读取IO口输入电平调用库函数为</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">uint8_t</span> GPIO_ReadInputDataBit(GPIO_TypeDef* GPIOx, <span class="keyword">uint16_t</span> GPIO_Pin);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>读取IO口输入电平操作寄存器为</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GPIOx_IDR:端口输入寄存器</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用位带操作读取IO口输入电平：</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PEin(<span class="number">4</span>)          <span class="comment">//读取GPIOE.4口电平</span></span><br><span class="line">PEin(n)          <span class="comment">//读取GPIOE.n口电平</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><ul>
+<li>使能按键对应IO口时钟。调用函数：<code>RCC_APB2PeriphClockCmd()</code></li>
+<li>初始化IO模式：上拉/下拉输入。调用函数：<code>GPIO_Init()</code></li>
+<li>扫描IO口电平（库函数/寄存器/位操作）</li>
+</ul>
+<h1 id="硬件连接"><a href="#硬件连接" class="headerlink" title="硬件连接"></a>硬件连接</h1><p><img src="http://wx3.sinaimg.cn/large/006BuM4Jgy1g607sfu2jyj30ku059q4q.jpg" alt="key"></p>
+<p>所以需要打开<code>PA</code>,<code>PE</code>的时钟，并打开<code>PA0</code>; <code>PE2,3,4</code>;</p>
+<p>而且，对于KEY0，一端连接地，另一端连接PE4的IO口，KEY1，KEY2同理，所以当案件按下的时候，IO口坚持得到低电平。WK_UP正好相反。</p>
+<h1 id="按键扫描思路"><a href="#按键扫描思路" class="headerlink" title="按键扫描思路"></a>按键扫描思路</h1><h2 id="扫描的两种类型"><a href="#扫描的两种类型" class="headerlink" title="扫描的两种类型"></a>扫描的两种类型</h2><ul>
+<li>支持连续监测，比如遥控器选台的前进按钮，一直按会一直跳台</li>
+<li>不支持连续监测，比如遥控器的关机/开机按钮，一直按但只会执行一次操作</li>
+</ul>
+<h2 id="引入C语言关键字：static"><a href="#引入C语言关键字：static" class="headerlink" title="引入C语言关键字：static"></a>引入C语言关键字：<code>static</code></h2><ul>
+<li><p>Static申明的<strong>局部变量</strong>，存储在静态存储区。</p>
+</li>
+<li><p>它在函数调用结束之后，<strong>不会被释放</strong>。它的值会一直保留下来。</p>
+</li>
+<li><p>所以可以说static申明的局部变量，具有<strong>记忆功能</strong>。</p>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//利用两个函数说明问题</span></span><br><span class="line"><span class="comment">//1. 用int</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getValue</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span>  flag=<span class="number">0</span>;</span><br><span class="line">  flag++;</span><br><span class="line">  <span class="keyword">return</span> flag;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 用static</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getValue</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">int</span>  flag=<span class="number">0</span>; </span><br><span class="line">  <span class="comment">/*初始化函数只会在第一次使用中运行，第二次调用getvalue函数就会直接跳到下面的语句，不会再次执行。*/</span></span><br><span class="line">  flag++;</span><br><span class="line">  <span class="keyword">return</span> flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="实际代码操作尝试！"><a href="#实际代码操作尝试！" class="headerlink" title="实际代码操作尝试！"></a>实际代码操作尝试！</h3><h4 id="第一次"><a href="#第一次" class="headerlink" title="第一次"></a>第一次</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*demo1，将循环体放在两个getvalue中*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getvalue1</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">10</span>; i &gt; <span class="number">0</span>; i--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">        a++;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getvalue2</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">10</span>; i &gt; <span class="number">0</span>; i--)&#123;</span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">int</span> b = <span class="number">0</span>;</span><br><span class="line">        b++;</span><br><span class="line">        <span class="keyword">return</span> b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> c = getvalue1();</span><br><span class="line">    <span class="keyword">int</span> d = getvalue2();</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d, %d"</span>, c, d);</span><br><span class="line">    getchar();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>编译报<code>warning: control reaches end of non-void function</code></p>
+<p>编译结果为<code>“1,1”</code>，结果不对！</p>
+<p>分析原因: </p>
+<ul>
+<li>C语言必须要有返回值，例如return 0，或者return a等等</li>
+<li>我将两个getvalue函数中的return写在了循环体里，并不会返回！</li>
+<li>至于为什么出现了错误的结果，根据debug发现，并没有执行循环，而是只执行了一次，原因在于第一次就return了！</li>
+</ul>
+<h4 id="第二次"><a href="#第二次" class="headerlink" title="第二次"></a>第二次</h4><p>进行如下修改：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将return修改到循环体之外</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getvalue1</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">10</span>; i &gt; <span class="number">0</span>; i--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">        a++;      </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getvalue2</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">10</span>; i &gt; <span class="number">0</span>; i--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">int</span> b = <span class="number">0</span>;</span><br><span class="line">        b++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> c = getvalue1();</span><br><span class="line">    <span class="keyword">int</span> d = getvalue2();</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d, %d"</span>, c, d);</span><br><span class="line">    getchar();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>编译出现错误：<br><code>identifier &quot;a&quot; is undefined；identifier &quot;b&quot; is undefined；</code></p>
+<p>原因：未定义变量a和b！</p>
+<p>我的<code>int a</code>,<code>static int b</code>,都是在循环体里定义的，依然在函数中生效</p>
+<h4 id="第三次"><a href="#第三次" class="headerlink" title="第三次"></a>第三次</h4><p>继续修改！</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getvalue1</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a;                           <span class="comment">//添加定义</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">10</span>; i &gt; <span class="number">0</span>; i--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">        a++;      </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getvalue2</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> b;                           <span class="comment">//添加定义</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">10</span>; i &gt; <span class="number">0</span>; i--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">int</span> b = <span class="number">0</span>;</span><br><span class="line">        b++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> c = getvalue1();</span><br><span class="line">    <span class="keyword">int</span> d = getvalue2();</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d, %d"</span>, c, d);</span><br><span class="line">    getchar();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>编译未出现错误，但结果为<code>“0,1”</code>，结果不对</p>
+<font color="#dd0000">
+分析原因：暂时未知，怀疑是循环体执行的`b`并没有并没有返回出来
+</font><br>
+
+<h4 id="第四次"><a href="#第四次" class="headerlink" title="第四次"></a>第四次</h4><p>继续修改！</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将循环体放在main中，而getvalue函数不执行循环功能</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getvalue1</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">    a++;</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getvalue2</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> b = <span class="number">0</span>;</span><br><span class="line">    b++;</span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> c,d;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">10</span>; i &gt;<span class="number">0</span>; i--)&#123;</span><br><span class="line">        <span class="keyword">int</span> c = getvalue1();</span><br><span class="line">        <span class="keyword">int</span> d = getvalue2();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d, %d"</span>, c, d);</span><br><span class="line">    getchar();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>结果仍然不对…<br>得到的结果为：<code>7349584, 0</code></p>
+<p>原因重复定义？一个变量只能被定义一次！</p>
+<p>一个函数外面对变量进行了定义，循环体里就不用定义了。static可能是个例外…</p>
+<h4 id="第五次"><a href="#第五次" class="headerlink" title="第五次"></a>第五次</h4><p>最终修改版本：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getvalue1</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">    a++;</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getvalue2</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> b = <span class="number">0</span>;</span><br><span class="line">    b++;</span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,b;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">10</span>; i &gt;<span class="number">0</span>; i--)&#123;</span><br><span class="line">        a = getvalue1();</span><br><span class="line">        b = getvalue2();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d, %d"</span>, a, b);</span><br><span class="line">    getchar();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>结果正确，得到<code>“1,10”</code>!!</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>问题在于C语言基础不牢，关于变量定义范围还需要进行复习！！</p>
+<h2 id="两种扫描的具体思路"><a href="#两种扫描的具体思路" class="headerlink" title="两种扫描的具体思路"></a>两种扫描的具体思路</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//支持连续按</span></span><br><span class="line"><span class="comment">//代码比较好理解</span></span><br><span class="line"><span class="function">u8 <span class="title">KEY_Scan</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">   </span>&#123;</span><br><span class="line">     <span class="keyword">if</span>(KEY按下）</span><br><span class="line">    &#123;</span><br><span class="line">          delay_ms(<span class="number">10</span>)；<span class="comment">//延时10-20ms，防抖。</span></span><br><span class="line">          <span class="keyword">if</span>(KEY确实按下)</span><br><span class="line">           &#123;</span><br><span class="line">              <span class="keyword">return</span> KEY_Value；</span><br><span class="line">            &#125;</span><br><span class="line">         <span class="keyword">return</span> 无效值；</span><br><span class="line">    &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//不支持连续按，按一次就是一次</span></span><br><span class="line"><span class="comment">//代码稍显复杂，比较巧妙</span></span><br><span class="line"><span class="function">u8 <span class="title">KEY_Scan</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function">   </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> u8 key_up=<span class="number">1</span>;      <span class="comment">//引入局部变量key_up</span></span><br><span class="line">    <span class="keyword">if</span>（key_up &amp;&amp;  KEY按下）</span><br><span class="line">    &#123;</span><br><span class="line">       delay_ms(<span class="number">10</span>);         <span class="comment">//延时，防抖</span></span><br><span class="line">       key_up=<span class="number">0</span>;             <span class="comment">//标记这次key已经按下</span></span><br><span class="line">       <span class="keyword">if</span>(KEY确实按下)</span><br><span class="line">         &#123;</span><br><span class="line">          <span class="keyword">return</span> KEY_VALUE;</span><br><span class="line">         &#125;</span><br><span class="line">       &#125;<span class="keyword">else</span> <span class="keyword">if</span>(KEY没有按下)  key_up=<span class="number">1</span>;</span><br><span class="line">      <span class="keyword">return</span> 没有按下</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//按键扫描二合一！</span></span><br><span class="line"><span class="comment">//函数需要给一个值</span></span><br><span class="line"><span class="function">u8 <span class="title">KEY_Scan</span><span class="params">(u8 mode)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">     <span class="keyword">static</span> u8 key_up=<span class="number">1</span>;</span><br><span class="line">     <span class="keyword">if</span>(mode==<span class="number">1</span>) key_up=<span class="number">1</span>;<span class="comment">//支持连续按</span></span><br><span class="line">      <span class="keyword">if</span>（key_up &amp;&amp;  KEY按下）</span><br><span class="line">      &#123;</span><br><span class="line">        delay_ms(<span class="number">10</span>);<span class="comment">//延时，防抖</span></span><br><span class="line">        key_up=<span class="number">0</span>;<span class="comment">//标记这次key已经按下</span></span><br><span class="line">        <span class="keyword">if</span>(KEY确实按下)</span><br><span class="line">          &#123;</span><br><span class="line">           <span class="keyword">return</span> KEY_VALUE;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(KEY没有按下)  key_up=<span class="number">1</span>;</span><br><span class="line">       <span class="keyword">return</span> 没有按下</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="实际代码"><a href="#实际代码" class="headerlink" title="实际代码"></a>实际代码</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//key.h</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> __KEY_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> __KEY_H	 </span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> KEY0  GPIO_ReadInputDataBit(GPIOE,GPIO_Pin_4)  <span class="comment">//读取按键0</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> KEY1  GPIO_ReadInputDataBit(GPIOE,GPIO_Pin_3)  <span class="comment">//读取按键1</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> KEY2  GPIO_ReadInputDataBit(GPIOE,GPIO_Pin_2)  <span class="comment">//读取按键2 </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> WK_UP   GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_0)<span class="comment">//读取按键3(WK_UP) </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> KEY0_PRES 	1	<span class="comment">//KEY0按下</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> KEY1_PRES	2	<span class="comment">//KEY1按下</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> KEY2_PRES	3	<span class="comment">//KEY2按下</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> WKUP_PRES   4	<span class="comment">//KEY_UP按下(即WK_UP/KEY_UP)</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">KEY_Init</span><span class="params">(<span class="keyword">void</span>)</span></span>; <span class="comment">//IO初始化</span></span><br><span class="line"><span class="function">u8 <span class="title">KEY_Scan</span><span class="params">(u8)</span></span>;  	 <span class="comment">//按键扫描函数</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//key.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stm32f10x.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"key.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"delay.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">KEY_Init</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line">	</span><br><span class="line">	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA|RCC_APB2Periph_GPIOE,ENABLE); <span class="comment">//使能PORTA,PORTE时钟</span></span><br><span class="line">	GPIO_InitStructure.GPIO_Pin  = GPIO_Pin_2|GPIO_Pin_3|GPIO_Pin_4;          <span class="comment">//KEY0-KEY2</span></span><br><span class="line">	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;                             <span class="comment">//设置成上拉输入</span></span><br><span class="line">	GPIO_Init(GPIOE, &amp;GPIO_InitStructure);                                    <span class="comment">//初始化GPIOE2,3,4</span></span><br><span class="line">	<span class="comment">//初始化 WK_UP--&gt;GPIOA.0	  下拉输入</span></span><br><span class="line">	GPIO_InitStructure.GPIO_Pin  = GPIO_Pin_0;</span><br><span class="line">	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD;                             <span class="comment">//PA0设置成输入，默认下拉</span></span><br><span class="line">	GPIO_Init(GPIOA, &amp;GPIO_InitStructure);                                    <span class="comment">//初始化GPIOA.0</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//按键处理函数，用来返回按键值</span></span><br><span class="line"><span class="comment">//mode:0,不支持连续按;1,支持连续按;</span></span><br><span class="line"><span class="comment">//各种返回值代表的情况：</span></span><br><span class="line"><span class="comment">//0，没有任何按键按下</span></span><br><span class="line"><span class="comment">//1，KEY0按下</span></span><br><span class="line"><span class="comment">//2，KEY1按下</span></span><br><span class="line"><span class="comment">//3，KEY2按下 </span></span><br><span class="line"><span class="comment">//4，KEY3按下 WK_UP</span></span><br><span class="line"><span class="function">u8 <span class="title">KEY_Scan</span><span class="params">(u8 mode)</span></span></span><br><span class="line"><span class="function"></span>&#123;	 </span><br><span class="line">	<span class="keyword">static</span> u8 key_up=<span class="number">1</span>;<span class="comment">//按键按松开标志</span></span><br><span class="line">	<span class="keyword">if</span>(mode)key_up=<span class="number">1</span>;  <span class="comment">//支持连按		  </span></span><br><span class="line">	<span class="keyword">if</span>(key_up&amp;&amp;(KEY0==<span class="number">0</span>||KEY1==<span class="number">0</span>||KEY2==<span class="number">0</span>||WK_UP==<span class="number">1</span>)) <span class="comment">// if条件句判读是否有按键按下，有则执行判断语句</span></span><br><span class="line">	&#123;</span><br><span class="line">		delay_ms(<span class="number">10</span>);    <span class="comment">//去抖动 </span></span><br><span class="line">		key_up=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span>(KEY0==<span class="number">0</span>)<span class="keyword">return</span> KEY0_PRES;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(KEY1==<span class="number">0</span>)<span class="keyword">return</span> KEY1_PRES;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(KEY2==<span class="number">0</span>)<span class="keyword">return</span> KEY2_PRES;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(WK_UP==<span class="number">1</span>)<span class="keyword">return</span> WKUP_PRES;</span><br><span class="line">	&#125;<span class="keyword">else</span> <span class="keyword">if</span>(KEY0==<span class="number">1</span>&amp;&amp;KEY1==<span class="number">1</span>&amp;&amp;KEY2==<span class="number">1</span>&amp;&amp;WK_UP==<span class="number">0</span>)key_up=<span class="number">1</span>; 	    </span><br><span class="line"> 	<span class="keyword">return</span> <span class="number">0</span>;          <span class="comment">// 无按键按下</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//main.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stm32f10x.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"led.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"beep.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"key.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"sys.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"delay.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	u8 key=<span class="number">0</span>;	</span><br><span class="line">	delay_init();	    	  <span class="comment">//延时函数初始化	  </span></span><br><span class="line"> 	LED_Init();			      <span class="comment">//LED端口初始化</span></span><br><span class="line">	KEY_Init();           <span class="comment">//初始化与按键连接的硬件接口</span></span><br><span class="line">	beep_init();         	<span class="comment">//初始化蜂鸣器端口</span></span><br><span class="line">	LED0 = <span class="number">0</span>;					    <span class="comment">//先点亮红灯</span></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line"> 		key = KEY_Scan(<span class="number">0</span>);	<span class="comment">//得到键值</span></span><br><span class="line">	   	<span class="keyword">if</span>(key)</span><br><span class="line">		&#123;						   </span><br><span class="line">			<span class="keyword">switch</span>(key)</span><br><span class="line">			&#123;				 </span><br><span class="line">				<span class="keyword">case</span> WKUP_PRES:	<span class="comment">//控制蜂鸣器</span></span><br><span class="line">					BEEP = !BEEP; <span class="comment">//取反，则蜂鸣器不叫</span></span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				<span class="keyword">case</span> KEY2_PRES:	<span class="comment">//控制LED0翻转</span></span><br><span class="line">					LED0 = !LED0;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				<span class="keyword">case</span> KEY1_PRES:	<span class="comment">//控制LED1翻转	 </span></span><br><span class="line">					LED1 = !LED1;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				<span class="keyword">case</span> KEY0_PRES:	<span class="comment">//同时控制LED0,LED1翻转 </span></span><br><span class="line">					LED0 = !LED0;</span><br><span class="line">					LED1 = !LED1;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;<span class="keyword">else</span> delay_ms(<span class="number">10</span>); </span><br><span class="line">	&#125;	 </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/使用VScode写博客.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/使用VScode写博客.html" itemprop="url">使用VSCode写博客</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-13T11:24:09+08:00">
+                2019-08-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/使用VScode写博客.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="使用VScode写博客.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="使用原因"><a href="#使用原因" class="headerlink" title="使用原因"></a>使用原因</h1><p>偶然之间看到一篇文章推荐使用VSCode，对于它我也是早有耳闻，一个开源的代码编辑器，但是之前觉得麻烦，觉得自己已经有了Visual Studio 2017就没必要再下一个代码编辑器了，当时以为VSCode不带有编译功能。</p>
+<p>昨晚没事干，就下了个尝试一下啊，果然耳目一新，觉得从颜值也好，使用上也好都很舒服，但在配置的时候也遇到了问题，研究了好久才终于解决，特此记录！</p>
+<h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><ul>
+<li>从官网安装VSCode</li>
+<li>安装MinGW64,并将bin文件添加到Path路径中</li>
+<li>安装插件</li>
+<li>成功运行代码！</li>
+</ul>
+<h1 id="具体过程"><a href="#具体过程" class="headerlink" title="具体过程"></a>具体过程</h1><h2 id="从官网安装VSCode"><a href="#从官网安装VSCode" class="headerlink" title="从官网安装VSCode"></a>从官网安装VSCode</h2><p>过程比较简单，从Google搜索VSCode进入官方网站，下载Windows的版本，运行即可。</p>
+<h2 id="安装MinGW64"><a href="#安装MinGW64" class="headerlink" title="安装MinGW64"></a>安装MinGW64</h2><p>由于想在VSCode里跑C代码，最开始下了个C/C++的扩展程序，以为就可以用<code>Fn+F5</code>正常运行，实则不然，遇到报错！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">提示这个内容：lauch:program does not exist</span><br></pre></td></tr></table></figure>
+
+<p>并要求我修改<code>launch.json</code>文件，可是我怎么修改也不管用…<br>逐渐开始进入崩溃状态，想要直接写在这**的VSCode…<br>可是作为一个颜控的我沉迷于VSCode的颜值无法自拔，决定再试试…</p>
+<p>最终发现问题出现在没有安装MinGW64无法调试，于是搜索教程，前往官网下载，并将bin文件的目录添加到<code>path</code>路径中去。</p>
+<p>并最终用<code>gcc -v</code>测试是否安装成功，要注意在<code>cmd</code>里测试，不要像我一样，在<code>cmder</code>里怎么测试都不成功…</p>
+<p>安装具体教程点击这个<a href="https://www.cnblogs.com/findumars/p/8289454.html" target="_blank" rel="noopener">链接</a></p>
+<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p>VSCode不安装插件是没有灵魂的…</p>
+<p>我目前还不是很懂，也只是安装了一下几个插件</p>
+<ul>
+<li>C/C++</li>
+<li>C++ Intellisense</li>
+<li>Chinese Language</li>
+<li>Code Runner</li>
+<li>Seti-theme</li>
+</ul>
+<h2 id="运行代码"><a href="#运行代码" class="headerlink" title="运行代码"></a>运行代码</h2><p>最终用配置好的环境跑了一下<code>hello，world</code>成功编译！<br><font color="#006600"></font></p>
+<h2 id="问题补充（修改于19-8-14）"><a href="#问题补充（修改于19-8-14）" class="headerlink" title="问题补充（修改于19.8.14）"></a>问题补充（修改于19.8.14）</h2><p>再次出现问题！之前成功编译只是通过了代码右上角的“播放”按键，也就是插件<code>Code Runner</code>，然而<code>F5</code>依然无法通过！</p>
+<p>继续查阅资料，查到一篇比较详细的教程，<a href="https://blog.csdn.net/bat67/article/details/76095813#commentBox" target="_blank" rel="noopener">地址请点击</a></p>
+<p>简单来讲就是还要修改<code>.vscode</code>文件夹里的<code>launch.json</code>和<code>tasks.json</code>文件。</p>
+<p>而我是将<code>launch.json</code>修改为，其中<code>gdb.exe</code>的路径需要自己进行修改一下<br><br> </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&#123;  </span><br><span class="line">    <span class="string">"version"</span>: <span class="string">"0.2.0"</span>,  </span><br><span class="line">    <span class="string">"configurations"</span>: [  </span><br><span class="line">        &#123;  </span><br><span class="line">            <span class="string">"name"</span>: <span class="string">"(gdb) Launch"</span>, <span class="comment">// 配置名称，将会在启动配置的下拉菜单中显示  </span></span><br><span class="line">            <span class="string">"type"</span>: <span class="string">"cppdbg"</span>,       <span class="comment">// 配置类型，这里只能为cppdbg  </span></span><br><span class="line">            <span class="string">"request"</span>: <span class="string">"launch"</span>,    <span class="comment">// 请求配置类型，可以为launch（启动）或attach（附加）  </span></span><br><span class="line">            <span class="string">"program"</span>: <span class="string">"$&#123;workspaceFolder&#125;/$&#123;fileBasenameNoExtension&#125;.exe"</span>,<span class="comment">// 将要进行调试的程序的路径  </span></span><br><span class="line">            <span class="string">"args"</span>: [],             <span class="comment">// 程序调试时传递给程序的命令行参数，一般设为空即可  </span></span><br><span class="line">            <span class="string">"stopAtEntry"</span>: <span class="keyword">false</span>,   <span class="comment">// 设为true时程序将暂停在程序入口处，一般设置为false  </span></span><br><span class="line">            <span class="string">"cwd"</span>: <span class="string">"$&#123;workspaceFolder&#125;"</span>, <span class="comment">// 调试程序时的工作目录，一般为$&#123;workspaceFolder&#125;即代码所在目录  </span></span><br><span class="line">            <span class="string">"environment"</span>: [],  </span><br><span class="line">            <span class="string">"externalConsole"</span>: <span class="keyword">true</span>, <span class="comment">// 调试时是否显示控制台窗口，一般设置为true显示控制台  </span></span><br><span class="line">            <span class="string">"MIMode"</span>: <span class="string">"gdb"</span>,  </span><br><span class="line">            <span class="string">"miDebuggerPath"</span>: <span class="string">"D:\\MinGW64\\mingw64\\bin\\gdb.exe"</span>, <span class="comment">// miDebugger的路径，注意这里要与MinGw的路径对应  </span></span><br><span class="line">            <span class="string">"preLaunchTask"</span>: <span class="string">"g++"</span>, <span class="comment">// 调试会话开始前执行的任务，一般为编译程序，c++为g++, c为gcc  </span></span><br><span class="line">            <span class="string">"setupCommands"</span>: [  </span><br><span class="line">                &#123;   </span><br><span class="line">		    <span class="string">"description"</span>: <span class="string">"Enable pretty-printing for gdb"</span>,  </span><br><span class="line">                    <span class="string">"text"</span>: <span class="string">"-enable-pretty-printing"</span>,  </span><br><span class="line">                    <span class="string">"ignoreFailures"</span>: <span class="keyword">true</span>  </span><br><span class="line">                &#125;  </span><br><span class="line">            ]  </span><br><span class="line">        &#125;  </span><br><span class="line">    ]  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>将<code>tasks.json</code>修改为</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"version"</span>: <span class="string">"2.0.0"</span>,</span><br><span class="line">    <span class="string">"command"</span>: <span class="string">"g++"</span>,</span><br><span class="line">    <span class="string">"args"</span>: [<span class="string">"-g"</span>,<span class="string">"$&#123;file&#125;"</span>,<span class="string">"-o"</span>,<span class="string">"$&#123;fileBasenameNoExtension&#125;.exe"</span>],    <span class="comment">// 编译命令参数</span></span><br><span class="line">    <span class="string">"problemMatcher"</span>: &#123;</span><br><span class="line">        <span class="string">"owner"</span>: <span class="string">"cpp"</span>,</span><br><span class="line">        <span class="string">"fileLocation"</span>: [<span class="string">"relative"</span>, <span class="string">"$&#123;workspaceFolder&#125;"</span>],</span><br><span class="line">        <span class="string">"pattern"</span>: &#123;</span><br><span class="line">            <span class="string">"regexp"</span>: <span class="string">"^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$"</span>,</span><br><span class="line">            <span class="string">"file"</span>: <span class="number">1</span>,</span><br><span class="line">            <span class="string">"line"</span>: <span class="number">2</span>,</span><br><span class="line">            <span class="string">"column"</span>: <span class="number">3</span>,</span><br><span class="line">            <span class="string">"severity"</span>: <span class="number">4</span>,</span><br><span class="line">            <span class="string">"message"</span>: <span class="number">5</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="最终实现F5调试"><a href="#最终实现F5调试" class="headerlink" title="最终实现F5调试"></a>最终实现<code>F5</code>调试</h2><p>并且可以实现断点debug等功能</p>
+<h1 id="使用VSCode编辑博客"><a href="#使用VSCode编辑博客" class="headerlink" title="使用VSCode编辑博客"></a>使用VSCode编辑博客</h1><p>VSCode让我比较喜欢的一点是在于可以直接打开文件夹，并且继承了终端处理，git等，很多功能我还没有发掘出来，之后会深度体验一下VSCode！</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/【STM32】手把手写跑马灯实验.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/【STM32】手把手写跑马灯实验.html" itemprop="url">【STM32】手把手写跑马灯实验</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-12T14:22:33+08:00">
+                2019-08-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/STM32/" itemprop="url" rel="index">
+                    <span itemprop="name">STM32</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/【STM32】手把手写跑马灯实验.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="【STM32】手把手写跑马灯实验.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.2k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="库函数版本"><a href="#库函数版本" class="headerlink" title="库函数版本"></a>库函数版本</h1><h2 id="回顾GPIO基础知识"><a href="#回顾GPIO基础知识" class="headerlink" title="回顾GPIO基础知识"></a>回顾GPIO基础知识</h2><h3 id="4种输入模式："><a href="#4种输入模式：" class="headerlink" title="4种输入模式："></a>4种输入模式：</h3><ul>
+<li>输入浮空</li>
+<li>输入上拉</li>
+<li>输入下拉</li>
+<li>模拟输入</li>
+</ul>
+<h3 id="4种输出模式："><a href="#4种输出模式：" class="headerlink" title="4种输出模式："></a>4种输出模式：</h3><ul>
+<li>开漏输出</li>
+<li>开漏复用功能</li>
+<li>推挽式输出</li>
+<li>推挽式复用功能</li>
+</ul>
+<h3 id="3种最大输出速度："><a href="#3种最大输出速度：" class="headerlink" title="3种最大输出速度："></a>3种最大输出速度：</h3><ul>
+<li>2MHZ</li>
+<li>10MHz</li>
+<li>50MHz</li>
+</ul>
+<h3 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h3><ul>
+<li><code>GPIOx_CRL</code> : 端口配置低寄存器（低8位）</li>
+<li><code>GPIOx_CRH</code>: 端口配置高寄存器（高8位）</li>
+<li><code>GPIOx_IDR</code>: 端口输入寄存器</li>
+<li><code>GPIOx_ODR</code>: 端口输出寄存器</li>
+<li><code>GPIOx_BSRR</code>: 端口位设置/清除寄存器</li>
+<li><code>GPIOx_BRR</code> : 端口位清除寄存器</li>
+<li><code>GPIOx_LCKR</code>: 端口配置锁存寄存器</li>
+</ul>
+<h2 id="跑马灯的硬件连接"><a href="#跑马灯的硬件连接" class="headerlink" title="跑马灯的硬件连接"></a>跑马灯的硬件连接</h2><ul>
+<li>LED0连接PB5</li>
+<li>LED1连接PE5</li>
+</ul>
+<h2 id="库函数介绍"><a href="#库函数介绍" class="headerlink" title="库函数介绍"></a>库函数介绍</h2><ul>
+<li><p>头文件：<code>stm32f10x_gpio.h</code></p>
+</li>
+<li><p>源文件：<code>stm32f10x_gpio.c</code></p>
+</li>
+</ul>
+<h2 id="具体函数"><a href="#具体函数" class="headerlink" title="具体函数"></a>具体函数</h2><h3 id="1个初始化函数："><a href="#1个初始化函数：" class="headerlink" title="1个初始化函数："></a>1个初始化函数：</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">GPIO_Init</span><span class="params">(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)</span></span>;</span><br><span class="line"><span class="comment">//作用：初始化一个或者多个IO口（同一组）的工作方式和速度。该函数主要是操作GPIO_CRL(CRH)寄存器</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//样例</span></span><br><span class="line"> GPIO_InitTypeDef  GPIO_InitStructure;</span><br><span class="line">	</span><br><span class="line"> GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5;         <span class="comment">//LED0--&gt;PB.5 端口配置</span></span><br><span class="line"> GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;  <span class="comment">//推挽输出</span></span><br><span class="line"> GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; <span class="comment">//IO口速度为50MHz</span></span><br><span class="line"> GPIO_Init(GPIOB, &amp;GPIO_InitStructure);	           <span class="comment">//根据设定参数初始化GPIOB.5</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2个读取输入电平函数："><a href="#2个读取输入电平函数：" class="headerlink" title="2个读取输入电平函数："></a>2个读取输入电平函数：</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">uint8_t</span> GPIO_ReadInputDataBit(GPIO_TypeDef* GPIOx, <span class="keyword">uint16_t</span> GPIO_Pin);</span><br><span class="line"><span class="comment">//作用：读取某个GPIO的输入电平。实际操作的是GPIOx_IDR寄存器。</span></span><br><span class="line"><span class="comment">//举例：</span></span><br><span class="line">GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_5);<span class="comment">//读取GPIOA.5的输入电平</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">uint16_t</span> GPIO_ReadInputData(GPIO_TypeDef* GPIOx);</span><br><span class="line"><span class="comment">//作用：读取某组GPIO的输入电平。实际操作的是GPIOx_IDR寄存器。</span></span><br><span class="line"><span class="comment">//举例：</span></span><br><span class="line">GPIO_ReadInputData(GPIOA);<span class="comment">//读取GPIOA组中所有IO口输入电平</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2个读取输出电平函数："><a href="#2个读取输出电平函数：" class="headerlink" title="2个读取输出电平函数："></a>2个读取输出电平函数：</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">uint8_t</span> GPIO_ReadOutputDataBit (GPIO_TypeDef* GPIOx, <span class="keyword">uint16_t</span> GPIO_Pin);</span><br><span class="line"><span class="comment">//作用：读取某个GPIO的输出电平。实际操作的是GPIO_ODR寄存器。</span></span><br><span class="line"><span class="comment">//例如：</span></span><br><span class="line">GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_5);<span class="comment">//读取GPIOA.5的输出电平</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">uint16_t</span> GPIO_ReadOutputData(GPIO_TypeDef* GPIOx);</span><br><span class="line"><span class="comment">//作用：读取某组GPIO的输出电平。实际操作的是GPIO_ODR寄存器。</span></span><br><span class="line"><span class="comment">//例如：</span></span><br><span class="line">GPIO_ReadOutputData(GPIOA);<span class="comment">//读取GPIOA组中所有io口输出电平</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4个设置输出电平函数："><a href="#4个设置输出电平函数：" class="headerlink" title="4个设置输出电平函数："></a>4个设置输出电平函数：</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">GPIO_SetBits</span><span class="params">(GPIO_TypeDef* GPIOx, <span class="keyword">uint16_t</span> GPIO_Pin)</span></span>;</span><br><span class="line"><span class="comment">//作用：设置某个IO口输出为高电平（1）。实际操作BSRR寄存器</span></span><br><span class="line"><span class="comment">//例如：</span></span><br><span class="line">GPIO_SetBits(GPIOB,GPIO_Pin_5);   <span class="comment">//GPIOB.5设置为高电平，LED高电平不亮</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">GPIO_ResetBits</span><span class="params">(GPIO_TypeDef* GPIOx, <span class="keyword">uint16_t</span> GPIO_Pin)</span></span>;</span><br><span class="line"><span class="comment">//作用：设置某个IO口输出为低电平（0）。实际操作的BRR寄存器。</span></span><br><span class="line"><span class="comment">//例如：</span></span><br><span class="line"> GPIO_ResetBits(GPIOB,GPIO_Pin_5);<span class="comment">//GPIOB.5设置为低电平，LED高电平亮</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="代码思路"><a href="#代码思路" class="headerlink" title="代码思路"></a>代码思路</h2><ul>
+<li>使能IO口时钟。调用函数<code>RCC_APB2PeriphColckCmd()</code>;</li>
+<li>初始化IO口模式。调用函数<code>GPIO_Init()</code>;</li>
+<li>操作IO口，输出高低电平<code>GPIO_SetBits()</code>,<code>GPIO_ResetBits()</code>;</li>
+</ul>
+<h2 id="最终代码"><a href="#最终代码" class="headerlink" title="最终代码"></a>最终代码</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//led.h 文件</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> __LED_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> __LED_H</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">LED_Init</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//led.c 文件</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"led.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stm32f10x.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">LED_Init</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	GPIO_InitTypeDef GPIO_InitStructure; <span class="comment">//GPIO初始化定义</span></span><br><span class="line">	</span><br><span class="line">	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE); <span class="comment">//GPIOB时钟使能</span></span><br><span class="line">	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOE, ENABLE); <span class="comment">//GPIOE时钟使能</span></span><br><span class="line"></span><br><span class="line">	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;      <span class="comment">//推挽输出</span></span><br><span class="line">	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5;             <span class="comment">//端口配置</span></span><br><span class="line">	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;     <span class="comment">//IO口速度为50MHz</span></span><br><span class="line">	GPIO_Init(GPIOB,&amp;GPIO_InitStructure);                 <span class="comment">//根据设定参数初始化GPIOB.5</span></span><br><span class="line">	GPIO_SetBits(GPIOB,GPIO_Pin_5);                       <span class="comment">//GPIOB.5设置为高电平，LED高电平不亮</span></span><br><span class="line">	</span><br><span class="line">	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;</span><br><span class="line">	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5;</span><br><span class="line">	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">	GPIO_Init(GPIOE,&amp;GPIO_InitStructure);</span><br><span class="line">	GPIO_SetBits(GPIOE,GPIO_Pin_5);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// main.c</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stm32f10x.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"led.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"delay.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">		LED_Init();</span><br><span class="line">		delay_init();</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">		GPIO_SetBits(GPIOB,GPIO_Pin_5);</span><br><span class="line">		GPIO_SetBits(GPIOE,GPIO_Pin_5);</span><br><span class="line">		delay_ms(<span class="number">500</span>);</span><br><span class="line">		</span><br><span class="line">		GPIO_ResetBits(GPIOB,GPIO_Pin_5);</span><br><span class="line">		GPIO_ResetBits(GPIOE,GPIO_Pin_5);</span><br><span class="line">		delay_ms(<span class="number">500</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="寄存器版本"><a href="#寄存器版本" class="headerlink" title="寄存器版本"></a>寄存器版本</h1><h2 id="代码思路-1"><a href="#代码思路-1" class="headerlink" title="代码思路"></a>代码思路</h2><ul>
+<li>使能IO口时钟。配置寄存器<code>RCC_APB2ENR</code></li>
+<li>初始化IO口模式。配置寄存器<code>GPIOx_CRH/CRL</code></li>
+<li>操作IO口，输出高低电平。配置寄存器<code>GPIOX_ODR</code>或者<code>BSRR/BRR</code></li>
+</ul>
+<h2 id="最终代码-1"><a href="#最终代码-1" class="headerlink" title="最终代码"></a>最终代码</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//led.h 文件</span></span><br><span class="line"><span class="comment">//与库函数版本相同</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> __LED_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> __LED_H</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">LED_Init</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//led.c 文件</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"led.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stm32f10x.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">LED_Init</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	RCC-&gt;APB2ENR |= <span class="number">1</span>&lt;&lt;<span class="number">3</span>;      <span class="comment">//使能IO口时钟，GPIOB</span></span><br><span class="line">	RCC-&gt;APB2ENR |= <span class="number">1</span>&lt;&lt;<span class="number">6</span>;      <span class="comment">//使能IO口时钟, GPIOE</span></span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//GPIOB.5</span></span><br><span class="line">	GPIOB-&gt;CRL &amp;= <span class="number">0xFF0FFFFF</span>;  <span class="comment">//先用与运算将欲修改的位修改为0（修改第六位）</span></span><br><span class="line">	GPIOB-&gt;CRL |= <span class="number">0x00300000</span>;  <span class="comment">//再用或运算将PB5修改为通用推挽输出，即0011，也就是3</span></span><br><span class="line">	GPIOB-&gt;ODR |= <span class="number">1</span>&lt;&lt;<span class="number">5</span>;        <span class="comment">//将PB5的ODR寄存器设置为高电平，即最开始不亮</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//GPIOE.5</span></span><br><span class="line">	GPIOE-&gt;CRL &amp;= <span class="number">0xFF0FFFFF</span>;  <span class="comment">//同理</span></span><br><span class="line">	GPIOE-&gt;CRL |= <span class="number">0x00300000</span>;	</span><br><span class="line">	GPIOE-&gt;ODR |= <span class="number">1</span>&lt;&lt;<span class="number">5</span>;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//main 文件</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stm32f10x.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"led.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"delay.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	LED_Init();</span><br><span class="line">	delay_init();</span><br><span class="line">	</span><br><span class="line">	GPIOB-&gt;ODR |= <span class="number">1</span>&lt;&lt;<span class="number">5</span>; </span><br><span class="line">	GPIOE-&gt;ODR |= <span class="number">1</span>&lt;&lt;<span class="number">5</span>; </span><br><span class="line">	delay_ms(<span class="number">500</span>);</span><br><span class="line">	</span><br><span class="line">	GPIOB-&gt;ODR = ~(<span class="number">1</span>&lt;&lt;<span class="number">5</span>);</span><br><span class="line">	GPIOE-&gt;ODR = ~(<span class="number">1</span>&lt;&lt;<span class="number">5</span>);</span><br><span class="line">	delay_ms(<span class="number">500</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="位带操作版本"><a href="#位带操作版本" class="headerlink" title="位带操作版本"></a>位带操作版本</h1><h2 id="位操作原理"><a href="#位操作原理" class="headerlink" title="位操作原理"></a>位操作原理</h2><p>把每个比特膨胀为一个32位的字，当访问这些字的时候就达到了访问比特的目的，比如说BSRR寄存器有32个位，那么可以映射到32个地址上，我们去访问（读-改-写）这32个地址就达到访问32个比特的目的。</p>
+<h2 id="代码思路-2"><a href="#代码思路-2" class="headerlink" title="代码思路"></a>代码思路</h2><ul>
+<li>使能IO口时钟。调用函数<code>RCC_APB2PeriphColckCmd()</code></li>
+<li>初始化IO口模式。调用函数<code>GPIO_Init()</code></li>
+<li>操作IO口，输出高低电平。<strong>使用位带操作</strong>。</li>
+</ul>
+<h2 id="最终代码-2"><a href="#最终代码-2" class="headerlink" title="最终代码"></a>最终代码</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//led.h 文件</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> __LED_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> __LED_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LED0 PBout(5)<span class="comment">// PB5 添加宏定义</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LED1 PEout(5)<span class="comment">// PE5	</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">LED_Init</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//main 文件</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stm32f10x.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"led.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"delay.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	LED_Init();</span><br><span class="line">	delay_init();</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">		LED0 = <span class="number">1</span>;</span><br><span class="line">		LED1 = <span class="number">1</span>;</span><br><span class="line">		delay_ms(<span class="number">500</span>);</span><br><span class="line">		</span><br><span class="line">		LED0 = <span class="number">0</span>;</span><br><span class="line">		LED1 = <span class="number">0</span>;</span><br><span class="line">		delay_ms(<span class="number">500</span>);			</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/【STM32】用GCC编译Keil5的代码，了解GCC工具链.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -746,681 +1504,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/嵌入式开发学习笔记.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/嵌入式开发学习笔记.html" itemprop="url">嵌入式开发学习笔记</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-04T13:24:53+08:00">
-                2019-07-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/嵌入式开发学习笔记.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="嵌入式开发学习笔记.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  309 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Linux-distribution-linux的发行版本"><a href="#Linux-distribution-linux的发行版本" class="headerlink" title="Linux distribution (linux的发行版本)"></a>Linux distribution (linux的发行版本)</h2><p>软件，shell 保护层，kernel内核，硬件</p>
-<p>linux系统，完整的分层模型</p>
-<p>RedHat：server 服务器 面向企业用户 具有license</p>
-<p>CentOS：已经被红帽子收购，开源免费版本，区别于企业版，比较稳定</p>
-<p>以上两款界面不好看，不追求绚丽的东西</p>
-<p>Ubuntu：稳定性不如上面两个，但适用于普通用户，中文支持，软件支持做的都比较好</p>
-<h2 id="ubuntu操作"><a href="#ubuntu操作" class="headerlink" title="ubuntu操作"></a>ubuntu操作</h2><ol>
-<li>sudo 为普通命令提升权限</li>
-<li>sudo  passwd root </li>
-<li>su - 切换到系统的身份</li>
-<li>apt-get update更新源，用于下载新的安装包（如果是普通用于，记得在前面加sudo</li>
-<li>尽量用命令行的方式来学习linux</li>
-<li>vim安装 apt-get install vim-nox</li>
-<li>vi已经安装，是一个编辑软件的记事本</li>
-<li>vim回车，进入</li>
-<li>退出，敲：q（不知道要不要加！）</li>
-<li>vim全键盘操作，效率很高</li>
-<li>cd /    根目录  </li>
-<li>c—change  d—directory 目录</li>
-<li>ls</li>
-<li>不要在根目录里面操作</li>
-<li>回去 cd</li>
-<li>vi /etc/</li>
-<li>vi 命令模式，编辑模式，用 i 切换模式，esc键退出</li>
-<li>ssh-secure shell</li>
-<li>SecureCRT安装 </li>
-<li>sshd回车</li>
-<li>apt-get install openssh-server</li>
-<li>ifconfig</li>
-<li>net add:</li>
-<li>rz zmodem r:receive</li>
-<li>sz zmodem s:send</li>
-<li>samba</li>
-<li>apt-get install samba</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/脸上各部位长痘痘的原因及调理方法汇总.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/脸上各部位长痘痘的原因及调理方法汇总.html" itemprop="url">脸上各部位长痘痘的原因及调理方法汇总</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-26T09:24:31+08:00">
-                2019-06-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/知识积累/" itemprop="url" rel="index">
-                    <span itemprop="name">知识积累</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/脸上各部位长痘痘的原因及调理方法汇总.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="脸上各部位长痘痘的原因及调理方法汇总.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  582 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>额头痘状况：</strong>有可能是压力太大，容易脾气不好，造成心火和血液循环有问题。</p>
-<p>改善：应养成早睡早起的习惯，让睡眠充足，并多喝水。</p>
-<p><strong>印堂痘状况：</strong>出现在两眉正中间的痘痘，通常有胸闷、心律不整、<a href="http://www.med66.com/jibing/xinji/" target="_blank" rel="noopener">心悸</a>等毛病。</p>
-<p>改善：不要尝试太过激烈的运动，要避免烟、酒等刺激性的食品。</p>
-<p><strong>发髻痘状况：</strong>因为卸妆没有卸干净，造成毛孔堵塞河污染，容易在较闷的发髻或眉间形成细小痘痘。</p>
-<p>改善：加强卸妆和清洁的工作，一定要彻底搓揉干净，每星期做一次去角质工作，报纸皮脂腺顺畅。</p>
-<p><strong>鼻翼痘状况：</strong>突然冒出的肿大痘痘，可能是卵巢机能或者生殖系统有关。</p>
-<p>改善：不要过度纵欲或禁欲，尽量走出户外，享受降的自然环境。</p>
-<p><strong>鼻头痘状况：</strong>可能是胃火过大，消化系统异常。</p>
-<p>改善：少吃冰冷食物，寒性食品容易引起胃酸分泌，造成胃火过大。</p>
-<p><strong>眼头痘状况：</strong>K近鼻子和眼头区域的痘痘，通常是肝机能不好所引起。</p>
-<p>改善：生活作息要正常，避免熬夜，尽量在11点前上床睡觉。</p>
-<p><strong>唇周痘状况：</strong><a href="http://www.med66.com/jibing/bianmi/" target="_blank" rel="noopener">便秘</a>导致体内毒素累计，或者是使用含氟过量的牙膏，都是造成唇周痘痘的主因。</p>
-<p>改善：多吃高纤维的蔬菜水果，调整饮食习惯，刷牙漱口要彻底。</p>
-<p><strong>下巴痘状况：</strong>通常是月经要来的前几天，造成<a href="http://www.med66.com/jibing/neifenmishitiao/" target="_blank" rel="noopener">内分泌失调</a>所引起的。</p>
-<p>改善：少吃冰冷的东西，月经期间可用消炎镇定的保养品。</p>
-<p><strong>右边脸颊痘状况：</strong>可能是肺部功能失常，手脚冰冷，或是容易敏感的体质，也有可能是<a href="http://www.med66.com/jibing/ganmao/" target="_blank" rel="noopener">感冒</a>前兆。</p>
-<p>改善：平时注意呼吸道的保养，尽量避免芒果、芋头、海鲜甲壳类易过敏的食物。</p>
-<p><strong>左边脸颊痘状况：</strong>可能是肝功能不顺畅，如肝脏的分泌、解毒或造血等功能出了状况。</p>
-<p>改善：作息正常，保持心情愉快，该吹冷气就吹冷气，不要让身体处在过度闷热。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/专业导论课最后一节个人认为比较有价值内容整理.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/专业导论课最后一节个人认为比较有价值内容整理.html" itemprop="url">专业导论课最后一节个人认为比较有价值内容整理</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-14T12:07:11+08:00">
-                2019-06-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/华科机械学习资料分享/" itemprop="url" rel="index">
-                    <span itemprop="name">华科机械学习资料分享</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/专业导论课最后一节个人认为比较有价值内容整理.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="专业导论课最后一节个人认为比较有价值内容整理.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  487 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="机械工程伦理"><a href="#机械工程伦理" class="headerlink" title="机械工程伦理"></a>机械工程伦理</h2><h3 id="问问自己："><a href="#问问自己：" class="headerlink" title="问问自己："></a>问问自己：</h3><p>内心世界?</p>
-<p>存在的意义?</p>
-<p>为何要多一点形而上?</p>
-<p>你的价值感?</p>
-<p>你的技术创造的欲求?</p>
-<p>技术工作者/工程师的责任?</p>
-<p>你对未来技术的感觉?</p>
-<h2 id="知识、能力与素质的区别和联系"><a href="#知识、能力与素质的区别和联系" class="headerlink" title="知识、能力与素质的区别和联系"></a>知识、能力与素质的区别和联系</h2><table>
-<thead>
-<tr>
-<th align="left"></th>
-<th align="center">核心</th>
-<th align="center">t特点</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">知识</td>
-<td align="center">人类认识的成果</td>
-<td align="center">形成能力，素质的基础</td>
-</tr>
-<tr>
-<td align="left">能力</td>
-<td align="center">完成一定活动的本领</td>
-<td align="center">对知识的运用，是知识发挥作用的实践条件，具“外显性”</td>
-</tr>
-<tr>
-<td align="left">素养</td>
-<td align="center">基本品质或基础条件</td>
-<td align="center">人在活动过程中所塑造成的内在升华，具“内凝性”</td>
-</tr>
-</tbody></table>
-<h2 id="专业教育组成"><a href="#专业教育组成" class="headerlink" title="专业教育组成"></a>专业教育组成</h2><p>数学类和自然科学类总计最少为450学时</p>
-<p>工程科学类、工程设计与实践类两者总计最少1000学时</p>
-<p>人文和社会科学不少于400学时</p>
-<h2 id="机械专业教育知识体系包含如下5个知识领域"><a href="#机械专业教育知识体系包含如下5个知识领域" class="headerlink" title="机械专业教育知识体系包含如下5个知识领域"></a>机械专业教育知识体系包含如下5个知识领域</h2><ol>
-<li>机械设计的原理与方法</li>
-<li>机械制造工程原理与技术</li>
-<li>机械系统中的传动和控制</li>
-<li>计算机应用技术</li>
-<li>热流体</li>
-</ol>
-<h2 id="中国加入《华盛顿协议》"><a href="#中国加入《华盛顿协议》" class="headerlink" title="中国加入《华盛顿协议》"></a>中国加入《华盛顿协议》</h2><p>国内本科生获得的文凭，在国际上都会被认可</p>
-<h2 id="企业对毕业生能力的评价"><a href="#企业对毕业生能力的评价" class="headerlink" title="企业对毕业生能力的评价"></a>企业对毕业生能力的评价</h2><ol>
-<li>独立性强、思路开阔、时尚;</li>
-<li>知识面广;</li>
-<li>不够踏实、团队协作意识弱;</li>
-<li>不能承受较大压力,工作责任心、事业心弱,急功近利;</li>
-<li>熟悉、胜任本职工作需要的时间较长,须在企业工作3-4年左右才能完全胜任工作。</li>
-</ol>
-<h2 id="企业对毕业生能力的期待"><a href="#企业对毕业生能力的期待" class="headerlink" title="企业对毕业生能力的期待"></a>企业对毕业生能力的期待</h2><ol>
-<li>除专业能力外,最基本的要求是踏实、勤奋、敬业、忠诚、合作;</li>
-<li>感兴趣的主要不是学习成绩,更注重处理问题的能力、解决问题的能力以及工作中的综合性能</li>
-<li>很看重学生的整体素质和品德.</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1468,7 +1556,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-count">56</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1479,7 +1567,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1584,7 +1672,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">51.9k</span>
+    <span title="Site words total count">53.8k</span>
   
 </div>
 

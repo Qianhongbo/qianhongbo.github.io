@@ -1,10 +1,10 @@
-https://www.qianhongbo.com/Java-Notes-3.html
-https://www.qianhongbo.com/Add-Binary.html
-https://www.qianhongbo.com/Design-Pattern.html
-https://www.qianhongbo.com/Java-Notes-2.html
-https://www.qianhongbo.com/GCD.html
-https://www.qianhongbo.com/Java Notes.html
-https://www.qianhongbo.com/Git.html
-https://www.qianhongbo.com/Network-Foundations-HTTP.html
-https://www.qianhongbo.com/Binary-Search-Tree.html
-https://www.qianhongbo.com/Swift-knowledge-supplement.html
+https://www.qianhongbo.com/LeetCode/Linked-list.html
+https://www.qianhongbo.com/LeetCode/Longest-Common-Prefix.html
+https://www.qianhongbo.com/LeetCode/Integer-to-Roman.html
+https://www.qianhongbo.com/Backend/Java/Java-Notes-3.html
+https://www.qianhongbo.com/LeetCode/Add-Binary.html
+https://www.qianhongbo.com/Backend/Design-Pattern.html
+https://www.qianhongbo.com/Backend/Java/Java-Notes-2.html
+https://www.qianhongbo.com/iOS/GCD.html
+https://www.qianhongbo.com/Backend/Java/Java Notes.html
+https://www.qianhongbo.com/OtherTechnique/Git.html

@@ -2,7 +2,7 @@
 title: Design Pattern
 date: 2022-01-27 14:16:54
 categories: 
-- Design Pattern
+- Backend
 ---
 
 > [一个设计模式非常好的网站](https://www.runoob.com/design-pattern/design-pattern-tutorial.html)

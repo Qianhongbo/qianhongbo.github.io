@@ -5,29 +5,27 @@ categories:
 - Leetcode
 ---
 
-## Add Binary
-
-### Question
+## Question
 
 Given two binary strings `a` and `b`, return *their sum as a binary string*.
 
-**Example 1:**
+### Example 1:
 
-```
+```text
 Input: a = "11", b = "1"
 Output: "100"
 ```
 
-**Example 2:**
+### Example 2:
 
-```
+```text
 Input: a = "1010", b = "1011"
 Output: "10101"
 ```
 
-### Solution
+## Solution
 
-#### Solution 1
+### Solution 1
 
 ```python
 # O(M+N)
@@ -49,7 +47,7 @@ int(“11”, 2) # 3
 
 2 . This method has quite low performance in the case of large input numbers.
 
-#### Solution 2
+### Solution 2
 
 ```python
 # Time O(max(M,N))

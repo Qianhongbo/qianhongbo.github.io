@@ -102,7 +102,7 @@ menu:
   #commonweal: /404/ || heartbeat
   books: /books/ || book  
   movies: /movies/ || video-camera  
-  #games: /games/ || gamepad
+  励志: /lizhi/ || bars #gamepad
 
 # Enable/Disable menu icons.
 menu_icons:

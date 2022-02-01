@@ -2,7 +2,7 @@
 title: Binary Search Tree
 date: 2021-12-28 17:24:37
 categories: 
-- Data Structure
+- Leetcode
 ---
 
 # BST Construction

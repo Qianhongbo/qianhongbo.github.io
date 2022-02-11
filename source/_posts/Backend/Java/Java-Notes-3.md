@@ -325,3 +325,100 @@ Map<Year, Long> graduatingClassSizes = studentList.stream()
 
 Here, `groupingBy()` is used to collect elements into a `Map`. `Collectors.counting()` counts the number of values for each key, so, in this example, it will count how many students there are for each graduation year.
 
+## Working with Files & I/O
+
+### I/O (Input/Output)
+
+**Input** is data the program receives from external processes and systems, such as from the local file system or the Internet.
+
+**Output** is data the program sends to external processes and systems.
+
+### Program Memory vs. Persistent Storage
+
+#### Program Memory
+
+In Java programs and other computer programs, short-term storage happens in the program memory.
+
+- Variables, objects and data structures are stored in the heap and stack. * Memory access is fast.
+- Memory is erased when the program is done running.
+
+#### Persistent Storage
+
+If we want to store data for longer periods of time, we have to use long-term storage, also known as persistent storage.
+
+- *Files*, stored on disk, are one of the most common forms of persistent storage. Your PC, laptop, and phone all have their own file systems that can store different kinds of files.
+- Files stick around, or *persist*, after the program is done executing, so can also be read by humans or other programs.
+- Persistent storage access is usually *much* slower than memory access.
+- Databases are another common form of persistent storage.
+
+### File Open Options
+
+When you create, read, or write a file, there are standard modes that you can use to do so. Java uses the [`StandardOpenOptions`](https://docs.oracle.com/javase/10/docs/api/java/nio/file/StandardOpenOption.html) class to encapsulate all these modes.
+
+Here are some of the common modes:
+
+| **Option**   | **Description**                                        |
+| :----------- | :----------------------------------------------------- |
+| `READ`       | Open a file for reading, fail if it doesn't exist.     |
+| `CREATE`     | Create a file.                                         |
+| `CREATE_NEW` | Same as `CREATE`, but fail if the file already exists. |
+| `WRITE`      | Open a file for writing.                               |
+| `APPEND`     | Same as `WRITE`, but write to the end of the file.     |
+
+You are allowed to use more than one option at a time.
+
+### Path API
+
+A [`Path`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html) is Java's way to refer to a file on a file system:
+
+```
+Path p = Path.of("your/path/here");
+```
+
+All paths either refer to *files* or *directories*.
+
+- A *file* contains stored data or bytes.
+- A *directory* contains zero or more files.
+
+All paths are either *absolute* or *relative*.
+
+- *Absolute paths* start with a forward-slash (`/`) (known as the *root directory* on Mac and Linux), or a drive name on Windows.
+- *Relative paths* are only meaningful relative to some other starting point. They do not start with a forward slash or drive name.
+
+Note that the `Path` object in Java always uses forward-slashes to delimit the parts of the path `String`, even if the underlying file system uses backslashes (such as the NTFS file system on Windows).
+
+```java
+// Absolute path to a directory on Mac or Linux
+Path p = Path.of("/home/user/Documents/workspaces");
+// Absolute path to a file on Mac or Linux
+Path p = Path.of("/home/user/Documents/workspaces/main.java");
+// Relatuve path to a directory
+Path p = Path.of("user/Documents/workspaces");
+// Path parts as separate parameters
+Path p = Path.of("user", "Documents", "workspaces");
+```
+
+```java
+import java.nio.file.Path;
+
+public class PathApiDemo {
+    public static void main(String[] args) {
+        Path p1 = Path.of(".");
+        System.out.println(p1);
+        // output: .
+        Path p2 = Path.of(".");
+        System.out.println(p2.toAbsolutePath());
+        // output: /Users/qianhongbo/Documents/Mycode/JAVA/Java Code/Java Notes 4/.
+        Path p3 = Path.of(".");
+        System.out.println(p3.toAbsolutePath().normalize());
+        // output: /Users/qianhongbo/Documents/Mycode/JAVA/Java Code/Java Notes 4
+        Path p4 = Path.of(".");
+        System.out.println(p4.toAbsolutePath().resolve(".."));
+        // output: /Users/qianhongbo/Documents/Mycode/JAVA/Java Code/Java Notes 4/./..
+        Path p5 = Path.of(".");
+        System.out.println(p5.toAbsolutePath().resolve("..").normalize());
+        // output: /Users/qianhongbo/Documents/Mycode/JAVA/Java Code
+    }
+}
+```
+

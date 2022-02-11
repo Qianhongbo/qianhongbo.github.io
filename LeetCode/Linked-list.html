@@ -118,7 +118,7 @@
 <meta property="og:site_name" content="Blog | Qian Homeberg">
 <meta property="og:description" content="Merge Tow Sorted ListsQuestionExample 1: 12Input: list1 = [1,2,4], list2 = [1,3,4]Output: [1,1,2,3,4,4]  Solution12345678910111213141516171819202122# Time complexity: O(n + m)# Space complexity: O(1)#">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-02-01T04:45:07.416Z">
+<meta property="og:updated_time" content="2022-02-10T22:42:30.417Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linked list">
 <meta name="twitter:description" content="Merge Tow Sorted ListsQuestionExample 1: 12Input: list1 = [1,2,4], list2 = [1,3,4]Output: [1,1,2,3,4,4]  Solution12345678910111213141516171819202122# Time complexity: O(n + m)# Space complexity: O(1)#">
@@ -456,7 +456,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  108 字
+                  410 字
                 </span>
               
 
@@ -472,7 +472,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -498,6 +498,14 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: list1 = [1,2,4], list2 = [1,3,4]</span><br><span class="line">Output: [1,1,2,3,4,4]</span><br></pre></td></tr></table></figure>
 
 <h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Time complexity: O(n + m)</span></span><br><span class="line"><span class="comment"># Space complexity: O(1)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, next=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.next = next</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">mergeTwoLists</span><span class="params">(self, list1: Optional[ListNode], list2: Optional[ListNode])</span> -&gt; Optional[ListNode]:</span></span><br><span class="line">        prehead = ListNode(<span class="number">-1</span>)</span><br><span class="line">        result = prehead</span><br><span class="line">        <span class="keyword">while</span> list1 <span class="keyword">and</span> list2:</span><br><span class="line">            <span class="keyword">if</span> list1.val &lt;= list2.val:</span><br><span class="line">                result.next = list1</span><br><span class="line">                list1 = list1.next</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                result.next = list2</span><br><span class="line">                list2 = list2.next</span><br><span class="line">            result = result.next</span><br><span class="line">        result.next = list1 <span class="keyword">if</span> list1 <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">else</span> list2</span><br><span class="line">        <span class="keyword">return</span> prehead.next</span><br></pre></td></tr></table></figure>
+
+<h2 id="Sum-of-Linked-Lists"><a href="#Sum-of-Linked-Lists" class="headerlink" title="Sum of Linked Lists"></a>Sum of Linked Lists</h2><h3 id="Question-1"><a href="#Question-1" class="headerlink" title="Question"></a>Question</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">linkedListOne = 2 -&gt; 4 -&gt; 7 -&gt; 1</span><br><span class="line">linkedListTwo = 9 -&gt; 4 -&gt; 5</span><br><span class="line"></span><br><span class="line"><span class="comment"># Output</span></span><br><span class="line">// linkedListOne represents <span class="number">1742</span></span><br><span class="line">// linkedListTwo represents <span class="number">549</span></span><br><span class="line">// <span class="number">1742</span> + <span class="number">549</span> = <span class="number">2291</span></span><br><span class="line">1 -&gt; 9 -&gt; 2 -&gt; 2</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This is an input class. Do not edit.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LinkedList</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, value)</span>:</span></span><br><span class="line">        self.value = value</span><br><span class="line">        self.next = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># O(max(m, n)) time | O(max(m, n)) space</span></span><br><span class="line"><span class="comment"># For time and space, max(m, n) + 1 (1 is for carry).</span></span><br><span class="line"><span class="comment"># We have to store a new linked list for space.</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sumOfLinkedLists</span><span class="params">(linkedListOne, linkedListTwo)</span>:</span></span><br><span class="line">	carry = <span class="number">0</span></span><br><span class="line">	resultLinkedList = LinkedList(<span class="number">0</span>)</span><br><span class="line">	currentNode = resultLinkedList</span><br><span class="line">	NodeOne = linkedListOne</span><br><span class="line">	NodeTwo = linkedListTwo</span><br><span class="line">	</span><br><span class="line">    <span class="keyword">while</span> NodeOne <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">or</span> NodeTwo <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">or</span> carry != <span class="number">0</span>:</span><br><span class="line">		valueOne = NodeOne.value <span class="keyword">if</span> NodeOne <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">		valueTwo = NodeTwo.value <span class="keyword">if</span> NodeTwo <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">		sumVal = valueOne + valueTwo + carry</span><br><span class="line">		</span><br><span class="line">		carry = sumVal // <span class="number">10</span></span><br><span class="line">		resultVal = sumVal % <span class="number">10</span></span><br><span class="line">		</span><br><span class="line">		newNode = LinkedList(resultVal)</span><br><span class="line">		currentNode.next = newNode</span><br><span class="line">		currentNode = currentNode.next</span><br><span class="line">		</span><br><span class="line">		NodeOne = NodeOne.next <span class="keyword">if</span> NodeOne <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">else</span> <span class="literal">None</span></span><br><span class="line">		NodeTwo = NodeTwo.next <span class="keyword">if</span> NodeTwo <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">else</span> <span class="literal">None</span></span><br><span class="line">    <span class="keyword">return</span> resultLinkedList.next</span><br></pre></td></tr></table></figure>
+
+<h2 id="Remove-Kth-Node-From-End"><a href="#Remove-Kth-Node-From-End" class="headerlink" title="Remove Kth Node From End"></a>Remove Kth Node From End</h2><h3 id="Question-2"><a href="#Question-2" class="headerlink" title="Question"></a>Question</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">head = 0 -&gt; 1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 5 -&gt; 6</span><br><span class="line">k = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Output</span></span><br><span class="line">0 -&gt; 1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 6</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This is an input class. Do not edit.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LinkedList</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, value)</span>:</span></span><br><span class="line">        self.value = value</span><br><span class="line">        self.next = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># O(n) time | O(1) space</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">removeKthNodeFromEnd</span><span class="params">(head, k)</span>:</span></span><br><span class="line">    pointerOne = head</span><br><span class="line">	pointerTwo = head</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(k):</span><br><span class="line">		pointerTwo = pointerTwo.next</span><br><span class="line">	</span><br><span class="line">  <span class="comment"># have to check this, because in the while loop</span></span><br><span class="line">  <span class="comment"># we need to use pointerTwo.next</span></span><br><span class="line">  <span class="comment"># we have to check whether pointerTwo is None...</span></span><br><span class="line">	<span class="keyword">if</span> pointerTwo <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">		pointerOne.value = pointerOne.next.value</span><br><span class="line">		pointerOne.next = pointerOne.next.next</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span> pointerTwo.next <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">		pointerOne = pointerOne.next</span><br><span class="line">		pointerTwo = pointerTwo.next</span><br><span class="line">	pointerOne.next = pointerOne.next.next</span><br></pre></td></tr></table></figure>
 
 
       
@@ -589,6 +597,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/LeetCode/Reverse-Integer.html" rel="prev" title="Reverse Integer">
+                Reverse Integer <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -676,7 +688,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -687,7 +699,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -698,7 +710,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -757,8 +769,8 @@
           
           
 	<br>
-  
-  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=28143753&auto=1&height=66"></iframe>
+
+  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1826996483&auto=0&height=66"></iframe>
           
 
         </div>
@@ -774,7 +786,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Merge-Tow-Sorted-Lists"><span class="nav-number">1.</span> <span class="nav-text">Merge Tow Sorted Lists</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Question"><span class="nav-number">1.1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution"><span class="nav-number">1.2.</span> <span class="nav-text">Solution</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Merge-Tow-Sorted-Lists"><span class="nav-number">1.</span> <span class="nav-text">Merge Tow Sorted Lists</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Question"><span class="nav-number">1.1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution"><span class="nav-number">1.2.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sum-of-Linked-Lists"><span class="nav-number">2.</span> <span class="nav-text">Sum of Linked Lists</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Question-1"><span class="nav-number">2.1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution-1"><span class="nav-number">2.2.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Remove-Kth-Node-From-End"><span class="nav-number">3.</span> <span class="nav-text">Remove Kth Node From End</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Question-2"><span class="nav-number">3.1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution-2"><span class="nav-number">3.2.</span> <span class="nav-text">Solution</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -808,7 +820,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">42.6k</span>
+    <span title="Site words total count">46.6k</span>
   
 </div>
 

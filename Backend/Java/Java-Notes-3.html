@@ -118,7 +118,7 @@
 <meta property="og:site_name" content="Blog | Qian Homeberg">
 <meta property="og:description" content="Functional ProgrammingImperative CodeEarly Java programs were usually programmed in the imperative style. Imperative code usually focuses on how a task is performed. Each line of code gives a specific">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-01-30T23:41:40.361Z">
+<meta property="og:updated_time" content="2022-02-11T06:06:40.424Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java Notes 3">
 <meta name="twitter:description" content="Functional ProgrammingImperative CodeEarly Java programs were usually programmed in the imperative style. Imperative code usually focuses on how a task is performed. Each line of code gives a specific">
@@ -456,7 +456,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.6k 字
+                  2.2k 字
                 </span>
               
 
@@ -472,7 +472,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  10 分钟
+                  13 分钟
                 </span>
               
             </div>
@@ -593,6 +593,69 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;Year, Long&gt; graduatingClassSizes = studentList.stream()</span><br><span class="line">    .collect(Collectors.groupingBy(</span><br><span class="line">        Student::getGraduationYear, Collectors.counting());</span><br></pre></td></tr></table></figure>
 
 <p>Here, <code>groupingBy()</code> is used to collect elements into a <code>Map</code>. <code>Collectors.counting()</code> counts the number of values for each key, so, in this example, it will count how many students there are for each graduation year.</p>
+<h2 id="Working-with-Files-amp-I-O"><a href="#Working-with-Files-amp-I-O" class="headerlink" title="Working with Files &amp; I/O"></a>Working with Files &amp; I/O</h2><h3 id="I-O-Input-Output"><a href="#I-O-Input-Output" class="headerlink" title="I/O (Input/Output)"></a>I/O (Input/Output)</h3><p><strong>Input</strong> is data the program receives from external processes and systems, such as from the local file system or the Internet.</p>
+<p><strong>Output</strong> is data the program sends to external processes and systems.</p>
+<h3 id="Program-Memory-vs-Persistent-Storage"><a href="#Program-Memory-vs-Persistent-Storage" class="headerlink" title="Program Memory vs. Persistent Storage"></a>Program Memory vs. Persistent Storage</h3><h4 id="Program-Memory"><a href="#Program-Memory" class="headerlink" title="Program Memory"></a>Program Memory</h4><p>In Java programs and other computer programs, short-term storage happens in the program memory.</p>
+<ul>
+<li>Variables, objects and data structures are stored in the heap and stack. * Memory access is fast.</li>
+<li>Memory is erased when the program is done running.</li>
+</ul>
+<h4 id="Persistent-Storage"><a href="#Persistent-Storage" class="headerlink" title="Persistent Storage"></a>Persistent Storage</h4><p>If we want to store data for longer periods of time, we have to use long-term storage, also known as persistent storage.</p>
+<ul>
+<li><em>Files</em>, stored on disk, are one of the most common forms of persistent storage. Your PC, laptop, and phone all have their own file systems that can store different kinds of files.</li>
+<li>Files stick around, or <em>persist</em>, after the program is done executing, so can also be read by humans or other programs.</li>
+<li>Persistent storage access is usually <em>much</em> slower than memory access.</li>
+<li>Databases are another common form of persistent storage.</li>
+</ul>
+<h3 id="File-Open-Options"><a href="#File-Open-Options" class="headerlink" title="File Open Options"></a>File Open Options</h3><p>When you create, read, or write a file, there are standard modes that you can use to do so. Java uses the <a href="https://docs.oracle.com/javase/10/docs/api/java/nio/file/StandardOpenOption.html" target="_blank" rel="noopener"><code>StandardOpenOptions</code></a> class to encapsulate all these modes.</p>
+<p>Here are some of the common modes:</p>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Option</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>READ</code></td>
+<td align="left">Open a file for reading, fail if it doesn’t exist.</td>
+</tr>
+<tr>
+<td align="left"><code>CREATE</code></td>
+<td align="left">Create a file.</td>
+</tr>
+<tr>
+<td align="left"><code>CREATE_NEW</code></td>
+<td align="left">Same as <code>CREATE</code>, but fail if the file already exists.</td>
+</tr>
+<tr>
+<td align="left"><code>WRITE</code></td>
+<td align="left">Open a file for writing.</td>
+</tr>
+<tr>
+<td align="left"><code>APPEND</code></td>
+<td align="left">Same as <code>WRITE</code>, but write to the end of the file.</td>
+</tr>
+</tbody></table>
+<p>You are allowed to use more than one option at a time.</p>
+<h3 id="Path-API"><a href="#Path-API" class="headerlink" title="Path API"></a>Path API</h3><p>A <a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html" target="_blank" rel="noopener"><code>Path</code></a> is Java’s way to refer to a file on a file system:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Path p = Path.of(&quot;your/path/here&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>All paths either refer to <em>files</em> or <em>directories</em>.</p>
+<ul>
+<li>A <em>file</em> contains stored data or bytes.</li>
+<li>A <em>directory</em> contains zero or more files.</li>
+</ul>
+<p>All paths are either <em>absolute</em> or <em>relative</em>.</p>
+<ul>
+<li><em>Absolute paths</em> start with a forward-slash (<code>/</code>) (known as the <em>root directory</em> on Mac and Linux), or a drive name on Windows.</li>
+<li><em>Relative paths</em> are only meaningful relative to some other starting point. They do not start with a forward slash or drive name.</li>
+</ul>
+<p>Note that the <code>Path</code> object in Java always uses forward-slashes to delimit the parts of the path <code>String</code>, even if the underlying file system uses backslashes (such as the NTFS file system on Windows).</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Absolute path to a directory on Mac or Linux</span></span><br><span class="line">Path p = Path.of(<span class="string">"/home/user/Documents/workspaces"</span>);</span><br><span class="line"><span class="comment">// Absolute path to a file on Mac or Linux</span></span><br><span class="line">Path p = Path.of(<span class="string">"/home/user/Documents/workspaces/main.java"</span>);</span><br><span class="line"><span class="comment">// Relatuve path to a directory</span></span><br><span class="line">Path p = Path.of(<span class="string">"user/Documents/workspaces"</span>);</span><br><span class="line"><span class="comment">// Path parts as separate parameters</span></span><br><span class="line">Path p = Path.of(<span class="string">"user"</span>, <span class="string">"Documents"</span>, <span class="string">"workspaces"</span>);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.nio.file.Path;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PathApiDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Path p1 = Path.of(<span class="string">"."</span>);</span><br><span class="line">        System.out.println(p1);</span><br><span class="line">        <span class="comment">// output: .</span></span><br><span class="line">        Path p2 = Path.of(<span class="string">"."</span>);</span><br><span class="line">        System.out.println(p2.toAbsolutePath());</span><br><span class="line">        <span class="comment">// output: /Users/qianhongbo/Documents/Mycode/JAVA/Java Code/Java Notes 4/.</span></span><br><span class="line">        Path p3 = Path.of(<span class="string">"."</span>);</span><br><span class="line">        System.out.println(p3.toAbsolutePath().normalize());</span><br><span class="line">        <span class="comment">// output: /Users/qianhongbo/Documents/Mycode/JAVA/Java Code/Java Notes 4</span></span><br><span class="line">        Path p4 = Path.of(<span class="string">"."</span>);</span><br><span class="line">        System.out.println(p4.toAbsolutePath().resolve(<span class="string">".."</span>));</span><br><span class="line">        <span class="comment">// output: /Users/qianhongbo/Documents/Mycode/JAVA/Java Code/Java Notes 4/./..</span></span><br><span class="line">        Path p5 = Path.of(<span class="string">"."</span>);</span><br><span class="line">        System.out.println(p5.toAbsolutePath().resolve(<span class="string">".."</span>).normalize());</span><br><span class="line">        <span class="comment">// output: /Users/qianhongbo/Documents/Mycode/JAVA/Java Code</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -780,7 +843,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -791,7 +854,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -802,7 +865,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -861,8 +924,8 @@
           
           
 	<br>
-  
-  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=28143753&auto=1&height=66"></iframe>
+
+  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1826996483&auto=0&height=66"></iframe>
           
 
         </div>
@@ -878,7 +941,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Functional-Programming"><span class="nav-number">1.</span> <span class="nav-text">Functional Programming</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Imperative-Code"><span class="nav-number">1.1.</span> <span class="nav-text">Imperative Code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Functional-Code"><span class="nav-number">1.2.</span> <span class="nav-text">Functional Code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lambda-Expressions"><span class="nav-number">1.3.</span> <span class="nav-text">Lambda Expressions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Functional-Interface"><span class="nav-number">1.4.</span> <span class="nav-text">Functional Interface</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Anonymous-Class"><span class="nav-number">1.5.</span> <span class="nav-text">Anonymous Class</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Anonymous-Class-vs-Lambda"><span class="nav-number">1.5.1.</span> <span class="nav-text">Anonymous Class vs. Lambda</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#What’s-this-all-about"><span class="nav-number">1.5.2.</span> <span class="nav-text">What’s this all about?</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shortcomings-of-Lambdas"><span class="nav-number">1.6.</span> <span class="nav-text">Shortcomings of Lambdas</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Two-Examples"><span class="nav-number">1.7.</span> <span class="nav-text">Two Examples</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Example-1"><span class="nav-number">1.7.1.</span> <span class="nav-text">Example 1</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#BinaryOperation-java"><span class="nav-number">1.7.1.1.</span> <span class="nav-text">BinaryOperation.java</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Main-java"><span class="nav-number">1.7.1.2.</span> <span class="nav-text">Main.java</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Example-2"><span class="nav-number">1.7.2.</span> <span class="nav-text">Example 2</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Calculator-java"><span class="nav-number">1.7.2.1.</span> <span class="nav-text">Calculator.java</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Calculate-java"><span class="nav-number">1.7.2.2.</span> <span class="nav-text">Calculate.java</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Capturing-variables"><span class="nav-number">1.8.</span> <span class="nav-text">Capturing variables</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Captured-variables"><span class="nav-number">1.8.1.</span> <span class="nav-text">Captured variables</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Example"><span class="nav-number">1.8.2.</span> <span class="nav-text">Example</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Method-Reference"><span class="nav-number">1.9.</span> <span class="nav-text">Method Reference</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stream-API"><span class="nav-number">1.10.</span> <span class="nav-text">Stream API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Example-1"><span class="nav-number">1.10.1.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Collector"><span class="nav-number">1.10.2.</span> <span class="nav-text">Collector</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Functional-Programming"><span class="nav-number">1.</span> <span class="nav-text">Functional Programming</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Imperative-Code"><span class="nav-number">1.1.</span> <span class="nav-text">Imperative Code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Functional-Code"><span class="nav-number">1.2.</span> <span class="nav-text">Functional Code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lambda-Expressions"><span class="nav-number">1.3.</span> <span class="nav-text">Lambda Expressions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Functional-Interface"><span class="nav-number">1.4.</span> <span class="nav-text">Functional Interface</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Anonymous-Class"><span class="nav-number">1.5.</span> <span class="nav-text">Anonymous Class</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Anonymous-Class-vs-Lambda"><span class="nav-number">1.5.1.</span> <span class="nav-text">Anonymous Class vs. Lambda</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#What’s-this-all-about"><span class="nav-number">1.5.2.</span> <span class="nav-text">What’s this all about?</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shortcomings-of-Lambdas"><span class="nav-number">1.6.</span> <span class="nav-text">Shortcomings of Lambdas</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Two-Examples"><span class="nav-number">1.7.</span> <span class="nav-text">Two Examples</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Example-1"><span class="nav-number">1.7.1.</span> <span class="nav-text">Example 1</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#BinaryOperation-java"><span class="nav-number">1.7.1.1.</span> <span class="nav-text">BinaryOperation.java</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Main-java"><span class="nav-number">1.7.1.2.</span> <span class="nav-text">Main.java</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Example-2"><span class="nav-number">1.7.2.</span> <span class="nav-text">Example 2</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Calculator-java"><span class="nav-number">1.7.2.1.</span> <span class="nav-text">Calculator.java</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Calculate-java"><span class="nav-number">1.7.2.2.</span> <span class="nav-text">Calculate.java</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Capturing-variables"><span class="nav-number">1.8.</span> <span class="nav-text">Capturing variables</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Captured-variables"><span class="nav-number">1.8.1.</span> <span class="nav-text">Captured variables</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Example"><span class="nav-number">1.8.2.</span> <span class="nav-text">Example</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Method-Reference"><span class="nav-number">1.9.</span> <span class="nav-text">Method Reference</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stream-API"><span class="nav-number">1.10.</span> <span class="nav-text">Stream API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Example-1"><span class="nav-number">1.10.1.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Collector"><span class="nav-number">1.10.2.</span> <span class="nav-text">Collector</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Working-with-Files-amp-I-O"><span class="nav-number">2.</span> <span class="nav-text">Working with Files &amp; I/O</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#I-O-Input-Output"><span class="nav-number">2.1.</span> <span class="nav-text">I/O (Input/Output)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Program-Memory-vs-Persistent-Storage"><span class="nav-number">2.2.</span> <span class="nav-text">Program Memory vs. Persistent Storage</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Program-Memory"><span class="nav-number">2.2.1.</span> <span class="nav-text">Program Memory</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Persistent-Storage"><span class="nav-number">2.2.2.</span> <span class="nav-text">Persistent Storage</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#File-Open-Options"><span class="nav-number">2.3.</span> <span class="nav-text">File Open Options</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Path-API"><span class="nav-number">2.4.</span> <span class="nav-text">Path API</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -912,7 +975,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">42.6k</span>
+    <span title="Site words total count">46.6k</span>
   
 </div>
 

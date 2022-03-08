@@ -346,6 +346,217 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/OtherTechnique/【从零入门Qt】开发一款属于自己的串口调试助手.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/OtherTechnique/【从零入门Qt】开发一款属于自己的串口调试助手.html" itemprop="url">【从零入门Qt】开发一款属于自己的串口调试助手</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-31T17:22:58+08:00">
+                2019-07-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/OtherTechnique/【从零入门Qt】开发一款属于自己的串口调试助手.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="OtherTechnique/【从零入门Qt】开发一款属于自己的串口调试助手.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.1k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>暑假来深圳这边实习，做的是嵌入式方向，负责人分配给我的第一个任务是用Qt写一个串口调试助手。这个任务总体来讲难度适中，尽管我没接触过Qt，但能查到很多很多的资料，甚至包括别人写好的源代码，所以有很多的学习资源。</p>
+<p>我第一天在同学的推荐下，看了一个入门的文档，<a href="https://www.devbean.net/2012/08/qt-study-road-2-catelog/" target="_blank" rel="noopener">《Qt 学习之路 2》</a>，其中内容讲的比较基础，基本可以理解，算是能对Qt的语法了解个大概。而且如果实在不懂，也可以参看b站上的视频教程，是<a href="https://www.bilibili.com/video/av20446734" target="_blank" rel="noopener">黑马程序员的教程</a>，视频内容比较冗长，但对于初学者来说可能更好理解，各取所需，看个人选择。</p>
+<p>因为负责人只给了我三天的时间，所以我也就花了一天左右的时间看教程，就开始看我在网上看的一份源码了。当时我的进度是黑马程序员看了不到10个视频，《Qt 学习之路 2》看了不到20节教程，虽然说看了不少，但我当时还是很慌的，对于我这种小白来说，还是不知道源代码是什么意思，但这个时候我能大概明白每个函数要做什么功能了，也就是我看懂了函数名，但函数里的句子我看不懂。</p>
+<p>然后我就选择了按照这份代码自己复刻一份，算是尝试着自己写一下。</p>
+<p>于是我新建了一个<code>project</code>，名字是<code>Myserialport</code>，发现源代码中<code>main.cpp</code>完全一样，也就是一个窗体的显示功能，很好理解，直接略去~</p>
+<p>上面的<code>mainwindow.h</code>文件里面有很多库函数的引用，函数的声明，我姑且认为不重要，暂时略去</p>
+<p>而代码最多的就集中在<code>mainwindow.cpp</code>文件里了，也是我最需要解决的部分！</p>
+<p>这是我新建工程后的代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"mainwindow.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"ui_mainwindow.h"</span></span></span><br><span class="line"></span><br><span class="line">MainWindow::MainWindow(QWidget *parent) :</span><br><span class="line">    QMainWindow(parent),</span><br><span class="line">    ui(<span class="keyword">new</span> Ui::MainWindow)</span><br><span class="line">&#123;</span><br><span class="line">    ui-&gt;setupUi(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MainWindow::~MainWindow()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">delete</span> ui;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>而源代码在<code>MainWindow::MainWindow(QWidget *parent)</code>中添加了很多窗体生成的初始化语句</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">MainWindow::MainWindow(QWidget *parent) :</span><br><span class="line">    QMainWindow(parent),</span><br><span class="line">    ui(<span class="keyword">new</span> Ui::MainWindow)</span><br><span class="line">&#123;</span><br><span class="line">    ui-&gt;setupUi(<span class="keyword">this</span>);</span><br><span class="line">    textstate_receive = <span class="literal">false</span>;                 <span class="comment">//初始化发送窗口状态为文本模式</span></span><br><span class="line">    textstate_send = <span class="literal">false</span>;                    <span class="comment">//初始化接收窗口状态为文本模式</span></span><br><span class="line">    serialport = <span class="keyword">new</span> QSerialPort;              <span class="comment">//创建QSerialPort类，需要在头文件中添加#include &lt;QSerialPort&gt;</span></span><br><span class="line">    ui-&gt;send_button-&gt;setEnabled(<span class="literal">false</span>);        <span class="comment">//初始化接收按钮不可用</span></span><br><span class="line">    ui-&gt;close_port-&gt;setEnabled(<span class="literal">false</span>);         <span class="comment">//初始化接收按钮不可用</span></span><br><span class="line">    ui-&gt;Receive_text_window-&gt;setReadOnly(<span class="literal">true</span>);<span class="comment">//讲接收窗口设置为只读窗口</span></span><br><span class="line">    setWindowTitle(<span class="string">"串口调试助手"</span>);              <span class="comment">//设置程序的标题</span></span><br><span class="line">    setWindowIcon(QIcon(<span class="string">":/images/exe.jpg"</span>));  <span class="comment">//设置程序左上角图标</span></span><br><span class="line">    find_port();                               <span class="comment">//查找可用串口函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以上语句还是比较好理解的，每句话我都进行了注释。</p>
+<p>下面的代码就是定义各个函数，而.h文件里的很多函数声明也就很好理解了，也就是在.h文件里定义一下各个函数</p>
+<p>比如以下很重要的两个函数，用于实现数据的发送和接收</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//发送数据</span></span><br><span class="line"><span class="keyword">void</span> MainWindow::on_send_button_clicked()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(textstate_send == <span class="literal">false</span>)  <span class="comment">//文本模式</span></span><br><span class="line">    &#123;</span><br><span class="line">        serialport-&gt;write(ui-&gt;Send_text_window-&gt;toPlainText().toUtf8());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(textstate_send == <span class="literal">true</span>)     <span class="comment">//hex模式</span></span><br><span class="line">    &#123;</span><br><span class="line">        QString str = ui-&gt;Send_text_window-&gt;toPlainText();</span><br><span class="line">        <span class="keyword">int</span> num = str.toInt();</span><br><span class="line">        str = str.setNum(num,<span class="number">16</span>);</span><br><span class="line">        ui-&gt;Send_text_window-&gt;clear();</span><br><span class="line">        ui-&gt;Send_text_window-&gt;append(str);</span><br><span class="line">        serialport-&gt;write(ui-&gt;Send_text_window-&gt;toPlainText().toLatin1());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//窗口显示串口传来的数据</span></span><br><span class="line"><span class="keyword">void</span> MainWindow::Read_Data()</span><br><span class="line">&#123;</span><br><span class="line">    QByteArray buf;</span><br><span class="line">    buf = serialport-&gt;readAll();</span><br><span class="line">    <span class="keyword">if</span>(!buf.isEmpty())          <span class="comment">//将数据显示到文本串口</span></span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(textstate_receive == <span class="literal">false</span>)   <span class="comment">//文本模式</span></span><br><span class="line">        &#123;</span><br><span class="line">            QString str = ui-&gt;Receive_text_window-&gt;toPlainText();</span><br><span class="line">            str += tr(buf);</span><br><span class="line">            ui-&gt;Receive_text_window-&gt;clear();</span><br><span class="line">            ui-&gt;Receive_text_window-&gt;append(str);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(textstate_receive == <span class="literal">true</span>)   <span class="comment">//hex模式</span></span><br><span class="line">        &#123;</span><br><span class="line">            QString str = ui-&gt;Receive_text_window-&gt;toPlainText();</span><br><span class="line">            <span class="comment">// byteArray 转 16进制</span></span><br><span class="line">            QByteArray temp = buf.toHex().toUpper();</span><br><span class="line">            str += tr(temp);</span><br><span class="line">            ui-&gt;Receive_text_window-&gt;clear();</span><br><span class="line">            ui-&gt;Receive_text_window-&gt;append(str);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    buf.clear();    <span class="comment">//清空缓存区</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后实现了以下的界面，以及文本模式和16进制（hex模式）两种模式转换的数据收发</p>
+<p>p.s.：尝试了很久想要解决中文无法显示的问题，最终无果…</p>
+<p><img src="http://ww1.sinaimg.cn/large/006tNc79gy1g5j5oshorpj30kc0k5769.jpg" alt></p>
+<p><a href="https://download.csdn.net/download/weixin_42559298/11457836" target="_blank" rel="noopener">有需要的话可以在这个链接下载嗷~</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/MicroController/嵌入式开发学习笔记.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1036,7 +1247,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1152,7 +1363,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">52k</span>
+    <span title="Site words total count">52.1k</span>
   
 </div>
 

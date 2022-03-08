@@ -15,7 +15,7 @@
       });
       // 成功提示
       clipboard.on('success', function(e) {
-        toastPlug('复制成功!', 2000)
+        toastPlug('Copy successfully!', 2000)
       });
     }
     initCopyCode();

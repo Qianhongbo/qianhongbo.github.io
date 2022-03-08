@@ -422,3 +422,351 @@ public class PathApiDemo {
 }
 ```
 
+### Reading and Writing data in Java
+
+In Java, the utilities for reading and writing data are built on top of each other. This diagram shows you what that means. When you use a [`BufferedReader`](https://docs.oracle.com/javase/10/docs/api/java/io/BufferedReader.html) to read lines of text, that buffered reader is reading from another underlying [`Reader`](https://docs.oracle.com/javase/10/docs/api/java/io/Reader.html) that provides characters of text. That `Reader`, in turn, is itself using an [`InputStream`](https://docs.oracle.com/javase/10/docs/api/java/io/InputStream.html) behind the scenes to read the raw data.
+
+![stream](https://video.udacity-data.com/topher/2020/November/5faf3729_screen-shot-2020-11-13-at-5.45.56-pm/screen-shot-2020-11-13-at-5.45.56-pm.png)
+
+#### `InputStream` and `OutputStream`
+
+Input and output streams are the lowest level utilities Java provides. They give you access to the raw data, in the form of bytes. This data can come from a file, from user input on the command-line, or from a network or other source. These are the lowest level APIs Java offers for reading or writing a stream of bytes.
+
+#### `InputStream` Example
+
+```java
+InputStream in =
+   Files.newInputStream(Path.of("test"), StandardOpenOption.READ);
+byte[] data = new byte[10];
+while (in.read(data) != -1) {  // Returns the number of bytes read
+  useData(data);
+}
+in.close();  // Close the "test" file
+```
+
+This code creates a file called "test" using `newInputStream()` method of the Files API. The code calls the `read()` method, which reads the data into a `byte[]` and returns the number of bytes that were read. If no bytes were read, it returns `-1`. This code will read the entire file, 10 bytes at a time, until the loop reaches the end of the file.
+
+#### `OutputStream` Example
+
+```java
+OutputStream out = Files.newOutputStream(Path.of("test"));
+out.write("Hello, world!".getBytes());
+out.close();  // Close the "test" file
+```
+
+The basic `write()` method only deals with bytes. It's pretty self-explanatory: you give the `write()` method a `byte[]`, and it writes those bytes to the output stream.
+
+Both code examples call the `close()` method, which we'll cover in more detail later in this lesson.
+
+#### Demo Code: Ways to Copy a File
+
+##### Reading and Writing the Data Directly
+
+```java
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
+public class CopyFile {
+    public static void main(String[] args) throws IOException {
+        InputStream in = Files.newInputStream(Path.of(args[0]));
+        OutputStream out = Files.newOutputStream(Path.of(args[1]));
+
+        byte[] data = new byte[10];
+        while (in.read(data) != -1) {
+            out.write(data);
+        }
+        in.close();
+        out.close();
+    }
+}
+```
+
+##### Using `InputStream.transferTo(OutputStream)`
+
+```java
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
+public class InputOutputStreams {
+    public static void main(String[] args) throws IOException {
+        InputStream in = Files.newInputStream(Path.of(args[0]));
+        OutputStream out = Files.newOutputStream(Path.of(args[1]));
+        in.transferTo(out);
+        in.close();
+        out.close();
+    }
+}
+```
+
+##### Using the Files API
+
+```java
+import java.io.IOException;
+import java.nio.file.Path;
+
+public final class CopyFile {
+    public static void main(String[] args) throws IOException {
+        Files.copy(Path.of(args[0]), Path.of(args[1]));
+    }
+}
+```
+
+#### Readers / Writers
+
+Readers and Writers are the next level of abstraction built on top of input and output streams. These interfaces read and write text characters.
+
+##### Reader Example
+
+```java
+char[] data = new char[10];
+Reader reader =
+   Files.newBufferedReader(Path.of("test"), StandardCharsets.UTF_8);
+while (reader.read(data) != -1) {
+ useData(data);
+}
+reader.close();
+```
+
+Just like input streams, `Reader`s are usually created with the Files API. But instead of reading `byte`s, we are reading `char`s. There's also a `StandardCharset`, which we'll cover that in more detail in the next video.
+
+##### Writer Example
+
+```java
+Writer writer =
+   Files.newBufferedWriter(Path.of("test"),
+                           StandardCharsets.UTF_8);
+writer.write("hello, world");
+writer.close();  // Close the "test" file
+```
+
+The `Writer` is pretty much what you would expect. This time we are writing encoded `String`s of data instead of raw `byte`s.
+
+#### Buffered Strams
+
+Buffered streams reduce the number of I/O operations performed by your program. This can significantly shrink the amount of time your program spends doing I/O!
+
+When your code calls `BufferedReader.read()`, the `BufferedReader` reads ahead, and fetches more data than you asked for. Whatever it reads is stored in an array, which is also called a *buffer*.
+
+The next time you call `read()`, if the data you requested is already in the buffer, the BufferedReader will give you that cached data, without having to do another read from disk!
+
+##### `BufferedReader` Example
+
+```java
+BufferedReader reader =
+   Files.newBufferedReader(Path.of("test"), StandardCharsets.UTF_8);
+String line;
+while ((line = reader.readLine()) != null) {
+ useString(line);
+}
+reader.close();
+```
+
+The main difference between this API and the `Reader` API is the addition of the `readLine()` method, which returns a full line of text. Reading lines this way is a lot easier than reading the individual characters one by one!
+
+```
+BufferedWriter writer =
+   Files.newBufferedWriter(Path.of("test"),
+                           StandardCharsets.UTF_8);
+writer.write("Hello, ");
+writer.write("world!");
+writer.flush();  // Writes the contents of the buffer
+writer.close();  // Flushes the buffer and closes "test"
+```
+
+`BufferedWriter` also uses an in-memory buffer to store writes, and then periodically writes contents of the buffer in batches.
+
+In this code, the `write()` method is called twice, but there is only one actual write to the underlying output stream.
+
+### Java Object Serialization
+
+**Serialization** is the process of converting an object into a data format that can later be **deserialized** back into the original object.
+
+![](https://video.udacity-data.com/topher/2020/November/5faf3bcd_screen-shot-2020-11-13-at-6.06.13-pm/screen-shot-2020-11-13-at-6.06.13-pm.png)
+
+#### Example
+
+`UdacisearchClient.java`
+
+```java
+public final class UdacisearchClient implements Serializable {
+  ... // Everything else stays the same!
+}
+```
+
+`Main.java`
+
+```java
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.time.Duration;
+import java.time.Instant;
+import java.time.ZoneId;
+
+public final class Main {
+  public static void main(String[] args) throws Exception {
+    if (args.length != 1) {
+      System.out.println("Usage: Main [file path]");
+      return;
+    }
+
+    UdacisearchClient client =
+        new UdacisearchClient(
+            "CatFacts LLC",
+            17,
+            8000,
+            5,
+            Instant.now(),
+            Duration.ofDays(180),
+            ZoneId.of("America/Los_Angeles"),
+            "555 Meowmers Ln, Riverside, CA 92501");
+
+    Path outputPath = Path.of(args[0]);
+    try (ObjectOutputStream out = new ObjectOutputStream(Files.newOutputStream(outputPath))) {
+      out.writeObject(client);
+    }
+    System.out.println("Wrote to " + outputPath.toAbsolutePath().toString());
+
+    try (ObjectInputStream in = new ObjectInputStream(Files.newInputStream(outputPath))) {
+      UdacisearchClient deserialized = (UdacisearchClient) in.readObject();
+      System.out.println("Deserialized " + deserialized);
+    }
+  }
+}
+```
+
+#### JSON and XML
+
+JSON (**J**ava**S**cript **O**bject **N**otation) and XML (E**x**tensible **M**arkup **L**anguage) are two common text formats for serializing data.
+
+##### JSON Example
+
+```java
+{
+  "id": 17,
+  "name": "George Washington",
+  "emails": ["george.w@gmail.com", "potus.ftw@yahoo.com"]
+}
+```
+
+##### XML Example
+
+```
+<?xml version="1.0" encoding="UTF-8" ?>
+<client>
+  <id> 17 </id>
+  <name> George Washington </name>
+  <emails>
+    <email> george.w@gmail.com </email>
+    <email> potus.ftw@yahoo.com </email>
+  </emails>
+</client>
+```
+
+##### Jackson example for JSON
+
+```java
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.time.Duration;
+import java.time.Instant;
+import java.time.ZoneId;
+
+public final class Main {
+  public static void main(String[] args) throws Exception {
+    if (args.length != 1) {
+      System.out.println("Usage: Main [file path]");
+      return;
+    }
+
+    UdacisearchClient client =
+        new UdacisearchClient(
+            "CatFacts LLC",
+            17,
+            8000,
+            5,
+            Instant.now(),
+            Duration.ofDays(180),
+            ZoneId.of("America/Los_Angeles"),
+            "555 Meowmers Ln, Riverside, CA 92501");
+
+    Path outputPath = Path.of(args[0]);
+    ObjectMapper objectMapper = new ObjectMapper();
+    objectMapper.registerModule(new JavaTimeModule());
+    objectMapper.writeValue(Files.newBufferedWriter(outputPath), client);
+
+    System.out.println("Wrote to " + outputPath.toAbsolutePath().toString());
+
+    UdacisearchClient deserialized =
+        objectMapper.readValue(Files.newBufferedReader(outputPath), UdacisearchClient.class);
+    System.out.println("Deserialized " + deserialized);
+  }
+}
+```
+
+## Dependency Injection
+
+### What is a Dependency?
+
+A **dependency** is anything your code needs to work, such as an external library, an environment variable, a remote website, or a database.
+
+In the context of dependency injection, a dependency usually refers to an object, class, or interface that your code imports, creates, or uses.
+
+### What is Dependency Injection?
+
+**D**ependency **I**njection, or DI, is a design pattern that moves the creation of dependencies to outside of your code. Instead of creating objects, you tell the DI framework to create the objects for you, and then you inject those objects into your class.
+
+### Using `@Inject` Annotations
+
+To inject objects from a DI framework, you can add `@Inject` annotations to your code. You can add them directly to instance fields:
+
+```java
+class CourseRegistrar {
+  @Inject private Database db;
+  @Inject private Clock clock;
+  @Inject private RegistrationFactory factory;
+
+  boolean registerStudentForCourse(Student s, int courseId) {
+    Course c = db.getCourse(courseId);
+    if (clock.instant().isAfter(c.getRegistrationDeadline())) return false;
+    if (!s.getPassedCourses().containsAll(c.getPrereqs())) return false;
+    db.createRegistration(factory.create(courseId, s.getId()));
+    return true;
+  }
+}
+```
+
+... or, you can add `@Inject` annotations to constructors:
+
+```java
+class CourseRegistrar {
+  private final Database db;
+  private final Clock clock;
+  private final RegistrationFactory factory;
+
+  @Inject
+  CourseRegistrar(Database db, Clock clock, RegistrationFactory factory) {
+    this.db = db;
+    this.clock = clock;
+    this.factory = factory;
+  }
+
+  boolean registerStudentForCourse(Student s, int courseId) {
+    Course c = db.getCourse(courseId);
+    if (clock.instant().isAfter(c.getRegistrationDeadline())) return false;
+    if (!s.getPassedCourses().containsAll(c.getPrereqs())) return false;
+    db.createRegistration(factory.create(courseId, s.getId()));
+    return true;
+  }
+}
+```

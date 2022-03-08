@@ -5,7 +5,50 @@ categories:
 - Leetcode
 ---
 
-# BST Construction
+## Find CLosest Value in BST
+
+### Question
+
+Write a function that takes in a `BST` and a target integer value and returns that closest value to that target value contained in the BST.
+
+```python
+tree = 10
+			/  \
+     5   15
+    / \  / \
+   2  5 13  22
+  /       \
+ 1         14
+target = 12
+
+# output = 13
+```
+
+### Solution
+
+```python
+def findClosestValueInBst(tree, target):
+	closest = tree.value
+	currentNode = tree
+	while currentNode is not None:
+		if abs(target - currentNode.value) < abs(target - closest):
+			closest = currentNode.value
+		if target > currentNode.value:
+			currentNode = currentNode.right
+		else:
+			currentNode = currentNode.left
+	return closest
+
+
+# This is the class of the input tree. Do not edit.
+class BST:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+```
+
+## BST Construction
 
 Write a BST class for a Binary Search Tree. The class should support:
 

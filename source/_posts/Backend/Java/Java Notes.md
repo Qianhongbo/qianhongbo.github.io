@@ -303,27 +303,7 @@ public class Car extends Vehicle {
 
 **Interfaces** allow us to avoid hardcoding features in an application. We can move specific implementation details into subclasses, and then use an interface to communicate between the application and the subclasses.
 
-> [A website about interface.](https://www.liaoxuefeng.com/wiki/1252599548343744/1260456790454816)
 
-### Interfaces vs Abstract Classes
-
-Here are some of the similarities and differences between abstract classes and interfaces:
-
-**Abstract class**
-
-- Can have class variables.
-- Can have both **abstract** methods and **concrete** methods that are shared with the subclasses.
-- **Can have instance variables**, i.e. variables that are specific to individual subclasses.
-- Subclasses can only extend one class.
-
-**Interfaces**
-
-- Can have class variables.
-- Every method in an interface is **abstract**.
-- **Cannot have instance variables**. Variables in an interface must be the same for every class implementing the interface.
-- Classes can implement more than one interface and **have multiple inheritance**.
-
-One other thing to note is that that Interfaces are types just like classes are types!
 
 ```java
 public interface Vehicle {
@@ -368,3 +348,24 @@ public class Car implements Vehicle {
 }
 ```
 
+### Interfaces vs Abstract Classes
+
+Here are some of the similarities and differences between abstract classes and interfaces:
+
+**Abstract class**
+
+- Can have class(static) variables.
+- Can have both **abstract** methods and **concrete** methods that are shared with the subclasses.
+- **Can have instance variables**, i.e. variables that are specific to individual subclasses.
+- Subclasses can only extend one class.
+
+**Interfaces**
+
+- Can have class(static) variables.
+- Every method in an interface is **abstract**.
+- **Cannot have instance variables**. Variables in an interface must be the same for every class implementing the interface.
+- Classes can implement more than one interface and **have multiple inheritance**.
+
+> Abstract classes are used for **Modeling** a class hierarchy of similar looking classes (For example Animal can be abstract class and Human , Lion, Tiger can be concrete derived classes)
+>
+> Interface is used for **Communication** between 2 similar / non similar classes which does not care about type of the class implementing Interface(e.g. Height can be interface property and it can be implemented by Human , Building , Tree. It does not matter if you can eat , you can swim you can die or anything.. it matters only a thing that you need to have Height (implementation in you class) ).

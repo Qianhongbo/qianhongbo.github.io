@@ -102,7 +102,6 @@ menu:
   #commonweal: /404/ || heartbeat
   books: /books/ || book  
   movies: /movies/ || video-camera  
-  励志: /lizhi/ || bars #gamepad
 
 # Enable/Disable menu icons.
 menu_icons:
@@ -830,7 +829,7 @@ images: images
 version: 5.1.4
 
 # Fireworks
-fireworks: true
+fireworks: false
 
 # Markdown-it config
 ## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki

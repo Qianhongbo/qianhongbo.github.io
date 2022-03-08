@@ -1,10 +1,10 @@
+https://www.qianhongbo.com/Fullstack/Node-js.html
+https://www.qianhongbo.com/Fullstack/JavaScript-Notes.html
+https://www.qianhongbo.com/Backend/c++/lambda-expression-in-C.html
+https://www.qianhongbo.com/LeetCode/Two-pointers.html
+https://www.qianhongbo.com/Backend/Java/Java-Notes-4.html
+https://www.qianhongbo.com/LeetCode/Kadane's Algorithm.html
+https://www.qianhongbo.com/Backend/c++/Connect-different-classes-in-C.html
+https://www.qianhongbo.com/LeetCode/Sorting.html
 https://www.qianhongbo.com/Backend/c++/c-多层Switch简化.html
 https://www.qianhongbo.com/Data Structure/Data-Structure.html
-https://www.qianhongbo.com/LeetCode/Reverse-Integer.html
-https://www.qianhongbo.com/LeetCode/Linked-list.html
-https://www.qianhongbo.com/LeetCode/Longest-Common-Prefix.html
-https://www.qianhongbo.com/LeetCode/Integer-to-Roman.html
-https://www.qianhongbo.com/Backend/Java/Java-Notes-3.html
-https://www.qianhongbo.com/LeetCode/Add-Binary.html
-https://www.qianhongbo.com/Backend/Design Pattern/Design-Pattern.html
-https://www.qianhongbo.com/Backend/Java/Java-Notes-2.html

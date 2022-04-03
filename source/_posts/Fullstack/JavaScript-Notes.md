@@ -60,6 +60,10 @@ var sum = add(1, 2);
 
 ## Hoisting
 
+The function can be declared after we call it. The interpreter will help us to change the sequence of the code. 
+
+Also, we can also declare the variable after we use it, but the value we set is still at the original place.
+
 ```javascript
 sayHi("Julia");
 
@@ -67,7 +71,7 @@ function sayHi(name) {
   console.log(greeting + " " + name);
   var greeting;
 }
-// undefined Julia
+// result: undefined Julia
 ```
 
 ```js
@@ -77,10 +81,10 @@ function sayHi(name) {
   console.log(greeting + " " + name);
   var greeting = "Hello";
 }
-// undefined Julia
+// result: undefined Julia
 
 /*
-The about function is equal to the following function...
+The above function is equal to the following function...
 function sayHi(name) {
   var greeting;
   console.log(greeting + " " + name);
@@ -198,7 +202,8 @@ console.log(donuts.length);
 
 ```js
 var donuts = ["glazed", "chocolate frosted", "Boston creme", "glazed cruller", "cinnamon sugar", "sprinkled"];
-donuts.push("powdered"); // the `push()` method returns 7 because the `donuts` array now has 7 elements
+donuts.push("powdered"); 
+// the `push()` method returns 7 because the `donuts` array now has 7 elements
 ```
 
 ### Pop
@@ -206,6 +211,7 @@ donuts.push("powdered"); // the `push()` method returns 7 because the `donuts` a
 ```js
 var donuts = ["glazed", "chocolate frosted", "Boston creme", "glazed cruller", "cinnamon sugar", "sprinkled", "powdered"];
 donuts.pop(); 
+// pops "powdered" off the end of the `donuts` array
 ```
 
 ### Loop
@@ -238,11 +244,17 @@ words = ["cat", "in", "hat"];
 words.forEach(function(word, num, all) {
   console.log("Word " + num + " in " + all.toString() + " is " + word);
 });
+/*
+Result:
+Word 0 in cat,in,hat is cat
+Word 1 in cat,in,hat is in
+Word 2 in cat,in,hat is hat
+*/
 ```
 
 ### Map
 
-With the `map()` method, you can take an array, perform some operation on each element of the array, and return a new array.
+With the `map()` method, you can take an array, perform some operation on each element of the array, and return **a new array**.
 
 ```js
 var donuts = ["jelly donut", "chocolate donut", "glazed donut"];
@@ -252,10 +264,12 @@ var improvedDonuts = donuts.map(function(donut) {
   donut = donut.toUpperCase();
   return donut;
 });
-```
 
-> **donuts array:** ["jelly donut", "chocolate donut", "glazed donut"]
-> **improvedDonuts array:** ["JELLY DONUT HOLE", "CHOCOLATE DONUT HOLE", "GLAZED DONUT HOLE"]
+/*
+donuts array: ["jelly donut", "chocolate donut", "glazed donut"]
+improvedDonuts array: ["JELLY DONUT HOLE", "CHOCOLATE DONUT HOLE", "GLAZED DONUT HOLE"]
+*/
+```
 
 ## Object
 
@@ -271,6 +285,9 @@ var sister = {
 };
 
 sister.paintPicture();
-```
 
-> **Returns**: "Sarah paints!"
+/*
+Return: 
+"Sarah paints!"
+*/
+```

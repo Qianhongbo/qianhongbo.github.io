@@ -116,3 +116,80 @@ class Solution:
         return trapped_water
 ```
 
+## Merge Sorted Array
+
+### Question
+
+You are given two integer arrays `nums1` and `nums2`, sorted in **non-decreasing order**, and two integers `m` and `n`, representing the number of elements in `nums1` and `nums2` respectively.
+
+**Merge** `nums1` and `nums2` into a single array sorted in **non-decreasing order**.
+
+The final sorted array should not be returned by the function, but instead be stored inside the array `nums1`. To accommodate this, `nums1` has a length of `m + n`, where the first `m` elements denote the elements that should be merged, and the last `n` elements are set to `0` and should be ignored. `nums2` has a length of `n`.
+
+```
+Input: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
+Output: [1,2,2,3,5,6]
+```
+
+### Solution
+
+#### Brute Force: Merge and sort
+
+```python
+# O((n+m)log(n+m)) time | O(n) space
+class Solution:
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+        # Write the elements of num2 into the end of nums1.
+        for i in range(n):
+            nums1[i + m] = nums2[i]
+        # Sort nums1 list in-place.
+        nums1.sort()
+```
+
+#### Three Pointers (Start from the beginning)
+
+```python
+# O(n+m) time | O(m) space
+class Solution:
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+        # must copy the nums1[:m] first...
+        # can't use nums1_copy = nums1, because it will be alias
+        nums1_copy = nums1[:m]
+        idx1 = 0
+        idx2 = 0
+        for i in range(m + n):
+            # have to put idx2 >= n before... need to check it first
+            # or the list will be out of the index...
+            if idx2 >= n or (idx1 < m and nums1_copy[idx1] <= nums2[idx2]):
+                nums1[i] = nums1_copy[idx1]
+                idx1 += 1
+            else:
+                nums1[i] = nums2[idx2]
+                idx2 += 1
+```
+
+### Three Pointers (Start from the end)
+
+Approach 2 already demonstrates the best possible time complexity, but still uses additional space. This is because the elements of array `nums1` have to be stored somwhere so that they aren't overwritten.
+
+So, if instead we start to overwrite `nums1` from the end, we can solve this problem.
+
+> **Interview Tip**: Whenever you're trying to solve an array problem in-place, always consider the possibility of iterating backwards instead of forwards through the array. It can completely change the problem, and make it a lot easier.
+
+```python
+# O(n+m) time | O(1) space
+class Solution:
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:   
+        idx1 = m - 1
+        idx2 = n - 1
+        for i in range(m + n - 1, -1, -1):
+            if idx2 < 0:
+                break
+            if idx1 >= 0 and nums1[idx1] > nums2[idx2]:
+                nums1[i] = nums1[idx1]
+                idx1 -= 1
+            else:
+                nums1[i] = nums2[idx2]
+                idx2 -= 1
+```
+

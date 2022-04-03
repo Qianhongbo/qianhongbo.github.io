@@ -1,10 +1,10 @@
+https://www.qianhongbo.com/Fullstack/Jasmine.html
+https://www.qianhongbo.com/Fullstack/TypeScript.html
+https://www.qianhongbo.com/Backend/Database/Database-Tutorial.html
 https://www.qianhongbo.com/LeetCode/hashmap.html
 https://www.qianhongbo.com/Fullstack/Node-js.html
 https://www.qianhongbo.com/Fullstack/JavaScript-Notes.html
-https://www.qianhongbo.com/Backend/c++/lambda-expression-in-C.html
+https://www.qianhongbo.com/Backend/C++/lambda-expression-in-C.html
 https://www.qianhongbo.com/LeetCode/Two-pointers.html
 https://www.qianhongbo.com/Backend/Java/Java-Notes-4.html
 https://www.qianhongbo.com/LeetCode/Kadane's Algorithm.html
-https://www.qianhongbo.com/Backend/c++/Connect-different-classes-in-C.html
-https://www.qianhongbo.com/LeetCode/Sorting.html
-https://www.qianhongbo.com/Backend/c++/c-多层Switch简化.html

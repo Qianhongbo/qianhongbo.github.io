@@ -120,7 +120,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://assets.leetcode.com/uploads/2018/10/22/rainwatertrap.png">
 <meta property="og:image" content="https://leetcode.com/problems/trapping-rain-water/Figures/42/trapping_rain_water.png">
-<meta property="og:updated_time" content="2022-02-27T00:18:25.087Z">
+<meta property="og:updated_time" content="2022-03-24T23:48:04.024Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Two pointers">
 <meta name="twitter:description" content="Trap Rain Water(LeetCode 42)QuestionGiven n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining.   12Input: height =">
@@ -449,7 +449,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  531 字
+                  983 字
                 </span>
               
 
@@ -465,7 +465,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3 分钟
+                  6 分钟
                 </span>
               
             </div>
@@ -504,6 +504,22 @@
 
 <h4 id="Using-stacks"><a href="#Using-stacks" class="headerlink" title="Using stacks"></a>Using stacks</h4><p>This way is not the best and also not easy to understand. The main idea is to track and compute the <code>V</code> shape, because it is only possible to trap vater in <code>V</code> shape.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">trap</span><span class="params">(self, heights: List[int])</span> -&gt; int:</span></span><br><span class="line">        stack, trapped_water = [], <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> hi_index, height <span class="keyword">in</span> enumerate(heights):</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> stack <span class="keyword">and</span> height &gt;= heights[stack[<span class="number">-1</span>]]:</span><br><span class="line">                ground_height = heights[stack.pop()]</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> stack:</span><br><span class="line">                     <span class="keyword">continue</span></span><br><span class="line">                lo_index = stack[<span class="number">-1</span>]</span><br><span class="line">                water_line = min(heights[lo_index], height)</span><br><span class="line">                trapped_water += (water_line - ground_height) * (hi_index - lo_index - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">            stack.append(hi_index)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> trapped_water</span><br></pre></td></tr></table></figure>
+
+<h2 id="Merge-Sorted-Array"><a href="#Merge-Sorted-Array" class="headerlink" title="Merge Sorted Array"></a>Merge Sorted Array</h2><h3 id="Question-1"><a href="#Question-1" class="headerlink" title="Question"></a>Question</h3><p>You are given two integer arrays <code>nums1</code> and <code>nums2</code>, sorted in <strong>non-decreasing order</strong>, and two integers <code>m</code> and <code>n</code>, representing the number of elements in <code>nums1</code> and <code>nums2</code> respectively.</p>
+<p><strong>Merge</strong> <code>nums1</code> and <code>nums2</code> into a single array sorted in <strong>non-decreasing order</strong>.</p>
+<p>The final sorted array should not be returned by the function, but instead be stored inside the array <code>nums1</code>. To accommodate this, <code>nums1</code> has a length of <code>m + n</code>, where the first <code>m</code> elements denote the elements that should be merged, and the last <code>n</code> elements are set to <code>0</code> and should be ignored. <code>nums2</code> has a length of <code>n</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3</span><br><span class="line">Output: [1,2,2,3,5,6]</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h3><h4 id="Brute-Force-Merge-and-sort"><a href="#Brute-Force-Merge-and-sort" class="headerlink" title="Brute Force: Merge and sort"></a>Brute Force: Merge and sort</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O((n+m)log(n+m)) time | O(n) space</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(self, nums1: List[int], m: int, nums2: List[int], n: int)</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">        <span class="comment"># Write the elements of num2 into the end of nums1.</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            nums1[i + m] = nums2[i]</span><br><span class="line">        <span class="comment"># Sort nums1 list in-place.</span></span><br><span class="line">        nums1.sort()</span><br></pre></td></tr></table></figure>
+
+<h4 id="Three-Pointers-Start-from-the-beginning"><a href="#Three-Pointers-Start-from-the-beginning" class="headerlink" title="Three Pointers (Start from the beginning)"></a>Three Pointers (Start from the beginning)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(n+m) time | O(m) space</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(self, nums1: List[int], m: int, nums2: List[int], n: int)</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">        <span class="comment"># must copy the nums1[:m] first...</span></span><br><span class="line">        <span class="comment"># can't use nums1_copy = nums1, because it will be alias</span></span><br><span class="line">        nums1_copy = nums1[:m]</span><br><span class="line">        idx1 = <span class="number">0</span></span><br><span class="line">        idx2 = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(m + n):</span><br><span class="line">            <span class="comment"># have to put idx2 &gt;= n before... need to check it first</span></span><br><span class="line">            <span class="comment"># or the list will be out of the index...</span></span><br><span class="line">            <span class="keyword">if</span> idx2 &gt;= n <span class="keyword">or</span> (idx1 &lt; m <span class="keyword">and</span> nums1_copy[idx1] &lt;= nums2[idx2]):</span><br><span class="line">                nums1[i] = nums1_copy[idx1]</span><br><span class="line">                idx1 += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                nums1[i] = nums2[idx2]</span><br><span class="line">                idx2 += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Three-Pointers-Start-from-the-end"><a href="#Three-Pointers-Start-from-the-end" class="headerlink" title="Three Pointers (Start from the end)"></a>Three Pointers (Start from the end)</h3><p>Approach 2 already demonstrates the best possible time complexity, but still uses additional space. This is because the elements of array <code>nums1</code> have to be stored somwhere so that they aren’t overwritten.</p>
+<p>So, if instead we start to overwrite <code>nums1</code> from the end, we can solve this problem.</p>
+<blockquote>
+<p><strong>Interview Tip</strong>: Whenever you’re trying to solve an array problem in-place, always consider the possibility of iterating backwards instead of forwards through the array. It can completely change the problem, and make it a lot easier.</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(n+m) time | O(1) space</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(self, nums1: List[int], m: int, nums2: List[int], n: int)</span> -&gt; <span class="keyword">None</span>:</span>   </span><br><span class="line">        idx1 = m - <span class="number">1</span></span><br><span class="line">        idx2 = n - <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(m + n - <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            <span class="keyword">if</span> idx2 &lt; <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">if</span> idx1 &gt;= <span class="number">0</span> <span class="keyword">and</span> nums1[idx1] &gt; nums2[idx2]:</span><br><span class="line">                nums1[i] = nums1[idx1]</span><br><span class="line">                idx1 -= <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                nums1[i] = nums2[idx2]</span><br><span class="line">                idx2 -= <span class="number">1</span></span><br></pre></td></tr></table></figure>
 
 
       
@@ -595,7 +611,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Backend/c++/lambda-expression-in-C.html" rel="prev" title="lambda expression in C++">
+              <a href="/Backend/C++/lambda-expression-in-C.html" rel="prev" title="lambda expression in C++">
                 lambda expression in C++ <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -686,7 +702,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -697,7 +713,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -708,7 +724,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -784,7 +800,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Trap-Rain-Water-LeetCode-42"><span class="nav-number">1.</span> <span class="nav-text">Trap Rain Water(LeetCode 42)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Question"><span class="nav-number">1.1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution"><span class="nav-number">1.2.</span> <span class="nav-text">Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Brute-force"><span class="nav-number">1.2.1.</span> <span class="nav-text">Brute force</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dynamic-programming"><span class="nav-number">1.2.2.</span> <span class="nav-text">Dynamic programming</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Two-pointers"><span class="nav-number">1.2.3.</span> <span class="nav-text">Two pointers</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Using-stacks"><span class="nav-number">1.2.4.</span> <span class="nav-text">Using stacks</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Trap-Rain-Water-LeetCode-42"><span class="nav-number">1.</span> <span class="nav-text">Trap Rain Water(LeetCode 42)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Question"><span class="nav-number">1.1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution"><span class="nav-number">1.2.</span> <span class="nav-text">Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Brute-force"><span class="nav-number">1.2.1.</span> <span class="nav-text">Brute force</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dynamic-programming"><span class="nav-number">1.2.2.</span> <span class="nav-text">Dynamic programming</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Two-pointers"><span class="nav-number">1.2.3.</span> <span class="nav-text">Two pointers</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Using-stacks"><span class="nav-number">1.2.4.</span> <span class="nav-text">Using stacks</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Merge-Sorted-Array"><span class="nav-number">2.</span> <span class="nav-text">Merge Sorted Array</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Question-1"><span class="nav-number">2.1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution-1"><span class="nav-number">2.2.</span> <span class="nav-text">Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Brute-Force-Merge-and-sort"><span class="nav-number">2.2.1.</span> <span class="nav-text">Brute Force: Merge and sort</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Three-Pointers-Start-from-the-beginning"><span class="nav-number">2.2.2.</span> <span class="nav-text">Three Pointers (Start from the beginning)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Three-Pointers-Start-from-the-end"><span class="nav-number">2.3.</span> <span class="nav-text">Three Pointers (Start from the end)</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -818,7 +834,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">52.1k</span>
+    <span title="Site words total count">57k</span>
   
 </div>
 

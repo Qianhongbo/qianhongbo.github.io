@@ -110,19 +110,20 @@
 
 
 
-<meta name="description" content="History of Backend Development">
+<meta name="description" content="History of Backend Development pros and consThe Node.js Advantage Node.js allows for JavaScript to be used on the frontend and backend. Node.js allows for easy application scaling and maintenance.  Th">
 <meta name="keywords" content="Node.js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Node.js">
 <meta property="og:url" content="https://www.qianhongbo.com/Fullstack/Node-js.html">
 <meta property="og:site_name" content="Blog | Qian Homeberg">
-<meta property="og:description" content="History of Backend Development">
+<meta property="og:description" content="History of Backend Development pros and consThe Node.js Advantage Node.js allows for JavaScript to be used on the frontend and backend. Node.js allows for easy application scaling and maintenance.  Th">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://video.udacity-data.com/topher/2021/February/60351af5_screen-shot-2021-02-23-at-9.04.16-am/screen-shot-2021-02-23-at-9.04.16-am.png">
-<meta property="og:updated_time" content="2022-03-08T06:35:00.467Z">
+<meta property="og:image" content="https://video.udacity-data.com/topher/2021/February/6033fb75_fsjs-c1-l1-event-loop/fsjs-c1-l1-event-loop.jpg">
+<meta property="og:updated_time" content="2022-04-01T18:56:51.144Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node.js">
-<meta name="twitter:description" content="History of Backend Development">
+<meta name="twitter:description" content="History of Backend Development pros and consThe Node.js Advantage Node.js allows for JavaScript to be used on the frontend and backend. Node.js allows for easy application scaling and maintenance.  Th">
 <meta name="twitter:image" content="https://video.udacity-data.com/topher/2021/February/60351af5_screen-shot-2021-02-23-at-9.04.16-am/screen-shot-2021-02-23-at-9.04.16-am.png">
 
 
@@ -448,7 +449,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4 字
+                  880 字
                 </span>
               
 
@@ -464,7 +465,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  5 分钟
                 </span>
               
             </div>
@@ -487,6 +488,73 @@
 
       
         <h2 id="History-of-Backend-Development"><a href="#History-of-Backend-Development" class="headerlink" title="History of Backend Development"></a>History of Backend Development</h2><p><img src="https://video.udacity-data.com/topher/2021/February/60351af5_screen-shot-2021-02-23-at-9.04.16-am/screen-shot-2021-02-23-at-9.04.16-am.png" alt></p>
+<h2 id="pros-and-cons"><a href="#pros-and-cons" class="headerlink" title="pros and cons"></a>pros and cons</h2><h3 id="The-Node-js-Advantage"><a href="#The-Node-js-Advantage" class="headerlink" title="The Node.js Advantage"></a>The Node.js Advantage</h3><ul>
+<li>Node.js allows for JavaScript to be used on the frontend and backend.</li>
+<li>Node.js allows for easy application scaling and maintenance.</li>
+</ul>
+<h3 id="The-Node-js-Disadvantage"><a href="#The-Node-js-Disadvantage" class="headerlink" title="The Node.js Disadvantage"></a>The Node.js Disadvantage</h3><p>Node.js is <strong>not</strong> well-suited for applications that require heavy processing and computation, like video processing, 3D games, and traffic mapping.</p>
+<h2 id="Javascript-with-Node-js"><a href="#Javascript-with-Node-js" class="headerlink" title="Javascript with Node.js"></a>Javascript with Node.js</h2><h3 id="To-run-index-js-use"><a href="#To-run-index-js-use" class="headerlink" title="To run index.js use:"></a>To run <code>index.js</code> use:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ node src/index.js</span><br></pre></td></tr></table></figure>
+
+<h2 id="Common-JS-Module-System"><a href="#Common-JS-Module-System" class="headerlink" title="Common JS Module System"></a>Common JS Module System</h2><p>The module system creates the ability to export and import JavaScript from separate files.</p>
+<h3 id="Export"><a href="#Export" class="headerlink" title="Export"></a>Export</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// working file = util/logger.js</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// exports as object</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123; </span><br><span class="line">    myFirstFunction: myFirstFunction,</span><br><span class="line">    mySecondFunction: mySecondFunction</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// using ES6 shorthand property names</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123; </span><br><span class="line">    myFirstFunction,</span><br><span class="line">    mySecondFunction</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Require"><a href="#Require" class="headerlink" title="Require"></a>Require</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// working file = index.js</span></span><br><span class="line"><span class="comment">// all functions in util/logger.js are available</span></span><br><span class="line"><span class="keyword">const</span> logger = <span class="built_in">require</span>(<span class="string">'./util/logger.js'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// using ES6 object destructuring, only myFirstFunction is available</span></span><br><span class="line"><span class="keyword">const</span> &#123; myFirstFunction &#125; = <span class="built_in">require</span>(<span class="string">'./util/logger.js'</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="Event-Loop"><a href="#Event-Loop" class="headerlink" title="Event Loop"></a>Event Loop</h2><p>Nearly every Node.js feature is considered to be asynchronous (non-blocking). This means that we can request an API using promises and have our application continue running while that request is being waited for. But how does Node.js process that asynchronous request? Both the Browser and Node.js take advantage of something called the Event Loop. The Event Loop isn’t an API or language; it’s a process that runs anytime you have asynchronous code.</p>
+<p>The Event Loop controls the order in which results (output) of asynchronous tasks (input) are displayed. Think of the Event Loop as the person working the door at an exclusive venue. That person lets people in based on a set of information provided by the venue. Your application is the venue, your asynchronous tasks are the people trying to get in, and it’s your job to tell the door person how to do so. Once you become familiar with the Event Loop and the order in which Node.js handles tasks, you will control when those tasks occur in your application</p>
+<h3 id="Six-Phases-of-The-Event-Loop"><a href="#Six-Phases-of-The-Event-Loop" class="headerlink" title="Six Phases of The Event Loop"></a>Six Phases of The Event Loop</h3><ol>
+<li><strong>Timers</strong> - executes callbacks using timers. If there are timers set to <code>0 ms</code> or <code>setImmediate(),</code> they will run here. Incomplete timers will run in later iterations of the loop.</li>
+<li><strong>Pending</strong> - <em>internal phase</em></li>
+<li><strong>Idle/Prepare</strong> - <em>internal phase</em></li>
+<li><strong>Poll</strong> - process I/O callbacks</li>
+<li><strong>Check</strong> - execute any <code>setImmediate()</code> timers added in the Poll phase</li>
+<li><strong>Close</strong> - loop continues if there are more timers or I/O calls. If all timers and I/O calls are done, the loop closes and the process ends.</li>
+</ol>
+<p><img src="https://video.udacity-data.com/topher/2021/February/6033fb75_fsjs-c1-l1-event-loop/fsjs-c1-l1-event-loop.jpg" alt></p>
+<h2 id="NPM"><a href="#NPM" class="headerlink" title="NPM"></a>NPM</h2><h3 id="Initializing-npm-and-Creating-a-package-json-file"><a href="#Initializing-npm-and-Creating-a-package-json-file" class="headerlink" title="Initializing npm and Creating a package.json file"></a>Initializing <code>npm</code> and Creating a <code>package.json</code> file</h3><p>Initializing npm will create a package.json within the root of your application folder containing general information about the project.</p>
+<p>To initialize <code>npm</code> and go through all of the settings use:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm init</span><br></pre></td></tr></table></figure>
+
+<p>To automatically select all defaults use <code>-y</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm init -y</span><br></pre></td></tr></table></figure>
+
+<h3 id="Adding-Dependencies"><a href="#Adding-Dependencies" class="headerlink" title="Adding Dependencies"></a>Adding Dependencies</h3><blockquote>
+<p><a href="http://www.npmjs.com" target="_blank" rel="noopener">www.npmjs.com</a> is the node package management library.</p>
+</blockquote>
+<p>Applications will either include both dependencies and devDependencies or just dependencies. It is dependent on the team setting up the project. <code>devDependencies</code> are thought of as dependencies that are only necessary for development whereas <code>dependencies</code> are those dependencies used in both development and production. </p>
+<p>An example would be needing TypeScript added as a dependency for development, but since it compiles to standard JavaScript to be used in production, TypeScript is not needed for production and therefore could be just a <code>devDependency</code>. </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ npm i module-name // install module to dependencies</span><br><span class="line">$ npm i --save-dev module-name // install to dev dependencies</span><br><span class="line">$ npm i --save-dev module-name@1.19 // install a specific version (1.19 here) of module</span><br></pre></td></tr></table></figure>
+
+<p>Installing dependencies adds the dependency to your package.json file in the format:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"devDependencies"</span>: &#123;</span><br><span class="line">  <span class="string">"prettier"</span>: <span class="string">"^2.2.1"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>The version states what was installed, but it also clarifies how it can be updated should you remove the node_modules and package-lock.json files and reinstall all dependencies with <code>$ npm install</code>.</p>
+<h3 id="package-lock-json"><a href="#package-lock-json" class="headerlink" title="package-lock.json"></a>package-lock.json</h3><p><code>package-lock.json</code> contains all of the information for the dependencies of the modules you have installed.</p>
+<p>It is best practice to add <code>package-lock.json</code> as well as .<code>/node_modules</code> to your <code>.gitignore</code> file when using a repository. The <code>node_modules</code> folder can grow rapidly, containing thousands of files. It is best to clone a repository without <code>node_modules</code> and run <code>npm install</code> to reinstall all dependencies of the project directly from npm.</p>
+<h3 id="npm-update"><a href="#npm-update" class="headerlink" title="npm update"></a>npm update</h3><p>running <code>$ npm update</code> will update all of your dependencies based on the specifications given in your package.json file.</p>
+<h3 id="scripts"><a href="#scripts" class="headerlink" title="scripts"></a>scripts</h3><p>To run a script that you have added to your package.json file, simply run <code>$ npm run</code> argument with the name of the script as the argument.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm run prettier</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// touch .prettierrc</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">"semi"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"singleQuote"</span>: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"prettier"</span>: <span class="string">"prettier --config .prettierrc 'NPM/**/*.js' --write"</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Compiled-vs-Interpreted-Language"><a href="#Compiled-vs-Interpreted-Language" class="headerlink" title="Compiled vs. Interpreted Language"></a>Compiled vs. Interpreted Language</h2><h3 id="Compiled-Language"><a href="#Compiled-Language" class="headerlink" title="Compiled Language"></a>Compiled Language</h3><ul>
+<li>Language is written and compiled to machine code inside of an application</li>
+<li>Errors are detected during compiling</li>
+<li>The code won’t compile until it’s error-free</li>
+<li>Examples: C, C++, Erlang, Go</li>
+</ul>
+<h3 id="JavaScript-is-an-Interpreted-Language"><a href="#JavaScript-is-an-Interpreted-Language" class="headerlink" title="JavaScript is an Interpreted Language"></a>JavaScript is an Interpreted Language</h3><ul>
+<li>Errors found when the code is run</li>
+<li>The interpreter translates and runs code one statement at a time</li>
+<li>Interpreted code runs more slowly</li>
+</ul>
+<h3 id="Node-js-Is-an-Interpreter"><a href="#Node-js-Is-an-Interpreter" class="headerlink" title="Node.js Is an Interpreter"></a>Node.js Is an Interpreter</h3><ul>
+<li>Node.js is mostly written in C++</li>
+<li>Many node modules also include some C++ code</li>
+<li>Other modules include Python or C</li>
+</ul>
 
       
     </div>
@@ -674,7 +742,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -685,7 +753,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -696,7 +764,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -772,7 +840,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#History-of-Backend-Development"><span class="nav-number">1.</span> <span class="nav-text">History of Backend Development</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#History-of-Backend-Development"><span class="nav-number">1.</span> <span class="nav-text">History of Backend Development</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pros-and-cons"><span class="nav-number">2.</span> <span class="nav-text">pros and cons</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Node-js-Advantage"><span class="nav-number">2.1.</span> <span class="nav-text">The Node.js Advantage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Node-js-Disadvantage"><span class="nav-number">2.2.</span> <span class="nav-text">The Node.js Disadvantage</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Javascript-with-Node-js"><span class="nav-number">3.</span> <span class="nav-text">Javascript with Node.js</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#To-run-index-js-use"><span class="nav-number">3.1.</span> <span class="nav-text">To run index.js use:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Common-JS-Module-System"><span class="nav-number">4.</span> <span class="nav-text">Common JS Module System</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Export"><span class="nav-number">4.1.</span> <span class="nav-text">Export</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Require"><span class="nav-number">4.2.</span> <span class="nav-text">Require</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Event-Loop"><span class="nav-number">5.</span> <span class="nav-text">Event Loop</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Six-Phases-of-The-Event-Loop"><span class="nav-number">5.1.</span> <span class="nav-text">Six Phases of The Event Loop</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NPM"><span class="nav-number">6.</span> <span class="nav-text">NPM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Initializing-npm-and-Creating-a-package-json-file"><span class="nav-number">6.1.</span> <span class="nav-text">Initializing npm and Creating a package.json file</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Adding-Dependencies"><span class="nav-number">6.2.</span> <span class="nav-text">Adding Dependencies</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#package-lock-json"><span class="nav-number">6.3.</span> <span class="nav-text">package-lock.json</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-update"><span class="nav-number">6.4.</span> <span class="nav-text">npm update</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scripts"><span class="nav-number">6.5.</span> <span class="nav-text">scripts</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compiled-vs-Interpreted-Language"><span class="nav-number">7.</span> <span class="nav-text">Compiled vs. Interpreted Language</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Compiled-Language"><span class="nav-number">7.1.</span> <span class="nav-text">Compiled Language</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript-is-an-Interpreted-Language"><span class="nav-number">7.2.</span> <span class="nav-text">JavaScript is an Interpreted Language</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Node-js-Is-an-Interpreter"><span class="nav-number">7.3.</span> <span class="nav-text">Node.js Is an Interpreter</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -806,7 +874,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">52.1k</span>
+    <span title="Site words total count">57k</span>
   
 </div>
 

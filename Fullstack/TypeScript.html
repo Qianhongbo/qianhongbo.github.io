@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="OgElj4o9DCjKj3vLsPSXYe8He24OJKxYy0ejEmUrsy8">
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="obU5HKXSi3">
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=EB Garamond:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/Me.JPG?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/ironman.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/Me_16x16.JPG?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Typescript,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Blog | Qian Homeberg" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="Why TypeScriptTypesTypes are applied to:  variables function parameters function returns object values.  JavaScript is Weakly-Typed.This means that types are assigned by the interpreter based on the d">
+<meta name="keywords" content="Typescript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TypeScript">
+<meta property="og:url" content="https://www.qianhongbo.com/Fullstack/TypeScript.html">
+<meta property="og:site_name" content="Blog | Qian Homeberg">
+<meta property="og:description" content="Why TypeScriptTypesTypes are applied to:  variables function parameters function returns object values.  JavaScript is Weakly-Typed.This means that types are assigned by the interpreter based on the d">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://video.udacity-data.com/topher/2021/March/603f9e26_fsjs-c1-l2-implicit-typing/fsjs-c1-l2-implicit-typing.jpg">
+<meta property="og:image" content="https://video.udacity-data.com/topher/2021/March/603fa213_fsjs-c1-l2-explicit-typing/fsjs-c1-l2-explicit-typing.jpg">
+<meta property="og:updated_time" content="2022-04-03T19:21:06.774Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TypeScript">
+<meta name="twitter:description" content="Why TypeScriptTypesTypes are applied to:  variables function parameters function returns object values.  JavaScript is Weakly-Typed.This means that types are assigned by the interpreter based on the d">
+<meta name="twitter:image" content="https://video.udacity-data.com/topher/2021/March/603f9e26_fsjs-c1-l2-implicit-typing/fsjs-c1-l2-implicit-typing.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+
+
+
+
+  <title>TypeScript | Blog | Qian Homeberg</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	
+	<a href="https://github.com/Qianhongbo" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+	
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Blog | Qian Homeberg</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Look! Who is here! Welcome~~</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+            
+            阅读
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-movies">
+          <a href="/movies/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-video-camera"></i> <br>
+            
+            电影
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Fullstack/TypeScript.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">TypeScript</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-04-01T11:56:13+08:00">
+                2022-04-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Fullstack/" itemprop="url" rel="index">
+                    <span itemprop="name">Fullstack</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Fullstack/TypeScript.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Fullstack/TypeScript.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.6k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Why-TypeScript"><a href="#Why-TypeScript" class="headerlink" title="Why TypeScript"></a>Why TypeScript</h2><h3 id="Types"><a href="#Types" class="headerlink" title="Types"></a>Types</h3><p>Types are applied to:</p>
+<ul>
+<li>variables</li>
+<li>function parameters</li>
+<li>function returns</li>
+<li>object values.</li>
+</ul>
+<h3 id="JavaScript-is-Weakly-Typed"><a href="#JavaScript-is-Weakly-Typed" class="headerlink" title="JavaScript is Weakly-Typed."></a>JavaScript is Weakly-Typed.</h3><p>This means that types are assigned by the interpreter based on the data and makes an educated guess when the code’s intention is ambiguous. This can lead to unintended results.</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2 + &apos;2&apos; = &apos;22&apos;</span><br></pre></td></tr></table></figure>
+
+<h3 id="TypeScript-Adds-Typing-to-JavaScript"><a href="#TypeScript-Adds-Typing-to-JavaScript" class="headerlink" title="TypeScript Adds Typing to JavaScript"></a>TypeScript Adds Typing to JavaScript</h3><p>In short, TypeScript is a static and strong typed superset of JavaScript. When we’re done with our TypeScript code, it compiles to JavaScript.</p>
+<h2 id="Configure-TypeScript"><a href="#Configure-TypeScript" class="headerlink" title="Configure TypeScript"></a>Configure TypeScript</h2><h3 id="Install-TypeScript"><a href="#Install-TypeScript" class="headerlink" title="Install TypeScript"></a>Install TypeScript</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init -y</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm i typescript // save to dependencies</span><br><span class="line">$ npm i typescript --save-dev // save to devDependencies</span><br></pre></td></tr></table></figure>
+
+<p>Add <code>typescript</code>, <code>ts-node</code> and <code>@types/node</code> definitions to dev dependencies.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm i --save-dev typescript</span><br><span class="line">npm i --save-dev ts-node </span><br><span class="line">npm i --save-dev @types/node</span><br></pre></td></tr></table></figure>
+
+<h3 id="Creating-your-package-json-Script"><a href="#Creating-your-package-json-Script" class="headerlink" title="Creating your package.json Script"></a>Creating your package.json Script</h3><p>To use TypeScript, you need to add a script to your package.json file to compile TypeScript to JavaScript. This is generally called your “build” script but could be named anything.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  <span class="string">"build"</span>: <span class="string">"npx tsc"</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<p>To execute your <code>&quot;build&quot;</code> script use the following:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm run build</span><br></pre></td></tr></table></figure>
+
+<p>Run the completed index file.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ node build/.</span><br></pre></td></tr></table></figure>
+
+<p><code>tsconfig.json</code> can also be named <code>jsconfig.json</code>.</p>
+<p>To install the config file, run</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npx tsc --init</span><br></pre></td></tr></table></figure>
+
+<h3 id="Helpful-configurations-to-note"><a href="#Helpful-configurations-to-note" class="headerlink" title="Helpful configurations to note:"></a>Helpful configurations to note:</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"compilerOptions"</span>: &#123;</span><br><span class="line">    <span class="string">"target"</span>: <span class="string">"es5"</span>,                          </span><br><span class="line">    <span class="string">"module"</span>: <span class="string">"commonjs"</span>,                     </span><br><span class="line">    <span class="string">"lib"</span>: [<span class="string">"ES2018"</span>, <span class="string">"DOM"</span>], </span><br><span class="line">    <span class="string">"outDir"</span>: <span class="string">"./build"</span>,                        </span><br><span class="line">    <span class="string">"strict"</span>: <span class="literal">true</span>,                           </span><br><span class="line">    <span class="string">"noImplicitAny"</span>: <span class="literal">true</span>,                 </span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"exclude"</span>: [<span class="string">"node_modules"</span>, <span class="string">"tests"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>You will see many more options available than what is above. Your application may require additional settings to be configured, but these are typically the main settings to start with.</p>
+<ul>
+<li><code>target</code> - sets what version of JS TypeScript will be transpiled to.</li>
+<li><code>module</code> - sets what module system will be used when transpiling. Node.js uses the common.js module system by default</li>
+<li><code>lib</code> - is used to say what libraries your code is using. In this case, ES2018 and the DOM API</li>
+<li><code>outDir</code> - where you want your src code to output to. Often named build, prod, or server (when using it serverside)</li>
+<li><code>strict</code> - enable strict typing</li>
+<li><code>noImplicitAny</code> - disallow the <code>&quot;any&quot;</code> type (covered in TypeScript Basics)</li>
+<li><code>exclude</code> - directories to exclude in compiling</li>
+</ul>
+<h2 id="ES6-Modules"><a href="#ES6-Modules" class="headerlink" title="ES6 Modules"></a>ES6 Modules</h2><p>Now that we are using TypeScript for our application, we can also easily utilize the ES6 module system instead of the CommonJS module system. Destructuring should only be used when you are exporting the functions individually. If choosing to use export default, you must import the entire default as a module.</p>
+<h3 id="Import"><a href="#Import" class="headerlink" title="Import"></a>Import</h3><p>For importing modules, use the following syntax</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Rename the module</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'name'</span> <span class="keyword">from</span> <span class="string">'module'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Use destructuring to pull in specific functions when they are exported individually</span></span><br><span class="line"><span class="keyword">import</span> &#123;<span class="function"><span class="keyword">function</span>, <span class="title">function</span>&#125; <span class="title">from</span> '<span class="title">module</span>';</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Export"><a href="#Export" class="headerlink" title="Export"></a>Export</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Export an individual function or other type of object in code</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> myFunction = <span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Export a single item at the end</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> object;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Export a list of objects</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;object1, object2&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="TypeScript-Basics"><a href="#TypeScript-Basics" class="headerlink" title="TypeScript Basics"></a>TypeScript Basics</h2><h3 id="Implicit-Typing-and-Explicit-Typing"><a href="#Implicit-Typing-and-Explicit-Typing" class="headerlink" title="Implicit Typing and Explicit Typing"></a>Implicit Typing and Explicit Typing</h3><h4 id="Implicit-Typing"><a href="#Implicit-Typing" class="headerlink" title="Implicit Typing"></a>Implicit Typing</h4><p>TypeScript will automatically assume types of objects if the object is not typed. It is best practice to allow TypeScript to type immutable variables and simple functions implicitly.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myNum = <span class="number">3</span>; <span class="comment">// TypeScript implicitly types myNum as a number based on the variable</span></span><br></pre></td></tr></table></figure>
+
+<p>Implicit Typing is a best practice when the app is self-contained (meaning that it does not depend on other applications or APIs) or variables are immutable.</p>
+<p><img src="https://video.udacity-data.com/topher/2021/March/603f9e26_fsjs-c1-l2-implicit-typing/fsjs-c1-l2-implicit-typing.jpg" alt></p>
+<h4 id="Explicit-Typing"><a href="#Explicit-Typing" class="headerlink" title="Explicit Typing"></a>Explicit Typing</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myVar: number = <span class="number">3</span>; <span class="comment">// myVar has been explicitly typed as a number</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://video.udacity-data.com/topher/2021/March/603fa213_fsjs-c1-l2-explicit-typing/fsjs-c1-l2-explicit-typing.jpg" alt></p>
+<h3 id="Basic-Types"><a href="#Basic-Types" class="headerlink" title="Basic Types"></a>Basic Types</h3><p><code>string</code> - used for string types, textual data</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> studentName:string;</span><br><span class="line">studentName = <span class="string">'Dae Lee'</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>number</code> - used for number types including integers and decimals</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> studentAge: number;</span><br><span class="line">studentAge = <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>boolean</code> - used for <code>true</code>/<code>false</code> types</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> studentEnriched: boolean;</span><br><span class="line">studentEnriched = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>Union Types</code> - used when more than one type can be used</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> studentPhone: (number | string);</span><br><span class="line">studentPhone = <span class="string">'(555) 555 - 5555'</span>;</span><br><span class="line">studentPhone = <span class="number">5555555555</span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>null</code> - used when an object or variable is intentionally <code>null</code>, typically only functionally found in union types</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> getCapitals = (str:string):string[] | <span class="function"><span class="params">null</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> capitals = str.match(<span class="regexp">/[A-Z]/</span>);</span><br><span class="line">  <span class="keyword">return</span> capitals;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(getCapitals(<span class="string">'something'</span>));</span><br><span class="line"><span class="comment">// returns null</span></span><br><span class="line"><span class="built_in">console</span>.log(getCapitals(<span class="string">'Something'</span>));</span><br><span class="line"><span class="comment">// returns ['S']</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>undefined</code> - used when a variable has yet to be defined</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myFunc = <span class="function">(<span class="params">student: string | <span class="literal">undefined</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> ( student === <span class="literal">undefined</span> )&#123;</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">  &#125; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>void</code> - used as a return type when the function returns nothing</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myFunc = (student: string): <span class="keyword">void</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(student);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>never</code> - used as a return type when the function will never return anything, such as with functions that throw errors or infinite loops</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myError = (err: string): never &#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(err); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>any</code> - <em>should be avoided</em>. Used when the type of the item being typed can be anything</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myFunc = (student: any): <span class="function"><span class="params">any</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// do something</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>unknown</code> - used when the type of the thing being typed is unknown. Used heavily for type assertion</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myFunc = (student: unknown): <span class="function"><span class="params">string</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// do something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Type-Assertions"><a href="#Type-Assertions" class="headerlink" title="Type Assertions"></a>Type Assertions</h3><p>Type Assertions are used to tell TypeScript that even though TypeScript thinks it should be one type, it is actually a different type. Common to see when a type is <code>unknown</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myFunc = (student: unknown): <span class="function"><span class="params">string</span> =&gt;</span> &#123;</span><br><span class="line">  newStudent = student <span class="keyword">as</span> string;</span><br><span class="line">  <span class="keyword">return</span> newStudent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Object-like-types"><a href="#Object-like-types" class="headerlink" title="Object-like types"></a>Object-like types</h3><p><strong>Array</strong> - to type as an array, use the type, followed by square brackets. Union types can be used to allow for multiple types in an array.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let arr: string[]; // only accepts strings</span><br><span class="line">let arr2: (string | number)[]; // accepts strings or numbers</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>Tuple</strong> - tuples are not native to JavaScript. When you know exactly what data will be in the array, and you will not be adding to the array or modifying the type for any value, you can use a tuple.</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr: [<span class="built_in">string</span>, <span class="built_in">number</span>, <span class="built_in">string</span>]; <span class="comment">// ['cat', 7, 'dog']</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>enum</code> - enums are not native to JavaScript but are similar to enumeration used in other languages like C++ and Java. You use an enum when you have a constant set of values that will not be changed. By default, the values in an enum are also given a numeric value starting at 0. However, the numeric value can manually be set to any number explicitly or by calculation. Uses PascalCase to name the type.</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> Weekend &#123;</span><br><span class="line">  Friday,</span><br><span class="line">  Saturday,</span><br><span class="line">  Sunday</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Objects-and-Interfaces"><a href="#Objects-and-Interfaces" class="headerlink" title="Objects and Interfaces"></a>Objects and Interfaces</h3><p>Objects are easily created in JavaScript due to JavaScript’s weak typing. With TypeScript, they take a bit more work. It is possible to create an object in TypeScript, but TypeScript offers better tools for doing so.</p>
+<p><strong>Object</strong> - creating an object requires defining the object before setting values. Once you have defined the object, additional properties cannot be added to the type definition, making it unhelpful when you need to add more properties after creation.</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> student:&#123; name: <span class="built_in">string</span>, age: <span class="built_in">number</span>, enrolled: <span class="built_in">boolean</span>&#125; = &#123;name: <span class="string">'Maria'</span>, age: <span class="number">10</span>, enrolled: <span class="literal">true</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>interface</code> - Interfaces are a concept not native to javascript, but similar concepts exist in other languages like Java, C++, and Python, where you create an abstract class as an interface for creating classes. With TypeScript, interfaces are simply used as the blueprint for the shape of something. Interfaces can be used to create functions but are most commonly seen to create objects.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">interface Student &#123; </span><br><span class="line">  name: string, </span><br><span class="line">  age: number, </span><br><span class="line">  enrolled: boolean</span><br><span class="line">&#125;;</span><br><span class="line">let newStudent:Student = &#123;name: &apos;Maria&apos;, age: 10, enrolled: true&#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">interface Undergrad extends Student &#123;</span><br><span class="line">  major: string;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Duck-Typing"><a href="#Duck-Typing" class="headerlink" title="Duck Typing"></a>Duck Typing</h4><p>Duck Typing is a programming concept that tests if an object meets the duck test: “If it walks like a duck and it quacks like a duck, then it must be a duck.”</p>
+<p>TypeScript uses duck typing for interfaces, meaning that even though you may say a function takes in an argument of interface A, if interface B has the same properties of A, it will also accept B. Interface A is the duck, and Interface B walks and quacks like a duck, so we’ll accept it as a duck too.</p>
+<h4 id="Optional-and-Readonly-Properties"><a href="#Optional-and-Readonly-Properties" class="headerlink" title="Optional and Readonly Properties"></a>Optional and Readonly Properties</h4><p><strong>Optional</strong> - use when an object may or may not have a specific property by adding a <code>?</code> at the end of the property name.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">interface Student &#123; </span><br><span class="line">  name: string, </span><br><span class="line">  age: number, </span><br><span class="line">  enrolled: boolean,</span><br><span class="line">  phone?: number // phone becomes optional</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>readonly</code> - use when a property should not be able to be modified after the object has been created.</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Student &#123; </span><br><span class="line">  name: <span class="built_in">string</span>, </span><br><span class="line">  age: <span class="built_in">number</span>, </span><br><span class="line">  enrolled: <span class="built_in">boolean</span>,</span><br><span class="line">  readonly id: <span class="built_in">number</span> <span class="comment">// id is readonly</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Type-Aliases"><a href="#Type-Aliases" class="headerlink" title="Type Aliases"></a>Type Aliases</h3><h4 id="With-primitive-types-for-documentation"><a href="#With-primitive-types-for-documentation" class="headerlink" title="With primitive types for documentation"></a>With primitive types for documentation</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type Name = string;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Workes-with-unions-and-tuples"><a href="#Workes-with-unions-and-tuples" class="headerlink" title="Workes with unions and tuples"></a>Workes with unions and tuples</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">type Input = string | number;</span><br><span class="line">type Coord = [number, number];</span><br></pre></td></tr></table></figure>
+
+<p>Type Aliases can also be used as object. It is similar as interface.</p>
+<h3 id="Classes"><a href="#Classes" class="headerlink" title="Classes"></a>Classes</h3><p>TypeScript classes look and behave very much like the classes introduced in ES6. The biggest addition to TypeScript classes is the addition of access modifiers. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Student &#123;</span><br><span class="line">  protected studentGrade: number;</span><br><span class="line">  private studentId: number;</span><br><span class="line">  public constructor(grade: number, id: number) &#123;</span><br><span class="line">    this.studentGrade = grade;</span><br><span class="line">    this.studentId = id;</span><br><span class="line">  &#125;</span><br><span class="line">  id()&#123;</span><br><span class="line">    return this.studentId;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Factory-Functions"><a href="#Factory-Functions" class="headerlink" title="Factory Functions"></a>Factory Functions</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">interface Student &#123;</span><br><span class="line">  name: string;</span><br><span class="line">  age: number</span><br><span class="line">  greet(): void;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const studentFactory = (name: string, age: number): Student =&gt;&#123; </span><br><span class="line">  const greet = ():void =&gt; console.log(&apos;hello&apos;); </span><br><span class="line">  return &#123; name, age, greet &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const myStudent = studentFactory(&apos;Hana&apos;, 16);</span><br></pre></td></tr></table></figure>
+
+<h2 id="Generics-and-Asynchronous-TypeScript"><a href="#Generics-and-Asynchronous-TypeScript" class="headerlink" title="Generics and Asynchronous TypeScript"></a>Generics and Asynchronous TypeScript</h2><h3 id="Generics"><a href="#Generics" class="headerlink" title="Generics"></a>Generics</h3><p>We can combine the following function using generics.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const getItem = (arr: number[]):number =&gt; &#123;</span><br><span class="line">  return arr[1];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const getItem = (arr: string[]):string =&gt; &#123;</span><br><span class="line">  return arr[1];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// Generic Function</span><br><span class="line">const getItem = &lt;T&gt;(arr: T[]):T =&gt; &#123;</span><br><span class="line">  return arr[1];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+	
+	
+      <div>
+          
+    <div style="text-align:center;color: #ccc;font-size:14px;">
+        ------ 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
+    
+      </div>
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果觉得不错，可以打赏喔~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Qian Hongbo 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Qian Hongbo 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Qian Hongbo
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.qianhongbo.com/Fullstack/TypeScript.html" title="TypeScript">https://www.qianhongbo.com/Fullstack/TypeScript.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Typescript/" rel="tag"><i class="fa fa-tag"></i> Typescript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Backend/Database/Database-Tutorial.html" rel="next" title="Database Tutorial">
+                <i class="fa fa-chevron-left"></i> Database Tutorial
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Fullstack/Jasmine.html" rel="prev" title="Jasmine">
+                Jasmine <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/Me.JPG" alt="Qian Hongbo">
+            
+              <p class="site-author-name" itemprop="name">Qian Hongbo</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Qianhongbo" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="/images/wechat.jpg" target="_blank" title="Wechat">
+                      
+                        <i class="fa fa-fw fa-weixin"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="/images/QQ.jpg" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/Qianhongbo" target="_blank" title="Zhihu">
+                      
+                        <i class="fa fa-fw fa-heart"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://music.163.com/#/user/home?id=411692137" target="_blank" title="music163">
+                      
+                        <i class="fa fa-fw fa-music"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+	<br>
+
+  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1826996483&auto=0&height=66"></iframe>
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Why-TypeScript"><span class="nav-number">1.</span> <span class="nav-text">Why TypeScript</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Types"><span class="nav-number">1.1.</span> <span class="nav-text">Types</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript-is-Weakly-Typed"><span class="nav-number">1.2.</span> <span class="nav-text">JavaScript is Weakly-Typed.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TypeScript-Adds-Typing-to-JavaScript"><span class="nav-number">1.3.</span> <span class="nav-text">TypeScript Adds Typing to JavaScript</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Configure-TypeScript"><span class="nav-number">2.</span> <span class="nav-text">Configure TypeScript</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-TypeScript"><span class="nav-number">2.1.</span> <span class="nav-text">Install TypeScript</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Creating-your-package-json-Script"><span class="nav-number">2.2.</span> <span class="nav-text">Creating your package.json Script</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Helpful-configurations-to-note"><span class="nav-number">2.3.</span> <span class="nav-text">Helpful configurations to note:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES6-Modules"><span class="nav-number">3.</span> <span class="nav-text">ES6 Modules</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Import"><span class="nav-number">3.1.</span> <span class="nav-text">Import</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Export"><span class="nav-number">3.2.</span> <span class="nav-text">Export</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TypeScript-Basics"><span class="nav-number">4.</span> <span class="nav-text">TypeScript Basics</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Implicit-Typing-and-Explicit-Typing"><span class="nav-number">4.1.</span> <span class="nav-text">Implicit Typing and Explicit Typing</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Implicit-Typing"><span class="nav-number">4.1.1.</span> <span class="nav-text">Implicit Typing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Explicit-Typing"><span class="nav-number">4.1.2.</span> <span class="nav-text">Explicit Typing</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Basic-Types"><span class="nav-number">4.2.</span> <span class="nav-text">Basic Types</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Type-Assertions"><span class="nav-number">4.3.</span> <span class="nav-text">Type Assertions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-like-types"><span class="nav-number">4.4.</span> <span class="nav-text">Object-like types</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Objects-and-Interfaces"><span class="nav-number">4.5.</span> <span class="nav-text">Objects and Interfaces</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Duck-Typing"><span class="nav-number">4.5.1.</span> <span class="nav-text">Duck Typing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Optional-and-Readonly-Properties"><span class="nav-number">4.5.2.</span> <span class="nav-text">Optional and Readonly Properties</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Type-Aliases"><span class="nav-number">4.6.</span> <span class="nav-text">Type Aliases</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#With-primitive-types-for-documentation"><span class="nav-number">4.6.1.</span> <span class="nav-text">With primitive types for documentation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Workes-with-unions-and-tuples"><span class="nav-number">4.6.2.</span> <span class="nav-text">Workes with unions and tuples</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Classes"><span class="nav-number">4.7.</span> <span class="nav-text">Classes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Factory-Functions"><span class="nav-number">4.8.</span> <span class="nav-text">Factory Functions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generics-and-Asynchronous-TypeScript"><span class="nav-number">5.</span> <span class="nav-text">Generics and Asynchronous TypeScript</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Generics"><span class="nav-number">5.1.</span> <span class="nav-text">Generics</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Qian Hongbo</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">57k</span>
+  
+</div>
+
+
+
+
+
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("06/04/2019 12:27:43");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://qianhongbo.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://www.qianhongbo.com/Fullstack/TypeScript.html';
+          this.page.identifier = 'Fullstack/TypeScript.html';
+          this.page.title = 'TypeScript';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://qianhongbo.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "./public/search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":166,"height":200},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+
+
+<!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+
+</html>

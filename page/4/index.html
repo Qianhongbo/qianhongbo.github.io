@@ -346,6 +346,647 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/LeetCode/Reverse-Integer.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/LeetCode/Reverse-Integer.html" itemprop="url">Reverse Integer</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-02-01T10:02:27+08:00">
+                2022-02-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">Leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/LeetCode/Reverse-Integer.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="LeetCode/Reverse-Integer.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  255 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Reverse-Integer"><a href="#Reverse-Integer" class="headerlink" title="Reverse Integer"></a>Reverse Integer</h2><h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>Given a signed 32-bit integer <code>x</code>, return <code>x</code> <em>with its digits reversed</em>. If reversing <code>x</code> causes the value to go outside the signed 32-bit integer range $[-2^{31}, 2^{31} - 1]$, then return $0$.</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: x = 123</span><br><span class="line">Output: 321</span><br></pre></td></tr></table></figure>
+
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: x = -123</span><br><span class="line">Output: -321</span><br></pre></td></tr></table></figure>
+
+<p><strong>Example 3:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: x = 120</span><br><span class="line">Output: 21</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Time complexity: O(log10(n))</span></span><br><span class="line"><span class="comment"># Space complexity: O(1)  </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverse</span><span class="params">(self, x: int)</span> -&gt; int:</span></span><br><span class="line">        result = <span class="number">0</span></span><br><span class="line">        INT_MAX = <span class="number">2</span>**<span class="number">31</span><span class="number">-1</span></span><br><span class="line">        INT_MIN = <span class="number">-2</span>**<span class="number">31</span></span><br><span class="line">        <span class="keyword">while</span> x != <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">if</span> x &gt; <span class="number">0</span>: </span><br><span class="line">                remain = x % <span class="number">10</span></span><br><span class="line">                x //= <span class="number">10</span></span><br><span class="line">            <span class="keyword">else</span>: </span><br><span class="line">                remain = x % <span class="number">-10</span></span><br><span class="line">                x = -(x//<span class="number">-10</span>)</span><br><span class="line">            <span class="keyword">if</span> result &gt; INT_MAX / <span class="number">10</span> <span class="keyword">or</span> (result == INT_MAX // <span class="number">10</span> <span class="keyword">and</span> remain &gt; <span class="number">7</span>): <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            <span class="keyword">if</span> result &lt; INT_MIN / <span class="number">10</span> <span class="keyword">or</span> (result == INT_MIN // <span class="number">10</span> <span class="keyword">and</span> remain &lt; <span class="number">-8</span>): <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            result = result * <span class="number">10</span> + remain</span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>python的取余和java并不一样，<a href="https://zhuanlan.zhihu.com/p/70819721" target="_blank" rel="noopener">一篇很好的解释文章</a></p>
+</blockquote>
+<h2 id="Palindrome-Number"><a href="#Palindrome-Number" class="headerlink" title="Palindrome Number"></a>Palindrome Number</h2><h3 id="Question-1"><a href="#Question-1" class="headerlink" title="Question"></a>Question</h3><p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: x = 121</span><br><span class="line">Output: true</span><br><span class="line">Explanation: 121 reads as 121 from left to right and from right to left.</span><br></pre></td></tr></table></figure>
+
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: x = -121</span><br><span class="line">Output: false</span><br><span class="line">Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Time complexity: O(log10(n))</span></span><br><span class="line"><span class="comment"># Space complexity: O(1)  </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isPalindrome</span><span class="params">(self, x: int)</span> -&gt; bool:</span></span><br><span class="line">        <span class="keyword">if</span> x &lt; <span class="number">0</span> <span class="keyword">or</span> (x % <span class="number">10</span> == <span class="number">0</span> <span class="keyword">and</span> x != <span class="number">0</span>): <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        reversedNumber = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> x &gt; reversedNumber:</span><br><span class="line">            reversedNumber = reversedNumber * <span class="number">10</span> + x % <span class="number">10</span></span><br><span class="line">            x = x // <span class="number">10</span></span><br><span class="line">        <span class="keyword">return</span> reversedNumber == x <span class="keyword">or</span> x == reversedNumber // <span class="number">10</span></span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/LeetCode/Linked-list.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/LeetCode/Linked-list.html" itemprop="url">Linked list</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-01-31T20:43:02+08:00">
+                2022-01-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">Leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/LeetCode/Linked-list.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="LeetCode/Linked-list.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  410 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Merge-Tow-Sorted-Lists"><a href="#Merge-Tow-Sorted-Lists" class="headerlink" title="Merge Tow Sorted Lists"></a>Merge Tow Sorted Lists</h2><h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: list1 = [1,2,4], list2 = [1,3,4]</span><br><span class="line">Output: [1,1,2,3,4,4]</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Time complexity: O(n + m)</span></span><br><span class="line"><span class="comment"># Space complexity: O(1)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, next=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.next = next</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">mergeTwoLists</span><span class="params">(self, list1: Optional[ListNode], list2: Optional[ListNode])</span> -&gt; Optional[ListNode]:</span></span><br><span class="line">        prehead = ListNode(<span class="number">-1</span>)</span><br><span class="line">        result = prehead</span><br><span class="line">        <span class="keyword">while</span> list1 <span class="keyword">and</span> list2:</span><br><span class="line">            <span class="keyword">if</span> list1.val &lt;= list2.val:</span><br><span class="line">                result.next = list1</span><br><span class="line">                list1 = list1.next</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                result.next = list2</span><br><span class="line">                list2 = list2.next</span><br><span class="line">            result = result.next</span><br><span class="line">        result.next = list1 <span class="keyword">if</span> list1 <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">else</span> list2</span><br><span class="line">        <span class="keyword">return</span> prehead.next</span><br></pre></td></tr></table></figure>
+
+<h2 id="Sum-of-Linked-Lists"><a href="#Sum-of-Linked-Lists" class="headerlink" title="Sum of Linked Lists"></a>Sum of Linked Lists</h2><h3 id="Question-1"><a href="#Question-1" class="headerlink" title="Question"></a>Question</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">linkedListOne = 2 -&gt; 4 -&gt; 7 -&gt; 1</span><br><span class="line">linkedListTwo = 9 -&gt; 4 -&gt; 5</span><br><span class="line"></span><br><span class="line"><span class="comment"># Output</span></span><br><span class="line">// linkedListOne represents <span class="number">1742</span></span><br><span class="line">// linkedListTwo represents <span class="number">549</span></span><br><span class="line">// <span class="number">1742</span> + <span class="number">549</span> = <span class="number">2291</span></span><br><span class="line">1 -&gt; 9 -&gt; 2 -&gt; 2</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This is an input class. Do not edit.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LinkedList</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, value)</span>:</span></span><br><span class="line">        self.value = value</span><br><span class="line">        self.next = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># O(max(m, n)) time | O(max(m, n)) space</span></span><br><span class="line"><span class="comment"># For time and space, max(m, n) + 1 (1 is for carry).</span></span><br><span class="line"><span class="comment"># We have to store a new linked list for space.</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sumOfLinkedLists</span><span class="params">(linkedListOne, linkedListTwo)</span>:</span></span><br><span class="line">	carry = <span class="number">0</span></span><br><span class="line">	resultLinkedList = LinkedList(<span class="number">0</span>)</span><br><span class="line">	currentNode = resultLinkedList</span><br><span class="line">	NodeOne = linkedListOne</span><br><span class="line">	NodeTwo = linkedListTwo</span><br><span class="line">	</span><br><span class="line">    <span class="keyword">while</span> NodeOne <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">or</span> NodeTwo <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">or</span> carry != <span class="number">0</span>:</span><br><span class="line">		valueOne = NodeOne.value <span class="keyword">if</span> NodeOne <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">		valueTwo = NodeTwo.value <span class="keyword">if</span> NodeTwo <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">		sumVal = valueOne + valueTwo + carry</span><br><span class="line">		</span><br><span class="line">		carry = sumVal // <span class="number">10</span></span><br><span class="line">		resultVal = sumVal % <span class="number">10</span></span><br><span class="line">		</span><br><span class="line">		newNode = LinkedList(resultVal)</span><br><span class="line">		currentNode.next = newNode</span><br><span class="line">		currentNode = currentNode.next</span><br><span class="line">		</span><br><span class="line">		NodeOne = NodeOne.next <span class="keyword">if</span> NodeOne <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">else</span> <span class="literal">None</span></span><br><span class="line">		NodeTwo = NodeTwo.next <span class="keyword">if</span> NodeTwo <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">else</span> <span class="literal">None</span></span><br><span class="line">    <span class="keyword">return</span> resultLinkedList.next</span><br></pre></td></tr></table></figure>
+
+<h2 id="Remove-Kth-Node-From-End"><a href="#Remove-Kth-Node-From-End" class="headerlink" title="Remove Kth Node From End"></a>Remove Kth Node From End</h2><h3 id="Question-2"><a href="#Question-2" class="headerlink" title="Question"></a>Question</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">head = 0 -&gt; 1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 5 -&gt; 6</span><br><span class="line">k = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Output</span></span><br><span class="line">0 -&gt; 1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 6</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This is an input class. Do not edit.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LinkedList</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, value)</span>:</span></span><br><span class="line">        self.value = value</span><br><span class="line">        self.next = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># O(n) time | O(1) space</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">removeKthNodeFromEnd</span><span class="params">(head, k)</span>:</span></span><br><span class="line">    pointerOne = head</span><br><span class="line">	pointerTwo = head</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(k):</span><br><span class="line">		pointerTwo = pointerTwo.next</span><br><span class="line">	</span><br><span class="line">  <span class="comment"># have to check this, because in the while loop</span></span><br><span class="line">  <span class="comment"># we need to use pointerTwo.next</span></span><br><span class="line">  <span class="comment"># we have to check whether pointerTwo is None...</span></span><br><span class="line">	<span class="keyword">if</span> pointerTwo <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">		pointerOne.value = pointerOne.next.value</span><br><span class="line">		pointerOne.next = pointerOne.next.next</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span> pointerTwo.next <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">		pointerOne = pointerOne.next</span><br><span class="line">		pointerTwo = pointerTwo.next</span><br><span class="line">	pointerOne.next = pointerOne.next.next</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/LeetCode/String.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/LeetCode/String.html" itemprop="url">String</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-01-30T09:34:42+08:00">
+                2022-01-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">Leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/LeetCode/String.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="LeetCode/String.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  983 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Longest-Common-Prefix"><a href="#Longest-Common-Prefix" class="headerlink" title="Longest Common Prefix"></a>Longest Common Prefix</h2><h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: strs = [&quot;flower&quot;,&quot;flow&quot;,&quot;flight&quot;]</span><br><span class="line">Output: &quot;fl&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: strs = [&quot;dog&quot;,&quot;racecar&quot;,&quot;car&quot;]</span><br><span class="line">Output: &quot;&quot;</span><br><span class="line">Explanation: There is no common prefix among the input strings.</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><h4 id="Horizontal-scanning"><a href="#Horizontal-scanning" class="headerlink" title="Horizontal scanning"></a>Horizontal scanning</h4><p><img src="https://leetcode.com/media/original_images/14_basic.png" alt="Horizontal scanning"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Time Complexity: O(S), where S is the sum of all characters in all strings</span></span><br><span class="line"><span class="comment"># Space Complexity: O(1)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">longestCommonPrefix</span><span class="params">(self, strs: List[str])</span> -&gt; str:</span></span><br><span class="line">        prefix = strs[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> strs:</span><br><span class="line">            <span class="keyword">while</span> s.find(prefix) != <span class="number">0</span>:</span><br><span class="line">                prefix = prefix[<span class="number">0</span>:<span class="number">-1</span>]</span><br><span class="line">                <span class="keyword">if</span> prefix <span class="keyword">is</span> <span class="literal">None</span>: <span class="keyword">return</span> <span class="string">""</span></span><br><span class="line">        <span class="keyword">return</span> prefix</span><br></pre></td></tr></table></figure>
+
+<h4 id="Vertical-scanning"><a href="#Vertical-scanning" class="headerlink" title="Vertical scanning"></a>Vertical scanning</h4><p>Imagine a very short string is the common prefix at the end of the array. The above approach will still do S<em>S</em> comparisons. One way to optimize this case is to do vertical scanning. We compare characters from top to bottom on the same column (same character index of the strings) before moving on to the next column.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Time Complexity: O(S), where S is the sum of all characters in all strings</span></span><br><span class="line"><span class="comment"># Even though the worst case is still the same as Approach 1, </span></span><br><span class="line"><span class="comment"># in the best case there are at most n minLen comparisons </span></span><br><span class="line"><span class="comment"># where minLen is the length of the shortest string in the array.</span></span><br><span class="line"><span class="comment"># Space Complexity: O(1)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">longestCommonPrefix</span><span class="params">(self, strs: List[str])</span> -&gt; str:</span></span><br><span class="line">        <span class="keyword">if</span> strs <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">or</span> len(strs) == <span class="number">0</span>: <span class="keyword">return</span> <span class="string">""</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(strs[<span class="number">0</span>])):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, len(strs)):</span><br><span class="line">                <span class="keyword">if</span> i == len(strs[j]) <span class="keyword">or</span> strs[j][i] != strs[<span class="number">0</span>][i]:</span><br><span class="line">                    <span class="keyword">return</span> strs[<span class="number">0</span>][<span class="number">0</span>:i]</span><br><span class="line">        <span class="keyword">return</span> strs[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+<h4 id="Divide-and-conquer"><a href="#Divide-and-conquer" class="headerlink" title="Divide and conquer"></a>Divide and conquer</h4><p><img src="https://leetcode.com/media/original_images/14_lcp_diviso_et_lmpera.png" alt="Divide and conquer"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">longestCommonPrefix</span><span class="params">(self, strs: List[str])</span> -&gt; str:</span></span><br><span class="line">        <span class="keyword">return</span> self.longestCommonPrefixHelper(strs, <span class="number">0</span>, len(strs) - <span class="number">1</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">longestCommonPrefixHelper</span><span class="params">(self, strs: List[str], l: int , r: int)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> l == r:</span><br><span class="line">            <span class="keyword">return</span> strs[l]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            mid = (l + r) // <span class="number">2</span></span><br><span class="line">            lcpLeft = self.longestCommonPrefixHelper(strs, l, mid)</span><br><span class="line">            lcpRight = self.longestCommonPrefixHelper(strs, mid + <span class="number">1</span>, r)</span><br><span class="line">            <span class="keyword">return</span> self.commonPrefix(lcpLeft, lcpRight)</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">commonPrefix</span><span class="params">(self, left: str, right: str)</span>:</span></span><br><span class="line">        minLen = min(len(left), len(right))</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(minLen):</span><br><span class="line">            <span class="keyword">if</span> left[i] != right[i]:</span><br><span class="line">                <span class="keyword">return</span> left[<span class="number">0</span>:i]</span><br><span class="line">        <span class="keyword">return</span> left[<span class="number">0</span>:minLen]</span><br></pre></td></tr></table></figure>
+
+<h4 id="Binary-search"><a href="#Binary-search" class="headerlink" title="Binary search"></a>Binary search</h4><p><img src="https://leetcode.com/media/original_images/14_lcp_binary_search.png" alt="Binary search"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">longestCommonPrefix</span><span class="params">(self, strs: List[str])</span> -&gt; str:</span></span><br><span class="line">        <span class="keyword">if</span> strs <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">or</span> len(strs) == <span class="number">0</span>: <span class="keyword">return</span> <span class="string">""</span></span><br><span class="line">        minLen = len(strs[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> strs:</span><br><span class="line">            minLen = min(minLen, len(s))</span><br><span class="line">        low = <span class="number">1</span></span><br><span class="line">        high = minLen</span><br><span class="line">        <span class="keyword">while</span> low &lt;= high:</span><br><span class="line">            middle = (low + high) // <span class="number">2</span></span><br><span class="line">            <span class="keyword">if</span> self.isCommonPrefix(strs, middle):</span><br><span class="line">                low = middle + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                high = middle - <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> strs[<span class="number">0</span>][<span class="number">0</span>:(low + high) // <span class="number">2</span>]</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isCommonPrefix</span><span class="params">(self, strs: List[str], middle: int)</span>:</span></span><br><span class="line">        str1 = strs[<span class="number">0</span>][<span class="number">0</span>:middle]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(strs)):</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> strs[i].startswith(str1): <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Longest-Palindromic-Substring"><a href="#Longest-Palindromic-Substring" class="headerlink" title="Longest Palindromic Substring"></a>Longest Palindromic Substring</h2><h3 id="Question-1"><a href="#Question-1" class="headerlink" title="Question"></a>Question</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Sample input </span></span><br><span class="line">string = <span class="string">"abaxyzzyxf"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Sample output</span></span><br><span class="line"><span class="string">"xyzzyx"</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h3><h4 id="Brutal-force"><a href="#Brutal-force" class="headerlink" title="Brutal force"></a>Brutal force</h4><p>判断是否为palindrome string是<code>O(n)</code>, 最简单的方式是获取所有的子串，对每一种子串进行验证。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(n^3) time | O(n) space</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">longestPalindromicSubstring</span><span class="params">(string)</span>:</span></span><br><span class="line">    longest = <span class="string">""</span></span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(len(string)):</span><br><span class="line">		<span class="keyword">for</span> j <span class="keyword">in</span> range(i, len(string)):</span><br><span class="line">			substring = string[i : j + <span class="number">1</span>]</span><br><span class="line">			<span class="keyword">if</span> len(substring) &gt; len(longest) <span class="keyword">and</span> isPalindrome(substring):</span><br><span class="line">				longest = substring</span><br><span class="line">	<span class="keyword">return</span> longest</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isPalindrome</span><span class="params">(string)</span>:</span></span><br><span class="line">	leftIdx = <span class="number">0</span></span><br><span class="line">	rightIdx = len(string) - <span class="number">1</span></span><br><span class="line">	<span class="keyword">while</span> leftIdx &lt; rightIdx:</span><br><span class="line">		<span class="keyword">if</span> string[leftIdx] != string[rightIdx]:</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">		leftIdx += <span class="number">1</span></span><br><span class="line">		rightIdx -= <span class="number">1</span></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Better-way"><a href="#Better-way" class="headerlink" title="Better way"></a>Better way</h4><p>为了不判断所有的子串，改变判断是否为palindrome string的方式，从子串的中间开始判断两侧的字符是否相同。这也分两种情况，一种是子串为奇数，一种是子串为偶数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(n^2) time | O(n) space</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">longestPalindromicSubstring</span><span class="params">(string)</span>:</span></span><br><span class="line">    currentLongest = [<span class="number">0</span>, <span class="number">1</span>]</span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(string)):</span><br><span class="line">		odd = getLongestPalindromeFrom(string, i - <span class="number">1</span>, i + <span class="number">1</span>)</span><br><span class="line">		even = getLongestPalindromeFrom(string, i - <span class="number">1</span>, i)</span><br><span class="line">		longest = max(odd, even, key = <span class="keyword">lambda</span> x: x[<span class="number">1</span>] - x[<span class="number">0</span>])</span><br><span class="line">		currentLongest = max(longest, currentLongest, key = <span class="keyword">lambda</span> x: x[<span class="number">1</span>] - x[<span class="number">0</span>])</span><br><span class="line">	<span class="keyword">return</span> string[currentLongest[<span class="number">0</span>] : currentLongest[<span class="number">1</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getLongestPalindromeFrom</span><span class="params">(string, leftIdx, rightIdx)</span>:</span></span><br><span class="line">	<span class="keyword">while</span> leftIdx &gt;= <span class="number">0</span> <span class="keyword">and</span> rightIdx &lt; len(string):</span><br><span class="line">		<span class="keyword">if</span> string[leftIdx] != string[rightIdx]:</span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">		leftIdx -= <span class="number">1</span></span><br><span class="line">		rightIdx += <span class="number">1</span></span><br><span class="line">	<span class="keyword">return</span> [leftIdx + <span class="number">1</span>, rightIdx]</span><br></pre></td></tr></table></figure>
+
+<h2 id="Group-Anagrams"><a href="#Group-Anagrams" class="headerlink" title="Group Anagrams"></a>Group Anagrams</h2><h3 id="Question-2"><a href="#Question-2" class="headerlink" title="Question"></a>Question</h3><p>Anagrams are strings made up of exactly the same letters, where order dosen’t matter.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Sample Input</span></span><br><span class="line">words = [<span class="string">"yo"</span>, <span class="string">"act"</span>, <span class="string">"flop"</span>, <span class="string">"tac"</span>, <span class="string">"foo"</span>, <span class="string">"cat"</span>, <span class="string">"oy"</span>, <span class="string">"olfp"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Sample output</span></span><br><span class="line">[[<span class="string">"yo"</span>, <span class="string">"oy"</span>], [<span class="string">"flop"</span>, <span class="string">"olfp"</span>], [<span class="string">"act"</span>, <span class="string">"tac"</span>, <span class="string">"cat"</span>], [<span class="string">"foo"</span>]]</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution"></a>Solution</h3><ul>
+<li>sort every word in the list</li>
+<li>use hash code to group the anagrams</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(wnlog(n)) time | O(wn) space</span></span><br><span class="line"><span class="comment"># where w is the number of words and </span></span><br><span class="line"><span class="comment"># n is the length of the longest word</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">groupAnagrams</span><span class="params">(words)</span>:</span></span><br><span class="line">  anagrams = &#123;&#125;</span><br><span class="line">	<span class="keyword">for</span> word <span class="keyword">in</span> words:</span><br><span class="line">		sortedWord = <span class="string">""</span>.join(sorted(word))</span><br><span class="line">		<span class="keyword">if</span> sortedWord <span class="keyword">in</span> anagrams:</span><br><span class="line">			anagrams[sortedWord].append(word)</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			anagrams[sortedWord] = [word]</span><br><span class="line">	<span class="keyword">return</span> list(anagrams.values())</span><br></pre></td></tr></table></figure>
+
+<h2 id="Valid-IP-Addresses"><a href="#Valid-IP-Addresses" class="headerlink" title="Valid IP Addresses"></a>Valid IP Addresses</h2><h3 id="Question-3"><a href="#Question-3" class="headerlink" title="Question"></a>Question</h3><p>Write a function that returns all the possible IP addresses that can be created by inserting <code>.</code>s in the string. </p>
+<p>A valid IP adress should have some properties:</p>
+<ul>
+<li>it consists of four sets of integer</li>
+<li>the individual integer is within the range<code>0 - 255</code>, inclusive</li>
+<li>not contain leading <code>0</code></li>
+</ul>
+<h3 id="Solution-3"><a href="#Solution-3" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(1) time | O(1) space</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">validIPAddresses</span><span class="params">(string)</span>:</span></span><br><span class="line">    result = []</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, min(len(string), <span class="number">4</span>)):</span><br><span class="line">		currentIPAddressParts = [<span class="string">""</span>, <span class="string">""</span>, <span class="string">""</span>, <span class="string">""</span>]</span><br><span class="line">		</span><br><span class="line">		currentIPAddressParts[<span class="number">0</span>] = string[:i]</span><br><span class="line">		<span class="keyword">if</span> <span class="keyword">not</span> isValidPart(currentIPAddressParts[<span class="number">0</span>]):</span><br><span class="line">			<span class="keyword">continue</span></span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span> j <span class="keyword">in</span> range(i + <span class="number">1</span>, i + min(len(string) - i, <span class="number">4</span>)):</span><br><span class="line">			currentIPAddressParts[<span class="number">1</span>] = string[i:j]</span><br><span class="line">			<span class="keyword">if</span> <span class="keyword">not</span> isValidPart(currentIPAddressParts[<span class="number">1</span>]):</span><br><span class="line">				<span class="keyword">continue</span></span><br><span class="line">			</span><br><span class="line">			<span class="keyword">for</span> k <span class="keyword">in</span> range(j + <span class="number">1</span>, j + min(len(string) - j, <span class="number">4</span>)):</span><br><span class="line">				currentIPAddressParts[<span class="number">2</span>] = string[j:k]</span><br><span class="line">				currentIPAddressParts[<span class="number">3</span>] = string[k:]</span><br><span class="line">				</span><br><span class="line">				<span class="keyword">if</span> isValidPart(currentIPAddressParts[<span class="number">2</span>]) <span class="keyword">and</span> isValidPart(currentIPAddressParts[<span class="number">3</span>]):</span><br><span class="line">					result.append(<span class="string">"."</span>.join(currentIPAddressParts))</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> result</span><br><span class="line">	</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isValidPart</span><span class="params">(string)</span>:</span></span><br><span class="line">	stringAsInt = int(string)</span><br><span class="line">	<span class="keyword">if</span> stringAsInt &gt; <span class="number">255</span>:</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">	<span class="keyword">return</span> len(string) == len(str(stringAsInt)) <span class="comment"># check for leading 0</span></span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/LeetCode/Integer-to-Roman.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -946,809 +1587,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/LeetCode/Add-Binary.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/LeetCode/Add-Binary.html" itemprop="url">Add Binary</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-01-28T10:15:06+08:00">
-                2022-01-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">Leetcode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/LeetCode/Add-Binary.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="LeetCode/Add-Binary.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  430 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given two binary strings <code>a</code> and <code>b</code>, return <em>their sum as a binary string</em>.</p>
-<h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1:"></a>Example 1:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: a = &quot;11&quot;, b = &quot;1&quot;</span><br><span class="line">Output: &quot;100&quot;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2:"></a>Example 2:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: a = &quot;1010&quot;, b = &quot;1011&quot;</span><br><span class="line">Output: &quot;10101&quot;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution 1"></a>Solution 1</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(M+N)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">addBinary</span><span class="params">(self, a, b)</span> -&gt; str:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'&#123;0:b&#125;'</span>.format(int(a, <span class="number">2</span>) + int(b, <span class="number">2</span>))</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 二进制字符串转十进制</span></span><br><span class="line">int(“<span class="number">11</span>”, <span class="number">2</span>) <span class="comment"># 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 把十进制数12转为对应的二进制数的字符串形式</span></span><br><span class="line"><span class="string">'&#123;0:b&#125;'</span>.format(<span class="number">12</span>)  </span><br><span class="line"><span class="string">'1100'</span></span><br></pre></td></tr></table></figure>
-
-<p>1 . In Java this approach is limited by the length of the input strings a and b. Once the string is long enough, the result of conversion into integers will not fit into Integer, Long or BigInteger.</p>
-<p>2 . This method has quite low performance in the case of large input numbers.</p>
-<h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution 2"></a>Solution 2</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Time O(max(M,N))</span></span><br><span class="line"><span class="comment"># Space O(max(N,M))</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">addBinary</span><span class="params">(self, a, b)</span> -&gt; str:</span></span><br><span class="line">        n = max(len(a), len(b))</span><br><span class="line">        <span class="comment"># zfill() 方法返回指定长度的字符串，原字符串右对齐，前面填充0</span></span><br><span class="line">        a, b = a.zfill(n), b.zfill(n)</span><br><span class="line">        </span><br><span class="line">        carry = <span class="number">0</span></span><br><span class="line">        answer = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n - <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            <span class="keyword">if</span> a[i] == <span class="string">'1'</span>:</span><br><span class="line">                carry += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> b[i] == <span class="string">'1'</span>:</span><br><span class="line">                carry += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> carry % <span class="number">2</span> == <span class="number">1</span>:</span><br><span class="line">                answer.append(<span class="string">'1'</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                answer.append(<span class="string">'0'</span>)</span><br><span class="line">            carry //= <span class="number">2</span></span><br><span class="line">        <span class="comment"># 最后一位的进位</span></span><br><span class="line">        <span class="keyword">if</span> carry == <span class="number">1</span>:</span><br><span class="line">            answer.append(<span class="string">'1'</span>)</span><br><span class="line">        <span class="comment"># append 方法获得的数据结果需要反向，并将字符串连接到一起</span></span><br><span class="line">        answer.reverse()</span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span>.join(answer)</span><br></pre></td></tr></table></figure>
-
-<h4 id="Solution-3"><a href="#Solution-3" class="headerlink" title="Solution 3"></a>Solution 3</h4><p>Here the input is more adapted to push towards Approach 1, but there is popular Facebook variation of this problem when interviewer provides you two numbers and asks to sum them up <code>without using addition operation</code>.</p>
-<p>How to start? There is an interview tip for bit manipulation problems: if you don’t know how to start, start from computing XOR for your input data. </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">addBinary</span><span class="params">(self, a, b)</span> -&gt; str:</span></span><br><span class="line">        x, y = int(a, <span class="number">2</span>), int(b, <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">while</span> y:</span><br><span class="line">            answer = x ^ y</span><br><span class="line">            carry = (x &amp; y) &lt;&lt; <span class="number">1</span></span><br><span class="line">            x, y = answer, carry</span><br><span class="line">        <span class="keyword">return</span> bin(x)[<span class="number">2</span>:] <span class="comment"># bin()将十进制转二进制</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 结果的前两位需要去掉</span></span><br><span class="line">&gt;&gt;&gt;bin(<span class="number">10</span>)</span><br><span class="line"><span class="string">'0b1010'</span></span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Backend/Design Pattern/Design-Pattern.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Backend/Design Pattern/Design-Pattern.html" itemprop="url">Design Pattern</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-01-27T14:16:54+08:00">
-                2022-01-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Backend/" itemprop="url" rel="index">
-                    <span itemprop="name">Backend</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/Backend/Design Pattern/Design-Pattern.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Backend/Design Pattern/Design-Pattern.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.9k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  7 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p><a href="https://www.runoob.com/design-pattern/design-pattern-tutorial.html" target="_blank" rel="noopener">一个设计模式非常好的网站</a></p>
-<p><a href="https://github.com/Qianhongbo/Design-Pattern.git" target="_blank" rel="noopener">Java实例Github仓库</a></p>
-</blockquote>
-<h2 id="设计模式简介"><a href="#设计模式简介" class="headerlink" title="设计模式简介"></a>设计模式简介</h2><p>设计模式是一套被反复使用的、多数人知晓的、经过分类编目的、代码设计经验的总结。使用设计模式是为了重用代码、让代码更容易被他人理解、保证代码可靠性。</p>
-<h2 id="设计模式的类型"><a href="#设计模式的类型" class="headerlink" title="设计模式的类型"></a>设计模式的类型</h2><p>总共有 23 种设计模式。这些模式可以分为三大类：</p>
-<ol>
-<li>创建型模式（Creational Patterns）</li>
-<li>结构型模式（Structural Patterns）</li>
-<li>行为型模式（Behavioral Patterns）</li>
-</ol>
-<h3 id="创建型模式"><a href="#创建型模式" class="headerlink" title="创建型模式"></a>创建型模式</h3><p>这些设计模式提供了一种在创建对象的同时隐藏创建逻辑的方式，而不是使用 new 运算符直接实例化对象。这使得程序在判断针对某个给定实例需要创建哪些对象时更加灵活。</p>
-<ul>
-<li>工厂模式（Factory Pattern）</li>
-<li>抽象工厂模式（Abstract Factory Pattern）</li>
-<li>单例模式（Singleton Pattern）</li>
-<li>建造者模式（Builder Pattern）</li>
-<li>原型模式（Prototype Pattern）</li>
-</ul>
-<h3 id="结构型模式"><a href="#结构型模式" class="headerlink" title="结构型模式"></a>结构型模式</h3><p>这些设计模式关注类和对象的组合。继承的概念被用来组合接口和定义组合对象获得新功能的方式。</p>
-<ul>
-<li>适配器模式（Adapter Pattern）</li>
-<li>桥接模式（Bridge Pattern）</li>
-<li>过滤器模式（Filter、Criteria Pattern）</li>
-<li>组合模式（Composite Pattern）</li>
-<li>装饰器模式（Decorator Pattern）</li>
-<li>外观模式（Facade Pattern）</li>
-<li>享元模式（Flyweight Pattern）</li>
-<li>代理模式（Proxy Pattern）</li>
-</ul>
-<h3 id="行为型模式"><a href="#行为型模式" class="headerlink" title="行为型模式"></a>行为型模式</h3><p>这些设计模式特别关注对象之间的通信。</p>
-<ul>
-<li>责任链模式（Chain of Responsibility Pattern）</li>
-<li>命令模式（Command Pattern）</li>
-<li>解释器模式（Interpreter Pattern）</li>
-<li>迭代器模式（Iterator Pattern）</li>
-<li>中介者模式（Mediator Pattern）</li>
-<li>备忘录模式（Memento Pattern）</li>
-<li>观察者模式（Observer Pattern）</li>
-<li>状态模式（State Pattern）</li>
-<li>空对象模式（Null Object Pattern）</li>
-<li>策略模式（Strategy Pattern）</li>
-<li>模板模式（Template Pattern）</li>
-<li>访问者模式（Visitor Pattern）</li>
-</ul>
-<h2 id="具体内容"><a href="#具体内容" class="headerlink" title="具体内容"></a>具体内容</h2><h3 id="Creational-Pattern"><a href="#Creational-Pattern" class="headerlink" title="Creational Pattern"></a>Creational Pattern</h3><h4 id="Singleton-Pattern"><a href="#Singleton-Pattern" class="headerlink" title="Singleton Pattern"></a>Singleton Pattern</h4><p><strong>意图：</strong>保证一个类仅有一个实例，并提供一个访问它的全局访问点。</p>
-<p><strong>主要解决：</strong>一个全局使用的类频繁地创建与销毁。</p>
-<h4 id="Factory-Pattern"><a href="#Factory-Pattern" class="headerlink" title="Factory Pattern"></a>Factory Pattern</h4><p><strong>意图：</strong>定义一个创建对象的接口，让其子类自己决定实例化哪一个工厂类，工厂模式使其创建过程延迟到子类进行。</p>
-<p><strong>主要解决：</strong>主要解决接口选择的问题。</p>
-<h3 id="Structual-Pattern"><a href="#Structual-Pattern" class="headerlink" title="Structual Pattern"></a>Structual Pattern</h3><h4 id="Proxy-Pattern"><a href="#Proxy-Pattern" class="headerlink" title="Proxy Pattern"></a>Proxy Pattern</h4><p><strong>意图：</strong>为其他对象提供一种代理以控制对这个对象的访问。</p>
-<p><strong>主要解决：</strong>在直接访问对象时带来的问题，比如说：要访问的对象在远程的机器上。在面向对象系统中，有些对象由于某些原因（比如对象创建开销很大，或者某些操作需要安全控制，或者需要进程外的访问），直接访问会给使用者或者系统结构带来很多麻烦，我们可以在访问此对象时加上一个对此对象的访问层。</p>
-<h4 id="Decorator-Pattern"><a href="#Decorator-Pattern" class="headerlink" title="Decorator Pattern"></a>Decorator Pattern</h4><p><strong>意图：</strong>动态地给一个对象添加一些额外的职责。就增加功能来说，装饰器模式相比生成子类更为灵活。</p>
-<p><strong>主要解决：</strong>一般的，我们为了扩展一个类经常使用继承方式实现，由于继承为类引入静态特征，并且随着扩展功能的增多，子类会很膨胀。</p>
-<h4 id="Adapter-Pattern"><a href="#Adapter-Pattern" class="headerlink" title="Adapter Pattern"></a>Adapter Pattern</h4><p><strong>意图：</strong>将一个类的接口转换成客户希望的另外一个接口。适配器模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。</p>
-<p><strong>主要解决：</strong>主要解决在软件系统中，常常要将一些”现存的对象”放到新的环境中，而新环境要求的接口是现对象不能满足的。</p>
-<h3 id="Behavioral-Pattern"><a href="#Behavioral-Pattern" class="headerlink" title="Behavioral Pattern"></a>Behavioral Pattern</h3><h4 id="Observer-Pattern"><a href="#Observer-Pattern" class="headerlink" title="Observer Pattern"></a>Observer Pattern</h4><p><strong>意图：</strong>定义对象间的一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都得到通知并被自动更新。</p>
-<p><strong>主要解决：</strong>一个对象状态改变给其他对象通知的问题，而且要考虑到易用和低耦合，保证高度的协作。</p>
-<h4 id="Command-Pattern"><a href="#Command-Pattern" class="headerlink" title="Command Pattern"></a>Command Pattern</h4><p><strong>意图：</strong>将一个请求封装成一个对象，从而使您可以用不同的请求对客户进行参数化。</p>
-<p><strong>主要解决：</strong>在软件系统中，行为请求者与行为实现者通常是一种紧耦合的关系，但某些场合，比如需要对行为进行记录、撤销或重做、事务等处理时，这种无法抵御变化的紧耦合的设计就不太合适。</p>
-<h4 id="Chain-of-Responsibility-Pattern"><a href="#Chain-of-Responsibility-Pattern" class="headerlink" title="Chain of Responsibility Pattern"></a>Chain of Responsibility Pattern</h4><p><strong>意图：</strong>避免请求发送者与接收者耦合在一起，让多个对象都有可能接收请求，将这些对象连接成一条链，并且沿着这条链传递请求，直到有对象处理它为止。</p>
-<p><strong>主要解决：</strong>职责链上的处理者负责处理请求，客户只需要将请求发送到职责链上即可，无须关心请求的处理细节和请求的传递，所以职责链将请求的发送者和请求的处理者解耦了。</p>
-<h4 id="Interpreter-Pattern"><a href="#Interpreter-Pattern" class="headerlink" title="Interpreter Pattern"></a>Interpreter Pattern</h4><p><strong>意图：</strong>给定一个语言，定义它的文法表示，并定义一个解释器，这个解释器使用该标识来解释语言中的句子。</p>
-<p><strong>主要解决：</strong>对于一些固定文法构建一个解释句子的解释器。</p>
-<p><strong>何时使用：</strong>如果一种特定类型的问题发生的频率足够高，那么可能就值得将该问题的各个实例表述为一个简单语言中的句子。这样就可以构建一个解释器，该解释器通过解释这些句子来解决该问题。</p>
-<h4 id="Template-Pattern"><a href="#Template-Pattern" class="headerlink" title="Template Pattern"></a>Template Pattern</h4><p><strong>意图：</strong>定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。模板方法使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。</p>
-<p><strong>主要解决：</strong>一些方法通用，却在每一个子类都重新写了这一方法。</p>
-<h4 id="Strategy-Pattern"><a href="#Strategy-Pattern" class="headerlink" title="Strategy Pattern"></a>Strategy Pattern</h4><p><strong>意图：</strong>定义一系列的算法,把它们一个个封装起来, 并且使它们可相互替换。</p>
-<p><strong>主要解决：</strong>在有多种算法相似的情况下，使用 if…else 所带来的复杂和难以维护。</p>
-<blockquote>
-<p>策略模式和命令模式二者存在相似之处，区别如下：</p>
-<p>“策略模式可能有不同的算法，但是实际工作中，可能在同一环境下只执行一种算法；命令模式可能有不同的命令，实际工作中，可能各个命令是要先后执行的。”</p>
-</blockquote>
-<h4 id="Visitor-Pattern"><a href="#Visitor-Pattern" class="headerlink" title="Visitor Pattern"></a>Visitor Pattern</h4><p>在访问者模式（Visitor Pattern）中，我们使用了一个访问者类，它改变了元素类的执行算法。通过这种方式，元素的执行算法可以随着访问者改变而改变。</p>
-<p><strong>意图：</strong>主要将数据结构与数据操作分离。</p>
-<p><strong>主要解决：</strong>稳定的数据结构和易变的操作耦合问题。</p>
-<p><strong>何时使用：</strong>需要对一个对象结构中的对象进行很多不同的并且不相关的操作，而需要避免让这些操作”污染”这些对象的类，使用访问者模式将这些封装到类中。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;variant&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">MyVisitor</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">double</span> d)</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; d &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">int</span> i)</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span>&amp; s)</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; s &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">std</span>::variant&lt;<span class="keyword">int</span>, <span class="keyword">double</span>, <span class="built_in">std</span>::<span class="built_in">string</span>&gt; var1(<span class="number">42</span>), var2(<span class="number">3.14</span>), var3(<span class="string">"visit"</span>);</span><br><span class="line"> 		<span class="comment">// calls operator() for matching int type</span></span><br><span class="line">    <span class="built_in">std</span>::visit(MyVisitor(), var1); </span><br><span class="line"> 		<span class="comment">// calls operator() for matching double type</span></span><br><span class="line">    <span class="built_in">std</span>::visit(MyVisitor(), var2); </span><br><span class="line"> 		<span class="comment">// calls operator() for matching std::string type</span></span><br><span class="line">    <span class="built_in">std</span>::visit(MyVisitor(), var3); </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Backend/Java/Java-Notes-2.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Backend/Java/Java-Notes-2.html" itemprop="url">Java Notes 2</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-01-23T12:25:39+08:00">
-                2022-01-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Backend/" itemprop="url" rel="index">
-                    <span itemprop="name">Backend</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/Backend/Java/Java-Notes-2.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Backend/Java/Java-Notes-2.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  2.2k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  14 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Common-Types"><a href="#Common-Types" class="headerlink" title="Common Types"></a>Common Types</h2><h3 id="Exceptions"><a href="#Exceptions" class="headerlink" title="Exceptions"></a>Exceptions</h3><h4 id="The-Error-Class-and-the-Exception-Class"><a href="#The-Error-Class-and-the-Exception-Class" class="headerlink" title="The Error Class and the Exception Class"></a>The Error Class and the Exception Class</h4><p>The Java error-handling framework uses two different classes to identify abnormal software events:</p>
-<ul>
-<li>The <strong>Error</strong> class is used to indicate a serious problem that the application should <em>not</em> try to handle.</li>
-<li>The <strong>Exception</strong> class is used when there is a less catastrophic event that the application <em>should</em> try to handle.</li>
-</ul>
-<h4 id="The-Throwable-Class"><a href="#The-Throwable-Class" class="headerlink" title="The Throwable Class"></a>The Throwable Class</h4><p>Both <em>Error</em> and <em>Exception</em> classes inherit from the abstract class <strong>throwable</strong>. This means that both errors and exceptions will contain:</p>
-<ul>
-<li><strong>The type of problem</strong> – the class type, either <em>Exception</em> or <em>Error</em></li>
-<li><strong>The problem message</strong> – whatever description you’ve provided within the class, such as “out of memory”</li>
-<li><strong>The stack trace where the exception occurred</strong> – the order in which things ran and the place in that sequence where the problem occurred (this information is used by developers to track down issues and resolve problems in the code)</li>
-</ul>
-<h4 id="Throwing-an-Exception"><a href="#Throwing-an-Exception" class="headerlink" title="Throwing an Exception"></a>Throwing an Exception</h4><p>What does it mean to throw an exception?</p>
-<ul>
-<li>When an error occurs within a method, that method creates an <em>Exception</em> object.</li>
-<li>Next, the method hands the Exception off to the JVM runtime system. And that’s what we mean when we say that we are throwing an exception. We simply mean that a method hands off an exception to the runtime.</li>
-</ul>
-<h4 id="Checked-vs-Unchecked"><a href="#Checked-vs-Unchecked" class="headerlink" title="Checked vs Unchecked"></a>Checked vs Unchecked</h4><p>In Java there are two different types of exceptions:</p>
-<h5 id="Unchecked-Exceptions"><a href="#Unchecked-Exceptions" class="headerlink" title="Unchecked Exceptions"></a>Unchecked Exceptions</h5><ul>
-<li><strong>Unchecked</strong> exceptions are exceptions that are unknown to the compiler.</li>
-<li>Because these exceptions are only known at runtime, they are also referred to as <em>runtime exceptions</em>.</li>
-<li>They are a result of a programming error, typically arithmetic errors (such as division by 0).</li>
-<li>Unchecked exceptions are used when when we expect that the caller of the method cannot recover from the exception.</li>
-</ul>
-<h5 id="Checked-Exceptions"><a href="#Checked-Exceptions" class="headerlink" title="Checked Exceptions"></a>Checked Exceptions</h5><ul>
-<li><strong>Checked</strong> exceptions are known to the compiler.</li>
-<li>If we are calling a method that potentially throws a checked exception, it <em>must</em> be handled (or we will get an error from the compiler).</li>
-<li>Checked exceptions are used when we expect that the caller of the method <em>can</em> recover from the exception.</li>
-</ul>
-<h4 id="Handling-Exceptions"><a href="#Handling-Exceptions" class="headerlink" title="Handling Exceptions"></a>Handling Exceptions</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    read();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span> (FileNotFoundException ex)&#123;</span><br><span class="line">    ex.getLocalizedMessage();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">finally</span> &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Enum"><a href="#Enum" class="headerlink" title="Enum"></a>Enum</h3><p>In Java, the declaration of an Enum defines a class. This class can exist <strong>within another class</strong> or as a <strong>standalone class</strong>.</p>
-<p>In some cases, we might only need to use the Enum type within a single class (as would probably be the case with the stoplight example). In that case it would be acceptable to define it within another class rather than as a standalone. However, if other classes are expected to use the enum type, it should be defined as a separate, standalone class.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">  <span class="keyword">enum</span> StopLight &#123;</span><br><span class="line">    RED,</span><br><span class="line">    YELLOW,</span><br><span class="line">    GREEN</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    StopLight myStoplight = Stoplight.RED; </span><br><span class="line">    System.out.println(myStoplight);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Scanner"><a href="#Scanner" class="headerlink" title="Scanner"></a>Scanner</h3><p>The <code>Scanner</code> class can read and parse simple text. Here are some key points to keep in mind:</p>
-<ul>
-<li>It parses primitive types and String types into tokens.</li>
-<li>By default it uses whitespaces to delimitate each word. However, it can also use regular expressions.</li>
-<li>The Scanner class can read from several different types of sources, like strings, files and <code>System.in</code> (to get input from the command line).</li>
-</ul>
-<h4 id="Scanner-Syntax"><a href="#Scanner-Syntax" class="headerlink" title="Scanner Syntax"></a>Scanner Syntax</h4><h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><p>We can use the <code>Scanner</code> class to get input from the command line. To do so, we instantiate a scanner object, passing in <code>System.in</code>:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br></pre></td></tr></table></figure>
-
-<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><p>In this example we are using the <code>nextLine</code> method to return the full line of the input:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Scanner scanner = <span class="keyword">new</span> Scanner(<span class="string">"This is a line"</span>);</span><br><span class="line">System.out.println(scanner.nextLine());</span><br></pre></td></tr></table></figure>
-
-<p><strong>Output:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This is a line</span><br></pre></td></tr></table></figure>
-
-<h5 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h5><p>In this next example, we are using the <code>next</code> method to read the first token. The <code>next</code> method finds and returns the next complete token.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Scanner scanner = <span class="keyword">new</span> Scanner(<span class="string">"This is a line"</span>);</span><br><span class="line">System.out.println(scanner.next());</span><br></pre></td></tr></table></figure>
-
-<p><strong>Output:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This</span><br></pre></td></tr></table></figure>
-
-<h5 id="Example-4"><a href="#Example-4" class="headerlink" title="Example 4"></a>Example 4</h5><p>In the final example, we are using the <code>hasNext()</code> method in a <code>while</code> loop to determine if it is safe to call the next method. We only want to call the next method when we know there is a token available.</p>
-<blockquote>
-<p><strong>Note:</strong> By default the Scanner tokenizes input by whitespaces. Let’s say we have a string with the following text <code>&quot;One Two Three&quot;</code>. The text will be tokenized into three separate tokens, <code>&quot;One&quot;</code>, <code>&quot;Two&quot;</code> and <code>&quot;Three&quot;</code>.</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Scanner scanner = <span class="keyword">new</span> Scanner(<span class="string">"This is a line"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(scanner.hasNext()) &#123;</span><br><span class="line">    System.out.println(scanner.next());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>Output:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">This</span><br><span class="line">is</span><br><span class="line">a</span><br><span class="line">line</span><br></pre></td></tr></table></figure>
-
-<h4 id="Scanner-Example"><a href="#Scanner-Example" class="headerlink" title="Scanner Example"></a>Scanner Example</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserInputTester</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"Enter a String"</span>);</span><br><span class="line">            String userInput = scanner.nextLine();</span><br><span class="line">            System.out.println(<span class="string">"User Input: "</span> + userInput);</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception ex) &#123;</span><br><span class="line">            ex.getLocalizedMessage();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            scanner.close(); <span class="comment">// we have to close the scanner</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="RegEx"><a href="#RegEx" class="headerlink" title="RegEx"></a>RegEx</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RegExTester</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">      String emailRegex = <span class="string">"^(.+)@(.+).(.+)$"</span>;</span><br><span class="line">      Pattern pattern = Pattern.compile(emailRegex);</span><br><span class="line">      String email = <span class="string">"jeff@gmail.com"</span>;</span><br><span class="line"></span><br><span class="line">      System.out.println(pattern.matcher(email).matches());</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><p>Java provides advanced memory management for String objects by using a <em>String pool</em>. A <strong>String pool</strong> is a way of storing only one copy of a String.</p>
-<p>To understand this, we have to look at what is happening in memory when we create Strings and assign them to variables. Strings in Java are <em>immutable</em>, meaning they cannot be changed after they are created. When we “change” the String in a variable, what actually happens is that, behind the scenes, Java creates a new String in the String pool—and changes the variable’s reference value to point to this new String. The old String object may remain in place, unchanged.</p>
-<p>Also note that multiple variables may use the same String reference. This means that if we have two variables with exactly the same String (e.g., <code>&quot;Hello&quot;</code>) they will all reference the same String object.</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gyofi80gpej31h70u0who.jpg" alt="image-20220123155351170"></p>
-<h2 id="Generics-and-Collections"><a href="#Generics-and-Collections" class="headerlink" title="Generics and Collections"></a>Generics and Collections</h2><h3 id="Generics"><a href="#Generics" class="headerlink" title="Generics"></a>Generics</h3><p>With generics, we can identify what types are stored in the list. The syntax for a generic is very simple—it’s just bracket with the type inside, <code>&lt; type &gt;</code>. So in this example, we can add <code>&lt;String&gt;</code> right next to <code>List</code> to identify what types are stored in the list:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; myList = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">myList.add(<span class="string">"one"</span>);</span><br><span class="line">myList.add(<span class="string">"two"</span>);</span><br><span class="line">myList.add(<span class="string">"three"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// We could also remove the element "one" </span></span><br><span class="line"><span class="comment">// by using the index 0 instead of the value "one".</span></span><br><span class="line">myList.remove(<span class="string">"one"</span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h3><h4 id="Use-iterator-with-collections"><a href="#Use-iterator-with-collections" class="headerlink" title="Use iterator with collections"></a>Use iterator with collections</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; names = <span class="keyword">new</span> LinkedList&lt;String&gt;();</span><br><span class="line">names.add(<span class="string">"Mike"</span>);</span><br><span class="line">names.add(<span class="string">"Bob"</span>);</span><br><span class="line">names.add(<span class="string">"Alice"</span>);</span><br><span class="line"></span><br><span class="line">Iterator&lt;String&gt; iterator = names.iterator();</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(iterator.hasNext())&#123;</span><br><span class="line">  System.out.println(iterator.next());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="for-each-loop"><a href="#for-each-loop" class="headerlink" title="for each loop"></a>for each loop</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CollectionsExercise</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        List&lt;String&gt; listOfItems = <span class="keyword">new</span> LinkedList&lt;String&gt;();</span><br><span class="line">        listOfItems.add(<span class="string">"Mike"</span>);</span><br><span class="line">        listOfItems.add(<span class="string">"Bob"</span>);</span><br><span class="line">        listOfItems.add(<span class="string">"Alice"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (String name : listOfItems) &#123;</span><br><span class="line">            System.out.println(name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Sorting-collections"><a href="#Sorting-collections" class="headerlink" title="Sorting collections"></a>Sorting collections</h3><h4 id="Strings"><a href="#Strings" class="headerlink" title="Strings"></a>Strings</h4><p>A list of Strings can be sorted by simply passing the list to the <code>Collections.sort()</code> method. In the example bellow, the names will be sorted in ascending order.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; names = <span class="keyword">new</span> LinkedList&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">names.add(<span class="string">"Mike"</span>);</span><br><span class="line">names.add(<span class="string">"Bob"</span>);</span><br><span class="line">names.add(<span class="string">"Alice"</span>);</span><br><span class="line"></span><br><span class="line">Collections.sort(names);</span><br></pre></td></tr></table></figure>
-
-<h4 id="Wrapper-Objects"><a href="#Wrapper-Objects" class="headerlink" title="Wrapper Objects"></a>Wrapper Objects</h4><p>Wrapper objects were introduced in Java to wrap primitive variable types into objects. In the example below, the primitive <code>int</code> values are being converted to <code>Integer</code> objects and then sorted.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = <span class="keyword">new</span> LinkedList&lt;Integer&gt;();</span><br><span class="line"></span><br><span class="line">numbers.add(<span class="number">201</span>);</span><br><span class="line">numbers.add(<span class="number">100</span>);</span><br><span class="line">numbers.add(<span class="number">101</span>);</span><br><span class="line"></span><br><span class="line">Collections.sort(numbers);</span><br></pre></td></tr></table></figure>
-
-<h4 id="User-Defined-Classes"><a href="#User-Defined-Classes" class="headerlink" title="User-Defined Classes"></a>User-Defined Classes</h4><p>User-defined classes will need to implement the <strong>Comparable</strong> Interface in order to use the <code>Collections.sort()</code> method. The <em>Comparable</em> Interface provides a method, <code>compareTo</code>, which is used to compare two objects of the same type. In the example below we are using the Person object’s <code>name</code> field to compare Person objects. This line of code, <code>name.compareTo(person.name)</code>, handles all of the hard work.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;  </span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> <span class="keyword">implements</span> <span class="title">Comparable</span>&lt;<span class="title">Person</span>&gt; </span>&#123;  </span><br><span class="line">  <span class="keyword">public</span> String name;  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name)</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">this</span>.name = name;  </span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// implement compareTo function</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Person person)</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">return</span> name.compareTo(person.name);  </span><br><span class="line"></span><br><span class="line">  &#125;   </span><br><span class="line">&#125;  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PersonSort</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    ArrayList&lt;Person&gt; people = <span class="keyword">new</span> ArrayList&lt;Person&gt;();</span><br><span class="line">    people.add(<span class="keyword">new</span> Person(<span class="string">"Same"</span>));</span><br><span class="line">    people.add(<span class="keyword">new</span> Person(<span class="string">"Mike"</span>));</span><br><span class="line">    people.add(<span class="keyword">new</span> Person(<span class="string">"Apple"</span>));</span><br><span class="line"></span><br><span class="line">    Collections.sort(people);</span><br><span class="line">    <span class="keyword">for</span> (Person person : people) &#123;</span><br><span class="line">      System.out.println(person.name);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Advanced-Collections"><a href="#Advanced-Collections" class="headerlink" title="Advanced Collections"></a>Advanced Collections</h2><h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><h4 id="Creating-a-Map-Object"><a href="#Creating-a-Map-Object" class="headerlink" title="Creating a Map Object"></a>Creating a Map Object</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, Person&gt; mapOfPeople = <span class="keyword">new</span> HashMap&lt;String, Person&gt;();</span><br></pre></td></tr></table></figure>
-
-<h4 id="Adding-to-a-Map"><a href="#Adding-to-a-Map" class="headerlink" title="Adding to a Map"></a>Adding to a Map</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Person mike = <span class="keyword">new</span> Person(<span class="string">"Mike"</span>, <span class="string">"mike@email.com"</span>);</span><br><span class="line">Person shaun = <span class="keyword">new</span> Person(<span class="string">"Shaun"</span>, <span class="string">"shaun@email.com"</span>);</span><br><span class="line">Person sally = <span class="keyword">new</span> Person(<span class="string">"Sally"</span>, <span class="string">"sally@email.com"</span>);</span><br><span class="line">Person cesar = <span class="keyword">new</span> Person(<span class="string">"Cesar"</span>, <span class="string">"cesar@email.com"</span>);</span><br><span class="line"></span><br><span class="line">mapOfPeople.put(mike.getEmail(), mike);</span><br><span class="line">mapOfPeople.put(shaun.getEmail(), shaun);</span><br><span class="line">mapOfPeople.put(sally.getEmail(), sally);</span><br><span class="line">mapOfPeople.put(cesar.getEmail(), cesar);</span><br></pre></td></tr></table></figure>
-
-<h4 id="Retrieving-an-object-from-a-Map"><a href="#Retrieving-an-object-from-a-Map" class="headerlink" title="Retrieving an object from a Map"></a>Retrieving an object from a Map</h4><p>In this example, we will be looking at the syntax to retrieve a Person object from the Map using an email as the key.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mapOfPeople.get(<span class="string">"mike@email.com"</span>);</span><br></pre></td></tr></table></figure>
-
-<h4 id="Iterating-over-a-Map"><a href="#Iterating-over-a-Map" class="headerlink" title="Iterating over a Map"></a>Iterating over a Map</h4><p>We can iterate over our Map using a <code>for-each</code> loop. Remember that each Map has three distinct views for seeing the data. We can get the keys, the values, or key-value mapping. In the example below we are displaying all of the keys for our Map.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (String email : mapOfPeople.keySet()) &#123;</span><br><span class="line">    System.out.println(email);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MapExcercise</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        Map&lt;String, Person&gt; mapOfPeople = <span class="keyword">new</span> HashMap&lt;String, Person&gt;();</span><br><span class="line">        Person mike = <span class="keyword">new</span> Person(<span class="string">"Mike"</span>, <span class="string">"mike@email.com"</span>);</span><br><span class="line">        Person shaun = <span class="keyword">new</span> Person(<span class="string">"Shaun"</span>, <span class="string">"shaun@email.com"</span>);</span><br><span class="line">        Person sally = <span class="keyword">new</span> Person(<span class="string">"Sally"</span>, <span class="string">"sally@email.com"</span>);</span><br><span class="line">        Person cesar = <span class="keyword">new</span> Person(<span class="string">"Cesar"</span>, <span class="string">"cesar@email.com"</span>);</span><br><span class="line"></span><br><span class="line">        ArrayList&lt;Person&gt; people = <span class="keyword">new</span> ArrayList&lt;Person&gt;();</span><br><span class="line">        people.add(mike);</span><br><span class="line">        people.add(shaun);</span><br><span class="line">        people.add(sally);</span><br><span class="line">        people.add(cesar);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (Person person : people) &#123;</span><br><span class="line">            MapExcercise.addToMap(mapOfPeople, person);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (String email : mapOfPeople.keySet()) &#123;</span><br><span class="line">            System.out.println(email);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (Person person : mapOfPeople.values()) &#123;</span><br><span class="line">            System.out.println(person);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"Get Mike: "</span> + mapOfPeople.get(<span class="string">"mike@email.com"</span>));</span><br><span class="line">        System.out.println(<span class="string">"Get Jeff: "</span> + mapOfPeople.get(<span class="string">"jeff@email.com"</span>));</span><br><span class="line">        System.out.println(<span class="string">"Contains Mike: "</span> + mapOfPeople.containsKey(<span class="string">"mike@email.com"</span>));</span><br><span class="line">        System.out.println(<span class="string">"Contains Jeff: "</span> + mapOfPeople.containsKey(<span class="string">"jeff@email.com"</span>));</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">addToMap</span><span class="params">(Map&lt;String, Person&gt; map, Person person)</span> </span>&#123;</span><br><span class="line">        map.put(person.getEmail(), person);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String email;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, String email)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.email = email;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getEmail</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> email;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name + <span class="string">" "</span> + email;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Sets"><a href="#Sets" class="headerlink" title="Sets"></a>Sets</h3><h4 id="Concrete-Implementations"><a href="#Concrete-Implementations" class="headerlink" title="Concrete Implementations"></a>Concrete Implementations</h4><p>There are three concrete implementations for the Set interface:</p>
-<ul>
-<li>HashSet</li>
-<li>TreeSet</li>
-<li>LinkedHashSet</li>
-</ul>
-<p>Each of these implementations vary, but all of them enforce the no-duplicate-values requirement of the Set interface.</p>
-<h4 id="Creating-a-Set-Object"><a href="#Creating-a-Set-Object" class="headerlink" title="Creating a Set Object"></a>Creating a Set Object</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set&lt;String&gt; mySet = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br></pre></td></tr></table></figure>
-
-<h4 id="Adding-to-a-Set"><a href="#Adding-to-a-Set" class="headerlink" title="Adding to a Set"></a>Adding to a Set</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mySet.add(<span class="string">"Hello"</span>);</span><br><span class="line">mySet.add(<span class="string">"Hello"</span>);</span><br><span class="line">mySet.add(<span class="string">"Hellos"</span>);</span><br></pre></td></tr></table></figure>
-
-<p>Even though we used <code>add</code> three times, this will actually only add two items, since one of the items is a duplicate.</p>
-<h4 id="Retrieving-an-Object-From-a-Set"><a href="#Retrieving-an-Object-From-a-Set" class="headerlink" title="Retrieving an Object From a Set"></a>Retrieving an Object From a Set</h4><p>Using for each loop to retrieve an object.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String foundObject;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (String text : mySet) &#123;</span><br><span class="line">   <span class="keyword">if</span>(text.equals(<span class="string">"Hello"</span>)&#123;</span><br><span class="line">      foundObject  = text;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.HashSet;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SetExcercise</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        List&lt;String&gt; numbers = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// We have a list of numbers and some are duplicates</span></span><br><span class="line">        numbers.add(<span class="string">"123-222-3333"</span>);</span><br><span class="line">        numbers.add(<span class="string">"123-222-3333"</span>);</span><br><span class="line">        numbers.add(<span class="string">"555-222-3333"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Add them to a Set to get a unique list</span></span><br><span class="line">        Set&lt;String&gt; uniqueNumbers = <span class="keyword">new</span> HashSet&lt;String&gt;(numbers);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (String number : uniqueNumbers) &#123;</span><br><span class="line">            System.out.println(number);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Queues"><a href="#Queues" class="headerlink" title="Queues"></a>Queues</h3><p><strong>Queues</strong> are data structures that allow us to process items in a <strong>First-In, First-Out</strong> (<strong>FIFO</strong>) order. The first item placed in a queue is also the first one removed from the queue.</p>
-<p>Some key points about Queues in Java:</p>
-<ul>
-<li>Queue is an <em>interface</em> that implements the <em>Collection</em> interface</li>
-<li>We <em>put</em> newly added elements at the <em>end</em> of the queue</li>
-<li>We <em>pop</em> elements off the <em>front</em> of the queue</li>
-</ul>
-<h4 id="Creating-a-Queue-object"><a href="#Creating-a-Queue-object" class="headerlink" title="Creating a Queue object"></a>Creating a Queue object</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Queue&lt;String&gt; myQueue = <span class="keyword">new</span> LinkedList&lt;String&gt;();</span><br></pre></td></tr></table></figure>
-
-<h4 id="Adding-to-a-Queue"><a href="#Adding-to-a-Queue" class="headerlink" title="Adding to a Queue"></a>Adding to a Queue</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">myQueue.add(<span class="string">"Hi"</span>);</span><br><span class="line">myQueue.add(<span class="string">"There"</span>);</span><br></pre></td></tr></table></figure>
-
-<h4 id="Retrieving-an-Object-From-a-Queue"><a href="#Retrieving-an-Object-From-a-Queue" class="headerlink" title="Retrieving an Object From a Queue"></a>Retrieving an Object From a Queue</h4><p>This method both <em>retrieves</em> the first element from the Queue and <em>removes</em> it from the Queue.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myQueue.poll()</span><br></pre></td></tr></table></figure>
-
-<h4 id="Iterating-Over-a-Queue"><a href="#Iterating-Over-a-Queue" class="headerlink" title="Iterating Over a Queue"></a>Iterating Over a Queue</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (!myQueue.isEmpty()) &#123;</span><br><span class="line">    System.out.println(myQueue.poll());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Supplementary-Knowledge"><a href="#Supplementary-Knowledge" class="headerlink" title="Supplementary Knowledge"></a>Supplementary Knowledge</h2><h3 id="Super"><a href="#Super" class="headerlink" title="Super()"></a>Super()</h3><p>We can use super() to call the direct parent constructor.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">ShapeDecorator</span> <span class="keyword">implements</span> <span class="title">Shape</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> Shape decoratedShape;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ShapeDecorator</span><span class="params">(Shape decoratedShape)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.decoratedShape = decoratedShape;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        decoratedShape.draw();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RedShapeDecorator</span> <span class="keyword">extends</span> <span class="title">ShapeDecorator</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">RedShapeDecorator</span><span class="params">(Shape decoratedShape)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(decoratedShape); <span class="comment">// use super() to call the parent constructor</span></span><br><span class="line">        <span class="comment">// inheritate the decoratedShape </span></span><br><span class="line">        <span class="comment">// this.decoratedShape = decoratedShape;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.draw();</span><br><span class="line">        setRedBorder(<span class="keyword">this</span>.decoratedShape); <span class="comment">// use the decoratedShape</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// add a new function(decorate)</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setRedBorder</span><span class="params">(Shape decoratedShape)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Border Color: Red"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1796,7 +1639,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1807,7 +1650,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1818,7 +1661,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1912,7 +1755,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">52.1k</span>
+    <span title="Site words total count">57k</span>
   
 </div>
 

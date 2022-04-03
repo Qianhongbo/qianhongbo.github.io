@@ -346,6 +346,804 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/LeetCode/Add-Binary.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/LeetCode/Add-Binary.html" itemprop="url">Add Binary</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-01-28T10:15:06+08:00">
+                2022-01-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">Leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/LeetCode/Add-Binary.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="LeetCode/Add-Binary.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  430 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given two binary strings <code>a</code> and <code>b</code>, return <em>their sum as a binary string</em>.</p>
+<h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1:"></a>Example 1:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: a = &quot;11&quot;, b = &quot;1&quot;</span><br><span class="line">Output: &quot;100&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2:"></a>Example 2:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: a = &quot;1010&quot;, b = &quot;1011&quot;</span><br><span class="line">Output: &quot;10101&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution 1"></a>Solution 1</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(M+N)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">addBinary</span><span class="params">(self, a, b)</span> -&gt; str:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'&#123;0:b&#125;'</span>.format(int(a, <span class="number">2</span>) + int(b, <span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 二进制字符串转十进制</span></span><br><span class="line">int(“<span class="number">11</span>”, <span class="number">2</span>) <span class="comment"># 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 把十进制数12转为对应的二进制数的字符串形式</span></span><br><span class="line"><span class="string">'&#123;0:b&#125;'</span>.format(<span class="number">12</span>)  </span><br><span class="line"><span class="string">'1100'</span></span><br></pre></td></tr></table></figure>
+
+<p>1 . In Java this approach is limited by the length of the input strings a and b. Once the string is long enough, the result of conversion into integers will not fit into Integer, Long or BigInteger.</p>
+<p>2 . This method has quite low performance in the case of large input numbers.</p>
+<h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution 2"></a>Solution 2</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Time O(max(M,N))</span></span><br><span class="line"><span class="comment"># Space O(max(N,M))</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">addBinary</span><span class="params">(self, a, b)</span> -&gt; str:</span></span><br><span class="line">        n = max(len(a), len(b))</span><br><span class="line">        <span class="comment"># zfill() 方法返回指定长度的字符串，原字符串右对齐，前面填充0</span></span><br><span class="line">        a, b = a.zfill(n), b.zfill(n)</span><br><span class="line">        </span><br><span class="line">        carry = <span class="number">0</span></span><br><span class="line">        answer = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n - <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            <span class="keyword">if</span> a[i] == <span class="string">'1'</span>:</span><br><span class="line">                carry += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> b[i] == <span class="string">'1'</span>:</span><br><span class="line">                carry += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> carry % <span class="number">2</span> == <span class="number">1</span>:</span><br><span class="line">                answer.append(<span class="string">'1'</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                answer.append(<span class="string">'0'</span>)</span><br><span class="line">            carry //= <span class="number">2</span></span><br><span class="line">        <span class="comment"># 最后一位的进位</span></span><br><span class="line">        <span class="keyword">if</span> carry == <span class="number">1</span>:</span><br><span class="line">            answer.append(<span class="string">'1'</span>)</span><br><span class="line">        <span class="comment"># append 方法获得的数据结果需要反向，并将字符串连接到一起</span></span><br><span class="line">        answer.reverse()</span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span>.join(answer)</span><br></pre></td></tr></table></figure>
+
+<h4 id="Solution-3"><a href="#Solution-3" class="headerlink" title="Solution 3"></a>Solution 3</h4><p>Here the input is more adapted to push towards Approach 1, but there is popular Facebook variation of this problem when interviewer provides you two numbers and asks to sum them up <code>without using addition operation</code>.</p>
+<p>How to start? There is an interview tip for bit manipulation problems: if you don’t know how to start, start from computing XOR for your input data. </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">addBinary</span><span class="params">(self, a, b)</span> -&gt; str:</span></span><br><span class="line">        x, y = int(a, <span class="number">2</span>), int(b, <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">while</span> y:</span><br><span class="line">            answer = x ^ y</span><br><span class="line">            carry = (x &amp; y) &lt;&lt; <span class="number">1</span></span><br><span class="line">            x, y = answer, carry</span><br><span class="line">        <span class="keyword">return</span> bin(x)[<span class="number">2</span>:] <span class="comment"># bin()将十进制转二进制</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 结果的前两位需要去掉</span></span><br><span class="line">&gt;&gt;&gt;bin(<span class="number">10</span>)</span><br><span class="line"><span class="string">'0b1010'</span></span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Backend/Design Pattern/Design-Pattern.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Backend/Design Pattern/Design-Pattern.html" itemprop="url">Design Pattern</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-01-27T14:16:54+08:00">
+                2022-01-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Backend/" itemprop="url" rel="index">
+                    <span itemprop="name">Backend</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Backend/Design Pattern/Design-Pattern.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Backend/Design Pattern/Design-Pattern.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.9k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p><a href="https://www.runoob.com/design-pattern/design-pattern-tutorial.html" target="_blank" rel="noopener">一个设计模式非常好的网站</a></p>
+<p><a href="https://github.com/Qianhongbo/Design-Pattern.git" target="_blank" rel="noopener">Java实例Github仓库</a></p>
+</blockquote>
+<h2 id="设计模式简介"><a href="#设计模式简介" class="headerlink" title="设计模式简介"></a>设计模式简介</h2><p>设计模式是一套被反复使用的、多数人知晓的、经过分类编目的、代码设计经验的总结。使用设计模式是为了重用代码、让代码更容易被他人理解、保证代码可靠性。</p>
+<h2 id="设计模式的类型"><a href="#设计模式的类型" class="headerlink" title="设计模式的类型"></a>设计模式的类型</h2><p>总共有 23 种设计模式。这些模式可以分为三大类：</p>
+<ol>
+<li>创建型模式（Creational Patterns）</li>
+<li>结构型模式（Structural Patterns）</li>
+<li>行为型模式（Behavioral Patterns）</li>
+</ol>
+<h3 id="创建型模式"><a href="#创建型模式" class="headerlink" title="创建型模式"></a>创建型模式</h3><p>这些设计模式提供了一种在创建对象的同时隐藏创建逻辑的方式，而不是使用 new 运算符直接实例化对象。这使得程序在判断针对某个给定实例需要创建哪些对象时更加灵活。</p>
+<ul>
+<li>工厂模式（Factory Pattern）</li>
+<li>抽象工厂模式（Abstract Factory Pattern）</li>
+<li>单例模式（Singleton Pattern）</li>
+<li>建造者模式（Builder Pattern）</li>
+<li>原型模式（Prototype Pattern）</li>
+</ul>
+<h3 id="结构型模式"><a href="#结构型模式" class="headerlink" title="结构型模式"></a>结构型模式</h3><p>这些设计模式关注类和对象的组合。继承的概念被用来组合接口和定义组合对象获得新功能的方式。</p>
+<ul>
+<li>适配器模式（Adapter Pattern）</li>
+<li>桥接模式（Bridge Pattern）</li>
+<li>过滤器模式（Filter、Criteria Pattern）</li>
+<li>组合模式（Composite Pattern）</li>
+<li>装饰器模式（Decorator Pattern）</li>
+<li>外观模式（Facade Pattern）</li>
+<li>享元模式（Flyweight Pattern）</li>
+<li>代理模式（Proxy Pattern）</li>
+</ul>
+<h3 id="行为型模式"><a href="#行为型模式" class="headerlink" title="行为型模式"></a>行为型模式</h3><p>这些设计模式特别关注对象之间的通信。</p>
+<ul>
+<li>责任链模式（Chain of Responsibility Pattern）</li>
+<li>命令模式（Command Pattern）</li>
+<li>解释器模式（Interpreter Pattern）</li>
+<li>迭代器模式（Iterator Pattern）</li>
+<li>中介者模式（Mediator Pattern）</li>
+<li>备忘录模式（Memento Pattern）</li>
+<li>观察者模式（Observer Pattern）</li>
+<li>状态模式（State Pattern）</li>
+<li>空对象模式（Null Object Pattern）</li>
+<li>策略模式（Strategy Pattern）</li>
+<li>模板模式（Template Pattern）</li>
+<li>访问者模式（Visitor Pattern）</li>
+</ul>
+<h2 id="具体内容"><a href="#具体内容" class="headerlink" title="具体内容"></a>具体内容</h2><h3 id="Creational-Pattern"><a href="#Creational-Pattern" class="headerlink" title="Creational Pattern"></a>Creational Pattern</h3><h4 id="Singleton-Pattern"><a href="#Singleton-Pattern" class="headerlink" title="Singleton Pattern"></a>Singleton Pattern</h4><p><strong>意图：</strong>保证一个类仅有一个实例，并提供一个访问它的全局访问点。</p>
+<p><strong>主要解决：</strong>一个全局使用的类频繁地创建与销毁。</p>
+<h4 id="Factory-Pattern"><a href="#Factory-Pattern" class="headerlink" title="Factory Pattern"></a>Factory Pattern</h4><p><strong>意图：</strong>定义一个创建对象的接口，让其子类自己决定实例化哪一个工厂类，工厂模式使其创建过程延迟到子类进行。</p>
+<p><strong>主要解决：</strong>主要解决接口选择的问题。</p>
+<h3 id="Structual-Pattern"><a href="#Structual-Pattern" class="headerlink" title="Structual Pattern"></a>Structual Pattern</h3><h4 id="Proxy-Pattern"><a href="#Proxy-Pattern" class="headerlink" title="Proxy Pattern"></a>Proxy Pattern</h4><p><strong>意图：</strong>为其他对象提供一种代理以控制对这个对象的访问。</p>
+<p><strong>主要解决：</strong>在直接访问对象时带来的问题，比如说：要访问的对象在远程的机器上。在面向对象系统中，有些对象由于某些原因（比如对象创建开销很大，或者某些操作需要安全控制，或者需要进程外的访问），直接访问会给使用者或者系统结构带来很多麻烦，我们可以在访问此对象时加上一个对此对象的访问层。</p>
+<h4 id="Decorator-Pattern"><a href="#Decorator-Pattern" class="headerlink" title="Decorator Pattern"></a>Decorator Pattern</h4><p><strong>意图：</strong>动态地给一个对象添加一些额外的职责。就增加功能来说，装饰器模式相比生成子类更为灵活。</p>
+<p><strong>主要解决：</strong>一般的，我们为了扩展一个类经常使用继承方式实现，由于继承为类引入静态特征，并且随着扩展功能的增多，子类会很膨胀。</p>
+<h4 id="Adapter-Pattern"><a href="#Adapter-Pattern" class="headerlink" title="Adapter Pattern"></a>Adapter Pattern</h4><p><strong>意图：</strong>将一个类的接口转换成客户希望的另外一个接口。适配器模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。</p>
+<p><strong>主要解决：</strong>主要解决在软件系统中，常常要将一些”现存的对象”放到新的环境中，而新环境要求的接口是现对象不能满足的。</p>
+<h3 id="Behavioral-Pattern"><a href="#Behavioral-Pattern" class="headerlink" title="Behavioral Pattern"></a>Behavioral Pattern</h3><h4 id="Observer-Pattern"><a href="#Observer-Pattern" class="headerlink" title="Observer Pattern"></a>Observer Pattern</h4><p><strong>意图：</strong>定义对象间的一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都得到通知并被自动更新。</p>
+<p><strong>主要解决：</strong>一个对象状态改变给其他对象通知的问题，而且要考虑到易用和低耦合，保证高度的协作。</p>
+<h4 id="Command-Pattern"><a href="#Command-Pattern" class="headerlink" title="Command Pattern"></a>Command Pattern</h4><p><strong>意图：</strong>将一个请求封装成一个对象，从而使您可以用不同的请求对客户进行参数化。</p>
+<p><strong>主要解决：</strong>在软件系统中，行为请求者与行为实现者通常是一种紧耦合的关系，但某些场合，比如需要对行为进行记录、撤销或重做、事务等处理时，这种无法抵御变化的紧耦合的设计就不太合适。</p>
+<h4 id="Chain-of-Responsibility-Pattern"><a href="#Chain-of-Responsibility-Pattern" class="headerlink" title="Chain of Responsibility Pattern"></a>Chain of Responsibility Pattern</h4><p><strong>意图：</strong>避免请求发送者与接收者耦合在一起，让多个对象都有可能接收请求，将这些对象连接成一条链，并且沿着这条链传递请求，直到有对象处理它为止。</p>
+<p><strong>主要解决：</strong>职责链上的处理者负责处理请求，客户只需要将请求发送到职责链上即可，无须关心请求的处理细节和请求的传递，所以职责链将请求的发送者和请求的处理者解耦了。</p>
+<h4 id="Interpreter-Pattern"><a href="#Interpreter-Pattern" class="headerlink" title="Interpreter Pattern"></a>Interpreter Pattern</h4><p><strong>意图：</strong>给定一个语言，定义它的文法表示，并定义一个解释器，这个解释器使用该标识来解释语言中的句子。</p>
+<p><strong>主要解决：</strong>对于一些固定文法构建一个解释句子的解释器。</p>
+<p><strong>何时使用：</strong>如果一种特定类型的问题发生的频率足够高，那么可能就值得将该问题的各个实例表述为一个简单语言中的句子。这样就可以构建一个解释器，该解释器通过解释这些句子来解决该问题。</p>
+<h4 id="Template-Pattern"><a href="#Template-Pattern" class="headerlink" title="Template Pattern"></a>Template Pattern</h4><p><strong>意图：</strong>定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。模板方法使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。</p>
+<p><strong>主要解决：</strong>一些方法通用，却在每一个子类都重新写了这一方法。</p>
+<h4 id="Strategy-Pattern"><a href="#Strategy-Pattern" class="headerlink" title="Strategy Pattern"></a>Strategy Pattern</h4><p><strong>意图：</strong>定义一系列的算法,把它们一个个封装起来, 并且使它们可相互替换。</p>
+<p><strong>主要解决：</strong>在有多种算法相似的情况下，使用 if…else 所带来的复杂和难以维护。</p>
+<blockquote>
+<p>策略模式和命令模式二者存在相似之处，区别如下：</p>
+<p>“策略模式可能有不同的算法，但是实际工作中，可能在同一环境下只执行一种算法；命令模式可能有不同的命令，实际工作中，可能各个命令是要先后执行的。”</p>
+</blockquote>
+<h4 id="Visitor-Pattern"><a href="#Visitor-Pattern" class="headerlink" title="Visitor Pattern"></a>Visitor Pattern</h4><p>在访问者模式（Visitor Pattern）中，我们使用了一个访问者类，它改变了元素类的执行算法。通过这种方式，元素的执行算法可以随着访问者改变而改变。</p>
+<p><strong>意图：</strong>主要将数据结构与数据操作分离。</p>
+<p><strong>主要解决：</strong>稳定的数据结构和易变的操作耦合问题。</p>
+<p><strong>何时使用：</strong>需要对一个对象结构中的对象进行很多不同的并且不相关的操作，而需要避免让这些操作”污染”这些对象的类，使用访问者模式将这些封装到类中。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;variant&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">MyVisitor</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">double</span> d)</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; d &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">int</span> i)</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span>&amp; s)</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; s &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">std</span>::variant&lt;<span class="keyword">int</span>, <span class="keyword">double</span>, <span class="built_in">std</span>::<span class="built_in">string</span>&gt; var1(<span class="number">42</span>), var2(<span class="number">3.14</span>), var3(<span class="string">"visit"</span>);</span><br><span class="line"> 		<span class="comment">// calls operator() for matching int type</span></span><br><span class="line">    <span class="built_in">std</span>::visit(MyVisitor(), var1); </span><br><span class="line"> 		<span class="comment">// calls operator() for matching double type</span></span><br><span class="line">    <span class="built_in">std</span>::visit(MyVisitor(), var2); </span><br><span class="line"> 		<span class="comment">// calls operator() for matching std::string type</span></span><br><span class="line">    <span class="built_in">std</span>::visit(MyVisitor(), var3); </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Backend/Java/Java-Notes-2.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Backend/Java/Java-Notes-2.html" itemprop="url">Java Notes 2</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-01-23T12:25:39+08:00">
+                2022-01-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Backend/" itemprop="url" rel="index">
+                    <span itemprop="name">Backend</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Backend/Java/Java-Notes-2.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Backend/Java/Java-Notes-2.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.2k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  14 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Common-Types"><a href="#Common-Types" class="headerlink" title="Common Types"></a>Common Types</h2><h3 id="Exceptions"><a href="#Exceptions" class="headerlink" title="Exceptions"></a>Exceptions</h3><h4 id="The-Error-Class-and-the-Exception-Class"><a href="#The-Error-Class-and-the-Exception-Class" class="headerlink" title="The Error Class and the Exception Class"></a>The Error Class and the Exception Class</h4><p>The Java error-handling framework uses two different classes to identify abnormal software events:</p>
+<ul>
+<li>The <strong>Error</strong> class is used to indicate a serious problem that the application should <em>not</em> try to handle.</li>
+<li>The <strong>Exception</strong> class is used when there is a less catastrophic event that the application <em>should</em> try to handle.</li>
+</ul>
+<h4 id="The-Throwable-Class"><a href="#The-Throwable-Class" class="headerlink" title="The Throwable Class"></a>The Throwable Class</h4><p>Both <em>Error</em> and <em>Exception</em> classes inherit from the abstract class <strong>throwable</strong>. This means that both errors and exceptions will contain:</p>
+<ul>
+<li><strong>The type of problem</strong> – the class type, either <em>Exception</em> or <em>Error</em></li>
+<li><strong>The problem message</strong> – whatever description you’ve provided within the class, such as “out of memory”</li>
+<li><strong>The stack trace where the exception occurred</strong> – the order in which things ran and the place in that sequence where the problem occurred (this information is used by developers to track down issues and resolve problems in the code)</li>
+</ul>
+<h4 id="Throwing-an-Exception"><a href="#Throwing-an-Exception" class="headerlink" title="Throwing an Exception"></a>Throwing an Exception</h4><p>What does it mean to throw an exception?</p>
+<ul>
+<li>When an error occurs within a method, that method creates an <em>Exception</em> object.</li>
+<li>Next, the method hands the Exception off to the JVM runtime system. And that’s what we mean when we say that we are throwing an exception. We simply mean that a method hands off an exception to the runtime.</li>
+</ul>
+<h4 id="Checked-vs-Unchecked"><a href="#Checked-vs-Unchecked" class="headerlink" title="Checked vs Unchecked"></a>Checked vs Unchecked</h4><p>In Java there are two different types of exceptions:</p>
+<h5 id="Unchecked-Exceptions"><a href="#Unchecked-Exceptions" class="headerlink" title="Unchecked Exceptions"></a>Unchecked Exceptions</h5><ul>
+<li><strong>Unchecked</strong> exceptions are exceptions that are unknown to the compiler.</li>
+<li>Because these exceptions are only known at runtime, they are also referred to as <em>runtime exceptions</em>.</li>
+<li>They are a result of a programming error, typically arithmetic errors (such as division by 0).</li>
+<li>Unchecked exceptions are used when when we expect that the caller of the method cannot recover from the exception.</li>
+</ul>
+<h5 id="Checked-Exceptions"><a href="#Checked-Exceptions" class="headerlink" title="Checked Exceptions"></a>Checked Exceptions</h5><ul>
+<li><strong>Checked</strong> exceptions are known to the compiler.</li>
+<li>If we are calling a method that potentially throws a checked exception, it <em>must</em> be handled (or we will get an error from the compiler).</li>
+<li>Checked exceptions are used when we expect that the caller of the method <em>can</em> recover from the exception.</li>
+</ul>
+<h4 id="Handling-Exceptions"><a href="#Handling-Exceptions" class="headerlink" title="Handling Exceptions"></a>Handling Exceptions</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    read();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span> (FileNotFoundException ex)&#123;</span><br><span class="line">    ex.getLocalizedMessage();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">finally</span> &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Enum"><a href="#Enum" class="headerlink" title="Enum"></a>Enum</h3><p>In Java, the declaration of an Enum defines a class. This class can exist <strong>within another class</strong> or as a <strong>standalone class</strong>.</p>
+<p>In some cases, we might only need to use the Enum type within a single class (as would probably be the case with the stoplight example). In that case it would be acceptable to define it within another class rather than as a standalone. However, if other classes are expected to use the enum type, it should be defined as a separate, standalone class.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">  <span class="keyword">enum</span> StopLight &#123;</span><br><span class="line">    RED,</span><br><span class="line">    YELLOW,</span><br><span class="line">    GREEN</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    StopLight myStoplight = Stoplight.RED; </span><br><span class="line">    System.out.println(myStoplight);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Scanner"><a href="#Scanner" class="headerlink" title="Scanner"></a>Scanner</h3><p>The <code>Scanner</code> class can read and parse simple text. Here are some key points to keep in mind:</p>
+<ul>
+<li>It parses primitive types and String types into tokens.</li>
+<li>By default it uses whitespaces to delimitate each word. However, it can also use regular expressions.</li>
+<li>The Scanner class can read from several different types of sources, like strings, files and <code>System.in</code> (to get input from the command line).</li>
+</ul>
+<h4 id="Scanner-Syntax"><a href="#Scanner-Syntax" class="headerlink" title="Scanner Syntax"></a>Scanner Syntax</h4><h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><p>We can use the <code>Scanner</code> class to get input from the command line. To do so, we instantiate a scanner object, passing in <code>System.in</code>:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br></pre></td></tr></table></figure>
+
+<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><p>In this example we are using the <code>nextLine</code> method to return the full line of the input:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Scanner scanner = <span class="keyword">new</span> Scanner(<span class="string">"This is a line"</span>);</span><br><span class="line">System.out.println(scanner.nextLine());</span><br></pre></td></tr></table></figure>
+
+<p><strong>Output:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This is a line</span><br></pre></td></tr></table></figure>
+
+<h5 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h5><p>In this next example, we are using the <code>next</code> method to read the first token. The <code>next</code> method finds and returns the next complete token.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Scanner scanner = <span class="keyword">new</span> Scanner(<span class="string">"This is a line"</span>);</span><br><span class="line">System.out.println(scanner.next());</span><br></pre></td></tr></table></figure>
+
+<p><strong>Output:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This</span><br></pre></td></tr></table></figure>
+
+<h5 id="Example-4"><a href="#Example-4" class="headerlink" title="Example 4"></a>Example 4</h5><p>In the final example, we are using the <code>hasNext()</code> method in a <code>while</code> loop to determine if it is safe to call the next method. We only want to call the next method when we know there is a token available.</p>
+<blockquote>
+<p><strong>Note:</strong> By default the Scanner tokenizes input by whitespaces. Let’s say we have a string with the following text <code>&quot;One Two Three&quot;</code>. The text will be tokenized into three separate tokens, <code>&quot;One&quot;</code>, <code>&quot;Two&quot;</code> and <code>&quot;Three&quot;</code>.</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Scanner scanner = <span class="keyword">new</span> Scanner(<span class="string">"This is a line"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(scanner.hasNext()) &#123;</span><br><span class="line">    System.out.println(scanner.next());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Output:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">This</span><br><span class="line">is</span><br><span class="line">a</span><br><span class="line">line</span><br></pre></td></tr></table></figure>
+
+<h4 id="Scanner-Example"><a href="#Scanner-Example" class="headerlink" title="Scanner Example"></a>Scanner Example</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserInputTester</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"Enter a String"</span>);</span><br><span class="line">            String userInput = scanner.nextLine();</span><br><span class="line">            System.out.println(<span class="string">"User Input: "</span> + userInput);</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception ex) &#123;</span><br><span class="line">            ex.getLocalizedMessage();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            scanner.close(); <span class="comment">// we have to close the scanner</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="RegEx"><a href="#RegEx" class="headerlink" title="RegEx"></a>RegEx</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RegExTester</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">      String emailRegex = <span class="string">"^(.+)@(.+).(.+)$"</span>;</span><br><span class="line">      Pattern pattern = Pattern.compile(emailRegex);</span><br><span class="line">      String email = <span class="string">"jeff@gmail.com"</span>;</span><br><span class="line"></span><br><span class="line">      System.out.println(pattern.matcher(email).matches());</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><p>Java provides advanced memory management for String objects by using a <em>String pool</em>. A <strong>String pool</strong> is a way of storing only one copy of a String.</p>
+<p>To understand this, we have to look at what is happening in memory when we create Strings and assign them to variables. Strings in Java are <em>immutable</em>, meaning they cannot be changed after they are created. When we “change” the String in a variable, what actually happens is that, behind the scenes, Java creates a new String in the String pool—and changes the variable’s reference value to point to this new String. The old String object may remain in place, unchanged.</p>
+<p>Also note that multiple variables may use the same String reference. This means that if we have two variables with exactly the same String (e.g., <code>&quot;Hello&quot;</code>) they will all reference the same String object.</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gyofi80gpej31h70u0who.jpg" alt="image-20220123155351170"></p>
+<h2 id="Generics-and-Collections"><a href="#Generics-and-Collections" class="headerlink" title="Generics and Collections"></a>Generics and Collections</h2><h3 id="Generics"><a href="#Generics" class="headerlink" title="Generics"></a>Generics</h3><p>With generics, we can identify what types are stored in the list. The syntax for a generic is very simple—it’s just bracket with the type inside, <code>&lt; type &gt;</code>. So in this example, we can add <code>&lt;String&gt;</code> right next to <code>List</code> to identify what types are stored in the list:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; myList = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">myList.add(<span class="string">"one"</span>);</span><br><span class="line">myList.add(<span class="string">"two"</span>);</span><br><span class="line">myList.add(<span class="string">"three"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// We could also remove the element "one" </span></span><br><span class="line"><span class="comment">// by using the index 0 instead of the value "one".</span></span><br><span class="line">myList.remove(<span class="string">"one"</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h3><h4 id="Use-iterator-with-collections"><a href="#Use-iterator-with-collections" class="headerlink" title="Use iterator with collections"></a>Use iterator with collections</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; names = <span class="keyword">new</span> LinkedList&lt;String&gt;();</span><br><span class="line">names.add(<span class="string">"Mike"</span>);</span><br><span class="line">names.add(<span class="string">"Bob"</span>);</span><br><span class="line">names.add(<span class="string">"Alice"</span>);</span><br><span class="line"></span><br><span class="line">Iterator&lt;String&gt; iterator = names.iterator();</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(iterator.hasNext())&#123;</span><br><span class="line">  System.out.println(iterator.next());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="for-each-loop"><a href="#for-each-loop" class="headerlink" title="for each loop"></a>for each loop</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CollectionsExercise</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        List&lt;String&gt; listOfItems = <span class="keyword">new</span> LinkedList&lt;String&gt;();</span><br><span class="line">        listOfItems.add(<span class="string">"Mike"</span>);</span><br><span class="line">        listOfItems.add(<span class="string">"Bob"</span>);</span><br><span class="line">        listOfItems.add(<span class="string">"Alice"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (String name : listOfItems) &#123;</span><br><span class="line">            System.out.println(name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Sorting-collections"><a href="#Sorting-collections" class="headerlink" title="Sorting collections"></a>Sorting collections</h3><h4 id="Strings"><a href="#Strings" class="headerlink" title="Strings"></a>Strings</h4><p>A list of Strings can be sorted by simply passing the list to the <code>Collections.sort()</code> method. In the example bellow, the names will be sorted in ascending order.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; names = <span class="keyword">new</span> LinkedList&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">names.add(<span class="string">"Mike"</span>);</span><br><span class="line">names.add(<span class="string">"Bob"</span>);</span><br><span class="line">names.add(<span class="string">"Alice"</span>);</span><br><span class="line"></span><br><span class="line">Collections.sort(names);</span><br></pre></td></tr></table></figure>
+
+<h4 id="Wrapper-Objects"><a href="#Wrapper-Objects" class="headerlink" title="Wrapper Objects"></a>Wrapper Objects</h4><p>Wrapper objects were introduced in Java to wrap primitive variable types into objects. In the example below, the primitive <code>int</code> values are being converted to <code>Integer</code> objects and then sorted.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = <span class="keyword">new</span> LinkedList&lt;Integer&gt;();</span><br><span class="line"></span><br><span class="line">numbers.add(<span class="number">201</span>);</span><br><span class="line">numbers.add(<span class="number">100</span>);</span><br><span class="line">numbers.add(<span class="number">101</span>);</span><br><span class="line"></span><br><span class="line">Collections.sort(numbers);</span><br></pre></td></tr></table></figure>
+
+<h4 id="User-Defined-Classes"><a href="#User-Defined-Classes" class="headerlink" title="User-Defined Classes"></a>User-Defined Classes</h4><p>User-defined classes will need to implement the <strong>Comparable</strong> Interface in order to use the <code>Collections.sort()</code> method. The <em>Comparable</em> Interface provides a method, <code>compareTo</code>, which is used to compare two objects of the same type. In the example below we are using the Person object’s <code>name</code> field to compare Person objects. This line of code, <code>name.compareTo(person.name)</code>, handles all of the hard work.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;  </span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> <span class="keyword">implements</span> <span class="title">Comparable</span>&lt;<span class="title">Person</span>&gt; </span>&#123;  </span><br><span class="line">  <span class="keyword">public</span> String name;  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name)</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">this</span>.name = name;  </span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// implement compareTo function</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Person person)</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">return</span> name.compareTo(person.name);  </span><br><span class="line"></span><br><span class="line">  &#125;   </span><br><span class="line">&#125;  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PersonSort</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    ArrayList&lt;Person&gt; people = <span class="keyword">new</span> ArrayList&lt;Person&gt;();</span><br><span class="line">    people.add(<span class="keyword">new</span> Person(<span class="string">"Same"</span>));</span><br><span class="line">    people.add(<span class="keyword">new</span> Person(<span class="string">"Mike"</span>));</span><br><span class="line">    people.add(<span class="keyword">new</span> Person(<span class="string">"Apple"</span>));</span><br><span class="line"></span><br><span class="line">    Collections.sort(people);</span><br><span class="line">    <span class="keyword">for</span> (Person person : people) &#123;</span><br><span class="line">      System.out.println(person.name);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Advanced-Collections"><a href="#Advanced-Collections" class="headerlink" title="Advanced Collections"></a>Advanced Collections</h2><h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><h4 id="Creating-a-Map-Object"><a href="#Creating-a-Map-Object" class="headerlink" title="Creating a Map Object"></a>Creating a Map Object</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, Person&gt; mapOfPeople = <span class="keyword">new</span> HashMap&lt;String, Person&gt;();</span><br></pre></td></tr></table></figure>
+
+<h4 id="Adding-to-a-Map"><a href="#Adding-to-a-Map" class="headerlink" title="Adding to a Map"></a>Adding to a Map</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Person mike = <span class="keyword">new</span> Person(<span class="string">"Mike"</span>, <span class="string">"mike@email.com"</span>);</span><br><span class="line">Person shaun = <span class="keyword">new</span> Person(<span class="string">"Shaun"</span>, <span class="string">"shaun@email.com"</span>);</span><br><span class="line">Person sally = <span class="keyword">new</span> Person(<span class="string">"Sally"</span>, <span class="string">"sally@email.com"</span>);</span><br><span class="line">Person cesar = <span class="keyword">new</span> Person(<span class="string">"Cesar"</span>, <span class="string">"cesar@email.com"</span>);</span><br><span class="line"></span><br><span class="line">mapOfPeople.put(mike.getEmail(), mike);</span><br><span class="line">mapOfPeople.put(shaun.getEmail(), shaun);</span><br><span class="line">mapOfPeople.put(sally.getEmail(), sally);</span><br><span class="line">mapOfPeople.put(cesar.getEmail(), cesar);</span><br></pre></td></tr></table></figure>
+
+<h4 id="Retrieving-an-object-from-a-Map"><a href="#Retrieving-an-object-from-a-Map" class="headerlink" title="Retrieving an object from a Map"></a>Retrieving an object from a Map</h4><p>In this example, we will be looking at the syntax to retrieve a Person object from the Map using an email as the key.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mapOfPeople.get(<span class="string">"mike@email.com"</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="Iterating-over-a-Map"><a href="#Iterating-over-a-Map" class="headerlink" title="Iterating over a Map"></a>Iterating over a Map</h4><p>We can iterate over our Map using a <code>for-each</code> loop. Remember that each Map has three distinct views for seeing the data. We can get the keys, the values, or key-value mapping. In the example below we are displaying all of the keys for our Map.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (String email : mapOfPeople.keySet()) &#123;</span><br><span class="line">    System.out.println(email);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MapExcercise</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        Map&lt;String, Person&gt; mapOfPeople = <span class="keyword">new</span> HashMap&lt;String, Person&gt;();</span><br><span class="line">        Person mike = <span class="keyword">new</span> Person(<span class="string">"Mike"</span>, <span class="string">"mike@email.com"</span>);</span><br><span class="line">        Person shaun = <span class="keyword">new</span> Person(<span class="string">"Shaun"</span>, <span class="string">"shaun@email.com"</span>);</span><br><span class="line">        Person sally = <span class="keyword">new</span> Person(<span class="string">"Sally"</span>, <span class="string">"sally@email.com"</span>);</span><br><span class="line">        Person cesar = <span class="keyword">new</span> Person(<span class="string">"Cesar"</span>, <span class="string">"cesar@email.com"</span>);</span><br><span class="line"></span><br><span class="line">        ArrayList&lt;Person&gt; people = <span class="keyword">new</span> ArrayList&lt;Person&gt;();</span><br><span class="line">        people.add(mike);</span><br><span class="line">        people.add(shaun);</span><br><span class="line">        people.add(sally);</span><br><span class="line">        people.add(cesar);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (Person person : people) &#123;</span><br><span class="line">            MapExcercise.addToMap(mapOfPeople, person);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (String email : mapOfPeople.keySet()) &#123;</span><br><span class="line">            System.out.println(email);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (Person person : mapOfPeople.values()) &#123;</span><br><span class="line">            System.out.println(person);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"Get Mike: "</span> + mapOfPeople.get(<span class="string">"mike@email.com"</span>));</span><br><span class="line">        System.out.println(<span class="string">"Get Jeff: "</span> + mapOfPeople.get(<span class="string">"jeff@email.com"</span>));</span><br><span class="line">        System.out.println(<span class="string">"Contains Mike: "</span> + mapOfPeople.containsKey(<span class="string">"mike@email.com"</span>));</span><br><span class="line">        System.out.println(<span class="string">"Contains Jeff: "</span> + mapOfPeople.containsKey(<span class="string">"jeff@email.com"</span>));</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">addToMap</span><span class="params">(Map&lt;String, Person&gt; map, Person person)</span> </span>&#123;</span><br><span class="line">        map.put(person.getEmail(), person);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String email;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, String email)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.email = email;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getEmail</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> email;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name + <span class="string">" "</span> + email;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Sets"><a href="#Sets" class="headerlink" title="Sets"></a>Sets</h3><h4 id="Concrete-Implementations"><a href="#Concrete-Implementations" class="headerlink" title="Concrete Implementations"></a>Concrete Implementations</h4><p>There are three concrete implementations for the Set interface:</p>
+<ul>
+<li>HashSet</li>
+<li>TreeSet</li>
+<li>LinkedHashSet</li>
+</ul>
+<p>Each of these implementations vary, but all of them enforce the no-duplicate-values requirement of the Set interface.</p>
+<h4 id="Creating-a-Set-Object"><a href="#Creating-a-Set-Object" class="headerlink" title="Creating a Set Object"></a>Creating a Set Object</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set&lt;String&gt; mySet = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br></pre></td></tr></table></figure>
+
+<h4 id="Adding-to-a-Set"><a href="#Adding-to-a-Set" class="headerlink" title="Adding to a Set"></a>Adding to a Set</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mySet.add(<span class="string">"Hello"</span>);</span><br><span class="line">mySet.add(<span class="string">"Hello"</span>);</span><br><span class="line">mySet.add(<span class="string">"Hellos"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>Even though we used <code>add</code> three times, this will actually only add two items, since one of the items is a duplicate.</p>
+<h4 id="Retrieving-an-Object-From-a-Set"><a href="#Retrieving-an-Object-From-a-Set" class="headerlink" title="Retrieving an Object From a Set"></a>Retrieving an Object From a Set</h4><p>Using for each loop to retrieve an object.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String foundObject;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (String text : mySet) &#123;</span><br><span class="line">   <span class="keyword">if</span>(text.equals(<span class="string">"Hello"</span>)&#123;</span><br><span class="line">      foundObject  = text;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.HashSet;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SetExcercise</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        List&lt;String&gt; numbers = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// We have a list of numbers and some are duplicates</span></span><br><span class="line">        numbers.add(<span class="string">"123-222-3333"</span>);</span><br><span class="line">        numbers.add(<span class="string">"123-222-3333"</span>);</span><br><span class="line">        numbers.add(<span class="string">"555-222-3333"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Add them to a Set to get a unique list</span></span><br><span class="line">        Set&lt;String&gt; uniqueNumbers = <span class="keyword">new</span> HashSet&lt;String&gt;(numbers);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (String number : uniqueNumbers) &#123;</span><br><span class="line">            System.out.println(number);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Queues"><a href="#Queues" class="headerlink" title="Queues"></a>Queues</h3><p><strong>Queues</strong> are data structures that allow us to process items in a <strong>First-In, First-Out</strong> (<strong>FIFO</strong>) order. The first item placed in a queue is also the first one removed from the queue.</p>
+<p>Some key points about Queues in Java:</p>
+<ul>
+<li>Queue is an <em>interface</em> that implements the <em>Collection</em> interface</li>
+<li>We <em>put</em> newly added elements at the <em>end</em> of the queue</li>
+<li>We <em>pop</em> elements off the <em>front</em> of the queue</li>
+</ul>
+<h4 id="Creating-a-Queue-object"><a href="#Creating-a-Queue-object" class="headerlink" title="Creating a Queue object"></a>Creating a Queue object</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Queue&lt;String&gt; myQueue = <span class="keyword">new</span> LinkedList&lt;String&gt;();</span><br></pre></td></tr></table></figure>
+
+<h4 id="Adding-to-a-Queue"><a href="#Adding-to-a-Queue" class="headerlink" title="Adding to a Queue"></a>Adding to a Queue</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">myQueue.add(<span class="string">"Hi"</span>);</span><br><span class="line">myQueue.add(<span class="string">"There"</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="Retrieving-an-Object-From-a-Queue"><a href="#Retrieving-an-Object-From-a-Queue" class="headerlink" title="Retrieving an Object From a Queue"></a>Retrieving an Object From a Queue</h4><p>This method both <em>retrieves</em> the first element from the Queue and <em>removes</em> it from the Queue.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myQueue.poll()</span><br></pre></td></tr></table></figure>
+
+<h4 id="Iterating-Over-a-Queue"><a href="#Iterating-Over-a-Queue" class="headerlink" title="Iterating Over a Queue"></a>Iterating Over a Queue</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (!myQueue.isEmpty()) &#123;</span><br><span class="line">    System.out.println(myQueue.poll());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Supplementary-Knowledge"><a href="#Supplementary-Knowledge" class="headerlink" title="Supplementary Knowledge"></a>Supplementary Knowledge</h2><h3 id="Super"><a href="#Super" class="headerlink" title="Super()"></a>Super()</h3><p>We can use super() to call the direct parent constructor.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">ShapeDecorator</span> <span class="keyword">implements</span> <span class="title">Shape</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> Shape decoratedShape;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ShapeDecorator</span><span class="params">(Shape decoratedShape)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.decoratedShape = decoratedShape;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        decoratedShape.draw();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RedShapeDecorator</span> <span class="keyword">extends</span> <span class="title">ShapeDecorator</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">RedShapeDecorator</span><span class="params">(Shape decoratedShape)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(decoratedShape); <span class="comment">// use super() to call the parent constructor</span></span><br><span class="line">        <span class="comment">// inheritate the decoratedShape </span></span><br><span class="line">        <span class="comment">// this.decoratedShape = decoratedShape;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.draw();</span><br><span class="line">        setRedBorder(<span class="keyword">this</span>.decoratedShape); <span class="comment">// use the decoratedShape</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// add a new function(decorate)</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setRedBorder</span><span class="params">(Shape decoratedShape)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Border Color: Red"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/iOS/GCD.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -878,818 +1676,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/OtherTechnique/Git.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/OtherTechnique/Git.html" itemprop="url">Git</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-01-05T10:03:41+08:00">
-                2022-01-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/OtherTechnique/Git.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="OtherTechnique/Git.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  87 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="How-to-use-Git"><a href="#How-to-use-Git" class="headerlink" title="How to use Git"></a>How to use Git</h1><p>Here are some commonds to use git.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &apos;&apos;</span><br><span class="line">git push</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git branch <span class="comment"># show the local branch </span></span><br><span class="line">git branch -a <span class="comment"># show all the branch including the remote branch</span></span><br><span class="line">git checkout branchName <span class="comment"># change to the local branch</span></span><br><span class="line">git checkout -b localBranchName origin/remoteBranchName </span><br><span class="line"><span class="comment"># create a new local branch the same as the remote branch</span></span><br><span class="line">git merge branchName <span class="comment"># merge the current branch with another branch</span></span><br><span class="line">git branch -d branchName <span class="comment"># delete the local branch</span></span><br><span class="line">git push origin --delete remoteBranchName <span class="comment"># delete the remote branch</span></span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/iOS/Network-Foundations-HTTP.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/iOS/Network-Foundations-HTTP.html" itemprop="url">Network Foundations HTTP</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-12-30T19:13:37+08:00">
-                2021-12-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/iOS/Network-Foundations-HTTP.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="iOS/Network-Foundations-HTTP.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.6k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  9 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Networking-Terms"><a href="#Networking-Terms" class="headerlink" title="Networking Terms"></a>Networking Terms</h1><ul>
-<li><strong>Data:</strong> (Usually in the raw form) anything that is sent over the network.</li>
-<li><strong>Client:</strong></li>
-<li><strong>Server:</strong></li>
-<li><strong>URL:</strong> <strong>U</strong>niform <strong>R</strong>esource <strong>L</strong>ocator</li>
-<li><strong>HTTP:</strong> <strong>H</strong>yper<strong>t</strong>ext <strong>T</strong>ransfer <strong>P</strong>rotocol</li>
-<li><strong>HTTPS:</strong> HTTP <strong>S</strong>ecure,</li>
-</ul>
-<h1 id="Anatomy-of-a-URL"><a href="#Anatomy-of-a-URL" class="headerlink" title="Anatomy of a URL"></a>Anatomy of a URL</h1><table>
-<thead>
-<tr>
-<th>Component</th>
-<th>Name</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>https://</td>
-<td>scheme</td>
-</tr>
-<tr>
-<td>swift.org</td>
-<td>host</td>
-</tr>
-<tr>
-<td>/about/</td>
-<td>path</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th>Order</th>
-<th>Component</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1st</td>
-<td>scheme</td>
-</tr>
-<tr>
-<td>2nd</td>
-<td>host</td>
-</tr>
-<tr>
-<td>3rd</td>
-<td>port</td>
-</tr>
-<tr>
-<td>4th</td>
-<td>path</td>
-</tr>
-<tr>
-<td>5th</td>
-<td>query</td>
-</tr>
-<tr>
-<td>6th</td>
-<td>fragment</td>
-</tr>
-</tbody></table>
-<h1 id="Status-codes"><a href="#Status-codes" class="headerlink" title="Status codes"></a>Status codes</h1><p>HTTP status codes fall into 5 ranges based on the type of response.</p>
-<ul>
-<li><strong>100:</strong> Informational response (request has been received by the server but is not finished yet)</li>
-<li><strong>200:</strong> Successful response (request has been processed and completed by the server)</li>
-<li><strong>300:</strong> Redirection (client needs to do something to complete the request)</li>
-<li><strong>400:</strong> Unsuccessful (problem with the client’s request)</li>
-<li><strong>500:</strong> Unsuccessful (problem with the server)</li>
-</ul>
-<p>A complete list of status codes can be found <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes" target="_blank" rel="noopener">here</a>.</p>
-<table>
-<thead>
-<tr>
-<th align="left"><strong>Status Code</strong></th>
-<th align="left"><strong>Short Description</strong></th>
-<th align="left"><strong>Category</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">100</td>
-<td align="left"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/100" target="_blank" rel="noopener">Continue</a></td>
-<td align="left">Information</td>
-</tr>
-<tr>
-<td align="left">200</td>
-<td align="left"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200" target="_blank" rel="noopener">OK</a></td>
-<td align="left">Success</td>
-</tr>
-<tr>
-<td align="left">301</td>
-<td align="left"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301" target="_blank" rel="noopener">Moved Permanently</a></td>
-<td align="left">Redirection</td>
-</tr>
-<tr>
-<td align="left">403</td>
-<td align="left"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403" target="_blank" rel="noopener">Forbidden</a></td>
-<td align="left">Client Error</td>
-</tr>
-<tr>
-<td align="left">404</td>
-<td align="left"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404" target="_blank" rel="noopener">Not Found</a></td>
-<td align="left">Client Error</td>
-</tr>
-<tr>
-<td align="left">418</td>
-<td align="left"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/418" target="_blank" rel="noopener">I’m a teapot</a></td>
-<td align="left">Client Error</td>
-</tr>
-<tr>
-<td align="left">500</td>
-<td align="left"><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500" target="_blank" rel="noopener">Internal Server Error</a></td>
-<td align="left">Server Error</td>
-</tr>
-</tbody></table>
-<h1 id="HTTP-Verbs"><a href="#HTTP-Verbs" class="headerlink" title="HTTP Verbs"></a>HTTP Verbs</h1><p>CRUD:</p>
-<ul>
-<li>Create</li>
-<li>Read</li>
-<li>Update</li>
-<li>Delete</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Verb</th>
-<th>CRUD Operation</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>GET</td>
-<td>Read</td>
-</tr>
-<tr>
-<td>POST</td>
-<td>Create</td>
-</tr>
-<tr>
-<td>PUT</td>
-<td>Update(Replace)</td>
-</tr>
-<tr>
-<td>PATCH</td>
-<td>Update(Modify)</td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td>Delete</td>
-</tr>
-</tbody></table>
-<ul>
-<li><strong>GET</strong>: Retrieves data from the server, such as getting a list of search results.</li>
-<li><strong>POST</strong>: Submits data to be stored in the server, such as when submitting a form.</li>
-<li><strong>PUT</strong>: Updates data on the server, replacing the old data with the new data.</li>
-<li><strong>PATCH</strong>: Updates data on the server, by changing specific values.</li>
-<li><strong>DELETE</strong>: Used when removing data from the server.</li>
-</ul>
-<h1 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h1><h1 id="string"><a href="#string" class="headerlink" title="string"></a>string</h1><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Task 1: create a valid URL</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> website = <span class="string">"http://udacity.com"</span></span><br><span class="line"><span class="keyword">let</span> url = <span class="type">URL</span>(string: website)</span><br><span class="line"><span class="built_in">print</span>(url!)</span><br><span class="line"></span><br><span class="line"><span class="comment">// Task 2: append an "ios" path component to the URL</span></span><br><span class="line"></span><br><span class="line">url?.appendPathComponent(<span class="string">"ios"</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> url = url &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"URL: \(url)"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>We can’t add query and fragment.</p>
-</blockquote>
-<h2 id="URLComponents"><a href="#URLComponents" class="headerlink" title="URLComponents"></a>URLComponents</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="comment">// create a new URLComponents</span></span><br><span class="line"><span class="keyword">var</span> components = <span class="type">URLComponents</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment">// set the scheme</span></span><br><span class="line">components.scheme = <span class="string">"https"</span></span><br><span class="line"><span class="comment">// set the host</span></span><br><span class="line">components.host = <span class="string">"google.com"</span></span><br><span class="line"><span class="comment">// set the path</span></span><br><span class="line">components.path = <span class="string">"/search"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// set the query, you'll need to create a new URLQueryItem</span></span><br><span class="line">components.queryItems = [<span class="type">URLQueryItem</span>(name: <span class="string">"query"</span>, value: <span class="string">"udacity"</span>)]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(components.url ?? <span class="string">""</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="Use-struct-to-store-URLComponents"><a href="#Use-struct-to-store-URLComponents" class="headerlink" title="Use struct to store URLComponents"></a>Use struct to store URLComponents</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> urlString = <span class="string">"https://itunes.apple.com/us/app/udacity/id819700933?mt=8"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> urlComponents = <span class="type">URLComponents</span>(string: urlString)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> urlComponents = urlComponents &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"scheme:\t\t\(String(reflecting: urlComponents.scheme))"</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"user:\t\t\(String(reflecting: urlComponents.user))"</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"password:\t\(String(reflecting: urlComponents.password))"</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"host:\t\t\(String(reflecting: urlComponents.host))"</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"port:\t\t\(String(reflecting: urlComponents.port))"</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"path:\t\t\(String(reflecting: urlComponents.path))"</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"query:\t\t\(String(reflecting: urlComponents.query))"</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"fragment:\t\(String(reflecting: urlComponents.fragment))"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">AppStore</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> scheme = <span class="string">"https"</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> host = <span class="string">"itunes.apple.com"</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> udacityPath = <span class="string">"/us/app/udacity/id819700933"</span></span><br><span class="line">    </span><br><span class="line">    <span class="class"><span class="keyword">enum</span> <span class="title">ParameterKey</span>: <span class="title">String</span> </span>&#123;</span><br><span class="line">        <span class="keyword">case</span> mediaType = <span class="string">"mt"</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="class"><span class="keyword">enum</span> <span class="title">MediaType</span>: <span class="title">String</span> </span>&#123;</span><br><span class="line">        <span class="keyword">case</span> music = <span class="string">"1"</span>,</span><br><span class="line">        podcasts = <span class="string">"2"</span>,</span><br><span class="line">        audiobooks = <span class="string">"3"</span>,</span><br><span class="line">        tvShows = <span class="string">"4"</span>,</span><br><span class="line">        musicVideos = <span class="string">"5"</span>,</span><br><span class="line">        movies = <span class="string">"6"</span>,</span><br><span class="line">        iPodGames = <span class="string">"7"</span>,</span><br><span class="line">        mobileApps = <span class="string">"8"</span>,</span><br><span class="line">        ringTones = <span class="string">"9"</span>,</span><br><span class="line">        iTunesU = <span class="string">"10"</span>,</span><br><span class="line">        ebooks = <span class="string">"11"</span>,</span><br><span class="line">        desktopApps = <span class="string">"12"</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> udacityAppURL = <span class="type">URLComponents</span>()</span><br><span class="line">udacityAppURL.scheme = <span class="type">AppStore</span>.scheme</span><br><span class="line">udacityAppURL.host = <span class="type">AppStore</span>.host</span><br><span class="line">udacityAppURL.path = <span class="type">AppStore</span>.udacityPath</span><br><span class="line"></span><br><span class="line">udacityAppURL.queryItems = [<span class="type">URLQueryItem</span>(name: <span class="type">AppStore</span>.<span class="type">ParameterKey</span>.mediaType.rawValue, value: <span class="type">AppStore</span>.<span class="type">MediaType</span>.mobileApps.rawValue)]</span><br><span class="line"><span class="built_in">print</span>(udacityAppURL)</span><br></pre></td></tr></table></figure>
-
-<h2 id="URLSession"><a href="#URLSession" class="headerlink" title="URLSession"></a>URLSession</h2><p>“Tasks” are what <code>URLSession</code> calls network requests.</p>
-<ul>
-<li><code>URLSessionDataTask</code>: Used for perfuming an HTTP request (GET, POST, etc.).</li>
-<li><code>URLSessionDownloadTask</code>: Downloading a file from a server.</li>
-<li><code>URLSessionUploadTask</code>: Uploading a file to a server</li>
-<li><code>URLSessionStreamTask</code>: Getting a continuous stream of data from a server.</li>
-</ul>
-<blockquote>
-<p>After you create the task, you must start it by calling its <a href="https://developer.apple.com/documentation/foundation/urlsessiontask/1411121-resume" target="_blank" rel="noopener"><code>resume()</code></a> method.</p>
-<p>Newly-initialized tasks begin in a suspended state, so you need to call this method to start the task.</p>
-</blockquote>
-<p>###URLSession.shared.dataTask </p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@IBAction</span> <span class="function"><span class="keyword">func</span> <span class="title">loadImage</span><span class="params">(<span class="number">_</span> sender: <span class="keyword">Any</span>)</span></span> &#123;</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> url = <span class="type">URL</span>(string: <span class="keyword">self</span>.imageLocation) <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"Cannot create url!"</span>)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">let</span> task = <span class="type">URLSession</span>.shared.dataTask(with: url) &#123;</span><br><span class="line">            (data, response, error) <span class="keyword">in</span></span><br><span class="line">            <span class="keyword">guard</span> <span class="keyword">let</span> data = data <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">"no data"</span>)</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">let</span> downLoadedImage = <span class="type">UIImage</span>(data: data)</span><br><span class="line">          <span class="comment">// the code of network request is working on the background</span></span><br><span class="line">          <span class="comment">// have to move this line of code to the main thread</span></span><br><span class="line">            <span class="type">DispatchQueue</span>.main.async &#123;</span><br><span class="line">                <span class="keyword">self</span>.imageView.image = downLoadedImage</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">  <span class="comment">// have to use resume() to start the task </span></span><br><span class="line">        task.resume()</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="Trailing-closure-syntax"><a href="#Trailing-closure-syntax" class="headerlink" title="Trailing closure syntax"></a>Trailing closure syntax</h4><p>Many functions in iOS accept multiple parameters where the final parameter is a closure.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> task = <span class="type">URLSession</span>.shared.dataTask(with: url, completionHandler: &#123;</span><br><span class="line">  </span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// trailing closure syntax</span></span><br><span class="line"><span class="keyword">let</span> task = <span class="type">URLSession</span>.shared.dataTask(with: url) &#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="URLSession-shared-downloadTask"><a href="#URLSession-shared-downloadTask" class="headerlink" title="URLSession.shared.downloadTask"></a>URLSession.shared.downloadTask</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@IBAction</span> <span class="function"><span class="keyword">func</span> <span class="title">loadImage</span><span class="params">(<span class="number">_</span> sender: <span class="keyword">Any</span>)</span></span> &#123;</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> url = <span class="type">URL</span>(string: <span class="keyword">self</span>.imageLocation) <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"Cannot create url!"</span>)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">let</span> task = <span class="type">URLSession</span>.shared.downloadTask(with: url) &#123;</span><br><span class="line">            (location, response, error) <span class="keyword">in</span></span><br><span class="line">            <span class="keyword">guard</span> <span class="keyword">let</span> location = location <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">"location is nil!"</span>)</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">let</span> downLoadedImage = <span class="keyword">try</span>! <span class="type">Data</span>(contentsOf: location)</span><br><span class="line">            <span class="type">DispatchQueue</span>.main.async &#123;</span><br><span class="line">                <span class="keyword">self</span>.imageView.image = <span class="type">UIImage</span>(data: downLoadedImage)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        task.resume()</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="API"><a href="#API" class="headerlink" title="API"></a>API</h1><h2 id="API-amp-Web-Service"><a href="#API-amp-Web-Service" class="headerlink" title="API &amp; Web Service"></a>API &amp; Web Service</h2><p>There you have it: an API is an interface that allows you to build on the data and functionality of another application, while a web service is a network-based resource that fulfills a specific task. Yes, there’s overlap between the two: all web services are APIs, but not all APIs are web services.</p>
-<h2 id="DogAPI"><a href="#DogAPI" class="headerlink" title="DogAPI"></a>DogAPI</h2><h3 id="JSONSerialization"><a href="#JSONSerialization" class="headerlink" title="JSONSerialization"></a>JSONSerialization</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DogAPI</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">enum</span> <span class="title">endpoint</span>: <span class="title">String</span> </span>&#123;</span><br><span class="line">        <span class="keyword">case</span> randomImageFromAllDogsCollection = <span class="string">"https://dog.ceo/api/breeds/image/random"</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">var</span> url: <span class="type">URL</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="type">URL</span>(string: <span class="keyword">self</span>.rawValue)!</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> randomImageEndpoint = <span class="type">DogAPI</span>.endpoint.randomImageFromAllDogsCollection.url</span><br><span class="line">        </span><br><span class="line"><span class="keyword">let</span> tast = <span class="type">URLSession</span>.shared.dataTask(with: randomImageEndpoint) &#123; </span><br><span class="line">  data, response, error <span class="keyword">in</span></span><br><span class="line">  <span class="keyword">guard</span> <span class="keyword">let</span> data = data <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  &#125; <span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> json = <span class="keyword">try</span> <span class="type">JSONSerialization</span>.jsonObject(with: data, options: []) <span class="keyword">as</span>! [<span class="type">String</span>: <span class="type">Any</span>]</span><br><span class="line">    <span class="keyword">let</span> url = json[<span class="string">"message"</span>] <span class="keyword">as</span>! <span class="type">String</span></span><br><span class="line">    <span class="built_in">print</span>(url)</span><br><span class="line">  &#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(error)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">tast.resume()</span><br></pre></td></tr></table></figure>
-
-<h2 id="Codable"><a href="#Codable" class="headerlink" title="Codable"></a>Codable</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">DogImage</span>: <span class="title">Codable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> status: <span class="type">String</span></span><br><span class="line">    <span class="keyword">let</span> message: <span class="type">String</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> decoder = <span class="type">JSONDecoder</span>()</span><br><span class="line"><span class="keyword">let</span> imageData = <span class="keyword">try</span>! decoder.decode(<span class="type">DogImage</span>.<span class="keyword">self</span>, from: data)</span><br><span class="line"><span class="built_in">print</span>(imageData) <span class="comment">// a struct</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="JSON-parsing-scenarios"><a href="#JSON-parsing-scenarios" class="headerlink" title="JSON parsing scenarios"></a>JSON parsing scenarios</h2><ul>
-<li><strong>Coding Keys</strong> (a way to map differently named JSON keys to Swift property names)</li>
-<li><strong>Parsing JSON Arrays</strong></li>
-<li><strong>Nested</strong> JSON objects</li>
-<li><strong>Accessing keys and values</strong> (treating a JSON object like a dictionary when we don’t know what the keys and values will be)</li>
-</ul>
-<h3 id="Coding-Keys"><a href="#Coding-Keys" class="headerlink" title="Coding Keys"></a>Coding Keys</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> json = <span class="string">"""</span></span><br><span class="line"><span class="string">&#123;</span></span><br><span class="line"><span class="string">    "food_name": "Lemon",</span></span><br><span class="line"><span class="string">    "taste": "sour",</span></span><br><span class="line"><span class="string">    "number of calories": 17</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">"""</span>.data(using: .utf8)!</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Food</span>: <span class="title">Codable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> name: <span class="type">String</span></span><br><span class="line">    <span class="keyword">let</span> taste: <span class="type">String</span></span><br><span class="line">    <span class="keyword">let</span> calories: <span class="type">Int</span></span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">enum</span> <span class="title">CodingKeys</span>: <span class="title">String</span>, <span class="title">CodingKey</span> </span>&#123;</span><br><span class="line">        <span class="keyword">case</span> name = <span class="string">"food_name"</span></span><br><span class="line">        <span class="keyword">case</span> taste</span><br><span class="line">        <span class="keyword">case</span> calories = <span class="string">"number of calories"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> decoder = <span class="type">JSONDecoder</span>()</span><br><span class="line"><span class="keyword">let</span> food: <span class="type">Food</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    food = <span class="keyword">try</span> decoder.decode(<span class="type">Food</span>.<span class="keyword">self</span>, from: json)</span><br><span class="line">    <span class="built_in">print</span>(food)</span><br><span class="line">&#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(error)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Parsing-JSON-Arrays"><a href="#Parsing-JSON-Arrays" class="headerlink" title="Parsing JSON Arrays"></a>Parsing JSON Arrays</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> json = <span class="string">"""</span></span><br><span class="line"><span class="string">[</span></span><br><span class="line"><span class="string">    &#123;</span></span><br><span class="line"><span class="string">        "title": "Groundhog Day",</span></span><br><span class="line"><span class="string">        "released": 1993,</span></span><br><span class="line"><span class="string">        "starring": ["Bill Murray", "Andie MacDowell", "Chris Elliot"]</span></span><br><span class="line"><span class="string">    &#125;,</span></span><br><span class="line"><span class="string">    &#123;</span></span><br><span class="line"><span class="string">        "title": "Home Alone",</span></span><br><span class="line"><span class="string">        "released": 1990,</span></span><br><span class="line"><span class="string">        "starring": ["Macaulay Culkin", "Joe Pesci", "Daniel Stern", "John Heard", "Catherine O'Hara"]</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">]</span></span><br><span class="line"><span class="string">"""</span>.data(using: .utf8)!</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Movie</span>: <span class="title">Codable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> title: <span class="type">String</span></span><br><span class="line">    <span class="keyword">let</span> released: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">let</span> starring: [<span class="type">String</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> decoder = <span class="type">JSONDecoder</span>()</span><br><span class="line"><span class="keyword">let</span> comedies: [<span class="type">Movie</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    comedies = <span class="keyword">try</span> decoder.decode([<span class="type">Movie</span>].<span class="keyword">self</span>, from: json)</span><br><span class="line">    <span class="built_in">print</span>(comedies)</span><br><span class="line">&#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(error)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Nested-JSON-objects"><a href="#Nested-JSON-objects" class="headerlink" title="Nested JSON objects"></a>Nested JSON objects</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> json = <span class="string">"""</span></span><br><span class="line"><span class="string">&#123;</span></span><br><span class="line"><span class="string">    "name": "",</span></span><br><span class="line"><span class="string">    "studentId: 326156,</span></span><br><span class="line"><span class="string">    "academics": &#123;</span></span><br><span class="line"><span class="string">        "field": "iOS",</span></span><br><span class="line"><span class="string">        "grade": "A"</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">"""</span>.data(using: .utf8)!</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Academics</span>: <span class="title">Codable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> field: <span class="type">String</span></span><br><span class="line">    <span class="keyword">let</span> grade: <span class="type">String</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Student</span>: <span class="title">Codable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> name: <span class="type">String</span></span><br><span class="line">    <span class="keyword">let</span> studentId: <span class="type">String</span></span><br><span class="line">    <span class="keyword">let</span> academics: <span class="type">Academics</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> decoder = <span class="type">JSONDecoder</span>()</span><br><span class="line"><span class="keyword">let</span> student: <span class="type">Student</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    student = <span class="keyword">try</span> decoder.decode(<span class="type">Student</span>.<span class="keyword">self</span>, from: json)</span><br><span class="line">    <span class="built_in">print</span>(student)</span><br><span class="line">&#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(error)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Accessing-keys-and-values"><a href="#Accessing-keys-and-values" class="headerlink" title="Accessing keys and values"></a>Accessing keys and values</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> json = <span class="string">"""</span></span><br><span class="line"><span class="string">&#123;</span></span><br><span class="line"><span class="string">    "100": &#123;</span></span><br><span class="line"><span class="string">        "type": "colonial",</span></span><br><span class="line"><span class="string">        "location": "Plainville, MA",</span></span><br><span class="line"><span class="string">        "bedrooms": 3,</span></span><br><span class="line"><span class="string">        "bathrooms": 2.5,</span></span><br><span class="line"><span class="string">        "has air conditioning": false,</span></span><br><span class="line"><span class="string">        "amenities": ["basement", "garden"],</span></span><br><span class="line"><span class="string">        "listing": &#123;</span></span><br><span class="line"><span class="string">            "price": 430000,</span></span><br><span class="line"><span class="string">            "date": "May 2018"</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    &#125;,</span></span><br><span class="line"><span class="string">    "101": &#123;</span></span><br><span class="line"><span class="string">        "type": "condo",</span></span><br><span class="line"><span class="string">        "location": "San Francisco, CA",</span></span><br><span class="line"><span class="string">        "bedrooms": 1,</span></span><br><span class="line"><span class="string">        "bathrooms": 1,</span></span><br><span class="line"><span class="string">        "has air conditioning": true,</span></span><br><span class="line"><span class="string">        "amenities": [],</span></span><br><span class="line"><span class="string">        "listing": &#123;</span></span><br><span class="line"><span class="string">            "price": 765000,</span></span><br><span class="line"><span class="string">            "date": "September 2018"</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">"""</span>.data(using: .utf8)!</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Listing</span>: <span class="title">Codable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> price: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">let</span> date: <span class="type">String</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">House</span>: <span class="title">Codable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> houseType: <span class="type">String</span></span><br><span class="line">    <span class="keyword">let</span> location: <span class="type">String</span></span><br><span class="line">    <span class="keyword">let</span> beds: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">let</span> baths: <span class="type">Float</span></span><br><span class="line">    <span class="keyword">let</span> hasAirConditioning: <span class="type">Bool</span></span><br><span class="line">    <span class="keyword">let</span> amenities: [<span class="type">String</span>]</span><br><span class="line">    <span class="keyword">let</span> listing: <span class="type">Listing</span></span><br><span class="line">    </span><br><span class="line">    <span class="class"><span class="keyword">enum</span> <span class="title">CodingKeys</span>: <span class="title">String</span>, <span class="title">CodingKey</span> </span>&#123;</span><br><span class="line">        <span class="keyword">case</span> houseType = <span class="string">"type"</span></span><br><span class="line">        <span class="keyword">case</span> location = <span class="string">"location"</span></span><br><span class="line">        <span class="keyword">case</span> beds = <span class="string">"bedrooms"</span></span><br><span class="line">        <span class="keyword">case</span> baths = <span class="string">"bathrooms"</span></span><br><span class="line">        <span class="keyword">case</span> hasAirConditioning = <span class="string">"has air conditioning"</span></span><br><span class="line">        <span class="keyword">case</span> amenities</span><br><span class="line">        <span class="keyword">case</span> listing</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> decoder = <span class="type">JSONDecoder</span>()</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> houseDict = <span class="keyword">try</span> decoder.decode([<span class="type">String</span>: <span class="type">House</span>].<span class="keyword">self</span>, from: json)</span><br><span class="line">    <span class="built_in">print</span>(houseDict)</span><br><span class="line">    <span class="keyword">let</span> houses = houseDict.values.<span class="built_in">map</span>(&#123;$<span class="number">0</span>&#125;)</span><br><span class="line">    <span class="keyword">let</span> houseIds = houseDict.keys.<span class="built_in">map</span>(&#123;$<span class="number">0</span>&#125;)</span><br><span class="line">    <span class="built_in">print</span>(houses)</span><br><span class="line">    <span class="built_in">print</span>(houseIds)</span><br><span class="line">&#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(error)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>We have to use <a href="https://developer.apple.com/documentation/swift/array/3017522-map" target="_blank" rel="noopener">map</a> to transform the data from keys <code>type</code> to <code>array</code> type.</p>
-</blockquote>
-<h2 id="Post-request-in-Swift"><a href="#Post-request-in-Swift" class="headerlink" title="Post request in Swift"></a>Post request in Swift</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"><span class="keyword">import</span> CoreFoundation</span><br><span class="line"></span><br><span class="line"><span class="comment">// create a Codable struct called "POST" with the correct properties</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Post</span>: <span class="title">Codable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> userId: <span class="type">Int</span></span><br><span class="line">    <span class="keyword">let</span> title: <span class="type">String</span></span><br><span class="line">    <span class="keyword">let</span> body: <span class="type">String</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// create an instance of the Post struct with your own values</span></span><br><span class="line"><span class="keyword">let</span> post = <span class="type">Post</span>(userId: <span class="number">1</span>, title: <span class="string">"udacity"</span>, body: <span class="string">"udacious"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// create a URLRequest by passing in the URL</span></span><br><span class="line"><span class="keyword">var</span> request = <span class="type">URLRequest</span>(url: <span class="type">URL</span>(string: <span class="string">"https://jsonplaceholder.typicode.com/posts"</span>)!)</span><br><span class="line"><span class="comment">// set the HTTP method to POST</span></span><br><span class="line">request.httpMethod = <span class="string">"POST"</span></span><br><span class="line"><span class="comment">// set the HTTP body to the encoded "Post" struct</span></span><br><span class="line">request.httpBody = <span class="keyword">try</span>! <span class="type">JSONEncoder</span>().encode(post)</span><br><span class="line"><span class="comment">// set the appropriate HTTP header fields</span></span><br><span class="line">request.addValue(<span class="string">"application/json"</span>, forHTTPHeaderField: <span class="string">"Content-Type"</span>)</span><br><span class="line"><span class="comment">// HACK: this line allows the workspace or an Xcode playground to execute the request, but is not needed in a real app</span></span><br><span class="line"><span class="keyword">let</span> runLoop = <span class="type">CFRunLoopGetCurrent</span>()</span><br><span class="line"><span class="comment">// task for making the request</span></span><br><span class="line"><span class="keyword">let</span> task = <span class="type">URLSession</span>.shared.dataTask(with: request) &#123;data, response, error <span class="keyword">in</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="type">String</span>(data: data!, encoding: .utf8))</span><br><span class="line">    <span class="comment">// also not necessary in a real app</span></span><br><span class="line">    <span class="type">CFRunLoopStop</span>(runLoop)</span><br><span class="line">&#125;</span><br><span class="line">task.resume()</span><br><span class="line"><span class="comment">// not necessary</span></span><br><span class="line"><span class="type">CFRunLoopRun</span>()s</span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/LeetCode/Binary-Search-Tree.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/LeetCode/Binary-Search-Tree.html" itemprop="url">Binary Search Tree</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-12-28T17:24:37+08:00">
-                2021-12-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">Leetcode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/LeetCode/Binary-Search-Tree.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="LeetCode/Binary-Search-Tree.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  6 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Find-CLosest-Value-in-BST"><a href="#Find-CLosest-Value-in-BST" class="headerlink" title="Find CLosest Value in BST"></a>Find CLosest Value in BST</h2><h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>Write a function that takes in a <code>BST</code> and a target integer value and returns that closest value to that target value contained in the BST.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">tree = <span class="number">10</span></span><br><span class="line">			/  \</span><br><span class="line">     <span class="number">5</span>   <span class="number">15</span></span><br><span class="line">    / \  / \</span><br><span class="line">   <span class="number">2</span>  <span class="number">5</span> <span class="number">13</span>  <span class="number">22</span></span><br><span class="line">  /       \</span><br><span class="line"> <span class="number">1</span>         <span class="number">14</span></span><br><span class="line">target = <span class="number">12</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># output = 13</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">findClosestValueInBst</span><span class="params">(tree, target)</span>:</span></span><br><span class="line">	closest = tree.value</span><br><span class="line">	currentNode = tree</span><br><span class="line">	<span class="keyword">while</span> currentNode <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">		<span class="keyword">if</span> abs(target - currentNode.value) &lt; abs(target - closest):</span><br><span class="line">			closest = currentNode.value</span><br><span class="line">		<span class="keyword">if</span> target &gt; currentNode.value:</span><br><span class="line">			currentNode = currentNode.right</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			currentNode = currentNode.left</span><br><span class="line">	<span class="keyword">return</span> closest</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># This is the class of the input tree. Do not edit.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BST</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, value)</span>:</span></span><br><span class="line">        self.value = value</span><br><span class="line">        self.left = <span class="literal">None</span></span><br><span class="line">        self.right = <span class="literal">None</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="BST-Construction"><a href="#BST-Construction" class="headerlink" title="BST Construction"></a>BST Construction</h2><p>Write a BST class for a Binary Search Tree. The class should support:</p>
-<ol>
-<li>Inserting values</li>
-<li>Removing values</li>
-<li>Searching for values/ Contain</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BST</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, value)</span>:</span></span><br><span class="line">        self.value = value</span><br><span class="line">        self.left = <span class="literal">None</span></span><br><span class="line">        self.right = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Average: O(log(n)) time | O(1) space</span></span><br><span class="line">    <span class="comment"># Worst: O(n) time | O(1) space</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">insert</span><span class="params">(self, value)</span>:</span></span><br><span class="line">        currentNode = self</span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            <span class="keyword">if</span> value &lt; currentNode.value:</span><br><span class="line">                <span class="keyword">if</span> currentNode.left <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">                    currentNode.left = BST(value)</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    currentNode = currentNode.left</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> currentNode.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">                    currentNode.right = BST(value)</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    currentNode = currentNode.right</span><br><span class="line">        <span class="keyword">return</span> self</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Average: O(log(n)) time | O(1) space</span></span><br><span class="line">    <span class="comment"># Worst: O(n) time | O(1) space</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">contains</span><span class="params">(self, value)</span>:</span></span><br><span class="line">        currentNode = self</span><br><span class="line">        <span class="keyword">while</span> currentNode <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">if</span> value &lt; currentNode.value:</span><br><span class="line">                currentNode = currentNode.left</span><br><span class="line">            <span class="keyword">elif</span> value &gt; currentNode.value:</span><br><span class="line">                currentNode = currentNode.right</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Average: O(log(n)) time | O(1) space</span></span><br><span class="line">    <span class="comment"># Worst: O(n) time | O(1) space</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">remove</span><span class="params">(self, value, parrentNode=None)</span>:</span></span><br><span class="line">        currentNode = self</span><br><span class="line">        <span class="keyword">while</span> currentNode <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">if</span> value &lt; currentNode.value:</span><br><span class="line">                parrentNode = currentNode</span><br><span class="line">                currentNode = currentNode.left</span><br><span class="line">            <span class="keyword">elif</span> value &gt; currentNode.value:</span><br><span class="line">                parrentNode = currentNode</span><br><span class="line">                currentNode = currentNode.right</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">              	<span class="comment"># Circumstance 1</span></span><br><span class="line">                <span class="keyword">if</span> currentNode.left <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">and</span> currentNode.right <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">                    currentNode.value = currentNode.right.getMinValue()</span><br><span class="line">                    currentNode.right.remove(currentNode.value, currentNode)</span><br><span class="line">                <span class="comment"># Circumstance 2.2</span></span><br><span class="line">                <span class="keyword">elif</span> parrentNode <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">                    <span class="keyword">if</span> currentNode.left <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">                        currentNode.value = currentNode.left.value</span><br><span class="line">                        currentNode.right = currentNode.left.right</span><br><span class="line">                        currentNode.left = currentNode.left.left</span><br><span class="line">                    <span class="keyword">elif</span> currentNode.right <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">                        currentNode.value = currentNode.right.value</span><br><span class="line">                        currentNode.left = currentNode.right.left</span><br><span class="line">                        currentNode.right = currentNode.right.right</span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        <span class="keyword">pass</span></span><br><span class="line">                <span class="comment"># Circumstance 2.1</span></span><br><span class="line">                <span class="keyword">elif</span> currentNode == parrentNode.left:</span><br><span class="line">                    parrentNode.left = currentNode.left <span class="keyword">if</span> currentNode.left <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">else</span> currentNode.right</span><br><span class="line">                <span class="comment"># Circumstance 2.1</span></span><br><span class="line">                <span class="keyword">elif</span> currentNode == parrentNode.right:</span><br><span class="line">                    parrentNode.right = currentNode.left <span class="keyword">if</span> currentNode.left <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">else</span> currentNode.right</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">return</span> self</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getMinValue</span><span class="params">(self)</span>:</span></span><br><span class="line">    currentNode = self</span><br><span class="line">    <span class="keyword">while</span> currentNode.left <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        currentNode = currentNode.left</span><br><span class="line">    <span class="keyword">return</span> currentNode.value</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>There are three circumstances for remove </p>
-<ol>
-<li>have both left child and right child</li>
-<li>only have left child or right child or no child<ul>
-<li>have parent node</li>
-<li>don’t have parent node</li>
-</ul>
-</li>
-</ol>
-</blockquote>
-<h1 id="Validate-BST"><a href="#Validate-BST" class="headerlink" title="Validate BST"></a>Validate BST</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(n) time | O(d) space</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">validateBst</span><span class="params">(tree)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> validateBstHelper(tree, float(<span class="string">"-inf"</span>), float(<span class="string">"inf"</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">validateBstHelper</span><span class="params">(tree, minValue, maxValue)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> tree <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">if</span> tree.value &lt; minValue <span class="keyword">or</span> tree.value &gt;= maxValue:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    leftIsValid = validateBstHelper(tree.left, minValue, tree.value)</span><br><span class="line">    rightIsValid = validateBstHelper(tree.right, tree.value, maxValue)</span><br><span class="line">    <span class="keyword">return</span> leftIsValid <span class="keyword">and</span> rightIsValid</span><br></pre></td></tr></table></figure>
-
-<h1 id="BST-Traversal"><a href="#BST-Traversal" class="headerlink" title="BST Traversal"></a>BST Traversal</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">tree = 10</span><br><span class="line">       / \ </span><br><span class="line">      5   15</span><br><span class="line">     / \    \</span><br><span class="line">    2   5    22</span><br><span class="line">  /</span><br><span class="line"> 1</span><br><span class="line"> </span><br><span class="line"> inOrderTraverse: [1, 2, 5, 5, 10, 15, 22]</span><br><span class="line"> preOrderTraverse: [10, 5, 2, 1, 5, 15, 22]</span><br><span class="line"> postOrderTraverse: [1, 2, 5, 5, 22, 15, 10]</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(n) time | O(n) space</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">inOrderTraverse</span><span class="params">(tree, array)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> tree <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        inOrderTraverse(tree.left, array)</span><br><span class="line">        array.append(tree.value)</span><br><span class="line">        inOrderTraverse(tree.right, array)</span><br><span class="line">    <span class="keyword">return</span> array</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># O(n) time | O(n) space</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">preOrderTraverse</span><span class="params">(tree, array)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> tree <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        array.append(tree.value)</span><br><span class="line">        preOrderTraverse(tree.left, array)</span><br><span class="line">        preOrderTraverse(tree.right, array)</span><br><span class="line">    <span class="keyword">return</span> array</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># O(n) time | O(n) space</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">postOrderTraverse</span><span class="params">(tree, array)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> tree <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        postOrderTraverse(tree.left, array)</span><br><span class="line">        postOrderTraverse(tree.right, array)</span><br><span class="line">        array.append(tree.value)</span><br><span class="line">    <span class="keyword">return</span> array</span><br></pre></td></tr></table></figure>
-
-<h1 id="Min-Height-BST"><a href="#Min-Height-BST" class="headerlink" title="Min Height BST"></a>Min Height BST</h1><p>Write a function that takes in a sorted array of distince integers. Construct a BST from the integers, and return the root of the BST.</p>
-<p>Recursive!</p>
-<ol>
-<li>Use the insert function of Class BST</li>
-<li>Write the insert function by ourselves</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(nlogn) time | O(n) space</span></span><br><span class="line"><span class="comment"># insert O(logn) time * n elements</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">minHeightBst</span><span class="params">(array)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> constructMinHeightBst(array, <span class="literal">None</span>, <span class="number">0</span>, len(array) - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">constructMinHeightBst</span><span class="params">(array, bst, startIdx, endIdx)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> startIdx &gt; endIdx:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    midIdx = (startIdx + endIdx) // <span class="number">2</span></span><br><span class="line">    midValue = array[midIdx]</span><br><span class="line">    <span class="keyword">if</span> bst <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        bst = BST(midValue)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        bst.insert(midValue)</span><br><span class="line"></span><br><span class="line">    constructMinHeightBst(array, bst, startIdx, midIdx - <span class="number">1</span>)</span><br><span class="line">    constructMinHeightBst(array, bst, midIdx + <span class="number">1</span>, endIdx)</span><br><span class="line">    <span class="keyword">return</span> bst</span><br></pre></td></tr></table></figure>
-
-<p>In order to optimize the program, the built-in insert function is not practical, and there is no need to start from the root node. Directly compare and insert.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(n) time | O(n) space</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">minHeightBst</span><span class="params">(array)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> constructMinHeightBst(array, <span class="literal">None</span>, <span class="number">0</span>, len(array) - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">constructMinHeightBst</span><span class="params">(array, bst, startIdx, endIdx)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> startIdx &gt; endIdx:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    midIdx = (startIdx + endIdx) // <span class="number">2</span></span><br><span class="line">    newBstNode = BST(array[midIdx])</span><br><span class="line">    <span class="keyword">if</span> bst <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        bst = newBstNode</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">      <span class="comment"># Don't need to traverse elements from the root node.</span></span><br><span class="line">        <span class="keyword">if</span> bst.value &gt; array[midIdx]:</span><br><span class="line">            bst.left = newBstNode</span><br><span class="line">            bst = bst.left</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            bst.right = newBstNode</span><br><span class="line">            bst = bst.right</span><br><span class="line"></span><br><span class="line">    constructMinHeightBst(array, bst, startIdx, midIdx - <span class="number">1</span>)</span><br><span class="line">    constructMinHeightBst(array, bst, midIdx + <span class="number">1</span>, endIdx)</span><br><span class="line">    <span class="keyword">return</span> bst</span><br></pre></td></tr></table></figure>
-
-<p>Make a few changes to the above code.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">constructMinHeightBst</span><span class="params">(array, startIdx, endIdx)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> startIdx &gt; endIdx:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    midIdx = (startIdx + endIdx) // <span class="number">2</span></span><br><span class="line">    bst = BST(array[midIdx])</span><br><span class="line">    bst.left = constructMinHeightBst(array, startIdx, midIdx - <span class="number">1</span>)</span><br><span class="line">    bst.right = constructMinHeightBst(array, midIdx + <span class="number">1</span>, endIdx)</span><br><span class="line">    <span class="keyword">return</span> bst</span><br></pre></td></tr></table></figure>
-
-<h1 id="Find-Kth-Largest-Value-in-BST"><a href="#Find-Kth-Largest-Value-in-BST" class="headerlink" title="Find Kth Largest Value in BST"></a>Find Kth Largest Value in BST</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BST</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, value, left=None, right=None)</span>:</span></span><br><span class="line">        self.value = value</span><br><span class="line">        self.left = left</span><br><span class="line">        self.right = right</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(N) time, O(N) space</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">findKthLargestValueInBst</span><span class="params">(tree, k)</span>:</span></span><br><span class="line">    array = []</span><br><span class="line">    array = reverseInorderTraverse(tree, array)</span><br><span class="line">    <span class="keyword">return</span> array[k - <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverseInorderTraverse</span><span class="params">(tree, array)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> tree <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        reverseInorderTraverse(tree.right, array)</span><br><span class="line">        array.append(tree.value)</span><br><span class="line">        reverseInorderTraverse(tree.left, array)</span><br><span class="line">    <span class="keyword">return</span> array</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeInfo</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, numberOfNodesVisited, latestVisitedNodeValue)</span>:</span></span><br><span class="line">        self.numberOfNodesVisited = numberOfNodesVisited</span><br><span class="line">        self.latestVisitedNodeValue = latestVisitedNodeValue</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># O(h + k) time, O(h) space</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">findKthLargestValueInBst</span><span class="params">(tree, k)</span>:</span></span><br><span class="line">    treeInfo = TreeInfo(<span class="number">0</span>, <span class="number">-1</span>)</span><br><span class="line">    reverseInorderTraverse(tree, k, treeInfo)</span><br><span class="line">    <span class="keyword">return</span> treeInfo.latestVisitedNodeValue</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverseInorderTraverse</span><span class="params">(node, k, treeInfo)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> node <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">or</span> treeInfo.numberOfNodesVisited &gt;= k:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    reverseInorderTraverse(node.right, k, treeInfo)</span><br><span class="line">    <span class="keyword">if</span> treeInfo.numberOfNodesVisited &lt; k:</span><br><span class="line">        treeInfo.latestVisitedNodeValue = node.value</span><br><span class="line">        treeInfo.numberOfNodesVisited += <span class="number">1</span></span><br><span class="line">        reverseInorderTraverse(node.left, k, treeInfo)</span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1737,7 +1728,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1748,7 +1739,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1759,7 +1750,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1853,7 +1844,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">52.1k</span>
+    <span title="Site words total count">57k</span>
   
 </div>
 

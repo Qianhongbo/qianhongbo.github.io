@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="OgElj4o9DCjKj3vLsPSXYe8He24OJKxYy0ejEmUrsy8">
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="obU5HKXSi3">
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=EB Garamond:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/Me.JPG?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/ironman.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/Me_16x16.JPG?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Blog | Qian Homeberg" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="Angular BasisAngular CLIThe Angular CLI is a command-line interface (CLI) that allows developers to initialize, develop, scaffold, and maintain Angular applications directly from the command line. In">
+<meta name="keywords" content="WoW">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular Basis">
+<meta property="og:url" content="https://www.qianhongbo.com/Fullstack/Angular-Basis.html">
+<meta property="og:site_name" content="Blog | Qian Homeberg">
+<meta property="og:description" content="Angular BasisAngular CLIThe Angular CLI is a command-line interface (CLI) that allows developers to initialize, develop, scaffold, and maintain Angular applications directly from the command line. In">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://video.udacity-data.com/topher/2021/March/604d07e8_fsjs-c3-l2-components/fsjs-c3-l2-components.jpg">
+<meta property="og:image" content="https://video.udacity-data.com/topher/2021/March/604d05aa_fsjs-c3-l2-component-lifecycle/fsjs-c3-l2-component-lifecycle.jpg">
+<meta property="og:updated_time" content="2022-06-22T18:24:16.266Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Angular Basis">
+<meta name="twitter:description" content="Angular BasisAngular CLIThe Angular CLI is a command-line interface (CLI) that allows developers to initialize, develop, scaffold, and maintain Angular applications directly from the command line. In">
+<meta name="twitter:image" content="https://video.udacity-data.com/topher/2021/March/604d07e8_fsjs-c3-l2-components/fsjs-c3-l2-components.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+
+
+
+
+  <title>Angular Basis | Blog | Qian Homeberg</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	
+	<a href="https://github.com/Qianhongbo" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+	
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Blog | Qian Homeberg</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Look! Who is here! Welcome~~</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+            
+            阅读
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-movies">
+          <a href="/movies/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-video-camera"></i> <br>
+            
+            电影
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Fullstack/Angular-Basis.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Angular Basis</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-06-19T21:07:47-07:00">
+                2022-06-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Fullstack/" itemprop="url" rel="index">
+                    <span itemprop="name">Fullstack</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Fullstack/Angular-Basis.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Fullstack/Angular-Basis.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  18 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Angular-Basis"><a href="#Angular-Basis" class="headerlink" title="Angular Basis"></a>Angular Basis</h1><h2 id="Angular-CLI"><a href="#Angular-CLI" class="headerlink" title="Angular CLI"></a>Angular CLI</h2><p>The <strong>Angular CLI</strong> is a command-line interface (CLI) that allows developers to initialize, develop, scaffold, and maintain Angular applications directly from the command line. In short, the Angular CLI allows us to:</p>
+<ul>
+<li><strong>Create a new Angular application</strong> from the ground up <code>ng new</code></li>
+<li><strong>Add features</strong> to the application, such as additional components, support for external libraries, and updates to the application and its dependencies <code>ng generate</code></li>
+<li><strong>Run unit tests</strong> : <code>ng test</code></li>
+<li><strong>Run a development server</strong> with live reload (i.e., automated page reloads when a change in the application is detected) <code>ng serve</code></li>
+<li><strong>Re-build the application</strong> on change (think Webpack)</li>
+<li><strong>Build the application</strong> for production <code>ng build</code></li>
+</ul>
+<h2 id="Install-and-Configure-the-Angular-CLI"><a href="#Install-and-Configure-the-Angular-CLI" class="headerlink" title="Install and Configure the Angular CLI"></a>Install and Configure the Angular CLI</h2><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @angular/cli</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>-g means global</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng --version</span><br></pre></td></tr></table></figure>
+
+<h2 id="Create-a-New-Angular-Project"><a href="#Create-a-New-Angular-Project" class="headerlink" title="Create a New Angular Project"></a>Create a New Angular Project</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng new my_first app</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng serve</span><br></pre></td></tr></table></figure>
+
+<h2 id="Component"><a href="#Component" class="headerlink" title="Component"></a>Component</h2><h3 id="What-is-a-component"><a href="#What-is-a-component" class="headerlink" title="What is a component?"></a>What is a component?</h3><ul>
+<li>Fundamental building block of an Angular application</li>
+<li>Controls the view displayed as HTML output</li>
+<li>Components determines the user interface of an Angular app</li>
+</ul>
+<h3 id="What-makes-up-a-component"><a href="#What-makes-up-a-component" class="headerlink" title="What makes up a component?"></a>What makes up a component?</h3><ul>
+<li>An <strong>HTML template</strong> (*.html file) that defines the user interface (i.e., what is actually rendered on the page)</li>
+<li>A <strong>TypeScript component class</strong> (*.ts file) containing the behavior and logic of the component. The component class supports and interacts with the view through the properties and methods defined in it</li>
+<li><strong>CSS styles</strong> (*.css file) that define the presentation and style of the component</li>
+</ul>
+<h3 id="Visualizing-Components"><a href="#Visualizing-Components" class="headerlink" title="Visualizing Components"></a>Visualizing Components</h3><p>All of the boxes in the following image are components.</p>
+<p><img src="https://video.udacity-data.com/topher/2021/March/604d07e8_fsjs-c3-l2-components/fsjs-c3-l2-components.jpg" alt></p>
+<h3 id="Generate-a-Component"><a href="#Generate-a-Component" class="headerlink" title="Generate a Component"></a>Generate a Component</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ng generate component &lt;name&gt;</span><br><span class="line"><span class="comment"># example: </span></span><br><span class="line">ng generate component Photos</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Result:</span></span><br><span class="line">~$ ng generate component Photos</span><br><span class="line">CREATE src/app/photos/photos.component.css (0 bytes)</span><br><span class="line">CREATE src/app/photos/photos.component.html (21 bytes)</span><br><span class="line">CREATE src/app/photos/photos.component.spec.ts (626 bytes)</span><br><span class="line">CREATE src/app/photos/photos.component.ts (275 bytes)</span><br><span class="line">UPDATE src/app/app.module.ts (475 bytes)</span><br></pre></td></tr></table></figure>
+
+<p>The Angular CLI tells us that four files were created:</p>
+<ul>
+<li>The Photos component CSS styles</li>
+<li>The Photos component HTML template</li>
+<li>The Photos component unit test (optional)</li>
+<li>The Photos component class (TypeScript)</li>
+</ul>
+<h3 id="What-is-in-a-Component-Class"><a href="#What-is-in-a-Component-Class" class="headerlink" title="What is in a Component Class"></a>What is in a Component Class</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/app/photos/photos.component.ts</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app-photos'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./photos.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./photos.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> PhotosComponent <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span>) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit(): <span class="built_in">void</span> &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>The component class contains a <code>@Component</code> <strong>decorator</strong>. A decorator is a feature that provides a way to add annotations and meta-programming syntax for class declarations. Angular needs this metadata so that it knows how to build that particular component. Specifically, it takes a look at a few properties:</p>
+<ul>
+<li><code>selector</code>: The identifying name for the component, which can be used in an HTML template</li>
+<li><code>templateUrl</code>: The path of the HTML template file associated with component</li>
+<li><code>styleUrls</code>: The path(s) for the file(s) containing CSS stylesheets that the component can use</li>
+</ul>
+<p>The rest of the file contains an exported <code>PhotosComponent</code> class, with two methods:</p>
+<ul>
+<li><code>constructor()</code>, which is used primarily for dependency injection and initializing variables. </li>
+<li><code>ngOnInit()</code>, which is called after the component has initialized. The <code>ngOnInit()</code> method is a lifecycle method used to handle additional initialization tasks.</li>
+</ul>
+<h3 id="Data-in-the-Component-Class"><a href="#Data-in-the-Component-Class" class="headerlink" title="Data in the Component Class"></a>Data in the Component Class</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// students.component.ts</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app-student'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./student.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./student.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> StudentComponent <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line">  name: <span class="built_in">string</span> = <span class="string">"Taylor"</span>;</span><br><span class="line">  grade: <span class="built_in">number</span> = <span class="number">12</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span>) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit(): <span class="built_in">void</span> &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>In the above example, we define two properties:</p>
+<ul>
+<li><code>name</code>, which points to a <code>string</code> with the value <code>&quot;Taylor&quot;</code></li>
+<li><code>grade</code>, which points to a <code>number</code> with the value <code>12</code></li>
+</ul>
+<p>We can use these data in our html file with double curly braces.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- student.component.html --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; name &#125;&#125; is a student in grade &#123;&#123; grade &#125;&#125;.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>As it turns out, the double curly braces syntax helps facilitate <strong>interpolation</strong>. By interpolating data, what we mean is that under the hood, Angular first evaluates the data properties (e.g., <code>name</code> and <code>grade</code>) of the component class (e.g., <code>StudentComponent</code>). It then converts them to strings before finally rendering everything on the page:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Taylor is a student in grade 12.</span><br></pre></td></tr></table></figure>
+
+<p>As such, we can say that the <code>name</code> and <code>grade</code> properties are <em>bound</em> (i.e., through <strong>data binding</strong>) to the component class.</p>
+<h3 id="The-component-lifecycle"><a href="#The-component-lifecycle" class="headerlink" title="The component lifecycle"></a>The component lifecycle</h3><p>Every Angular component goes through a cycle: from the moment it is created and mounted to the document object model (DOM), all the way to the moment it is unmounted and ultimately destroyed. This is what we refer to as the <strong>component lifecycle</strong>.</p>
+<p><img src="https://video.udacity-data.com/topher/2021/March/604d05aa_fsjs-c3-l2-component-lifecycle/fsjs-c3-l2-component-lifecycle.jpg" alt></p>
+<h3 id="Lifecycle-Methods"><a href="#Lifecycle-Methods" class="headerlink" title="Lifecycle Methods"></a>Lifecycle Methods</h3><p>The answer to the question lives in the component’s <strong>lifecycle methods</strong>. These predefined methods in the component class allow us to run any code or logic during any particular stage of the component’s lifecycle:</p>
+<ul>
+<li><code>ngOnChanges()</code></li>
+<li><code>ngOnInit()</code></li>
+<li><code>ngDoCheck()</code></li>
+<li><code>ngAfterContentInit()</code></li>
+<li><code>ngAfterContentChecked()</code></li>
+<li><code>ngAfterViewInit()</code></li>
+<li><code>ngAfterViewChecked()</code></li>
+<li><code>ngOnDestroy()</code></li>
+</ul>
+<p>Note that these methods are called <em>automatically</em> during specific points in time of the lifecycle (e.g., <code>ngOninit()</code> during initialization). You won’t need to manually invoke these functions in your application.</p>
+<p>Another thing to keep in mind that usage of these methods is not required. That is, you won’t need to use leverage lifecycle methods in every single Angular application that you build. That said, using certain methods is considered standard in the industry and can greatly benefit your application’s functionality.</p>
+<h3 id="ngOnInit"><a href="#ngOnInit" class="headerlink" title="ngOnInit()"></a><code>ngOnInit()</code></h3><p>The <code>ngOnInit()</code> lifecycle method is called during the <code>OnInit</code> event, which occurs during the initializing phase of a component. It is one of the most common lifecycle methods you’ll see and use, and is only called <em>once</em> during a component’s lifecycle.</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// countries.component.ts</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app-countries'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./countries.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./countries.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> CountriesComponent <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line">  countryList: object[] = [];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span>) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit(): <span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.countryList = [</span><br><span class="line">      &#123;</span><br><span class="line">        name: <span class="string">'Spain'</span>,</span><br><span class="line">        population: <span class="number">46754778</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        name: <span class="string">'New Zealand'</span>,</span><br><span class="line">        population: <span class="number">4822233</span>    </span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        name: <span class="string">'United States of America'</span>,</span><br><span class="line">        population: <span class="number">331002651</span>    </span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>We first import <code>OnInit</code> from <code>@angular/core</code> (which is where all lifecycle events are imported from). When <code>OnInit</code> occurs, the variable <code>countryList</code>, which is initially an empty array, is available for us to use.</p>
+<p>At this point, Angular automatically invokes <code>ngOnInit()</code> for us, the lifecycle method containing the code that we want to run during this initialization. In particular, we reassign the value of the component class’s <code>countryList</code> property to a new array of objects. This way, when the component mounts to the DOM, the <code>countryList</code> will be populated with an array of objects containing the data that we need, and the template will have access to the country data.</p>
+<blockquote>
+<h3 id="💡️-Can-I-Just-Use-the-constructor-Instead"><a href="#💡️-Can-I-Just-Use-the-constructor-Instead" class="headerlink" title="💡️ Can I Just Use the constructor() Instead?"></a>💡️ Can I Just Use the <code>constructor()</code> Instead?</h3><p>On the surface, it seems like the <code>constructor()</code> would be a logical place to keep initialization tasks as well.</p>
+<p>Recall that the <code>constructor()</code> is called <em>before</em> <code>ngOnInit()</code> in the component lifecycle. That is, data-bound properties haven’t be set and ready to use yet. If we tried referencing <code>countryList</code> in the <code>constructor()</code>, it would be an <code>undefined</code> value rather than the array we’d expect.</p>
+<p>As such, the <code>constructor()</code> should generally only be used for dependency injection (which we’ll visit later in this course), and not much more. Ideally, your <code>constructor()</code> functions should be kept relatively simple, and away from business logic.</p>
+</blockquote>
+<h2 id="Modules"><a href="#Modules" class="headerlink" title="Modules"></a>Modules</h2><h3 id="What-is-a-Module"><a href="#What-is-a-Module" class="headerlink" title="What is a Module?"></a>What is a Module?</h3><p>In general, a module collects a block of code dedicated to a single purpose.</p>
+<ul>
+<li>Cohesive, organized set of functionality</li>
+<li>TypeScript </li>
+<li>At least one root module(AppModule)</li>
+<li>Generated with the Angular CLI</li>
+</ul>
+<h3 id="Recall"><a href="#Recall" class="headerlink" title="Recall"></a>Recall</h3><p>Recall the terminal output when we ran the command, <code>ng generate component Photos</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">~$ ng generate component Photos</span><br><span class="line">CREATE src/app/photos/photos.component.css (0 bytes)</span><br><span class="line">CREATE src/app/photos/photos.component.html (21 bytes)</span><br><span class="line">CREATE src/app/photos/photos.component.spec.ts (626 bytes)</span><br><span class="line">CREATE src/app/photos/photos.component.ts (275 bytes)</span><br><span class="line">UPDATE src/app/app.module.ts (475 bytes)</span><br></pre></td></tr></table></figure>
+
+<p>The Angular CLI reports that four files were created, and one file was updated: <code>src/app/app.module.ts</code>. This is because generating an Angular component involves two steps:</p>
+<ol>
+<li>Creating the component files</li>
+<li>Registering the newly-generated component to a module (recall that a module is a set of closely-related capabilities or functionalities)</li>
+</ol>
+<p>As such, the Angular CLI automatically registers the module to the root application module, the <code>AppModule</code>.</p>
+<h3 id="The-AppModule"><a href="#The-AppModule" class="headerlink" title="The AppModule"></a>The <code>AppModule</code></h3><p>So, what happens to the <code>AppModule</code> when it is updated by the Angular CLI? Specifically, by registering the component, the Angular CLI updates a property called <code>declarations</code>:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/app/app.module.ts</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; BrowserModule &#125; <span class="keyword">from</span> <span class="string">'@angular/platform-browser'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; NgModule &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; AppRoutingModule &#125; <span class="keyword">from</span> <span class="string">'./app-routing.module'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; AppComponent &#125; <span class="keyword">from</span> <span class="string">'./app.component'</span>;</span><br><span class="line"><span class="comment">// The new component is automatically imported:</span></span><br><span class="line"><span class="keyword">import</span> &#123; PhotosComponent &#125; <span class="keyword">from</span> <span class="string">'./photos/photos.component'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@NgModule</span>(&#123;</span><br><span class="line">  declarations: [</span><br><span class="line">    AppComponent,</span><br><span class="line">    PhotosComponent <span class="comment">// The new component is added to declarations</span></span><br><span class="line">  ],</span><br><span class="line">  imports: [</span><br><span class="line">    BrowserModule,</span><br><span class="line">    AppRoutingModule</span><br><span class="line">  ],</span><br><span class="line">  providers: [],</span><br><span class="line">  bootstrap: [AppComponent]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> AppModule &#123; &#125;</span><br></pre></td></tr></table></figure>
+
+<p>Registering a component with a module is crucial, as it allows the component to be recognized by Angular. After importing <code>PhotosComponent</code> using ES6 <code>import</code> syntax, it is added to the <code>declarations</code> array, which defines all the components that live within the module. If the new component weren’t included here, and we try to use that component in our application, Angular will throw an error!</p>
+<h3 id="Generate-a-Module"><a href="#Generate-a-Module" class="headerlink" title="Generate a Module"></a>Generate a Module</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~$ ng generate module books</span><br><span class="line">CREATE src/app/books/books.module.ts (191 bytes)</span><br></pre></td></tr></table></figure>
+
+<p>The file created will have everything ready for you to start registering your components!</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/app/books/books.module.ts</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; NgModule &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; CommonModule &#125; <span class="keyword">from</span> <span class="string">'@angular/common'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@NgModule</span>(&#123;</span><br><span class="line">  declarations: [],</span><br><span class="line">  imports: [</span><br><span class="line">    CommonModule</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> BooksModule &#123; &#125;</span><br></pre></td></tr></table></figure>
+
+<p>We can open the folder of the module and create a component. This component will belong to the module.</p>
+<p>After we create a new module, we should add this module to <code>AppModule</code> in the imports part.</p>
+<h2 id="Directives"><a href="#Directives" class="headerlink" title="Directives"></a>Directives</h2><h3 id="Types"><a href="#Types" class="headerlink" title="Types"></a>Types</h3><p>The main responsibility for directives is to manipulate the DOM. There are three kinds of directives in Angular:</p>
+<ul>
+<li><strong>Components</strong> are directives with a template</li>
+<li><strong>Structural directive</strong> manipulate the DOM by adding or removing DOM elements</li>
+<li><strong>Attribute directives</strong> modify the appearance or behavior of a DOM element</li>
+</ul>
+<h3 id="ngFor"><a href="#ngFor" class="headerlink" title="ngFor"></a><code>ngFor</code></h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- countries.component.html --&gt;</span></span><br><span class="line"></span><br><span class="line">&#123;&#123; countryList &#125;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">Browser output:</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">[object Object],[object Object],[object Object] </span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- countries.component.html --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> *<span class="attr">ngFor</span>=<span class="string">"let country of countryList"</span>&gt;</span></span><br><span class="line">    &#123;&#123; country.name &#125;&#125; has &#123;&#123; country.population &#125;&#125; people.</span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">Browser output:</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">- Spain has 46754778 people.</span></span><br><span class="line"><span class="comment">- New Zealand has 4822233 people.</span></span><br><span class="line"><span class="comment">- United States of America has 331002651 people.</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="ngIf"><a href="#ngIf" class="headerlink" title="ngIf"></a><code>ngIf</code></h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app-blogs'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./blogs.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./blogs.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> BlogsComponent <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line">  title: <span class="built_in">string</span> = <span class="string">'My Favorite Blogs'</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span>) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit(): <span class="built_in">void</span> &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&lt;!-- blogs.component.html --&gt;</span><br><span class="line"></span><br><span class="line">&lt;p *ngIf=<span class="string">"title === 'My Favorite Blogs'"</span>&gt;</span><br><span class="line">  This is a list of my favorite blogs!</span><br><span class="line">&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;!-- </span></span><br><span class="line"><span class="regexp">Browser output:</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">This is a list of my favorite blogs!</span></span><br><span class="line"><span class="regexp">--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Attribute-Directives"><a href="#Attribute-Directives" class="headerlink" title="Attribute Directives"></a>Attribute Directives</h3><p>Along with structural directives, we can also leverage attribute directives to help manipulate the DOM.</p>
+<p>Recall that the attribute directive’s main responsibility is to modify the behavior or appearance of a DOM element. Consider <code>ngStyle</code>, which is an attribute directive that updates styles for the containing HTML element:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// header.component.ts</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app-header'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./header.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./header.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> HeaderComponent <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line">  title: <span class="built_in">string</span> = <span class="string">'Header'</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&lt;!-- header.component.html --&gt;</span><br><span class="line"></span><br><span class="line">&lt;p [ngStyle]=<span class="string">"&#123;'font-size': title === 'Header' ? '48px' : '12px' &#125;"</span>&gt;This is the header.&lt;<span class="regexp">/p&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>The <code>Header</code> component class above contains a <code>title</code> property whose value is set to <code>&#39;Header&#39;</code>. The component’s template leverages the <code>ngStyle</code> directive to conditionally apply styles directly to the paragraph element.</p>
+<h2 id="Sending-data"><a href="#Sending-data" class="headerlink" title="Sending data"></a>Sending data</h2><h3 id="Passing-Data-From-Parent-to-Child-Input"><a href="#Passing-Data-From-Parent-to-Child-Input" class="headerlink" title="Passing Data From Parent to Child: @Input"></a>Passing Data From Parent to Child: <code>@Input</code></h3><p>Angular gives us a useful tool to facilitate passing data from a parent component to its child component. By leveraging the <code>@Input</code> decorator in the child component class, we can get it ready to receive data from its parent.</p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><h4 id="PostItem-Class"><a href="#PostItem-Class" class="headerlink" title="PostItem Class"></a>PostItem Class</h4><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> PostItemComponent <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line">  <span class="meta">@Input</span>() post: Post;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span>) &#123; </span><br><span class="line">    <span class="keyword">this</span>.post = &#123;</span><br><span class="line">      id: <span class="number">0</span>,</span><br><span class="line">      title: <span class="string">''</span>,</span><br><span class="line">      body: <span class="string">''</span>,</span><br><span class="line">      votes: <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit(): <span class="built_in">void</span> &#123;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="PostItem-html"><a href="#PostItem-html" class="headerlink" title="PostItem html"></a>PostItem html</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>&#123;&#123; post.title &#125;&#125;<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; post.body &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Votes: &#123;&#123; post.votes &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Posts-html"><a href="#Posts-html" class="headerlink" title="Posts html"></a>Posts html</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- still use ngFor to iterate posts. </span></span><br><span class="line"><span class="comment">Rather than show the posts use list, pass each post to its child (post item) --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">app-post-item</span> *<span class="attr">ngFor</span> = <span class="string">"let post of posts"</span> [<span class="attr">post</span>] = <span class="string">"post"</span>&gt;</span><span class="tag">&lt;/<span class="name">app-post-item</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Event-binding"><a href="#Event-binding" class="headerlink" title="Event binding"></a>Event binding</h2><p><strong>Event binding</strong> allows us to listen for and respond to such user actions. That is, we detect when something has occurred on a target DOM element, and in response, we can invoke certain function methods in the template’s associated component class. As a result, with event binding, we can send information from the template <em>to</em> its corresponding component class.</p>
+<p>Consider the following example of an HTML template.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- click.component.html --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> (<span class="attr">click</span>)=<span class="string">"onClick()"</span>&gt;</span>Click me!<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>On the <code>&lt;button&gt;</code> element, note the block of code that says <code>(click)=&quot;onClick()&quot;</code>. This shows standard event binding syntax in Angular, which is made of two parts:</p>
+<ul>
+<li>The <strong>target event</strong> name in parentheses to the left of the equal sign (i.e., <code>click</code>)</li>
+<li>The <strong>template statement</strong> on the right of the equal sign, which is the method (<code>onClick()</code>) called in the component class whenever the target event occurs.</li>
+</ul>
+<p>Back in the component class, then, we might see something like this:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// click.component.ts</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app-click'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./click.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./click.component.scss'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> ClickComponent <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line"></span><br><span class="line">  clickAmount: <span class="built_in">number</span> = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span>) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit(): <span class="built_in">void</span> &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  onClick(): <span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.clickAmount += <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Sending-data-to-a-parent-component"><a href="#Sending-data-to-a-parent-component" class="headerlink" title="Sending data to a parent component"></a>Sending data to a parent component</h2><p>In many real-world applications, data for the book list, as well as any associated data for that list, might live in the parent <code>BooksList</code> component. As such, the parent needs to be notified of certain actions that occur in its child component.</p>
+<p>To accomplish this, the child component needs to <em>emit an event up</em> to its parent. We can leverage the <code>@Output</code> decorator as well as the <code>EvenEmitter</code> class to do just that:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// book-item.component.ts</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; Component, OnInit, Input, Output, EventEmitter &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app-book-item'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./book-item.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./book-item.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> BookItemComponent <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line">  <span class="meta">@Input</span>() book;</span><br><span class="line">  <span class="meta">@Output</span>() marked = <span class="keyword">new</span> EventEmitter();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span>) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit(): <span class="built_in">void</span> &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Similar to the event binding that we saw on the previous page, we can bind an event handler method from the parent <code>BooksList</code> component to the output property of its child component.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- books-list-component.html --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>List of available books<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">app-book-item</span> *<span class="attr">ngFor</span>=<span class="string">"let book of bookList"</span> [<span class="attr">book</span>]=<span class="string">"book"</span> (<span class="attr">marked</span>)=<span class="string">"markAsFavorite(book)"</span>&gt;</span><span class="tag">&lt;/<span class="name">app-book-item</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>In the above template, we “capture” the event emitted from the child component on the <code>marked</code> output property. This way, when the user clicks the button, the <code>BooksList</code> component invokes its <code>markAsFavorite()</code> method:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app-books-list'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./books-list.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./books-list.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> BooksListComponent <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line">  bookList: object[] = [];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span>) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit(): <span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.bookList = [</span><br><span class="line">      &#123;</span><br><span class="line">        id: <span class="number">1</span>,</span><br><span class="line">        title: <span class="string">'Pride and Prejudice'</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        id: <span class="number">2</span>,</span><br><span class="line">        title: <span class="string">'The Great Gatsby'</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        id: <span class="number">3</span>,</span><br><span class="line">        title: <span class="string">'The Catcher in the Rye'</span>,</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  markAsFavorite(book: <span class="built_in">any</span>): <span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;book.title&#125;</span> has been added to favorites.`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Navigation"><a href="#Navigation" class="headerlink" title="Navigation"></a>Navigation</h2><h2 id="Configuring-the-Angular-Router"><a href="#Configuring-the-Angular-Router" class="headerlink" title="Configuring the Angular Router"></a>Configuring the Angular Router</h2><p>In order to map a component to a particular path, most of the work involves configuring <code>routes</code>, which is an array of <code>Route</code> objects. Each object in the array defines a route in the application, as well as the component that responds to that route.</p>
+<p>For example, consider a web application that shows information about the libraries in your local county. Its <code>routes</code> may look something like this:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// app-routing.module.ts</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; NgModule &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Routes, RouterModule &#125; <span class="keyword">from</span> <span class="string">'@angular/router'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HomeComponent &#125; <span class="keyword">from</span> <span class="string">'./components/home/home.component'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; ContactComponent &#125; <span class="keyword">from</span> <span class="string">'./components/contact/contact.component'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; LibrariesComponent &#125; <span class="keyword">from</span> <span class="string">'./components/pages/libraries/libraries.component'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> routes: Routes = [</span><br><span class="line">  &#123; path: <span class="string">''</span>, component: HomeComponent &#125;,</span><br><span class="line">  &#123; path: <span class="string">'contact'</span>, component: ContactComponent &#125;,</span><br><span class="line">  &#123; path: <span class="string">'libraries/:id'</span>, component: LibrariesComponent &#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="meta">@NgModule</span>(&#123;</span><br><span class="line">  imports: [RouterModule.forRoot(routes)],</span><br><span class="line">  exports: [RouterModule]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> AppRoutingModule &#123; &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- app.component.html --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">app-header</span>&gt;</span><span class="tag">&lt;/<span class="name">app-header</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">router-outlet</span>&gt;</span><span class="tag">&lt;/<span class="name">router-outlet</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Setting-Up-Hyperlinks"><a href="#Setting-Up-Hyperlinks" class="headerlink" title="Setting Up Hyperlinks"></a>Setting Up Hyperlinks</h3><p>At this point, our routes do indeed work, but only if our users directly access them. That is, if the user types the URL (e.g., <code>http://localhost:4200/contact</code>) directly into the browser.</p>
+<p>This, of course, wouldn’t be an optimal experience for users of your application. In order to make anchor tags (<code>&lt;a&gt;</code>) work properly in the browser, we must add the proper route to the <code>routerLink</code> directive. For example:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- navigation.component.html --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Library Directory<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">nav</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">routerLink</span>=<span class="string">"/"</span>&gt;</span>Home<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">routerLink</span>=<span class="string">"/contact"</span>&gt;</span>Contact us<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Since we are building a single-page application, using <code>routerLink</code> (versus <code>href</code>) allows us to navigate to other components without reloading the page. Note that unlike the <code>path</code> property of the <code>Route</code> objects we saw previously, there is a preceding <code>/</code> that we use before the component name in the value for <code>routerLink</code>.</p>
+
+      
+    </div>
+    
+    
+    
+	
+	
+      <div>
+          
+    <div style="text-align:center;color: #ccc;font-size:14px;">
+        ------ 本文结束<i class="fa fa-paw"></i>感谢您的阅读 ------</div>
+    
+      </div>
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>如果觉得不错，可以打赏喔~</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Qian Hongbo 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Qian Hongbo 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Qian Hongbo
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.qianhongbo.com/Fullstack/Angular-Basis.html" title="Angular Basis">https://www.qianhongbo.com/Fullstack/Angular-Basis.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Fullstack/Authentication-and-Authorization-in-a-Node-API.html" rel="next" title="Authentication and Authorization in a Node API">
+                <i class="fa fa-chevron-left"></i> Authentication and Authorization in a Node API
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/Me.JPG" alt="Qian Hongbo">
+            
+              <p class="site-author-name" itemprop="name">Qian Hongbo</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Qianhongbo" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="/images/wechat.jpg" target="_blank" title="Wechat">
+                      
+                        <i class="fa fa-fw fa-weixin"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="/images/QQ.jpg" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/Qianhongbo" target="_blank" title="Zhihu">
+                      
+                        <i class="fa fa-fw fa-heart"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://music.163.com/#/user/home?id=411692137" target="_blank" title="music163">
+                      
+                        <i class="fa fa-fw fa-music"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+	<br>
+
+  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1826996483&auto=0&height=66"></iframe>
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Angular-Basis"><span class="nav-number">1.</span> <span class="nav-text">Angular Basis</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Angular-CLI"><span class="nav-number">1.1.</span> <span class="nav-text">Angular CLI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-and-Configure-the-Angular-CLI"><span class="nav-number">1.2.</span> <span class="nav-text">Install and Configure the Angular CLI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Create-a-New-Angular-Project"><span class="nav-number">1.3.</span> <span class="nav-text">Create a New Angular Project</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Component"><span class="nav-number">1.4.</span> <span class="nav-text">Component</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-a-component"><span class="nav-number">1.4.1.</span> <span class="nav-text">What is a component?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-makes-up-a-component"><span class="nav-number">1.4.2.</span> <span class="nav-text">What makes up a component?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Visualizing-Components"><span class="nav-number">1.4.3.</span> <span class="nav-text">Visualizing Components</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-a-Component"><span class="nav-number">1.4.4.</span> <span class="nav-text">Generate a Component</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-in-a-Component-Class"><span class="nav-number">1.4.5.</span> <span class="nav-text">What is in a Component Class</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-in-the-Component-Class"><span class="nav-number">1.4.6.</span> <span class="nav-text">Data in the Component Class</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-component-lifecycle"><span class="nav-number">1.4.7.</span> <span class="nav-text">The component lifecycle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lifecycle-Methods"><span class="nav-number">1.4.8.</span> <span class="nav-text">Lifecycle Methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ngOnInit"><span class="nav-number">1.4.9.</span> <span class="nav-text">ngOnInit()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#💡️-Can-I-Just-Use-the-constructor-Instead"><span class="nav-number">1.4.10.</span> <span class="nav-text">💡️ Can I Just Use the constructor() Instead?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Modules"><span class="nav-number">1.5.</span> <span class="nav-text">Modules</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-a-Module"><span class="nav-number">1.5.1.</span> <span class="nav-text">What is a Module?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Recall"><span class="nav-number">1.5.2.</span> <span class="nav-text">Recall</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-AppModule"><span class="nav-number">1.5.3.</span> <span class="nav-text">The AppModule</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-a-Module"><span class="nav-number">1.5.4.</span> <span class="nav-text">Generate a Module</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Directives"><span class="nav-number">1.6.</span> <span class="nav-text">Directives</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Types"><span class="nav-number">1.6.1.</span> <span class="nav-text">Types</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ngFor"><span class="nav-number">1.6.2.</span> <span class="nav-text">ngFor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ngIf"><span class="nav-number">1.6.3.</span> <span class="nav-text">ngIf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Attribute-Directives"><span class="nav-number">1.6.4.</span> <span class="nav-text">Attribute Directives</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sending-data"><span class="nav-number">1.7.</span> <span class="nav-text">Sending data</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Passing-Data-From-Parent-to-Child-Input"><span class="nav-number">1.7.1.</span> <span class="nav-text">Passing Data From Parent to Child: @Input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example"><span class="nav-number">1.7.2.</span> <span class="nav-text">Example</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PostItem-Class"><span class="nav-number">1.7.2.1.</span> <span class="nav-text">PostItem Class</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PostItem-html"><span class="nav-number">1.7.2.2.</span> <span class="nav-text">PostItem html</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Posts-html"><span class="nav-number">1.7.2.3.</span> <span class="nav-text">Posts html</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Event-binding"><span class="nav-number">1.8.</span> <span class="nav-text">Event binding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sending-data-to-a-parent-component"><span class="nav-number">1.9.</span> <span class="nav-text">Sending data to a parent component</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Navigation"><span class="nav-number">1.10.</span> <span class="nav-text">Navigation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Configuring-the-Angular-Router"><span class="nav-number">1.11.</span> <span class="nav-text">Configuring the Angular Router</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Setting-Up-Hyperlinks"><span class="nav-number">1.11.1.</span> <span class="nav-text">Setting Up Hyperlinks</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Qian Hongbo</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">63k</span>
+  
+</div>
+
+
+
+
+
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("06/04/2019 12:27:43");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://qianhongbo.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://www.qianhongbo.com/Fullstack/Angular-Basis.html';
+          this.page.identifier = 'Fullstack/Angular-Basis.html';
+          this.page.title = 'Angular Basis';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://qianhongbo.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "./public/search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":166,"height":200},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+
+
+<!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+
+</html>

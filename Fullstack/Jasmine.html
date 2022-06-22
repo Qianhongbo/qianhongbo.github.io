@@ -110,18 +110,18 @@
 
 
 
-<meta name="description" content="Install Jasmine">
+<meta name="description" content="Configure JasmineInstall Jasmine: To install Jasmine run: 1npm i jasmine  Add a reporter for outputting Jasmine results to the terminal: 1npm i jasmine-spec-reporter  Add type definitions for Jasmine">
 <meta name="keywords" content="WoW">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Jasmine">
 <meta property="og:url" content="https://www.qianhongbo.com/Fullstack/Jasmine.html">
 <meta property="og:site_name" content="Blog | Qian Homeberg">
-<meta property="og:description" content="Install Jasmine">
+<meta property="og:description" content="Configure JasmineInstall Jasmine: To install Jasmine run: 1npm i jasmine  Add a reporter for outputting Jasmine results to the terminal: 1npm i jasmine-spec-reporter  Add type definitions for Jasmine">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-04-03T19:14:32.524Z">
+<meta property="og:updated_time" content="2022-04-06T22:01:27.199Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jasmine">
-<meta name="twitter:description" content="Install Jasmine">
+<meta name="twitter:description" content="Configure JasmineInstall Jasmine: To install Jasmine run: 1npm i jasmine  Add a reporter for outputting Jasmine results to the terminal: 1npm i jasmine-spec-reporter  Add type definitions for Jasmine">
 
 
 
@@ -375,7 +375,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-04-03T12:01:39+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-04-02T21:01:39-07:00">
                 2022-04-03
               </time>
             
@@ -446,7 +446,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2 字
+                  685 字
                 </span>
               
 
@@ -462,7 +462,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  4 分钟
                 </span>
               
             </div>
@@ -484,7 +484,138 @@
       
 
       
-        <h2 id="Install-Jasmine"><a href="#Install-Jasmine" class="headerlink" title="Install Jasmine"></a>Install Jasmine</h2>
+        <h2 id="Configure-Jasmine"><a href="#Configure-Jasmine" class="headerlink" title="Configure Jasmine"></a>Configure Jasmine</h2><h3 id="Install-Jasmine"><a href="#Install-Jasmine" class="headerlink" title="Install Jasmine:"></a>Install Jasmine:</h3><ol>
+<li><p>To install Jasmine run:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i jasmine</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Add a reporter for outputting Jasmine results to the terminal:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i jasmine-spec-reporter</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Add type definitions for Jasmine with :</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i --save-dev @types/jasmine</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="Add-Testing-Scripts"><a href="#Add-Testing-Scripts" class="headerlink" title="Add Testing Scripts:"></a>Add Testing Scripts:</h3><p>Add the scripts object in the <code>package.json</code> and add the followingto run Jasmine:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"jasmine"</span>: <span class="string">"jasmine"</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Set-up-the-file-structure"><a href="#Set-up-the-file-structure" class="headerlink" title="Set up the file structure"></a>Set up the file structure</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">├── node_modules</span><br><span class="line">├── spec</span><br><span class="line">│      └── support</span><br><span class="line">│           └── jasmine.json</span><br><span class="line">├── src</span><br><span class="line">│     ├──  tests</span><br><span class="line">│     │     ├── helpers</span><br><span class="line">│     │     │      └── reporter.ts</span><br><span class="line">│     │     └── indexSpec.ts</span><br><span class="line">│     └── index.ts</span><br><span class="line">├── package-lock.json</span><br><span class="line">├── package.json</span><br><span class="line">└── tsconfig.json</span><br></pre></td></tr></table></figure>
+
+<h3 id="Add-code-to-reporter-ts"><a href="#Add-code-to-reporter-ts" class="headerlink" title="Add code to reporter.ts"></a>Add code to <code>reporter.ts</code></h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;DisplayProcessor, SpecReporter, StacktraceOption&#125; <span class="keyword">from</span> <span class="string">"jasmine-spec-reporter"</span>;</span><br><span class="line"><span class="keyword">import</span> SuiteInfo = jasmine.SuiteInfo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> CustomProcessor <span class="keyword">extends</span> DisplayProcessor &#123;</span><br><span class="line">    <span class="keyword">public</span> displayJasmineStarted(info: SuiteInfo, log: <span class="built_in">string</span>): <span class="built_in">string</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;log&#125;</span>`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">jasmine.getEnv().clearReporters();</span><br><span class="line">jasmine.getEnv().addReporter(<span class="keyword">new</span> SpecReporter(&#123;</span><br><span class="line">    spec: &#123;</span><br><span class="line">        displayStacktrace: StacktraceOption.NONE</span><br><span class="line">    &#125;,</span><br><span class="line">    customProcessors: [CustomProcessor],</span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
+
+<h3 id="Add-code-to-jasmine-json"><a href="#Add-code-to-jasmine-json" class="headerlink" title="Add code to jasmine.json"></a>Add code to <code>jasmine.json</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;spec_dir&quot;: &quot;build/tests&quot;,</span><br><span class="line">    &quot;spec_files&quot;: [</span><br><span class="line">        &quot;**/*[sS]pec.js&quot;</span><br><span class="line">    ],</span><br><span class="line">    &quot;helpers&quot;: [</span><br><span class="line">        &quot;helpers/**/*.js&quot;</span><br><span class="line">    ],</span><br><span class="line">    &quot;stopSpecOnExpectationFailure&quot;: false,</span><br><span class="line">    &quot;random&quot;: false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Add-code-to-tsconfig-json"><a href="#Add-code-to-tsconfig-json" class="headerlink" title="Add code to tsconfig.json"></a>Add code to <code>tsconfig.json</code></h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"exclude": ["node_modules", "./dist", "spec"]</span><br></pre></td></tr></table></figure>
+
+<h2 id="Write-a-Basic-Test"><a href="#Write-a-Basic-Test" class="headerlink" title="Write a Basic Test"></a>Write a Basic Test</h2><p><code>index.ts</code></p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myFunc = (num: <span class="built_in">number</span>): <span class="function"><span class="params">number</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> num * num;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> myFunc;</span><br></pre></td></tr></table></figure>
+
+<p><code>indexSpec.ts</code></p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> myFunc <span class="keyword">from</span> <span class="string">'../index'</span>;</span><br><span class="line"></span><br><span class="line">it(<span class="string">'expect myFunc(5) to equal 25'</span>, <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  expect(myFunc(<span class="number">5</span>)).toEqual(<span class="number">25</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>To test this we’ll need to first run the build script and then the test script:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br><span class="line">npm run jasmine</span><br></pre></td></tr></table></figure>
+
+<h2 id="Jasmine-syntax"><a href="#Jasmine-syntax" class="headerlink" title="Jasmine syntax"></a>Jasmine syntax</h2><blockquote>
+<p>The sample code is in this <a href="https://github.com/Qianhongbo/JavaScript/tree/master/jasmine_comparisons" target="_blank" rel="noopener">website</a>.</p>
+</blockquote>
+<blockquote>
+<ul>
+<li><strong>Spec</strong>: an individual test</li>
+<li><strong>Suite</strong>: a collection of similar tests related to one function</li>
+</ul>
+</blockquote>
+<ul>
+<li>Use the <strong>describe</strong> keyword followed by a short description of what the suite is testing and one or more specs.</li>
+<li>A best practice is to start a sentence with “it” and then complete the sentence with the description of what the suite is testing.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">describe(“suite description”, () =&gt; &#123;</span><br><span class="line">    it(“describes the spec”, () =&gt; &#123;</span><br><span class="line">        const myVar = true;</span><br><span class="line">        expect(myVar).toBe(true);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Comparisons"><a href="#Comparisons" class="headerlink" title="Comparisons"></a>Comparisons</h3><ul>
+<li><p><code>.toEqual</code> : check the value</p>
+</li>
+<li><p><code>.toBe</code> : check the object</p>
+</li>
+<li><p><code>.toBeTruthy()</code>passes when</p>
+<ul>
+<li>The expectation has any non-zero value</li>
+<li>The expectation evaluates to <code>true</code></li>
+</ul>
+</li>
+<li><p><code>.toBeFalsy()</code> passes when the value is:</p>
+<ul>
+<li><code>0</code></li>
+<li><code>&#39;&#39;</code> (an empty string)</li>
+<li><code>undefined</code></li>
+<li><code>null</code></li>
+<li><code>NaN</code></li>
+</ul>
+</li>
+<li><p><code>.toBeCloseTo(expected value, precision)</code></p>
+<ul>
+<li>Passes if a value is within a specified precision of the expected value</li>
+<li>Precision is optional and is represented the number of decimal points to check (defaults to 2)</li>
+</ul>
+</li>
+<li><p><code>.toBeGreaterThan(expected value)</code></p>
+</li>
+<li><p><code>.toBeLessThan(expected value)</code></p>
+</li>
+<li><p><code>.toBeGreaterThanOrEqual(expected value)</code></p>
+</li>
+<li><p><code>.toBeLessThanOrEqual(expected value)</code></p>
+</li>
+<li><p>use <code>.not</code> to negate the matcher</p>
+</li>
+</ul>
+<h2 id="Test-asynchronous-code"><a href="#Test-asynchronous-code" class="headerlink" title="Test asynchronous code"></a>Test asynchronous code</h2><blockquote>
+<p>The sample code is in this <a href="https://github.com/Qianhongbo/JavaScript/tree/master/jasmine_asynchronous" target="_blank" rel="noopener">website</a>.</p>
+</blockquote>
+<h3 id="async-await"><a href="#async-await" class="headerlink" title="async/await"></a>async/await</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">it(&apos;expects asyncFunc() result to equal value&apos;, </span><br><span class="line">  async () =&gt; &#123;</span><br><span class="line">    const result = await asyncFunc();</span><br><span class="line">    expect(result).toEqual(value);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">it(&apos;expects asyncFunc() result to equal value&apos;,</span><br><span class="line">  () =&gt; &#123;</span><br><span class="line">    return asyncFunc().then( result =&gt; &#123;</span><br><span class="line">        expect(result).toEqual(value);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="Endpoint-testing"><a href="#Endpoint-testing" class="headerlink" title="Endpoint testing"></a>Endpoint testing</h2><blockquote>
+<p>The sample code is in this <a href="https://github.com/Qianhongbo/JavaScript/tree/master/endpoint_tesing" target="_blank" rel="noopener">website</a>.</p>
+</blockquote>
+<h3 id="Benefits-of-Endpoint-Testing"><a href="#Benefits-of-Endpoint-Testing" class="headerlink" title="Benefits of Endpoint Testing"></a>Benefits of Endpoint Testing</h3><ul>
+<li>Confirms that the server is working.</li>
+<li>Confirms that endpoints are configured properly.</li>
+<li>More efficient than manual testing.</li>
+</ul>
+<h3 id="Setting-Up-Endpoint-Testing"><a href="#Setting-Up-Endpoint-Testing" class="headerlink" title="Setting Up Endpoint Testing"></a>Setting Up Endpoint Testing</h3><ul>
+<li>Install Supertest as a dependency.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i supertest</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Add type definition to allow the code to compile without TypeScript errors.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i --save-dev @types/supertest.</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Import SuperTest in the spec file.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> supertest <span class="keyword">from</span> <span class="string">'supertest'</span>;</span><br><span class="line"><span class="keyword">import</span> app <span class="keyword">from</span> <span class="string">'../index'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> request = supertest(app);</span><br><span class="line">describe(<span class="string">'Test endpoint responses'</span>, () =&gt; &#123;</span><br><span class="line">    it(<span class="string">'gets the api endpoint'</span>, <span class="keyword">async</span> (done) =&gt; &#123;</span><br><span class="line">        <span class="keyword">const</span> response = <span class="keyword">await</span> request.get(<span class="string">'/api'</span>);</span><br><span class="line">        expect(response.status).toBe(<span class="number">200</span>);</span><br><span class="line">        done();</span><br><span class="line">    &#125;</span><br><span class="line">)&#125;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Create and Run Tests</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm run <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Setup-and-teardown"><a href="#Setup-and-teardown" class="headerlink" title="Setup and teardown"></a>Setup and teardown</h2><ul>
+<li><p><code>beforeAll();</code>can be used to run some code before the specs run, and any log statements show up before the specs.</p>
+</li>
+<li><p><code>afterAll();</code> allows functionality to be added after all of the specs in a suite have run. Log statements will show after the specs.</p>
+</li>
+<li><p><code>beforeEach();</code> and <code>afterEach();</code> will run before or after each one of the individual specs.</p>
+</li>
+<li><p><code>fdescribe</code> and <code>fit</code> allows jasmine to focus on one specific suite, skipping the others</p>
+</li>
+<li><p><code>xdescribe</code> and <code>xit</code> allows Jasmine to skip a specific suite or test, running all others.</p>
+</li>
+</ul>
+
       
     </div>
     
@@ -574,6 +705,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/Fullstack/Express.html" rel="prev" title="Express">
+                Express <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -661,7 +796,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-count">62</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -759,7 +894,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-Jasmine"><span class="nav-number">1.</span> <span class="nav-text">Install Jasmine</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Configure-Jasmine"><span class="nav-number">1.</span> <span class="nav-text">Configure Jasmine</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-Jasmine"><span class="nav-number">1.1.</span> <span class="nav-text">Install Jasmine:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Add-Testing-Scripts"><span class="nav-number">1.2.</span> <span class="nav-text">Add Testing Scripts:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set-up-the-file-structure"><span class="nav-number">1.3.</span> <span class="nav-text">Set up the file structure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Add-code-to-reporter-ts"><span class="nav-number">1.4.</span> <span class="nav-text">Add code to reporter.ts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Add-code-to-jasmine-json"><span class="nav-number">1.5.</span> <span class="nav-text">Add code to jasmine.json</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Add-code-to-tsconfig-json"><span class="nav-number">1.6.</span> <span class="nav-text">Add code to tsconfig.json</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Write-a-Basic-Test"><span class="nav-number">2.</span> <span class="nav-text">Write a Basic Test</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jasmine-syntax"><span class="nav-number">3.</span> <span class="nav-text">Jasmine syntax</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Comparisons"><span class="nav-number">3.1.</span> <span class="nav-text">Comparisons</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Test-asynchronous-code"><span class="nav-number">4.</span> <span class="nav-text">Test asynchronous code</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#async-await"><span class="nav-number">4.1.</span> <span class="nav-text">async/await</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#promise"><span class="nav-number">4.2.</span> <span class="nav-text">promise</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Endpoint-testing"><span class="nav-number">5.</span> <span class="nav-text">Endpoint testing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Benefits-of-Endpoint-Testing"><span class="nav-number">5.1.</span> <span class="nav-text">Benefits of Endpoint Testing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Setting-Up-Endpoint-Testing"><span class="nav-number">5.2.</span> <span class="nav-text">Setting Up Endpoint Testing</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Setup-and-teardown"><span class="nav-number">6.</span> <span class="nav-text">Setup and teardown</span></a></li></ol></div>
             
 
           </div>
@@ -793,7 +928,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">57k</span>
+    <span title="Site words total count">63k</span>
   
 </div>
 

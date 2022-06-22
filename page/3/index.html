@@ -346,7 +346,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/LeetCode/Kadane's Algorithm.html">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Fullstack/Node-js.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Qian Hongbo">
@@ -365,7 +365,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/LeetCode/Kadane's Algorithm.html" itemprop="url">Kadane's Algorithm</a></h2>
+                <a class="post-title-link" href="/Fullstack/Node-js.html" itemprop="url">Node.js</a></h2>
         
 
         <div class="post-meta">
@@ -377,8 +377,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-02-23T10:42:03+08:00">
-                2022-02-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-03-07T22:08:58+08:00">
+                2022-03-07
               </time>
             
 
@@ -400,8 +400,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">Leetcode</span>
+                  <a href="/categories/Fullstack/" itemprop="url" rel="index">
+                    <span itemprop="name">Fullstack</span>
                   </a>
                 </span>
 
@@ -420,8 +420,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/LeetCode/Kadane's Algorithm.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="LeetCode/Kadane's Algorithm.html" itemprop="commentCount"></span>
+                <a href="/Fullstack/Node-js.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Fullstack/Node-js.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  218 字
+                  880 字
                 </span>
               
 
@@ -459,7 +459,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  5 分钟
                 </span>
               
             </div>
@@ -483,15 +483,327 @@
       
         
           
-            <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Write a function that takes in a non-empty array of integers an returns the maximum sum that can be obtained by summing up all of the integers in a non empty sunarray of the input array. A subarray must only contain adjacent numbers.</p>
-<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array = [<span class="number">3</span>, <span class="number">5</span>, <span class="number">-9</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">-2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">2</span>, <span class="number">-9</span>, <span class="number">6</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">-5</span>, <span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+            <h2 id="History-of-Backend-Development"><a href="#History-of-Backend-Development" class="headerlink" title="History of Backend Development"></a>History of Backend Development</h2><p><img src="https://video.udacity-data.com/topher/2021/February/60351af5_screen-shot-2021-02-23-at-9.04.16-am/screen-shot-2021-02-23-at-9.04.16-am.png" alt></p>
+<h2 id="pros-and-cons"><a href="#pros-and-cons" class="headerlink" title="pros and cons"></a>pros and cons</h2><h3 id="The-Node-js-Advantage"><a href="#The-Node-js-Advantage" class="headerlink" title="The Node.js Advantage"></a>The Node.js Advantage</h3><ul>
+<li>Node.js allows for JavaScript to be used on the frontend and backend.</li>
+<li>Node.js allows for easy application scaling and maintenance.</li>
+</ul>
+<h3 id="The-Node-js-Disadvantage"><a href="#The-Node-js-Disadvantage" class="headerlink" title="The Node.js Disadvantage"></a>The Node.js Disadvantage</h3><p>Node.js is <strong>not</strong> well-suited for applications that require heavy processing and computation, like video processing, 3D games, and traffic mapping.</p>
+<h2 id="Javascript-with-Node-js"><a href="#Javascript-with-Node-js" class="headerlink" title="Javascript with Node.js"></a>Javascript with Node.js</h2><h3 id="To-run-index-js-use"><a href="#To-run-index-js-use" class="headerlink" title="To run index.js use:"></a>To run <code>index.js</code> use:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ node src/index.js</span><br></pre></td></tr></table></figure>
 
-<h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">19</span> // [<span class="number">1</span>, <span class="number">3</span>, <span class="number">-2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">2</span>, <span class="number">-9</span>, <span class="number">6</span>, <span class="number">3</span>, <span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+<h2 id="Common-JS-Module-System"><a href="#Common-JS-Module-System" class="headerlink" title="Common JS Module System"></a>Common JS Module System</h2><p>The module system creates the ability to export and import JavaScript from separate files.</p>
+<h3 id="Export"><a href="#Export" class="headerlink" title="Export"></a>Export</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// working file = util/logger.js</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// exports as object</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123; </span><br><span class="line">    myFirstFunction: myFirstFunction,</span><br><span class="line">    mySecondFunction: mySecondFunction</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// using ES6 shorthand property names</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123; </span><br><span class="line">    myFirstFunction,</span><br><span class="line">    mySecondFunction</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>The reason why this question is not that straightforward is that there exists negative number in the array. If the negative number is small enough, we need to discard all preceding numbers and it.</p>
-<p>Compare the sum ending here with the number here. Save the bigger number as <code>maxEndingHere</code>. If the number here is negative and small enough, we just save the next number. </p>
-<p>Compare all the <code>maxEndingHere</code>, the maximum <code>maxSoFar</code> will be the final result.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(n) time | O(1) space</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">kadanesAlgorithm</span><span class="params">(array)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    Find the maximum sum that can be obtained by </span></span><br><span class="line"><span class="string">    all of the integers of the subarray of input array.</span></span><br><span class="line"><span class="string">    :param array: an array</span></span><br><span class="line"><span class="string">    :return: the maximum sum</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">assert</span> isinstance(array, list)</span><br><span class="line"></span><br><span class="line">    maxEndingHere = array[<span class="number">0</span>]</span><br><span class="line">    maxSoFar = array[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(array)):</span><br><span class="line">        num = array[i]</span><br><span class="line">        maxEndingHere = max(maxEndingHere + num, num)</span><br><span class="line">        maxSoFar = max(maxSoFar, maxEndingHere)</span><br><span class="line">    <span class="keyword">return</span> maxSoFar</span><br></pre></td></tr></table></figure>
+<h3 id="Require"><a href="#Require" class="headerlink" title="Require"></a>Require</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// working file = index.js</span></span><br><span class="line"><span class="comment">// all functions in util/logger.js are available</span></span><br><span class="line"><span class="keyword">const</span> logger = <span class="built_in">require</span>(<span class="string">'./util/logger.js'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// using ES6 object destructuring, only myFirstFunction is available</span></span><br><span class="line"><span class="keyword">const</span> &#123; myFirstFunction &#125; = <span class="built_in">require</span>(<span class="string">'./util/logger.js'</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="Event-Loop"><a href="#Event-Loop" class="headerlink" title="Event Loop"></a>Event Loop</h2><p>Nearly every Node.js feature is considered to be asynchronous (non-blocking). This means that we can request an API using promises and have our application continue running while that request is being waited for. But how does Node.js process that asynchronous request? Both the Browser and Node.js take advantage of something called the Event Loop. The Event Loop isn’t an API or language; it’s a process that runs anytime you have asynchronous code.</p>
+<p>The Event Loop controls the order in which results (output) of asynchronous tasks (input) are displayed. Think of the Event Loop as the person working the door at an exclusive venue. That person lets people in based on a set of information provided by the venue. Your application is the venue, your asynchronous tasks are the people trying to get in, and it’s your job to tell the door person how to do so. Once you become familiar with the Event Loop and the order in which Node.js handles tasks, you will control when those tasks occur in your application</p>
+<h3 id="Six-Phases-of-The-Event-Loop"><a href="#Six-Phases-of-The-Event-Loop" class="headerlink" title="Six Phases of The Event Loop"></a>Six Phases of The Event Loop</h3><ol>
+<li><strong>Timers</strong> - executes callbacks using timers. If there are timers set to <code>0 ms</code> or <code>setImmediate(),</code> they will run here. Incomplete timers will run in later iterations of the loop.</li>
+<li><strong>Pending</strong> - <em>internal phase</em></li>
+<li><strong>Idle/Prepare</strong> - <em>internal phase</em></li>
+<li><strong>Poll</strong> - process I/O callbacks</li>
+<li><strong>Check</strong> - execute any <code>setImmediate()</code> timers added in the Poll phase</li>
+<li><strong>Close</strong> - loop continues if there are more timers or I/O calls. If all timers and I/O calls are done, the loop closes and the process ends.</li>
+</ol>
+<p><img src="https://video.udacity-data.com/topher/2021/February/6033fb75_fsjs-c1-l1-event-loop/fsjs-c1-l1-event-loop.jpg" alt></p>
+<h2 id="NPM"><a href="#NPM" class="headerlink" title="NPM"></a>NPM</h2><h3 id="Initializing-npm-and-Creating-a-package-json-file"><a href="#Initializing-npm-and-Creating-a-package-json-file" class="headerlink" title="Initializing npm and Creating a package.json file"></a>Initializing <code>npm</code> and Creating a <code>package.json</code> file</h3><p>Initializing npm will create a package.json within the root of your application folder containing general information about the project.</p>
+<p>To initialize <code>npm</code> and go through all of the settings use:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm init</span><br></pre></td></tr></table></figure>
+
+<p>To automatically select all defaults use <code>-y</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm init -y</span><br></pre></td></tr></table></figure>
+
+<h3 id="Adding-Dependencies"><a href="#Adding-Dependencies" class="headerlink" title="Adding Dependencies"></a>Adding Dependencies</h3><blockquote>
+<p><a href="http://www.npmjs.com" target="_blank" rel="noopener">www.npmjs.com</a> is the node package management library.</p>
+</blockquote>
+<p>Applications will either include both dependencies and devDependencies or just dependencies. It is dependent on the team setting up the project. <code>devDependencies</code> are thought of as dependencies that are only necessary for development whereas <code>dependencies</code> are those dependencies used in both development and production. </p>
+<p>An example would be needing TypeScript added as a dependency for development, but since it compiles to standard JavaScript to be used in production, TypeScript is not needed for production and therefore could be just a <code>devDependency</code>. </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ npm i module-name // install module to dependencies</span><br><span class="line">$ npm i --save-dev module-name // install to dev dependencies</span><br><span class="line">$ npm i --save-dev module-name@1.19 // install a specific version (1.19 here) of module</span><br></pre></td></tr></table></figure>
+
+<p>Installing dependencies adds the dependency to your package.json file in the format:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"devDependencies"</span>: &#123;</span><br><span class="line">  <span class="string">"prettier"</span>: <span class="string">"^2.2.1"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>The version states what was installed, but it also clarifies how it can be updated should you remove the node_modules and package-lock.json files and reinstall all dependencies with <code>$ npm install</code>.</p>
+<h3 id="package-lock-json"><a href="#package-lock-json" class="headerlink" title="package-lock.json"></a>package-lock.json</h3><p><code>package-lock.json</code> contains all of the information for the dependencies of the modules you have installed.</p>
+<p>It is best practice to add <code>package-lock.json</code> as well as .<code>/node_modules</code> to your <code>.gitignore</code> file when using a repository. The <code>node_modules</code> folder can grow rapidly, containing thousands of files. It is best to clone a repository without <code>node_modules</code> and run <code>npm install</code> to reinstall all dependencies of the project directly from npm.</p>
+<h3 id="npm-update"><a href="#npm-update" class="headerlink" title="npm update"></a>npm update</h3><p>running <code>$ npm update</code> will update all of your dependencies based on the specifications given in your package.json file.</p>
+<h3 id="scripts"><a href="#scripts" class="headerlink" title="scripts"></a>scripts</h3><p>To run a script that you have added to your package.json file, simply run <code>$ npm run</code> argument with the name of the script as the argument.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm run prettier</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// touch .prettierrc</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">"semi"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"singleQuote"</span>: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"prettier"</span>: <span class="string">"prettier --config .prettierrc 'NPM/**/*.js' --write"</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Compiled-vs-Interpreted-Language"><a href="#Compiled-vs-Interpreted-Language" class="headerlink" title="Compiled vs. Interpreted Language"></a>Compiled vs. Interpreted Language</h2><h3 id="Compiled-Language"><a href="#Compiled-Language" class="headerlink" title="Compiled Language"></a>Compiled Language</h3><ul>
+<li>Language is written and compiled to machine code inside of an application</li>
+<li>Errors are detected during compiling</li>
+<li>The code won’t compile until it’s error-free</li>
+<li>Examples: C, C++, Erlang, Go</li>
+</ul>
+<h3 id="JavaScript-is-an-Interpreted-Language"><a href="#JavaScript-is-an-Interpreted-Language" class="headerlink" title="JavaScript is an Interpreted Language"></a>JavaScript is an Interpreted Language</h3><ul>
+<li>Errors found when the code is run</li>
+<li>The interpreter translates and runs code one statement at a time</li>
+<li>Interpreted code runs more slowly</li>
+</ul>
+<h3 id="Node-js-Is-an-Interpreter"><a href="#Node-js-Is-an-Interpreter" class="headerlink" title="Node.js Is an Interpreter"></a>Node.js Is an Interpreter</h3><ul>
+<li>Node.js is mostly written in C++</li>
+<li>Many node modules also include some C++ code</li>
+<li>Other modules include Python or C</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Fullstack/JavaScript-Notes.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Fullstack/JavaScript-Notes.html" itemprop="url">JavaScript Notes</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-03-07T22:08:43+08:00">
+                2022-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Fullstack/" itemprop="url" rel="index">
+                    <span itemprop="name">Fullstack</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Fullstack/JavaScript-Notes.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Fullstack/JavaScript-Notes.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  726 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Null-Undefined-and-NaN"><a href="#Null-Undefined-and-NaN" class="headerlink" title="Null, Undefined and NaN"></a>Null, Undefined and NaN</h2><h3 id="null-means-“value-of-nothing”"><a href="#null-means-“value-of-nothing”" class="headerlink" title="null means “value of nothing”"></a>null means “value of nothing”</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="literal">null</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="undefined-means-“absence-of-value”"><a href="#undefined-means-“absence-of-value”" class="headerlink" title="undefined means “absence of value”"></a>undefined means “absence of value”</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x;</span><br><span class="line"><span class="built_in">console</span>.log(x);</span><br></pre></td></tr></table></figure>
+
+<h3 id="NaN-means-“not-a-number”"><a href="#NaN-means-“not-a-number”" class="headerlink" title="NaN means “not a number”"></a>NaN means “not a number”</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// calculating the square root of a negative number will return NaN</span></span><br><span class="line"><span class="built_in">Math</span>.sqrt(<span class="number">-10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// trying to divide a string by 5 will return NaN</span></span><br><span class="line"><span class="string">"hello"</span>/<span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Equality"><a href="#Equality" class="headerlink" title="Equality"></a>Equality</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"1"</span> == <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>Returns:</strong> true</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"1"</span> === <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>Returns:</strong> false</p>
+</blockquote>
+<h2 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> sum = x + y;</span><br><span class="line">  <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> sum = add(<span class="number">1</span>, <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>If you don’t explicitly define a return value, the function will return <code>undefined</code> by default.</p>
+</blockquote>
+<h2 id="Hoisting"><a href="#Hoisting" class="headerlink" title="Hoisting"></a>Hoisting</h2><p>The function can be declared after we call it. The interpreter will help us to change the sequence of the code. </p>
+<p>Also, we can also declare the variable after we use it, but the value we set is still at the original place.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sayHi(<span class="string">"Julia"</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(greeting + <span class="string">" "</span> + name);</span><br><span class="line">  <span class="keyword">var</span> greeting;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// result: undefined Julia</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">sayHi(<span class="string">"Julia"</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(greeting + <span class="string">" "</span> + name);</span><br><span class="line">  <span class="keyword">var</span> greeting = <span class="string">"Hello"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// result: undefined Julia</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">The above function is equal to the following function...</span></span><br><span class="line"><span class="comment">function sayHi(name) &#123;</span></span><br><span class="line"><span class="comment">  var greeting;</span></span><br><span class="line"><span class="comment">  console.log(greeting + " " + name);</span></span><br><span class="line"><span class="comment">  greeting = "Hello";</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Function-Expressions"><a href="#Function-Expressions" class="headerlink" title="Function Expressions"></a>Function Expressions</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> catSays = <span class="function"><span class="keyword">function</span>(<span class="params">max</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> catMessage = <span class="string">""</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; max; i++) &#123;</span><br><span class="line">    catMessage += <span class="string">"meow "</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> catMessage;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>Notice how the <code>function</code> keyword no longer has a name.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> catSays = <span class="function"><span class="keyword">function</span>(<span class="params">max</span>) </span>&#123; </span><br><span class="line">  <span class="comment">// code here </span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>It’s an <strong>anonymous function</strong>, a function with no name, and you’ve stored it in a variable called <code>catSays</code>.</p>
+<h3 id="Use-function-expressions-as-parameters"><a href="#Use-function-expressions-as-parameters" class="headerlink" title="Use function expressions as parameters"></a>Use function expressions as parameters</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// function expression catSays</span></span><br><span class="line"><span class="keyword">var</span> catSays = <span class="function"><span class="keyword">function</span>(<span class="params">max</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> catMessage = <span class="string">""</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; max; i++) &#123;</span><br><span class="line">    catMessage += <span class="string">"meow "</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> catMessage;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// function declaration helloCat accepting a callback</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">helloCat</span>(<span class="params">callbackFunc</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"Hello "</span> + callbackFunc(<span class="number">3</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// pass in catSays as a callback function</span></span><br><span class="line">helloCat(catSays);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Inline-function-expressions"><a href="#Inline-function-expressions" class="headerlink" title="Inline function expressions"></a>Inline function expressions</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> favoriteMovie = <span class="function"><span class="keyword">function</span> <span class="title">displayFavorite</span>(<span class="params">movieName</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"My favorite movie is "</span> + movieName);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">movies</span>(<span class="params">messageFunction, name</span>) </span>&#123;</span><br><span class="line">  messageFunction(name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">movies(favoriteMovie, <span class="string">"Finding Nemo"</span>);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">movies</span>(<span class="params">messageFunction, name</span>) </span>&#123;</span><br><span class="line">  messageFunction(name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">movies(<span class="function"><span class="keyword">function</span> <span class="title">displayFavorite</span>(<span class="params">movieName</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"My favorite movie is "</span> + movieName);</span><br><span class="line">&#125;, <span class="string">"Finding Nemo"</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// creates a `donuts` array with three strings</span></span><br><span class="line"><span class="keyword">var</span> donuts = [<span class="string">"glazed"</span>, <span class="string">"powdered"</span>, <span class="string">"jelly"</span>];</span><br></pre></td></tr></table></figure>
+
+<p>But strings aren’t the only type of data you can store in an array. You can also store numbers, booleans… and really anything!</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// creates a `mixedData` array with mixed data types</span></span><br><span class="line"><span class="keyword">var</span> mixedData = [<span class="string">"abcd"</span>, <span class="number">1</span>, <span class="literal">true</span>, <span class="literal">undefined</span>, <span class="literal">null</span>, <span class="string">"all the things"</span>];</span><br></pre></td></tr></table></figure>
+
+<p>You can even store an array in an array to create a <strong>nested array</strong>!</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arraysInArrays = [</span><br><span class="line">  [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], </span><br><span class="line">  [<span class="string">"Julia"</span>, <span class="string">"James"</span>], </span><br><span class="line">  [<span class="literal">true</span>, <span class="literal">false</span>, <span class="literal">true</span>, <span class="literal">false</span>]</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+
+<h3 id="Indexing"><a href="#Indexing" class="headerlink" title="Indexing"></a>Indexing</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> donuts = [<span class="string">"glazed"</span>, <span class="string">"powdered"</span>, <span class="string">"sprinkled"</span>];</span><br><span class="line"><span class="built_in">console</span>.log(donuts[<span class="number">0</span>]);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Length"><a href="#Length" class="headerlink" title="Length"></a>Length</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> donuts = [<span class="string">"glazed"</span>, <span class="string">"powdered"</span>, <span class="string">"sprinkled"</span>];</span><br><span class="line"><span class="built_in">console</span>.log(donuts.length);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Push"><a href="#Push" class="headerlink" title="Push"></a>Push</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> donuts = [<span class="string">"glazed"</span>, <span class="string">"chocolate frosted"</span>, <span class="string">"Boston creme"</span>, <span class="string">"glazed cruller"</span>, <span class="string">"cinnamon sugar"</span>, <span class="string">"sprinkled"</span>];</span><br><span class="line">donuts.push(<span class="string">"powdered"</span>); </span><br><span class="line"><span class="comment">// the `push()` method returns 7 because the `donuts` array now has 7 elements</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Pop"><a href="#Pop" class="headerlink" title="Pop"></a>Pop</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> donuts = [<span class="string">"glazed"</span>, <span class="string">"chocolate frosted"</span>, <span class="string">"Boston creme"</span>, <span class="string">"glazed cruller"</span>, <span class="string">"cinnamon sugar"</span>, <span class="string">"sprinkled"</span>, <span class="string">"powdered"</span>];</span><br><span class="line">donuts.pop(); </span><br><span class="line"><span class="comment">// pops "powdered" off the end of the `donuts` array</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Loop"><a href="#Loop" class="headerlink" title="Loop"></a>Loop</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> donuts = [<span class="string">"jelly donut"</span>, <span class="string">"chocolate donut"</span>, <span class="string">"glazed donut"</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; donuts.length; i++) &#123;</span><br><span class="line">    donuts[i] += <span class="string">" hole"</span>;</span><br><span class="line">    donuts[i] = donuts[i].toUpperCase();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="forEach-loop"><a href="#forEach-loop" class="headerlink" title="forEach loop"></a>forEach loop</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> donuts = [<span class="string">"jelly donut"</span>, <span class="string">"chocolate donut"</span>, <span class="string">"glazed donut"</span>];</span><br><span class="line"></span><br><span class="line">donuts.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">donut</span>) </span>&#123;</span><br><span class="line">  donut += <span class="string">" hole"</span>;</span><br><span class="line">  donut = donut.toUpperCase();</span><br><span class="line">  <span class="built_in">console</span>.log(donut);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>The function that you pass to the <code>forEach()</code> method can take up to three parameters. In the video, these are called <code>element</code>, <code>index</code>, and <code>array</code>, but you can call them whatever you like.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">words = [<span class="string">"cat"</span>, <span class="string">"in"</span>, <span class="string">"hat"</span>];</span><br><span class="line">words.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">word, num, all</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Word "</span> + num + <span class="string">" in "</span> + all.toString() + <span class="string">" is "</span> + word);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Result:</span></span><br><span class="line"><span class="comment">Word 0 in cat,in,hat is cat</span></span><br><span class="line"><span class="comment">Word 1 in cat,in,hat is in</span></span><br><span class="line"><span class="comment">Word 2 in cat,in,hat is hat</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><p>With the <code>map()</code> method, you can take an array, perform some operation on each element of the array, and return <strong>a new array</strong>.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> donuts = [<span class="string">"jelly donut"</span>, <span class="string">"chocolate donut"</span>, <span class="string">"glazed donut"</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> improvedDonuts = donuts.map(<span class="function"><span class="keyword">function</span>(<span class="params">donut</span>) </span>&#123;</span><br><span class="line">  donut += <span class="string">" hole"</span>;</span><br><span class="line">  donut = donut.toUpperCase();</span><br><span class="line">  <span class="keyword">return</span> donut;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">donuts array: ["jelly donut", "chocolate donut", "glazed donut"]</span></span><br><span class="line"><span class="comment">improvedDonuts array: ["JELLY DONUT HOLE", "CHOCOLATE DONUT HOLE", "GLAZED DONUT HOLE"]</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sister = &#123;</span><br><span class="line">  name: <span class="string">"Sarah"</span>,</span><br><span class="line">  age: <span class="number">23</span>,</span><br><span class="line">  parents: [ <span class="string">"alice"</span>, <span class="string">"andy"</span> ],</span><br><span class="line">  siblings: [<span class="string">"julia"</span>],</span><br><span class="line">  favoriteColor: <span class="string">"purple"</span>,</span><br><span class="line">  pets: <span class="literal">true</span>,</span><br><span class="line">  paintPicture: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="string">"Sarah paints!"</span>; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">sister.paintPicture();</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Return: </span></span><br><span class="line"><span class="comment">"Sarah paints!"</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 
 
           
@@ -543,7 +855,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Backend/C++/Connect-different-classes-in-C.html">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Backend/C++/lambda-expression-in-C.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Qian Hongbo">
@@ -562,7 +874,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/Backend/C++/Connect-different-classes-in-C.html" itemprop="url">Connect different classes in C++</a></h2>
+                <a class="post-title-link" href="/Backend/C++/lambda-expression-in-C.html" itemprop="url">lambda expression in C++</a></h2>
         
 
         <div class="post-meta">
@@ -574,8 +886,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-02-19T18:04:57+08:00">
-                2022-02-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-02-26T16:22:27+08:00">
+                2022-02-26
               </time>
             
 
@@ -617,8 +929,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/Backend/C++/Connect-different-classes-in-C.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Backend/C++/Connect-different-classes-in-C.html" itemprop="commentCount"></span>
+                <a href="/Backend/C++/lambda-expression-in-C.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Backend/C++/lambda-expression-in-C.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -640,7 +952,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  178 字
+                  291 字
                 </span>
               
 
@@ -680,14 +992,17 @@
       
         
           
-            <h2 id="Problem-description"><a href="#Problem-description" class="headerlink" title="Problem description"></a>Problem description</h2><p>How to connect different classes, but they don’t know each other?</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="IMessenger-Interface"><a href="#IMessenger-Interface" class="headerlink" title="IMessenger Interface"></a>IMessenger Interface</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">IMessenger</span> &#123;</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">tell</span><span class="params">(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span> &amp;aMsg)</span> </span>= <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">receive</span><span class="params">(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span> &amp;aMsg)</span> </span>= <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setOther</span><span class="params">(IMessenger *anOther)</span> </span>&#123;other=anOther;&#125;</span><br><span class="line">    </span><br><span class="line">    IMessenger* other;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+            <p>There are three ways to call the function.</p>
+<ul>
+<li>Just call</li>
+<li>Function pointer</li>
+<li>Lambda expression</li>
+</ul>
+<h2 id="Just-call"><a href="#Just-call" class="headerlink" title="Just call"></a>Just call</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">size_t</span> foo(<span class="keyword">size_t</span> aValue) &#123;</span><br><span class="line">    <span class="keyword">return</span> rand() % <span class="number">5</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Container</span> &#123;</span></span><br><span class="line">    Container() &#123;</span><br><span class="line">        values.push_back(<span class="number">10</span>);</span><br><span class="line">        values.push_back(<span class="number">20</span>);</span><br><span class="line">        values.push_back(<span class="number">30</span>);</span><br><span class="line">        values.push_back(<span class="number">40</span>);</span><br><span class="line">        values.push_back(<span class="number">50</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">eachFrom</span><span class="params">(<span class="keyword">size_t</span> anIndex)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> ((anIndex = foo(values[anIndex]))) &#123;</span><br><span class="line">            <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; values[anIndex] &lt;&lt; <span class="string">"\n"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; values;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    srand((<span class="keyword">unsigned</span>)time(<span class="literal">NULL</span>));</span><br><span class="line">    Container theContainer;</span><br><span class="line">    theContainer.eachFrom(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="Two-class"><a href="#Two-class" class="headerlink" title="Two class"></a>Two class</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">A</span> :</span> <span class="keyword">public</span> IMessenger &#123;</span><br><span class="line">    A() &#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">tell</span><span class="params">(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span> &amp;aMsg)</span> override </span>&#123;</span><br><span class="line">        other-&gt;receive(aMsg);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">receive</span><span class="params">(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span> &amp;aMsg)</span> override </span>&#123;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"A got "</span> &lt;&lt; aMsg &lt;&lt; <span class="string">"\n"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">B</span> :</span> <span class="keyword">public</span> IMessenger &#123;</span><br><span class="line">    B() &#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">tell</span><span class="params">(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span> &amp;aMsg)</span> override </span>&#123;</span><br><span class="line">        other-&gt;receive(aMsg);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">receive</span><span class="params">(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span> &amp;aMsg)</span> override </span>&#123;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"B got "</span> &lt;&lt; aMsg &lt;&lt; <span class="string">"\n"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="Function-pointer"><a href="#Function-pointer" class="headerlink" title="Function pointer"></a>Function pointer</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Container</span> &#123;</span></span><br><span class="line">    Container() &#123;</span><br><span class="line">        values.push_back(<span class="number">10</span>);</span><br><span class="line">        values.push_back(<span class="number">20</span>);</span><br><span class="line">        values.push_back(<span class="number">30</span>);</span><br><span class="line">        values.push_back(<span class="number">40</span>);</span><br><span class="line">        values.push_back(<span class="number">50</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">using</span> EachVisitor = <span class="built_in">std</span>::function&lt;<span class="keyword">size_t</span>(<span class="keyword">size_t</span>)&gt;;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">eachFrom</span><span class="params">(<span class="keyword">size_t</span> anIndex, EachVisitor aVisitor)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> ((anIndex = aVisitor(values[anIndex]))) &#123;</span><br><span class="line">            <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; values[anIndex] &lt;&lt; <span class="string">"\n"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; values;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">size_t</span> foo(<span class="keyword">size_t</span> aValue) &#123;</span><br><span class="line">    <span class="keyword">return</span> rand() % <span class="number">5</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    srand((<span class="keyword">unsigned</span>)time(<span class="literal">NULL</span>));</span><br><span class="line">    Container theContainer;</span><br><span class="line">    theContainer.eachFrom(<span class="number">1</span>, foo);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="Main"><a href="#Main" class="headerlink" title="Main"></a>Main</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> * argv[])</span> </span>&#123;</span><br><span class="line">    A theA;</span><br><span class="line">    B theB;</span><br><span class="line">    theA.setOther(&amp;theB);</span><br><span class="line">    theB.setOther(&amp;theA);</span><br><span class="line">    theA.tell(<span class="string">"Hello world!"</span>);</span><br><span class="line">    theB.tell(<span class="string">"Happy everyday!"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// output:</span></span><br><span class="line"><span class="comment">// B got Hello world!</span></span><br><span class="line"><span class="comment">// A got Happy everyday!</span></span><br></pre></td></tr></table></figure>
+<h2 id="Lambda-expression"><a href="#Lambda-expression" class="headerlink" title="Lambda expression"></a>Lambda expression</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Container</span> &#123;</span></span><br><span class="line">    Container() &#123;</span><br><span class="line">        values.push_back(<span class="number">10</span>);</span><br><span class="line">        values.push_back(<span class="number">20</span>);</span><br><span class="line">        values.push_back(<span class="number">30</span>);</span><br><span class="line">        values.push_back(<span class="number">40</span>);</span><br><span class="line">        values.push_back(<span class="number">50</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">using</span> EachVisitor = <span class="built_in">std</span>::function&lt;<span class="keyword">size_t</span>(<span class="keyword">size_t</span>)&gt;;</span><br><span class="line">    <span class="keyword">size_t</span> eachFrom(<span class="keyword">size_t</span> anIndex, EachVisitor aVisitor) &#123;</span><br><span class="line">        <span class="keyword">while</span>((anIndex = aVisitor(values[anIndex]))) &#123;</span><br><span class="line">            <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"value"</span> &lt;&lt; values[anIndex] &lt;&lt; <span class="string">"\n"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; values;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    srand((<span class="keyword">unsigned</span>)time(<span class="literal">NULL</span>)); </span><br><span class="line">    Container theContainer;</span><br><span class="line">    theContainer.eachFrom(<span class="number">1</span>, [&amp;](<span class="keyword">size_t</span> aValue) &#123;<span class="keyword">return</span> rand() % <span class="number">5</span>;&#125;);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
           
@@ -739,7 +1054,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/LeetCode/Sorting.html">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/LeetCode/Two-pointers.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Qian Hongbo">
@@ -758,7 +1073,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/LeetCode/Sorting.html" itemprop="url">Sorting</a></h2>
+                <a class="post-title-link" href="/LeetCode/Two-pointers.html" itemprop="url">Two pointers</a></h2>
         
 
         <div class="post-meta">
@@ -770,8 +1085,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-02-12T15:00:18+08:00">
-                2022-02-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-02-26T15:29:37+08:00">
+                2022-02-26
               </time>
             
 
@@ -813,8 +1128,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/LeetCode/Sorting.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="LeetCode/Sorting.html" itemprop="commentCount"></span>
+                <a href="/LeetCode/Two-pointers.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="LeetCode/Two-pointers.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -836,407 +1151,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  547 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Three-Number-Sort"><a href="#Three-Number-Sort" class="headerlink" title="Three Number Sort"></a>Three Number Sort</h2><h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>The order is an array of three distinct integers. The first array is guaranteed to only contain integers that are in the second array, and the second array represents a desired order for the integers in the first array.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sample input</span></span><br><span class="line">array = [<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">order = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># sample output</span></span><br><span class="line">[<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
-
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><h4 id="Bucket-sort"><a href="#Bucket-sort" class="headerlink" title="Bucket sort"></a>Bucket sort</h4><p>Traverse the array two times. Get the number of each elements in the order in the  first time. Set the number in the array in the second time.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(n) time | O(1) space</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">threeNumberSort</span><span class="params">(array, order)</span>:</span></span><br><span class="line">    buckets = [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> array:</span><br><span class="line">		buckets[order.index(i)] += <span class="number">1</span></span><br><span class="line">		</span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(len(array)):</span><br><span class="line">		<span class="keyword">if</span> i &lt; buckets[<span class="number">0</span>]: </span><br><span class="line">			array[i] = order[<span class="number">0</span>]</span><br><span class="line">		<span class="keyword">elif</span> i &lt; buckets[<span class="number">0</span>] + buckets[<span class="number">1</span>]:</span><br><span class="line">			array[i] = order[<span class="number">1</span>]</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			array[i] = order[<span class="number">2</span>]</span><br><span class="line">			</span><br><span class="line">	<span class="keyword">return</span> array</span><br></pre></td></tr></table></figure>
-
-<h4 id="Two-pointers"><a href="#Two-pointers" class="headerlink" title="Two pointers"></a>Two pointers</h4><p>Still traverse two times using two pointers.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line"> ^  ^      </span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">    ^  ^ </span><br><span class="line">[<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line"> 	   ^          ^</span><br><span class="line">[<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">               ^        ^</span><br><span class="line">[<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">           ^         ^</span><br><span class="line">[<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>]</span><br><span class="line">          ^         ^</span><br><span class="line">[<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>]</span><br><span class="line"> ^              ^</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(n) time | O(1) space</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">threeNumberSort</span><span class="params">(array, order)</span>:</span></span><br><span class="line">    Idx = <span class="number">0</span></span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(len(array)):</span><br><span class="line">		<span class="keyword">if</span> array[i] == order[<span class="number">0</span>]:</span><br><span class="line">			array[Idx], array[i] = array[i], array[Idx]</span><br><span class="line">			Idx += <span class="number">1</span></span><br><span class="line">	</span><br><span class="line">	Idy = len(array) - <span class="number">1</span></span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> reversed(range(len(array))):</span><br><span class="line">		<span class="keyword">if</span> array[i] == order[<span class="number">-1</span>]:</span><br><span class="line">			array[Idy], array[i] = array[i], array[Idy]</span><br><span class="line">			Idy -= <span class="number">1</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> array</span><br></pre></td></tr></table></figure>
-
-<h4 id="Three-pointers"><a href="#Three-pointers" class="headerlink" title="Three pointers"></a>Three pointers</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line"> ^  ^                   ^</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">    ^  ^                ^      </span><br><span class="line">[<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">       ^   ^            ^   </span><br><span class="line">[<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">-1</span>]</span><br><span class="line">       ^  ^         ^  </span><br><span class="line">[<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">-1</span>]</span><br><span class="line">       ^      ^     ^  </span><br><span class="line">[<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>, <span class="number">-1</span>]</span><br><span class="line">       ^     ^  ^  </span><br><span class="line">[<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>, <span class="number">-1</span>]</span><br><span class="line">       ^        ^ </span><br><span class="line">                ^</span><br><span class="line">[<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>]</span><br><span class="line">       ^        ^   ^</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(n) time | O(1) space</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">threeNumberSort</span><span class="params">(array, order)</span>:</span></span><br><span class="line">    Idx0, Idx1, Idx2 = <span class="number">0</span>, <span class="number">0</span>, len(array) - <span class="number">1</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span> Idx1 &lt;= Idx2:</span><br><span class="line">		value = array[Idx1]</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> value == order[<span class="number">0</span>]:</span><br><span class="line">			array[Idx0], array[Idx1] = array[Idx1], array[Idx0]</span><br><span class="line">			Idx0 += <span class="number">1</span></span><br><span class="line">			Idx1 += <span class="number">1</span></span><br><span class="line">		<span class="keyword">elif</span> value == order[<span class="number">1</span>]:</span><br><span class="line">			Idx1 += <span class="number">1</span></span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			array[Idx1], array[Idx2] = array[Idx2], array[Idx1]</span><br><span class="line">			Idx2 -= <span class="number">1</span></span><br><span class="line">			</span><br><span class="line">	<span class="keyword">return</span> array</span><br></pre></td></tr></table></figure>
-
-<h2 id="Search-in-Sorted-Matrix"><a href="#Search-in-Sorted-Matrix" class="headerlink" title="Search in Sorted Matrix"></a>Search in Sorted Matrix</h2><h3 id="Question-1"><a href="#Question-1" class="headerlink" title="Question"></a>Question</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">matrix = [</span><br><span class="line">  [<span class="number">1</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">12</span>, <span class="number">15</span>, <span class="number">1000</span>],</span><br><span class="line">  [<span class="number">2</span>, <span class="number">5</span>, <span class="number">19</span>, <span class="number">31</span>, <span class="number">32</span>, <span class="number">1001</span>],</span><br><span class="line">  [<span class="number">3</span>, <span class="number">8</span>, <span class="number">24</span>, <span class="number">33</span>, <span class="number">35</span>, <span class="number">1002</span>],</span><br><span class="line">  [<span class="number">40</span>, <span class="number">41</span>, <span class="number">42</span>, <span class="number">44</span>, <span class="number">45</span>, <span class="number">1003</span>],</span><br><span class="line">  [<span class="number">99</span>, <span class="number">100</span>, <span class="number">103</span>, <span class="number">106</span>, <span class="number">128</span>, <span class="number">1004</span>]</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">target = <span class="number">44</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># output = [3, 3]</span></span><br></pre></td></tr></table></figure>
-
-<p>If the matrix does not contain the integer, return [-1, -1].</p>
-<h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">searchInSortedMatrix</span><span class="params">(matrix, target)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    search the target  number in a sorted matrix</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    :param matrix: a two dimensional array of distinct integers. each row is sorted; each column is sorted</span></span><br><span class="line"><span class="string">    :param target: a target integer</span></span><br><span class="line"><span class="string">    :return: an array of the row and column indices of the target integer</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">assert</span> isinstance(matrix, list)</span><br><span class="line">    <span class="keyword">assert</span> isinstance(target, int)</span><br><span class="line"></span><br><span class="line">    row = <span class="number">0</span></span><br><span class="line">    column = len(matrix[<span class="number">0</span>]) - <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> row &lt; len(matrix) <span class="keyword">and</span> column &gt;= <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">if</span> matrix[row][column] &gt; target:</span><br><span class="line">            column -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> matrix[row][column] &lt; target:</span><br><span class="line">            row += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> [row, column]</span><br><span class="line">    <span class="keyword">return</span> [<span class="number">-1</span>, <span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Backend/C++/c-多层Switch简化.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Backend/C++/c-多层Switch简化.html" itemprop="url">c++多层Switch简化</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-02-10T18:07:40+08:00">
-                2022-02-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Backend/" itemprop="url" rel="index">
-                    <span itemprop="name">Backend</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/Backend/C++/c-多层Switch简化.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Backend/C++/c-多层Switch简化.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  221 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="如何简化多层switch条件判断"><a href="#如何简化多层switch条件判断" class="headerlink" title="如何简化多层switch条件判断"></a>如何简化多层switch条件判断</h2><h3 id="Logic-before"><a href="#Logic-before" class="headerlink" title="Logic before"></a>Logic before</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">switch</span>(type) &#123;</span><br><span class="line">      <span class="keyword">case</span>(Bird):</span><br><span class="line">      		<span class="keyword">switch</span>(color) &#123;</span><br><span class="line">        		<span class="keyword">case</span> Red: ...</span><br><span class="line">          		<span class="keyword">case</span> Blue ...</span><br><span class="line">      <span class="keyword">case</span> Fox ...</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Simplify"><a href="#Simplify" class="headerlink" title="Simplify"></a>Simplify</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">enum</span> <span class="class"><span class="keyword">class</span> <span class="title">Color</span>  &#123;</span>Red, Blue, End_&#125;;</span><br><span class="line"><span class="keyword">enum</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span> &#123;</span>Bird, Fox, Lizard, End_&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Enum&gt;</span><br><span class="line"><span class="function"><span class="keyword">constexpr</span> size_t <span class="title">enumValue</span><span class="params">(Enum aValue)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">static_cast</span>&lt;<span class="keyword">size_t</span>&gt;(aValue);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Enum&gt;</span><br><span class="line"><span class="function"><span class="keyword">constexpr</span> size_t <span class="title">param</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> enumValue(Enum::End_);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Just like a hash map</span></span><br><span class="line"><span class="comment">// Map every situation to an int</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Enum1, <span class="keyword">typename</span> Enum2&gt;</span><br><span class="line"><span class="function"><span class="keyword">constexpr</span> size_t <span class="title">combineEnums</span><span class="params">(Enum1 e1, Enum2 e2)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> enumValue(e1) + param&lt;Enum1&gt;() * enumValue(e2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">auto</span> theC1 = combineEnums(Color::Red, Animal::Lizard);</span><br><span class="line">    <span class="keyword">switch</span>(theC1) &#123;</span><br><span class="line">        case combineEnums(Color::Red, Animal::Bird):</span><br><span class="line">            <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Red Bird\n"</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        case combineEnums(Color::Red, Animal::Fox):</span><br><span class="line">            <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Red Fox\n"</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        case combineEnums(Color::Red, Animal::Lizard):</span><br><span class="line">            <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Red Lizard\n"</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        case combineEnums(Color::Blue, Animal::Bird):</span><br><span class="line">            <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Blue Bird\n"</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        case combineEnums(Color::Blue, Animal::Fox):</span><br><span class="line">            <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Blue Fox\n"</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        case combineEnums(Color::Blue, Animal::Lizard):</span><br><span class="line">            <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Blue Lizard\n"</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Data Structure/Data-Structure.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Data Structure/Data-Structure.html" itemprop="url">Data Structure</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-02-02T10:50:06+08:00">
-                2022-02-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Data-Structure/" itemprop="url" rel="index">
-                    <span itemprop="name">Data Structure</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/Data Structure/Data-Structure.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Data Structure/Data-Structure.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.1k 字
+                  983 字
                 </span>
               
 
@@ -1276,103 +1191,351 @@
       
         
           
-            <h2 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h2><p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gyrm73geuxj319q0u041v.jpg" alt="image-20220126100207323"></p>
-<h3 id="Bit"><a href="#Bit" class="headerlink" title="Bit"></a>Bit</h3><p>Short for binary digit. It represents <code>0</code> and <code>1</code>.</p>
-<h3 id="Byte"><a href="#Byte" class="headerlink" title="Byte"></a>Byte</h3><p>A group of <code>8</code> bits. For example, <code>01101000</code> is a byte.</p>
-<p>A single byte can represent up to <code>256</code> data values($2^8$).</p>
-<h3 id="Fixed-width-integer"><a href="#Fixed-width-integer" class="headerlink" title="Fixed-width integer"></a>Fixed-width integer</h3><p>An integer represented by a fixed amount of bits. For example, a 32-bit integer is an an integer represented by <code>32</code> bits(<code>4</code> bytes), and a 64-bit integer is an integer represented by <code>64</code> bits(<code>8</code> bytes).</p>
-<h3 id="Memory-1"><a href="#Memory-1" class="headerlink" title="Memory"></a>Memory</h3><ul>
-<li>Data stored in memory is stored in bytes and, by extension, bits.</li>
-<li>Bytes in memory can point to other bytes in memory, so as to store references to other data.</li>
-<li>The amount of memory that a machine has is bounded, making it valuable to limit how much memory an algorithm takes up.</li>
-<li>Accessing a byte or a fixed number of bytesis an elementary operation.</li>
-</ul>
-<h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><p>The following are an array’s standard operations and their corresponding time complexities:</p>
-<ol>
-<li>Accessing a value at a given index: <code>O(1)</code></li>
-<li>Updating a value at a given index: <code>O(1)</code></li>
-<li>Inserting a value at the beginning: <code>O(n)</code></li>
-<li>Inserting a value in the middle: <code>O(n)</code></li>
-<li>Inserting a value at the end: <code>O(1)</code> for dynamic array; <code>O(n)</code> for static array</li>
-<li>Removing a value at the beginning: <code>O(n)</code></li>
-<li>Removing a value in the middle: <code>O(n)</code></li>
-<li>Removing a value at the end: <code>O(1)</code></li>
-<li>Copying the array: <code>O(n)</code></li>
-</ol>
+            <h2 id="Trap-Rain-Water-LeetCode-42"><a href="#Trap-Rain-Water-LeetCode-42" class="headerlink" title="Trap Rain Water(LeetCode 42)"></a>Trap Rain Water(LeetCode 42)</h2><h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>Given <code>n</code> non-negative integers representing an elevation map where the width of each bar is <code>1</code>, compute how much water it can trap after raining. </p>
+<p><img src="https://assets.leetcode.com/uploads/2018/10/22/rainwatertrap.png" alt></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: height = [0,1,0,2,1,0,1,3,2,1,2,1]</span><br><span class="line">Output: 6</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><h4 id="Brute-force"><a href="#Brute-force" class="headerlink" title="Brute force"></a>Brute force</h4><p>For every position, find <code>left_max</code> and <code>right_max</code>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(n^2) time | O(1) space</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">trap</span><span class="params">(self, height: List[int])</span> -&gt; int:</span></span><br><span class="line">      	<span class="keyword">if</span> height <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(height)):</span><br><span class="line">            left_max, right_max = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(i, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">                left_max = max(left_max, height[j])</span><br><span class="line">            <span class="keyword">for</span> k <span class="keyword">in</span> range(i, len(height)):</span><br><span class="line">                right_max = max(right_max, height[k])</span><br><span class="line">            ans += min(left_max, right_max) - height[i]</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+
+<h4 id="Dynamic-programming"><a href="#Dynamic-programming" class="headerlink" title="Dynamic programming"></a>Dynamic programming</h4><p>We can find that we don’t need to find <code>left_max</code> and <code>right_max</code> at every position. We can traverse the list and store them. Although we improved the time complexity, we use more space than brute force. This is also not a good way.</p>
+<p><img src="https://leetcode.com/problems/trapping-rain-water/Figures/42/trapping_rain_water.png" alt></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(n) time | O(n) space</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">trap</span><span class="params">(self, height: List[int])</span> -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> height <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        theSize = len(height)</span><br><span class="line">        left_max, right_max = [height[<span class="number">0</span>]] * theSize, [height[theSize - <span class="number">1</span>]] * theSize</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, theSize):</span><br><span class="line">            left_max[i] = max(height[i], left_max[i - <span class="number">1</span>])</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(theSize - <span class="number">2</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            right_max[j] = max(height[j], right_max[j + <span class="number">1</span>])</span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> range(<span class="number">1</span>, theSize - <span class="number">1</span>):</span><br><span class="line">            ans += min(left_max[k], right_max[k]) - height[k]</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+
+<h4 id="Two-pointers"><a href="#Two-pointers" class="headerlink" title="Two pointers"></a>Two pointers</h4><p>The best way for this question is using two pointers, which is also a good way for some array questions. If we don’t want to preserve the data like in dynamic programming way, we can find a way to get the <code>left_max</code> and <code>right_max</code> during the for loop.</p>
+<p>Firstly, set the <code>leftId</code> and <code>rightId</code> as 0, and size. Then, set the <code>left_max</code> and <code>right_max</code> as leftmost value and rightmost value. We should know that we only use the minimum of <code>left_max</code> and <code>right_max</code>, so we should start with smaller side. When we found that the current <code>left_max</code> or <code>right_max</code> is larger than another one. We should change to another side. This ensures that we always use the minimun of <code>left_max</code> and <code>right_max</code>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(n) time | O(1) space</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">trap</span><span class="params">(self, height: List[int])</span> -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> height:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        left, right = <span class="number">0</span>, len(height) - <span class="number">1</span></span><br><span class="line">        left_max, right_max = height[left], height[right]</span><br><span class="line">        water = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> left &lt;= right:</span><br><span class="line">            <span class="keyword">if</span> left_max &lt; right_max:</span><br><span class="line">                left_max = max(left_max, height[left])</span><br><span class="line">                water += left_max - height[left]</span><br><span class="line">                left += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                right_max = max(right_max, height[right])</span><br><span class="line">                water += right_max - height[right]</span><br><span class="line">                right -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> water</span><br></pre></td></tr></table></figure>
+
+<h4 id="Using-stacks"><a href="#Using-stacks" class="headerlink" title="Using stacks"></a>Using stacks</h4><p>This way is not the best and also not easy to understand. The main idea is to track and compute the <code>V</code> shape, because it is only possible to trap vater in <code>V</code> shape.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">trap</span><span class="params">(self, heights: List[int])</span> -&gt; int:</span></span><br><span class="line">        stack, trapped_water = [], <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> hi_index, height <span class="keyword">in</span> enumerate(heights):</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> stack <span class="keyword">and</span> height &gt;= heights[stack[<span class="number">-1</span>]]:</span><br><span class="line">                ground_height = heights[stack.pop()]</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> stack:</span><br><span class="line">                     <span class="keyword">continue</span></span><br><span class="line">                lo_index = stack[<span class="number">-1</span>]</span><br><span class="line">                water_line = min(heights[lo_index], height)</span><br><span class="line">                trapped_water += (water_line - ground_height) * (hi_index - lo_index - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">            stack.append(hi_index)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> trapped_water</span><br></pre></td></tr></table></figure>
+
+<h2 id="Merge-Sorted-Array"><a href="#Merge-Sorted-Array" class="headerlink" title="Merge Sorted Array"></a>Merge Sorted Array</h2><h3 id="Question-1"><a href="#Question-1" class="headerlink" title="Question"></a>Question</h3><p>You are given two integer arrays <code>nums1</code> and <code>nums2</code>, sorted in <strong>non-decreasing order</strong>, and two integers <code>m</code> and <code>n</code>, representing the number of elements in <code>nums1</code> and <code>nums2</code> respectively.</p>
+<p><strong>Merge</strong> <code>nums1</code> and <code>nums2</code> into a single array sorted in <strong>non-decreasing order</strong>.</p>
+<p>The final sorted array should not be returned by the function, but instead be stored inside the array <code>nums1</code>. To accommodate this, <code>nums1</code> has a length of <code>m + n</code>, where the first <code>m</code> elements denote the elements that should be merged, and the last <code>n</code> elements are set to <code>0</code> and should be ignored. <code>nums2</code> has a length of <code>n</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3</span><br><span class="line">Output: [1,2,2,3,5,6]</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h3><h4 id="Brute-Force-Merge-and-sort"><a href="#Brute-Force-Merge-and-sort" class="headerlink" title="Brute Force: Merge and sort"></a>Brute Force: Merge and sort</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O((n+m)log(n+m)) time | O(n) space</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(self, nums1: List[int], m: int, nums2: List[int], n: int)</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">        <span class="comment"># Write the elements of num2 into the end of nums1.</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            nums1[i + m] = nums2[i]</span><br><span class="line">        <span class="comment"># Sort nums1 list in-place.</span></span><br><span class="line">        nums1.sort()</span><br></pre></td></tr></table></figure>
+
+<h4 id="Three-Pointers-Start-from-the-beginning"><a href="#Three-Pointers-Start-from-the-beginning" class="headerlink" title="Three Pointers (Start from the beginning)"></a>Three Pointers (Start from the beginning)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(n+m) time | O(m) space</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(self, nums1: List[int], m: int, nums2: List[int], n: int)</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">        <span class="comment"># must copy the nums1[:m] first...</span></span><br><span class="line">        <span class="comment"># can't use nums1_copy = nums1, because it will be alias</span></span><br><span class="line">        nums1_copy = nums1[:m]</span><br><span class="line">        idx1 = <span class="number">0</span></span><br><span class="line">        idx2 = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(m + n):</span><br><span class="line">            <span class="comment"># have to put idx2 &gt;= n before... need to check it first</span></span><br><span class="line">            <span class="comment"># or the list will be out of the index...</span></span><br><span class="line">            <span class="keyword">if</span> idx2 &gt;= n <span class="keyword">or</span> (idx1 &lt; m <span class="keyword">and</span> nums1_copy[idx1] &lt;= nums2[idx2]):</span><br><span class="line">                nums1[i] = nums1_copy[idx1]</span><br><span class="line">                idx1 += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                nums1[i] = nums2[idx2]</span><br><span class="line">                idx2 += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Three-Pointers-Start-from-the-end"><a href="#Three-Pointers-Start-from-the-end" class="headerlink" title="Three Pointers (Start from the end)"></a>Three Pointers (Start from the end)</h3><p>Approach 2 already demonstrates the best possible time complexity, but still uses additional space. This is because the elements of array <code>nums1</code> have to be stored somwhere so that they aren’t overwritten.</p>
+<p>So, if instead we start to overwrite <code>nums1</code> from the end, we can solve this problem.</p>
 <blockquote>
-<p>A static array is an implementation of an array that allocates a fixed amount of memory to be used for storing the array’s values. Appending values to the array therefor involves copying the entire array and allocating new memory for it. This is a linear time operation.</p>
-<p>A lot of popular programming languages like JavaScript and Python implement arrays as dynamic arrays.</p>
+<p><strong>Interview Tip</strong>: Whenever you’re trying to solve an array problem in-place, always consider the possibility of iterating backwards instead of forwards through the array. It can completely change the problem, and make it a lot easier.</p>
 </blockquote>
-<h2 id="Linked-Lists"><a href="#Linked-Lists" class="headerlink" title="Linked Lists"></a>Linked Lists</h2><h3 id="Singly-Linked-Lists"><a href="#Singly-Linked-Lists" class="headerlink" title="Singly Linked Lists"></a>Singly Linked Lists</h3><p>A linked list node’s value and next node are typically stored in <code>value</code> and <code>next</code> properties.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 -&gt; 1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 5 -&gt; 6 -&gt; 7 -&gt; null</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(n+m) time | O(1) space</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(self, nums1: List[int], m: int, nums2: List[int], n: int)</span> -&gt; <span class="keyword">None</span>:</span>   </span><br><span class="line">        idx1 = m - <span class="number">1</span></span><br><span class="line">        idx2 = n - <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(m + n - <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            <span class="keyword">if</span> idx2 &lt; <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">if</span> idx1 &gt;= <span class="number">0</span> <span class="keyword">and</span> nums1[idx1] &gt; nums2[idx2]:</span><br><span class="line">                nums1[i] = nums1[idx1]</span><br><span class="line">                idx1 -= <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                nums1[i] = nums2[idx2]</span><br><span class="line">                idx2 -= <span class="number">1</span></span><br></pre></td></tr></table></figure>
 
-<p>A singly linked list typically exposes its head to its user for easy access. While finding a node in a singly linked list involves traversing through all of the nodes leading up to the node in question (as opposed to instant access with an array).</p>
-<ol>
-<li>Accessing the head: <code>O(1)</code></li>
-<li>Accessing the tail: <code>O(n)</code></li>
-<li>Accessing the middle node: <code>O(n)</code></li>
-<li>Inserting/Removing the head: <code>O(1)</code></li>
-<li>Inserting/Removing the tail: <code>O(n)</code> + <code>O(1)</code></li>
-<li>Inserting/Removing a middle node: <code>O(n)</code> + <code>O(1)</code></li>
-<li>Searching for a value: <code>O(n)</code></li>
-</ol>
-<h3 id="Doubly-Linked-List"><a href="#Doubly-Linked-List" class="headerlink" title="Doubly Linked List"></a>Doubly Linked List</h3><p>A doubly linked list also has a pointer to the previous node in the linked list. THe previous node is typically stored in a <code>prev</code> property.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">null &lt;- 0 &lt;-&gt; 1 &lt;-&gt; 2 &lt;-&gt; 3 &lt;-&gt; 4 &lt;-&gt; 5 &lt;-&gt; 6 &lt;-&gt; 7 -&gt; null</span><br></pre></td></tr></table></figure>
 
-<p>The doubly linked list typically exposes both its head an tail to its user.</p>
-<ol>
-<li>Accessing the head: <code>O(1)</code></li>
-<li>Accessing the tail: <code>O(1)</code></li>
-<li>Accessing the middle node: <code>O(n)</code></li>
-<li>Inserting/Removing the head: <code>O(1)</code></li>
-<li>Inserting/Removing the tail:  <code>O(1)</code></li>
-<li>Inserting/Removing a middle node: <code>O(n)</code> + <code>O(1)</code></li>
-<li>Searching for a value: <code>O(n)</code></li>
-</ol>
-<h2 id="Hash-Tables"><a href="#Hash-Tables" class="headerlink" title="Hash Tables"></a>Hash Tables</h2><p>Under the hood, a hash table uses a dynamic array of linked lists to efficiently store key/value pairs. </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">0: (value1, key1) -&gt; null</span><br><span class="line">1: (value2, key2) -&gt; (value3, key3) -&gt; (value4, key4)</span><br><span class="line">2: (value5, key5) -&gt; null</span><br><span class="line">3: (value6, key6) -&gt; null</span><br><span class="line">4: null</span><br><span class="line">5: (value7, key7) -&gt; (value8, key8)</span><br><span class="line">6: (value9, key9) -&gt; null</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
 
-<p>Hash table rely on highly optimized hash functions to minimize the number of <code>collisions</code> than occur when storing values: cases where two keys map to the same index.</p>
-<ol>
-<li>Inserting a key/value pair: <code>O(1)</code> on average; <code>O(n)</code> in the worse case</li>
-<li>Removing a key/value pair: <code>O(1)</code> on average; <code>O(n)</code> in the worse case</li>
-<li>Looking up a key: <code>O(1)</code> on average; <code>O(n)</code> in the worse case</li>
-</ol>
-<p>The worst-case linear time operations occur when a hash table experiences a lot of collisions, leading to long linked lists internally, which take <code>O(n)</code> time to traverse.</p>
-<p>However, in practice and especially in coding interviews, we typically assume that the hash functions employed by hash tables are so optimized that collisions are extremely rare and constant-time operations are all but guaranteed.</p>
-<h2 id="Stacks-and-Queues"><a href="#Stacks-and-Queues" class="headerlink" title="Stacks and Queues"></a>Stacks and Queues</h2><h3 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h3><p>An array-like data structure whose elements follow the <code>LIFO</code> rule: Last In, First Out.</p>
-<p>A stack is typically implemented with a <code>dynamic array</code>.</p>
-<ol>
-<li>Push an element onto the stack: <code>O(1)</code></li>
-<li>Hoping an element onto the stack: <code>O(1)</code></li>
-<li>Peeking at the element on the top of the stack: <code>O(1)</code></li>
-<li>Searching for an element in the stack: <code>O(n)</code></li>
-</ol>
-<h3 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h3><p>An array-like data structure whose elements follow the <code>FIFO</code> rule: First In, First Out.</p>
-<p>A queue is typically implemented with a doubly linked list.</p>
-<ol>
-<li>Enqueuing an element into the queue: <code>O(1)</code></li>
-<li>Dequeuing an element out of the queue: <code>O(1)</code></li>
-<li>Peeking at the element ar the front of the queue: <code>O(1)</code></li>
-<li>Searching for an lement in the queue: <code>O(n)</code></li>
-</ol>
-<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><p>Strings are stored in memory as arrays of integers, where each character in a given string is mapped to an integer via some characer encoding standard like <code>ASCII</code>.</p>
-<p>If the character is encoded in ASCII, it requires one byte. 1 byte(256) can cover all of the English characters. </p>
-<p>Stri ngs behave much like normal arrays. In most programming languages(<code>C++</code> is a notable exception), strings are immutable, meaning that they can’t be edited after creation. This also means that simple operations like appending a chracter to a string are more expensive than they might appear.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">string = <span class="string">"this is a string"</span></span><br><span class="line">newString = <span class="string">""</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> character <span class="keyword">in</span> string:</span><br><span class="line">newString += character</span><br></pre></td></tr></table></figure>
+    
 
-<p>The operation above has a time complexity of <code>O(n2)</code> where n is the length of string, because each addition of a character to newString creates an entirely new string and is itself an <code>O(n)</code> operation. </p>
-<h2 id="Graph"><a href="#Graph" class="headerlink" title="Graph"></a>Graph</h2><p>A collection of nodes or values called vertices that might be related; relations between vertices are called edges.</p>
-<h3 id="Graph-cycle"><a href="#Graph-cycle" class="headerlink" title="Graph cycle"></a>Graph cycle</h3><p>A cycle occurs in a graph when three or more vertices in the graph are connected so as to form a closed loop</p>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Backend/Java/Java-Notes-4.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Backend/Java/Java-Notes-4.html" itemprop="url">Java Notes 4</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-02-24T21:03:49+08:00">
+                2022-02-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Backend/" itemprop="url" rel="index">
+                    <span itemprop="name">Backend</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Backend/Java/Java-Notes-4.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Backend/Java/Java-Notes-4.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  740 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Reflection"><a href="#Reflection" class="headerlink" title="Reflection"></a>Reflection</h2><h3 id="What-is-Reflection"><a href="#What-is-Reflection" class="headerlink" title="What is Reflection?"></a>What is Reflection?</h3><p><strong>Reflection</strong>, which is sometimes called <strong>introspection</strong>, is the ability of a program to examine its own structure at runtime.</p>
+<h3 id="Static-vs-Dynamic-Code"><a href="#Static-vs-Dynamic-Code" class="headerlink" title="Static vs Dynamic Code"></a>Static vs Dynamic Code</h3><h4 id="Static-Code"><a href="#Static-Code" class="headerlink" title="Static Code"></a>Static Code</h4><p>Normally, when you write a program, all the class names, method names, and variable names are known <em>statically</em>, when the code is being written and compiled:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Foo myObject = <span class="keyword">new</span> Foo();</span><br></pre></td></tr></table></figure>
+
+<p>Static code gives you the benefit of <strong>static analysis</strong>, which includes compile-type checking of static symbols like class and method names, and useful IDE features like auto-completion.</p>
+<p>The Java compiler will return an error if you used an invalid class or method name.</p>
+<h4 id="Dynamic-Code"><a href="#Dynamic-Code" class="headerlink" title="Dynamic Code"></a>Dynamic Code</h4><p>You can also create a <code>Foo</code> object <em>without</em> static symbol names. This is sometimes called <em>dynamic</em> coding:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object myObject = Class.forName(<span class="string">"Foo"</span>).getConstructor().newInstance();</span><br></pre></td></tr></table></figure>
+
+<p>Writing this kind of code, you won’t get any static or compile-time checks to make sure you got the class name correct. If you run this code and there is no class named “Foo”, a <code>ClassNotFoundException</code> will be thrown.</p>
+<h3 id="What-are-Annotations"><a href="#What-are-Annotations" class="headerlink" title="What are Annotations?"></a>What are Annotations?</h3><p><strong>Annotations</strong> are a way to provide extra metadata about your program. Annotations only provide metadata — they have no other effect on execution of the annotated code.</p>
+<h4 id="Common-built-in-annotations"><a href="#Common-built-in-annotations" class="headerlink" title="Common built-in annotations"></a>Common built-in annotations</h4><table>
+<thead>
+<tr>
+<th>Annotations</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>@Override</code></td>
+<td>Tells the compuler that a method is inteded to iverride a superclass method.</td>
+</tr>
+<tr>
+<td><code>@Deprecated</code></td>
+<td>Indicated that a method is deprecated an should not be used. Using it will result in a compiler warning.</td>
+</tr>
+<tr>
+<td><code>@FunctionalInterface</code></td>
+<td>Tells the compuler that the annotated interface is intended to be a functional interface.</td>
+</tr>
+<tr>
+<td><code>@SuppressWarnings</code></td>
+<td>Stops the compuler from generating warnings such as for type casting or deprecation warnings.</td>
+</tr>
+</tbody></table>
+<h3 id="Defining-custom-annotations"><a href="#Defining-custom-annotations" class="headerlink" title="Defining custom annotations"></a>Defining custom annotations</h3><h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.SOURCE)</span><br><span class="line"><span class="meta">@Target</span>(ElementType.TYPE)  <span class="comment">// Applies to class, interface, or enum</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> ConvertsTo &#123;</span><br><span class="line">  Class&lt;?&gt; targetClass();</span><br><span class="line">  <span class="function">String <span class="title">setterPrefix</span><span class="params">()</span> <span class="keyword">default</span> "set"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Target</span>(ElementType.METHOD)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Test &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Retention-Policies"><a href="#Retention-Policies" class="headerlink" title="Retention Policies"></a>Retention Policies</h4><p>Here are the possible retention policies for an annotation:</p>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Retention Policy</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>SOURCE</code></td>
+<td align="left">Annotation only exists in the source code.</td>
+</tr>
+<tr>
+<td align="left"><code>RUNTIME</code></td>
+<td align="left">Annotation exists in the .class bytecode file and is available at runtime to be used with reflection.</td>
+</tr>
+<tr>
+<td align="left"><code>CLASS</code></td>
+<td align="left">Annotation exists in the <code>.class</code> bytecode file but not exist while the program is running.</td>
+</tr>
+</tbody></table>
+<h4 id="Annotation-Targets"><a href="#Annotation-Targets" class="headerlink" title="Annotation Targets"></a>Annotation Targets</h4><p>The target types determine which parts of the program can be given a particular annotation. Here are the possible target types:</p>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Element Type</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>ANNOTATION_TYPE</code></td>
+<td align="left">Annotation type declarations (for annotations that apply to other annotations).</td>
+</tr>
+<tr>
+<td align="left"><code>CONSTRUCTOR</code></td>
+<td align="left">Constructor declarations</td>
+</tr>
+<tr>
+<td align="left"><code>FIELD</code></td>
+<td align="left">Field declarations, including enum constants.</td>
+</tr>
+<tr>
+<td align="left"><code>LOCAL_VARIABLE</code></td>
+<td align="left">Local variable declarations.</td>
+</tr>
+<tr>
+<td align="left"><code>METHOD</code></td>
+<td align="left">Method declarations.</td>
+</tr>
+<tr>
+<td align="left"><code>PACKAGE</code></td>
+<td align="left">Package declarations.</td>
+</tr>
+<tr>
+<td align="left"><code>PARAMETER</code></td>
+<td align="left">Method parameter declarations.</td>
+</tr>
+<tr>
+<td align="left"><code>TYPE</code></td>
+<td align="left">Type declarations, such as classes, interfaces, annotation types, and enum declarations.</td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Target</span>(ElementType.METHOD)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Test &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Reflection-API"><a href="#Reflection-API" class="headerlink" title="Reflection API"></a>Reflection API</h3><p>Every class, interface, and type (including primitive types) has a corresponding <code>Class</code> object that accesses metadata about that type.</p>
+<p><code>Class</code> objects are the main entry point into Java’s <strong>Reflection API</strong>.</p>
+<h4 id="Obtaining-Class-Objects"><a href="#Obtaining-Class-Objects" class="headerlink" title="Obtaining Class Objects"></a>Obtaining <code>Class</code> Objects</h4><p>There are many ways to get <code>Class</code> objects:</p>
 <ul>
-<li>Acyclic graph: A graph that has no cycles.</li>
-<li>Cyclic graph: A graph that has at least one cycle.</li>
+<li><p>Call <code>getClass()</code> on an object:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class&lt;String&gt; c = <span class="string">"Hello world!"</span>.getClass();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Use <code>.class</code> to create a class literal:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Class&lt;String&gt; c = String.class;</span><br><span class="line">Class&lt;<span class="keyword">int</span>[]&gt;  c = <span class="keyword">int</span>[].class;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Create classes dynamically using <code>Class.forName()</code>:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class&lt;String&gt; c = Class.forName(<span class="string">"java.lang.String"</span>);</span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
-<h3 id="Directed-and-undirected-graph"><a href="#Directed-and-undirected-graph" class="headerlink" title="Directed and undirected graph"></a>Directed and undirected graph</h3><ul>
-<li>Directed graph: they can only be reversed in one direction, which is specified.</li>
-<li>Undirected graph: they can be traversed in both directions.</li>
-</ul>
-<h3 id="Connected-graph"><a href="#Connected-graph" class="headerlink" title="Connected graph"></a>Connected graph</h3><p>A graph is connected if for every pair of vertices in the graph, there is a path of one or more edges connecting the given vertices.</p>
+<h4 id="Working-with-Methods"><a href="#Working-with-Methods" class="headerlink" title="Working with Methods"></a>Working with Methods</h4><p>Using the <code>Class</code> API, you can also obtain <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/reflect/Method.html" target="_blank" rel="noopener"><code>Method</code></a> objects.</p>
+<p><code>Method</code>s have some smiliar functionality as <code>Class</code>es, such as finding annotations and listing qualifiers, but methods can also be invoked by calling <code>Method.invoke()</code>.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Method m = String.class.getMethod(<span class="string">"equals"</span>, Object.class);</span><br><span class="line">m.invoke(<span class="string">"foo"</span>, <span class="string">"bar"</span>);</span><br><span class="line"><span class="comment">// This is the same as `"foo".equals("bar")` return false</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">TestRunner</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> List&lt;Class&lt;?&gt;&gt; TESTS = List.of(CalculatorTest.class);</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line">    List&lt;String&gt; passed = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    List&lt;String&gt; failed = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (Class&lt;?&gt; klass : TESTS) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!UnitTest.class.isAssignableFrom(klass)) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Class "</span> + klass.toString() + <span class="string">" must implement UnitTest"</span>);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span> (Method method : klass.getDeclaredMethods()) &#123;</span><br><span class="line">        <span class="keyword">if</span> (method.getAnnotation(Test.class) != <span class="keyword">null</span>) &#123;</span><br><span class="line">          <span class="keyword">try</span> &#123;</span><br><span class="line">            UnitTest test = (UnitTest) klass.getConstructor().newInstance();</span><br><span class="line">            test.beforeEachTest();</span><br><span class="line">            method.invoke(test);</span><br><span class="line">            test.afterEachTest();</span><br><span class="line">            passed.add(getTestName(klass, method));</span><br><span class="line">          &#125; <span class="keyword">catch</span> (Throwable throwable) &#123;</span><br><span class="line">            failed.add(getTestName(klass, method));</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(<span class="string">"Passed tests: "</span> + passed);</span><br><span class="line">    System.out.println(<span class="string">"FAILED tests: "</span> + failed);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">getTestName</span><span class="params">(Class&lt;?&gt; klass, Method method)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> klass.getName() + <span class="string">"#"</span> + method.getName();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
           
         
@@ -1414,7 +1577,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1462,7 +1625,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-count">62</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1578,7 +1741,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">57k</span>
+    <span title="Site words total count">63k</span>
   
 </div>
 

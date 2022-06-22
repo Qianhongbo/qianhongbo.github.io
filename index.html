@@ -487,7 +487,7 @@
           
           
             <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="//tva1.sinaimg.cn/large/006BuM4Jly1gc1kfywsvyj30zk0qou0x.jpg" rel="gallery_cl1jwrowb002krcpt23x8q12w" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+              <a class="post-gallery-img fancybox" href="//tva1.sinaimg.cn/large/006BuM4Jly1gc1kfywsvyj30zk0qou0x.jpg" rel="gallery_cl4pxsv640037q8ptatseuxt5" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="//tva1.sinaimg.cn/large/006BuM4Jly1gc1kfywsvyj30zk0qou0x.jpg" itemprop="contentUrl">
               </a>
             
@@ -552,7 +552,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Fullstack/Jasmine.html">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Fullstack/Angular-Basis.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Qian Hongbo">
@@ -571,7 +571,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/Fullstack/Jasmine.html" itemprop="url">Jasmine</a></h2>
+                <a class="post-title-link" href="/Fullstack/Angular-Basis.html" itemprop="url">Angular Basis</a></h2>
         
 
         <div class="post-meta">
@@ -583,8 +583,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-04-03T12:01:39+08:00">
-                2022-04-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-06-20T12:07:47+08:00">
+                2022-06-20
               </time>
             
 
@@ -626,8 +626,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/Fullstack/Jasmine.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Fullstack/Jasmine.html" itemprop="commentCount"></span>
+                <a href="/Fullstack/Angular-Basis.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Fullstack/Angular-Basis.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -649,7 +649,373 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2 字
+                  3k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  18 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Angular-Basis"><a href="#Angular-Basis" class="headerlink" title="Angular Basis"></a>Angular Basis</h1><h2 id="Angular-CLI"><a href="#Angular-CLI" class="headerlink" title="Angular CLI"></a>Angular CLI</h2><p>The <strong>Angular CLI</strong> is a command-line interface (CLI) that allows developers to initialize, develop, scaffold, and maintain Angular applications directly from the command line. In short, the Angular CLI allows us to:</p>
+<ul>
+<li><strong>Create a new Angular application</strong> from the ground up <code>ng new</code></li>
+<li><strong>Add features</strong> to the application, such as additional components, support for external libraries, and updates to the application and its dependencies <code>ng generate</code></li>
+<li><strong>Run unit tests</strong> : <code>ng test</code></li>
+<li><strong>Run a development server</strong> with live reload (i.e., automated page reloads when a change in the application is detected) <code>ng serve</code></li>
+<li><strong>Re-build the application</strong> on change (think Webpack)</li>
+<li><strong>Build the application</strong> for production <code>ng build</code></li>
+</ul>
+<h2 id="Install-and-Configure-the-Angular-CLI"><a href="#Install-and-Configure-the-Angular-CLI" class="headerlink" title="Install and Configure the Angular CLI"></a>Install and Configure the Angular CLI</h2><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @angular/cli</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>-g means global</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng --version</span><br></pre></td></tr></table></figure>
+
+<h2 id="Create-a-New-Angular-Project"><a href="#Create-a-New-Angular-Project" class="headerlink" title="Create a New Angular Project"></a>Create a New Angular Project</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng new my_first app</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng serve</span><br></pre></td></tr></table></figure>
+
+<h2 id="Component"><a href="#Component" class="headerlink" title="Component"></a>Component</h2><h3 id="What-is-a-component"><a href="#What-is-a-component" class="headerlink" title="What is a component?"></a>What is a component?</h3><ul>
+<li>Fundamental building block of an Angular application</li>
+<li>Controls the view displayed as HTML output</li>
+<li>Components determines the user interface of an Angular app</li>
+</ul>
+<h3 id="What-makes-up-a-component"><a href="#What-makes-up-a-component" class="headerlink" title="What makes up a component?"></a>What makes up a component?</h3><ul>
+<li>An <strong>HTML template</strong> (*.html file) that defines the user interface (i.e., what is actually rendered on the page)</li>
+<li>A <strong>TypeScript component class</strong> (*.ts file) containing the behavior and logic of the component. The component class supports and interacts with the view through the properties and methods defined in it</li>
+<li><strong>CSS styles</strong> (*.css file) that define the presentation and style of the component</li>
+</ul>
+<h3 id="Visualizing-Components"><a href="#Visualizing-Components" class="headerlink" title="Visualizing Components"></a>Visualizing Components</h3><p>All of the boxes in the following image are components.</p>
+<p><img src="https://video.udacity-data.com/topher/2021/March/604d07e8_fsjs-c3-l2-components/fsjs-c3-l2-components.jpg" alt></p>
+<h3 id="Generate-a-Component"><a href="#Generate-a-Component" class="headerlink" title="Generate a Component"></a>Generate a Component</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ng generate component &lt;name&gt;</span><br><span class="line"><span class="comment"># example: </span></span><br><span class="line">ng generate component Photos</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Result:</span></span><br><span class="line">~$ ng generate component Photos</span><br><span class="line">CREATE src/app/photos/photos.component.css (0 bytes)</span><br><span class="line">CREATE src/app/photos/photos.component.html (21 bytes)</span><br><span class="line">CREATE src/app/photos/photos.component.spec.ts (626 bytes)</span><br><span class="line">CREATE src/app/photos/photos.component.ts (275 bytes)</span><br><span class="line">UPDATE src/app/app.module.ts (475 bytes)</span><br></pre></td></tr></table></figure>
+
+<p>The Angular CLI tells us that four files were created:</p>
+<ul>
+<li>The Photos component CSS styles</li>
+<li>The Photos component HTML template</li>
+<li>The Photos component unit test (optional)</li>
+<li>The Photos component class (TypeScript)</li>
+</ul>
+<h3 id="What-is-in-a-Component-Class"><a href="#What-is-in-a-Component-Class" class="headerlink" title="What is in a Component Class"></a>What is in a Component Class</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/app/photos/photos.component.ts</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app-photos'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./photos.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./photos.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> PhotosComponent <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span>) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit(): <span class="built_in">void</span> &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>The component class contains a <code>@Component</code> <strong>decorator</strong>. A decorator is a feature that provides a way to add annotations and meta-programming syntax for class declarations. Angular needs this metadata so that it knows how to build that particular component. Specifically, it takes a look at a few properties:</p>
+<ul>
+<li><code>selector</code>: The identifying name for the component, which can be used in an HTML template</li>
+<li><code>templateUrl</code>: The path of the HTML template file associated with component</li>
+<li><code>styleUrls</code>: The path(s) for the file(s) containing CSS stylesheets that the component can use</li>
+</ul>
+<p>The rest of the file contains an exported <code>PhotosComponent</code> class, with two methods:</p>
+<ul>
+<li><code>constructor()</code>, which is used primarily for dependency injection and initializing variables. </li>
+<li><code>ngOnInit()</code>, which is called after the component has initialized. The <code>ngOnInit()</code> method is a lifecycle method used to handle additional initialization tasks.</li>
+</ul>
+<h3 id="Data-in-the-Component-Class"><a href="#Data-in-the-Component-Class" class="headerlink" title="Data in the Component Class"></a>Data in the Component Class</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// students.component.ts</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app-student'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./student.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./student.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> StudentComponent <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line">  name: <span class="built_in">string</span> = <span class="string">"Taylor"</span>;</span><br><span class="line">  grade: <span class="built_in">number</span> = <span class="number">12</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span>) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit(): <span class="built_in">void</span> &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>In the above example, we define two properties:</p>
+<ul>
+<li><code>name</code>, which points to a <code>string</code> with the value <code>&quot;Taylor&quot;</code></li>
+<li><code>grade</code>, which points to a <code>number</code> with the value <code>12</code></li>
+</ul>
+<p>We can use these data in our html file with double curly braces.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- student.component.html --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; name &#125;&#125; is a student in grade &#123;&#123; grade &#125;&#125;.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>As it turns out, the double curly braces syntax helps facilitate <strong>interpolation</strong>. By interpolating data, what we mean is that under the hood, Angular first evaluates the data properties (e.g., <code>name</code> and <code>grade</code>) of the component class (e.g., <code>StudentComponent</code>). It then converts them to strings before finally rendering everything on the page:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Taylor is a student in grade 12.</span><br></pre></td></tr></table></figure>
+
+<p>As such, we can say that the <code>name</code> and <code>grade</code> properties are <em>bound</em> (i.e., through <strong>data binding</strong>) to the component class.</p>
+<h3 id="The-component-lifecycle"><a href="#The-component-lifecycle" class="headerlink" title="The component lifecycle"></a>The component lifecycle</h3><p>Every Angular component goes through a cycle: from the moment it is created and mounted to the document object model (DOM), all the way to the moment it is unmounted and ultimately destroyed. This is what we refer to as the <strong>component lifecycle</strong>.</p>
+<p><img src="https://video.udacity-data.com/topher/2021/March/604d05aa_fsjs-c3-l2-component-lifecycle/fsjs-c3-l2-component-lifecycle.jpg" alt></p>
+<h3 id="Lifecycle-Methods"><a href="#Lifecycle-Methods" class="headerlink" title="Lifecycle Methods"></a>Lifecycle Methods</h3><p>The answer to the question lives in the component’s <strong>lifecycle methods</strong>. These predefined methods in the component class allow us to run any code or logic during any particular stage of the component’s lifecycle:</p>
+<ul>
+<li><code>ngOnChanges()</code></li>
+<li><code>ngOnInit()</code></li>
+<li><code>ngDoCheck()</code></li>
+<li><code>ngAfterContentInit()</code></li>
+<li><code>ngAfterContentChecked()</code></li>
+<li><code>ngAfterViewInit()</code></li>
+<li><code>ngAfterViewChecked()</code></li>
+<li><code>ngOnDestroy()</code></li>
+</ul>
+<p>Note that these methods are called <em>automatically</em> during specific points in time of the lifecycle (e.g., <code>ngOninit()</code> during initialization). You won’t need to manually invoke these functions in your application.</p>
+<p>Another thing to keep in mind that usage of these methods is not required. That is, you won’t need to use leverage lifecycle methods in every single Angular application that you build. That said, using certain methods is considered standard in the industry and can greatly benefit your application’s functionality.</p>
+<h3 id="ngOnInit"><a href="#ngOnInit" class="headerlink" title="ngOnInit()"></a><code>ngOnInit()</code></h3><p>The <code>ngOnInit()</code> lifecycle method is called during the <code>OnInit</code> event, which occurs during the initializing phase of a component. It is one of the most common lifecycle methods you’ll see and use, and is only called <em>once</em> during a component’s lifecycle.</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// countries.component.ts</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app-countries'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./countries.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./countries.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> CountriesComponent <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line">  countryList: object[] = [];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span>) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit(): <span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.countryList = [</span><br><span class="line">      &#123;</span><br><span class="line">        name: <span class="string">'Spain'</span>,</span><br><span class="line">        population: <span class="number">46754778</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        name: <span class="string">'New Zealand'</span>,</span><br><span class="line">        population: <span class="number">4822233</span>    </span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        name: <span class="string">'United States of America'</span>,</span><br><span class="line">        population: <span class="number">331002651</span>    </span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>We first import <code>OnInit</code> from <code>@angular/core</code> (which is where all lifecycle events are imported from). When <code>OnInit</code> occurs, the variable <code>countryList</code>, which is initially an empty array, is available for us to use.</p>
+<p>At this point, Angular automatically invokes <code>ngOnInit()</code> for us, the lifecycle method containing the code that we want to run during this initialization. In particular, we reassign the value of the component class’s <code>countryList</code> property to a new array of objects. This way, when the component mounts to the DOM, the <code>countryList</code> will be populated with an array of objects containing the data that we need, and the template will have access to the country data.</p>
+<blockquote>
+<h3 id="💡️-Can-I-Just-Use-the-constructor-Instead"><a href="#💡️-Can-I-Just-Use-the-constructor-Instead" class="headerlink" title="💡️ Can I Just Use the constructor() Instead?"></a>💡️ Can I Just Use the <code>constructor()</code> Instead?</h3><p>On the surface, it seems like the <code>constructor()</code> would be a logical place to keep initialization tasks as well.</p>
+<p>Recall that the <code>constructor()</code> is called <em>before</em> <code>ngOnInit()</code> in the component lifecycle. That is, data-bound properties haven’t be set and ready to use yet. If we tried referencing <code>countryList</code> in the <code>constructor()</code>, it would be an <code>undefined</code> value rather than the array we’d expect.</p>
+<p>As such, the <code>constructor()</code> should generally only be used for dependency injection (which we’ll visit later in this course), and not much more. Ideally, your <code>constructor()</code> functions should be kept relatively simple, and away from business logic.</p>
+</blockquote>
+<h2 id="Modules"><a href="#Modules" class="headerlink" title="Modules"></a>Modules</h2><h3 id="What-is-a-Module"><a href="#What-is-a-Module" class="headerlink" title="What is a Module?"></a>What is a Module?</h3><p>In general, a module collects a block of code dedicated to a single purpose.</p>
+<ul>
+<li>Cohesive, organized set of functionality</li>
+<li>TypeScript </li>
+<li>At least one root module(AppModule)</li>
+<li>Generated with the Angular CLI</li>
+</ul>
+<h3 id="Recall"><a href="#Recall" class="headerlink" title="Recall"></a>Recall</h3><p>Recall the terminal output when we ran the command, <code>ng generate component Photos</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">~$ ng generate component Photos</span><br><span class="line">CREATE src/app/photos/photos.component.css (0 bytes)</span><br><span class="line">CREATE src/app/photos/photos.component.html (21 bytes)</span><br><span class="line">CREATE src/app/photos/photos.component.spec.ts (626 bytes)</span><br><span class="line">CREATE src/app/photos/photos.component.ts (275 bytes)</span><br><span class="line">UPDATE src/app/app.module.ts (475 bytes)</span><br></pre></td></tr></table></figure>
+
+<p>The Angular CLI reports that four files were created, and one file was updated: <code>src/app/app.module.ts</code>. This is because generating an Angular component involves two steps:</p>
+<ol>
+<li>Creating the component files</li>
+<li>Registering the newly-generated component to a module (recall that a module is a set of closely-related capabilities or functionalities)</li>
+</ol>
+<p>As such, the Angular CLI automatically registers the module to the root application module, the <code>AppModule</code>.</p>
+<h3 id="The-AppModule"><a href="#The-AppModule" class="headerlink" title="The AppModule"></a>The <code>AppModule</code></h3><p>So, what happens to the <code>AppModule</code> when it is updated by the Angular CLI? Specifically, by registering the component, the Angular CLI updates a property called <code>declarations</code>:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/app/app.module.ts</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; BrowserModule &#125; <span class="keyword">from</span> <span class="string">'@angular/platform-browser'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; NgModule &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; AppRoutingModule &#125; <span class="keyword">from</span> <span class="string">'./app-routing.module'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; AppComponent &#125; <span class="keyword">from</span> <span class="string">'./app.component'</span>;</span><br><span class="line"><span class="comment">// The new component is automatically imported:</span></span><br><span class="line"><span class="keyword">import</span> &#123; PhotosComponent &#125; <span class="keyword">from</span> <span class="string">'./photos/photos.component'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@NgModule</span>(&#123;</span><br><span class="line">  declarations: [</span><br><span class="line">    AppComponent,</span><br><span class="line">    PhotosComponent <span class="comment">// The new component is added to declarations</span></span><br><span class="line">  ],</span><br><span class="line">  imports: [</span><br><span class="line">    BrowserModule,</span><br><span class="line">    AppRoutingModule</span><br><span class="line">  ],</span><br><span class="line">  providers: [],</span><br><span class="line">  bootstrap: [AppComponent]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> AppModule &#123; &#125;</span><br></pre></td></tr></table></figure>
+
+<p>Registering a component with a module is crucial, as it allows the component to be recognized by Angular. After importing <code>PhotosComponent</code> using ES6 <code>import</code> syntax, it is added to the <code>declarations</code> array, which defines all the components that live within the module. If the new component weren’t included here, and we try to use that component in our application, Angular will throw an error!</p>
+<h3 id="Generate-a-Module"><a href="#Generate-a-Module" class="headerlink" title="Generate a Module"></a>Generate a Module</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~$ ng generate module books</span><br><span class="line">CREATE src/app/books/books.module.ts (191 bytes)</span><br></pre></td></tr></table></figure>
+
+<p>The file created will have everything ready for you to start registering your components!</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/app/books/books.module.ts</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; NgModule &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; CommonModule &#125; <span class="keyword">from</span> <span class="string">'@angular/common'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@NgModule</span>(&#123;</span><br><span class="line">  declarations: [],</span><br><span class="line">  imports: [</span><br><span class="line">    CommonModule</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> BooksModule &#123; &#125;</span><br></pre></td></tr></table></figure>
+
+<p>We can open the folder of the module and create a component. This component will belong to the module.</p>
+<p>After we create a new module, we should add this module to <code>AppModule</code> in the imports part.</p>
+<h2 id="Directives"><a href="#Directives" class="headerlink" title="Directives"></a>Directives</h2><h3 id="Types"><a href="#Types" class="headerlink" title="Types"></a>Types</h3><p>The main responsibility for directives is to manipulate the DOM. There are three kinds of directives in Angular:</p>
+<ul>
+<li><strong>Components</strong> are directives with a template</li>
+<li><strong>Structural directive</strong> manipulate the DOM by adding or removing DOM elements</li>
+<li><strong>Attribute directives</strong> modify the appearance or behavior of a DOM element</li>
+</ul>
+<h3 id="ngFor"><a href="#ngFor" class="headerlink" title="ngFor"></a><code>ngFor</code></h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- countries.component.html --&gt;</span></span><br><span class="line"></span><br><span class="line">&#123;&#123; countryList &#125;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">Browser output:</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">[object Object],[object Object],[object Object] </span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- countries.component.html --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> *<span class="attr">ngFor</span>=<span class="string">"let country of countryList"</span>&gt;</span></span><br><span class="line">    &#123;&#123; country.name &#125;&#125; has &#123;&#123; country.population &#125;&#125; people.</span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">Browser output:</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">- Spain has 46754778 people.</span></span><br><span class="line"><span class="comment">- New Zealand has 4822233 people.</span></span><br><span class="line"><span class="comment">- United States of America has 331002651 people.</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="ngIf"><a href="#ngIf" class="headerlink" title="ngIf"></a><code>ngIf</code></h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app-blogs'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./blogs.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./blogs.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> BlogsComponent <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line">  title: <span class="built_in">string</span> = <span class="string">'My Favorite Blogs'</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span>) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit(): <span class="built_in">void</span> &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&lt;!-- blogs.component.html --&gt;</span><br><span class="line"></span><br><span class="line">&lt;p *ngIf=<span class="string">"title === 'My Favorite Blogs'"</span>&gt;</span><br><span class="line">  This is a list of my favorite blogs!</span><br><span class="line">&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;!-- </span></span><br><span class="line"><span class="regexp">Browser output:</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">This is a list of my favorite blogs!</span></span><br><span class="line"><span class="regexp">--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Attribute-Directives"><a href="#Attribute-Directives" class="headerlink" title="Attribute Directives"></a>Attribute Directives</h3><p>Along with structural directives, we can also leverage attribute directives to help manipulate the DOM.</p>
+<p>Recall that the attribute directive’s main responsibility is to modify the behavior or appearance of a DOM element. Consider <code>ngStyle</code>, which is an attribute directive that updates styles for the containing HTML element:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// header.component.ts</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app-header'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./header.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./header.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> HeaderComponent <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line">  title: <span class="built_in">string</span> = <span class="string">'Header'</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&lt;!-- header.component.html --&gt;</span><br><span class="line"></span><br><span class="line">&lt;p [ngStyle]=<span class="string">"&#123;'font-size': title === 'Header' ? '48px' : '12px' &#125;"</span>&gt;This is the header.&lt;<span class="regexp">/p&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>The <code>Header</code> component class above contains a <code>title</code> property whose value is set to <code>&#39;Header&#39;</code>. The component’s template leverages the <code>ngStyle</code> directive to conditionally apply styles directly to the paragraph element.</p>
+<h2 id="Sending-data"><a href="#Sending-data" class="headerlink" title="Sending data"></a>Sending data</h2><h3 id="Passing-Data-From-Parent-to-Child-Input"><a href="#Passing-Data-From-Parent-to-Child-Input" class="headerlink" title="Passing Data From Parent to Child: @Input"></a>Passing Data From Parent to Child: <code>@Input</code></h3><p>Angular gives us a useful tool to facilitate passing data from a parent component to its child component. By leveraging the <code>@Input</code> decorator in the child component class, we can get it ready to receive data from its parent.</p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><h4 id="PostItem-Class"><a href="#PostItem-Class" class="headerlink" title="PostItem Class"></a>PostItem Class</h4><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> PostItemComponent <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line">  <span class="meta">@Input</span>() post: Post;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span>) &#123; </span><br><span class="line">    <span class="keyword">this</span>.post = &#123;</span><br><span class="line">      id: <span class="number">0</span>,</span><br><span class="line">      title: <span class="string">''</span>,</span><br><span class="line">      body: <span class="string">''</span>,</span><br><span class="line">      votes: <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit(): <span class="built_in">void</span> &#123;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="PostItem-html"><a href="#PostItem-html" class="headerlink" title="PostItem html"></a>PostItem html</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>&#123;&#123; post.title &#125;&#125;<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; post.body &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Votes: &#123;&#123; post.votes &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Posts-html"><a href="#Posts-html" class="headerlink" title="Posts html"></a>Posts html</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- still use ngFor to iterate posts. </span></span><br><span class="line"><span class="comment">Rather than show the posts use list, pass each post to its child (post item) --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">app-post-item</span> *<span class="attr">ngFor</span> = <span class="string">"let post of posts"</span> [<span class="attr">post</span>] = <span class="string">"post"</span>&gt;</span><span class="tag">&lt;/<span class="name">app-post-item</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Event-binding"><a href="#Event-binding" class="headerlink" title="Event binding"></a>Event binding</h2><p><strong>Event binding</strong> allows us to listen for and respond to such user actions. That is, we detect when something has occurred on a target DOM element, and in response, we can invoke certain function methods in the template’s associated component class. As a result, with event binding, we can send information from the template <em>to</em> its corresponding component class.</p>
+<p>Consider the following example of an HTML template.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- click.component.html --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> (<span class="attr">click</span>)=<span class="string">"onClick()"</span>&gt;</span>Click me!<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>On the <code>&lt;button&gt;</code> element, note the block of code that says <code>(click)=&quot;onClick()&quot;</code>. This shows standard event binding syntax in Angular, which is made of two parts:</p>
+<ul>
+<li>The <strong>target event</strong> name in parentheses to the left of the equal sign (i.e., <code>click</code>)</li>
+<li>The <strong>template statement</strong> on the right of the equal sign, which is the method (<code>onClick()</code>) called in the component class whenever the target event occurs.</li>
+</ul>
+<p>Back in the component class, then, we might see something like this:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// click.component.ts</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app-click'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./click.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./click.component.scss'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> ClickComponent <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line"></span><br><span class="line">  clickAmount: <span class="built_in">number</span> = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span>) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit(): <span class="built_in">void</span> &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  onClick(): <span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.clickAmount += <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Sending-data-to-a-parent-component"><a href="#Sending-data-to-a-parent-component" class="headerlink" title="Sending data to a parent component"></a>Sending data to a parent component</h2><p>In many real-world applications, data for the book list, as well as any associated data for that list, might live in the parent <code>BooksList</code> component. As such, the parent needs to be notified of certain actions that occur in its child component.</p>
+<p>To accomplish this, the child component needs to <em>emit an event up</em> to its parent. We can leverage the <code>@Output</code> decorator as well as the <code>EvenEmitter</code> class to do just that:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// book-item.component.ts</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; Component, OnInit, Input, Output, EventEmitter &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app-book-item'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./book-item.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./book-item.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> BookItemComponent <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line">  <span class="meta">@Input</span>() book;</span><br><span class="line">  <span class="meta">@Output</span>() marked = <span class="keyword">new</span> EventEmitter();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span>) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit(): <span class="built_in">void</span> &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Similar to the event binding that we saw on the previous page, we can bind an event handler method from the parent <code>BooksList</code> component to the output property of its child component.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- books-list-component.html --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>List of available books<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">app-book-item</span> *<span class="attr">ngFor</span>=<span class="string">"let book of bookList"</span> [<span class="attr">book</span>]=<span class="string">"book"</span> (<span class="attr">marked</span>)=<span class="string">"markAsFavorite(book)"</span>&gt;</span><span class="tag">&lt;/<span class="name">app-book-item</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>In the above template, we “capture” the event emitted from the child component on the <code>marked</code> output property. This way, when the user clicks the button, the <code>BooksList</code> component invokes its <code>markAsFavorite()</code> method:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, OnInit &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app-books-list'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./books-list.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./books-list.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> BooksListComponent <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line">  bookList: object[] = [];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span>) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit(): <span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.bookList = [</span><br><span class="line">      &#123;</span><br><span class="line">        id: <span class="number">1</span>,</span><br><span class="line">        title: <span class="string">'Pride and Prejudice'</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        id: <span class="number">2</span>,</span><br><span class="line">        title: <span class="string">'The Great Gatsby'</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        id: <span class="number">3</span>,</span><br><span class="line">        title: <span class="string">'The Catcher in the Rye'</span>,</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  markAsFavorite(book: <span class="built_in">any</span>): <span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;book.title&#125;</span> has been added to favorites.`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Navigation"><a href="#Navigation" class="headerlink" title="Navigation"></a>Navigation</h2><h2 id="Configuring-the-Angular-Router"><a href="#Configuring-the-Angular-Router" class="headerlink" title="Configuring the Angular Router"></a>Configuring the Angular Router</h2><p>In order to map a component to a particular path, most of the work involves configuring <code>routes</code>, which is an array of <code>Route</code> objects. Each object in the array defines a route in the application, as well as the component that responds to that route.</p>
+<p>For example, consider a web application that shows information about the libraries in your local county. Its <code>routes</code> may look something like this:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// app-routing.module.ts</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; NgModule &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Routes, RouterModule &#125; <span class="keyword">from</span> <span class="string">'@angular/router'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HomeComponent &#125; <span class="keyword">from</span> <span class="string">'./components/home/home.component'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; ContactComponent &#125; <span class="keyword">from</span> <span class="string">'./components/contact/contact.component'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; LibrariesComponent &#125; <span class="keyword">from</span> <span class="string">'./components/pages/libraries/libraries.component'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> routes: Routes = [</span><br><span class="line">  &#123; path: <span class="string">''</span>, component: HomeComponent &#125;,</span><br><span class="line">  &#123; path: <span class="string">'contact'</span>, component: ContactComponent &#125;,</span><br><span class="line">  &#123; path: <span class="string">'libraries/:id'</span>, component: LibrariesComponent &#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="meta">@NgModule</span>(&#123;</span><br><span class="line">  imports: [RouterModule.forRoot(routes)],</span><br><span class="line">  exports: [RouterModule]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> AppRoutingModule &#123; &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- app.component.html --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">app-header</span>&gt;</span><span class="tag">&lt;/<span class="name">app-header</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">router-outlet</span>&gt;</span><span class="tag">&lt;/<span class="name">router-outlet</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Setting-Up-Hyperlinks"><a href="#Setting-Up-Hyperlinks" class="headerlink" title="Setting Up Hyperlinks"></a>Setting Up Hyperlinks</h3><p>At this point, our routes do indeed work, but only if our users directly access them. That is, if the user types the URL (e.g., <code>http://localhost:4200/contact</code>) directly into the browser.</p>
+<p>This, of course, wouldn’t be an optimal experience for users of your application. In order to make anchor tags (<code>&lt;a&gt;</code>) work properly in the browser, we must add the proper route to the <code>routerLink</code> directive. For example:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- navigation.component.html --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Library Directory<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">nav</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">routerLink</span>=<span class="string">"/"</span>&gt;</span>Home<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">routerLink</span>=<span class="string">"/contact"</span>&gt;</span>Contact us<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>Since we are building a single-page application, using <code>routerLink</code> (versus <code>href</code>) allows us to navigate to other components without reloading the page. Note that unlike the <code>path</code> property of the <code>Route</code> objects we saw previously, there is a preceding <code>/</code> that we use before the component name in the value for <code>routerLink</code>.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Fullstack/Authentication-and-Authorization-in-a-Node-API.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Fullstack/Authentication-and-Authorization-in-a-Node-API.html" itemprop="url">Authentication and Authorization in a Node API</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-05-20T11:07:15+08:00">
+                2022-05-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Fullstack/" itemprop="url" rel="index">
+                    <span itemprop="name">Fullstack</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Fullstack/Authentication-and-Authorization-in-a-Node-API.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Fullstack/Authentication-and-Authorization-in-a-Node-API.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  303 字
                 </span>
               
 
@@ -689,7 +1055,40 @@
       
         
           
-            <h2 id="Install-Jasmine"><a href="#Install-Jasmine" class="headerlink" title="Install Jasmine"></a>Install Jasmine</h2>
+            <h2 id="Hash-and-Salt"><a href="#Hash-and-Salt" class="headerlink" title="Hash and Salt"></a>Hash and Salt</h2><ul>
+<li>A hashed password has been run through a function that generates a long encrypted string from the original password.</li>
+<li>The same password run through the same hash function will generate the same response, this is how we can match passwords when users log in. But from the result, we can’t get the password back.</li>
+<li>Simply hashing passwords though isn’t enough, adding <strong>Salt</strong>, an extra string sequence to the beginning or end of a password before hashing it makes it much harder for attackers to decrypt passwords</li>
+</ul>
+<h2 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h2><ul>
+<li>Add the dependency: <code>npm i bcrypt</code></li>
+<li>Import bcrypt into the user model <code>import bcrypt from &#39;bcrypt&#39;</code></li>
+<li>Create some environment variable in the local <ul>
+<li><code>BCRYPT_PASSWORD</code>=some string</li>
+<li><code>SALT_ROUNDS</code>=10</li>
+</ul>
+</li>
+<li>Use the hash method inside the create method to hash, salt and pepper the password and save the resulting value to the password column on the users table</li>
+</ul>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> pepper = process.env.BCRYPT_PASSWORD;</span><br><span class="line"><span class="keyword">const</span> saltRounds = process.env.SALT_ROUNDS <span class="keyword">as</span> <span class="built_in">string</span>;</span><br><span class="line"><span class="keyword">const</span> hash = bcrypt.hashSync(</span><br><span class="line">  u.password + pepper,</span><br><span class="line">  <span class="built_in">parseInt</span>(saltRounds)</span><br><span class="line">)</span><br><span class="line"><span class="keyword">const</span> result = <span class="keyword">await</span> conn.query(sql, [u.username, hash])</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Add an authentication route to implement this job</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">async authenticate(username: string, password: string): Promise&lt;User | null&gt; &#123;</span><br><span class="line">    // @ts-ignore</span><br><span class="line">    const conn = await Client.connect();</span><br><span class="line">    const sql = &apos;SELECT password FROM users where username=($1)&apos;;</span><br><span class="line">    const result = await conn.query(sql, [username]);</span><br><span class="line">    const pepper = process.env.BCRYPT_PASSWORD;</span><br><span class="line">    console.log(password + pepper);</span><br><span class="line"></span><br><span class="line">    if (result.rows.length) &#123;</span><br><span class="line">      const user = result.rows[0];</span><br><span class="line">      console.log(user);</span><br><span class="line">      if (bcrypt.compareSync(password + pepper, user.password)) &#123;</span><br><span class="line">        return user;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return null;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="JSON-Web-Tokens-JWT"><a href="#JSON-Web-Tokens-JWT" class="headerlink" title="JSON Web Tokens (JWT)"></a>JSON Web Tokens (JWT)</h2><h3 id="Structure"><a href="#Structure" class="headerlink" title="Structure"></a>Structure</h3><ul>
+<li>header</li>
+<li>payload</li>
+<li>signature</li>
+</ul>
+<h3 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h3><h4 id="header"><a href="#header" class="headerlink" title="header"></a>header</h4><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"alg"</span>: <span class="string">"HS256"</span>,</span><br><span class="line">  <span class="attr">"typ"</span>: <span class="string">"JWT"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="payload"><a href="#payload" class="headerlink" title="payload"></a>payload</h4><p>Used for indentify which user this request belongs to.</p>
+<p>Note: Don’t put any secret information to this part.</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"user"</span>: <span class="string">"Maverick"</span>,</span><br><span class="line">  <span class="attr">"school"</span>: <span class="string">"UCSD"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
           
         
       
@@ -739,7 +1138,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Fullstack/TypeScript.html">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Fullstack/Create-an-API-with-Express.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Qian Hongbo">
@@ -758,7 +1157,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/Fullstack/TypeScript.html" itemprop="url">TypeScript</a></h2>
+                <a class="post-title-link" href="/Fullstack/Create-an-API-with-Express.html" itemprop="url">Create an API with Express</a></h2>
         
 
         <div class="post-meta">
@@ -770,8 +1169,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-04-01T11:56:13+08:00">
-                2022-04-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-05-19T21:04:44+08:00">
+                2022-05-19
               </time>
             
 
@@ -813,8 +1212,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/Fullstack/TypeScript.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Fullstack/TypeScript.html" itemprop="commentCount"></span>
+                <a href="/Fullstack/Create-an-API-with-Express.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Fullstack/Create-an-API-with-Express.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -836,339 +1235,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.6k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  9 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Why-TypeScript"><a href="#Why-TypeScript" class="headerlink" title="Why TypeScript"></a>Why TypeScript</h2><h3 id="Types"><a href="#Types" class="headerlink" title="Types"></a>Types</h3><p>Types are applied to:</p>
-<ul>
-<li>variables</li>
-<li>function parameters</li>
-<li>function returns</li>
-<li>object values.</li>
-</ul>
-<h3 id="JavaScript-is-Weakly-Typed"><a href="#JavaScript-is-Weakly-Typed" class="headerlink" title="JavaScript is Weakly-Typed."></a>JavaScript is Weakly-Typed.</h3><p>This means that types are assigned by the interpreter based on the data and makes an educated guess when the code’s intention is ambiguous. This can lead to unintended results.</p>
-<p><strong>Example:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2 + &apos;2&apos; = &apos;22&apos;</span><br></pre></td></tr></table></figure>
-
-<h3 id="TypeScript-Adds-Typing-to-JavaScript"><a href="#TypeScript-Adds-Typing-to-JavaScript" class="headerlink" title="TypeScript Adds Typing to JavaScript"></a>TypeScript Adds Typing to JavaScript</h3><p>In short, TypeScript is a static and strong typed superset of JavaScript. When we’re done with our TypeScript code, it compiles to JavaScript.</p>
-<h2 id="Configure-TypeScript"><a href="#Configure-TypeScript" class="headerlink" title="Configure TypeScript"></a>Configure TypeScript</h2><h3 id="Install-TypeScript"><a href="#Install-TypeScript" class="headerlink" title="Install TypeScript"></a>Install TypeScript</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init -y</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm i typescript // save to dependencies</span><br><span class="line">$ npm i typescript --save-dev // save to devDependencies</span><br></pre></td></tr></table></figure>
-
-<p>Add <code>typescript</code>, <code>ts-node</code> and <code>@types/node</code> definitions to dev dependencies.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm i --save-dev typescript</span><br><span class="line">npm i --save-dev ts-node </span><br><span class="line">npm i --save-dev @types/node</span><br></pre></td></tr></table></figure>
-
-<h3 id="Creating-your-package-json-Script"><a href="#Creating-your-package-json-Script" class="headerlink" title="Creating your package.json Script"></a>Creating your package.json Script</h3><p>To use TypeScript, you need to add a script to your package.json file to compile TypeScript to JavaScript. This is generally called your “build” script but could be named anything.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  <span class="string">"build"</span>: <span class="string">"npx tsc"</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-
-<p>To execute your <code>&quot;build&quot;</code> script use the following:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm run build</span><br></pre></td></tr></table></figure>
-
-<p>Run the completed index file.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ node build/.</span><br></pre></td></tr></table></figure>
-
-<p><code>tsconfig.json</code> can also be named <code>jsconfig.json</code>.</p>
-<p>To install the config file, run</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npx tsc --init</span><br></pre></td></tr></table></figure>
-
-<h3 id="Helpful-configurations-to-note"><a href="#Helpful-configurations-to-note" class="headerlink" title="Helpful configurations to note:"></a>Helpful configurations to note:</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"compilerOptions"</span>: &#123;</span><br><span class="line">    <span class="string">"target"</span>: <span class="string">"es5"</span>,                          </span><br><span class="line">    <span class="string">"module"</span>: <span class="string">"commonjs"</span>,                     </span><br><span class="line">    <span class="string">"lib"</span>: [<span class="string">"ES2018"</span>, <span class="string">"DOM"</span>], </span><br><span class="line">    <span class="string">"outDir"</span>: <span class="string">"./build"</span>,                        </span><br><span class="line">    <span class="string">"strict"</span>: <span class="literal">true</span>,                           </span><br><span class="line">    <span class="string">"noImplicitAny"</span>: <span class="literal">true</span>,                 </span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"exclude"</span>: [<span class="string">"node_modules"</span>, <span class="string">"tests"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>You will see many more options available than what is above. Your application may require additional settings to be configured, but these are typically the main settings to start with.</p>
-<ul>
-<li><code>target</code> - sets what version of JS TypeScript will be transpiled to.</li>
-<li><code>module</code> - sets what module system will be used when transpiling. Node.js uses the common.js module system by default</li>
-<li><code>lib</code> - is used to say what libraries your code is using. In this case, ES2018 and the DOM API</li>
-<li><code>outDir</code> - where you want your src code to output to. Often named build, prod, or server (when using it serverside)</li>
-<li><code>strict</code> - enable strict typing</li>
-<li><code>noImplicitAny</code> - disallow the <code>&quot;any&quot;</code> type (covered in TypeScript Basics)</li>
-<li><code>exclude</code> - directories to exclude in compiling</li>
-</ul>
-<h2 id="ES6-Modules"><a href="#ES6-Modules" class="headerlink" title="ES6 Modules"></a>ES6 Modules</h2><p>Now that we are using TypeScript for our application, we can also easily utilize the ES6 module system instead of the CommonJS module system. Destructuring should only be used when you are exporting the functions individually. If choosing to use export default, you must import the entire default as a module.</p>
-<h3 id="Import"><a href="#Import" class="headerlink" title="Import"></a>Import</h3><p>For importing modules, use the following syntax</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Rename the module</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'name'</span> <span class="keyword">from</span> <span class="string">'module'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Use destructuring to pull in specific functions when they are exported individually</span></span><br><span class="line"><span class="keyword">import</span> &#123;<span class="function"><span class="keyword">function</span>, <span class="title">function</span>&#125; <span class="title">from</span> '<span class="title">module</span>';</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Export"><a href="#Export" class="headerlink" title="Export"></a>Export</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Export an individual function or other type of object in code</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> myFunction = <span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Export a single item at the end</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> object;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Export a list of objects</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;object1, object2&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="TypeScript-Basics"><a href="#TypeScript-Basics" class="headerlink" title="TypeScript Basics"></a>TypeScript Basics</h2><h3 id="Implicit-Typing-and-Explicit-Typing"><a href="#Implicit-Typing-and-Explicit-Typing" class="headerlink" title="Implicit Typing and Explicit Typing"></a>Implicit Typing and Explicit Typing</h3><h4 id="Implicit-Typing"><a href="#Implicit-Typing" class="headerlink" title="Implicit Typing"></a>Implicit Typing</h4><p>TypeScript will automatically assume types of objects if the object is not typed. It is best practice to allow TypeScript to type immutable variables and simple functions implicitly.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myNum = <span class="number">3</span>; <span class="comment">// TypeScript implicitly types myNum as a number based on the variable</span></span><br></pre></td></tr></table></figure>
-
-<p>Implicit Typing is a best practice when the app is self-contained (meaning that it does not depend on other applications or APIs) or variables are immutable.</p>
-<p><img src="https://video.udacity-data.com/topher/2021/March/603f9e26_fsjs-c1-l2-implicit-typing/fsjs-c1-l2-implicit-typing.jpg" alt></p>
-<h4 id="Explicit-Typing"><a href="#Explicit-Typing" class="headerlink" title="Explicit Typing"></a>Explicit Typing</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myVar: number = <span class="number">3</span>; <span class="comment">// myVar has been explicitly typed as a number</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://video.udacity-data.com/topher/2021/March/603fa213_fsjs-c1-l2-explicit-typing/fsjs-c1-l2-explicit-typing.jpg" alt></p>
-<h3 id="Basic-Types"><a href="#Basic-Types" class="headerlink" title="Basic Types"></a>Basic Types</h3><p><code>string</code> - used for string types, textual data</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> studentName:string;</span><br><span class="line">studentName = <span class="string">'Dae Lee'</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<p><code>number</code> - used for number types including integers and decimals</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> studentAge: number;</span><br><span class="line">studentAge = <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p><code>boolean</code> - used for <code>true</code>/<code>false</code> types</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> studentEnriched: boolean;</span><br><span class="line">studentEnriched = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p><code>Union Types</code> - used when more than one type can be used</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> studentPhone: (number | string);</span><br><span class="line">studentPhone = <span class="string">'(555) 555 - 5555'</span>;</span><br><span class="line">studentPhone = <span class="number">5555555555</span>;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p><code>null</code> - used when an object or variable is intentionally <code>null</code>, typically only functionally found in union types</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> getCapitals = (str:string):string[] | <span class="function"><span class="params">null</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> capitals = str.match(<span class="regexp">/[A-Z]/</span>);</span><br><span class="line">  <span class="keyword">return</span> capitals;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(getCapitals(<span class="string">'something'</span>));</span><br><span class="line"><span class="comment">// returns null</span></span><br><span class="line"><span class="built_in">console</span>.log(getCapitals(<span class="string">'Something'</span>));</span><br><span class="line"><span class="comment">// returns ['S']</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<p><code>undefined</code> - used when a variable has yet to be defined</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myFunc = <span class="function">(<span class="params">student: string | <span class="literal">undefined</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> ( student === <span class="literal">undefined</span> )&#123;</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">  &#125; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p><code>void</code> - used as a return type when the function returns nothing</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myFunc = (student: string): <span class="keyword">void</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(student);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p><code>never</code> - used as a return type when the function will never return anything, such as with functions that throw errors or infinite loops</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myError = (err: string): never &#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(err); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p><code>any</code> - <em>should be avoided</em>. Used when the type of the item being typed can be anything</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myFunc = (student: any): <span class="function"><span class="params">any</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// do something</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p><code>unknown</code> - used when the type of the thing being typed is unknown. Used heavily for type assertion</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myFunc = (student: unknown): <span class="function"><span class="params">string</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// do something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Type-Assertions"><a href="#Type-Assertions" class="headerlink" title="Type Assertions"></a>Type Assertions</h3><p>Type Assertions are used to tell TypeScript that even though TypeScript thinks it should be one type, it is actually a different type. Common to see when a type is <code>unknown</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myFunc = (student: unknown): <span class="function"><span class="params">string</span> =&gt;</span> &#123;</span><br><span class="line">  newStudent = student <span class="keyword">as</span> string;</span><br><span class="line">  <span class="keyword">return</span> newStudent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Object-like-types"><a href="#Object-like-types" class="headerlink" title="Object-like types"></a>Object-like types</h3><p><strong>Array</strong> - to type as an array, use the type, followed by square brackets. Union types can be used to allow for multiple types in an array.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let arr: string[]; // only accepts strings</span><br><span class="line">let arr2: (string | number)[]; // accepts strings or numbers</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p><strong>Tuple</strong> - tuples are not native to JavaScript. When you know exactly what data will be in the array, and you will not be adding to the array or modifying the type for any value, you can use a tuple.</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr: [<span class="built_in">string</span>, <span class="built_in">number</span>, <span class="built_in">string</span>]; <span class="comment">// ['cat', 7, 'dog']</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<p><code>enum</code> - enums are not native to JavaScript but are similar to enumeration used in other languages like C++ and Java. You use an enum when you have a constant set of values that will not be changed. By default, the values in an enum are also given a numeric value starting at 0. However, the numeric value can manually be set to any number explicitly or by calculation. Uses PascalCase to name the type.</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> Weekend &#123;</span><br><span class="line">  Friday,</span><br><span class="line">  Saturday,</span><br><span class="line">  Sunday</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Objects-and-Interfaces"><a href="#Objects-and-Interfaces" class="headerlink" title="Objects and Interfaces"></a>Objects and Interfaces</h3><p>Objects are easily created in JavaScript due to JavaScript’s weak typing. With TypeScript, they take a bit more work. It is possible to create an object in TypeScript, but TypeScript offers better tools for doing so.</p>
-<p><strong>Object</strong> - creating an object requires defining the object before setting values. Once you have defined the object, additional properties cannot be added to the type definition, making it unhelpful when you need to add more properties after creation.</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> student:&#123; name: <span class="built_in">string</span>, age: <span class="built_in">number</span>, enrolled: <span class="built_in">boolean</span>&#125; = &#123;name: <span class="string">'Maria'</span>, age: <span class="number">10</span>, enrolled: <span class="literal">true</span>&#125;;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p><code>interface</code> - Interfaces are a concept not native to javascript, but similar concepts exist in other languages like Java, C++, and Python, where you create an abstract class as an interface for creating classes. With TypeScript, interfaces are simply used as the blueprint for the shape of something. Interfaces can be used to create functions but are most commonly seen to create objects.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">interface Student &#123; </span><br><span class="line">  name: string, </span><br><span class="line">  age: number, </span><br><span class="line">  enrolled: boolean</span><br><span class="line">&#125;;</span><br><span class="line">let newStudent:Student = &#123;name: &apos;Maria&apos;, age: 10, enrolled: true&#125;;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">interface Undergrad extends Student &#123;</span><br><span class="line">  major: string;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="Duck-Typing"><a href="#Duck-Typing" class="headerlink" title="Duck Typing"></a>Duck Typing</h4><p>Duck Typing is a programming concept that tests if an object meets the duck test: “If it walks like a duck and it quacks like a duck, then it must be a duck.”</p>
-<p>TypeScript uses duck typing for interfaces, meaning that even though you may say a function takes in an argument of interface A, if interface B has the same properties of A, it will also accept B. Interface A is the duck, and Interface B walks and quacks like a duck, so we’ll accept it as a duck too.</p>
-<h4 id="Optional-and-Readonly-Properties"><a href="#Optional-and-Readonly-Properties" class="headerlink" title="Optional and Readonly Properties"></a>Optional and Readonly Properties</h4><p><strong>Optional</strong> - use when an object may or may not have a specific property by adding a <code>?</code> at the end of the property name.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">interface Student &#123; </span><br><span class="line">  name: string, </span><br><span class="line">  age: number, </span><br><span class="line">  enrolled: boolean,</span><br><span class="line">  phone?: number // phone becomes optional</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p><code>readonly</code> - use when a property should not be able to be modified after the object has been created.</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Student &#123; </span><br><span class="line">  name: <span class="built_in">string</span>, </span><br><span class="line">  age: <span class="built_in">number</span>, </span><br><span class="line">  enrolled: <span class="built_in">boolean</span>,</span><br><span class="line">  readonly id: <span class="built_in">number</span> <span class="comment">// id is readonly</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Type-Aliases"><a href="#Type-Aliases" class="headerlink" title="Type Aliases"></a>Type Aliases</h3><h4 id="With-primitive-types-for-documentation"><a href="#With-primitive-types-for-documentation" class="headerlink" title="With primitive types for documentation"></a>With primitive types for documentation</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type Name = string;</span><br></pre></td></tr></table></figure>
-
-<h4 id="Workes-with-unions-and-tuples"><a href="#Workes-with-unions-and-tuples" class="headerlink" title="Workes with unions and tuples"></a>Workes with unions and tuples</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">type Input = string | number;</span><br><span class="line">type Coord = [number, number];</span><br></pre></td></tr></table></figure>
-
-<p>Type Aliases can also be used as object. It is similar as interface.</p>
-<h3 id="Classes"><a href="#Classes" class="headerlink" title="Classes"></a>Classes</h3><p>TypeScript classes look and behave very much like the classes introduced in ES6. The biggest addition to TypeScript classes is the addition of access modifiers. </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Student &#123;</span><br><span class="line">  protected studentGrade: number;</span><br><span class="line">  private studentId: number;</span><br><span class="line">  public constructor(grade: number, id: number) &#123;</span><br><span class="line">    this.studentGrade = grade;</span><br><span class="line">    this.studentId = id;</span><br><span class="line">  &#125;</span><br><span class="line">  id()&#123;</span><br><span class="line">    return this.studentId;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Factory-Functions"><a href="#Factory-Functions" class="headerlink" title="Factory Functions"></a>Factory Functions</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">interface Student &#123;</span><br><span class="line">  name: string;</span><br><span class="line">  age: number</span><br><span class="line">  greet(): void;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const studentFactory = (name: string, age: number): Student =&gt;&#123; </span><br><span class="line">  const greet = ():void =&gt; console.log(&apos;hello&apos;); </span><br><span class="line">  return &#123; name, age, greet &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const myStudent = studentFactory(&apos;Hana&apos;, 16);</span><br></pre></td></tr></table></figure>
-
-<h2 id="Generics-and-Asynchronous-TypeScript"><a href="#Generics-and-Asynchronous-TypeScript" class="headerlink" title="Generics and Asynchronous TypeScript"></a>Generics and Asynchronous TypeScript</h2><h3 id="Generics"><a href="#Generics" class="headerlink" title="Generics"></a>Generics</h3><p>We can combine the following function using generics.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const getItem = (arr: number[]):number =&gt; &#123;</span><br><span class="line">  return arr[1];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const getItem = (arr: string[]):string =&gt; &#123;</span><br><span class="line">  return arr[1];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// Generic Function</span><br><span class="line">const getItem = &lt;T&gt;(arr: T[]):T =&gt; &#123;</span><br><span class="line">  return arr[1];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Backend/Database/Database-Tutorial.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Backend/Database/Database-Tutorial.html" itemprop="url">Database Tutorial</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-03-28T22:20:28+08:00">
-                2022-03-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Database/" itemprop="url" rel="index">
-                    <span itemprop="name">Database</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/Backend/Database/Database-Tutorial.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Backend/Database/Database-Tutorial.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  354 字
+                  392 字
                 </span>
               
 
@@ -1208,51 +1275,51 @@
       
         
           
-            <h1 id="Database-Tutorial"><a href="#Database-Tutorial" class="headerlink" title="Database Tutorial"></a>Database Tutorial</h1><h2 id="Install-MYSQL-as-a-Docker-Container"><a href="#Install-MYSQL-as-a-Docker-Container" class="headerlink" title="Install MYSQL as a Docker Container"></a>Install MYSQL as a Docker Container</h2><p>First, we need to install Docker to our system. After that we just run the following code.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 3306:3306 --name ECE141MySQL -e MYSQL_ROOT_PASS</span><br><span class="line">WORD=root -e MYSQL_DATABASE=testing -d mysql</span><br></pre></td></tr></table></figure>
+            <h2 id="RESTful-APIs"><a href="#RESTful-APIs" class="headerlink" title="RESTful APIs"></a>RESTful APIs</h2><h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><ul>
+<li><p>RESTful: <strong>R</strong>epresentational <strong>S</strong>tate <strong>T</strong>ransfer(-<strong>ful</strong>) <strong>A</strong>pplication <strong>P</strong>rogramming <strong>I</strong>nterface.</p>
+</li>
+<li><p>REST: A pattern for organizing API endpoints.</p>
+</li>
+</ul>
+<h3 id="There-are-five-actionable-RESTful-routes-for-APIs"><a href="#There-are-five-actionable-RESTful-routes-for-APIs" class="headerlink" title="There are five actionable RESTful routes for APIs:"></a>There are five actionable RESTful routes for APIs:</h3><table>
+<thead>
+<tr>
+<th>URL(Routes)</th>
+<th>CRUD</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>GET [‘/cats’]</td>
+<td>INDEX</td>
+</tr>
+<tr>
+<td>GET [‘/cats/:id’]</td>
+<td>SHOW</td>
+</tr>
+<tr>
+<td>POST [‘/cats’]</td>
+<td>CREATE</td>
+</tr>
+<tr>
+<td>PUT [‘/cats/:id’]</td>
+<td>EDIT</td>
+</tr>
+<tr>
+<td>DELETE [‘/cats/:id’]</td>
+<td>DELETE</td>
+</tr>
+</tbody></table>
+<h2 id="Define-functions"><a href="#Define-functions" class="headerlink" title="Define functions"></a>Define functions</h2><p>In the <code>src/handles/book.ts</code> file. We write some functions to handle the query.</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> express, &#123; Request, Response &#125; <span class="keyword">from</span> <span class="string">'express'</span></span><br><span class="line"><span class="keyword">import</span> &#123; Book, BookStore &#125; <span class="keyword">from</span> <span class="string">'../models/book'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> BookStore();</span><br><span class="line"></span><br><span class="line"><span class="comment">// get all the records</span></span><br><span class="line"><span class="keyword">const</span> index = <span class="keyword">async</span> (_req: Request, res: Response) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> books = <span class="keyword">await</span> store.index();</span><br><span class="line">  res.json(books);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// show one specific record</span></span><br><span class="line"><span class="keyword">const</span> show = <span class="keyword">async</span> (req: Request, res: Response) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> book = <span class="keyword">await</span> store.show(req.params.id);</span><br><span class="line">  res.json(book);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// create an record</span></span><br><span class="line"><span class="comment">// need to put the details in the request body</span></span><br><span class="line"><span class="keyword">const</span> create = <span class="keyword">async</span> (req: Request, res: Response) =&gt; &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> book: Book = &#123;</span><br><span class="line">        title: req.body.title,</span><br><span class="line">        author: req.body.author,</span><br><span class="line">        total_pages: req.body.total_pages,</span><br><span class="line">        summary: req.body.summary,</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> newBook = <span class="keyword">await</span> store.create(book)</span><br><span class="line">    res.json(newBook)</span><br><span class="line">  &#125; <span class="keyword">catch</span>(err) &#123;</span><br><span class="line">      res.status(<span class="number">400</span>)</span><br><span class="line">      res.json(err)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// delete a record</span></span><br><span class="line"><span class="keyword">const</span> destroy = <span class="keyword">async</span> (req: Request, res: Response) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> deleted = <span class="keyword">await</span> store.delete(req.params.id)</span><br><span class="line">  res.json(deleted)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> book_routes = <span class="function">(<span class="params">app: express.Application</span>) =&gt;</span> &#123;</span><br><span class="line">  app.get(<span class="string">'/products'</span>, index);</span><br><span class="line">  app.get(<span class="string">'/products/:id'</span>, show);</span><br><span class="line">  app.post(<span class="string">'/products'</span>, create);</span><br><span class="line">  app.delete(<span class="string">'/products/:id'</span>, destroy);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> book_routes;</span><br></pre></td></tr></table></figure>
 
-<p>This creates a mysql container(ECE141MySQL) in docker, a database called “testing”, and a root user (root) with a passward of “root”.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it ECE141MySQL bash</span><br><span class="line">mysql -p // use &quot;root&quot; when asked for password</span><br></pre></td></tr></table></figure>
+<h2 id="Add-routes-to-server"><a href="#Add-routes-to-server" class="headerlink" title="Add routes to server"></a>Add routes to server</h2><p>In the <code>src/server.ts</code>, we can just use one line to call the function in <code>handler/book.ts</code></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> express, &#123; Request, Response &#125; <span class="keyword">from</span> <span class="string">'express'</span></span><br><span class="line"><span class="keyword">import</span> bodyParser <span class="keyword">from</span> <span class="string">'body-parser'</span></span><br><span class="line"><span class="keyword">import</span> book_routes <span class="keyword">from</span> <span class="string">'./handles/book'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app: express.Application = express()</span><br><span class="line"><span class="keyword">const</span> address: <span class="built_in">string</span> = <span class="string">"0.0.0.0:3000"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// parse application/x-www-form-urlencoded</span></span><br><span class="line">app.use(bodyParser.urlencoded(&#123; extended: <span class="literal">false</span> &#125;))</span><br><span class="line">app.use(bodyParser.json())</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req: Request, res: Response</span>) </span>&#123;</span><br><span class="line">  res.send(<span class="string">'Hello World!'</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// just use this line to handle the query!</span></span><br><span class="line">book_routes(app);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`starting app on: <span class="subst">$&#123;address&#125;</span>`</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-<p>Now, we can use mysql!</p>
-<h2 id="Create-the-first-database"><a href="#Create-the-first-database" class="headerlink" title="Create the first database"></a>Create the first database</h2><h3 id="Create-database"><a href="#Create-database" class="headerlink" title="Create database"></a>Create database</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create databsed &lt;dbname&gt;; // &lt;dbname&gt; can be test...</span><br></pre></td></tr></table></figure>
-
-<h3 id="Show-databases"><a href="#Show-databases" class="headerlink" title="Show databases"></a>Show databases</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">databases</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Select-a-database"><a href="#Select-a-database" class="headerlink" title="Select a database"></a>Select a database</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> testing;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Create-a-table"><a href="#Create-a-table" class="headerlink" title="Create a table"></a>Create a table</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">Authors</span> ( </span><br><span class="line">  <span class="keyword">id</span> <span class="built_in">INT</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> auto_increment PRIMARY <span class="keyword">KEY</span>, </span><br><span class="line">  firstname <span class="built_in">VARCHAR</span>(<span class="number">50</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>, </span><br><span class="line">  lastname <span class="built_in">VARCHAR</span>(<span class="number">50</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> </span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<h3 id="Describe-the-table"><a href="#Describe-the-table" class="headerlink" title="Describe the table"></a>Describe the table</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">describe</span> <span class="keyword">authors</span>;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">+<span class="comment">-----------+-------------+------+-----+---------+----------------+</span></span><br><span class="line">| Field     | Type        | Null | Key | Default | Extra          |</span><br><span class="line">+<span class="comment">-----------+-------------+------+-----+---------+----------------+</span></span><br><span class="line">| id        | int         | NO   | PRI | NULL    | auto_increment |</span><br><span class="line">| firstname | varchar(50) | NO   |     | NULL    |                |</span><br><span class="line">| lastname  | varchar(50) | NO   |     | NULL    |                |</span><br><span class="line">+<span class="comment">-----------+-------------+------+-----+---------+----------------+</span></span><br><span class="line">3 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
-
-<h3 id="Insert-data-into-a-table"><a href="#Insert-data-into-a-table" class="headerlink" title="Insert data into a table"></a>Insert data into a table</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">Authors</span> (firstname, lastname) </span><br><span class="line"><span class="keyword">VALUES</span> (<span class="string">'Elon'</span>, <span class="string">'Must'</span>), (<span class="string">'Bill'</span>, <span class="string">'Gates'</span>), (<span class="string">'Bill'</span>, <span class="string">'Chen'</span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="Show-rows-in-a-table"><a href="#Show-rows-in-a-table" class="headerlink" title="Show rows in a table"></a>Show rows in a table</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">from</span> <span class="keyword">Authors</span>;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">+<span class="comment">----+-----------+----------+</span></span><br><span class="line">| id | firstname | lastname |</span><br><span class="line">+<span class="comment">----+-----------+----------+</span></span><br><span class="line">|  1 | Elon      | Must     |</span><br><span class="line">|  2 | Bill      | Gates    |</span><br><span class="line">|  3 | Bill      | Chen     |</span><br><span class="line">+<span class="comment">----+-----------+----------+</span></span><br><span class="line">3 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">from</span> <span class="keyword">Authors</span> <span class="keyword">WHERE</span> firstname=<span class="string">'Bill'</span> <span class="keyword">order</span> <span class="keyword">by</span> lastname;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">+<span class="comment">----+-----------+----------+</span></span><br><span class="line">| id | firstname | lastname |</span><br><span class="line">+<span class="comment">----+-----------+----------+</span></span><br><span class="line">|  3 | Bill      | Chen     |</span><br><span class="line">|  2 | Bill      | Gates    |</span><br><span class="line">+<span class="comment">----+-----------+----------+</span></span><br><span class="line">2 rows in <span class="keyword">set</span> (<span class="number">0.01</span> sec)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">count</span>(<span class="keyword">id</span>), firstname <span class="keyword">from</span> <span class="keyword">Authors</span> <span class="keyword">group</span> <span class="keyword">by</span> firstname;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">+<span class="comment">-----------+-----------+</span></span><br><span class="line">| count(id) | firstname |</span><br><span class="line">+<span class="comment">-----------+-----------+</span></span><br><span class="line">|         1 | Elon      |</span><br><span class="line">|         2 | Bill      |</span><br><span class="line">+<span class="comment">-----------+-----------+</span></span><br><span class="line">2 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
-
-<h3 id="Update-and-delete-rows"><a href="#Update-and-delete-rows" class="headerlink" title="Update and delete rows"></a>Update and delete rows</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UPDATE Authors set lastname=&quot;Musk&quot; where lastname=&quot;Must&quot;;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE from Authors where firstname=&quot;Bill&quot;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Join-data-from-tables"><a href="#Join-data-from-tables" class="headerlink" title="Join data from tables"></a>Join data from tables</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Books (</span><br><span class="line">  <span class="keyword">id</span> <span class="built_in">integer</span> auto_increment PRIMARY <span class="keyword">KEY</span>,</span><br><span class="line">  title <span class="built_in">VARCHAR</span>(<span class="number">50</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">  author_id <span class="built_in">int</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Books (title, author_id)</span><br><span class="line"><span class="keyword">VALUES</span> (<span class="string">"Of Earth and Mars"</span>, <span class="number">1</span>), </span><br><span class="line">(<span class="string">"The Road Ahead"</span>, <span class="number">2</span>), </span><br><span class="line">(<span class="string">"Business at the Speed of Thought"</span>, <span class="number">2</span>), </span><br><span class="line">(<span class="string">"THe Mathematics of Poker"</span>, <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> firstname, lastname, title</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">Authors</span> <span class="keyword">left</span> <span class="keyword">join</span> Books <span class="keyword">on</span> Authors.id=Books.author_id;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">+<span class="comment">-----------+----------+-------------------+</span></span><br><span class="line">| firstname | lastname | title             |</span><br><span class="line">+<span class="comment">-----------+----------+-------------------+</span></span><br><span class="line">| Elon      | Musk     | Of Earth and Mars |</span><br><span class="line">| Bill      | Gates    | NULL              |</span><br><span class="line">| Bill      | Chen     | NULL              |</span><br><span class="line">+<span class="comment">-----------+----------+-------------------+</span></span><br><span class="line">3 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
-
+<h2 id="Full-Stack-Big-Picture"><a href="#Full-Stack-Big-Picture" class="headerlink" title="Full Stack Big Picture"></a>Full Stack Big Picture</h2><ul>
+<li>Express handles incoming HTTP requests to the API and the handler functions call model methods</li>
+<li>Model methods query the database and send the information back to the handler, which parses it into json and sends the HTTP response</li>
+</ul>
+<p><img src="https://video.udacity-data.com/topher/2021/March/605cf319_l4-create-an-api-with-express-1/l4-create-an-api-with-express-1.png" alt="full stack summary"></p>
 
           
         
@@ -1303,7 +1370,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/LeetCode/hashmap.html">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Fullstack/Databases-and-SQL.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Qian Hongbo">
@@ -1322,7 +1389,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/LeetCode/hashmap.html" itemprop="url">hashmap</a></h2>
+                <a class="post-title-link" href="/Fullstack/Databases-and-SQL.html" itemprop="url">Databases and SQL</a></h2>
         
 
         <div class="post-meta">
@@ -1334,8 +1401,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-03-08T09:02:07+08:00">
-                2022-03-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-05-09T20:37:41+08:00">
+                2022-05-09
               </time>
             
 
@@ -1357,8 +1424,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">Leetcode</span>
+                  <a href="/categories/Fullstack/" itemprop="url" rel="index">
+                    <span itemprop="name">Fullstack</span>
                   </a>
                 </span>
 
@@ -1377,8 +1444,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/LeetCode/hashmap.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="LeetCode/hashmap.html" itemprop="commentCount"></span>
+                <a href="/Fullstack/Databases-and-SQL.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Fullstack/Databases-and-SQL.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1400,7 +1467,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  175 字
+                  653 字
                 </span>
               
 
@@ -1416,7 +1483,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  4 分钟
                 </span>
               
             </div>
@@ -1440,15 +1507,70 @@
       
         
           
-            <h2 id="Two-sum"><a href="#Two-sum" class="headerlink" title="Two sum"></a>Two sum</h2><h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>You may assume that each input would have <strong><em>exactly\</em> one solution</strong>, and you may not use the <em>same</em> element twice. You can return the answer in any order.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [2,7,11,15], target = 9</span><br><span class="line">Output: [0,1]</span><br><span class="line">Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].</span><br></pre></td></tr></table></figure>
-
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><h4 id="Brute-force"><a href="#Brute-force" class="headerlink" title="Brute force"></a>Brute force</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Double loop</span></span><br><span class="line"><span class="comment"># O(n^2) time | O(1) square</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="Two-pass-hash-table"><a href="#Two-pass-hash-table" class="headerlink" title="Two-pass hash table"></a>Two-pass hash table</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(n) time | O(n) square</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">twoSum</span><span class="params">(self, nums: List[int], target: int)</span> -&gt; List[int]:</span></span><br><span class="line">        hashmap = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            hashmap[nums[i]] = i</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            complement = target - nums[i]</span><br><span class="line">            <span class="keyword">if</span> complement <span class="keyword">in</span> hashmap <span class="keyword">and</span> hashmap[complement] != i:</span><br><span class="line">                <span class="keyword">return</span> [i, hashmap[complement]]</span><br></pre></td></tr></table></figure>
-
-<h4 id="One-pass-hash-table"><a href="#One-pass-hash-table" class="headerlink" title="One-pass hash table"></a>One-pass hash table</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(n) time | O(n) square</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">twoSum</span><span class="params">(self, nums: List[int], target: int)</span> -&gt; List[int]:</span></span><br><span class="line">        hashmap = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            hashmap[nums[i]] = i</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            complement = target - nums[i]</span><br><span class="line">            <span class="keyword">if</span> complement <span class="keyword">in</span> hashmap <span class="keyword">and</span> hashmap[complement] != i:</span><br><span class="line">                <span class="keyword">return</span> [i, hashmap[complement]]</span><br></pre></td></tr></table></figure>
-
+            <h2 id="Different-kinds-of-databases"><a href="#Different-kinds-of-databases" class="headerlink" title="Different kinds of databases"></a>Different kinds of databases</h2><h3 id="SQL-Relational-Type-Databases"><a href="#SQL-Relational-Type-Databases" class="headerlink" title="SQL/Relational Type Databases"></a>SQL/Relational Type Databases</h3><p>SQL type databases are organized to be query-able using SQL (Structured Query Language) and organize information in tables. These are pretty much like giant spreadsheets, where an item stored in the database is a row in the table, and columns hold data points on each item.</p>
+<h4 id="Ideal-Use-Cases"><a href="#Ideal-Use-Cases" class="headerlink" title="Ideal Use Cases:"></a>Ideal Use Cases:</h4><p>Repeating, structured data, such as:</p>
+<ul>
+<li>user information</li>
+<li>product inventories</li>
+<li>blogs</li>
+</ul>
+<h4 id="Common-SQL-Relational-Database-Technologies"><a href="#Common-SQL-Relational-Database-Technologies" class="headerlink" title="Common SQL/Relational Database Technologies:"></a>Common SQL/Relational Database Technologies:</h4><ul>
+<li>MySQL</li>
+<li>PostgreSQL</li>
+<li>MariaDB</li>
+<li>Microsoft SQL Server</li>
+</ul>
+<h3 id="NoSQL"><a href="#NoSQL" class="headerlink" title="NoSQL"></a>NoSQL</h3><p>As you might have guessed, a NoSQL database …doesn’t use SQL. Really this means it isn’t set up like a spreadsheet. These databases can take a few different forms and are used for large sets of distributed data (like for use in micro service architectures).</p>
+<h4 id="Ideal-Use-Cases-1"><a href="#Ideal-Use-Cases-1" class="headerlink" title="Ideal Use Cases:"></a>Ideal Use Cases:</h4><p>Partially structured or un-structured data: really big collections of complex data, caches</p>
+<h4 id="Types-of-NoSQL-Databases"><a href="#Types-of-NoSQL-Databases" class="headerlink" title="Types of NoSQL Databases:"></a>Types of NoSQL Databases:</h4><ul>
+<li>Key-Value store<ul>
+<li>A key-value store is a non-relational, noSQL database type that stores data in key-value pairs (exactly like objects or dictionaries in programming). These databases are fast because the keys are unique and easily searchable, and they are flexible, because these key value pairs can store any combination of data types required.</li>
+</ul>
+</li>
+<li>Document store<ul>
+<li>A document store is a non-relational, noSQL database type that organizes data into documents. Documents can hold any shape of data, which means document stores can easily handle data with no structure or that is arbitrarily nested, which can be a headache to account for in a relational way.</li>
+</ul>
+</li>
+<li>Column-oriented<ul>
+<li>Data organized by column instead of by row. This architecture scales easily and makes fast, efficient queries. I’m including this architecture as a NoSQL type dbms, but this architecture can actually be used with SQL as well.</li>
+</ul>
+</li>
+</ul>
+<h3 id="Common-NoSQL-Database-Technologies"><a href="#Common-NoSQL-Database-Technologies" class="headerlink" title="Common NoSQL Database Technologies:"></a>Common NoSQL Database Technologies:</h3><ul>
+<li>Redis [Key Value store]</li>
+<li>MongoDB [Document store]</li>
+<li>Elasticsearch [Document store]</li>
+<li>Apache Cassandra [Column-oriented]</li>
+</ul>
+<h2 id="PostgreSQL-Cheat-Sheet"><a href="#PostgreSQL-Cheat-Sheet" class="headerlink" title="PostgreSQL Cheat Sheet"></a>PostgreSQL Cheat Sheet</h2><h3 id="Meta-Commands"><a href="#Meta-Commands" class="headerlink" title="Meta Commands"></a>Meta Commands</h3><ul>
+<li><code>\l</code> <strong>List</strong> databases</li>
+<li><code>\c</code> <strong>Connect</strong> to a database</li>
+<li><code>\dt</code> <strong>Display Tables</strong> in a database</li>
+<li><code>\q</code> <strong>Quit</strong> out of psql to normal terminal</li>
+</ul>
+<h3 id="Queries"><a href="#Queries" class="headerlink" title="Queries"></a>Queries</h3><ul>
+<li>CREATE <code>INSERT INTO worlds (name) VALUES (&#39;Asgard&#39;);</code></li>
+<li>READ <code>SELECT* FROM herbs;</code></li>
+<li>UPDATE <code>UPDATE herbs SET sighting_date = &#39;2021-01-10&#39; WHERE id=&#39;1&#39;;</code></li>
+<li>DELETE <code>DELETE FROM herbs WHERE id=&#39;1&#39;;</code></li>
+<li>Filters<ul>
+<li>BETWEEN<code>SELECT * FROM trips WHERE start_date BETWEEN &#39;2021-02-01&#39; AND &#39;2021-02-12&#39;;</code></li>
+<li>LIKE <code>SELECT * FROM books WHERE title LIKE &#39;%ship%&#39;;</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="Connect-PostSQL-using-Docker"><a href="#Connect-PostSQL-using-Docker" class="headerlink" title="Connect PostSQL using Docker"></a>Connect PostSQL using Docker</h2><h3 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h3><ol>
+<li>Add <code>pg</code> to dependencies</li>
+<li>Create environment variables</li>
+<li>Use <code>.env</code> file to save the db name, user name and password</li>
+<li></li>
+</ol>
+<h3 id="Environment-Variables"><a href="#Environment-Variables" class="headerlink" title="Environment Variables"></a>Environment Variables</h3><p>Working with sensitive information can be hard, especially when your application relies on keys and passwords in order to connect to and access databases or APIs. The instructions below will walk you through adding a library for environment variables in Node so that we can safely store information away from public eyes without moving it out of reach.</p>
+<ol>
+<li>The library we will use for environment variables is called dotenv. You can add it via npm or yarn like this: <code>yarn add dotenv</code></li>
+<li>Once we have dotenv listed in the package.json dependencies, we need to create one file. Make a new file called <code>.env</code> in the root of the project. In that file, add this: <code>TEST_VAR=testing123</code>. This is our first environment variable!</li>
+<li>One last, <strong>super</strong> important step. The .env file hides sensitive information and makes it available to our application via a variable, so it holds a lot of really important, secret information. Information we don’t want shared even in a respository. If a gitignore file exists in your project add the .env file there. If there isn’t a gitignore, add a file called <code>.gitignore</code> to the root of the project and add a single line in the file that says just <code>.env</code>. <strong>If you include your env file in a public repository, you have completely negated the purpose of adding environment variables.</strong></li>
+</ol>
 
           
         
@@ -1490,7 +1612,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1538,7 +1660,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-count">62</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1654,7 +1776,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">57k</span>
+    <span title="Site words total count">63k</span>
   
 </div>
 

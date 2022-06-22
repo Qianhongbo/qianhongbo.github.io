@@ -140,48 +140,57 @@ string = "abaxyzzyxf"
 # O(n^3) time | O(n) space
 def longestPalindromicSubstring(string):
     longest = ""
-	for i in range(len(string)):
-		for j in range(i, len(string)):
-			substring = string[i : j + 1]
-			if len(substring) > len(longest) and isPalindrome(substring):
-				longest = substring
-	return longest
+    for i in range(len(string)):
+        for j in range(i, len(string)):
+            substring = string[i : j + 1]
+            if len(substring) > len(longest) and isPalindrome(substring):
+                longest = substring
+    return longest
 
 
 def isPalindrome(string):
-	leftIdx = 0
-	rightIdx = len(string) - 1
-	while leftIdx < rightIdx:
-		if string[leftIdx] != string[rightIdx]:
-			return False
-		leftIdx += 1
-		rightIdx -= 1
-	return True
+    leftIdx = 0
+    rightIdx = len(string) - 1
+    while leftIdx < rightIdx:
+        if string[leftIdx] != string[rightIdx]:
+            return False
+        leftIdx += 1
+        rightIdx -= 1
+    return True
 ```
 
 #### Better way
 
-为了不判断所有的子串，改变判断是否为palindrome string的方式，从子串的中间开始判断两侧的字符是否相同。这也分两种情况，一种是子串为奇数，一种是子串为偶数。
+In order not to check all the substrings, we can change how we check the substring is palindrome. 
+
+We can check the substring from the center. If the character on the both side of the center is the same, we can go further and stop when they are different or reach the side. But in this case, we also have two circumstances, one is an odd substring, another is an even substring.
 
 ```python
 # O(n^2) time | O(n) space
 def longestPalindromicSubstring(string):
+    # [leftIdx, rightIdx]
     currentLongest = [0, 1]
-	for i in range(1, len(string)):
-		odd = getLongestPalindromeFrom(string, i - 1, i + 1)
-		even = getLongestPalindromeFrom(string, i - 1, i)
-		longest = max(odd, even, key = lambda x: x[1] - x[0])
-		currentLongest = max(longest, currentLongest, key = lambda x: x[1] - x[0])
-	return string[currentLongest[0] : currentLongest[1]]
+    for i in range(1, len(string)):
+        odd = getLongestPalindromeFrom(string, i - 1, i + 1)
+        even = getLongestPalindromeFrom(string, i - 1, i)
+        # use lambda function to check the length of substring
+        # x[1] represent the rightIdx
+        # x[0] represent the leftIdx
+        longest = max(odd, even, key = lambda x: x[1] - x[0])
+        currentLongest = max(longest, currentLongest, key = lambda x: x[1] - x[0])
+    return string[currentLongest[0] : currentLongest[1]]
 
 
 def getLongestPalindromeFrom(string, leftIdx, rightIdx):
-	while leftIdx >= 0 and rightIdx < len(string):
-		if string[leftIdx] != string[rightIdx]:
-			break
-		leftIdx -= 1
-		rightIdx += 1
-	return [leftIdx + 1, rightIdx]
+    while leftIdx >= 0 and rightIdx < len(string):
+        if string[leftIdx] != string[rightIdx]:
+            break
+        leftIdx -= 1
+        rightIdx += 1
+    # The reason we return this is that:
+    # The last time in the while loop will fail, but we have move the pointer
+    # We need to put them back, but the rightIdx also need to plus one
+    return [leftIdx + 1, rightIdx]
 ```
 
 ## Group Anagrams

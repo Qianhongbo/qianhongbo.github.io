@@ -346,6 +346,1084 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Fullstack/Jasmine.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Fullstack/Jasmine.html" itemprop="url">Jasmine</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-04-03T12:01:39+08:00">
+                2022-04-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Fullstack/" itemprop="url" rel="index">
+                    <span itemprop="name">Fullstack</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Fullstack/Jasmine.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Fullstack/Jasmine.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  685 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Configure-Jasmine"><a href="#Configure-Jasmine" class="headerlink" title="Configure Jasmine"></a>Configure Jasmine</h2><h3 id="Install-Jasmine"><a href="#Install-Jasmine" class="headerlink" title="Install Jasmine:"></a>Install Jasmine:</h3><ol>
+<li><p>To install Jasmine run:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i jasmine</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Add a reporter for outputting Jasmine results to the terminal:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i jasmine-spec-reporter</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Add type definitions for Jasmine with :</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i --save-dev @types/jasmine</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="Add-Testing-Scripts"><a href="#Add-Testing-Scripts" class="headerlink" title="Add Testing Scripts:"></a>Add Testing Scripts:</h3><p>Add the scripts object in the <code>package.json</code> and add the followingto run Jasmine:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"jasmine"</span>: <span class="string">"jasmine"</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Set-up-the-file-structure"><a href="#Set-up-the-file-structure" class="headerlink" title="Set up the file structure"></a>Set up the file structure</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">├── node_modules</span><br><span class="line">├── spec</span><br><span class="line">│      └── support</span><br><span class="line">│           └── jasmine.json</span><br><span class="line">├── src</span><br><span class="line">│     ├──  tests</span><br><span class="line">│     │     ├── helpers</span><br><span class="line">│     │     │      └── reporter.ts</span><br><span class="line">│     │     └── indexSpec.ts</span><br><span class="line">│     └── index.ts</span><br><span class="line">├── package-lock.json</span><br><span class="line">├── package.json</span><br><span class="line">└── tsconfig.json</span><br></pre></td></tr></table></figure>
+
+<h3 id="Add-code-to-reporter-ts"><a href="#Add-code-to-reporter-ts" class="headerlink" title="Add code to reporter.ts"></a>Add code to <code>reporter.ts</code></h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;DisplayProcessor, SpecReporter, StacktraceOption&#125; <span class="keyword">from</span> <span class="string">"jasmine-spec-reporter"</span>;</span><br><span class="line"><span class="keyword">import</span> SuiteInfo = jasmine.SuiteInfo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> CustomProcessor <span class="keyword">extends</span> DisplayProcessor &#123;</span><br><span class="line">    <span class="keyword">public</span> displayJasmineStarted(info: SuiteInfo, log: <span class="built_in">string</span>): <span class="built_in">string</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;log&#125;</span>`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">jasmine.getEnv().clearReporters();</span><br><span class="line">jasmine.getEnv().addReporter(<span class="keyword">new</span> SpecReporter(&#123;</span><br><span class="line">    spec: &#123;</span><br><span class="line">        displayStacktrace: StacktraceOption.NONE</span><br><span class="line">    &#125;,</span><br><span class="line">    customProcessors: [CustomProcessor],</span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
+
+<h3 id="Add-code-to-jasmine-json"><a href="#Add-code-to-jasmine-json" class="headerlink" title="Add code to jasmine.json"></a>Add code to <code>jasmine.json</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;spec_dir&quot;: &quot;build/tests&quot;,</span><br><span class="line">    &quot;spec_files&quot;: [</span><br><span class="line">        &quot;**/*[sS]pec.js&quot;</span><br><span class="line">    ],</span><br><span class="line">    &quot;helpers&quot;: [</span><br><span class="line">        &quot;helpers/**/*.js&quot;</span><br><span class="line">    ],</span><br><span class="line">    &quot;stopSpecOnExpectationFailure&quot;: false,</span><br><span class="line">    &quot;random&quot;: false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Add-code-to-tsconfig-json"><a href="#Add-code-to-tsconfig-json" class="headerlink" title="Add code to tsconfig.json"></a>Add code to <code>tsconfig.json</code></h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"exclude": ["node_modules", "./dist", "spec"]</span><br></pre></td></tr></table></figure>
+
+<h2 id="Write-a-Basic-Test"><a href="#Write-a-Basic-Test" class="headerlink" title="Write a Basic Test"></a>Write a Basic Test</h2><p><code>index.ts</code></p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myFunc = (num: <span class="built_in">number</span>): <span class="function"><span class="params">number</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> num * num;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> myFunc;</span><br></pre></td></tr></table></figure>
+
+<p><code>indexSpec.ts</code></p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> myFunc <span class="keyword">from</span> <span class="string">'../index'</span>;</span><br><span class="line"></span><br><span class="line">it(<span class="string">'expect myFunc(5) to equal 25'</span>, <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  expect(myFunc(<span class="number">5</span>)).toEqual(<span class="number">25</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>To test this we’ll need to first run the build script and then the test script:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br><span class="line">npm run jasmine</span><br></pre></td></tr></table></figure>
+
+<h2 id="Jasmine-syntax"><a href="#Jasmine-syntax" class="headerlink" title="Jasmine syntax"></a>Jasmine syntax</h2><blockquote>
+<p>The sample code is in this <a href="https://github.com/Qianhongbo/JavaScript/tree/master/jasmine_comparisons" target="_blank" rel="noopener">website</a>.</p>
+</blockquote>
+<blockquote>
+<ul>
+<li><strong>Spec</strong>: an individual test</li>
+<li><strong>Suite</strong>: a collection of similar tests related to one function</li>
+</ul>
+</blockquote>
+<ul>
+<li>Use the <strong>describe</strong> keyword followed by a short description of what the suite is testing and one or more specs.</li>
+<li>A best practice is to start a sentence with “it” and then complete the sentence with the description of what the suite is testing.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">describe(“suite description”, () =&gt; &#123;</span><br><span class="line">    it(“describes the spec”, () =&gt; &#123;</span><br><span class="line">        const myVar = true;</span><br><span class="line">        expect(myVar).toBe(true);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Comparisons"><a href="#Comparisons" class="headerlink" title="Comparisons"></a>Comparisons</h3><ul>
+<li><p><code>.toEqual</code> : check the value</p>
+</li>
+<li><p><code>.toBe</code> : check the object</p>
+</li>
+<li><p><code>.toBeTruthy()</code>passes when</p>
+<ul>
+<li>The expectation has any non-zero value</li>
+<li>The expectation evaluates to <code>true</code></li>
+</ul>
+</li>
+<li><p><code>.toBeFalsy()</code> passes when the value is:</p>
+<ul>
+<li><code>0</code></li>
+<li><code>&#39;&#39;</code> (an empty string)</li>
+<li><code>undefined</code></li>
+<li><code>null</code></li>
+<li><code>NaN</code></li>
+</ul>
+</li>
+<li><p><code>.toBeCloseTo(expected value, precision)</code></p>
+<ul>
+<li>Passes if a value is within a specified precision of the expected value</li>
+<li>Precision is optional and is represented the number of decimal points to check (defaults to 2)</li>
+</ul>
+</li>
+<li><p><code>.toBeGreaterThan(expected value)</code></p>
+</li>
+<li><p><code>.toBeLessThan(expected value)</code></p>
+</li>
+<li><p><code>.toBeGreaterThanOrEqual(expected value)</code></p>
+</li>
+<li><p><code>.toBeLessThanOrEqual(expected value)</code></p>
+</li>
+<li><p>use <code>.not</code> to negate the matcher</p>
+</li>
+</ul>
+<h2 id="Test-asynchronous-code"><a href="#Test-asynchronous-code" class="headerlink" title="Test asynchronous code"></a>Test asynchronous code</h2><blockquote>
+<p>The sample code is in this <a href="https://github.com/Qianhongbo/JavaScript/tree/master/jasmine_asynchronous" target="_blank" rel="noopener">website</a>.</p>
+</blockquote>
+<h3 id="async-await"><a href="#async-await" class="headerlink" title="async/await"></a>async/await</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">it(&apos;expects asyncFunc() result to equal value&apos;, </span><br><span class="line">  async () =&gt; &#123;</span><br><span class="line">    const result = await asyncFunc();</span><br><span class="line">    expect(result).toEqual(value);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">it(&apos;expects asyncFunc() result to equal value&apos;,</span><br><span class="line">  () =&gt; &#123;</span><br><span class="line">    return asyncFunc().then( result =&gt; &#123;</span><br><span class="line">        expect(result).toEqual(value);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="Endpoint-testing"><a href="#Endpoint-testing" class="headerlink" title="Endpoint testing"></a>Endpoint testing</h2><blockquote>
+<p>The sample code is in this <a href="https://github.com/Qianhongbo/JavaScript/tree/master/endpoint_tesing" target="_blank" rel="noopener">website</a>.</p>
+</blockquote>
+<h3 id="Benefits-of-Endpoint-Testing"><a href="#Benefits-of-Endpoint-Testing" class="headerlink" title="Benefits of Endpoint Testing"></a>Benefits of Endpoint Testing</h3><ul>
+<li>Confirms that the server is working.</li>
+<li>Confirms that endpoints are configured properly.</li>
+<li>More efficient than manual testing.</li>
+</ul>
+<h3 id="Setting-Up-Endpoint-Testing"><a href="#Setting-Up-Endpoint-Testing" class="headerlink" title="Setting Up Endpoint Testing"></a>Setting Up Endpoint Testing</h3><ul>
+<li>Install Supertest as a dependency.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i supertest</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Add type definition to allow the code to compile without TypeScript errors.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i --save-dev @types/supertest.</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Import SuperTest in the spec file.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> supertest <span class="keyword">from</span> <span class="string">'supertest'</span>;</span><br><span class="line"><span class="keyword">import</span> app <span class="keyword">from</span> <span class="string">'../index'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> request = supertest(app);</span><br><span class="line">describe(<span class="string">'Test endpoint responses'</span>, () =&gt; &#123;</span><br><span class="line">    it(<span class="string">'gets the api endpoint'</span>, <span class="keyword">async</span> (done) =&gt; &#123;</span><br><span class="line">        <span class="keyword">const</span> response = <span class="keyword">await</span> request.get(<span class="string">'/api'</span>);</span><br><span class="line">        expect(response.status).toBe(<span class="number">200</span>);</span><br><span class="line">        done();</span><br><span class="line">    &#125;</span><br><span class="line">)&#125;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Create and Run Tests</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm run <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Setup-and-teardown"><a href="#Setup-and-teardown" class="headerlink" title="Setup and teardown"></a>Setup and teardown</h2><ul>
+<li><p><code>beforeAll();</code>can be used to run some code before the specs run, and any log statements show up before the specs.</p>
+</li>
+<li><p><code>afterAll();</code> allows functionality to be added after all of the specs in a suite have run. Log statements will show after the specs.</p>
+</li>
+<li><p><code>beforeEach();</code> and <code>afterEach();</code> will run before or after each one of the individual specs.</p>
+</li>
+<li><p><code>fdescribe</code> and <code>fit</code> allows jasmine to focus on one specific suite, skipping the others</p>
+</li>
+<li><p><code>xdescribe</code> and <code>xit</code> allows Jasmine to skip a specific suite or test, running all others.</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Fullstack/TypeScript.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Fullstack/TypeScript.html" itemprop="url">TypeScript</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-04-01T11:56:13+08:00">
+                2022-04-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Fullstack/" itemprop="url" rel="index">
+                    <span itemprop="name">Fullstack</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Fullstack/TypeScript.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Fullstack/TypeScript.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.6k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Why-TypeScript"><a href="#Why-TypeScript" class="headerlink" title="Why TypeScript"></a>Why TypeScript</h2><h3 id="Types"><a href="#Types" class="headerlink" title="Types"></a>Types</h3><p>Types are applied to:</p>
+<ul>
+<li>variables</li>
+<li>function parameters</li>
+<li>function returns</li>
+<li>object values.</li>
+</ul>
+<h3 id="JavaScript-is-Weakly-Typed"><a href="#JavaScript-is-Weakly-Typed" class="headerlink" title="JavaScript is Weakly-Typed."></a>JavaScript is Weakly-Typed.</h3><p>This means that types are assigned by the interpreter based on the data and makes an educated guess when the code’s intention is ambiguous. This can lead to unintended results.</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2 + &apos;2&apos; = &apos;22&apos;</span><br></pre></td></tr></table></figure>
+
+<h3 id="TypeScript-Adds-Typing-to-JavaScript"><a href="#TypeScript-Adds-Typing-to-JavaScript" class="headerlink" title="TypeScript Adds Typing to JavaScript"></a>TypeScript Adds Typing to JavaScript</h3><p>In short, TypeScript is a static and strong typed superset of JavaScript. When we’re done with our TypeScript code, it compiles to JavaScript.</p>
+<h2 id="Configure-TypeScript"><a href="#Configure-TypeScript" class="headerlink" title="Configure TypeScript"></a>Configure TypeScript</h2><h3 id="Install-TypeScript"><a href="#Install-TypeScript" class="headerlink" title="Install TypeScript"></a>Install TypeScript</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init -y</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm i typescript // save to dependencies</span><br><span class="line">$ npm i typescript --save-dev // save to devDependencies</span><br></pre></td></tr></table></figure>
+
+<p>Add <code>typescript</code>, <code>ts-node</code> and <code>@types/node</code> definitions to dev dependencies.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm i --save-dev typescript</span><br><span class="line">npm i --save-dev ts-node </span><br><span class="line">npm i --save-dev @types/node</span><br></pre></td></tr></table></figure>
+
+<h3 id="Creating-your-package-json-Script"><a href="#Creating-your-package-json-Script" class="headerlink" title="Creating your package.json Script"></a>Creating your package.json Script</h3><p>To use TypeScript, you need to add a script to your package.json file to compile TypeScript to JavaScript. This is generally called your “build” script but could be named anything.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  <span class="string">"build"</span>: <span class="string">"npx tsc"</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<p>To execute your <code>&quot;build&quot;</code> script use the following:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm run build</span><br></pre></td></tr></table></figure>
+
+<p>Run the completed index file.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ node build/.</span><br></pre></td></tr></table></figure>
+
+<p><code>tsconfig.json</code> can also be named <code>jsconfig.json</code>.</p>
+<p>To install the config file, run</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npx tsc --init</span><br></pre></td></tr></table></figure>
+
+<h3 id="Helpful-configurations-to-note"><a href="#Helpful-configurations-to-note" class="headerlink" title="Helpful configurations to note:"></a>Helpful configurations to note:</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"compilerOptions"</span>: &#123;</span><br><span class="line">    <span class="string">"target"</span>: <span class="string">"es5"</span>,                          </span><br><span class="line">    <span class="string">"module"</span>: <span class="string">"commonjs"</span>,                     </span><br><span class="line">    <span class="string">"lib"</span>: [<span class="string">"ES2018"</span>, <span class="string">"DOM"</span>], </span><br><span class="line">    <span class="string">"outDir"</span>: <span class="string">"./build"</span>,                        </span><br><span class="line">    <span class="string">"strict"</span>: <span class="literal">true</span>,                           </span><br><span class="line">    <span class="string">"noImplicitAny"</span>: <span class="literal">true</span>,                 </span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"exclude"</span>: [<span class="string">"node_modules"</span>, <span class="string">"tests"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>You will see many more options available than what is above. Your application may require additional settings to be configured, but these are typically the main settings to start with.</p>
+<ul>
+<li><code>target</code> - sets what version of JS TypeScript will be transpiled to.</li>
+<li><code>module</code> - sets what module system will be used when transpiling. Node.js uses the common.js module system by default</li>
+<li><code>lib</code> - is used to say what libraries your code is using. In this case, ES2018 and the DOM API</li>
+<li><code>outDir</code> - where you want your src code to output to. Often named build, prod, or server (when using it serverside)</li>
+<li><code>strict</code> - enable strict typing</li>
+<li><code>noImplicitAny</code> - disallow the <code>&quot;any&quot;</code> type (covered in TypeScript Basics)</li>
+<li><code>exclude</code> - directories to exclude in compiling</li>
+</ul>
+<h2 id="ES6-Modules"><a href="#ES6-Modules" class="headerlink" title="ES6 Modules"></a>ES6 Modules</h2><p>Now that we are using TypeScript for our application, we can also easily utilize the ES6 module system instead of the CommonJS module system. Destructuring should only be used when you are exporting the functions individually. If choosing to use export default, you must import the entire default as a module.</p>
+<h3 id="Import"><a href="#Import" class="headerlink" title="Import"></a>Import</h3><p>For importing modules, use the following syntax</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Rename the module</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'name'</span> <span class="keyword">from</span> <span class="string">'module'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Use destructuring to pull in specific functions when they are exported individually</span></span><br><span class="line"><span class="keyword">import</span> &#123;<span class="function"><span class="keyword">function</span>, <span class="title">function</span>&#125; <span class="title">from</span> '<span class="title">module</span>';</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Export"><a href="#Export" class="headerlink" title="Export"></a>Export</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Export an individual function or other type of object in code</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> myFunction = <span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Export a single item at the end</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> object;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Export a list of objects</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;object1, object2&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="TypeScript-Basics"><a href="#TypeScript-Basics" class="headerlink" title="TypeScript Basics"></a>TypeScript Basics</h2><h3 id="Implicit-Typing-and-Explicit-Typing"><a href="#Implicit-Typing-and-Explicit-Typing" class="headerlink" title="Implicit Typing and Explicit Typing"></a>Implicit Typing and Explicit Typing</h3><h4 id="Implicit-Typing"><a href="#Implicit-Typing" class="headerlink" title="Implicit Typing"></a>Implicit Typing</h4><p>TypeScript will automatically assume types of objects if the object is not typed. It is best practice to allow TypeScript to type immutable variables and simple functions implicitly.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myNum = <span class="number">3</span>; <span class="comment">// TypeScript implicitly types myNum as a number based on the variable</span></span><br></pre></td></tr></table></figure>
+
+<p>Implicit Typing is a best practice when the app is self-contained (meaning that it does not depend on other applications or APIs) or variables are immutable.</p>
+<p><img src="https://video.udacity-data.com/topher/2021/March/603f9e26_fsjs-c1-l2-implicit-typing/fsjs-c1-l2-implicit-typing.jpg" alt></p>
+<h4 id="Explicit-Typing"><a href="#Explicit-Typing" class="headerlink" title="Explicit Typing"></a>Explicit Typing</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myVar: number = <span class="number">3</span>; <span class="comment">// myVar has been explicitly typed as a number</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://video.udacity-data.com/topher/2021/March/603fa213_fsjs-c1-l2-explicit-typing/fsjs-c1-l2-explicit-typing.jpg" alt></p>
+<h3 id="Basic-Types"><a href="#Basic-Types" class="headerlink" title="Basic Types"></a>Basic Types</h3><p><code>string</code> - used for string types, textual data</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> studentName:string;</span><br><span class="line">studentName = <span class="string">'Dae Lee'</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>number</code> - used for number types including integers and decimals</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> studentAge: number;</span><br><span class="line">studentAge = <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>boolean</code> - used for <code>true</code>/<code>false</code> types</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> studentEnriched: boolean;</span><br><span class="line">studentEnriched = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>Union Types</code> - used when more than one type can be used</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> studentPhone: (number | string);</span><br><span class="line">studentPhone = <span class="string">'(555) 555 - 5555'</span>;</span><br><span class="line">studentPhone = <span class="number">5555555555</span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>null</code> - used when an object or variable is intentionally <code>null</code>, typically only functionally found in union types</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> getCapitals = (str:string):string[] | <span class="function"><span class="params">null</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> capitals = str.match(<span class="regexp">/[A-Z]/</span>);</span><br><span class="line">  <span class="keyword">return</span> capitals;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(getCapitals(<span class="string">'something'</span>));</span><br><span class="line"><span class="comment">// returns null</span></span><br><span class="line"><span class="built_in">console</span>.log(getCapitals(<span class="string">'Something'</span>));</span><br><span class="line"><span class="comment">// returns ['S']</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>undefined</code> - used when a variable has yet to be defined</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myFunc = <span class="function">(<span class="params">student: string | <span class="literal">undefined</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> ( student === <span class="literal">undefined</span> )&#123;</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">  &#125; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>void</code> - used as a return type when the function returns nothing</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myFunc = (student: string): <span class="keyword">void</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(student);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>never</code> - used as a return type when the function will never return anything, such as with functions that throw errors or infinite loops</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myError = (err: string): never &#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(err); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>any</code> - <em>should be avoided</em>. Used when the type of the item being typed can be anything</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myFunc = (student: any): <span class="function"><span class="params">any</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// do something</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>unknown</code> - used when the type of the thing being typed is unknown. Used heavily for type assertion</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myFunc = (student: unknown): <span class="function"><span class="params">string</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// do something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Type-Assertions"><a href="#Type-Assertions" class="headerlink" title="Type Assertions"></a>Type Assertions</h3><p>Type Assertions are used to tell TypeScript that even though TypeScript thinks it should be one type, it is actually a different type. Common to see when a type is <code>unknown</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myFunc = (student: unknown): <span class="function"><span class="params">string</span> =&gt;</span> &#123;</span><br><span class="line">  newStudent = student <span class="keyword">as</span> string;</span><br><span class="line">  <span class="keyword">return</span> newStudent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Object-like-types"><a href="#Object-like-types" class="headerlink" title="Object-like types"></a>Object-like types</h3><p><strong>Array</strong> - to type as an array, use the type, followed by square brackets. Union types can be used to allow for multiple types in an array.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let arr: string[]; // only accepts strings</span><br><span class="line">let arr2: (string | number)[]; // accepts strings or numbers</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>Tuple</strong> - tuples are not native to JavaScript. When you know exactly what data will be in the array, and you will not be adding to the array or modifying the type for any value, you can use a tuple.</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr: [<span class="built_in">string</span>, <span class="built_in">number</span>, <span class="built_in">string</span>]; <span class="comment">// ['cat', 7, 'dog']</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>enum</code> - enums are not native to JavaScript but are similar to enumeration used in other languages like C++ and Java. You use an enum when you have a constant set of values that will not be changed. By default, the values in an enum are also given a numeric value starting at 0. However, the numeric value can manually be set to any number explicitly or by calculation. Uses PascalCase to name the type.</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> Weekend &#123;</span><br><span class="line">  Friday,</span><br><span class="line">  Saturday,</span><br><span class="line">  Sunday</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Objects-and-Interfaces"><a href="#Objects-and-Interfaces" class="headerlink" title="Objects and Interfaces"></a>Objects and Interfaces</h3><p>Objects are easily created in JavaScript due to JavaScript’s weak typing. With TypeScript, they take a bit more work. It is possible to create an object in TypeScript, but TypeScript offers better tools for doing so.</p>
+<p><strong>Object</strong> - creating an object requires defining the object before setting values. Once you have defined the object, additional properties cannot be added to the type definition, making it unhelpful when you need to add more properties after creation.</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> student:&#123; name: <span class="built_in">string</span>, age: <span class="built_in">number</span>, enrolled: <span class="built_in">boolean</span>&#125; = &#123;name: <span class="string">'Maria'</span>, age: <span class="number">10</span>, enrolled: <span class="literal">true</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>interface</code> - Interfaces are a concept not native to javascript, but similar concepts exist in other languages like Java, C++, and Python, where you create an abstract class as an interface for creating classes. With TypeScript, interfaces are simply used as the blueprint for the shape of something. Interfaces can be used to create functions but are most commonly seen to create objects.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">interface Student &#123; </span><br><span class="line">  name: string, </span><br><span class="line">  age: number, </span><br><span class="line">  enrolled: boolean</span><br><span class="line">&#125;;</span><br><span class="line">let newStudent:Student = &#123;name: &apos;Maria&apos;, age: 10, enrolled: true&#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">interface Undergrad extends Student &#123;</span><br><span class="line">  major: string;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Duck-Typing"><a href="#Duck-Typing" class="headerlink" title="Duck Typing"></a>Duck Typing</h4><p>Duck Typing is a programming concept that tests if an object meets the duck test: “If it walks like a duck and it quacks like a duck, then it must be a duck.”</p>
+<p>TypeScript uses duck typing for interfaces, meaning that even though you may say a function takes in an argument of interface A, if interface B has the same properties of A, it will also accept B. Interface A is the duck, and Interface B walks and quacks like a duck, so we’ll accept it as a duck too.</p>
+<h4 id="Optional-and-Readonly-Properties"><a href="#Optional-and-Readonly-Properties" class="headerlink" title="Optional and Readonly Properties"></a>Optional and Readonly Properties</h4><p><strong>Optional</strong> - use when an object may or may not have a specific property by adding a <code>?</code> at the end of the property name.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">interface Student &#123; </span><br><span class="line">  name: string, </span><br><span class="line">  age: number, </span><br><span class="line">  enrolled: boolean,</span><br><span class="line">  phone?: number // phone becomes optional</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><code>readonly</code> - use when a property should not be able to be modified after the object has been created.</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Student &#123; </span><br><span class="line">  name: <span class="built_in">string</span>, </span><br><span class="line">  age: <span class="built_in">number</span>, </span><br><span class="line">  enrolled: <span class="built_in">boolean</span>,</span><br><span class="line">  readonly id: <span class="built_in">number</span> <span class="comment">// id is readonly</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Type-Aliases"><a href="#Type-Aliases" class="headerlink" title="Type Aliases"></a>Type Aliases</h3><h4 id="With-primitive-types-for-documentation"><a href="#With-primitive-types-for-documentation" class="headerlink" title="With primitive types for documentation"></a>With primitive types for documentation</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type Name = string;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Workes-with-unions-and-tuples"><a href="#Workes-with-unions-and-tuples" class="headerlink" title="Workes with unions and tuples"></a>Workes with unions and tuples</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">type Input = string | number;</span><br><span class="line">type Coord = [number, number];</span><br></pre></td></tr></table></figure>
+
+<p>Type Aliases can also be used as object. It is similar as interface.</p>
+<h3 id="Classes"><a href="#Classes" class="headerlink" title="Classes"></a>Classes</h3><p>TypeScript classes look and behave very much like the classes introduced in ES6. The biggest addition to TypeScript classes is the addition of access modifiers. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Student &#123;</span><br><span class="line">  protected studentGrade: number;</span><br><span class="line">  private studentId: number;</span><br><span class="line">  public constructor(grade: number, id: number) &#123;</span><br><span class="line">    this.studentGrade = grade;</span><br><span class="line">    this.studentId = id;</span><br><span class="line">  &#125;</span><br><span class="line">  id()&#123;</span><br><span class="line">    return this.studentId;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Factory-Functions"><a href="#Factory-Functions" class="headerlink" title="Factory Functions"></a>Factory Functions</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">interface Student &#123;</span><br><span class="line">  name: string;</span><br><span class="line">  age: number</span><br><span class="line">  greet(): void;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const studentFactory = (name: string, age: number): Student =&gt;&#123; </span><br><span class="line">  const greet = ():void =&gt; console.log(&apos;hello&apos;); </span><br><span class="line">  return &#123; name, age, greet &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const myStudent = studentFactory(&apos;Hana&apos;, 16);</span><br></pre></td></tr></table></figure>
+
+<h2 id="Generics-and-Asynchronous-TypeScript"><a href="#Generics-and-Asynchronous-TypeScript" class="headerlink" title="Generics and Asynchronous TypeScript"></a>Generics and Asynchronous TypeScript</h2><h3 id="Generics"><a href="#Generics" class="headerlink" title="Generics"></a>Generics</h3><p>We can combine the following function using generics.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const getItem = (arr: number[]):number =&gt; &#123;</span><br><span class="line">  return arr[1];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const getItem = (arr: string[]):string =&gt; &#123;</span><br><span class="line">  return arr[1];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// Generic Function</span><br><span class="line">const getItem = &lt;T&gt;(arr: T[]):T =&gt; &#123;</span><br><span class="line">  return arr[1];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Backend/Database/Database-Tutorial.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Backend/Database/Database-Tutorial.html" itemprop="url">Database Tutorial</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-03-28T22:20:28+08:00">
+                2022-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Database/" itemprop="url" rel="index">
+                    <span itemprop="name">Database</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Backend/Database/Database-Tutorial.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Backend/Database/Database-Tutorial.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  354 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Database-Tutorial"><a href="#Database-Tutorial" class="headerlink" title="Database Tutorial"></a>Database Tutorial</h1><h2 id="Install-MYSQL-as-a-Docker-Container"><a href="#Install-MYSQL-as-a-Docker-Container" class="headerlink" title="Install MYSQL as a Docker Container"></a>Install MYSQL as a Docker Container</h2><p>First, we need to install Docker to our system. After that we just run the following code.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 3306:3306 --name ECE141MySQL -e MYSQL_ROOT_PASS</span><br><span class="line">WORD=root -e MYSQL_DATABASE=testing -d mysql</span><br></pre></td></tr></table></figure>
+
+<p>This creates a mysql container(ECE141MySQL) in docker, a database called “testing”, and a root user (root) with a passward of “root”.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it ECE141MySQL bash</span><br><span class="line">mysql -p // use &quot;root&quot; when asked for password</span><br></pre></td></tr></table></figure>
+
+<p>Now, we can use mysql!</p>
+<h2 id="Create-the-first-database"><a href="#Create-the-first-database" class="headerlink" title="Create the first database"></a>Create the first database</h2><h3 id="Create-database"><a href="#Create-database" class="headerlink" title="Create database"></a>Create database</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create databsed &lt;dbname&gt;; // &lt;dbname&gt; can be test...</span><br></pre></td></tr></table></figure>
+
+<h3 id="Show-databases"><a href="#Show-databases" class="headerlink" title="Show databases"></a>Show databases</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">databases</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Select-a-database"><a href="#Select-a-database" class="headerlink" title="Select a database"></a>Select a database</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> testing;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Create-a-table"><a href="#Create-a-table" class="headerlink" title="Create a table"></a>Create a table</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">Authors</span> ( </span><br><span class="line">  <span class="keyword">id</span> <span class="built_in">INT</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> auto_increment PRIMARY <span class="keyword">KEY</span>, </span><br><span class="line">  firstname <span class="built_in">VARCHAR</span>(<span class="number">50</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>, </span><br><span class="line">  lastname <span class="built_in">VARCHAR</span>(<span class="number">50</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> </span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Describe-the-table"><a href="#Describe-the-table" class="headerlink" title="Describe the table"></a>Describe the table</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">describe</span> <span class="keyword">authors</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">+<span class="comment">-----------+-------------+------+-----+---------+----------------+</span></span><br><span class="line">| Field     | Type        | Null | Key | Default | Extra          |</span><br><span class="line">+<span class="comment">-----------+-------------+------+-----+---------+----------------+</span></span><br><span class="line">| id        | int         | NO   | PRI | NULL    | auto_increment |</span><br><span class="line">| firstname | varchar(50) | NO   |     | NULL    |                |</span><br><span class="line">| lastname  | varchar(50) | NO   |     | NULL    |                |</span><br><span class="line">+<span class="comment">-----------+-------------+------+-----+---------+----------------+</span></span><br><span class="line">3 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Insert-data-into-a-table"><a href="#Insert-data-into-a-table" class="headerlink" title="Insert data into a table"></a>Insert data into a table</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">Authors</span> (firstname, lastname) </span><br><span class="line"><span class="keyword">VALUES</span> (<span class="string">'Elon'</span>, <span class="string">'Must'</span>), (<span class="string">'Bill'</span>, <span class="string">'Gates'</span>), (<span class="string">'Bill'</span>, <span class="string">'Chen'</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Show-rows-in-a-table"><a href="#Show-rows-in-a-table" class="headerlink" title="Show rows in a table"></a>Show rows in a table</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">from</span> <span class="keyword">Authors</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">+<span class="comment">----+-----------+----------+</span></span><br><span class="line">| id | firstname | lastname |</span><br><span class="line">+<span class="comment">----+-----------+----------+</span></span><br><span class="line">|  1 | Elon      | Must     |</span><br><span class="line">|  2 | Bill      | Gates    |</span><br><span class="line">|  3 | Bill      | Chen     |</span><br><span class="line">+<span class="comment">----+-----------+----------+</span></span><br><span class="line">3 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">from</span> <span class="keyword">Authors</span> <span class="keyword">WHERE</span> firstname=<span class="string">'Bill'</span> <span class="keyword">order</span> <span class="keyword">by</span> lastname;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">+<span class="comment">----+-----------+----------+</span></span><br><span class="line">| id | firstname | lastname |</span><br><span class="line">+<span class="comment">----+-----------+----------+</span></span><br><span class="line">|  3 | Bill      | Chen     |</span><br><span class="line">|  2 | Bill      | Gates    |</span><br><span class="line">+<span class="comment">----+-----------+----------+</span></span><br><span class="line">2 rows in <span class="keyword">set</span> (<span class="number">0.01</span> sec)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">count</span>(<span class="keyword">id</span>), firstname <span class="keyword">from</span> <span class="keyword">Authors</span> <span class="keyword">group</span> <span class="keyword">by</span> firstname;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">+<span class="comment">-----------+-----------+</span></span><br><span class="line">| count(id) | firstname |</span><br><span class="line">+<span class="comment">-----------+-----------+</span></span><br><span class="line">|         1 | Elon      |</span><br><span class="line">|         2 | Bill      |</span><br><span class="line">+<span class="comment">-----------+-----------+</span></span><br><span class="line">2 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Update-and-delete-rows"><a href="#Update-and-delete-rows" class="headerlink" title="Update and delete rows"></a>Update and delete rows</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UPDATE Authors set lastname=&quot;Musk&quot; where lastname=&quot;Must&quot;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE from Authors where firstname=&quot;Bill&quot;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Join-data-from-tables"><a href="#Join-data-from-tables" class="headerlink" title="Join data from tables"></a>Join data from tables</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Books (</span><br><span class="line">  <span class="keyword">id</span> <span class="built_in">integer</span> auto_increment PRIMARY <span class="keyword">KEY</span>,</span><br><span class="line">  title <span class="built_in">VARCHAR</span>(<span class="number">50</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">  author_id <span class="built_in">int</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Books (title, author_id)</span><br><span class="line"><span class="keyword">VALUES</span> (<span class="string">"Of Earth and Mars"</span>, <span class="number">1</span>), </span><br><span class="line">(<span class="string">"The Road Ahead"</span>, <span class="number">2</span>), </span><br><span class="line">(<span class="string">"Business at the Speed of Thought"</span>, <span class="number">2</span>), </span><br><span class="line">(<span class="string">"THe Mathematics of Poker"</span>, <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> firstname, lastname, title</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">Authors</span> <span class="keyword">left</span> <span class="keyword">join</span> Books <span class="keyword">on</span> Authors.id=Books.author_id;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">+<span class="comment">-----------+----------+-------------------+</span></span><br><span class="line">| firstname | lastname | title             |</span><br><span class="line">+<span class="comment">-----------+----------+-------------------+</span></span><br><span class="line">| Elon      | Musk     | Of Earth and Mars |</span><br><span class="line">| Bill      | Gates    | NULL              |</span><br><span class="line">| Bill      | Chen     | NULL              |</span><br><span class="line">+<span class="comment">-----------+----------+-------------------+</span></span><br><span class="line">3 rows in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/LeetCode/hashmap.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/LeetCode/hashmap.html" itemprop="url">hashmap</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-03-08T09:02:07+08:00">
+                2022-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">Leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/LeetCode/hashmap.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="LeetCode/hashmap.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  175 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Two-sum"><a href="#Two-sum" class="headerlink" title="Two sum"></a>Two sum</h2><h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>You may assume that each input would have <strong><em>exactly\</em> one solution</strong>, and you may not use the <em>same</em> element twice. You can return the answer in any order.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [2,7,11,15], target = 9</span><br><span class="line">Output: [0,1]</span><br><span class="line">Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><h4 id="Brute-force"><a href="#Brute-force" class="headerlink" title="Brute force"></a>Brute force</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Double loop</span></span><br><span class="line"><span class="comment"># O(n^2) time | O(1) square</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Two-pass-hash-table"><a href="#Two-pass-hash-table" class="headerlink" title="Two-pass hash table"></a>Two-pass hash table</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(n) time | O(n) square</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">twoSum</span><span class="params">(self, nums: List[int], target: int)</span> -&gt; List[int]:</span></span><br><span class="line">        hashmap = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            hashmap[nums[i]] = i</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            complement = target - nums[i]</span><br><span class="line">            <span class="keyword">if</span> complement <span class="keyword">in</span> hashmap <span class="keyword">and</span> hashmap[complement] != i:</span><br><span class="line">                <span class="keyword">return</span> [i, hashmap[complement]]</span><br></pre></td></tr></table></figure>
+
+<h4 id="One-pass-hash-table"><a href="#One-pass-hash-table" class="headerlink" title="One-pass hash table"></a>One-pass hash table</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(n) time | O(n) square</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">twoSum</span><span class="params">(self, nums: List[int], target: int)</span> -&gt; List[int]:</span></span><br><span class="line">        hashmap = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            hashmap[nums[i]] = i</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            complement = target - nums[i]</span><br><span class="line">            <span class="keyword">if</span> complement <span class="keyword">in</span> hashmap <span class="keyword">and</span> hashmap[complement] != i:</span><br><span class="line">                <span class="keyword">return</span> [i, hashmap[complement]]</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Fullstack/Node-js.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -588,996 +1666,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Fullstack/JavaScript-Notes.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Fullstack/JavaScript-Notes.html" itemprop="url">JavaScript Notes</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-03-07T22:08:43+08:00">
-                2022-03-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Fullstack/" itemprop="url" rel="index">
-                    <span itemprop="name">Fullstack</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/Fullstack/JavaScript-Notes.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Fullstack/JavaScript-Notes.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  726 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Null-Undefined-and-NaN"><a href="#Null-Undefined-and-NaN" class="headerlink" title="Null, Undefined and NaN"></a>Null, Undefined and NaN</h2><h3 id="null-means-“value-of-nothing”"><a href="#null-means-“value-of-nothing”" class="headerlink" title="null means “value of nothing”"></a>null means “value of nothing”</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="literal">null</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="undefined-means-“absence-of-value”"><a href="#undefined-means-“absence-of-value”" class="headerlink" title="undefined means “absence of value”"></a>undefined means “absence of value”</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x;</span><br><span class="line"><span class="built_in">console</span>.log(x);</span><br></pre></td></tr></table></figure>
-
-<h3 id="NaN-means-“not-a-number”"><a href="#NaN-means-“not-a-number”" class="headerlink" title="NaN means “not a number”"></a>NaN means “not a number”</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// calculating the square root of a negative number will return NaN</span></span><br><span class="line"><span class="built_in">Math</span>.sqrt(<span class="number">-10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// trying to divide a string by 5 will return NaN</span></span><br><span class="line"><span class="string">"hello"</span>/<span class="number">5</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Equality"><a href="#Equality" class="headerlink" title="Equality"></a>Equality</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"1"</span> == <span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p><strong>Returns:</strong> true</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"1"</span> === <span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p><strong>Returns:</strong> false</p>
-</blockquote>
-<h2 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> sum = x + y;</span><br><span class="line">  <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> sum = add(<span class="number">1</span>, <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>If you don’t explicitly define a return value, the function will return <code>undefined</code> by default.</p>
-</blockquote>
-<h2 id="Hoisting"><a href="#Hoisting" class="headerlink" title="Hoisting"></a>Hoisting</h2><p>The function can be declared after we call it. The interpreter will help us to change the sequence of the code. </p>
-<p>Also, we can also declare the variable after we use it, but the value we set is still at the original place.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sayHi(<span class="string">"Julia"</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(greeting + <span class="string">" "</span> + name);</span><br><span class="line">  <span class="keyword">var</span> greeting;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// result: undefined Julia</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">sayHi(<span class="string">"Julia"</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(greeting + <span class="string">" "</span> + name);</span><br><span class="line">  <span class="keyword">var</span> greeting = <span class="string">"Hello"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// result: undefined Julia</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">The above function is equal to the following function...</span></span><br><span class="line"><span class="comment">function sayHi(name) &#123;</span></span><br><span class="line"><span class="comment">  var greeting;</span></span><br><span class="line"><span class="comment">  console.log(greeting + " " + name);</span></span><br><span class="line"><span class="comment">  greeting = "Hello";</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Function-Expressions"><a href="#Function-Expressions" class="headerlink" title="Function Expressions"></a>Function Expressions</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> catSays = <span class="function"><span class="keyword">function</span>(<span class="params">max</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> catMessage = <span class="string">""</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; max; i++) &#123;</span><br><span class="line">    catMessage += <span class="string">"meow "</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> catMessage;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>Notice how the <code>function</code> keyword no longer has a name.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> catSays = <span class="function"><span class="keyword">function</span>(<span class="params">max</span>) </span>&#123; </span><br><span class="line">  <span class="comment">// code here </span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>It’s an <strong>anonymous function</strong>, a function with no name, and you’ve stored it in a variable called <code>catSays</code>.</p>
-<h3 id="Use-function-expressions-as-parameters"><a href="#Use-function-expressions-as-parameters" class="headerlink" title="Use function expressions as parameters"></a>Use function expressions as parameters</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// function expression catSays</span></span><br><span class="line"><span class="keyword">var</span> catSays = <span class="function"><span class="keyword">function</span>(<span class="params">max</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> catMessage = <span class="string">""</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; max; i++) &#123;</span><br><span class="line">    catMessage += <span class="string">"meow "</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> catMessage;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// function declaration helloCat accepting a callback</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">helloCat</span>(<span class="params">callbackFunc</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"Hello "</span> + callbackFunc(<span class="number">3</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// pass in catSays as a callback function</span></span><br><span class="line">helloCat(catSays);</span><br></pre></td></tr></table></figure>
-
-<h3 id="Inline-function-expressions"><a href="#Inline-function-expressions" class="headerlink" title="Inline function expressions"></a>Inline function expressions</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> favoriteMovie = <span class="function"><span class="keyword">function</span> <span class="title">displayFavorite</span>(<span class="params">movieName</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"My favorite movie is "</span> + movieName);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">movies</span>(<span class="params">messageFunction, name</span>) </span>&#123;</span><br><span class="line">  messageFunction(name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">movies(favoriteMovie, <span class="string">"Finding Nemo"</span>);</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">movies</span>(<span class="params">messageFunction, name</span>) </span>&#123;</span><br><span class="line">  messageFunction(name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">movies(<span class="function"><span class="keyword">function</span> <span class="title">displayFavorite</span>(<span class="params">movieName</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"My favorite movie is "</span> + movieName);</span><br><span class="line">&#125;, <span class="string">"Finding Nemo"</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// creates a `donuts` array with three strings</span></span><br><span class="line"><span class="keyword">var</span> donuts = [<span class="string">"glazed"</span>, <span class="string">"powdered"</span>, <span class="string">"jelly"</span>];</span><br></pre></td></tr></table></figure>
-
-<p>But strings aren’t the only type of data you can store in an array. You can also store numbers, booleans… and really anything!</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// creates a `mixedData` array with mixed data types</span></span><br><span class="line"><span class="keyword">var</span> mixedData = [<span class="string">"abcd"</span>, <span class="number">1</span>, <span class="literal">true</span>, <span class="literal">undefined</span>, <span class="literal">null</span>, <span class="string">"all the things"</span>];</span><br></pre></td></tr></table></figure>
-
-<p>You can even store an array in an array to create a <strong>nested array</strong>!</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arraysInArrays = [</span><br><span class="line">  [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], </span><br><span class="line">  [<span class="string">"Julia"</span>, <span class="string">"James"</span>], </span><br><span class="line">  [<span class="literal">true</span>, <span class="literal">false</span>, <span class="literal">true</span>, <span class="literal">false</span>]</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
-
-<h3 id="Indexing"><a href="#Indexing" class="headerlink" title="Indexing"></a>Indexing</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> donuts = [<span class="string">"glazed"</span>, <span class="string">"powdered"</span>, <span class="string">"sprinkled"</span>];</span><br><span class="line"><span class="built_in">console</span>.log(donuts[<span class="number">0</span>]);</span><br></pre></td></tr></table></figure>
-
-<h3 id="Length"><a href="#Length" class="headerlink" title="Length"></a>Length</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> donuts = [<span class="string">"glazed"</span>, <span class="string">"powdered"</span>, <span class="string">"sprinkled"</span>];</span><br><span class="line"><span class="built_in">console</span>.log(donuts.length);</span><br></pre></td></tr></table></figure>
-
-<h3 id="Push"><a href="#Push" class="headerlink" title="Push"></a>Push</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> donuts = [<span class="string">"glazed"</span>, <span class="string">"chocolate frosted"</span>, <span class="string">"Boston creme"</span>, <span class="string">"glazed cruller"</span>, <span class="string">"cinnamon sugar"</span>, <span class="string">"sprinkled"</span>];</span><br><span class="line">donuts.push(<span class="string">"powdered"</span>); </span><br><span class="line"><span class="comment">// the `push()` method returns 7 because the `donuts` array now has 7 elements</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Pop"><a href="#Pop" class="headerlink" title="Pop"></a>Pop</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> donuts = [<span class="string">"glazed"</span>, <span class="string">"chocolate frosted"</span>, <span class="string">"Boston creme"</span>, <span class="string">"glazed cruller"</span>, <span class="string">"cinnamon sugar"</span>, <span class="string">"sprinkled"</span>, <span class="string">"powdered"</span>];</span><br><span class="line">donuts.pop(); </span><br><span class="line"><span class="comment">// pops "powdered" off the end of the `donuts` array</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Loop"><a href="#Loop" class="headerlink" title="Loop"></a>Loop</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> donuts = [<span class="string">"jelly donut"</span>, <span class="string">"chocolate donut"</span>, <span class="string">"glazed donut"</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; donuts.length; i++) &#123;</span><br><span class="line">    donuts[i] += <span class="string">" hole"</span>;</span><br><span class="line">    donuts[i] = donuts[i].toUpperCase();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="forEach-loop"><a href="#forEach-loop" class="headerlink" title="forEach loop"></a>forEach loop</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> donuts = [<span class="string">"jelly donut"</span>, <span class="string">"chocolate donut"</span>, <span class="string">"glazed donut"</span>];</span><br><span class="line"></span><br><span class="line">donuts.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">donut</span>) </span>&#123;</span><br><span class="line">  donut += <span class="string">" hole"</span>;</span><br><span class="line">  donut = donut.toUpperCase();</span><br><span class="line">  <span class="built_in">console</span>.log(donut);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p>The function that you pass to the <code>forEach()</code> method can take up to three parameters. In the video, these are called <code>element</code>, <code>index</code>, and <code>array</code>, but you can call them whatever you like.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">words = [<span class="string">"cat"</span>, <span class="string">"in"</span>, <span class="string">"hat"</span>];</span><br><span class="line">words.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">word, num, all</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Word "</span> + num + <span class="string">" in "</span> + all.toString() + <span class="string">" is "</span> + word);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Result:</span></span><br><span class="line"><span class="comment">Word 0 in cat,in,hat is cat</span></span><br><span class="line"><span class="comment">Word 1 in cat,in,hat is in</span></span><br><span class="line"><span class="comment">Word 2 in cat,in,hat is hat</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><p>With the <code>map()</code> method, you can take an array, perform some operation on each element of the array, and return <strong>a new array</strong>.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> donuts = [<span class="string">"jelly donut"</span>, <span class="string">"chocolate donut"</span>, <span class="string">"glazed donut"</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> improvedDonuts = donuts.map(<span class="function"><span class="keyword">function</span>(<span class="params">donut</span>) </span>&#123;</span><br><span class="line">  donut += <span class="string">" hole"</span>;</span><br><span class="line">  donut = donut.toUpperCase();</span><br><span class="line">  <span class="keyword">return</span> donut;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">donuts array: ["jelly donut", "chocolate donut", "glazed donut"]</span></span><br><span class="line"><span class="comment">improvedDonuts array: ["JELLY DONUT HOLE", "CHOCOLATE DONUT HOLE", "GLAZED DONUT HOLE"]</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sister = &#123;</span><br><span class="line">  name: <span class="string">"Sarah"</span>,</span><br><span class="line">  age: <span class="number">23</span>,</span><br><span class="line">  parents: [ <span class="string">"alice"</span>, <span class="string">"andy"</span> ],</span><br><span class="line">  siblings: [<span class="string">"julia"</span>],</span><br><span class="line">  favoriteColor: <span class="string">"purple"</span>,</span><br><span class="line">  pets: <span class="literal">true</span>,</span><br><span class="line">  paintPicture: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="string">"Sarah paints!"</span>; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">sister.paintPicture();</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Return: </span></span><br><span class="line"><span class="comment">"Sarah paints!"</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Backend/C++/lambda-expression-in-C.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Backend/C++/lambda-expression-in-C.html" itemprop="url">lambda expression in C++</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-02-26T16:22:27+08:00">
-                2022-02-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Backend/" itemprop="url" rel="index">
-                    <span itemprop="name">Backend</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/Backend/C++/lambda-expression-in-C.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Backend/C++/lambda-expression-in-C.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  291 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>There are three ways to call the function.</p>
-<ul>
-<li>Just call</li>
-<li>Function pointer</li>
-<li>Lambda expression</li>
-</ul>
-<h2 id="Just-call"><a href="#Just-call" class="headerlink" title="Just call"></a>Just call</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">size_t</span> foo(<span class="keyword">size_t</span> aValue) &#123;</span><br><span class="line">    <span class="keyword">return</span> rand() % <span class="number">5</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Container</span> &#123;</span></span><br><span class="line">    Container() &#123;</span><br><span class="line">        values.push_back(<span class="number">10</span>);</span><br><span class="line">        values.push_back(<span class="number">20</span>);</span><br><span class="line">        values.push_back(<span class="number">30</span>);</span><br><span class="line">        values.push_back(<span class="number">40</span>);</span><br><span class="line">        values.push_back(<span class="number">50</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">eachFrom</span><span class="params">(<span class="keyword">size_t</span> anIndex)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> ((anIndex = foo(values[anIndex]))) &#123;</span><br><span class="line">            <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; values[anIndex] &lt;&lt; <span class="string">"\n"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; values;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    srand((<span class="keyword">unsigned</span>)time(<span class="literal">NULL</span>));</span><br><span class="line">    Container theContainer;</span><br><span class="line">    theContainer.eachFrom(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Function-pointer"><a href="#Function-pointer" class="headerlink" title="Function pointer"></a>Function pointer</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Container</span> &#123;</span></span><br><span class="line">    Container() &#123;</span><br><span class="line">        values.push_back(<span class="number">10</span>);</span><br><span class="line">        values.push_back(<span class="number">20</span>);</span><br><span class="line">        values.push_back(<span class="number">30</span>);</span><br><span class="line">        values.push_back(<span class="number">40</span>);</span><br><span class="line">        values.push_back(<span class="number">50</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">using</span> EachVisitor = <span class="built_in">std</span>::function&lt;<span class="keyword">size_t</span>(<span class="keyword">size_t</span>)&gt;;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">eachFrom</span><span class="params">(<span class="keyword">size_t</span> anIndex, EachVisitor aVisitor)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> ((anIndex = aVisitor(values[anIndex]))) &#123;</span><br><span class="line">            <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; values[anIndex] &lt;&lt; <span class="string">"\n"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; values;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">size_t</span> foo(<span class="keyword">size_t</span> aValue) &#123;</span><br><span class="line">    <span class="keyword">return</span> rand() % <span class="number">5</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    srand((<span class="keyword">unsigned</span>)time(<span class="literal">NULL</span>));</span><br><span class="line">    Container theContainer;</span><br><span class="line">    theContainer.eachFrom(<span class="number">1</span>, foo);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Lambda-expression"><a href="#Lambda-expression" class="headerlink" title="Lambda expression"></a>Lambda expression</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Container</span> &#123;</span></span><br><span class="line">    Container() &#123;</span><br><span class="line">        values.push_back(<span class="number">10</span>);</span><br><span class="line">        values.push_back(<span class="number">20</span>);</span><br><span class="line">        values.push_back(<span class="number">30</span>);</span><br><span class="line">        values.push_back(<span class="number">40</span>);</span><br><span class="line">        values.push_back(<span class="number">50</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">using</span> EachVisitor = <span class="built_in">std</span>::function&lt;<span class="keyword">size_t</span>(<span class="keyword">size_t</span>)&gt;;</span><br><span class="line">    <span class="keyword">size_t</span> eachFrom(<span class="keyword">size_t</span> anIndex, EachVisitor aVisitor) &#123;</span><br><span class="line">        <span class="keyword">while</span>((anIndex = aVisitor(values[anIndex]))) &#123;</span><br><span class="line">            <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"value"</span> &lt;&lt; values[anIndex] &lt;&lt; <span class="string">"\n"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; values;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    srand((<span class="keyword">unsigned</span>)time(<span class="literal">NULL</span>)); </span><br><span class="line">    Container theContainer;</span><br><span class="line">    theContainer.eachFrom(<span class="number">1</span>, [&amp;](<span class="keyword">size_t</span> aValue) &#123;<span class="keyword">return</span> rand() % <span class="number">5</span>;&#125;);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/LeetCode/Two-pointers.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/LeetCode/Two-pointers.html" itemprop="url">Two pointers</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-02-26T15:29:37+08:00">
-                2022-02-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">Leetcode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/LeetCode/Two-pointers.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="LeetCode/Two-pointers.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  983 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  6 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Trap-Rain-Water-LeetCode-42"><a href="#Trap-Rain-Water-LeetCode-42" class="headerlink" title="Trap Rain Water(LeetCode 42)"></a>Trap Rain Water(LeetCode 42)</h2><h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>Given <code>n</code> non-negative integers representing an elevation map where the width of each bar is <code>1</code>, compute how much water it can trap after raining. </p>
-<p><img src="https://assets.leetcode.com/uploads/2018/10/22/rainwatertrap.png" alt></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: height = [0,1,0,2,1,0,1,3,2,1,2,1]</span><br><span class="line">Output: 6</span><br></pre></td></tr></table></figure>
-
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><h4 id="Brute-force"><a href="#Brute-force" class="headerlink" title="Brute force"></a>Brute force</h4><p>For every position, find <code>left_max</code> and <code>right_max</code>.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(n^2) time | O(1) space</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">trap</span><span class="params">(self, height: List[int])</span> -&gt; int:</span></span><br><span class="line">      	<span class="keyword">if</span> height <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(height)):</span><br><span class="line">            left_max, right_max = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(i, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">                left_max = max(left_max, height[j])</span><br><span class="line">            <span class="keyword">for</span> k <span class="keyword">in</span> range(i, len(height)):</span><br><span class="line">                right_max = max(right_max, height[k])</span><br><span class="line">            ans += min(left_max, right_max) - height[i]</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
-
-<h4 id="Dynamic-programming"><a href="#Dynamic-programming" class="headerlink" title="Dynamic programming"></a>Dynamic programming</h4><p>We can find that we don’t need to find <code>left_max</code> and <code>right_max</code> at every position. We can traverse the list and store them. Although we improved the time complexity, we use more space than brute force. This is also not a good way.</p>
-<p><img src="https://leetcode.com/problems/trapping-rain-water/Figures/42/trapping_rain_water.png" alt></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(n) time | O(n) space</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">trap</span><span class="params">(self, height: List[int])</span> -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> height <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        theSize = len(height)</span><br><span class="line">        left_max, right_max = [height[<span class="number">0</span>]] * theSize, [height[theSize - <span class="number">1</span>]] * theSize</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, theSize):</span><br><span class="line">            left_max[i] = max(height[i], left_max[i - <span class="number">1</span>])</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(theSize - <span class="number">2</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            right_max[j] = max(height[j], right_max[j + <span class="number">1</span>])</span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> range(<span class="number">1</span>, theSize - <span class="number">1</span>):</span><br><span class="line">            ans += min(left_max[k], right_max[k]) - height[k]</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
-
-<h4 id="Two-pointers"><a href="#Two-pointers" class="headerlink" title="Two pointers"></a>Two pointers</h4><p>The best way for this question is using two pointers, which is also a good way for some array questions. If we don’t want to preserve the data like in dynamic programming way, we can find a way to get the <code>left_max</code> and <code>right_max</code> during the for loop.</p>
-<p>Firstly, set the <code>leftId</code> and <code>rightId</code> as 0, and size. Then, set the <code>left_max</code> and <code>right_max</code> as leftmost value and rightmost value. We should know that we only use the minimum of <code>left_max</code> and <code>right_max</code>, so we should start with smaller side. When we found that the current <code>left_max</code> or <code>right_max</code> is larger than another one. We should change to another side. This ensures that we always use the minimun of <code>left_max</code> and <code>right_max</code>.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(n) time | O(1) space</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">trap</span><span class="params">(self, height: List[int])</span> -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> height:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        left, right = <span class="number">0</span>, len(height) - <span class="number">1</span></span><br><span class="line">        left_max, right_max = height[left], height[right]</span><br><span class="line">        water = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> left &lt;= right:</span><br><span class="line">            <span class="keyword">if</span> left_max &lt; right_max:</span><br><span class="line">                left_max = max(left_max, height[left])</span><br><span class="line">                water += left_max - height[left]</span><br><span class="line">                left += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                right_max = max(right_max, height[right])</span><br><span class="line">                water += right_max - height[right]</span><br><span class="line">                right -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> water</span><br></pre></td></tr></table></figure>
-
-<h4 id="Using-stacks"><a href="#Using-stacks" class="headerlink" title="Using stacks"></a>Using stacks</h4><p>This way is not the best and also not easy to understand. The main idea is to track and compute the <code>V</code> shape, because it is only possible to trap vater in <code>V</code> shape.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">trap</span><span class="params">(self, heights: List[int])</span> -&gt; int:</span></span><br><span class="line">        stack, trapped_water = [], <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> hi_index, height <span class="keyword">in</span> enumerate(heights):</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> stack <span class="keyword">and</span> height &gt;= heights[stack[<span class="number">-1</span>]]:</span><br><span class="line">                ground_height = heights[stack.pop()]</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> stack:</span><br><span class="line">                     <span class="keyword">continue</span></span><br><span class="line">                lo_index = stack[<span class="number">-1</span>]</span><br><span class="line">                water_line = min(heights[lo_index], height)</span><br><span class="line">                trapped_water += (water_line - ground_height) * (hi_index - lo_index - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">            stack.append(hi_index)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> trapped_water</span><br></pre></td></tr></table></figure>
-
-<h2 id="Merge-Sorted-Array"><a href="#Merge-Sorted-Array" class="headerlink" title="Merge Sorted Array"></a>Merge Sorted Array</h2><h3 id="Question-1"><a href="#Question-1" class="headerlink" title="Question"></a>Question</h3><p>You are given two integer arrays <code>nums1</code> and <code>nums2</code>, sorted in <strong>non-decreasing order</strong>, and two integers <code>m</code> and <code>n</code>, representing the number of elements in <code>nums1</code> and <code>nums2</code> respectively.</p>
-<p><strong>Merge</strong> <code>nums1</code> and <code>nums2</code> into a single array sorted in <strong>non-decreasing order</strong>.</p>
-<p>The final sorted array should not be returned by the function, but instead be stored inside the array <code>nums1</code>. To accommodate this, <code>nums1</code> has a length of <code>m + n</code>, where the first <code>m</code> elements denote the elements that should be merged, and the last <code>n</code> elements are set to <code>0</code> and should be ignored. <code>nums2</code> has a length of <code>n</code>.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3</span><br><span class="line">Output: [1,2,2,3,5,6]</span><br></pre></td></tr></table></figure>
-
-<h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h3><h4 id="Brute-Force-Merge-and-sort"><a href="#Brute-Force-Merge-and-sort" class="headerlink" title="Brute Force: Merge and sort"></a>Brute Force: Merge and sort</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O((n+m)log(n+m)) time | O(n) space</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(self, nums1: List[int], m: int, nums2: List[int], n: int)</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">        <span class="comment"># Write the elements of num2 into the end of nums1.</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            nums1[i + m] = nums2[i]</span><br><span class="line">        <span class="comment"># Sort nums1 list in-place.</span></span><br><span class="line">        nums1.sort()</span><br></pre></td></tr></table></figure>
-
-<h4 id="Three-Pointers-Start-from-the-beginning"><a href="#Three-Pointers-Start-from-the-beginning" class="headerlink" title="Three Pointers (Start from the beginning)"></a>Three Pointers (Start from the beginning)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(n+m) time | O(m) space</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(self, nums1: List[int], m: int, nums2: List[int], n: int)</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">        <span class="comment"># must copy the nums1[:m] first...</span></span><br><span class="line">        <span class="comment"># can't use nums1_copy = nums1, because it will be alias</span></span><br><span class="line">        nums1_copy = nums1[:m]</span><br><span class="line">        idx1 = <span class="number">0</span></span><br><span class="line">        idx2 = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(m + n):</span><br><span class="line">            <span class="comment"># have to put idx2 &gt;= n before... need to check it first</span></span><br><span class="line">            <span class="comment"># or the list will be out of the index...</span></span><br><span class="line">            <span class="keyword">if</span> idx2 &gt;= n <span class="keyword">or</span> (idx1 &lt; m <span class="keyword">and</span> nums1_copy[idx1] &lt;= nums2[idx2]):</span><br><span class="line">                nums1[i] = nums1_copy[idx1]</span><br><span class="line">                idx1 += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                nums1[i] = nums2[idx2]</span><br><span class="line">                idx2 += <span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Three-Pointers-Start-from-the-end"><a href="#Three-Pointers-Start-from-the-end" class="headerlink" title="Three Pointers (Start from the end)"></a>Three Pointers (Start from the end)</h3><p>Approach 2 already demonstrates the best possible time complexity, but still uses additional space. This is because the elements of array <code>nums1</code> have to be stored somwhere so that they aren’t overwritten.</p>
-<p>So, if instead we start to overwrite <code>nums1</code> from the end, we can solve this problem.</p>
-<blockquote>
-<p><strong>Interview Tip</strong>: Whenever you’re trying to solve an array problem in-place, always consider the possibility of iterating backwards instead of forwards through the array. It can completely change the problem, and make it a lot easier.</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(n+m) time | O(1) space</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(self, nums1: List[int], m: int, nums2: List[int], n: int)</span> -&gt; <span class="keyword">None</span>:</span>   </span><br><span class="line">        idx1 = m - <span class="number">1</span></span><br><span class="line">        idx2 = n - <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(m + n - <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            <span class="keyword">if</span> idx2 &lt; <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">if</span> idx1 &gt;= <span class="number">0</span> <span class="keyword">and</span> nums1[idx1] &gt; nums2[idx2]:</span><br><span class="line">                nums1[i] = nums1[idx1]</span><br><span class="line">                idx1 -= <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                nums1[i] = nums2[idx2]</span><br><span class="line">                idx2 -= <span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Backend/Java/Java-Notes-4.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Backend/Java/Java-Notes-4.html" itemprop="url">Java Notes 4</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-02-24T21:03:49+08:00">
-                2022-02-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Backend/" itemprop="url" rel="index">
-                    <span itemprop="name">Backend</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/Backend/Java/Java-Notes-4.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Backend/Java/Java-Notes-4.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  740 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Reflection"><a href="#Reflection" class="headerlink" title="Reflection"></a>Reflection</h2><h3 id="What-is-Reflection"><a href="#What-is-Reflection" class="headerlink" title="What is Reflection?"></a>What is Reflection?</h3><p><strong>Reflection</strong>, which is sometimes called <strong>introspection</strong>, is the ability of a program to examine its own structure at runtime.</p>
-<h3 id="Static-vs-Dynamic-Code"><a href="#Static-vs-Dynamic-Code" class="headerlink" title="Static vs Dynamic Code"></a>Static vs Dynamic Code</h3><h4 id="Static-Code"><a href="#Static-Code" class="headerlink" title="Static Code"></a>Static Code</h4><p>Normally, when you write a program, all the class names, method names, and variable names are known <em>statically</em>, when the code is being written and compiled:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Foo myObject = <span class="keyword">new</span> Foo();</span><br></pre></td></tr></table></figure>
-
-<p>Static code gives you the benefit of <strong>static analysis</strong>, which includes compile-type checking of static symbols like class and method names, and useful IDE features like auto-completion.</p>
-<p>The Java compiler will return an error if you used an invalid class or method name.</p>
-<h4 id="Dynamic-Code"><a href="#Dynamic-Code" class="headerlink" title="Dynamic Code"></a>Dynamic Code</h4><p>You can also create a <code>Foo</code> object <em>without</em> static symbol names. This is sometimes called <em>dynamic</em> coding:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object myObject = Class.forName(<span class="string">"Foo"</span>).getConstructor().newInstance();</span><br></pre></td></tr></table></figure>
-
-<p>Writing this kind of code, you won’t get any static or compile-time checks to make sure you got the class name correct. If you run this code and there is no class named “Foo”, a <code>ClassNotFoundException</code> will be thrown.</p>
-<h3 id="What-are-Annotations"><a href="#What-are-Annotations" class="headerlink" title="What are Annotations?"></a>What are Annotations?</h3><p><strong>Annotations</strong> are a way to provide extra metadata about your program. Annotations only provide metadata — they have no other effect on execution of the annotated code.</p>
-<h4 id="Common-built-in-annotations"><a href="#Common-built-in-annotations" class="headerlink" title="Common built-in annotations"></a>Common built-in annotations</h4><table>
-<thead>
-<tr>
-<th>Annotations</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>@Override</code></td>
-<td>Tells the compuler that a method is inteded to iverride a superclass method.</td>
-</tr>
-<tr>
-<td><code>@Deprecated</code></td>
-<td>Indicated that a method is deprecated an should not be used. Using it will result in a compiler warning.</td>
-</tr>
-<tr>
-<td><code>@FunctionalInterface</code></td>
-<td>Tells the compuler that the annotated interface is intended to be a functional interface.</td>
-</tr>
-<tr>
-<td><code>@SuppressWarnings</code></td>
-<td>Stops the compuler from generating warnings such as for type casting or deprecation warnings.</td>
-</tr>
-</tbody></table>
-<h3 id="Defining-custom-annotations"><a href="#Defining-custom-annotations" class="headerlink" title="Defining custom annotations"></a>Defining custom annotations</h3><h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.SOURCE)</span><br><span class="line"><span class="meta">@Target</span>(ElementType.TYPE)  <span class="comment">// Applies to class, interface, or enum</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> ConvertsTo &#123;</span><br><span class="line">  Class&lt;?&gt; targetClass();</span><br><span class="line">  <span class="function">String <span class="title">setterPrefix</span><span class="params">()</span> <span class="keyword">default</span> "set"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Target</span>(ElementType.METHOD)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Test &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="Retention-Policies"><a href="#Retention-Policies" class="headerlink" title="Retention Policies"></a>Retention Policies</h4><p>Here are the possible retention policies for an annotation:</p>
-<table>
-<thead>
-<tr>
-<th align="left"><strong>Retention Policy</strong></th>
-<th align="left"><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>SOURCE</code></td>
-<td align="left">Annotation only exists in the source code.</td>
-</tr>
-<tr>
-<td align="left"><code>RUNTIME</code></td>
-<td align="left">Annotation exists in the .class bytecode file and is available at runtime to be used with reflection.</td>
-</tr>
-<tr>
-<td align="left"><code>CLASS</code></td>
-<td align="left">Annotation exists in the <code>.class</code> bytecode file but not exist while the program is running.</td>
-</tr>
-</tbody></table>
-<h4 id="Annotation-Targets"><a href="#Annotation-Targets" class="headerlink" title="Annotation Targets"></a>Annotation Targets</h4><p>The target types determine which parts of the program can be given a particular annotation. Here are the possible target types:</p>
-<table>
-<thead>
-<tr>
-<th align="left"><strong>Element Type</strong></th>
-<th align="left"><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>ANNOTATION_TYPE</code></td>
-<td align="left">Annotation type declarations (for annotations that apply to other annotations).</td>
-</tr>
-<tr>
-<td align="left"><code>CONSTRUCTOR</code></td>
-<td align="left">Constructor declarations</td>
-</tr>
-<tr>
-<td align="left"><code>FIELD</code></td>
-<td align="left">Field declarations, including enum constants.</td>
-</tr>
-<tr>
-<td align="left"><code>LOCAL_VARIABLE</code></td>
-<td align="left">Local variable declarations.</td>
-</tr>
-<tr>
-<td align="left"><code>METHOD</code></td>
-<td align="left">Method declarations.</td>
-</tr>
-<tr>
-<td align="left"><code>PACKAGE</code></td>
-<td align="left">Package declarations.</td>
-</tr>
-<tr>
-<td align="left"><code>PARAMETER</code></td>
-<td align="left">Method parameter declarations.</td>
-</tr>
-<tr>
-<td align="left"><code>TYPE</code></td>
-<td align="left">Type declarations, such as classes, interfaces, annotation types, and enum declarations.</td>
-</tr>
-</tbody></table>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Target</span>(ElementType.METHOD)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Test &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Reflection-API"><a href="#Reflection-API" class="headerlink" title="Reflection API"></a>Reflection API</h3><p>Every class, interface, and type (including primitive types) has a corresponding <code>Class</code> object that accesses metadata about that type.</p>
-<p><code>Class</code> objects are the main entry point into Java’s <strong>Reflection API</strong>.</p>
-<h4 id="Obtaining-Class-Objects"><a href="#Obtaining-Class-Objects" class="headerlink" title="Obtaining Class Objects"></a>Obtaining <code>Class</code> Objects</h4><p>There are many ways to get <code>Class</code> objects:</p>
-<ul>
-<li><p>Call <code>getClass()</code> on an object:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class&lt;String&gt; c = <span class="string">"Hello world!"</span>.getClass();</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Use <code>.class</code> to create a class literal:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Class&lt;String&gt; c = String.class;</span><br><span class="line">Class&lt;<span class="keyword">int</span>[]&gt;  c = <span class="keyword">int</span>[].class;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Create classes dynamically using <code>Class.forName()</code>:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class&lt;String&gt; c = Class.forName(<span class="string">"java.lang.String"</span>);</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h4 id="Working-with-Methods"><a href="#Working-with-Methods" class="headerlink" title="Working with Methods"></a>Working with Methods</h4><p>Using the <code>Class</code> API, you can also obtain <a href="https://docs.oracle.com/javase/10/docs/api/java/lang/reflect/Method.html" target="_blank" rel="noopener"><code>Method</code></a> objects.</p>
-<p><code>Method</code>s have some smiliar functionality as <code>Class</code>es, such as finding annotations and listing qualifiers, but methods can also be invoked by calling <code>Method.invoke()</code>.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Method m = String.class.getMethod(<span class="string">"equals"</span>, Object.class);</span><br><span class="line">m.invoke(<span class="string">"foo"</span>, <span class="string">"bar"</span>);</span><br><span class="line"><span class="comment">// This is the same as `"foo".equals("bar")` return false</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">TestRunner</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> List&lt;Class&lt;?&gt;&gt; TESTS = List.of(CalculatorTest.class);</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line">    List&lt;String&gt; passed = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    List&lt;String&gt; failed = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (Class&lt;?&gt; klass : TESTS) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!UnitTest.class.isAssignableFrom(klass)) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Class "</span> + klass.toString() + <span class="string">" must implement UnitTest"</span>);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span> (Method method : klass.getDeclaredMethods()) &#123;</span><br><span class="line">        <span class="keyword">if</span> (method.getAnnotation(Test.class) != <span class="keyword">null</span>) &#123;</span><br><span class="line">          <span class="keyword">try</span> &#123;</span><br><span class="line">            UnitTest test = (UnitTest) klass.getConstructor().newInstance();</span><br><span class="line">            test.beforeEachTest();</span><br><span class="line">            method.invoke(test);</span><br><span class="line">            test.afterEachTest();</span><br><span class="line">            passed.add(getTestName(klass, method));</span><br><span class="line">          &#125; <span class="keyword">catch</span> (Throwable throwable) &#123;</span><br><span class="line">            failed.add(getTestName(klass, method));</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(<span class="string">"Passed tests: "</span> + passed);</span><br><span class="line">    System.out.println(<span class="string">"FAILED tests: "</span> + failed);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">getTestName</span><span class="params">(Class&lt;?&gt; klass, Method method)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> klass.getName() + <span class="string">"#"</span> + method.getName();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1625,7 +1718,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">66</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1647,7 +1740,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1741,7 +1834,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">63k</span>
+    <span title="Site words total count">65.6k</span>
   
 </div>
 

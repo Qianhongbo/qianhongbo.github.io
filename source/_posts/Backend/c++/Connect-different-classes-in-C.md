@@ -2,7 +2,7 @@
 title: Connect different classes in C++
 date: 2022-02-19 18:04:57
 categories: 
-- Backend
+- c++
 tags: 
 - c++
 ---

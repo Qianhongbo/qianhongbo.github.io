@@ -2,7 +2,7 @@
 title: C++ generate random number
 date: 2022-09-14 12:27:50
 categories: 
-- Backend
+- c++
 tags: 
 - c++
 ---

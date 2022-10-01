@@ -2,7 +2,7 @@
 title: lambda expression in C++
 date: 2022-02-26 16:22:27
 categories: 
-- Backend
+- c++
 tags: 
 - c++
 ---

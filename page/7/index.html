@@ -346,6 +346,618 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Backend/Java/Java-Notes-3.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Backend/Java/Java-Notes-3.html" itemprop="url">Java Notes 3</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-01-29T12:06:44+08:00">
+                2022-01-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Backend/" itemprop="url" rel="index">
+                    <span itemprop="name">Backend</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Backend/Java/Java-Notes-3.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Backend/Java/Java-Notes-3.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.7k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  23 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Functional-Programming"><a href="#Functional-Programming" class="headerlink" title="Functional Programming"></a>Functional Programming</h2><h3 id="Imperative-Code"><a href="#Imperative-Code" class="headerlink" title="Imperative Code"></a>Imperative Code</h3><p>Early Java programs were usually programmed in the imperative style. Imperative code usually focuses on how a task is performed. Each line of code gives a specific procedure or operation:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getTopScore</span><span class="params">(List&lt;Student&gt; students)</span> </span>&#123;</span><br><span class="line"> <span class="keyword">int</span> topScore = <span class="number">0</span>;</span><br><span class="line"> <span class="keyword">for</span> (Student s : students) &#123;</span><br><span class="line">   <span class="keyword">if</span> (s == <span class="keyword">null</span>) <span class="keyword">continue</span>;</span><br><span class="line">   topScore = Math.max(topScore, s.getScore());</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">return</span> topScore;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Focuses on <strong>how</strong> a task is performed.</li>
+<li>Each line of code gives a specific procedure or operation.</li>
+</ul>
+<h3 id="Functional-Code"><a href="#Functional-Code" class="headerlink" title="Functional Code"></a>Functional Code</h3><p>Starting with version 8, Java added language features to support a more functional style of programming. You might also hear some people call it <strong>declarative</strong> programming.</p>
+<p>Functional code focuses on what happens to inputs in order to produce outputs. You can think of it as describing how to get from the input to the output:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getTopScore</span><span class="params">(List&lt;Student&gt; students)</span> </span>&#123;</span><br><span class="line"> <span class="keyword">return</span> students.stream()</span><br><span class="line">     .filter(Objects::nonNull)</span><br><span class="line">     .mapToInt(Student::getScore)</span><br><span class="line">     .max()</span><br><span class="line">     .orElse(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>This code does the exact same thing as the last code example, but it uses a more functional programming style, because it:</p>
+<ul>
+<li>Focuses on what happens to inputs in order to produce outputs..</li>
+<li>Describes how to transform the input into the output.</li>
+</ul>
+<h3 id="Lambda-Expressions"><a href="#Lambda-Expressions" class="headerlink" title="Lambda Expressions"></a>Lambda Expressions</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">BinaryOperator&lt;Integer&gt; add =</span><br><span class="line">   (Integer a, Integer b) -&gt; &#123; <span class="keyword">return</span> a + b; &#125;;</span><br><span class="line"></span><br><span class="line">System.out.println(add.apply(<span class="number">1</span>, <span class="number">2</span>));</span><br></pre></td></tr></table></figure>
+
+<h3 id="Functional-Interface"><a href="#Functional-Interface" class="headerlink" title="Functional Interface"></a>Functional Interface</h3><p>A <strong>functional interface</strong> is a Java interface with exactly one abstract method, called the <strong>functional method</strong>.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Predicate</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">boolean</span> <span class="title">test</span><span class="params">(T t)</span></span>;</span><br><span class="line">  <span class="function"><span class="keyword">default</span> Predicate&lt;T&gt; <span class="title">negate</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> (t) -&gt; !test(t); &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Other methods left out of this example</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>Predicate</code>‘s one abstract method is <code>test()</code>. <code>test()</code> is known as the <strong>functional method</strong>. “Abstract” means the method is not implemented, so in order to be a functional method, it cannot have a default implementation. However, functional interfaces <em>can</em> have other default methods. In this case, the <code>Predicate</code> interface has a default method called <code>negate()</code> that returns another <code>Predicate</code>.</p>
+<h3 id="Anonymous-Class"><a href="#Anonymous-Class" class="headerlink" title="Anonymous Class"></a>Anonymous Class</h3><p>An <strong>anonymous class</strong> is a class that is defined “in-line” and <strong>has no name</strong>, and so it is called “anonymous”.</p>
+<h4 id="Anonymous-Class-vs-Lambda"><a href="#Anonymous-Class-vs-Lambda" class="headerlink" title="Anonymous Class vs. Lambda"></a>Anonymous Class vs. Lambda</h4><p>This anonymous class…</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Predicate&lt;String&gt; anonymousSubclass =</span><br><span class="line">   <span class="keyword">new</span> Predicate&lt;String&gt;() &#123;</span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">test</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> s.trim().isEmpty();</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>… does the same thing as this lambda expresssion:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Predicate&lt;String&gt; lambdaInstead = s -&gt; s.trim().isEmpty();</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Anonymous Class</strong></th>
+<th align="left"><strong>Lambdas</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Class generated at compile-time</td>
+<td align="left">Class generated at runtime</td>
+</tr>
+<tr>
+<td align="left">Can override <strong><code>equals()</code>/<code>hashCode()</code></strong></td>
+<td align="left">Cannot override them; has no identity</td>
+</tr>
+<tr>
+<td align="left"><strong><code>this</code></strong> refers to the anonymous class</td>
+<td align="left"><strong><code>this</code></strong> refers to the enclosing class</td>
+</tr>
+</tbody></table>
+<h4 id="What’s-this-all-about"><a href="#What’s-this-all-about" class="headerlink" title="What’s this all about?"></a>What’s <code>this</code> all about?</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">ThisExample</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">final</span> Runnable withLambda =</span><br><span class="line">      () -&gt; System.out.println(<span class="string">"From lambda: "</span> + <span class="keyword">this</span>.getClass());</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">final</span> Runnable withSubclass = <span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      System.out.println(<span class="string">"From subclass: "</span> + <span class="keyword">this</span>.getClass());</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    ThisExample thisExample = <span class="keyword">new</span> ThisExample();</span><br><span class="line">    thisExample.withLambda.run();</span><br><span class="line">    thisExample.withSubclass.run();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">From lambda: <span class="class"><span class="keyword">class</span> <span class="title">com</span>.<span class="title">udacitydemo</span>.<span class="title">lambdas</span>.<span class="title">ThisExample</span></span></span><br><span class="line">From subclass: class com.udacitydemo.lambdas.ThisExample$1</span><br></pre></td></tr></table></figure>
+
+<p>Inside the lambda, <code>this.getClass()</code> returns the class object representing <code>ThisExample</code>. We’ll cover class objects in more detail in the lesson on reflection, but for now the important part is that the <code>this</code> keyword inside the lambda references the <em>enclosing class</em>, which is <code>com.udacitydemo.lambdas.ThisExample</code>.</p>
+<p>For the <code>Runnable</code> subclass, on the other hand, the program printed <code>com.udacitydemo.lambdas.ThisExample$1</code>. You can see that the Java compiler generated a class called <code>com.udacitydemo.lambdas.ThisExample$1</code> for the anonymous lambda (yes, the class name contains a dollar sign), and the <code>this</code> keyword refers to <em>that</em> generated class! If you compile this program yourself, you’ll even notice the Java compiler produces a file called <code>ThisExample$1.class</code>, which contains the compiled byte code for the anonymous class.</p>
+<h3 id="Shortcomings-of-Lambdas"><a href="#Shortcomings-of-Lambdas" class="headerlink" title="Shortcomings of Lambdas"></a>Shortcomings of Lambdas</h3><p>Lambdas are very useful, but they do have some shortcomings:</p>
+<ul>
+<li>They can only be used to implement <strong>functional interfaces</strong>, not classes.</li>
+<li>Lambdas cannot implement any interface that has multiple abstract methods.</li>
+<li>Lambdas cannot throw checked exceptions (any subclass of <code>Exception</code>, such as <code>IOException</code>).</li>
+</ul>
+<h3 id="Two-Examples"><a href="#Two-Examples" class="headerlink" title="Two Examples"></a>Two Examples</h3><h4 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h4><h5 id="BinaryOperation-java"><a href="#BinaryOperation-java" class="headerlink" title="BinaryOperation.java"></a>BinaryOperation.java</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">BinaryOperation</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">  <span class="function">T <span class="title">apply</span><span class="params">(T a, T b)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="Main-java"><a href="#Main-java" class="headerlink" title="Main.java"></a>Main.java</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    BinaryOperator&lt;Integer&gt; add = (a, b) -&gt; a + b;</span><br><span class="line">    <span class="keyword">assert</span> <span class="number">5</span> == add.apply(<span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h4><h5 id="Calculator-java"><a href="#Calculator-java" class="headerlink" title="Calculator.java"></a>Calculator.java</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.function.BinaryOperator; <span class="comment">// a functional interface</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">Calculator</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">final</span> Map&lt;String, BinaryOperator&lt;Integer&gt;&gt; operators = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">registerOperation</span><span class="params">(String symbol, BinaryOperator&lt;Integer&gt; operator)</span> </span>&#123;</span><br><span class="line">    operators.put(symbol.strip(), operator);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">calculate</span><span class="params">(<span class="keyword">int</span> a, String operator, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> operators.get(operator).apply(a, b);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="Calculate-java"><a href="#Calculate-java" class="headerlink" title="Calculate.java"></a>Calculate.java</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">Calculate</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (args.length != <span class="number">3</span>) &#123;</span><br><span class="line">      System.out.println(<span class="string">"Usage: Calculate [int] [operator] [int]"</span>);</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Calculator calculator = <span class="keyword">new</span> Calculator();</span><br><span class="line">    calculator.registerOperation(<span class="string">"+"</span>, (a, b) -&gt; a + b);</span><br><span class="line">    calculator.registerOperation(<span class="string">"-"</span>, (a, b) -&gt; a - b);</span><br><span class="line">    calculator.registerOperation(<span class="string">"/"</span>, (a, b) -&gt; a / b);</span><br><span class="line">    calculator.registerOperation(<span class="string">"*"</span>, (a, b) -&gt; a * b);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> a = Integer.parseInt(args[<span class="number">0</span>]);</span><br><span class="line">    String operator = args[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">int</span> b = Integer.parseInt(args[<span class="number">2</span>]);</span><br><span class="line"></span><br><span class="line">    System.out.println(calculator.calculate(a, operator, b));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Capturing-variables"><a href="#Capturing-variables" class="headerlink" title="Capturing variables"></a>Capturing variables</h3><h4 id="Captured-variables"><a href="#Captured-variables" class="headerlink" title="Captured variables"></a>Captured variables</h4><p>Lambdas can <strong>capture</strong> variables from the surrounding code. If a lambda uses any variables from the surrounding code, those variables are <strong>captured</strong>. Variables can only be captured if they are <strong>effectively final</strong>.</p>
+<p>An <strong>effectively final</strong> variable is a variable whose value does not change after it is initialized.</p>
+<h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Map&lt;Year, Integer&gt; <span class="title">getClassSizes</span><span class="params">(List&lt;Student&gt; students)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">final</span> Map&lt;Year, Integer&gt; classSizes = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">  students.stream().forEach(s -&gt;</span><br><span class="line">      classSizes.compute(</span><br><span class="line">          s.getGraduationYear(),</span><br><span class="line">          (k, v) -&gt; (v == <span class="keyword">null</span>) ? <span class="number">1</span> : <span class="number">1</span> + v));</span><br><span class="line">  <span class="keyword">return</span> classSizes;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>A good test to figure out if a variable is effectively final is to add the <code>final</code> keyword to it. If the code still compiles, that variable is effectively final!</p>
+<p>In the example, the <code>classSizes</code> variable is effectively final because the value of the variable itself does not change after it’s initialized. Remember that in Java, objects are passed by reference. Even though the <code>HashMap</code> changes, the variable’s value is the <code>HashMap</code>‘s location in memory, and that location never changes.</p>
+<h3 id="Method-Reference"><a href="#Method-Reference" class="headerlink" title="Method Reference"></a>Method Reference</h3><p>A <strong>method reference</strong> is a short lambda expression that refers to a method that is already named.</p>
+<p>Generally speaking, if a method is already defined that you can use, you should use a method reference instead of writing a brand new lambda. It’s usually a good idea in software development to not write new code if there’s already existing code that does the same thing you’re trying to do!</p>
+<p>Method references cannot capture surrounding variables, though. If you find yourself in this situation, you should use a custom lambda instead.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.function.Predicate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">LambdasMain</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * Returns the number of strings that match a given condition.</span></span><br><span class="line"><span class="comment">   *</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> input the strings that should be tested.</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> condition the condition that strings should be tested against.</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@return</span> the number of strings in the input that match the condition.</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">countMatchingStrings</span><span class="params">(List&lt;String&gt; input, Predicate&lt;String&gt; condition)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> input.stream().filter(condition).count();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    List&lt;String&gt; input = List.of(<span class="string">"hello"</span>, <span class="string">"\t   "</span>, <span class="string">"world"</span>, <span class="string">""</span>, <span class="string">"\t"</span>, <span class="string">" "</span>, <span class="string">"goodbye"</span>, <span class="string">"  "</span>);</span><br><span class="line">		</span><br><span class="line">    <span class="comment">// Using lambda expression:</span></span><br><span class="line">    <span class="keyword">long</span> numberOfWhitespaceStrings =</span><br><span class="line">            countMatchingStrings(input, s -&gt; s.trim().isEmpty());</span><br><span class="line">    <span class="comment">// Using method reference:</span></span><br><span class="line">    <span class="keyword">long</span> numberOfWhitespaceStrings = countMatchingStrings(input, String::isBlank);</span><br><span class="line"></span><br><span class="line">    System.out.println(numberOfWhitespaceStrings + <span class="string">" whitespace strings"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Stream-API"><a href="#Stream-API" class="headerlink" title="Stream API"></a>Stream API</h3><p>A <strong>stream</strong> is a sequence of elements.</p>
+<p>Streams are useful because they allow us to process collection, one element at a time. They can process elements in many ways, such as (but not limited to) filtering or transforming elements, sorting elements, or computing statistics such as the sum or average.</p>
+<p>A stream pipeline consists of creating a stream, calling intermediate operations on the stream, and then terminating the stream using a terminal operation.</p>
+<h4 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printScores</span><span class="params">(List&lt;Student&gt; students)</span> </span>&#123;</span><br><span class="line"> <span class="keyword">return</span> students.stream()</span><br><span class="line">     .filter(Objects::nonNull)</span><br><span class="line">     .mapToInt(Student::getScore)</span><br><span class="line">     .max()</span><br><span class="line">     .orElse(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>First, the <code>stream()</code> method creates a stream from the students list.</p>
+<p>This stream pipeline has two intermediate methods: the <code>filter()</code> method removes the elements of the stream that are <code>null</code>, and <code>mapToInt()</code> transforms each student into an <code>int</code>. Notice that each of these methods returns another <code>Stream</code>: <code>filter()</code> returns a <code>Stream&lt;Student&gt;</code>, and <code>mapToInt()</code> returns an <code>IntStream</code>.</p>
+<p>Finally, the terminal operation <code>max()</code> computes the maximum value in the <code>IntStream</code>. This terminal method actually returns an <code>OptionalInt</code> instead of an <code>int</code>. If the <code>students</code> parameter is empty or contains only <code>null</code> elements, it’s possible the final stream will be empty. In this case, we need to tell the program to return a default value of <code>0</code>.</p>
+<blockquote>
+<p>If <code>max()</code> returns an <code>OptionalInt</code> with a value, that value will be used. However, if <code>max()</code> returns <code>OptionalInt.empty()</code>, the call to <code>orElse()</code> makes sure that a default value of <code>0</code> will be returned.</p>
+</blockquote>
+<h4 id="Collector"><a href="#Collector" class="headerlink" title="Collector"></a>Collector</h4><p>A <code>Collector</code> is a terminal stream operation that accumulates stream elements into a container.</p>
+<p>The <code>collect()</code> method is a terminal operation that aggregates streams of elements. Collectors can be passed to <code>collect()</code> to determine what kind of collection is created.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set&lt;String&gt; s = stringList.stream().collect(Collectors.toSet());</span><br></pre></td></tr></table></figure>
+
+<p>Collectors can be used to perform reduction operations such as adding or counting.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;Year, Long&gt; graduatingClassSizes = studentList.stream()</span><br><span class="line">    .collect(Collectors.groupingBy(</span><br><span class="line">        Student::getGraduationYear, Collectors.counting());</span><br></pre></td></tr></table></figure>
+
+<p>Here, <code>groupingBy()</code> is used to collect elements into a <code>Map</code>. <code>Collectors.counting()</code> counts the number of values for each key, so, in this example, it will count how many students there are for each graduation year.</p>
+<h2 id="Working-with-Files-amp-I-O"><a href="#Working-with-Files-amp-I-O" class="headerlink" title="Working with Files &amp; I/O"></a>Working with Files &amp; I/O</h2><h3 id="I-O-Input-Output"><a href="#I-O-Input-Output" class="headerlink" title="I/O (Input/Output)"></a>I/O (Input/Output)</h3><p><strong>Input</strong> is data the program receives from external processes and systems, such as from the local file system or the Internet.</p>
+<p><strong>Output</strong> is data the program sends to external processes and systems.</p>
+<h3 id="Program-Memory-vs-Persistent-Storage"><a href="#Program-Memory-vs-Persistent-Storage" class="headerlink" title="Program Memory vs. Persistent Storage"></a>Program Memory vs. Persistent Storage</h3><h4 id="Program-Memory"><a href="#Program-Memory" class="headerlink" title="Program Memory"></a>Program Memory</h4><p>In Java programs and other computer programs, short-term storage happens in the program memory.</p>
+<ul>
+<li>Variables, objects and data structures are stored in the heap and stack. * Memory access is fast.</li>
+<li>Memory is erased when the program is done running.</li>
+</ul>
+<h4 id="Persistent-Storage"><a href="#Persistent-Storage" class="headerlink" title="Persistent Storage"></a>Persistent Storage</h4><p>If we want to store data for longer periods of time, we have to use long-term storage, also known as persistent storage.</p>
+<ul>
+<li><em>Files</em>, stored on disk, are one of the most common forms of persistent storage. Your PC, laptop, and phone all have their own file systems that can store different kinds of files.</li>
+<li>Files stick around, or <em>persist</em>, after the program is done executing, so can also be read by humans or other programs.</li>
+<li>Persistent storage access is usually <em>much</em> slower than memory access.</li>
+<li>Databases are another common form of persistent storage.</li>
+</ul>
+<h3 id="File-Open-Options"><a href="#File-Open-Options" class="headerlink" title="File Open Options"></a>File Open Options</h3><p>When you create, read, or write a file, there are standard modes that you can use to do so. Java uses the <a href="https://docs.oracle.com/javase/10/docs/api/java/nio/file/StandardOpenOption.html" target="_blank" rel="noopener"><code>StandardOpenOptions</code></a> class to encapsulate all these modes.</p>
+<p>Here are some of the common modes:</p>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Option</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>READ</code></td>
+<td align="left">Open a file for reading, fail if it doesn’t exist.</td>
+</tr>
+<tr>
+<td align="left"><code>CREATE</code></td>
+<td align="left">Create a file.</td>
+</tr>
+<tr>
+<td align="left"><code>CREATE_NEW</code></td>
+<td align="left">Same as <code>CREATE</code>, but fail if the file already exists.</td>
+</tr>
+<tr>
+<td align="left"><code>WRITE</code></td>
+<td align="left">Open a file for writing.</td>
+</tr>
+<tr>
+<td align="left"><code>APPEND</code></td>
+<td align="left">Same as <code>WRITE</code>, but write to the end of the file.</td>
+</tr>
+</tbody></table>
+<p>You are allowed to use more than one option at a time.</p>
+<h3 id="Path-API"><a href="#Path-API" class="headerlink" title="Path API"></a>Path API</h3><p>A <a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html" target="_blank" rel="noopener"><code>Path</code></a> is Java’s way to refer to a file on a file system:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Path p = Path.of(&quot;your/path/here&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>All paths either refer to <em>files</em> or <em>directories</em>.</p>
+<ul>
+<li>A <em>file</em> contains stored data or bytes.</li>
+<li>A <em>directory</em> contains zero or more files.</li>
+</ul>
+<p>All paths are either <em>absolute</em> or <em>relative</em>.</p>
+<ul>
+<li><em>Absolute paths</em> start with a forward-slash (<code>/</code>) (known as the <em>root directory</em> on Mac and Linux), or a drive name on Windows.</li>
+<li><em>Relative paths</em> are only meaningful relative to some other starting point. They do not start with a forward slash or drive name.</li>
+</ul>
+<p>Note that the <code>Path</code> object in Java always uses forward-slashes to delimit the parts of the path <code>String</code>, even if the underlying file system uses backslashes (such as the NTFS file system on Windows).</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Absolute path to a directory on Mac or Linux</span></span><br><span class="line">Path p = Path.of(<span class="string">"/home/user/Documents/workspaces"</span>);</span><br><span class="line"><span class="comment">// Absolute path to a file on Mac or Linux</span></span><br><span class="line">Path p = Path.of(<span class="string">"/home/user/Documents/workspaces/main.java"</span>);</span><br><span class="line"><span class="comment">// Relatuve path to a directory</span></span><br><span class="line">Path p = Path.of(<span class="string">"user/Documents/workspaces"</span>);</span><br><span class="line"><span class="comment">// Path parts as separate parameters</span></span><br><span class="line">Path p = Path.of(<span class="string">"user"</span>, <span class="string">"Documents"</span>, <span class="string">"workspaces"</span>);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.nio.file.Path;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PathApiDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Path p1 = Path.of(<span class="string">"."</span>);</span><br><span class="line">        System.out.println(p1);</span><br><span class="line">        <span class="comment">// output: .</span></span><br><span class="line">        Path p2 = Path.of(<span class="string">"."</span>);</span><br><span class="line">        System.out.println(p2.toAbsolutePath());</span><br><span class="line">        <span class="comment">// output: /Users/qianhongbo/Documents/Mycode/JAVA/Java Code/Java Notes 4/.</span></span><br><span class="line">        Path p3 = Path.of(<span class="string">"."</span>);</span><br><span class="line">        System.out.println(p3.toAbsolutePath().normalize());</span><br><span class="line">        <span class="comment">// output: /Users/qianhongbo/Documents/Mycode/JAVA/Java Code/Java Notes 4</span></span><br><span class="line">        Path p4 = Path.of(<span class="string">"."</span>);</span><br><span class="line">        System.out.println(p4.toAbsolutePath().resolve(<span class="string">".."</span>));</span><br><span class="line">        <span class="comment">// output: /Users/qianhongbo/Documents/Mycode/JAVA/Java Code/Java Notes 4/./..</span></span><br><span class="line">        Path p5 = Path.of(<span class="string">"."</span>);</span><br><span class="line">        System.out.println(p5.toAbsolutePath().resolve(<span class="string">".."</span>).normalize());</span><br><span class="line">        <span class="comment">// output: /Users/qianhongbo/Documents/Mycode/JAVA/Java Code</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Reading-and-Writing-data-in-Java"><a href="#Reading-and-Writing-data-in-Java" class="headerlink" title="Reading and Writing data in Java"></a>Reading and Writing data in Java</h3><p>In Java, the utilities for reading and writing data are built on top of each other. This diagram shows you what that means. When you use a <a href="https://docs.oracle.com/javase/10/docs/api/java/io/BufferedReader.html" target="_blank" rel="noopener"><code>BufferedReader</code></a> to read lines of text, that buffered reader is reading from another underlying <a href="https://docs.oracle.com/javase/10/docs/api/java/io/Reader.html" target="_blank" rel="noopener"><code>Reader</code></a> that provides characters of text. That <code>Reader</code>, in turn, is itself using an <a href="https://docs.oracle.com/javase/10/docs/api/java/io/InputStream.html" target="_blank" rel="noopener"><code>InputStream</code></a> behind the scenes to read the raw data.</p>
+<p><img src="https://video.udacity-data.com/topher/2020/November/5faf3729_screen-shot-2020-11-13-at-5.45.56-pm/screen-shot-2020-11-13-at-5.45.56-pm.png" alt="stream"></p>
+<h4 id="InputStream-and-OutputStream"><a href="#InputStream-and-OutputStream" class="headerlink" title="InputStream and OutputStream"></a><code>InputStream</code> and <code>OutputStream</code></h4><p>Input and output streams are the lowest level utilities Java provides. They give you access to the raw data, in the form of bytes. This data can come from a file, from user input on the command-line, or from a network or other source. These are the lowest level APIs Java offers for reading or writing a stream of bytes.</p>
+<h4 id="InputStream-Example"><a href="#InputStream-Example" class="headerlink" title="InputStream Example"></a><code>InputStream</code> Example</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">InputStream in =</span><br><span class="line">   Files.newInputStream(Path.of(<span class="string">"test"</span>), StandardOpenOption.READ);</span><br><span class="line"><span class="keyword">byte</span>[] data = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">10</span>];</span><br><span class="line"><span class="keyword">while</span> (in.read(data) != -<span class="number">1</span>) &#123;  <span class="comment">// Returns the number of bytes read</span></span><br><span class="line">  useData(data);</span><br><span class="line">&#125;</span><br><span class="line">in.close();  <span class="comment">// Close the "test" file</span></span><br></pre></td></tr></table></figure>
+
+<p>This code creates a file called “test” using <code>newInputStream()</code> method of the Files API. The code calls the <code>read()</code> method, which reads the data into a <code>byte[]</code> and returns the number of bytes that were read. If no bytes were read, it returns <code>-1</code>. This code will read the entire file, 10 bytes at a time, until the loop reaches the end of the file.</p>
+<h4 id="OutputStream-Example"><a href="#OutputStream-Example" class="headerlink" title="OutputStream Example"></a><code>OutputStream</code> Example</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">OutputStream out = Files.newOutputStream(Path.of(<span class="string">"test"</span>));</span><br><span class="line">out.write(<span class="string">"Hello, world!"</span>.getBytes());</span><br><span class="line">out.close();  <span class="comment">// Close the "test" file</span></span><br></pre></td></tr></table></figure>
+
+<p>The basic <code>write()</code> method only deals with bytes. It’s pretty self-explanatory: you give the <code>write()</code> method a <code>byte[]</code>, and it writes those bytes to the output stream.</p>
+<p>Both code examples call the <code>close()</code> method, which we’ll cover in more detail later in this lesson.</p>
+<h4 id="Demo-Code-Ways-to-Copy-a-File"><a href="#Demo-Code-Ways-to-Copy-a-File" class="headerlink" title="Demo Code: Ways to Copy a File"></a>Demo Code: Ways to Copy a File</h4><h5 id="Reading-and-Writing-the-Data-Directly"><a href="#Reading-and-Writing-the-Data-Directly" class="headerlink" title="Reading and Writing the Data Directly"></a>Reading and Writing the Data Directly</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.OutputStream;</span><br><span class="line"><span class="keyword">import</span> java.nio.file.Files;</span><br><span class="line"><span class="keyword">import</span> java.nio.file.Path;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CopyFile</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        InputStream in = Files.newInputStream(Path.of(args[<span class="number">0</span>]));</span><br><span class="line">        OutputStream out = Files.newOutputStream(Path.of(args[<span class="number">1</span>]));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">byte</span>[] data = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">10</span>];</span><br><span class="line">        <span class="keyword">while</span> (in.read(data) != -<span class="number">1</span>) &#123;</span><br><span class="line">            out.write(data);</span><br><span class="line">        &#125;</span><br><span class="line">        in.close();</span><br><span class="line">        out.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="Using-InputStream-transferTo-OutputStream"><a href="#Using-InputStream-transferTo-OutputStream" class="headerlink" title="Using InputStream.transferTo(OutputStream)"></a>Using <code>InputStream.transferTo(OutputStream)</code></h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.OutputStream;</span><br><span class="line"><span class="keyword">import</span> java.nio.file.Files;</span><br><span class="line"><span class="keyword">import</span> java.nio.file.Path;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InputOutputStreams</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        InputStream in = Files.newInputStream(Path.of(args[<span class="number">0</span>]));</span><br><span class="line">        OutputStream out = Files.newOutputStream(Path.of(args[<span class="number">1</span>]));</span><br><span class="line">        in.transferTo(out);</span><br><span class="line">        in.close();</span><br><span class="line">        out.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="Using-the-Files-API"><a href="#Using-the-Files-API" class="headerlink" title="Using the Files API"></a>Using the Files API</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.nio.file.Path;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">CopyFile</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        Files.copy(Path.of(args[<span class="number">0</span>]), Path.of(args[<span class="number">1</span>]));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Readers-Writers"><a href="#Readers-Writers" class="headerlink" title="Readers / Writers"></a>Readers / Writers</h4><p>Readers and Writers are the next level of abstraction built on top of input and output streams. These interfaces read and write text characters.</p>
+<h5 id="Reader-Example"><a href="#Reader-Example" class="headerlink" title="Reader Example"></a>Reader Example</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span>[] data = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">10</span>];</span><br><span class="line">Reader reader =</span><br><span class="line">   Files.newBufferedReader(Path.of(<span class="string">"test"</span>), StandardCharsets.UTF_8);</span><br><span class="line"><span class="keyword">while</span> (reader.read(data) != -<span class="number">1</span>) &#123;</span><br><span class="line"> useData(data);</span><br><span class="line">&#125;</span><br><span class="line">reader.close();</span><br></pre></td></tr></table></figure>
+
+<p>Just like input streams, <code>Reader</code>s are usually created with the Files API. But instead of reading <code>byte</code>s, we are reading <code>char</code>s. There’s also a <code>StandardCharset</code>, which we’ll cover that in more detail in the next video.</p>
+<h5 id="Writer-Example"><a href="#Writer-Example" class="headerlink" title="Writer Example"></a>Writer Example</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Writer writer =</span><br><span class="line">   Files.newBufferedWriter(Path.of(<span class="string">"test"</span>),</span><br><span class="line">                           StandardCharsets.UTF_8);</span><br><span class="line">writer.write(<span class="string">"hello, world"</span>);</span><br><span class="line">writer.close();  <span class="comment">// Close the "test" file</span></span><br></pre></td></tr></table></figure>
+
+<p>The <code>Writer</code> is pretty much what you would expect. This time we are writing encoded <code>String</code>s of data instead of raw <code>byte</code>s.</p>
+<h4 id="Buffered-Strams"><a href="#Buffered-Strams" class="headerlink" title="Buffered Strams"></a>Buffered Strams</h4><p>Buffered streams reduce the number of I/O operations performed by your program. This can significantly shrink the amount of time your program spends doing I/O!</p>
+<p>When your code calls <code>BufferedReader.read()</code>, the <code>BufferedReader</code> reads ahead, and fetches more data than you asked for. Whatever it reads is stored in an array, which is also called a <em>buffer</em>.</p>
+<p>The next time you call <code>read()</code>, if the data you requested is already in the buffer, the BufferedReader will give you that cached data, without having to do another read from disk!</p>
+<h5 id="BufferedReader-Example"><a href="#BufferedReader-Example" class="headerlink" title="BufferedReader Example"></a><code>BufferedReader</code> Example</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">BufferedReader reader =</span><br><span class="line">   Files.newBufferedReader(Path.of(<span class="string">"test"</span>), StandardCharsets.UTF_8);</span><br><span class="line">String line;</span><br><span class="line"><span class="keyword">while</span> ((line = reader.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line"> useString(line);</span><br><span class="line">&#125;</span><br><span class="line">reader.close();</span><br></pre></td></tr></table></figure>
+
+<p>The main difference between this API and the <code>Reader</code> API is the addition of the <code>readLine()</code> method, which returns a full line of text. Reading lines this way is a lot easier than reading the individual characters one by one!</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">BufferedWriter writer =</span><br><span class="line">   Files.newBufferedWriter(Path.of(&quot;test&quot;),</span><br><span class="line">                           StandardCharsets.UTF_8);</span><br><span class="line">writer.write(&quot;Hello, &quot;);</span><br><span class="line">writer.write(&quot;world!&quot;);</span><br><span class="line">writer.flush();  // Writes the contents of the buffer</span><br><span class="line">writer.close();  // Flushes the buffer and closes &quot;test&quot;</span><br></pre></td></tr></table></figure>
+
+<p><code>BufferedWriter</code> also uses an in-memory buffer to store writes, and then periodically writes contents of the buffer in batches.</p>
+<p>In this code, the <code>write()</code> method is called twice, but there is only one actual write to the underlying output stream.</p>
+<h3 id="Java-Object-Serialization"><a href="#Java-Object-Serialization" class="headerlink" title="Java Object Serialization"></a>Java Object Serialization</h3><p><strong>Serialization</strong> is the process of converting an object into a data format that can later be <strong>deserialized</strong> back into the original object.</p>
+<p><img src="https://video.udacity-data.com/topher/2020/November/5faf3bcd_screen-shot-2020-11-13-at-6.06.13-pm/screen-shot-2020-11-13-at-6.06.13-pm.png" alt></p>
+<h4 id="Example-2"><a href="#Example-2" class="headerlink" title="Example"></a>Example</h4><p><code>UdacisearchClient.java</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">UdacisearchClient</span> <span class="keyword">implements</span> <span class="title">Serializable</span> </span>&#123;</span><br><span class="line">  ... <span class="comment">// Everything else stays the same!</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>Main.java</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.ObjectInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.ObjectOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.nio.file.Files;</span><br><span class="line"><span class="keyword">import</span> java.nio.file.Path;</span><br><span class="line"><span class="keyword">import</span> java.time.Duration;</span><br><span class="line"><span class="keyword">import</span> java.time.Instant;</span><br><span class="line"><span class="keyword">import</span> java.time.ZoneId;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (args.length != <span class="number">1</span>) &#123;</span><br><span class="line">      System.out.println(<span class="string">"Usage: Main [file path]"</span>);</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    UdacisearchClient client =</span><br><span class="line">        <span class="keyword">new</span> UdacisearchClient(</span><br><span class="line">            <span class="string">"CatFacts LLC"</span>,</span><br><span class="line">            <span class="number">17</span>,</span><br><span class="line">            <span class="number">8000</span>,</span><br><span class="line">            <span class="number">5</span>,</span><br><span class="line">            Instant.now(),</span><br><span class="line">            Duration.ofDays(<span class="number">180</span>),</span><br><span class="line">            ZoneId.of(<span class="string">"America/Los_Angeles"</span>),</span><br><span class="line">            <span class="string">"555 Meowmers Ln, Riverside, CA 92501"</span>);</span><br><span class="line"></span><br><span class="line">    Path outputPath = Path.of(args[<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">try</span> (ObjectOutputStream out = <span class="keyword">new</span> ObjectOutputStream(Files.newOutputStream(outputPath))) &#123;</span><br><span class="line">      out.writeObject(client);</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(<span class="string">"Wrote to "</span> + outputPath.toAbsolutePath().toString());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> (ObjectInputStream in = <span class="keyword">new</span> ObjectInputStream(Files.newInputStream(outputPath))) &#123;</span><br><span class="line">      UdacisearchClient deserialized = (UdacisearchClient) in.readObject();</span><br><span class="line">      System.out.println(<span class="string">"Deserialized "</span> + deserialized);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="JSON-and-XML"><a href="#JSON-and-XML" class="headerlink" title="JSON and XML"></a>JSON and XML</h4><p>JSON (<strong>J</strong>ava<strong>S</strong>cript <strong>O</strong>bject <strong>N</strong>otation) and XML (E<strong>x</strong>tensible <strong>M</strong>arkup <strong>L</strong>anguage) are two common text formats for serializing data.</p>
+<h5 id="JSON-Example"><a href="#JSON-Example" class="headerlink" title="JSON Example"></a>JSON Example</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"id"</span>: <span class="number">17</span>,</span><br><span class="line">  <span class="string">"name"</span>: <span class="string">"George Washington"</span>,</span><br><span class="line">  <span class="string">"emails"</span>: [<span class="string">"george.w@gmail.com"</span>, <span class="string">"potus.ftw@yahoo.com"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="XML-Example"><a href="#XML-Example" class="headerlink" title="XML Example"></a>XML Example</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span><br><span class="line">&lt;client&gt;</span><br><span class="line">  &lt;id&gt; 17 &lt;/id&gt;</span><br><span class="line">  &lt;name&gt; George Washington &lt;/name&gt;</span><br><span class="line">  &lt;emails&gt;</span><br><span class="line">    &lt;email&gt; george.w@gmail.com &lt;/email&gt;</span><br><span class="line">    &lt;email&gt; potus.ftw@yahoo.com &lt;/email&gt;</span><br><span class="line">  &lt;/emails&gt;</span><br><span class="line">&lt;/client&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="Jackson-example-for-JSON"><a href="#Jackson-example-for-JSON" class="headerlink" title="Jackson example for JSON"></a>Jackson example for JSON</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.databind.ObjectMapper;</span><br><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.nio.file.Files;</span><br><span class="line"><span class="keyword">import</span> java.nio.file.Path;</span><br><span class="line"><span class="keyword">import</span> java.time.Duration;</span><br><span class="line"><span class="keyword">import</span> java.time.Instant;</span><br><span class="line"><span class="keyword">import</span> java.time.ZoneId;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (args.length != <span class="number">1</span>) &#123;</span><br><span class="line">      System.out.println(<span class="string">"Usage: Main [file path]"</span>);</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    UdacisearchClient client =</span><br><span class="line">        <span class="keyword">new</span> UdacisearchClient(</span><br><span class="line">            <span class="string">"CatFacts LLC"</span>,</span><br><span class="line">            <span class="number">17</span>,</span><br><span class="line">            <span class="number">8000</span>,</span><br><span class="line">            <span class="number">5</span>,</span><br><span class="line">            Instant.now(),</span><br><span class="line">            Duration.ofDays(<span class="number">180</span>),</span><br><span class="line">            ZoneId.of(<span class="string">"America/Los_Angeles"</span>),</span><br><span class="line">            <span class="string">"555 Meowmers Ln, Riverside, CA 92501"</span>);</span><br><span class="line"></span><br><span class="line">    Path outputPath = Path.of(args[<span class="number">0</span>]);</span><br><span class="line">    ObjectMapper objectMapper = <span class="keyword">new</span> ObjectMapper();</span><br><span class="line">    objectMapper.registerModule(<span class="keyword">new</span> JavaTimeModule());</span><br><span class="line">    objectMapper.writeValue(Files.newBufferedWriter(outputPath), client);</span><br><span class="line"></span><br><span class="line">    System.out.println(<span class="string">"Wrote to "</span> + outputPath.toAbsolutePath().toString());</span><br><span class="line"></span><br><span class="line">    UdacisearchClient deserialized =</span><br><span class="line">        objectMapper.readValue(Files.newBufferedReader(outputPath), UdacisearchClient.class);</span><br><span class="line">    System.out.println(<span class="string">"Deserialized "</span> + deserialized);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Dependency-Injection"><a href="#Dependency-Injection" class="headerlink" title="Dependency Injection"></a>Dependency Injection</h2><h3 id="What-is-a-Dependency"><a href="#What-is-a-Dependency" class="headerlink" title="What is a Dependency?"></a>What is a Dependency?</h3><p>A <strong>dependency</strong> is anything your code needs to work, such as an external library, an environment variable, a remote website, or a database.</p>
+<p>In the context of dependency injection, a dependency usually refers to an object, class, or interface that your code imports, creates, or uses.</p>
+<h3 id="What-is-Dependency-Injection"><a href="#What-is-Dependency-Injection" class="headerlink" title="What is Dependency Injection?"></a>What is Dependency Injection?</h3><p><strong>D</strong>ependency <strong>I</strong>njection, or DI, is a design pattern that moves the creation of dependencies to outside of your code. Instead of creating objects, you tell the DI framework to create the objects for you, and then you inject those objects into your class.</p>
+<h3 id="Using-Inject-Annotations"><a href="#Using-Inject-Annotations" class="headerlink" title="Using @Inject Annotations"></a>Using <code>@Inject</code> Annotations</h3><p>To inject objects from a DI framework, you can add <code>@Inject</code> annotations to your code. You can add them directly to instance fields:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CourseRegistrar</span> </span>&#123;</span><br><span class="line">  <span class="meta">@Inject</span> <span class="keyword">private</span> Database db;</span><br><span class="line">  <span class="meta">@Inject</span> <span class="keyword">private</span> Clock clock;</span><br><span class="line">  <span class="meta">@Inject</span> <span class="keyword">private</span> RegistrationFactory factory;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">boolean</span> <span class="title">registerStudentForCourse</span><span class="params">(Student s, <span class="keyword">int</span> courseId)</span> </span>&#123;</span><br><span class="line">    Course c = db.getCourse(courseId);</span><br><span class="line">    <span class="keyword">if</span> (clock.instant().isAfter(c.getRegistrationDeadline())) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">if</span> (!s.getPassedCourses().containsAll(c.getPrereqs())) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    db.createRegistration(factory.create(courseId, s.getId()));</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>… or, you can add <code>@Inject</code> annotations to constructors:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CourseRegistrar</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">final</span> Database db;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">final</span> Clock clock;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">final</span> RegistrationFactory factory;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Inject</span></span><br><span class="line">  CourseRegistrar(Database db, Clock clock, RegistrationFactory factory) &#123;</span><br><span class="line">    <span class="keyword">this</span>.db = db;</span><br><span class="line">    <span class="keyword">this</span>.clock = clock;</span><br><span class="line">    <span class="keyword">this</span>.factory = factory;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">boolean</span> <span class="title">registerStudentForCourse</span><span class="params">(Student s, <span class="keyword">int</span> courseId)</span> </span>&#123;</span><br><span class="line">    Course c = db.getCourse(courseId);</span><br><span class="line">    <span class="keyword">if</span> (clock.instant().isAfter(c.getRegistrationDeadline())) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">if</span> (!s.getPassedCourses().containsAll(c.getPrereqs())) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    db.createRegistration(factory.create(courseId, s.getId()));</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/LeetCode/Add-Binary.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/LeetCode/Add-Binary.html" itemprop="url">Add Binary</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-01-28T10:15:06+08:00">
+                2022-01-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">Leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/LeetCode/Add-Binary.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="LeetCode/Add-Binary.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  430 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given two binary strings <code>a</code> and <code>b</code>, return <em>their sum as a binary string</em>.</p>
+<h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1:"></a>Example 1:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: a = &quot;11&quot;, b = &quot;1&quot;</span><br><span class="line">Output: &quot;100&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2:"></a>Example 2:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: a = &quot;1010&quot;, b = &quot;1011&quot;</span><br><span class="line">Output: &quot;10101&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution 1"></a>Solution 1</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(M+N)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">addBinary</span><span class="params">(self, a, b)</span> -&gt; str:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'&#123;0:b&#125;'</span>.format(int(a, <span class="number">2</span>) + int(b, <span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 二进制字符串转十进制</span></span><br><span class="line">int(“<span class="number">11</span>”, <span class="number">2</span>) <span class="comment"># 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 把十进制数12转为对应的二进制数的字符串形式</span></span><br><span class="line"><span class="string">'&#123;0:b&#125;'</span>.format(<span class="number">12</span>)  </span><br><span class="line"><span class="string">'1100'</span></span><br></pre></td></tr></table></figure>
+
+<p>1 . In Java this approach is limited by the length of the input strings a and b. Once the string is long enough, the result of conversion into integers will not fit into Integer, Long or BigInteger.</p>
+<p>2 . This method has quite low performance in the case of large input numbers.</p>
+<h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution 2"></a>Solution 2</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Time O(max(M,N))</span></span><br><span class="line"><span class="comment"># Space O(max(N,M))</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">addBinary</span><span class="params">(self, a, b)</span> -&gt; str:</span></span><br><span class="line">        n = max(len(a), len(b))</span><br><span class="line">        <span class="comment"># zfill() 方法返回指定长度的字符串，原字符串右对齐，前面填充0</span></span><br><span class="line">        a, b = a.zfill(n), b.zfill(n)</span><br><span class="line">        </span><br><span class="line">        carry = <span class="number">0</span></span><br><span class="line">        answer = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n - <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            <span class="keyword">if</span> a[i] == <span class="string">'1'</span>:</span><br><span class="line">                carry += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> b[i] == <span class="string">'1'</span>:</span><br><span class="line">                carry += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> carry % <span class="number">2</span> == <span class="number">1</span>:</span><br><span class="line">                answer.append(<span class="string">'1'</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                answer.append(<span class="string">'0'</span>)</span><br><span class="line">            carry //= <span class="number">2</span></span><br><span class="line">        <span class="comment"># 最后一位的进位</span></span><br><span class="line">        <span class="keyword">if</span> carry == <span class="number">1</span>:</span><br><span class="line">            answer.append(<span class="string">'1'</span>)</span><br><span class="line">        <span class="comment"># append 方法获得的数据结果需要反向，并将字符串连接到一起</span></span><br><span class="line">        answer.reverse()</span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span>.join(answer)</span><br></pre></td></tr></table></figure>
+
+<h4 id="Solution-3"><a href="#Solution-3" class="headerlink" title="Solution 3"></a>Solution 3</h4><p>Here the input is more adapted to push towards Approach 1, but there is popular Facebook variation of this problem when interviewer provides you two numbers and asks to sum them up <code>without using addition operation</code>.</p>
+<p>How to start? There is an interview tip for bit manipulation problems: if you don’t know how to start, start from computing XOR for your input data. </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">addBinary</span><span class="params">(self, a, b)</span> -&gt; str:</span></span><br><span class="line">        x, y = int(a, <span class="number">2</span>), int(b, <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">while</span> y:</span><br><span class="line">            answer = x ^ y</span><br><span class="line">            carry = (x &amp; y) &lt;&lt; <span class="number">1</span></span><br><span class="line">            x, y = answer, carry</span><br><span class="line">        <span class="keyword">return</span> bin(x)[<span class="number">2</span>:] <span class="comment"># bin()将十进制转二进制</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 结果的前两位需要去掉</span></span><br><span class="line">&gt;&gt;&gt;bin(<span class="number">10</span>)</span><br><span class="line"><span class="string">'0b1010'</span></span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Backend/Design Pattern/Design-Pattern.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1129,519 +1741,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Backend/Java/Java Notes.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Backend/Java/Java Notes.html" itemprop="url">Java Notes</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-01-22T21:48:53+08:00">
-                2022-01-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Backend/" itemprop="url" rel="index">
-                    <span itemprop="name">Backend</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/Backend/Java/Java Notes.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Backend/Java/Java Notes.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.6k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  10 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Java-Programing-Basics"><a href="#Java-Programing-Basics" class="headerlink" title="Java Programing Basics"></a>Java Programing Basics</h2><h3 id="Java-is-static-typing"><a href="#Java-is-static-typing" class="headerlink" title="Java is static typing"></a>Java is static typing</h3><p>Notice that, in Java, we must specify the data type (e.g., <code>int</code>). This is becouse Java is a <em>statically typed</em> language. Here are the key points to remember about <strong>static typing</strong>:</p>
-<ul>
-<li>The data type is bound to the variable when the variable is first declared.</li>
-<li>The data type is checked when the code is compiled.</li>
-<li>The data type for a variable cannot later be changed.</li>
-</ul>
-<p>In contrast, some languages, such as Python, are dynamically typed. In <strong>dynamic typing</strong>:</p>
-<ul>
-<li>The data type is bound to the <em>value</em> itself, but not to the variable.</li>
-<li>The type is checked during runtime.</li>
-<li>The data type of a variable can be changed after it is declared; since the type is associated with the <em>value</em>, assigning a new value may mean changing the data type.</li>
-</ul>
-<h3 id="Hello-world"><a href="#Hello-world" class="headerlink" title="Hello world!"></a>Hello world!</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GettingStarted</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Add your code here:</span></span><br><span class="line">        System.out.println(<span class="string">"Hello world!!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Use commond line to compile and run</span></span><br><span class="line">javac GettingStarted.java</span><br><span class="line">java GettingStarted.java</span><br></pre></td></tr></table></figure>
-
-<h3 id="Type-casting"><a href="#Type-casting" class="headerlink" title="Type casting"></a>Type casting</h3><h4 id="Automatic-Type-Casting"><a href="#Automatic-Type-Casting" class="headerlink" title="Automatic Type Casting"></a>Automatic Type Casting</h4><p><strong>Automatic</strong> type casting converts a smaller type into a larger type. For example:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> intNumber = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">double</span> doubleNumber = intNumber;</span><br><span class="line">System.out.println(doubleNumber);</span><br></pre></td></tr></table></figure>
-
-<p>When we print <code>doubleNumber</code>, the value will be <code>3.0</code>. Notice that there is no precision lost going from a smaller type into a larger type. We started with <code>3</code> and ended up with <code>3.0</code>.</p>
-<h4 id="Manual-Type-Casting"><a href="#Manual-Type-Casting" class="headerlink" title="Manual Type Casting"></a>Manual Type Casting</h4><p><strong>Manual</strong> type casting is necessary when we want to do either of these things:</p>
-<ul>
-<li>Convert a larger type into a smaller type</li>
-<li>Convert one object type into another</li>
-</ul>
-<p>For example, here we are converting from a larger type (double) to a smaller type (int):</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">double doubleNumber = 3.5;</span><br><span class="line">int intNumber = (int)doubleNumber;</span><br><span class="line">System.out.println(intNumber);</span><br></pre></td></tr></table></figure>
-
-<p>The resulting value will be <code>3</code>, not <code>3.5</code>. When we go from a larger type into a smaller type, precision is lost. Java cuts off additional data that will not fit in the casted type. So when we go from a double to an int, any values that are not integers will be removed. This is called <em>truncation</em>.</p>
-<h3 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h3><h4 id="Method-syntax"><a href="#Method-syntax" class="headerlink" title="Method syntax"></a>Method syntax</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">findTheArea</span><span class="params">(<span class="keyword">double</span> length, <span class="keyword">double</span> width)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> area = length * width;</span><br><span class="line">    <span class="keyword">return</span> area;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="Methods-vs-Functions"><a href="#Methods-vs-Functions" class="headerlink" title="Methods vs Functions"></a>Methods vs Functions</h4><p>You’ll often see the words <strong>function</strong> and <strong>method</strong> used interchangeably. Although the terms are sometimes used loosely, here’s the distinction:</p>
-<ul>
-<li>A <em>function</em> is any block of reusable/callable code.</li>
-<li>A <em>method</em> is a block of reusable/callable code that is attached to a class or object.</li>
-</ul>
-<p>So a method is a type of function, but it’s one that is associated with a class or object, whereas other functions can be executed from anywhere.</p>
-<h3 id="Stack-and-Heap"><a href="#Stack-and-Heap" class="headerlink" title="Stack and Heap"></a>Stack and Heap</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gynk6gr9opj31fl0u0wiv.jpg" alt="image-20220122102441454"></p>
-<h3 id="Types-of-Access-Modifiers"><a href="#Types-of-Access-Modifiers" class="headerlink" title="Types of Access Modifiers"></a>Types of Access Modifiers</h3><p>There are four types of access modifiers in Java:</p>
-<ul>
-<li><strong>Public</strong> means the class can be accessed from everywhere. If you have a method on a class that you want to expose to all other classes, then use this access modifier.</li>
-<li><strong>Private</strong> means only the defining class can access the data. This provides security, by not allowing other classes to change the data directly. Instead, they must make changes to the data via the provided methods only.</li>
-<li><strong>Protected</strong> means that access is restricted to the defining class, package, or subclass. This will be useful when we get into subclasses and inheritance in a later lesson, as it will allow our subclasses to use variables and methods from the parent class.</li>
-<li><strong>Default</strong> means access is restricted to the defining class or the package. This can be used when we have classes inside the same package that we may want to expose data and methods too.</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="left">Access</th>
-<th align="left">Inside class</th>
-<th align="left">Inside package</th>
-<th align="left">Outside package by subclass</th>
-<th align="left">Outside package</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><strong>Private</strong></td>
-<td align="left">Yes</td>
-<td align="left">No</td>
-<td align="left">No</td>
-<td align="left">No</td>
-</tr>
-<tr>
-<td align="left"><strong>Default</strong></td>
-<td align="left">Yes</td>
-<td align="left">Yes</td>
-<td align="left">No</td>
-<td align="left">No</td>
-</tr>
-<tr>
-<td align="left"><strong>Protected</strong></td>
-<td align="left">Yes</td>
-<td align="left">Yes</td>
-<td align="left">Yes</td>
-<td align="left">No</td>
-</tr>
-<tr>
-<td align="left"><strong>Public</strong></td>
-<td align="left">Yes</td>
-<td align="left">Yes</td>
-<td align="left">Yes</td>
-<td align="left">Yes</td>
-</tr>
-</tbody></table>
-<h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><h4 id="Creating-an-Array"><a href="#Creating-an-Array" class="headerlink" title="Creating an Array"></a>Creating an Array</h4><p>Here’s an example of some code that creates an array of size four, containing four integer values:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> [] numbers  = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>Notice that creating an array involves three steps:</p>
-<ol>
-<li>Declare the type of the array, using brackets (as in <code>int []</code>).</li>
-<li>Name the array (in this example, the name is <code>numbers</code>).</li>
-<li>Add values to the array.</li>
-</ol>
-<h4 id="Another-Way-to-Create-an-Array"><a href="#Another-Way-to-Create-an-Array" class="headerlink" title="Another Way to Create an Array"></a>Another Way to Create an Array</h4><p>Here’s another way we can create an array and add values to it:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> [] numbers = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">4</span>];</span><br><span class="line">numbers[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">numbers[<span class="number">1</span>] = <span class="number">2</span>;</span><br><span class="line">numbers[<span class="number">2</span>] = <span class="number">3</span>;</span><br><span class="line">numbers[<span class="number">3</span>] = <span class="number">4</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>[] numbers = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> &#125;;</span><br></pre></td></tr></table></figure>
-
-<p>This approach uses the <code>new</code> keyword to create a new array object of size 4, and then we assign values to the four spaces created in the array.</p>
-<h3 id="Loop"><a href="#Loop" class="headerlink" title="Loop"></a>Loop</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoopExercise</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span>[] numbers = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span> &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Add for Loop Here</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numbers.length; i++) &#123;</span><br><span class="line">            System.out.println(numbers[i]);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Add while Loop Here</span></span><br><span class="line">        <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (index &lt; numbers.length) &#123;</span><br><span class="line">            System.out.println(numbers[index]);</span><br><span class="line">            index++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Add Do while Loop Here</span></span><br><span class="line">        <span class="keyword">int</span> counter = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            System.out.println(numbers[counter]);</span><br><span class="line">            counter++;</span><br><span class="line">        &#125; <span class="keyword">while</span> (counter &lt; numbers.length);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Documentation"><a href="#Documentation" class="headerlink" title="Documentation"></a>Documentation</h3><h4 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h4><p>JavaDoc comments use a simple syntax that supports multi-line HTML format documentation. Here’s what the syntax looks like:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** documentation */</span></span><br></pre></td></tr></table></figure>
-
-<p>And here’s an example:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** This program HelloWorld produces a standard output</span></span><br><span class="line"><span class="comment"> *  displaying "Hello World"</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> The author of the class</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@see</span> A reference to another class</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="Parts-of-a-JavaDoc-Comment"><a href="#Parts-of-a-JavaDoc-Comment" class="headerlink" title="Parts of a JavaDoc Comment"></a>Parts of a JavaDoc Comment</h4><p>Notice that JavaDoc comments are broken down into two parts:</p>
-<ol>
-<li>The description</li>
-<li>Block tags</li>
-</ol>
-<p>In the above example, the description is the first part of the comment, and the block tags are the last part (<code>@author</code> and <code>@see</code>).</p>
-<p>In this example, we have a doc comment for a method:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * This method displays a simple text output to a provided name</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> name The name of the person we want to say “Hi” too</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> results Returns true if the name was printed or</span></span><br><span class="line"><span class="comment"> * false if it failed </span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Objecte-Oriented-Programming"><a href="#Objecte-Oriented-Programming" class="headerlink" title="Objecte-Oriented Programming"></a>Objecte-Oriented Programming</h2><h3 id="Define-a-class"><a href="#Define-a-class" class="headerlink" title="Define a class"></a>Define a class</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String firstName;</span><br><span class="line">    <span class="keyword">private</span> String lastName;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String firstName, String lastName)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.firstName = firstName;</span><br><span class="line">        <span class="keyword">this</span>.lastName = lastName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getFirstName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.firstName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getLastName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.lastName;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="string">" "</span> +<span class="keyword">this</span>.lastName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Garbage-Collection"><a href="#Garbage-Collection" class="headerlink" title="Garbage Collection"></a>Garbage Collection</h3><p>Every new object that we instantiate is added to the heap and consumes memory. In programming languages like C or C++, developers are responsible for creating and destroying objects. In contrast, Java has a background process called <strong>Garbage Collection (GC)</strong> that checks all instantiated objects, and destroys them if they do not have any references—thus freeing up memory, even without any active management on the part of the developer.</p>
-<h3 id="Abstract-Classes"><a href="#Abstract-Classes" class="headerlink" title="Abstract Classes"></a>Abstract Classes</h3><p>An <strong>abstract class</strong> has the following key characteristics:</p>
-<ul>
-<li>It defines the behavior for each of the subclasses, but we cannot directly instantiate the abstract class itself.</li>
-<li>It allows us to create abstract methods<ul>
-<li>An abstract method is a method that does not contain an implementation body. Instead, it simply provides a header for the method.</li>
-<li>Subclasses that extend an abstract class are required to override all abstract methods and provide a specific implementation.</li>
-</ul>
-</li>
-</ul>
-<h4 id="Example-Abstract-Vehicle-Class"><a href="#Example-Abstract-Vehicle-Class" class="headerlink" title="Example: Abstract Vehicle Class"></a>Example: Abstract <code>Vehicle</code> Class</h4><p>Here’s the example we looked at in the video. To ensure that we will <em>not</em> be able to directly instantiate <code>Vehicle</code> objects from this class, we define it using the <code>abstract</code> keyword:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Vehicle</span> </span>&#123;</span><br><span class="line">    <span class="keyword">protected</span> String start;</span><br><span class="line">    <span class="keyword">protected</span> String stop;</span><br><span class="line">    <span class="keyword">protected</span> String direction;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Vehicle</span><span class="params">(String start, String stop, String direction)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.start = start;</span><br><span class="line">        <span class="keyword">this</span>.stop = stop;</span><br><span class="line">        <span class="keyword">this</span>.direction = direction;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">speed</span><span class="params">()</span></span>;    </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Next, we use the <code>Extends</code> keyword to have our <code>Car</code> class extend the <code>Vehicle</code> class:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Car</span> <span class="keyword">extends</span> <span class="title">Vehicle</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Car</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">super</span>(<span class="string">"Car start"</span>, <span class="string">"Car stop"</span>, <span class="string">"Car direction"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">speed</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"55"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Interfaces"><a href="#Interfaces" class="headerlink" title="Interfaces"></a>Interfaces</h3><p><strong>Interfaces</strong> allow us to avoid hardcoding features in an application. We can move specific implementation details into subclasses, and then use an interface to communicate between the application and the subclasses.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Vehicle</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getType</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getSpeed</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getColor</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Car</span> <span class="keyword">implements</span> <span class="title">Vehicle</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String type;</span><br><span class="line">    <span class="keyword">private</span> String speed;</span><br><span class="line">    <span class="keyword">private</span> String color;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Car</span><span class="params">(String type, String speed, String color)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">        <span class="keyword">this</span>.type = type;</span><br><span class="line">        <span class="keyword">this</span>.speed = speed;</span><br><span class="line">        <span class="keyword">this</span>.color = color;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getType</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> type;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getSpeed</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> speed;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getColor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> color;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Interfaces-vs-Abstract-Classes"><a href="#Interfaces-vs-Abstract-Classes" class="headerlink" title="Interfaces vs Abstract Classes"></a>Interfaces vs Abstract Classes</h3><p>Here are some of the similarities and differences between abstract classes and interfaces:</p>
-<p><strong>Abstract class</strong></p>
-<ul>
-<li>Can have class(static) variables.</li>
-<li>Can have both <strong>abstract</strong> methods and <strong>concrete</strong> methods that are shared with the subclasses.</li>
-<li><strong>Can have instance variables</strong>, i.e. variables that are specific to individual subclasses.</li>
-<li>Subclasses can only extend one class.</li>
-</ul>
-<p><strong>Interfaces</strong></p>
-<ul>
-<li>Can have class(static) variables.</li>
-<li>Every method in an interface is <strong>abstract</strong>.</li>
-<li><strong>Cannot have instance variables</strong>. Variables in an interface must be the same for every class implementing the interface.</li>
-<li>Classes can implement more than one interface and <strong>have multiple inheritance</strong>.</li>
-</ul>
-<blockquote>
-<p>Abstract classes are used for <strong>Modeling</strong> a class hierarchy of similar looking classes (For example Animal can be abstract class and Human , Lion, Tiger can be concrete derived classes)</p>
-<p>Interface is used for <strong>Communication</strong> between 2 similar / non similar classes which does not care about type of the class implementing Interface(e.g. Height can be interface property and it can be implemented by Human , Building , Tree. It does not matter if you can eat , you can swim you can die or anything.. it matters only a thing that you need to have Height (implementation in you class) ).</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/OtherTechnique/Git.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/OtherTechnique/Git.html" itemprop="url">Git</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-01-05T10:03:41+08:00">
-                2022-01-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/OtherTechnique/Git.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="OtherTechnique/Git.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  87 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="How-to-use-Git"><a href="#How-to-use-Git" class="headerlink" title="How to use Git"></a>How to use Git</h1><p>Here are some commonds to use git.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &apos;&apos;</span><br><span class="line">git push</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git branch <span class="comment"># show the local branch </span></span><br><span class="line">git branch -a <span class="comment"># show all the branch including the remote branch</span></span><br><span class="line">git checkout branchName <span class="comment"># change to the local branch</span></span><br><span class="line">git checkout -b localBranchName origin/remoteBranchName </span><br><span class="line"><span class="comment"># create a new local branch the same as the remote branch</span></span><br><span class="line">git merge branchName <span class="comment"># merge the current branch with another branch</span></span><br><span class="line">git branch -d branchName <span class="comment"># delete the local branch</span></span><br><span class="line">git push origin --delete remoteBranchName <span class="comment"># delete the remote branch</span></span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1694,7 +1793,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">68</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1705,7 +1804,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1810,7 +1909,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">65.6k</span>
+    <span title="Site words total count">66.4k</span>
   
 </div>
 

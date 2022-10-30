@@ -346,6 +346,522 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Fullstack/Databases-and-SQL.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Fullstack/Databases-and-SQL.html" itemprop="url">Databases and SQL</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-05-09T20:37:41+08:00">
+                2022-05-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Fullstack/" itemprop="url" rel="index">
+                    <span itemprop="name">Fullstack</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Fullstack/Databases-and-SQL.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Fullstack/Databases-and-SQL.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  653 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Different-kinds-of-databases"><a href="#Different-kinds-of-databases" class="headerlink" title="Different kinds of databases"></a>Different kinds of databases</h2><h3 id="SQL-Relational-Type-Databases"><a href="#SQL-Relational-Type-Databases" class="headerlink" title="SQL/Relational Type Databases"></a>SQL/Relational Type Databases</h3><p>SQL type databases are organized to be query-able using SQL (Structured Query Language) and organize information in tables. These are pretty much like giant spreadsheets, where an item stored in the database is a row in the table, and columns hold data points on each item.</p>
+<h4 id="Ideal-Use-Cases"><a href="#Ideal-Use-Cases" class="headerlink" title="Ideal Use Cases:"></a>Ideal Use Cases:</h4><p>Repeating, structured data, such as:</p>
+<ul>
+<li>user information</li>
+<li>product inventories</li>
+<li>blogs</li>
+</ul>
+<h4 id="Common-SQL-Relational-Database-Technologies"><a href="#Common-SQL-Relational-Database-Technologies" class="headerlink" title="Common SQL/Relational Database Technologies:"></a>Common SQL/Relational Database Technologies:</h4><ul>
+<li>MySQL</li>
+<li>PostgreSQL</li>
+<li>MariaDB</li>
+<li>Microsoft SQL Server</li>
+</ul>
+<h3 id="NoSQL"><a href="#NoSQL" class="headerlink" title="NoSQL"></a>NoSQL</h3><p>As you might have guessed, a NoSQL database …doesn’t use SQL. Really this means it isn’t set up like a spreadsheet. These databases can take a few different forms and are used for large sets of distributed data (like for use in micro service architectures).</p>
+<h4 id="Ideal-Use-Cases-1"><a href="#Ideal-Use-Cases-1" class="headerlink" title="Ideal Use Cases:"></a>Ideal Use Cases:</h4><p>Partially structured or un-structured data: really big collections of complex data, caches</p>
+<h4 id="Types-of-NoSQL-Databases"><a href="#Types-of-NoSQL-Databases" class="headerlink" title="Types of NoSQL Databases:"></a>Types of NoSQL Databases:</h4><ul>
+<li>Key-Value store<ul>
+<li>A key-value store is a non-relational, noSQL database type that stores data in key-value pairs (exactly like objects or dictionaries in programming). These databases are fast because the keys are unique and easily searchable, and they are flexible, because these key value pairs can store any combination of data types required.</li>
+</ul>
+</li>
+<li>Document store<ul>
+<li>A document store is a non-relational, noSQL database type that organizes data into documents. Documents can hold any shape of data, which means document stores can easily handle data with no structure or that is arbitrarily nested, which can be a headache to account for in a relational way.</li>
+</ul>
+</li>
+<li>Column-oriented<ul>
+<li>Data organized by column instead of by row. This architecture scales easily and makes fast, efficient queries. I’m including this architecture as a NoSQL type dbms, but this architecture can actually be used with SQL as well.</li>
+</ul>
+</li>
+</ul>
+<h3 id="Common-NoSQL-Database-Technologies"><a href="#Common-NoSQL-Database-Technologies" class="headerlink" title="Common NoSQL Database Technologies:"></a>Common NoSQL Database Technologies:</h3><ul>
+<li>Redis [Key Value store]</li>
+<li>MongoDB [Document store]</li>
+<li>Elasticsearch [Document store]</li>
+<li>Apache Cassandra [Column-oriented]</li>
+</ul>
+<h2 id="PostgreSQL-Cheat-Sheet"><a href="#PostgreSQL-Cheat-Sheet" class="headerlink" title="PostgreSQL Cheat Sheet"></a>PostgreSQL Cheat Sheet</h2><h3 id="Meta-Commands"><a href="#Meta-Commands" class="headerlink" title="Meta Commands"></a>Meta Commands</h3><ul>
+<li><code>\l</code> <strong>List</strong> databases</li>
+<li><code>\c</code> <strong>Connect</strong> to a database</li>
+<li><code>\dt</code> <strong>Display Tables</strong> in a database</li>
+<li><code>\q</code> <strong>Quit</strong> out of psql to normal terminal</li>
+</ul>
+<h3 id="Queries"><a href="#Queries" class="headerlink" title="Queries"></a>Queries</h3><ul>
+<li>CREATE <code>INSERT INTO worlds (name) VALUES (&#39;Asgard&#39;);</code></li>
+<li>READ <code>SELECT* FROM herbs;</code></li>
+<li>UPDATE <code>UPDATE herbs SET sighting_date = &#39;2021-01-10&#39; WHERE id=&#39;1&#39;;</code></li>
+<li>DELETE <code>DELETE FROM herbs WHERE id=&#39;1&#39;;</code></li>
+<li>Filters<ul>
+<li>BETWEEN<code>SELECT * FROM trips WHERE start_date BETWEEN &#39;2021-02-01&#39; AND &#39;2021-02-12&#39;;</code></li>
+<li>LIKE <code>SELECT * FROM books WHERE title LIKE &#39;%ship%&#39;;</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="Connect-PostSQL-using-Docker"><a href="#Connect-PostSQL-using-Docker" class="headerlink" title="Connect PostSQL using Docker"></a>Connect PostSQL using Docker</h2><h3 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h3><ol>
+<li>Add <code>pg</code> to dependencies</li>
+<li>Create environment variables</li>
+<li>Use <code>.env</code> file to save the db name, user name and password</li>
+<li></li>
+</ol>
+<h3 id="Environment-Variables"><a href="#Environment-Variables" class="headerlink" title="Environment Variables"></a>Environment Variables</h3><p>Working with sensitive information can be hard, especially when your application relies on keys and passwords in order to connect to and access databases or APIs. The instructions below will walk you through adding a library for environment variables in Node so that we can safely store information away from public eyes without moving it out of reach.</p>
+<ol>
+<li>The library we will use for environment variables is called dotenv. You can add it via npm or yarn like this: <code>yarn add dotenv</code></li>
+<li>Once we have dotenv listed in the package.json dependencies, we need to create one file. Make a new file called <code>.env</code> in the root of the project. In that file, add this: <code>TEST_VAR=testing123</code>. This is our first environment variable!</li>
+<li>One last, <strong>super</strong> important step. The .env file hides sensitive information and makes it available to our application via a variable, so it holds a lot of really important, secret information. Information we don’t want shared even in a respository. If a gitignore file exists in your project add the .env file there. If there isn’t a gitignore, add a file called <code>.gitignore</code> to the root of the project and add a single line in the file that says just <code>.env</code>. <strong>If you include your env file in a public repository, you have completely negated the purpose of adding environment variables.</strong></li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Fullstack/Express.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Fullstack/Express.html" itemprop="url">Express</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-04-06T15:01:57+08:00">
+                2022-04-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Fullstack/" itemprop="url" rel="index">
+                    <span itemprop="name">Fullstack</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Fullstack/Express.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Fullstack/Express.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  789 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="HTTP-Basic"><a href="#HTTP-Basic" class="headerlink" title="HTTP Basic"></a>HTTP Basic</h2><h3 id="HTTP-Request"><a href="#HTTP-Request" class="headerlink" title="HTTP Request"></a>HTTP Request</h3><ul>
+<li><strong>GET</strong> - retrieves data from the server</li>
+<li><strong>POST</strong> - sends data to the server</li>
+<li><strong>DELETE</strong> - removes data from the server</li>
+<li><strong>PUT</strong> - replaces data on the server</li>
+<li><strong>PATCH</strong> - updates data on the server</li>
+</ul>
+<h3 id="Query-Parameters"><a href="#Query-Parameters" class="headerlink" title="Query Parameters"></a>Query Parameters</h3><ul>
+<li>Query strings are parameters in the URL, identified by a ‘?’<ul>
+<li>Ex: <a href="https://coffee.com/search?decaf=true" target="_blank" rel="noopener">https://coffee.com/search?decaf=true</a></li>
+</ul>
+</li>
+<li>To chain multiple parameters together in a query string, use ‘&amp;”<ul>
+<li>Ex: <a href="https://coffee.com/search?decaf=true&amp;size=large&amp;creamer=soy" target="_blank" rel="noopener">https://coffee.com/search?decaf=true&amp;size=large&amp;creamer=soy</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="HTTP-Response-Status-Codes"><a href="#HTTP-Response-Status-Codes" class="headerlink" title="HTTP Response Status Codes"></a>HTTP Response Status Codes</h3><table>
+<thead>
+<tr>
+<th align="left">Status Code Range</th>
+<th align="left">Example Code</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">100-199: information</td>
+<td align="left">100 Continue</td>
+</tr>
+<tr>
+<td align="left">200-299: request was successful</td>
+<td align="left">200 OK 201 Created</td>
+</tr>
+<tr>
+<td align="left">300-399: request was redirected</td>
+<td align="left">301 Moved Permanently 307 Temporary Redirect</td>
+</tr>
+<tr>
+<td align="left">400-499: client-side error</td>
+<td align="left">400 Bad Request 401 Unauthorized 405 Method Not Allowed</td>
+</tr>
+<tr>
+<td align="left">500-599: server-side error</td>
+<td align="left">500 Internal Server Error</td>
+</tr>
+</tbody></table>
+<h2 id="Express-basics"><a href="#Express-basics" class="headerlink" title="Express basics"></a>Express basics</h2><h3 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h3><p>Every Express application requires the creation of what is known as the application object. All of the core functions of express take place on the application object including endpoint methods.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> app = express();</span><br></pre></td></tr></table></figure>
+
+<h3 id="Core-Methods"><a href="#Core-Methods" class="headerlink" title="Core Methods"></a>Core Methods</h3><ul>
+<li><code>.listen()</code> - listens for connections to a specified host and port</li>
+<li><code>.get()</code> - used to get a route and takes a route and a callback function as arguments. The callback function takes two arguments, the request from the browser and the response from the server. Additionally, middleware can also be passed in as an argument which will be covered in the middleware section.</li>
+<li><code>.post()</code>, <code>.put()</code>, <code>.delete()</code> - the other app methods that make up endpoints. They require having the ability to store data. <code>.post()</code> is used to post a new item, <code>.put()</code> used to edit an item already in existence, and <code>.delete()</code> to remove an item from the data. Like get above, all three methods will take a route.</li>
+</ul>
+<h3 id="Create-an-endpoint"><a href="#Create-an-endpoint" class="headerlink" title="Create an endpoint"></a>Create an endpoint</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.get(&apos;/students&apos;, (req, res) =&gt; &#123;</span><br><span class="line">  // perform an action with req or res. </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="Middleware"><a href="#Middleware" class="headerlink" title="Middleware"></a>Middleware</h2><p>Middleware is a function that is applied between the request and response. Meaning you get the request, do something with it, and then send the response. Common uses of middleware include checking the authentication status of a user before sending a response or logging the request before sending the response.</p>
+<h3 id="Using-middleware"><a href="#Using-middleware" class="headerlink" title="Using middleware"></a>Using middleware</h3><h4 id="use"><a href="#use" class="headerlink" title=".use();"></a><code>.use();</code></h4><p>The <code>.use();</code> method is a method that can be applied to the application object or to route objects. It is used for applying middleware and can take in a route, and middleware as arguments</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(middleware);</span><br></pre></td></tr></table></figure>
+
+<h4 id="Endpoint-level"><a href="#Endpoint-level" class="headerlink" title="Endpoint level"></a>Endpoint level</h4><p>Applies middleware to a specific endpoint.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">students.get(<span class="string">'/'</span>, middleware, (req, res) =&gt; &#123; <span class="comment">// do stuff &#125;);</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Writing-middleware"><a href="#Writing-middleware" class="headerlink" title="Writing middleware"></a>Writing middleware</h3><p>Middleware is really just a function that is applied between the request and response. As such, if writing middleware, you create a function.</p>
+<p>A middleware function takes at least 3 arguments (req, res, next); a 4th is also available of err (err, req, res, next) for use in writing error-handling middleware.</p>
+<h4 id="next"><a href="#next" class="headerlink" title="next();"></a><code>next();</code></h4><p>The next method is a method from the express router. next() calls the next middleware in a chain of middlewares. Without adding next to your middleware function, your application will get stuck on the middleware.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myMiddleware = <span class="function">(<span class="params">req, res, next</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// do stuff</span></span><br><span class="line">  next();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Working-with-routes"><a href="#Working-with-routes" class="headerlink" title="Working with routes"></a>Working with routes</h3><blockquote>
+<p>The sample code for this topic is on the <a href="https://github.com/Qianhongbo/JavaScript/tree/master/work_with_routes" target="_blank" rel="noopener">website</a>.</p>
+</blockquote>
+<p>When building an express application, it’s best practice to keep the server and application endpoints and functionality separate. With the router object, you’re able to create a directory of routes and separate the functionality of each route onto its own file.</p>
+<h4 id="Router"><a href="#Router" class="headerlink" title="Router()"></a><code>Router()</code></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> express <span class="keyword">from</span> <span class="string">'express'</span>;   </span><br><span class="line"><span class="keyword">const</span> routes = express.Router();</span><br><span class="line"></span><br><span class="line">routes.get(<span class="string">'/'</span>, (req, res) =&gt; &#123; <span class="comment">//do something &#125;);</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> routes;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Use-the-Router"><a href="#Use-the-Router" class="headerlink" title="Use the Router"></a>Use the Router</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> routes <span class="keyword">from</span> <span class="string">'./routes/index'</span>;</span><br><span class="line"></span><br><span class="line">app.use(<span class="string">'/'</span>, routes);</span><br></pre></td></tr></table></figure>
+
+<h2 id="When-to-use-Express"><a href="#When-to-use-Express" class="headerlink" title="When to use Express"></a>When to use Express</h2><p>Everything we’ve done in this lesson so far has been the foundation of what’s known as a REST API (Representational State Transfer). It’s an architectural standard for APIs and currently the most popular type of API in use. RESTful APIs are considered to be stateless meaning the user/browser is independent of the server and they don’t care what the other is doing.</p>
+<p>But what if you need the interactions between the server and the user to be stateful meaning the server is aware of what the user is doing. Think about when you are waiting for someone to send a text message and you see the dots pop up letting you know they are working on a response–that’s stateful. So what do we do when we need a real-time application? Instead of a REST API, you create a <strong>WebSocket API.</strong></p>
+<p>Websocket APIs are stateful and allow for real-time communication between the user and the server allowing for one user to know what another user is doing. Websockets do not use the HTTP protocol and have their own WebSocket protocol.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Fullstack/Jasmine.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1215,457 +1731,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/LeetCode/hashmap.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/LeetCode/hashmap.html" itemprop="url">hashmap</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-03-08T09:02:07+08:00">
-                2022-03-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">Leetcode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/LeetCode/hashmap.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="LeetCode/hashmap.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  175 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Two-sum"><a href="#Two-sum" class="headerlink" title="Two sum"></a>Two sum</h2><h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>You may assume that each input would have <strong><em>exactly\</em> one solution</strong>, and you may not use the <em>same</em> element twice. You can return the answer in any order.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [2,7,11,15], target = 9</span><br><span class="line">Output: [0,1]</span><br><span class="line">Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].</span><br></pre></td></tr></table></figure>
-
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><h4 id="Brute-force"><a href="#Brute-force" class="headerlink" title="Brute force"></a>Brute force</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Double loop</span></span><br><span class="line"><span class="comment"># O(n^2) time | O(1) square</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="Two-pass-hash-table"><a href="#Two-pass-hash-table" class="headerlink" title="Two-pass hash table"></a>Two-pass hash table</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(n) time | O(n) square</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">twoSum</span><span class="params">(self, nums: List[int], target: int)</span> -&gt; List[int]:</span></span><br><span class="line">        hashmap = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            hashmap[nums[i]] = i</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            complement = target - nums[i]</span><br><span class="line">            <span class="keyword">if</span> complement <span class="keyword">in</span> hashmap <span class="keyword">and</span> hashmap[complement] != i:</span><br><span class="line">                <span class="keyword">return</span> [i, hashmap[complement]]</span><br></pre></td></tr></table></figure>
-
-<h4 id="One-pass-hash-table"><a href="#One-pass-hash-table" class="headerlink" title="One-pass hash table"></a>One-pass hash table</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># O(n) time | O(n) square</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">twoSum</span><span class="params">(self, nums: List[int], target: int)</span> -&gt; List[int]:</span></span><br><span class="line">        hashmap = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            hashmap[nums[i]] = i</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            complement = target - nums[i]</span><br><span class="line">            <span class="keyword">if</span> complement <span class="keyword">in</span> hashmap <span class="keyword">and</span> hashmap[complement] != i:</span><br><span class="line">                <span class="keyword">return</span> [i, hashmap[complement]]</span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Fullstack/Node-js.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Fullstack/Node-js.html" itemprop="url">Node.js</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-03-07T22:08:58+08:00">
-                2022-03-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Fullstack/" itemprop="url" rel="index">
-                    <span itemprop="name">Fullstack</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/Fullstack/Node-js.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Fullstack/Node-js.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  880 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  5 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="History-of-Backend-Development"><a href="#History-of-Backend-Development" class="headerlink" title="History of Backend Development"></a>History of Backend Development</h2><p><img src="https://video.udacity-data.com/topher/2021/February/60351af5_screen-shot-2021-02-23-at-9.04.16-am/screen-shot-2021-02-23-at-9.04.16-am.png" alt></p>
-<h2 id="pros-and-cons"><a href="#pros-and-cons" class="headerlink" title="pros and cons"></a>pros and cons</h2><h3 id="The-Node-js-Advantage"><a href="#The-Node-js-Advantage" class="headerlink" title="The Node.js Advantage"></a>The Node.js Advantage</h3><ul>
-<li>Node.js allows for JavaScript to be used on the frontend and backend.</li>
-<li>Node.js allows for easy application scaling and maintenance.</li>
-</ul>
-<h3 id="The-Node-js-Disadvantage"><a href="#The-Node-js-Disadvantage" class="headerlink" title="The Node.js Disadvantage"></a>The Node.js Disadvantage</h3><p>Node.js is <strong>not</strong> well-suited for applications that require heavy processing and computation, like video processing, 3D games, and traffic mapping.</p>
-<h2 id="Javascript-with-Node-js"><a href="#Javascript-with-Node-js" class="headerlink" title="Javascript with Node.js"></a>Javascript with Node.js</h2><h3 id="To-run-index-js-use"><a href="#To-run-index-js-use" class="headerlink" title="To run index.js use:"></a>To run <code>index.js</code> use:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ node src/index.js</span><br></pre></td></tr></table></figure>
-
-<h2 id="Common-JS-Module-System"><a href="#Common-JS-Module-System" class="headerlink" title="Common JS Module System"></a>Common JS Module System</h2><p>The module system creates the ability to export and import JavaScript from separate files.</p>
-<h3 id="Export"><a href="#Export" class="headerlink" title="Export"></a>Export</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// working file = util/logger.js</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// exports as object</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123; </span><br><span class="line">    myFirstFunction: myFirstFunction,</span><br><span class="line">    mySecondFunction: mySecondFunction</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// using ES6 shorthand property names</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123; </span><br><span class="line">    myFirstFunction,</span><br><span class="line">    mySecondFunction</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Require"><a href="#Require" class="headerlink" title="Require"></a>Require</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// working file = index.js</span></span><br><span class="line"><span class="comment">// all functions in util/logger.js are available</span></span><br><span class="line"><span class="keyword">const</span> logger = <span class="built_in">require</span>(<span class="string">'./util/logger.js'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// using ES6 object destructuring, only myFirstFunction is available</span></span><br><span class="line"><span class="keyword">const</span> &#123; myFirstFunction &#125; = <span class="built_in">require</span>(<span class="string">'./util/logger.js'</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id="Event-Loop"><a href="#Event-Loop" class="headerlink" title="Event Loop"></a>Event Loop</h2><p>Nearly every Node.js feature is considered to be asynchronous (non-blocking). This means that we can request an API using promises and have our application continue running while that request is being waited for. But how does Node.js process that asynchronous request? Both the Browser and Node.js take advantage of something called the Event Loop. The Event Loop isn’t an API or language; it’s a process that runs anytime you have asynchronous code.</p>
-<p>The Event Loop controls the order in which results (output) of asynchronous tasks (input) are displayed. Think of the Event Loop as the person working the door at an exclusive venue. That person lets people in based on a set of information provided by the venue. Your application is the venue, your asynchronous tasks are the people trying to get in, and it’s your job to tell the door person how to do so. Once you become familiar with the Event Loop and the order in which Node.js handles tasks, you will control when those tasks occur in your application</p>
-<h3 id="Six-Phases-of-The-Event-Loop"><a href="#Six-Phases-of-The-Event-Loop" class="headerlink" title="Six Phases of The Event Loop"></a>Six Phases of The Event Loop</h3><ol>
-<li><strong>Timers</strong> - executes callbacks using timers. If there are timers set to <code>0 ms</code> or <code>setImmediate(),</code> they will run here. Incomplete timers will run in later iterations of the loop.</li>
-<li><strong>Pending</strong> - <em>internal phase</em></li>
-<li><strong>Idle/Prepare</strong> - <em>internal phase</em></li>
-<li><strong>Poll</strong> - process I/O callbacks</li>
-<li><strong>Check</strong> - execute any <code>setImmediate()</code> timers added in the Poll phase</li>
-<li><strong>Close</strong> - loop continues if there are more timers or I/O calls. If all timers and I/O calls are done, the loop closes and the process ends.</li>
-</ol>
-<p><img src="https://video.udacity-data.com/topher/2021/February/6033fb75_fsjs-c1-l1-event-loop/fsjs-c1-l1-event-loop.jpg" alt></p>
-<h2 id="NPM"><a href="#NPM" class="headerlink" title="NPM"></a>NPM</h2><h3 id="Initializing-npm-and-Creating-a-package-json-file"><a href="#Initializing-npm-and-Creating-a-package-json-file" class="headerlink" title="Initializing npm and Creating a package.json file"></a>Initializing <code>npm</code> and Creating a <code>package.json</code> file</h3><p>Initializing npm will create a package.json within the root of your application folder containing general information about the project.</p>
-<p>To initialize <code>npm</code> and go through all of the settings use:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm init</span><br></pre></td></tr></table></figure>
-
-<p>To automatically select all defaults use <code>-y</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm init -y</span><br></pre></td></tr></table></figure>
-
-<h3 id="Adding-Dependencies"><a href="#Adding-Dependencies" class="headerlink" title="Adding Dependencies"></a>Adding Dependencies</h3><blockquote>
-<p><a href="http://www.npmjs.com" target="_blank" rel="noopener">www.npmjs.com</a> is the node package management library.</p>
-</blockquote>
-<p>Applications will either include both dependencies and devDependencies or just dependencies. It is dependent on the team setting up the project. <code>devDependencies</code> are thought of as dependencies that are only necessary for development whereas <code>dependencies</code> are those dependencies used in both development and production. </p>
-<p>An example would be needing TypeScript added as a dependency for development, but since it compiles to standard JavaScript to be used in production, TypeScript is not needed for production and therefore could be just a <code>devDependency</code>. </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ npm i module-name // install module to dependencies</span><br><span class="line">$ npm i --save-dev module-name // install to dev dependencies</span><br><span class="line">$ npm i --save-dev module-name@1.19 // install a specific version (1.19 here) of module</span><br></pre></td></tr></table></figure>
-
-<p>Installing dependencies adds the dependency to your package.json file in the format:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"devDependencies"</span>: &#123;</span><br><span class="line">  <span class="string">"prettier"</span>: <span class="string">"^2.2.1"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>The version states what was installed, but it also clarifies how it can be updated should you remove the node_modules and package-lock.json files and reinstall all dependencies with <code>$ npm install</code>.</p>
-<h3 id="package-lock-json"><a href="#package-lock-json" class="headerlink" title="package-lock.json"></a>package-lock.json</h3><p><code>package-lock.json</code> contains all of the information for the dependencies of the modules you have installed.</p>
-<p>It is best practice to add <code>package-lock.json</code> as well as .<code>/node_modules</code> to your <code>.gitignore</code> file when using a repository. The <code>node_modules</code> folder can grow rapidly, containing thousands of files. It is best to clone a repository without <code>node_modules</code> and run <code>npm install</code> to reinstall all dependencies of the project directly from npm.</p>
-<h3 id="npm-update"><a href="#npm-update" class="headerlink" title="npm update"></a>npm update</h3><p>running <code>$ npm update</code> will update all of your dependencies based on the specifications given in your package.json file.</p>
-<h3 id="scripts"><a href="#scripts" class="headerlink" title="scripts"></a>scripts</h3><p>To run a script that you have added to your package.json file, simply run <code>$ npm run</code> argument with the name of the script as the argument.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm run prettier</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// touch .prettierrc</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">"semi"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"singleQuote"</span>: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"prettier"</span>: <span class="string">"prettier --config .prettierrc 'NPM/**/*.js' --write"</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Compiled-vs-Interpreted-Language"><a href="#Compiled-vs-Interpreted-Language" class="headerlink" title="Compiled vs. Interpreted Language"></a>Compiled vs. Interpreted Language</h2><h3 id="Compiled-Language"><a href="#Compiled-Language" class="headerlink" title="Compiled Language"></a>Compiled Language</h3><ul>
-<li>Language is written and compiled to machine code inside of an application</li>
-<li>Errors are detected during compiling</li>
-<li>The code won’t compile until it’s error-free</li>
-<li>Examples: C, C++, Erlang, Go</li>
-</ul>
-<h3 id="JavaScript-is-an-Interpreted-Language"><a href="#JavaScript-is-an-Interpreted-Language" class="headerlink" title="JavaScript is an Interpreted Language"></a>JavaScript is an Interpreted Language</h3><ul>
-<li>Errors found when the code is run</li>
-<li>The interpreter translates and runs code one statement at a time</li>
-<li>Interpreted code runs more slowly</li>
-</ul>
-<h3 id="Node-js-Is-an-Interpreter"><a href="#Node-js-Is-an-Interpreter" class="headerlink" title="Node.js Is an Interpreter"></a>Node.js Is an Interpreter</h3><ul>
-<li>Node.js is mostly written in C++</li>
-<li>Many node modules also include some C++ code</li>
-<li>Other modules include Python or C</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1718,7 +1783,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">68</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1729,7 +1794,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1834,7 +1899,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">65.6k</span>
+    <span title="Site words total count">66.4k</span>
   
 </div>
 

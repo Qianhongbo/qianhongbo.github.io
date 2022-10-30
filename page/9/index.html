@@ -346,6 +346,420 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/iOS/UITableView.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/iOS/UITableView.html" itemprop="url">UITableView and Navigation</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-12-26T10:38:48+08:00">
+                2021-12-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/iOS/UITableView.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="iOS/UITableView.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  842 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Create-UITabelView"><a href="#Create-UITabelView" class="headerlink" title="Create UITabelView"></a>Create UITabelView</h2><blockquote>
+<p>We need to link two delegates(datasource &amp; delegate) from the tabelview in the storyboard to the ViewController.</p>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span>, <span class="title">UITableViewDataSource</span>, <span class="title">UITableViewDelegate</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// MARK: Properties</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Get ahold of some villains, for the table</span></span><br><span class="line">    <span class="comment">// This is an array of Villain instances</span></span><br><span class="line">    <span class="keyword">let</span> allVillains = <span class="type">Villain</span>.allVillains</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// MARK: Table View Data Source</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// The number of rows</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">tableView</span><span class="params">(<span class="number">_</span> tableView: UITableView, numberOfRowsInSection section: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">self</span>.allVillains.<span class="built_in">count</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// The text of every row</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">tableView</span><span class="params">(<span class="number">_</span> tableView: UITableView, cellForRowAt indexPath: IndexPath)</span></span> -&gt; <span class="type">UITableViewCell</span> &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">let</span> cell = tableView.dequeueReusableCell(withIdentifier: <span class="string">"VillainCell"</span>)!</span><br><span class="line">        <span class="keyword">let</span> villain = <span class="keyword">self</span>.allVillains[(indexPath <span class="keyword">as</span> <span class="type">NSIndexPath</span>).row]</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// Set the name and image</span></span><br><span class="line">        cell.textLabel?.text = villain.name</span><br><span class="line">        cell.imageView?.image = <span class="type">UIImage</span>(named: villain.imageName)</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// If the cell has a detail label, we will put the evil scheme in.</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">let</span> detailTextLabel = cell.detailTextLabel &#123;</span><br><span class="line">            detailTextLabel.text = <span class="string">"Scheme: \(villain.evilScheme)"</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> cell</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">tableView</span><span class="params">(<span class="number">_</span> tableView: UITableView, canEditRowAt indexPath: IndexPath)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">  	<span class="comment">// Use navigationController to show the corresponding page of each row </span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">tableView</span><span class="params">(<span class="number">_</span> tableView: UITableView, didSelectRowAt indexPath: IndexPath)</span></span> &#123;</span><br><span class="line">        <span class="keyword">let</span> detailController = storyboard?.instantiateViewController(withIdentifier: <span class="string">"VillainDetailViewController"</span>) <span class="keyword">as</span>! <span class="type">VillainDetailViewController</span></span><br><span class="line">        detailController.villain = <span class="keyword">self</span>.allVillains[indexPath.row]</span><br><span class="line">        navigationController?.pushViewController(detailController, animated: <span class="literal">true</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h3 id="Creating-and-preparing-the-DetailViewController"><a href="#Creating-and-preparing-the-DetailViewController" class="headerlink" title="Creating and preparing the DetailViewController"></a>Creating and preparing the DetailViewController</h3><ul>
+<li>Create a <code>VillainDetailViewController</code> with a 100x80 image view, and a label</li>
+<li>Give the <code>VillainDetailViewController</code> a Storyboard ID</li>
+<li>Give the <code>VillainDetailViewController</code> a villain property</li>
+<li>Write the <code>viewWillAppear</code> method in the <code>VillainDetailViewController</code> so that it sets the image and label</li>
+</ul>
+</blockquote>
+<h2 id="Create-the-Villain-struct"><a href="#Create-the-Villain-struct" class="headerlink" title="Create the Villain struct"></a>Create the Villain struct</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Villain</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// MARK: Properties</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> name: <span class="type">String</span></span><br><span class="line">    <span class="keyword">let</span> evilScheme: <span class="type">String</span></span><br><span class="line">    <span class="keyword">let</span> imageName: <span class="type">String</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> <span class="type">NameKey</span> = <span class="string">"NameKey"</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> <span class="type">EvilSchemeKey</span> = <span class="string">"EvilScheme"</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> <span class="type">ImageNameKey</span> = <span class="string">"ImageNameKey"</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// MARK: Initializer</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Generate a Villain from a three entry dictionary</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">init</span>(dictionary: [<span class="type">String</span> : <span class="type">String</span>]) &#123;</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">self</span>.name = dictionary[<span class="type">Villain</span>.<span class="type">NameKey</span>]!</span><br><span class="line">        <span class="keyword">self</span>.evilScheme = dictionary[<span class="type">Villain</span>.<span class="type">EvilSchemeKey</span>]!</span><br><span class="line">        <span class="keyword">self</span>.imageName = dictionary[<span class="type">Villain</span>.<span class="type">ImageNameKey</span>]!</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// MARK: - Villain (All Villians)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* This extension adds static variable allVillains. An array of Villain objects</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">Villain</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Generate an array full of all of the villains in</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">var</span> allVillains: [<span class="type">Villain</span>] &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">var</span> villainArray = [<span class="type">Villain</span>]()</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> d <span class="keyword">in</span> <span class="type">Villain</span>.localVillainData() &#123;</span><br><span class="line">            villainArray.append(<span class="type">Villain</span>(dictionary: d))</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> villainArray</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">localVillainData</span><span class="params">()</span></span> -&gt; [[<span class="type">String</span> : <span class="type">String</span>]] &#123;</span><br><span class="line">        <span class="keyword">return</span> [</span><br><span class="line">            [<span class="type">Villain</span>.<span class="type">NameKey</span> : <span class="string">"Mr. Big"</span>, <span class="type">Villain</span>.<span class="type">EvilSchemeKey</span> : <span class="string">"Smuggle herion."</span>,  <span class="type">Villain</span>.<span class="type">ImageNameKey</span> : <span class="string">"Big"</span>],</span><br><span class="line">            [<span class="type">Villain</span>.<span class="type">NameKey</span> : <span class="string">"Ernest Blofeld"</span>, <span class="type">Villain</span>.<span class="type">EvilSchemeKey</span> : <span class="string">"Many, many, schemes."</span>,  <span class="type">Villain</span>.<span class="type">ImageNameKey</span> : <span class="string">"Blofeld"</span>],</span><br><span class="line">            [<span class="type">Villain</span>.<span class="type">NameKey</span> : <span class="string">"Sir Hugo Drax"</span>, <span class="type">Villain</span>.<span class="type">EvilSchemeKey</span> : <span class="string">"Nerve gass Earth, from the Moon."</span>,  <span class="type">Villain</span>.<span class="type">ImageNameKey</span> : <span class="string">"Drax"</span>],</span><br><span class="line">            [<span class="type">Villain</span>.<span class="type">NameKey</span> : <span class="string">"Jaws"</span>, <span class="type">Villain</span>.<span class="type">EvilSchemeKey</span> : <span class="string">"Kill Bond with huge metal teeth."</span>,  <span class="type">Villain</span>.<span class="type">ImageNameKey</span> : <span class="string">"Jaws"</span>],</span><br><span class="line">            [<span class="type">Villain</span>.<span class="type">NameKey</span> : <span class="string">"Rosa Klebb"</span>, <span class="type">Villain</span>.<span class="type">EvilSchemeKey</span> : <span class="string">"Humiliate MI6"</span>,  <span class="type">Villain</span>.<span class="type">ImageNameKey</span> : <span class="string">"Klebb"</span>],</span><br><span class="line">            [<span class="type">Villain</span>.<span class="type">NameKey</span> : <span class="string">"Emilio Largo"</span>, <span class="type">Villain</span>.<span class="type">EvilSchemeKey</span> : <span class="string">"Steal nuclear weapons"</span>, <span class="type">Villain</span>.<span class="type">ImageNameKey</span> : <span class="string">"EmilioLargo"</span>],</span><br><span class="line">            [<span class="type">Villain</span>.<span class="type">NameKey</span> : <span class="string">"Le Chiffre"</span>, <span class="type">Villain</span>.<span class="type">EvilSchemeKey</span> : <span class="string">"Beat bond at poker."</span>,  <span class="type">Villain</span>.<span class="type">ImageNameKey</span> : <span class="string">"Lechiffre"</span>],</span><br><span class="line">            [<span class="type">Villain</span>.<span class="type">NameKey</span> : <span class="string">"Odd Job"</span>, <span class="type">Villain</span>.<span class="type">EvilSchemeKey</span> : <span class="string">"Kill Bond with razor hat."</span>,  <span class="type">Villain</span>.<span class="type">ImageNameKey</span> : <span class="string">"OddJob"</span>],</span><br><span class="line">            [<span class="type">Villain</span>.<span class="type">NameKey</span> : <span class="string">"Francisco Scaramanga"</span>, <span class="type">Villain</span>.<span class="type">EvilSchemeKey</span> : <span class="string">"Kill Bond after assembling a golden gun."</span>,  <span class="type">Villain</span>.<span class="type">ImageNameKey</span> : <span class="string">"Scaramanga"</span>],</span><br><span class="line">            [<span class="type">Villain</span>.<span class="type">NameKey</span> : <span class="string">"Raoul Silva"</span>, <span class="type">Villain</span>.<span class="type">EvilSchemeKey</span> : <span class="string">"Kill M."</span>,  <span class="type">Villain</span>.<span class="type">ImageNameKey</span> : <span class="string">"Silva"</span>],</span><br><span class="line">            [<span class="type">Villain</span>.<span class="type">NameKey</span> : <span class="string">"Alec Trevelyan"</span>, <span class="type">Villain</span>.<span class="type">EvilSchemeKey</span> : <span class="string">"Nuke London, after killing Bond."</span>,  <span class="type">Villain</span>.<span class="type">ImageNameKey</span> : <span class="string">"Trevelyan"</span>],</span><br><span class="line">            [<span class="type">Villain</span>.<span class="type">NameKey</span> : <span class="string">"Auric Goldfinger"</span>, <span class="type">Villain</span>.<span class="type">EvilSchemeKey</span> : <span class="string">"Nuke Fort Knox."</span>,  <span class="type">Villain</span>.<span class="type">ImageNameKey</span> : <span class="string">"Goldfinger"</span>],</span><br><span class="line">            [<span class="type">Villain</span>.<span class="type">NameKey</span> : <span class="string">"Max Zorin"</span>, <span class="type">Villain</span>.<span class="type">EvilSchemeKey</span> : <span class="string">"Destroy Silicon Valley with an earthquake and flood."</span>,  <span class="type">Villain</span>.<span class="type">ImageNameKey</span> : <span class="string">"Zorin"</span>]</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="How-to-create-a-Navigation-ViewController"><a href="#How-to-create-a-Navigation-ViewController" class="headerlink" title="How to create a Navigation ViewController"></a>How to create a Navigation ViewController</h2><p><strong>Step 1:</strong> Create a new single view application</p>
+<p><strong>Step 2:</strong> Delete the single view controller (You can delete this view controller by selecting the yellow icon and then tapping the delete button)</p>
+<p><strong>Step 3:</strong> Drag a <code>UINavigationController</code> into the storyboard from the object library.</p>
+<p><strong>Step 4:</strong> Delete the automatically generated root view controller and drag in a new view controller. To reset the Navigation Controller’s Root View Controller property control click on the Navigation Controller’s round yellow icon and drag a line from the root view controller triggered segue to your new view controller.</p>
+<h2 id="Implement-the-StartOver-button"><a href="#Implement-the-StartOver-button" class="headerlink" title="Implement the StartOver button"></a>Implement the StartOver button</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MYOAViewController</span>: <span class="title">UIViewController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line">        navigationItem.rightBarButtonItem = <span class="type">UIBarButtonItem</span>(</span><br><span class="line">          title: <span class="string">"Start Over"</span>, </span><br><span class="line">          style: .plain, </span><br><span class="line">          target: <span class="keyword">self</span>, </span><br><span class="line">          action: #selector(startOver))</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">startOver</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">let</span> navigationController = navigationController &#123;</span><br><span class="line">            navigationController.popToRootViewController(animated: <span class="literal">true</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>The Navigation Controller is a stack data structure.</p>
+</blockquote>
+<h2 id="How-to-Update-the-Rock-Paper-Scissors-App-with-Navigation"><a href="#How-to-Update-the-Rock-Paper-Scissors-App-with-Navigation" class="headerlink" title="How to Update the Rock Paper Scissors App with Navigation"></a>How to Update the Rock Paper Scissors App with Navigation</h2><p><strong>Step 1.</strong> Drag a navigation controller into the storyboard and set its root view controller property to the <code>RockPaperScissorsViewController</code>.</p>
+<p><strong>Step 2.</strong> Change each of the three segues one at a time.</p>
+<ul>
+<li>Scissors is easiest: Just change the type to “show” instead of “modal”. Note the invocation of <code>prepare(for:sender:)</code>.</li>
+<li>Paper is essentially the same, but follow the invocation in the view controller and note the invocations of an IBAction, and the <code>performSegue(withIdentifier:sender:)</code> method.</li>
+<li>Rock is always the hard way. Read the documentation for <code>UINavigationController</code> to see how to programmatically push the results controller onto the navigation controller. Remember that the <code>RockPaperScissorsViewController</code> will have a navigation controller property that you can use in the action.</li>
+</ul>
+<p><strong>Step 3.</strong> Edit the <code>playAgainButtonPressed</code> method so that the “Play Again” button behaves similarly to the “Start Over” button in Make Your Own Adventure.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/iOS/MVC-Pattern.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/iOS/MVC-Pattern.html" itemprop="url">MVC Pattern</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-12-24T11:57:49+08:00">
+                2021-12-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/iOS/MVC-Pattern.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="iOS/MVC-Pattern.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  467 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://tva1.sinaimg.cn/large/006gJ2jvgy1gxpk2581unj32ta1fc7jw.jpg" alt="MVC Pattern"></p>
+<h2 id="Model-Objects"><a href="#Model-Objects" class="headerlink" title="Model Objects"></a>Model Objects</h2><p>Model objects encapsulate the data specific to an application and define the logic and computation that manipulate and process that data. For example, a model object might represent a character in a game or a contact in an address book. A model object can have to-one and to-many relationships with other model objects, and so sometimes the model layer of an application effectively is one or more object graphs. Much of the data that is part of the persistent state of the application (whether that persistent state is stored in files or databases) should reside in the model objects after the data is loaded into the application. Because model objects represent knowledge and expertise related to a specific problem domain, they can be reused in similar problem domains. Ideally, a model object should have no explicit connection to the view objects that present its data and allow users to edit that data—it should not be concerned with user-interface and presentation issues.</p>
+<p><strong>Communication</strong>: User actions in the view layer that create or modify data are communicated through a controller object and result in the creation or updating of a model object. When a model object changes (for example, new data is received over a network connection), it notifies a controller object, which updates the appropriate view objects.</p>
+<h2 id="View-Objects"><a href="#View-Objects" class="headerlink" title="View Objects"></a>View Objects</h2><p>A view object is an object in an application that users can see. A view object knows how to draw itself and can respond to user actions. A major purpose of view objects is to display data from the application’s model objects and to enable the editing of that data. Despite this, view objects are typically decoupled from model objects in an MVC application.</p>
+<p>Because you typically reuse and reconfigure them, view objects provide consistency between applications. Both the UIKit and AppKit frameworks provide collections of view classes, and Interface Builder offers dozens of view objects in its Library.</p>
+<p><strong>Communication</strong>: View objects learn about changes in model data through the application’s controller objects and communicate user-initiated changes—for example, text entered in a text field—through controller objects to an application’s model objects.</p>
+<h2 id="Controller-Objects"><a href="#Controller-Objects" class="headerlink" title="Controller Objects"></a>Controller Objects</h2><p>A controller object acts as an intermediary between one or more of an application’s view objects and one or more of its model objects. Controller objects are thus a conduit through which view objects learn about changes in model objects and vice versa. Controller objects can also perform setup and coordinating tasks for an application and manage the life cycles of other objects.</p>
+<p><strong>Communication</strong>: A controller object interprets user actions made in view objects and communicates new or changed data to the model layer. When model objects change, a controller object communicates that new model data to the view objects so that they can display it.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/iOS/Delegate.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1337,487 +1751,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/OtherArticle/四学期课程安排.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/OtherArticle/四学期课程安排.html" itemprop="url">UCSD EC80 选课</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-09-27T23:41:25+08:00">
-                2021-09-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/UCSD/" itemprop="url" rel="index">
-                    <span itemprop="name">UCSD</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/OtherArticle/四学期课程安排.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="OtherArticle/四学期课程安排.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.9k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  7 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <table>
-<thead>
-<tr>
-<th>SEASON</th>
-<th>CLASS_1</th>
-<th>CLASS_2</th>
-<th>CLASS_3</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>FALL</td>
-<td>ECE269</td>
-<td>CSE252A</td>
-<td>CSE258</td>
-</tr>
-<tr>
-<td>WINTER</td>
-<td>ECE276A</td>
-<td>ECE141A</td>
-<td>ECE143</td>
-</tr>
-<tr>
-<td>SPRING</td>
-<td>ECE272A</td>
-<td>ECE141B</td>
-<td>ECE285</td>
-</tr>
-<tr>
-<td>FALL</td>
-<td>ECE271A</td>
-<td>CSE250</td>
-<td>CSE240</td>
-</tr>
-</tbody></table>
-<h1 id="FALL-2021"><a href="#FALL-2021" class="headerlink" title="FALL 2021:"></a>FALL 2021:</h1><h2 id="ECE-269-Linear-Algebra-and-Application-Piya-Pal"><a href="#ECE-269-Linear-Algebra-and-Application-Piya-Pal" class="headerlink" title="ECE 269: Linear Algebra and Application (Piya Pal)"></a>ECE 269: Linear Algebra and Application (Piya Pal)</h2><p>Class GPA:  3.03 (111 students)<br>Stats: A+ (0%), A (5.9%, 11), A- (7.5%, 14), B+ (23.7%,44), B (16.1%, 30), B- (30.6%, 57), C+ (9.7%, 18) …<br>Weights: Quiz (20%), Final (35%), Assignments (45%)<br>Comments:<br>由于EC80的专业特性，毕业要求四门核心课，所以如果想要在四学期毕业，就必须要每学期选一门。根据往届的信息，ECE269这门课是四门课程中相对简单的，毕竟本科都有点线性代数的基础（对于我来说等于没学）。<br>作为第一学期的核心课，我自认为还是比较认真的，上课次次不落，discussion也每次都去，课后也会复习笔记，因为有些内容真的没有完全听懂。作业的话由于自己马虎，加上有些题目确实不会，导致分数也不理想，都在median附近徘徊。两个quiz，第一个quiz难度还算可以，第二个quiz难度飙升，三道题目就对了一个。到了期末就更惨了，6道题只会两个半道，到现在我还不知道能打多少分。毕竟这门课是个comprehensive的课程，要达到一定标准才能毕业，再加上GPA 3.0才能达到毕业要求，让这个等待出分的我非常的慌张。</p>
-<p>最终结果出来了，非常非常惨，期末题目十分困难，我只打了17.5分hhhh，平均分只有20多，平均一道题20分，也就是我总共也没有做对一道题，非常的离谱。之后的几天我一直在担心能不能过Comprehensive Exam，毕竟这个完全按照期末的成绩来。还好最后还是过了，不然毕业都会成问题。</p>
-<p>补充：Winter听室友说Xie老师在Winter开的ECE269很水，题目难度低很多，期末考试也非常简单，只是给分可能故意往下压了一些，但相比于Piya的期末难度肯定是要好不少的。可以考虑把269放到Winter和276A一起上，当作一门水课。</p>
-<h2 id="CSE252A-Computer-Vision-I-Ben-Ochoa"><a href="#CSE252A-Computer-Vision-I-Ben-Ochoa" class="headerlink" title="CSE252A: Computer Vision I (Ben Ochoa)"></a>CSE252A: Computer Vision I (Ben Ochoa)</h2><p>Class GPA:  3.53 (126 students)</p>
-<p>Stats: A+ (15.1%, 19), A (19.8%, 25), A- (19.8%, 25), B+ (18.3%, 23), B (12.7%, 16), B- (6.3%, 8), C+ (1.6%, 2) …</p>
-<p>Weights: Assignments (60%), Midterm (15%), Final (25%)</p>
-<p>Comments: </p>
-<p>非常不幸运的是，今年是第一年课程改革，往届的学长都说这么课是一门水课，没成想我感觉并不容易，可能是因为今年额外加了midterm和final的缘故。老师解释改革的原因是因为同学们参考往年作业太多，分数没有区分度。。但确实大部分作业在Github都能找到答案，也会有一部分新的题目，所以如果遇到困难了可以面向Github编程。</p>
-<p>课程内容的话总体来讲难度中等，课上需要认真听把知识尽量理解了，期中和期末考试的知识点大部分都来自于lecture和slide，甚至可能会考很多很细节的点，所以在做cheatsheet的时候不要只写重要的，很多细节也要写上，我就在这上面扣了不少分，现在只有后悔。这门课总体给分还算可以，虽然我考的不好。</p>
-<h2 id="CSE258-Recommender-Sys-amp-Web-Mining-Julian-McAuley"><a href="#CSE258-Recommender-Sys-amp-Web-Mining-Julian-McAuley" class="headerlink" title="CSE258:  Recommender Sys&amp;Web Mining (Julian McAuley)"></a>CSE258:  Recommender Sys&amp;Web Mining (Julian McAuley)</h2><p>Class GPA:  3.93 (226 students)</p>
-<p>Stats: A+ (51.3%, 116), A (32.3%, 73), A- (11.1%, 25), B+ (1.8%, 4), B (1.8%, 4) …</p>
-<p>Weights: Homework (24%), Assignments (50%), Midterm (26%)</p>
-<p>Comments: </p>
-<p>从成绩分布不难看出，这门课真的是给分无敌，而且4个作业可以直接选择drop掉一个最低分，也就是前三个作业写的比较好的话，最后一个可以不写。课程内容属于entry level的machine learning，前半段讲回归和推荐系统比较好理解，到后面逐渐就扩展到其它的一些模型上去了，但所幸Assignment和后面的相关程度没那么大，作为了解的内容就好。由于当时被另两科的作业折磨的死去活来，后面有些网课我压根就没去听，但体感上影响并不大。</p>
-<p>成绩确实和Assignment相关度比较大，第一个Assignment是Kaggle上的竞赛，同学们之间的排名也会计入最终分数，但比例并不大，内容和Homework3几乎差不多，只是需要进一步调参。Assignment2就是写一篇论文，用老师提供的数据库，利用上课讲的各种模型做一个预测，将结果展示出来就好，可以小组作业也可以自己一个人做。Midterm考的内容就是课上讲的那些内容，难度并不大。总之，这个课给分很好，workload适中，教授人也非常好，是一门十分推荐的课程。</p>
-<h1 id="Winter-2022"><a href="#Winter-2022" class="headerlink" title="Winter 2022"></a>Winter 2022</h1><h2 id="ECE276A-Sensing-amp-Estimation-Robotics-Nikolay-Atanasov"><a href="#ECE276A-Sensing-amp-Estimation-Robotics-Nikolay-Atanasov" class="headerlink" title="ECE276A:  Sensing &amp; Estimation Robotics (Nikolay Atanasov)"></a>ECE276A:  Sensing &amp; Estimation Robotics (Nikolay Atanasov)</h2><p>Class GPA:  3.39 (151 students)</p>
-<p>Stats: A+ (2%, 3), A (29.8%, 45), A- (10.6%, 16), B+ (21.9%, 33), B (13.2%, 20) …</p>
-<p>Weights: Homework (16%), Projects (54%), Final (30%)</p>
-<p>Comments: </p>
-<p>这门课程据说是四门core中最难的一门，体验下来确实不简单，作业题目虽然不多，但每一道题都不好做，对数学的要求极高，尤其是概率论相关的知识，像我这种数学小白写起来真的十分痛苦。Project的话极其耗费时间，每一个至少要花2-3天的时间，同样Github上也能找到一些代码，作为参考的话会容易一些。Final的难度没那么高，相比于作业的难度还是低了不少的，期末前也会发几道Practice Problems把这几个题目理解了，能过Comprehensive还是没问题的，但总体来讲这门课想拿高分很难很难，至少对我来说是这样，但想过还是挺容易的，总体比较耗时间，作为核心课，也只能咬咬牙挺过去了。</p>
-<h2 id="ECE141A-Software-Foundations-I-Rick-Gessner"><a href="#ECE141A-Software-Foundations-I-Rick-Gessner" class="headerlink" title="ECE141A: Software Foundations I (Rick Gessner)"></a>ECE141A: Software Foundations I (Rick Gessner)</h2><p>Class GPA:  2.84 (85 students)</p>
-<p>Stats: A+ (5.9%, 5), A (10.6%, 9), A- (9.4%, 8), B+ (15.3%, 13), B (5.9%, 5), B- (5.9%, 5), C+ (8.2%, 7), C (4.7%, 4)    …</p>
-<p>Weights: Homework (40%), Quizzes &amp; Midterm (25%), Participation (10%), Final (25%)</p>
-<p>Comments: </p>
-<p>从结果来看这门课给分真的挺低，但不得不说这是我很喜欢的一门课。首先这是一门少有的ECE下的编程课，Graduate student几乎想选都能选上，不像很多CSE的课还要waitlist。其次，教授人很好，对课程准备的很认真，课讲的也很有趣，非常喜欢回答问题。而且，内容也比较有用，内容涵盖了C++，Design Pattern，以及如何写出更好的代码。6个作业想过test很容易，想写好挺难，midterm就是聊聊作业里的代码，final也不是很难，随便写写就能过。可能拿分点主要在平时的作业吧，如果作业都认真做想拿个A还是可以的。不知道下学期的141B是什么体验，据说workload会大很多，希望不要翻船。。。</p>
-<h2 id="ECE143-Programming-for-Data-Analysis-Jose-Unpingco"><a href="#ECE143-Programming-for-Data-Analysis-Jose-Unpingco" class="headerlink" title="ECE143:  Programming for Data Analysis (Jose Unpingco)"></a>ECE143:  Programming for Data Analysis (Jose Unpingco)</h2><p>Class GPA:  3.88 (98 students)</p>
-<p>Stats: A+ (54.1%, 53), A (27.6%, 27), A- (8.2%, 8), B+ (6.1%, 6), B (1%, 1) …</p>
-<p>Weights: Homework (40%), Final Project (40%), Group Evaluation (20%)</p>
-<p>Comments: </p>
-<p>这门课真是一门大水课，平时作业就是一些比leetcode简单一些的算法题，每周花费的时间长则一天，短则几个小时，相比另两门课实在是轻松不少。final project是一个小组作业，内容就是找一个数据库，做一些data analysis相关的内容最后做一个展示，难度不需要太难，能把内容讲清楚就好。而且最后的给分也比想象的好，随便学学都能拿高分。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/OtherArticle/LAIOFEER公开课.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/OtherArticle/LAIOFEER公开课.html" itemprop="url">LAIOFEER公开课</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-12-22T09:57:40+08:00">
-                2020-12-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/OtherArticle/LAIOFEER公开课.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="OtherArticle/LAIOFEER公开课.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  282 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>Always put yourself in other people’s shoes. 换位思考</p>
-<p>Critical thinking 任何事情并不是非黑即白</p>
-</blockquote>
-<h2 id="BQ-question-1"><a href="#BQ-question-1" class="headerlink" title="BQ question 1"></a>BQ question 1</h2><p>Tell me about yourself:</p>
-<ol>
-<li>Name, Education, Background</li>
-<li>Skills: Primary programming language, Projects experience, intern experience</li>
-<li>Thank you</li>
-</ol>
-<p>Variants:</p>
-<ol>
-<li>Tell me your weakness(e.g. 多任务同时处理，优先级问题) 承认自己的问题，尽量真实</li>
-<li>Key points: How to avoid/address the same problems in the future.</li>
-</ol>
-<h2 id="BQ-question-2"><a href="#BQ-question-2" class="headerlink" title="BQ question 2"></a>BQ question 2</h2><p>When you have different opinions from your colleagues</p>
-<ol>
-<li>Scenarios</li>
-<li>Communication: 1 on 1 不在公共场合批评别人; How/When/Where</li>
-</ol>
-<h2 id="BQ-question-3"><a href="#BQ-question-3" class="headerlink" title="BQ question 3"></a>BQ question 3</h2><p>When you have limited time available to finish your project. Quality vs Speed</p>
-<p>分情况讨论，用项目举例</p>
-<p>Variant 1:Provide an example scenario in which you made a quick decision under pressure</p>
-<p>Variant 2: Write an email to your manager on how to explain why you missed the deadline</p>
-<h2 id="BQ-question-4"><a href="#BQ-question-4" class="headerlink" title="BQ question 4"></a>BQ question 4</h2><p>What is your career plan for the next 5 years?</p>
-<p>现在有什么，未来期待什么，怎么做？</p>
-<p>concrete example</p>
-<h2 id="BQ-question-5"><a href="#BQ-question-5" class="headerlink" title="BQ question 5"></a>BQ question 5</h2><p>How do you define a good manager? Or what do you expect from your manager?</p>
-<p>grow path</p>
-<h2 id="BQ-question-6"><a href="#BQ-question-6" class="headerlink" title="BQ question 6"></a>BQ question 6</h2><p>Please tell me one of the most challenging projects you have accomplished.</p>
-<p>Why is it challenging？</p>
-<ol>
-<li>Technical </li>
-<li>Human resource </li>
-<li>Operational complexity/ cost</li>
-<li>Novelty</li>
-<li>Time constraints</li>
-</ol>
-<p>How did you solve it?</p>
-<p>How did you evaluate the results? Scope/Impact</p>
-<blockquote>
-<p>择高处立，就平处坐，向宽处行；立上等志，行中等事，享下等福。</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1870,7 +1803,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">68</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1881,7 +1814,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1986,7 +1919,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">65.6k</span>
+    <span title="Site words total count">66.4k</span>
   
 </div>
 

@@ -346,6 +346,438 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Robotics/Matlab机器人工具箱.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Robotics/Matlab机器人工具箱.html" itemprop="url">Matlab机器人工具箱（Robotic Toolbox）</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-10T20:50:12+08:00">
+                2020-03-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器人学/" itemprop="url" rel="index">
+                    <span itemprop="name">机器人学</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Robotics/Matlab机器人工具箱.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Robotics/Matlab机器人工具箱.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.3k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Matlab机器人工具箱是我们在学习机器人学时候的一个非常好的工具，不但可以帮助我们计算，也可以做图形化的输出。</p>
+<p>在此就不多谈安装问题，主要介绍各个函数的使用方法。</p>
+<h2 id="启动机器人工具箱"><a href="#启动机器人工具箱" class="headerlink" title="启动机器人工具箱"></a>启动机器人工具箱</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">startup_rvc;</span><br></pre></td></tr></table></figure>
+
+<h2 id="绕xyz轴的旋转变化矩阵"><a href="#绕xyz轴的旋转变化矩阵" class="headerlink" title="绕xyz轴的旋转变化矩阵"></a>绕xyz轴的旋转变化矩阵</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rotx(<span class="number">30</span>*<span class="built_in">pi</span>/<span class="number">180</span>) <span class="comment">%用弧度</span></span><br><span class="line">rotx(<span class="number">30</span>,<span class="string">'deg'</span>) <span class="comment">%用角度</span></span><br><span class="line">roty(<span class="number">30</span>,<span class="string">'deg'</span>)</span><br><span class="line">rotz(<span class="number">30</span>,<span class="string">'deg'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="绕xyz轴旋转的齐次变换矩阵"><a href="#绕xyz轴旋转的齐次变换矩阵" class="headerlink" title="绕xyz轴旋转的齐次变换矩阵"></a>绕xyz轴旋转的齐次变换矩阵</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">trotx(<span class="number">30</span>*<span class="built_in">pi</span>/<span class="number">180</span>) <span class="comment">%用弧度</span></span><br><span class="line">trotx(<span class="number">30</span>,<span class="string">'deg'</span>) <span class="comment">%用角度</span></span><br><span class="line">troty(<span class="number">30</span>,<span class="string">'deg'</span>)</span><br><span class="line">trotz(<span class="number">30</span>,<span class="string">'deg'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="平移齐次变换矩阵"><a href="#平移齐次变换矩阵" class="headerlink" title="平移齐次变换矩阵"></a>平移齐次变换矩阵</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">transl([<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>])</span><br></pre></td></tr></table></figure>
+
+<h2 id="旋转变换的连续乘积"><a href="#旋转变换的连续乘积" class="headerlink" title="旋转变换的连续乘积"></a>旋转变换的连续乘积</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">trotx(<span class="number">30</span>,<span class="string">'deg'</span>)*troty(<span class="number">30</span>,<span class="string">'deg'</span>)*trotz(<span class="number">30</span>,<span class="string">'deg'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="rpy角"><a href="#rpy角" class="headerlink" title="rpy角"></a>rpy角</h2><h3 id="旋转矩阵"><a href="#旋转矩阵" class="headerlink" title="旋转矩阵"></a>旋转矩阵</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">roll=<span class="number">10</span>*<span class="built_in">pi</span>/<span class="number">180</span>; pitch=<span class="number">20</span>*<span class="built_in">pi</span>/<span class="number">180</span>; yaw=<span class="number">30</span>*<span class="built_in">pi</span>/<span class="number">180</span>;</span><br><span class="line">rpy2r(roll,pitch,yaw)</span><br><span class="line">rpy2r(roll,pitch,yaw,<span class="string">'zyx'</span>)</span><br><span class="line">rpy2r(roll,pitch,yaw,<span class="string">'xyz'</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>需要说名的是，rpy2r这个函数在不同的工具箱版本的函数并不一样，使用的角度顺序发生了改变，具体内容可以看具体版本的rpy2r.m文件。</p>
+</blockquote>
+<p>在此附上机器人工具箱中关于各个参数option的定义，仅提供10版本</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> opt.order</span><br><span class="line">        <span class="keyword">case</span> &#123;<span class="string">'xyz'</span>, <span class="string">'arm'</span>&#125;</span><br><span class="line">            <span class="comment">% XYZ order</span></span><br><span class="line">            <span class="keyword">if</span> numrows(roll) == <span class="number">1</span></span><br><span class="line">                R = rotx(yaw) * roty(pitch) * rotz(roll);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                R = <span class="built_in">zeros</span>(<span class="number">3</span>,<span class="number">3</span>,numrows(roll));</span><br><span class="line">                <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:numrows(roll)</span><br><span class="line">                    R(:,:,<span class="built_in">i</span>) = rotx(yaw(<span class="built_in">i</span>)) * roty(pitch(<span class="built_in">i</span>)) * rotz(roll(<span class="built_in">i</span>));</span><br><span class="line">                <span class="keyword">end</span></span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">case</span> &#123;<span class="string">'zyx'</span>, <span class="string">'vehicle'</span>&#125;</span><br><span class="line">            <span class="comment">% ZYX order</span></span><br><span class="line">            <span class="keyword">if</span> numrows(roll) == <span class="number">1</span></span><br><span class="line">                R = rotz(yaw) * roty(pitch) * rotx(roll);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                R = <span class="built_in">zeros</span>(<span class="number">3</span>,<span class="number">3</span>,numrows(roll));</span><br><span class="line">                <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:numrows(roll)</span><br><span class="line">                    R(:,:,<span class="built_in">i</span>) = rotz(yaw(<span class="built_in">i</span>)) * roty(pitch(<span class="built_in">i</span>)) * rotx(roll(<span class="built_in">i</span>));</span><br><span class="line">                <span class="keyword">end</span></span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">            </span><br><span class="line">        <span class="keyword">case</span> &#123;<span class="string">'yxz'</span>, <span class="string">'camera'</span>&#125;</span><br><span class="line">            <span class="comment">% YXZ order</span></span><br><span class="line">            <span class="keyword">if</span> numrows(roll) == <span class="number">1</span></span><br><span class="line">                R = roty(yaw) * rotx(pitch) * rotz(roll);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                R = <span class="built_in">zeros</span>(<span class="number">3</span>,<span class="number">3</span>,numrows(roll));</span><br><span class="line">                <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:numrows(roll)</span><br><span class="line">                    R(:,:,<span class="built_in">i</span>) = roty(yaw(<span class="built_in">i</span>)) * rotx(pitch(<span class="built_in">i</span>)) * rotz(roll(<span class="built_in">i</span>));</span><br><span class="line">                <span class="keyword">end</span></span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="检验"><a href="#检验" class="headerlink" title="检验"></a>检验</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rotx(yaw)*roty(pitch)*rotz(roll)</span><br><span class="line">rotz(roll)*roty(pitch)*rotx(yaw)</span><br><span class="line">rotx(roll)*roty(pitch)*rotz(yaw)</span><br><span class="line">rotz(yaw)*roty(pitch)*rotx(roll)</span><br></pre></td></tr></table></figure>
+
+<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%以下二者结果相同</span></span><br><span class="line">rpy2r(roll,pitch,yaw,<span class="string">'zyx'</span>)</span><br><span class="line">rotz(yaw)*roty(pitch)*rotx(roll)</span><br><span class="line"><span class="comment">%以下二者结果相同</span></span><br><span class="line">rpy2r(roll,pitch,yaw,<span class="string">'xyz'</span>)</span><br><span class="line">rotx(yaw)*roty(pitch)*rotz(roll)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>个人认为没必要背下来，也没必要理解，只要想用的时候能知道它是怎么算的就好。</p>
+</blockquote>
+<h2 id="Euler角"><a href="#Euler角" class="headerlink" title="Euler角"></a>Euler角</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%Euler角 旋转矩阵</span></span><br><span class="line">alpha=<span class="number">10</span>*<span class="built_in">pi</span>/<span class="number">180</span>; <span class="built_in">beta</span>=<span class="number">20</span>*<span class="built_in">pi</span>/<span class="number">180</span>; gama=<span class="number">30</span>*<span class="built_in">pi</span>/<span class="number">180</span>;</span><br><span class="line">eul2r(alpha,<span class="built_in">beta</span>,gama)</span><br><span class="line"><span class="comment">%检验</span></span><br><span class="line">rotz(alpha)*roty(<span class="built_in">beta</span>)*rotz(gama)</span><br></pre></td></tr></table></figure>
+
+<h2 id="齐次变换函数homtrans"><a href="#齐次变换函数homtrans" class="headerlink" title="齐次变换函数homtrans"></a>齐次变换函数<code>homtrans</code></h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">V=[<span class="number">30</span>,<span class="number">40</span>,<span class="number">60</span>];T=trotx(<span class="number">30</span>*<span class="built_in">pi</span>/<span class="number">180</span>);</span><br><span class="line">V=[V';<span class="number">1</span>];</span><br><span class="line">homtrans(T,V)</span><br><span class="line"><span class="comment">%检验</span></span><br><span class="line">T*V</span><br></pre></td></tr></table></figure>
+
+<h2 id="绕任意轴旋转函数"><a href="#绕任意轴旋转函数" class="headerlink" title="绕任意轴旋转函数"></a>绕任意轴旋转函数</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%绕任意轴旋转函数</span></span><br><span class="line">theta=<span class="number">30</span>*<span class="built_in">pi</span>/<span class="number">180</span>; k=[<span class="number">1</span>;<span class="number">0</span>;<span class="number">0</span>];</span><br><span class="line">angvec2r(theta,k)</span><br></pre></td></tr></table></figure>
+
+<h2 id="建立连杆坐标系"><a href="#建立连杆坐标系" class="headerlink" title="建立连杆坐标系"></a>建立连杆坐标系</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">L(<span class="number">1</span>)=Link(<span class="string">'revolute'</span>,<span class="string">'a'</span>,<span class="number">0</span>,<span class="string">'alpha'</span>,<span class="number">0</span>,<span class="string">'d'</span>,<span class="number">0</span>);</span><br><span class="line">L(<span class="number">1</span>).mdh=<span class="number">1</span>;</span><br><span class="line">L(<span class="number">2</span>)=Link(<span class="string">'revolute'</span>,<span class="string">'a'</span>,<span class="number">10</span>,<span class="string">'alpha'</span>,<span class="built_in">pi</span>/<span class="number">2</span>,<span class="string">'d'</span>,<span class="number">0</span>);</span><br><span class="line">L(<span class="number">2</span>).mdh=<span class="number">1</span>;</span><br><span class="line">L(<span class="number">3</span>)=Link(<span class="string">'revolute'</span>,<span class="string">'a'</span>,<span class="number">6</span>,<span class="string">'alpha'</span>,<span class="number">0</span>,<span class="string">'d'</span>,<span class="number">0</span>);</span><br><span class="line">L(<span class="number">3</span>).mdh=<span class="number">1</span>;</span><br><span class="line">R=SerialLink(L,<span class="string">'name'</span>,<span class="string">'3RRR'</span>)</span><br><span class="line"><span class="comment">%改变一些参数</span></span><br><span class="line">R.base=transl([<span class="number">-10</span> <span class="number">0</span> <span class="number">0</span>]);</span><br><span class="line">R.tool=transl([<span class="number">4</span> <span class="number">0</span> <span class="number">0</span>]);</span><br><span class="line">q0=[<span class="number">0</span> <span class="number">0</span> <span class="number">0</span>];</span><br><span class="line">R.<span class="built_in">plot</span>(q0)</span><br></pre></td></tr></table></figure>
+
+<h2 id="让连杆坐标系运动起来"><a href="#让连杆坐标系运动起来" class="headerlink" title="让连杆坐标系运动起来"></a>让连杆坐标系运动起来</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">L(<span class="number">1</span>)=Link(<span class="string">'revolute'</span>,<span class="string">'a'</span>,<span class="number">0</span>,<span class="string">'alpha'</span>,<span class="number">0</span>,<span class="string">'d'</span>,<span class="number">0</span>);</span><br><span class="line">L(<span class="number">1</span>).mdh=<span class="number">1</span>;</span><br><span class="line">L(<span class="number">2</span>)=Link(<span class="string">'revolute'</span>,<span class="string">'a'</span>,<span class="number">10</span>,<span class="string">'alpha'</span>,<span class="built_in">pi</span>/<span class="number">2</span>,<span class="string">'d'</span>,<span class="number">0</span>);</span><br><span class="line">L(<span class="number">2</span>).mdh=<span class="number">1</span>;</span><br><span class="line">L(<span class="number">3</span>)=Link(<span class="string">'revolute'</span>,<span class="string">'a'</span>,<span class="number">6</span>,<span class="string">'alpha'</span>,<span class="number">0</span>,<span class="string">'d'</span>,<span class="number">0</span>);</span><br><span class="line">L(<span class="number">3</span>).mdh=<span class="number">1</span>;</span><br><span class="line">R=SerialLink(L,<span class="string">'name'</span>,<span class="string">'3RRR'</span>)</span><br><span class="line">q1=<span class="built_in">linspace</span>(<span class="number">0</span>,<span class="built_in">pi</span>/<span class="number">2</span>,<span class="number">100</span>)';</span><br><span class="line">q2=<span class="built_in">linspace</span>(<span class="number">0</span>,<span class="built_in">pi</span>/<span class="number">2</span>,<span class="number">100</span>)';</span><br><span class="line">q3=<span class="built_in">linspace</span>(<span class="number">0</span>,<span class="built_in">pi</span>/<span class="number">2</span>,<span class="number">100</span>)';</span><br><span class="line">Q=[q1,q2,q3];</span><br><span class="line"><span class="built_in">figure</span>(<span class="number">2</span>)</span><br><span class="line">R.<span class="built_in">plot</span>(Q)</span><br><span class="line">R.fkine(Q(<span class="keyword">end</span>,:))</span><br></pre></td></tr></table></figure>
+
+<h1 id="实操任务"><a href="#实操任务" class="headerlink" title="实操任务"></a>实操任务</h1><ol>
+<li>建立两个机器人，机器人基座的相对位置可调。（实际环境中，机器人位置可能发生变动，需要进行修改）</li>
+<li>建立一个一条线段（一系列散点），线段的位置可调。（此线段即为机器人末端需要走的xyz轨迹点。实际环境中，轨迹位置随着工件安装位置而变换）</li>
+<li>针对线段上的任意一个点，使某一机器人末端以某种姿态到达该点。（为xyz轨迹点加上姿态，一般的，机械臂末端z轴应当和工件表面垂直。这里只有一条线段，可指定rpy为pi/4,0,0)</li>
+<li>针对线段上的任意一个点，使某一机器人末端以某种姿态，到达距离该点z向（末端坐标系下的z向）距离为某值的点。(此处表达的是待加工平板有一定厚度，而线段位于平板中部的情况。)</li>
+<li>在4的基础上，使得两个机器人末端z 向正对（xy不作要求），且两个机器人末端距离可调b</li>
+</ol>
+<h2 id="Matlab仿真结果图"><a href="#Matlab仿真结果图" class="headerlink" title="Matlab仿真结果图"></a>Matlab仿真结果图</h2><p><img src="https://tvax3.sinaimg.cn/large/006BuM4Jly1gd2tp522waj30ji0hgq42.jpg" alt="19"></p>
+<blockquote>
+<p>使用的机器人工具箱版本为10.3.1版本</p>
+<p>修改了工具箱自带的函数mdl_puma560，要使用代码需要在函数开头加上function p560 = mdl_puma560，结尾加上end以实现调用功能。</p>
+</blockquote>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">close all</span><br><span class="line">clear;</span><br><span class="line">d = <span class="number">0.1</span>;</span><br><span class="line"><span class="built_in">plot3</span>([<span class="number">0</span> <span class="number">0</span>],[<span class="number">-1</span> <span class="number">1</span>],[<span class="number">0</span> <span class="number">0</span>])</span><br><span class="line">p560_1 = mdl_puma560;</span><br><span class="line">p560_1.name = <span class="string">'puma1'</span>;</span><br><span class="line">p560_1.base = [<span class="number">-0.6</span> <span class="number">0</span> <span class="number">0</span>];</span><br><span class="line">p560_2 = mdl_puma560;</span><br><span class="line">p560_2.name = <span class="string">'puma2'</span>;</span><br><span class="line">p560_2.base = [<span class="number">0.6</span> <span class="number">0</span> <span class="number">0</span>];</span><br><span class="line">t=<span class="number">0</span>:<span class="number">0.05</span>:<span class="number">2</span>;</span><br><span class="line"><span class="comment">%计算puma1机械臂移动到指定点，并将z轴指向朝下的齐次变换矩阵</span></span><br><span class="line">T1 = transl(<span class="number">-0.4</span>,<span class="number">0.2</span>,<span class="number">0.1</span>);</span><br><span class="line">T2 = transl(<span class="number">0</span>,<span class="number">-0.4</span>,d)*trotx(<span class="number">180</span>);</span><br><span class="line"><span class="comment">%计算puma2机械臂移动到指定点，z轴指向朝上的齐次变换矩阵</span></span><br><span class="line">T3 = transl(<span class="number">0.2</span>,<span class="number">-0.2</span>,<span class="number">-0.1</span>);</span><br><span class="line">T4 = transl(<span class="number">0</span>,<span class="number">-0.4</span>,-d);</span><br><span class="line"><span class="comment">%利用jtraj函数让两个机械臂运动到指定点</span></span><br><span class="line">q=p560_1.jtraj(T1,T2,t);</span><br><span class="line">s=p560_2.jtraj(T3,T4,t);</span><br><span class="line"><span class="comment">%移动到指定点后沿直线移动</span></span><br><span class="line">T5 = transl(<span class="number">0</span>,<span class="number">0.5</span>,d)*trotx(<span class="number">180</span>);<span class="comment">%puma1沿直线移动</span></span><br><span class="line">T6 = transl(<span class="number">0</span>,<span class="number">0.5</span>,-d);<span class="comment">%puma2沿直线移动                                                         </span></span><br><span class="line">m=ctraj(T2,T5,<span class="number">50</span>);</span><br><span class="line">n=ctraj(T4,T6,<span class="built_in">length</span>(t));</span><br><span class="line">y=p560_1.ikine6s(m);</span><br><span class="line">f=p560_2.ikine6s(n);</span><br><span class="line"><span class="comment">%画图</span></span><br><span class="line">p560_1.<span class="built_in">plot</span>(q);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">p560_2.<span class="built_in">plot</span>(s);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">p560_1.<span class="built_in">plot</span>(y);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">p560_2.<span class="built_in">plot</span>(f);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/OtherArticle/2020美赛有感.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/OtherArticle/2020美赛有感.html" itemprop="url">2020美赛有感</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-10T14:32:33+08:00">
+                2020-03-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/随笔/" itemprop="url" rel="index">
+                    <span itemprop="name">随笔</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/OtherArticle/2020美赛有感.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="OtherArticle/2020美赛有感.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.7k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+             <font size="3" face="楷体">
+
+<p>为了出国，提升背景为目的，我在大三报名了美赛，机缘巧合在一个留学交流群里，看到一个同学问有没有人有参加数模美赛的意向，要求是会写代码，我想着就去问问，毕竟我一个从小对数学无感，并且考了几次托福都上不了90的垃圾来说，除了写写代码还能干点什么呢？我就去说明了下自己的情况，他们考虑后也同意了，他们两个是同学，都是在经济学院，男生数学好，微积分什么的都接近满分，女生英语好，托福首考105，我了解到他们的情况之后压力还是很大的，毕竟我也只是一个懂$Matlab$语法的小白啊，数学建模这个词在我的印象里简直就像是“量子力学”一样的神秘（滑稽）。后来我们三个见面聊了聊，互相了解了下情况，我们都没有太多的数学建模基础，情况类似，之后也就没再多聊。</p>
+<p>直到考试前，我们关于建模的事情聊得都不多，感觉我们三个都是比较内敛的人，我还算是其中比较外向的了，很多时候如果我不说话，估计群里就不会有人说话了。赶在寒假前期末考试后，我打算好好准备一下，虽然感觉毫无头绪，不知道从哪个高深的算法开始学起，但还是硬着头皮上，买了个课，每天听一听，后来就去北京学GRE了，数模什么的也就暂且搁置了，直到比赛前几周，才继续学一些知识。忘记说了，今年比较特殊的是，受疫情影响，美赛从一次改成了两次，一次是2月份，一次是3月份，我们当时想着或许3月能开学，就去搞3月的比赛（我实际上是觉得自己啥也不会，能拖几天是几天，拖，就恩拖）</p>
+<p>然而躲得过初一却躲不过十五，3月份的比赛马上就到了，我们采用的是腾讯会议的方式线上交流。第一天早上起得很早，六点多就看赛题了，没记错的话，我3点多就醒了一次，估计是没准备太紧张了吧…拿到赛题，用词典把B题翻译了下，了解了题意，大概就是问想在海边建沙堡的话，怎么剪最好，我当时看了就觉得，这不就是开脑洞胡思乱想嘛，一个从小都没怎么去过海边的中国人，沙堡？别搞笑了，你问我怎么做汉堡好吃还差不多。</p>
+<p>但当我用翻译软件把B题翻译了之后我才发现，或许B题是唯一一个我能理解的题目了，这就像是养龙，你说咋养就咋养，你说怎么搭沙堡就怎么搭，没有硬性规定，全靠你自己的理解，这种还算好的，毕竟只要说服了自己，就觉得没问题不是。在和两个队友商量后，也一致认为B题比较好理解，虽然暂时没有太明确的思路，但至少能靠脑子想想，编，就恩编。第一天，我们最开始思路很乱，没搞清楚应该从哪个点入手，毕竟对一个沙堡要分析的东西还是很多的，没有限定条件随便扯总不是一个事，搞数学的同学想从含水量的角度出发，我想从力的角度考虑，但奈何我的流体力学也只是学了一个皮毛，现在一个公式都想不起来的我，想从力学出发未免太难了点，搞数学的同学倒是想出了个思路，还写了不少式子，到了下午，搞数学的同学竟然已经写出了一个模型，虽然忽略了很多因素，但听起来觉得很有道理，达到了“自圆其说”的作用，于是我们就照着这个方向继续研究，提出问题，否决问题，提出方案，改正方案…就这样我慢慢觉得这个模型有搞头，至少我开始有了点思路。当晚搞数学的同学给我提出了一个难题，让我求一个函数的最小值，单求最小值不要紧，毕竟我还是上了点网课的，懂一点算法，但这函数也太复杂了，迭代套迭代，简直就是一个套娃，我完全没有思路。当晚我们还说明天要不要讨论一下F题，毕竟如果这个式子不能解决，可能这个思路就没法继续下去了。实在不行，我们就去做文字建模。。。</p>
+<p>那晚我也没怎么睡好，因为我真的不知道这个“套娃”怎么解决，第二天早上起来我就自学了下可能能解决的办法–蒙特卡洛模拟，试着化简一下式子，再写写代码，听着两个队友在腾讯会议里讨论F题的题意，我得到了一个看起来“不错”的结果，我就在里面和他们说，如果我得到了第二问的结果，你们是觉得做F题还是B题？在我的语言诱导下，我们又开始脑洞大开建沙堡。可能是算出了个结果，有了信心，我们逐渐攻克各个难题，一起讨论，我认为我们仨合作还是很愉快的，总之就是在自圆其说的道路上越走越远233。</p>
+<p>我们每天也不熬夜，大概10点左右就收工，早上八点集合，第三天，大部分问题也都已经想好。最后一天，该算的也算完了，我就给自己找点事做，下了个Latex（真的是作死），最后一天把我搞得死去活来，硬是坐在电脑前一天，从零入门Latex还好我有点Markdown基础，搞这个上手也比较快，我们改了又改，填了又填，最后在后半夜两点，在我们三个人一同的见证下交上了论文，4天的美赛到此结束，圆满收工。</p>
+<p>这次美赛，收获很多，首先感谢我的两个队友，都很靠谱！我自己也算尽心尽力了，虽然基础差，但在这几天现学了不少东西，总之还是那句话，“尽吾志也而不能至者，可以无悔矣。”</p>
+</font>
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/MicroController/【STM32】外部中断实验.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1089,429 +1521,6 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/MicroController/【STM32】端口复用.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/MicroController/【STM32】端口复用.html" itemprop="url">【STM32】端口复用</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-19T14:31:53+08:00">
-                2019-08-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/STM32/" itemprop="url" rel="index">
-                    <span itemprop="name">STM32</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/MicroController/【STM32】端口复用.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="MicroController/【STM32】端口复用.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  285 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="什么是端口复用"><a href="#什么是端口复用" class="headerlink" title="什么是端口复用"></a>什么是端口复用</h1><p>STM32有很多的内置外设，这些外设的外部引脚都是与GPIO复用的。也就是说，一个GPIO如果可以复用为内置外设的功能引脚，那么当这个GPIO作为内置外设使用的时候，就叫做复用。</p>
-<blockquote>
-<p> 例如串口1 的发送接收引脚是PA9,PA10，当我们把PA9,PA10不用作GPIO，而用做复用功能串口1的发送接收引脚的时候，叫端口复用。</p>
-</blockquote>
-<h1 id="端口复用配置过程"><a href="#端口复用配置过程" class="headerlink" title="端口复用配置过程"></a>端口复用配置过程</h1><p>以PA9,PA10配置为串口1为例</p>
-<ul>
-<li><p>GPIO端口时钟使能。<code>RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);</code></p>
-</li>
-<li><p>复用外设时钟使能。比如你要将端口PA9,PA10复用为串口，所以要使能串口时钟。<code>RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);</code></p>
-</li>
-<li><p>端口模式配置。 GPIO_Init（）函数。查表：《STM32中文参考手册V10》P110的表格“8.1.11外设的GPIO配置”</p>
-</li>
-</ul>
-<p><img src="http://ws1.sinaimg.cn/large/006BuM4Jgy1g67l5tal6nj30pb07qq4w.jpg" alt="图片4"></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);<span class="comment">//①IO时钟使能</span></span><br><span class="line"></span><br><span class="line">RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);<span class="comment">//②外设时钟使能</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//③初始化IO为对应的模式</span></span><br><span class="line">GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9; <span class="comment">//PA.9//复用推挽输出</span></span><br><span class="line">GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP; </span><br><span class="line">GPIO_Init(GPIOA, &amp;GPIO_InitStructure);</span><br><span class="line">  </span><br><span class="line">GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;<span class="comment">//PA10 PA.10 浮空输入</span></span><br><span class="line">GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;<span class="comment">//浮空输入</span></span><br><span class="line">GPIO_Init(GPIOA, &amp;GPIO_InitStructure);</span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/MicroController/【STM32】SysTick定时器.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/MicroController/【STM32】SysTick定时器.html" itemprop="url">【STM32】SysTick定时器</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-19T10:33:47+08:00">
-                2019-08-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/STM32/" itemprop="url" rel="index">
-                    <span itemprop="name">STM32</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/MicroController/【STM32】SysTick定时器.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="MicroController/【STM32】SysTick定时器.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.2k 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  5 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Systick定时器是什么"><a href="#Systick定时器是什么" class="headerlink" title="Systick定时器是什么"></a>Systick定时器是什么</h1><ul>
-<li><p>Systick定时器，是一个简单的定时器，对于CM3,CM4内核芯片，都有Systick定时器。</p>
-</li>
-<li><p>Systick定时器常用来做延时，或者实时系统的心跳时钟。这样可以节省MCU资源，不用浪费一个定时器。比如UCOS中，分时复用，需要一个最小的时间戳，一般在STM32+UCOS系统中，都采用Systick做UCOS心跳时钟。</p>
-</li>
-<li><p>Systick定时器就是系统滴答定时器，一个24 位的倒计数定时器，计到0 时，将从RELOAD 寄存器中自动重装载定时初值。只要不把它在SysTick 控制及状态寄存器中的使能位清除，就永不停息，即使在睡眠模式下也能工作。</p>
-</li>
-<li><p>SysTick定时器被捆绑在NVIC中，用于产生SYSTICK异常（异常号：15）</p>
-</li>
-<li><p>Systick中断的优先级也可以设置。</p>
-</li>
-</ul>
-<h1 id="Systick相关寄存器"><a href="#Systick相关寄存器" class="headerlink" title="Systick相关寄存器"></a>Systick相关寄存器</h1><ul>
-<li><p>CTRL             SysTick 控制和状态寄存器  LOAD<br><img src="https://wx4.sinaimg.cn/large/006BuM4Jgy1g64su5lcdnj30oo02ngm8.jpg" alt="图片2"></p>
-</li>
-<li><p>SysTick       自动重装载除值寄存器<br><img src="https://wx3.sinaimg.cn/large/006BuM4Jgy1g64sme60v6j30oh07wad1.jpg" alt="图片1"><br>对于STM32，外部时钟源是 HCLK(AHB总线时钟）的1/8内核时钟是 HCLK时钟,配置函数：SysTick_CLKSourceConfig()</p>
-</li>
-<li><p>VAL                SysTick 当前值寄存器<br><img src="https://wx3.sinaimg.cn/large/006BuM4Jgy1g64svteyv1j30od04aq4c.jpg" alt="图片3"></p>
-</li>
-<li><p>CALIB            SysTick 校准值寄存器</p>
-</li>
-</ul>
-<h1 id="Systick库函数"><a href="#Systick库函数" class="headerlink" title="Systick库函数"></a>Systick库函数</h1><p>固件库中的Systick相关函数：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SysTick_CLKSourceConfig()    <span class="comment">//Systick时钟源选择  misc.c文件中</span></span><br><span class="line">SysTick_Config(<span class="keyword">uint32_t</span> ticks) </span><br><span class="line"><span class="comment">//初始化systick,时钟为HCLK,并开启中断</span></span><br><span class="line"><span class="comment">//core_cm3.h/core_cm4.h文件中</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Systick中断服务函数：</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SysTick_Handler</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//SysTick_CLKSourceConfig函数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SysTick_CLKSourceConfig</span><span class="params">(<span class="keyword">uint32_t</span> SysTick_CLKSource)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="comment">/* Check the parameters */</span></span><br><span class="line">  assert_param(IS_SYSTICK_CLK_SOURCE(SysTick_CLKSource));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (SysTick_CLKSource == SysTick_CLKSource_HCLK)</span><br><span class="line">  &#123;</span><br><span class="line">    SysTick-&gt;CTRL |= SysTick_CLKSource_HCLK;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  &#123;</span><br><span class="line">    SysTick-&gt;CTRL &amp;= SysTick_CLKSource_HCLK_Div8;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//SysTick_CLKSourceConfig函数</span></span><br><span class="line"><span class="keyword">static</span> __<span class="function">INLINE uint32_t <span class="title">SysTick_Config</span><span class="params">(<span class="keyword">uint32_t</span> ticks)</span></span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">  <span class="keyword">if</span> (ticks &gt; SysTick_LOAD_RELOAD_Msk)  <span class="keyword">return</span> (<span class="number">1</span>);         <span class="comment">/* Reload value impossible */</span></span><br><span class="line">   </span><br><span class="line"> <span class="comment">/* set reload register */</span>                                                            </span><br><span class="line">  SysTick-&gt;LOAD  = (ticks &amp; SysTick_LOAD_RELOAD_Msk) - <span class="number">1</span>; </span><br><span class="line"><span class="comment">/* set Priority for Cortex-M0 System Interrupts */</span></span><br><span class="line">  NVIC_SetPriority (SysTick_IRQn, (<span class="number">1</span>&lt;&lt;__NVIC_PRIO_BITS) - <span class="number">1</span>); </span><br><span class="line">  SysTick-&gt;VAL   = <span class="number">0</span>;                                        <span class="comment">/* Load the SysTick Counter Value */</span></span><br><span class="line">  SysTick-&gt;CTRL  = SysTick_CTRL_CLKSOURCE_Msk | </span><br><span class="line">                   SysTick_CTRL_TICKINT_Msk   | </span><br><span class="line">                   SysTick_CTRL_ENABLE_Msk;     <span class="comment">/* Enable SysTick IRQ and SysTick Timer */</span></span><br><span class="line">  <span class="keyword">return</span> (<span class="number">0</span>);                                                  <span class="comment">/* Function successful */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//用中断的方式实现delay延时</span></span><br><span class="line"><span class="keyword">static</span> __IO <span class="keyword">uint32_t</span> TimingDelay;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Delay</span><span class="params">(__IO <span class="keyword">uint32_t</span> nTime)</span></span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">   TimingDelay = nTime;</span><br><span class="line">   <span class="keyword">while</span>(TimingDelay != <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SysTick_Handler</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (TimingDelay != <span class="number">0x00</span>) </span><br><span class="line">     &#123; </span><br><span class="line">       TimingDelay--;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"> <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"> </span>&#123;  …</span><br><span class="line">    <span class="keyword">if</span> (SysTick_Config(SystemCoreClock / <span class="number">1000</span>)) <span class="comment">//systick时钟为HCLK，中断时间间隔1ms</span></span><br><span class="line">     &#123;</span><br><span class="line">     <span class="keyword">while</span> (<span class="number">1</span>);</span><br><span class="line">     &#125;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">     &#123; Delay(<span class="number">200</span>);<span class="comment">//2ms</span></span><br><span class="line">     … </span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay_init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> SYSTEM_SUPPORT_OS  							<span class="comment">//如果需要支持OS.</span></span></span><br><span class="line">	u32 reload;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">	SysTick_CLKSourceConfig(SysTick_CLKSource_HCLK_Div8);	<span class="comment">//选择外部时钟  HCLK/8</span></span><br><span class="line">	fac_us=SystemCoreClock/<span class="number">8000000</span>;				<span class="comment">//为系统时钟的1/8  </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> SYSTEM_SUPPORT_OS  							<span class="comment">//如果需要支持OS.</span></span></span><br><span class="line">	reload=SystemCoreClock/<span class="number">8000000</span>;				<span class="comment">//每秒钟的计数次数 单位为K	   </span></span><br><span class="line">	reload*=<span class="number">1000000</span>/delay_ostickspersec;		<span class="comment">//根据delay_ostickspersec设定溢出时间</span></span><br><span class="line">												<span class="comment">//reload为24位寄存器,最大值:16777216,在72M下,约合1.86s左右	</span></span><br><span class="line">	fac_ms=<span class="number">1000</span>/delay_ostickspersec;			<span class="comment">//代表OS可以延时的最少单位	   </span></span><br><span class="line"></span><br><span class="line">	SysTick-&gt;CTRL|=SysTick_CTRL_TICKINT_Msk;   	<span class="comment">//开启SYSTICK中断</span></span><br><span class="line">	SysTick-&gt;LOAD=reload; 						<span class="comment">//每1/delay_ostickspersec秒中断一次	</span></span><br><span class="line">	SysTick-&gt;CTRL|=SysTick_CTRL_ENABLE_Msk;   	<span class="comment">//开启SYSTICK    </span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">	fac_ms=(u16)fac_us*<span class="number">1000</span>;					<span class="comment">//非OS下,代表每个ms需要的systick时钟数   </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">&#125;								    </span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> SYSTEM_SUPPORT_OS  							<span class="comment">//如果需要支持OS.</span></span></span><br><span class="line"><span class="comment">//延时nus</span></span><br><span class="line"><span class="comment">//nus为要延时的us数.		    								   </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay_us</span><span class="params">(u32 nus)</span></span></span><br><span class="line"><span class="function"></span>&#123;		</span><br><span class="line">	u32 ticks;</span><br><span class="line">	u32 told,tnow,tcnt=<span class="number">0</span>;</span><br><span class="line">	u32 reload=SysTick-&gt;LOAD;					<span class="comment">//LOAD的值	    	 </span></span><br><span class="line">	ticks=nus*fac_us; 							<span class="comment">//需要的节拍数	  		 </span></span><br><span class="line">	tcnt=<span class="number">0</span>;</span><br><span class="line">	delay_osschedlock();						<span class="comment">//阻止OS调度，防止打断us延时</span></span><br><span class="line">	told=SysTick-&gt;VAL;        					<span class="comment">//刚进入时的计数器值</span></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		tnow=SysTick-&gt;VAL;	</span><br><span class="line">		<span class="keyword">if</span>(tnow!=told)</span><br><span class="line">		&#123;	    </span><br><span class="line">			<span class="keyword">if</span>(tnow&lt;told)tcnt+=told-tnow;		<span class="comment">//这里注意一下SYSTICK是一个递减的计数器就可以了.</span></span><br><span class="line">			<span class="keyword">else</span> tcnt+=reload-tnow+told;	    </span><br><span class="line">			told=tnow;</span><br><span class="line">			<span class="keyword">if</span>(tcnt&gt;=ticks)<span class="keyword">break</span>;				<span class="comment">//时间超过/等于要延迟的时间,则退出.</span></span><br><span class="line">		&#125;  </span><br><span class="line">	&#125;;</span><br><span class="line">	delay_osschedunlock();						<span class="comment">//恢复OS调度									    </span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//延时nms</span></span><br><span class="line"><span class="comment">//nms:要延时的ms数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay_ms</span><span class="params">(u16 nms)</span></span></span><br><span class="line"><span class="function"></span>&#123;	</span><br><span class="line">	<span class="keyword">if</span>(delay_osrunning&amp;&amp;delay_osintnesting==<span class="number">0</span>)	<span class="comment">//如果OS已经在跑了,并且不是在中断里面(中断里面不能任务调度)	    </span></span><br><span class="line">	&#123;		 </span><br><span class="line">		<span class="keyword">if</span>(nms&gt;=fac_ms)							<span class="comment">//延时的时间大于OS的最少时间周期 </span></span><br><span class="line">		&#123; </span><br><span class="line">   			delay_ostimedly(nms/fac_ms);		<span class="comment">//OS延时</span></span><br><span class="line">		&#125;</span><br><span class="line">		nms%=fac_ms;							<span class="comment">//OS已经无法提供这么小的延时了,采用普通方式延时    </span></span><br><span class="line">	&#125;</span><br><span class="line">	delay_us((u32)(nms*<span class="number">1000</span>));					<span class="comment">//普通方式延时  </span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span> <span class="comment">//不用OS时</span></span></span><br><span class="line"><span class="comment">//延时nus</span></span><br><span class="line"><span class="comment">//nus为要延时的us数.		    								   </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay_us</span><span class="params">(u32 nus)</span></span></span><br><span class="line"><span class="function"></span>&#123;		</span><br><span class="line">	u32 temp;	    	 </span><br><span class="line">	SysTick-&gt;LOAD=nus*fac_us; 					<span class="comment">//时间加载	  		 </span></span><br><span class="line">	SysTick-&gt;VAL=<span class="number">0x00</span>;        					<span class="comment">//清空计数器</span></span><br><span class="line">	SysTick-&gt;CTRL|=SysTick_CTRL_ENABLE_Msk ;	<span class="comment">//开始倒数	  </span></span><br><span class="line">	<span class="keyword">do</span></span><br><span class="line">	&#123;</span><br><span class="line">		temp=SysTick-&gt;CTRL;</span><br><span class="line">	&#125;<span class="keyword">while</span>((temp&amp;<span class="number">0x01</span>)&amp;&amp;!(temp&amp;(<span class="number">1</span>&lt;&lt;<span class="number">16</span>)));		<span class="comment">//等待时间到达   </span></span><br><span class="line">	SysTick-&gt;CTRL&amp;=~SysTick_CTRL_ENABLE_Msk;	<span class="comment">//关闭计数器</span></span><br><span class="line">	SysTick-&gt;VAL =<span class="number">0X00</span>;      					 <span class="comment">//清空计数器	 </span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//延时nms</span></span><br><span class="line"><span class="comment">//注意nms的范围</span></span><br><span class="line"><span class="comment">//SysTick-&gt;LOAD为24位寄存器,所以,最大延时为:</span></span><br><span class="line"><span class="comment">//nms&lt;=0xffffff*8*1000/SYSCLK</span></span><br><span class="line"><span class="comment">//SYSCLK单位为Hz,nms单位为ms</span></span><br><span class="line"><span class="comment">//对72M条件下,nms&lt;=1864 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay_ms</span><span class="params">(u16 nms)</span></span></span><br><span class="line"><span class="function"></span>&#123;	 		  	  </span><br><span class="line">	u32 temp;		   </span><br><span class="line">	SysTick-&gt;LOAD=(u32)nms*fac_ms;				<span class="comment">//时间加载(SysTick-&gt;LOAD为24bit)</span></span><br><span class="line">	SysTick-&gt;VAL =<span class="number">0x00</span>;							<span class="comment">//清空计数器</span></span><br><span class="line">	SysTick-&gt;CTRL|=SysTick_CTRL_ENABLE_Msk ;	<span class="comment">//开始倒数  </span></span><br><span class="line">	<span class="keyword">do</span></span><br><span class="line">	&#123;</span><br><span class="line">		temp=SysTick-&gt;CTRL;</span><br><span class="line">	&#125;<span class="keyword">while</span>((temp&amp;<span class="number">0x01</span>)&amp;&amp;!(temp&amp;(<span class="number">1</span>&lt;&lt;<span class="number">16</span>)));		<span class="comment">//等待时间到达   </span></span><br><span class="line">	SysTick-&gt;CTRL&amp;=~SysTick_CTRL_ENABLE_Msk;	<span class="comment">//关闭计数器</span></span><br><span class="line">	SysTick-&gt;VAL =<span class="number">0X00</span>;       					<span class="comment">//清空计数器	  	    </span></span><br><span class="line">&#125; </span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1564,7 +1573,7 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">68</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1575,7 +1584,7 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1680,7 +1689,7 @@ void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">65.6k</span>
+    <span title="Site words total count">66.4k</span>
   
 </div>
 

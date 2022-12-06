@@ -346,7 +346,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/MicroController/【STM32】端口复用.html">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/Robotics/Matlab机器人工具箱.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Qian Hongbo">
@@ -365,7 +365,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/MicroController/【STM32】端口复用.html" itemprop="url">【STM32】端口复用</a></h2>
+                <a class="post-title-link" href="/Robotics/Matlab机器人工具箱.html" itemprop="url">Matlab机器人工具箱（Robotic Toolbox）</a></h2>
         
 
         <div class="post-meta">
@@ -377,8 +377,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-19T14:31:53+08:00">
-                2019-08-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-10T20:50:12+08:00">
+                2020-03-10
               </time>
             
 
@@ -400,8 +400,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/STM32/" itemprop="url" rel="index">
-                    <span itemprop="name">STM32</span>
+                  <a href="/categories/机器人学/" itemprop="url" rel="index">
+                    <span itemprop="name">机器人学</span>
                   </a>
                 </span>
 
@@ -420,8 +420,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/MicroController/【STM32】端口复用.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="MicroController/【STM32】端口复用.html" itemprop="commentCount"></span>
+                <a href="/Robotics/Matlab机器人工具箱.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Robotics/Matlab机器人工具箱.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -443,7 +443,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  285 字
+                  1.3k 字
                 </span>
               
 
@@ -459,7 +459,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  6 分钟
                 </span>
               
             </div>
@@ -483,23 +483,56 @@
       
         
           
-            <h1 id="什么是端口复用"><a href="#什么是端口复用" class="headerlink" title="什么是端口复用"></a>什么是端口复用</h1><p>STM32有很多的内置外设，这些外设的外部引脚都是与GPIO复用的。也就是说，一个GPIO如果可以复用为内置外设的功能引脚，那么当这个GPIO作为内置外设使用的时候，就叫做复用。</p>
+            <p>Matlab机器人工具箱是我们在学习机器人学时候的一个非常好的工具，不但可以帮助我们计算，也可以做图形化的输出。</p>
+<p>在此就不多谈安装问题，主要介绍各个函数的使用方法。</p>
+<h2 id="启动机器人工具箱"><a href="#启动机器人工具箱" class="headerlink" title="启动机器人工具箱"></a>启动机器人工具箱</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">startup_rvc;</span><br></pre></td></tr></table></figure>
+
+<h2 id="绕xyz轴的旋转变化矩阵"><a href="#绕xyz轴的旋转变化矩阵" class="headerlink" title="绕xyz轴的旋转变化矩阵"></a>绕xyz轴的旋转变化矩阵</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rotx(<span class="number">30</span>*<span class="built_in">pi</span>/<span class="number">180</span>) <span class="comment">%用弧度</span></span><br><span class="line">rotx(<span class="number">30</span>,<span class="string">'deg'</span>) <span class="comment">%用角度</span></span><br><span class="line">roty(<span class="number">30</span>,<span class="string">'deg'</span>)</span><br><span class="line">rotz(<span class="number">30</span>,<span class="string">'deg'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="绕xyz轴旋转的齐次变换矩阵"><a href="#绕xyz轴旋转的齐次变换矩阵" class="headerlink" title="绕xyz轴旋转的齐次变换矩阵"></a>绕xyz轴旋转的齐次变换矩阵</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">trotx(<span class="number">30</span>*<span class="built_in">pi</span>/<span class="number">180</span>) <span class="comment">%用弧度</span></span><br><span class="line">trotx(<span class="number">30</span>,<span class="string">'deg'</span>) <span class="comment">%用角度</span></span><br><span class="line">troty(<span class="number">30</span>,<span class="string">'deg'</span>)</span><br><span class="line">trotz(<span class="number">30</span>,<span class="string">'deg'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="平移齐次变换矩阵"><a href="#平移齐次变换矩阵" class="headerlink" title="平移齐次变换矩阵"></a>平移齐次变换矩阵</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">transl([<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>])</span><br></pre></td></tr></table></figure>
+
+<h2 id="旋转变换的连续乘积"><a href="#旋转变换的连续乘积" class="headerlink" title="旋转变换的连续乘积"></a>旋转变换的连续乘积</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">trotx(<span class="number">30</span>,<span class="string">'deg'</span>)*troty(<span class="number">30</span>,<span class="string">'deg'</span>)*trotz(<span class="number">30</span>,<span class="string">'deg'</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="rpy角"><a href="#rpy角" class="headerlink" title="rpy角"></a>rpy角</h2><h3 id="旋转矩阵"><a href="#旋转矩阵" class="headerlink" title="旋转矩阵"></a>旋转矩阵</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">roll=<span class="number">10</span>*<span class="built_in">pi</span>/<span class="number">180</span>; pitch=<span class="number">20</span>*<span class="built_in">pi</span>/<span class="number">180</span>; yaw=<span class="number">30</span>*<span class="built_in">pi</span>/<span class="number">180</span>;</span><br><span class="line">rpy2r(roll,pitch,yaw)</span><br><span class="line">rpy2r(roll,pitch,yaw,<span class="string">'zyx'</span>)</span><br><span class="line">rpy2r(roll,pitch,yaw,<span class="string">'xyz'</span>)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p> 例如串口1 的发送接收引脚是PA9,PA10，当我们把PA9,PA10不用作GPIO，而用做复用功能串口1的发送接收引脚的时候，叫端口复用。</p>
+<p>需要说名的是，rpy2r这个函数在不同的工具箱版本的函数并不一样，使用的角度顺序发生了改变，具体内容可以看具体版本的rpy2r.m文件。</p>
 </blockquote>
-<h1 id="端口复用配置过程"><a href="#端口复用配置过程" class="headerlink" title="端口复用配置过程"></a>端口复用配置过程</h1><p>以PA9,PA10配置为串口1为例</p>
-<ul>
-<li><p>GPIO端口时钟使能。<code>RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);</code></p>
-</li>
-<li><p>复用外设时钟使能。比如你要将端口PA9,PA10复用为串口，所以要使能串口时钟。<code>RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);</code></p>
-</li>
-<li><p>端口模式配置。 GPIO_Init（）函数。查表：《STM32中文参考手册V10》P110的表格“8.1.11外设的GPIO配置”</p>
-</li>
-</ul>
-<p><img src="http://ws1.sinaimg.cn/large/006BuM4Jgy1g67l5tal6nj30pb07qq4w.jpg" alt="图片4"></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);<span class="comment">//①IO时钟使能</span></span><br><span class="line"></span><br><span class="line">RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);<span class="comment">//②外设时钟使能</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//③初始化IO为对应的模式</span></span><br><span class="line">GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9; <span class="comment">//PA.9//复用推挽输出</span></span><br><span class="line">GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP; </span><br><span class="line">GPIO_Init(GPIOA, &amp;GPIO_InitStructure);</span><br><span class="line">  </span><br><span class="line">GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;<span class="comment">//PA10 PA.10 浮空输入</span></span><br><span class="line">GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;<span class="comment">//浮空输入</span></span><br><span class="line">GPIO_Init(GPIOA, &amp;GPIO_InitStructure);</span><br></pre></td></tr></table></figure>
+<p>在此附上机器人工具箱中关于各个参数option的定义，仅提供10版本</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> opt.order</span><br><span class="line">        <span class="keyword">case</span> &#123;<span class="string">'xyz'</span>, <span class="string">'arm'</span>&#125;</span><br><span class="line">            <span class="comment">% XYZ order</span></span><br><span class="line">            <span class="keyword">if</span> numrows(roll) == <span class="number">1</span></span><br><span class="line">                R = rotx(yaw) * roty(pitch) * rotz(roll);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                R = <span class="built_in">zeros</span>(<span class="number">3</span>,<span class="number">3</span>,numrows(roll));</span><br><span class="line">                <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:numrows(roll)</span><br><span class="line">                    R(:,:,<span class="built_in">i</span>) = rotx(yaw(<span class="built_in">i</span>)) * roty(pitch(<span class="built_in">i</span>)) * rotz(roll(<span class="built_in">i</span>));</span><br><span class="line">                <span class="keyword">end</span></span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">case</span> &#123;<span class="string">'zyx'</span>, <span class="string">'vehicle'</span>&#125;</span><br><span class="line">            <span class="comment">% ZYX order</span></span><br><span class="line">            <span class="keyword">if</span> numrows(roll) == <span class="number">1</span></span><br><span class="line">                R = rotz(yaw) * roty(pitch) * rotx(roll);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                R = <span class="built_in">zeros</span>(<span class="number">3</span>,<span class="number">3</span>,numrows(roll));</span><br><span class="line">                <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:numrows(roll)</span><br><span class="line">                    R(:,:,<span class="built_in">i</span>) = rotz(yaw(<span class="built_in">i</span>)) * roty(pitch(<span class="built_in">i</span>)) * rotx(roll(<span class="built_in">i</span>));</span><br><span class="line">                <span class="keyword">end</span></span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">            </span><br><span class="line">        <span class="keyword">case</span> &#123;<span class="string">'yxz'</span>, <span class="string">'camera'</span>&#125;</span><br><span class="line">            <span class="comment">% YXZ order</span></span><br><span class="line">            <span class="keyword">if</span> numrows(roll) == <span class="number">1</span></span><br><span class="line">                R = roty(yaw) * rotx(pitch) * rotz(roll);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                R = <span class="built_in">zeros</span>(<span class="number">3</span>,<span class="number">3</span>,numrows(roll));</span><br><span class="line">                <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:numrows(roll)</span><br><span class="line">                    R(:,:,<span class="built_in">i</span>) = roty(yaw(<span class="built_in">i</span>)) * rotx(pitch(<span class="built_in">i</span>)) * rotz(roll(<span class="built_in">i</span>));</span><br><span class="line">                <span class="keyword">end</span></span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="检验"><a href="#检验" class="headerlink" title="检验"></a>检验</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rotx(yaw)*roty(pitch)*rotz(roll)</span><br><span class="line">rotz(roll)*roty(pitch)*rotx(yaw)</span><br><span class="line">rotx(roll)*roty(pitch)*rotz(yaw)</span><br><span class="line">rotz(yaw)*roty(pitch)*rotx(roll)</span><br></pre></td></tr></table></figure>
 
+<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%以下二者结果相同</span></span><br><span class="line">rpy2r(roll,pitch,yaw,<span class="string">'zyx'</span>)</span><br><span class="line">rotz(yaw)*roty(pitch)*rotx(roll)</span><br><span class="line"><span class="comment">%以下二者结果相同</span></span><br><span class="line">rpy2r(roll,pitch,yaw,<span class="string">'xyz'</span>)</span><br><span class="line">rotx(yaw)*roty(pitch)*rotz(roll)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>个人认为没必要背下来，也没必要理解，只要想用的时候能知道它是怎么算的就好。</p>
+</blockquote>
+<h2 id="Euler角"><a href="#Euler角" class="headerlink" title="Euler角"></a>Euler角</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%Euler角 旋转矩阵</span></span><br><span class="line">alpha=<span class="number">10</span>*<span class="built_in">pi</span>/<span class="number">180</span>; <span class="built_in">beta</span>=<span class="number">20</span>*<span class="built_in">pi</span>/<span class="number">180</span>; gama=<span class="number">30</span>*<span class="built_in">pi</span>/<span class="number">180</span>;</span><br><span class="line">eul2r(alpha,<span class="built_in">beta</span>,gama)</span><br><span class="line"><span class="comment">%检验</span></span><br><span class="line">rotz(alpha)*roty(<span class="built_in">beta</span>)*rotz(gama)</span><br></pre></td></tr></table></figure>
+
+<h2 id="齐次变换函数homtrans"><a href="#齐次变换函数homtrans" class="headerlink" title="齐次变换函数homtrans"></a>齐次变换函数<code>homtrans</code></h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">V=[<span class="number">30</span>,<span class="number">40</span>,<span class="number">60</span>];T=trotx(<span class="number">30</span>*<span class="built_in">pi</span>/<span class="number">180</span>);</span><br><span class="line">V=[V';<span class="number">1</span>];</span><br><span class="line">homtrans(T,V)</span><br><span class="line"><span class="comment">%检验</span></span><br><span class="line">T*V</span><br></pre></td></tr></table></figure>
+
+<h2 id="绕任意轴旋转函数"><a href="#绕任意轴旋转函数" class="headerlink" title="绕任意轴旋转函数"></a>绕任意轴旋转函数</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%绕任意轴旋转函数</span></span><br><span class="line">theta=<span class="number">30</span>*<span class="built_in">pi</span>/<span class="number">180</span>; k=[<span class="number">1</span>;<span class="number">0</span>;<span class="number">0</span>];</span><br><span class="line">angvec2r(theta,k)</span><br></pre></td></tr></table></figure>
+
+<h2 id="建立连杆坐标系"><a href="#建立连杆坐标系" class="headerlink" title="建立连杆坐标系"></a>建立连杆坐标系</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">L(<span class="number">1</span>)=Link(<span class="string">'revolute'</span>,<span class="string">'a'</span>,<span class="number">0</span>,<span class="string">'alpha'</span>,<span class="number">0</span>,<span class="string">'d'</span>,<span class="number">0</span>);</span><br><span class="line">L(<span class="number">1</span>).mdh=<span class="number">1</span>;</span><br><span class="line">L(<span class="number">2</span>)=Link(<span class="string">'revolute'</span>,<span class="string">'a'</span>,<span class="number">10</span>,<span class="string">'alpha'</span>,<span class="built_in">pi</span>/<span class="number">2</span>,<span class="string">'d'</span>,<span class="number">0</span>);</span><br><span class="line">L(<span class="number">2</span>).mdh=<span class="number">1</span>;</span><br><span class="line">L(<span class="number">3</span>)=Link(<span class="string">'revolute'</span>,<span class="string">'a'</span>,<span class="number">6</span>,<span class="string">'alpha'</span>,<span class="number">0</span>,<span class="string">'d'</span>,<span class="number">0</span>);</span><br><span class="line">L(<span class="number">3</span>).mdh=<span class="number">1</span>;</span><br><span class="line">R=SerialLink(L,<span class="string">'name'</span>,<span class="string">'3RRR'</span>)</span><br><span class="line"><span class="comment">%改变一些参数</span></span><br><span class="line">R.base=transl([<span class="number">-10</span> <span class="number">0</span> <span class="number">0</span>]);</span><br><span class="line">R.tool=transl([<span class="number">4</span> <span class="number">0</span> <span class="number">0</span>]);</span><br><span class="line">q0=[<span class="number">0</span> <span class="number">0</span> <span class="number">0</span>];</span><br><span class="line">R.<span class="built_in">plot</span>(q0)</span><br></pre></td></tr></table></figure>
+
+<h2 id="让连杆坐标系运动起来"><a href="#让连杆坐标系运动起来" class="headerlink" title="让连杆坐标系运动起来"></a>让连杆坐标系运动起来</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">L(<span class="number">1</span>)=Link(<span class="string">'revolute'</span>,<span class="string">'a'</span>,<span class="number">0</span>,<span class="string">'alpha'</span>,<span class="number">0</span>,<span class="string">'d'</span>,<span class="number">0</span>);</span><br><span class="line">L(<span class="number">1</span>).mdh=<span class="number">1</span>;</span><br><span class="line">L(<span class="number">2</span>)=Link(<span class="string">'revolute'</span>,<span class="string">'a'</span>,<span class="number">10</span>,<span class="string">'alpha'</span>,<span class="built_in">pi</span>/<span class="number">2</span>,<span class="string">'d'</span>,<span class="number">0</span>);</span><br><span class="line">L(<span class="number">2</span>).mdh=<span class="number">1</span>;</span><br><span class="line">L(<span class="number">3</span>)=Link(<span class="string">'revolute'</span>,<span class="string">'a'</span>,<span class="number">6</span>,<span class="string">'alpha'</span>,<span class="number">0</span>,<span class="string">'d'</span>,<span class="number">0</span>);</span><br><span class="line">L(<span class="number">3</span>).mdh=<span class="number">1</span>;</span><br><span class="line">R=SerialLink(L,<span class="string">'name'</span>,<span class="string">'3RRR'</span>)</span><br><span class="line">q1=<span class="built_in">linspace</span>(<span class="number">0</span>,<span class="built_in">pi</span>/<span class="number">2</span>,<span class="number">100</span>)';</span><br><span class="line">q2=<span class="built_in">linspace</span>(<span class="number">0</span>,<span class="built_in">pi</span>/<span class="number">2</span>,<span class="number">100</span>)';</span><br><span class="line">q3=<span class="built_in">linspace</span>(<span class="number">0</span>,<span class="built_in">pi</span>/<span class="number">2</span>,<span class="number">100</span>)';</span><br><span class="line">Q=[q1,q2,q3];</span><br><span class="line"><span class="built_in">figure</span>(<span class="number">2</span>)</span><br><span class="line">R.<span class="built_in">plot</span>(Q)</span><br><span class="line">R.fkine(Q(<span class="keyword">end</span>,:))</span><br></pre></td></tr></table></figure>
+
+<h1 id="实操任务"><a href="#实操任务" class="headerlink" title="实操任务"></a>实操任务</h1><ol>
+<li>建立两个机器人，机器人基座的相对位置可调。（实际环境中，机器人位置可能发生变动，需要进行修改）</li>
+<li>建立一个一条线段（一系列散点），线段的位置可调。（此线段即为机器人末端需要走的xyz轨迹点。实际环境中，轨迹位置随着工件安装位置而变换）</li>
+<li>针对线段上的任意一个点，使某一机器人末端以某种姿态到达该点。（为xyz轨迹点加上姿态，一般的，机械臂末端z轴应当和工件表面垂直。这里只有一条线段，可指定rpy为pi/4,0,0)</li>
+<li>针对线段上的任意一个点，使某一机器人末端以某种姿态，到达距离该点z向（末端坐标系下的z向）距离为某值的点。(此处表达的是待加工平板有一定厚度，而线段位于平板中部的情况。)</li>
+<li>在4的基础上，使得两个机器人末端z 向正对（xy不作要求），且两个机器人末端距离可调b</li>
+</ol>
+<h2 id="Matlab仿真结果图"><a href="#Matlab仿真结果图" class="headerlink" title="Matlab仿真结果图"></a>Matlab仿真结果图</h2><p><img src="https://tvax3.sinaimg.cn/large/006BuM4Jly1gd2tp522waj30ji0hgq42.jpg" alt="19"></p>
+<blockquote>
+<p>使用的机器人工具箱版本为10.3.1版本</p>
+<p>修改了工具箱自带的函数mdl_puma560，要使用代码需要在函数开头加上function p560 = mdl_puma560，结尾加上end以实现调用功能。</p>
+</blockquote>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">close all</span><br><span class="line">clear;</span><br><span class="line">d = <span class="number">0.1</span>;</span><br><span class="line"><span class="built_in">plot3</span>([<span class="number">0</span> <span class="number">0</span>],[<span class="number">-1</span> <span class="number">1</span>],[<span class="number">0</span> <span class="number">0</span>])</span><br><span class="line">p560_1 = mdl_puma560;</span><br><span class="line">p560_1.name = <span class="string">'puma1'</span>;</span><br><span class="line">p560_1.base = [<span class="number">-0.6</span> <span class="number">0</span> <span class="number">0</span>];</span><br><span class="line">p560_2 = mdl_puma560;</span><br><span class="line">p560_2.name = <span class="string">'puma2'</span>;</span><br><span class="line">p560_2.base = [<span class="number">0.6</span> <span class="number">0</span> <span class="number">0</span>];</span><br><span class="line">t=<span class="number">0</span>:<span class="number">0.05</span>:<span class="number">2</span>;</span><br><span class="line"><span class="comment">%计算puma1机械臂移动到指定点，并将z轴指向朝下的齐次变换矩阵</span></span><br><span class="line">T1 = transl(<span class="number">-0.4</span>,<span class="number">0.2</span>,<span class="number">0.1</span>);</span><br><span class="line">T2 = transl(<span class="number">0</span>,<span class="number">-0.4</span>,d)*trotx(<span class="number">180</span>);</span><br><span class="line"><span class="comment">%计算puma2机械臂移动到指定点，z轴指向朝上的齐次变换矩阵</span></span><br><span class="line">T3 = transl(<span class="number">0.2</span>,<span class="number">-0.2</span>,<span class="number">-0.1</span>);</span><br><span class="line">T4 = transl(<span class="number">0</span>,<span class="number">-0.4</span>,-d);</span><br><span class="line"><span class="comment">%利用jtraj函数让两个机械臂运动到指定点</span></span><br><span class="line">q=p560_1.jtraj(T1,T2,t);</span><br><span class="line">s=p560_2.jtraj(T3,T4,t);</span><br><span class="line"><span class="comment">%移动到指定点后沿直线移动</span></span><br><span class="line">T5 = transl(<span class="number">0</span>,<span class="number">0.5</span>,d)*trotx(<span class="number">180</span>);<span class="comment">%puma1沿直线移动</span></span><br><span class="line">T6 = transl(<span class="number">0</span>,<span class="number">0.5</span>,-d);<span class="comment">%puma2沿直线移动                                                         </span></span><br><span class="line">m=ctraj(T2,T5,<span class="number">50</span>);</span><br><span class="line">n=ctraj(T4,T6,<span class="built_in">length</span>(t));</span><br><span class="line">y=p560_1.ikine6s(m);</span><br><span class="line">f=p560_2.ikine6s(n);</span><br><span class="line"><span class="comment">%画图</span></span><br><span class="line">p560_1.<span class="built_in">plot</span>(q);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">p560_2.<span class="built_in">plot</span>(s);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">p560_1.<span class="built_in">plot</span>(y);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">p560_2.<span class="built_in">plot</span>(f);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br></pre></td></tr></table></figure>
           
         
       
@@ -549,7 +582,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/MicroController/【STM32】SysTick定时器.html">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/OtherArticle/2020美赛有感.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Qian Hongbo">
@@ -568,7 +601,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/MicroController/【STM32】SysTick定时器.html" itemprop="url">【STM32】SysTick定时器</a></h2>
+                <a class="post-title-link" href="/OtherArticle/2020美赛有感.html" itemprop="url">2020美赛有感</a></h2>
         
 
         <div class="post-meta">
@@ -580,8 +613,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-19T10:33:47+08:00">
-                2019-08-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-10T14:32:33+08:00">
+                2020-03-10
               </time>
             
 
@@ -603,8 +636,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/STM32/" itemprop="url" rel="index">
-                    <span itemprop="name">STM32</span>
+                  <a href="/categories/随笔/" itemprop="url" rel="index">
+                    <span itemprop="name">随笔</span>
                   </a>
                 </span>
 
@@ -623,8 +656,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/MicroController/【STM32】SysTick定时器.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="MicroController/【STM32】SysTick定时器.html" itemprop="commentCount"></span>
+                <a href="/OtherArticle/2020美赛有感.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="OtherArticle/2020美赛有感.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -646,7 +679,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.2k 字
+                  1.7k 字
                 </span>
               
 
@@ -686,40 +719,16 @@
       
         
           
-            <h1 id="Systick定时器是什么"><a href="#Systick定时器是什么" class="headerlink" title="Systick定时器是什么"></a>Systick定时器是什么</h1><ul>
-<li><p>Systick定时器，是一个简单的定时器，对于CM3,CM4内核芯片，都有Systick定时器。</p>
-</li>
-<li><p>Systick定时器常用来做延时，或者实时系统的心跳时钟。这样可以节省MCU资源，不用浪费一个定时器。比如UCOS中，分时复用，需要一个最小的时间戳，一般在STM32+UCOS系统中，都采用Systick做UCOS心跳时钟。</p>
-</li>
-<li><p>Systick定时器就是系统滴答定时器，一个24 位的倒计数定时器，计到0 时，将从RELOAD 寄存器中自动重装载定时初值。只要不把它在SysTick 控制及状态寄存器中的使能位清除，就永不停息，即使在睡眠模式下也能工作。</p>
-</li>
-<li><p>SysTick定时器被捆绑在NVIC中，用于产生SYSTICK异常（异常号：15）</p>
-</li>
-<li><p>Systick中断的优先级也可以设置。</p>
-</li>
-</ul>
-<h1 id="Systick相关寄存器"><a href="#Systick相关寄存器" class="headerlink" title="Systick相关寄存器"></a>Systick相关寄存器</h1><ul>
-<li><p>CTRL             SysTick 控制和状态寄存器  LOAD<br><img src="https://wx4.sinaimg.cn/large/006BuM4Jgy1g64su5lcdnj30oo02ngm8.jpg" alt="图片2"></p>
-</li>
-<li><p>SysTick       自动重装载除值寄存器<br><img src="https://wx3.sinaimg.cn/large/006BuM4Jgy1g64sme60v6j30oh07wad1.jpg" alt="图片1"><br>对于STM32，外部时钟源是 HCLK(AHB总线时钟）的1/8内核时钟是 HCLK时钟,配置函数：SysTick_CLKSourceConfig()</p>
-</li>
-<li><p>VAL                SysTick 当前值寄存器<br><img src="https://wx3.sinaimg.cn/large/006BuM4Jgy1g64svteyv1j30od04aq4c.jpg" alt="图片3"></p>
-</li>
-<li><p>CALIB            SysTick 校准值寄存器</p>
-</li>
-</ul>
-<h1 id="Systick库函数"><a href="#Systick库函数" class="headerlink" title="Systick库函数"></a>Systick库函数</h1><p>固件库中的Systick相关函数：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SysTick_CLKSourceConfig()    <span class="comment">//Systick时钟源选择  misc.c文件中</span></span><br><span class="line">SysTick_Config(<span class="keyword">uint32_t</span> ticks) </span><br><span class="line"><span class="comment">//初始化systick,时钟为HCLK,并开启中断</span></span><br><span class="line"><span class="comment">//core_cm3.h/core_cm4.h文件中</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Systick中断服务函数：</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SysTick_Handler</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br></pre></td></tr></table></figure>
+             <font size="3" face="楷体">
 
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//SysTick_CLKSourceConfig函数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SysTick_CLKSourceConfig</span><span class="params">(<span class="keyword">uint32_t</span> SysTick_CLKSource)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="comment">/* Check the parameters */</span></span><br><span class="line">  assert_param(IS_SYSTICK_CLK_SOURCE(SysTick_CLKSource));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (SysTick_CLKSource == SysTick_CLKSource_HCLK)</span><br><span class="line">  &#123;</span><br><span class="line">    SysTick-&gt;CTRL |= SysTick_CLKSource_HCLK;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  &#123;</span><br><span class="line">    SysTick-&gt;CTRL &amp;= SysTick_CLKSource_HCLK_Div8;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//SysTick_CLKSourceConfig函数</span></span><br><span class="line"><span class="keyword">static</span> __<span class="function">INLINE uint32_t <span class="title">SysTick_Config</span><span class="params">(<span class="keyword">uint32_t</span> ticks)</span></span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">  <span class="keyword">if</span> (ticks &gt; SysTick_LOAD_RELOAD_Msk)  <span class="keyword">return</span> (<span class="number">1</span>);         <span class="comment">/* Reload value impossible */</span></span><br><span class="line">   </span><br><span class="line"> <span class="comment">/* set reload register */</span>                                                            </span><br><span class="line">  SysTick-&gt;LOAD  = (ticks &amp; SysTick_LOAD_RELOAD_Msk) - <span class="number">1</span>; </span><br><span class="line"><span class="comment">/* set Priority for Cortex-M0 System Interrupts */</span></span><br><span class="line">  NVIC_SetPriority (SysTick_IRQn, (<span class="number">1</span>&lt;&lt;__NVIC_PRIO_BITS) - <span class="number">1</span>); </span><br><span class="line">  SysTick-&gt;VAL   = <span class="number">0</span>;                                        <span class="comment">/* Load the SysTick Counter Value */</span></span><br><span class="line">  SysTick-&gt;CTRL  = SysTick_CTRL_CLKSOURCE_Msk | </span><br><span class="line">                   SysTick_CTRL_TICKINT_Msk   | </span><br><span class="line">                   SysTick_CTRL_ENABLE_Msk;     <span class="comment">/* Enable SysTick IRQ and SysTick Timer */</span></span><br><span class="line">  <span class="keyword">return</span> (<span class="number">0</span>);                                                  <span class="comment">/* Function successful */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//用中断的方式实现delay延时</span></span><br><span class="line"><span class="keyword">static</span> __IO <span class="keyword">uint32_t</span> TimingDelay;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Delay</span><span class="params">(__IO <span class="keyword">uint32_t</span> nTime)</span></span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">   TimingDelay = nTime;</span><br><span class="line">   <span class="keyword">while</span>(TimingDelay != <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SysTick_Handler</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (TimingDelay != <span class="number">0x00</span>) </span><br><span class="line">     &#123; </span><br><span class="line">       TimingDelay--;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"> <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"> </span>&#123;  …</span><br><span class="line">    <span class="keyword">if</span> (SysTick_Config(SystemCoreClock / <span class="number">1000</span>)) <span class="comment">//systick时钟为HCLK，中断时间间隔1ms</span></span><br><span class="line">     &#123;</span><br><span class="line">     <span class="keyword">while</span> (<span class="number">1</span>);</span><br><span class="line">     &#125;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">     &#123; Delay(<span class="number">200</span>);<span class="comment">//2ms</span></span><br><span class="line">     … </span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay_init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> SYSTEM_SUPPORT_OS  							<span class="comment">//如果需要支持OS.</span></span></span><br><span class="line">	u32 reload;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">	SysTick_CLKSourceConfig(SysTick_CLKSource_HCLK_Div8);	<span class="comment">//选择外部时钟  HCLK/8</span></span><br><span class="line">	fac_us=SystemCoreClock/<span class="number">8000000</span>;				<span class="comment">//为系统时钟的1/8  </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> SYSTEM_SUPPORT_OS  							<span class="comment">//如果需要支持OS.</span></span></span><br><span class="line">	reload=SystemCoreClock/<span class="number">8000000</span>;				<span class="comment">//每秒钟的计数次数 单位为K	   </span></span><br><span class="line">	reload*=<span class="number">1000000</span>/delay_ostickspersec;		<span class="comment">//根据delay_ostickspersec设定溢出时间</span></span><br><span class="line">												<span class="comment">//reload为24位寄存器,最大值:16777216,在72M下,约合1.86s左右	</span></span><br><span class="line">	fac_ms=<span class="number">1000</span>/delay_ostickspersec;			<span class="comment">//代表OS可以延时的最少单位	   </span></span><br><span class="line"></span><br><span class="line">	SysTick-&gt;CTRL|=SysTick_CTRL_TICKINT_Msk;   	<span class="comment">//开启SYSTICK中断</span></span><br><span class="line">	SysTick-&gt;LOAD=reload; 						<span class="comment">//每1/delay_ostickspersec秒中断一次	</span></span><br><span class="line">	SysTick-&gt;CTRL|=SysTick_CTRL_ENABLE_Msk;   	<span class="comment">//开启SYSTICK    </span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">	fac_ms=(u16)fac_us*<span class="number">1000</span>;					<span class="comment">//非OS下,代表每个ms需要的systick时钟数   </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">&#125;								    </span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> SYSTEM_SUPPORT_OS  							<span class="comment">//如果需要支持OS.</span></span></span><br><span class="line"><span class="comment">//延时nus</span></span><br><span class="line"><span class="comment">//nus为要延时的us数.		    								   </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay_us</span><span class="params">(u32 nus)</span></span></span><br><span class="line"><span class="function"></span>&#123;		</span><br><span class="line">	u32 ticks;</span><br><span class="line">	u32 told,tnow,tcnt=<span class="number">0</span>;</span><br><span class="line">	u32 reload=SysTick-&gt;LOAD;					<span class="comment">//LOAD的值	    	 </span></span><br><span class="line">	ticks=nus*fac_us; 							<span class="comment">//需要的节拍数	  		 </span></span><br><span class="line">	tcnt=<span class="number">0</span>;</span><br><span class="line">	delay_osschedlock();						<span class="comment">//阻止OS调度，防止打断us延时</span></span><br><span class="line">	told=SysTick-&gt;VAL;        					<span class="comment">//刚进入时的计数器值</span></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		tnow=SysTick-&gt;VAL;	</span><br><span class="line">		<span class="keyword">if</span>(tnow!=told)</span><br><span class="line">		&#123;	    </span><br><span class="line">			<span class="keyword">if</span>(tnow&lt;told)tcnt+=told-tnow;		<span class="comment">//这里注意一下SYSTICK是一个递减的计数器就可以了.</span></span><br><span class="line">			<span class="keyword">else</span> tcnt+=reload-tnow+told;	    </span><br><span class="line">			told=tnow;</span><br><span class="line">			<span class="keyword">if</span>(tcnt&gt;=ticks)<span class="keyword">break</span>;				<span class="comment">//时间超过/等于要延迟的时间,则退出.</span></span><br><span class="line">		&#125;  </span><br><span class="line">	&#125;;</span><br><span class="line">	delay_osschedunlock();						<span class="comment">//恢复OS调度									    </span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//延时nms</span></span><br><span class="line"><span class="comment">//nms:要延时的ms数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay_ms</span><span class="params">(u16 nms)</span></span></span><br><span class="line"><span class="function"></span>&#123;	</span><br><span class="line">	<span class="keyword">if</span>(delay_osrunning&amp;&amp;delay_osintnesting==<span class="number">0</span>)	<span class="comment">//如果OS已经在跑了,并且不是在中断里面(中断里面不能任务调度)	    </span></span><br><span class="line">	&#123;		 </span><br><span class="line">		<span class="keyword">if</span>(nms&gt;=fac_ms)							<span class="comment">//延时的时间大于OS的最少时间周期 </span></span><br><span class="line">		&#123; </span><br><span class="line">   			delay_ostimedly(nms/fac_ms);		<span class="comment">//OS延时</span></span><br><span class="line">		&#125;</span><br><span class="line">		nms%=fac_ms;							<span class="comment">//OS已经无法提供这么小的延时了,采用普通方式延时    </span></span><br><span class="line">	&#125;</span><br><span class="line">	delay_us((u32)(nms*<span class="number">1000</span>));					<span class="comment">//普通方式延时  </span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span> <span class="comment">//不用OS时</span></span></span><br><span class="line"><span class="comment">//延时nus</span></span><br><span class="line"><span class="comment">//nus为要延时的us数.		    								   </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay_us</span><span class="params">(u32 nus)</span></span></span><br><span class="line"><span class="function"></span>&#123;		</span><br><span class="line">	u32 temp;	    	 </span><br><span class="line">	SysTick-&gt;LOAD=nus*fac_us; 					<span class="comment">//时间加载	  		 </span></span><br><span class="line">	SysTick-&gt;VAL=<span class="number">0x00</span>;        					<span class="comment">//清空计数器</span></span><br><span class="line">	SysTick-&gt;CTRL|=SysTick_CTRL_ENABLE_Msk ;	<span class="comment">//开始倒数	  </span></span><br><span class="line">	<span class="keyword">do</span></span><br><span class="line">	&#123;</span><br><span class="line">		temp=SysTick-&gt;CTRL;</span><br><span class="line">	&#125;<span class="keyword">while</span>((temp&amp;<span class="number">0x01</span>)&amp;&amp;!(temp&amp;(<span class="number">1</span>&lt;&lt;<span class="number">16</span>)));		<span class="comment">//等待时间到达   </span></span><br><span class="line">	SysTick-&gt;CTRL&amp;=~SysTick_CTRL_ENABLE_Msk;	<span class="comment">//关闭计数器</span></span><br><span class="line">	SysTick-&gt;VAL =<span class="number">0X00</span>;      					 <span class="comment">//清空计数器	 </span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//延时nms</span></span><br><span class="line"><span class="comment">//注意nms的范围</span></span><br><span class="line"><span class="comment">//SysTick-&gt;LOAD为24位寄存器,所以,最大延时为:</span></span><br><span class="line"><span class="comment">//nms&lt;=0xffffff*8*1000/SYSCLK</span></span><br><span class="line"><span class="comment">//SYSCLK单位为Hz,nms单位为ms</span></span><br><span class="line"><span class="comment">//对72M条件下,nms&lt;=1864 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay_ms</span><span class="params">(u16 nms)</span></span></span><br><span class="line"><span class="function"></span>&#123;	 		  	  </span><br><span class="line">	u32 temp;		   </span><br><span class="line">	SysTick-&gt;LOAD=(u32)nms*fac_ms;				<span class="comment">//时间加载(SysTick-&gt;LOAD为24bit)</span></span><br><span class="line">	SysTick-&gt;VAL =<span class="number">0x00</span>;							<span class="comment">//清空计数器</span></span><br><span class="line">	SysTick-&gt;CTRL|=SysTick_CTRL_ENABLE_Msk ;	<span class="comment">//开始倒数  </span></span><br><span class="line">	<span class="keyword">do</span></span><br><span class="line">	&#123;</span><br><span class="line">		temp=SysTick-&gt;CTRL;</span><br><span class="line">	&#125;<span class="keyword">while</span>((temp&amp;<span class="number">0x01</span>)&amp;&amp;!(temp&amp;(<span class="number">1</span>&lt;&lt;<span class="number">16</span>)));		<span class="comment">//等待时间到达   </span></span><br><span class="line">	SysTick-&gt;CTRL&amp;=~SysTick_CTRL_ENABLE_Msk;	<span class="comment">//关闭计数器</span></span><br><span class="line">	SysTick-&gt;VAL =<span class="number">0X00</span>;       					<span class="comment">//清空计数器	  	    </span></span><br><span class="line">&#125; </span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
-
-
+<p>为了出国，提升背景为目的，我在大三报名了美赛，机缘巧合在一个留学交流群里，看到一个同学问有没有人有参加数模美赛的意向，要求是会写代码，我想着就去问问，毕竟我一个从小对数学无感，并且考了几次托福都上不了90的垃圾来说，除了写写代码还能干点什么呢？我就去说明了下自己的情况，他们考虑后也同意了，他们两个是同学，都是在经济学院，男生数学好，微积分什么的都接近满分，女生英语好，托福首考105，我了解到他们的情况之后压力还是很大的，毕竟我也只是一个懂$Matlab$语法的小白啊，数学建模这个词在我的印象里简直就像是“量子力学”一样的神秘（滑稽）。后来我们三个见面聊了聊，互相了解了下情况，我们都没有太多的数学建模基础，情况类似，之后也就没再多聊。</p>
+<p>直到考试前，我们关于建模的事情聊得都不多，感觉我们三个都是比较内敛的人，我还算是其中比较外向的了，很多时候如果我不说话，估计群里就不会有人说话了。赶在寒假前期末考试后，我打算好好准备一下，虽然感觉毫无头绪，不知道从哪个高深的算法开始学起，但还是硬着头皮上，买了个课，每天听一听，后来就去北京学GRE了，数模什么的也就暂且搁置了，直到比赛前几周，才继续学一些知识。忘记说了，今年比较特殊的是，受疫情影响，美赛从一次改成了两次，一次是2月份，一次是3月份，我们当时想着或许3月能开学，就去搞3月的比赛（我实际上是觉得自己啥也不会，能拖几天是几天，拖，就恩拖）</p>
+<p>然而躲得过初一却躲不过十五，3月份的比赛马上就到了，我们采用的是腾讯会议的方式线上交流。第一天早上起得很早，六点多就看赛题了，没记错的话，我3点多就醒了一次，估计是没准备太紧张了吧…拿到赛题，用词典把B题翻译了下，了解了题意，大概就是问想在海边建沙堡的话，怎么剪最好，我当时看了就觉得，这不就是开脑洞胡思乱想嘛，一个从小都没怎么去过海边的中国人，沙堡？别搞笑了，你问我怎么做汉堡好吃还差不多。</p>
+<p>但当我用翻译软件把B题翻译了之后我才发现，或许B题是唯一一个我能理解的题目了，这就像是养龙，你说咋养就咋养，你说怎么搭沙堡就怎么搭，没有硬性规定，全靠你自己的理解，这种还算好的，毕竟只要说服了自己，就觉得没问题不是。在和两个队友商量后，也一致认为B题比较好理解，虽然暂时没有太明确的思路，但至少能靠脑子想想，编，就恩编。第一天，我们最开始思路很乱，没搞清楚应该从哪个点入手，毕竟对一个沙堡要分析的东西还是很多的，没有限定条件随便扯总不是一个事，搞数学的同学想从含水量的角度出发，我想从力的角度考虑，但奈何我的流体力学也只是学了一个皮毛，现在一个公式都想不起来的我，想从力学出发未免太难了点，搞数学的同学倒是想出了个思路，还写了不少式子，到了下午，搞数学的同学竟然已经写出了一个模型，虽然忽略了很多因素，但听起来觉得很有道理，达到了“自圆其说”的作用，于是我们就照着这个方向继续研究，提出问题，否决问题，提出方案，改正方案…就这样我慢慢觉得这个模型有搞头，至少我开始有了点思路。当晚搞数学的同学给我提出了一个难题，让我求一个函数的最小值，单求最小值不要紧，毕竟我还是上了点网课的，懂一点算法，但这函数也太复杂了，迭代套迭代，简直就是一个套娃，我完全没有思路。当晚我们还说明天要不要讨论一下F题，毕竟如果这个式子不能解决，可能这个思路就没法继续下去了。实在不行，我们就去做文字建模。。。</p>
+<p>那晚我也没怎么睡好，因为我真的不知道这个“套娃”怎么解决，第二天早上起来我就自学了下可能能解决的办法–蒙特卡洛模拟，试着化简一下式子，再写写代码，听着两个队友在腾讯会议里讨论F题的题意，我得到了一个看起来“不错”的结果，我就在里面和他们说，如果我得到了第二问的结果，你们是觉得做F题还是B题？在我的语言诱导下，我们又开始脑洞大开建沙堡。可能是算出了个结果，有了信心，我们逐渐攻克各个难题，一起讨论，我认为我们仨合作还是很愉快的，总之就是在自圆其说的道路上越走越远233。</p>
+<p>我们每天也不熬夜，大概10点左右就收工，早上八点集合，第三天，大部分问题也都已经想好。最后一天，该算的也算完了，我就给自己找点事做，下了个Latex（真的是作死），最后一天把我搞得死去活来，硬是坐在电脑前一天，从零入门Latex还好我有点Markdown基础，搞这个上手也比较快，我们改了又改，填了又填，最后在后半夜两点，在我们三个人一同的见证下交上了论文，4天的美赛到此结束，圆满收工。</p>
+<p>这次美赛，收获很多，首先感谢我的两个队友，都很靠谱！我自己也算尽心尽力了，虽然基础差，但在这几天现学了不少东西，总之还是那句话，“尽吾志也而不能至者，可以无悔矣。”</p>
+</font>
           
         
       
@@ -769,7 +778,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/MicroController/【STM32】STM32时钟系统.html">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/MicroController/【STM32】外部中断实验.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Qian Hongbo">
@@ -788,7 +797,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/MicroController/【STM32】STM32时钟系统.html" itemprop="url">【STM32】STM32时钟系统和时钟系统初始化函数</a></h2>
+                <a class="post-title-link" href="/MicroController/【STM32】外部中断实验.html" itemprop="url">【STM32】外部中断实验</a></h2>
         
 
         <div class="post-meta">
@@ -800,8 +809,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-15T15:49:16+08:00">
-                2019-08-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-28T21:12:38+08:00">
+                2019-08-28
               </time>
             
 
@@ -843,8 +852,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/MicroController/【STM32】STM32时钟系统.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="MicroController/【STM32】STM32时钟系统.html" itemprop="commentCount"></span>
+                <a href="/MicroController/【STM32】外部中断实验.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="MicroController/【STM32】外部中断实验.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -866,7 +875,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.2k 字
+                  526 字
                 </span>
               
 
@@ -882,7 +891,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -902,64 +911,315 @@
 
       
       
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-          
-          
-            <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox" href="https://ws3.sinaimg.cn/large/006BuM4Jgy1g60eusarn7j30mw0f2gqp.jpg" rel="gallery_cl59ajsyn001vsxptfuj7ik9v" itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="https://ws3.sinaimg.cn/large/006BuM4Jgy1g60eusarn7j30mw0f2gqp.jpg" itemprop="contentUrl">
-              </a>
-            
-          
-
-          
-          </div>
-        </div>
-      
 
       
         
           
-            <h1 id="时钟系统知识总结"><a href="#时钟系统知识总结" class="headerlink" title="时钟系统知识总结"></a>时钟系统知识总结</h1><ol>
-<li>STM32 有5个时钟源:HSI、HSE、LSI、LSE、PLL。</li>
+            <h1 id="外部中断概述"><a href="#外部中断概述" class="headerlink" title="外部中断概述"></a>外部中断概述</h1><ol>
+<li><p>STM32的每个IO都可以作为外部中断输入。</p>
+</li>
+<li><p>STM32的中断控制器支持19个外部中断/事件请求：</p>
+</li>
 </ol>
 <ul>
-<li>HSI是高速内部时钟，RC振荡器，频率为8MHz，精度不高。</li>
-<li>HSE是高速外部时钟，可接石英/陶瓷谐振器，或者接外部时钟源，频率范围为4MHz~16MHz。</li>
-<li>LSI是低速内部时钟，RC振荡器，频率为40kHz，提供低功耗时钟。WDG</li>
-<li>LSE是低速外部时钟，接频率为32.768kHz的石英晶体。RTC </li>
-<li>PLL为锁相环倍频输出，其时钟输入源可选择为HSI/2、HSE或者HSE/2倍频可选择为2~16倍，但是其输出频率最大不得超过72MHz。</li>
-</ul>
-<ol start="2">
-<li>系统时钟SYSCLK可来源于三个时钟源：       </li>
-</ol>
-<ul>
-<li>HSI振荡器时钟</li>
-<li>HSE振荡器时钟</li>
-<li>PLL时钟</li>
+<li>线0~15：对应外部IO口的输入中断。</li>
+<li>线16：连接到PVD输出。</li>
+<li>线17：连接到RTC闹钟事件。</li>
+<li>线18：连接到USB唤醒事件。</li>
 </ul>
 <ol start="3">
-<li><p>STM32可以选择一个时钟信号输出到MCO脚(PA8)上，可以选择为PLL<br>输出的2分频、HSI、HSE、或者系统时钟。</p>
+<li><p>每个外部中断线可以独立的配置触发方式（上升沿，下降沿或者双边沿触发），触发/屏蔽，专用的状态位。</p>
 </li>
-<li><p>任何一个外设在使用之前，必须首先使能其相应的时钟。</p>
+<li><p>从上面可以看出，STM32供IO使用的中断线只有16个，但是STM32F10x系列的IO口多达上百个，那么中断线怎么跟io口对应呢？</p>
 </li>
 </ol>
-<p>几个重要的时钟：</p>
 <ul>
-<li>SYSCLK(系统时钟) :</li>
-<li>AHB总线时钟</li>
-<li>APB1总线时钟(低速): 速度最高36MHz</li>
-<li>APB2总线时钟(高速): 速度最高72MHz</li>
-<li>PLL时钟</li>
+<li>GPIOx.0映射到EXTI0</li>
+<li>GPIOx.1映射到EXTI1</li>
+<li>…</li>
+<li>GPIOx.15映射到EXTI15</li>
 </ul>
-<h1 id="RCC相关配置寄存器"><a href="#RCC相关配置寄存器" class="headerlink" title="RCC相关配置寄存器"></a>RCC相关配置寄存器</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> CR;    <span class="comment">//HSI,HSE,CSS,PLL等的使能和就绪标志位 </span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> CFGR;     <span class="comment">//PLL等的时钟源选择，分频系数设定</span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> CIR;       <span class="comment">// 清除/使能 时钟就绪中断</span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> APB2RSTR;  <span class="comment">//APB2线上外设复位寄存器</span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> APB1RSTR;   <span class="comment">//APB1线上外设复位寄存器</span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> AHBENR;    <span class="comment">//DMA，SDIO等时钟使能</span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> APB2ENR;   <span class="comment">//APB2线上外设时钟使能</span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> APB1ENR;   <span class="comment">//APB1线上外设时钟使能</span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> BDCR;        <span class="comment">//备份域控制寄存器</span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> CSR;           <span class="comment">//控制状态寄存器</span></span><br><span class="line">&#125; RCC_TypeDef;</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>IO口外部中断在中断向量表中只分配了7个中断向量，也就是<br>只能使用7个中断服务函数<blockquote>
+<p>从表中可以看出，外部中断线5<del>9分配一个中断向量，共用一个服务函数，外部中断线10</del>15分配一个中断向量，共用一个中断服务函数。</p>
+</blockquote>
+</li>
+</ol>
+<h1 id="外部中断常用库函数"><a href="#外部中断常用库函数" class="headerlink" title="外部中断常用库函数"></a>外部中断常用库函数</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//exti.c文件</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">GPIO_EXTILineConfig</span><span class="params">(<span class="keyword">uint8_t</span> GPIO_PortSource, <span class="keyword">uint8_t</span> GPIO_PinSource)</span></span>;</span><br><span class="line"><span class="comment">//设置IO口与中断线的映射关系</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">exp</span>:  GPIO_EXTILineConfig(GPIO_PortSourceGPIOE,GPIO_PinSource2);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EXTI_Init</span><span class="params">(EXTI_InitTypeDef* EXTI_InitStruct)</span></span>;</span><br><span class="line"> <span class="comment">//初始化中断线：触发方式等</span></span><br><span class="line"></span><br><span class="line"><span class="function">ITStatus <span class="title">EXTI_GetITStatus</span><span class="params">(<span class="keyword">uint32_t</span> EXTI_Line)</span></span>;</span><br><span class="line"><span class="comment">//判断中断线中断状态，是否发生</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EXTI_ClearITPendingBit</span><span class="params">(<span class="keyword">uint32_t</span> EXTI_Line)</span></span>;</span><br><span class="line"><span class="comment">//清除中断线上的中断标志位</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="SystemInit源代码"><a href="#SystemInit源代码" class="headerlink" title="SystemInit源代码"></a>SystemInit源代码</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SystemInit</span> <span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="comment">/* Reset the RCC clock configuration to the default reset state(for debug purpose) */</span></span><br><span class="line">  <span class="comment">/* Set HSION bit */</span></span><br><span class="line">  RCC-&gt;CR |= (<span class="keyword">uint32_t</span>)<span class="number">0x00000001</span>;</span><br><span class="line">  <span class="comment">//或等于，也就是将最低位设置为1，其它位不变</span></span><br><span class="line">  <span class="comment">//将最低位设置为1，HSION：内部高速时钟使能</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Reset SW, HPRE, PPRE1, PPRE2, ADCPRE and MCO bits */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> STM32F10X_CL</span></span><br><span class="line">  RCC-&gt;CFGR &amp;= (<span class="keyword">uint32_t</span>)<span class="number">0xF8FF0000</span>;</span><br><span class="line">  <span class="comment">//并未定义STM32F10X_CL</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">  RCC-&gt;CFGR &amp;= (<span class="keyword">uint32_t</span>)<span class="number">0xF0FF0000</span>;</span><br><span class="line">  <span class="comment">//将0-15位置零，将24-27置零</span></span><br><span class="line">  <span class="comment">//查表可知，低四位为零目的是使SW, HPRE, PPRE1, PPRE2, ADCPRE, MCO几个寄存器复位。</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* STM32F10X_CL */</span>   </span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">/* Reset HSEON, CSSON and PLLON bits */</span></span><br><span class="line">  RCC-&gt;CR &amp;= (<span class="keyword">uint32_t</span>)<span class="number">0xFEF6FFFF</span>;</span><br><span class="line">  <span class="comment">//将16-19位与0110运算，也就是16,19位置零</span></span><br><span class="line">  <span class="comment">//将24-27位与1110运算，也就是24位置零</span></span><br><span class="line">  <span class="comment">//查表可知，目的是将HSEON, CSSON and PLLON几个寄存器复位</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Reset HSEBYP bit */</span></span><br><span class="line">  RCC-&gt;CR &amp;= (<span class="keyword">uint32_t</span>)<span class="number">0xFFFBFFFF</span>;</span><br><span class="line">  <span class="comment">//16-19位为B，也就是1011</span></span><br><span class="line">  <span class="comment">//与运算，也就是将18位置零</span></span><br><span class="line">  <span class="comment">//查表可知，目的是将HSEBYP复位</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Reset PLLSRC, PLLXTPRE, PLLMUL and USBPRE/OTGFSPRE bits */</span></span><br><span class="line">  RCC-&gt;CFGR &amp;= (<span class="keyword">uint32_t</span>)<span class="number">0xFF80FFFF</span>;</span><br><span class="line">  <span class="comment">//16-19位为与运算0000</span></span><br><span class="line">  <span class="comment">//20-23位为与运算1000</span></span><br><span class="line">  <span class="comment">//也就是将16-19位置零，20-23位置零</span></span><br><span class="line">  <span class="comment">//查表可知，目的是将PLLSRC, PLLXTPRE, PLLMUL and USBPRE/OTGFSPRE 复位</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> STM32F10X_CL   <span class="comment">//并未定义</span></span></span><br><span class="line">  <span class="comment">/* Reset PLL2ON and PLL3ON bits */</span></span><br><span class="line">  RCC-&gt;CR &amp;= (<span class="keyword">uint32_t</span>)<span class="number">0xEBFFFFFF</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Disable all interrupts and clear pending bits  */</span></span><br><span class="line">  RCC-&gt;CIR = <span class="number">0x00FF0000</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Reset CFGR2 register */</span></span><br><span class="line">  RCC-&gt;CFGR2 = <span class="number">0x00000000</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">elif</span> defined (STM32F10X_LD_VL) || defined (STM32F10X_MD_VL) || (defined STM32F10X_HD_VL)</span></span><br><span class="line">  <span class="comment">/* Disable all interrupts and clear pending bits  */</span></span><br><span class="line">  RCC-&gt;CIR = <span class="number">0x009F0000</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Reset CFGR2 register */</span></span><br><span class="line">  RCC-&gt;CFGR2 = <span class="number">0x00000000</span>;      </span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">  <span class="comment">/* Disable all interrupts and clear pending bits  */</span></span><br><span class="line">  RCC-&gt;CIR = <span class="number">0x009F0000</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* STM32F10X_CL */</span></span></span><br><span class="line">    </span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> defined (STM32F10X_HD) || (defined STM32F10X_XL) || (defined STM32F10X_HD_VL)           <span class="comment">//定义了STM32F10X_HD</span></span></span><br><span class="line">  <span class="meta">#<span class="meta-keyword">ifdef</span> DATA_IN_ExtSRAM</span></span><br><span class="line">    SystemInit_ExtMemCtl(); </span><br><span class="line">  <span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* DATA_IN_ExtSRAM */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> </span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Configure the System clock frequency, HCLK, PCLK2 and PCLK1 prescalers */</span></span><br><span class="line">  <span class="comment">/* Configure the Flash Latency cycles and enable prefetch buffer */</span></span><br><span class="line">  SetSysClock();</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> VECT_TAB_SRAM</span></span><br><span class="line">  SCB-&gt;VTOR = SRAM_BASE | VECT_TAB_OFFSET; <span class="comment">/* Vector Table Relocation in Internal SRAM. */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">  SCB-&gt;VTOR = FLASH_BASE | VECT_TAB_OFFSET; <span class="comment">/* Vector Table Relocation in Internal FLASH. */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="实际代码"><a href="#实际代码" class="headerlink" title="实际代码"></a>实际代码</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"exti.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stm32f10x.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"key.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"delay.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"led.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EXTIX_Init</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	EXTI_InitTypeDef  EXTI_InitStruct;</span><br><span class="line">	NVIC_InitTypeDef  NVIC_InitStruct;</span><br><span class="line">	</span><br><span class="line">	KEY_Init();</span><br><span class="line">	</span><br><span class="line">	RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO,ENABLE);</span><br><span class="line">	</span><br><span class="line">	GPIO_EXTILineConfig(GPIO_PortSourceGPIOE,GPIO_PinSource4);</span><br><span class="line">	</span><br><span class="line">	EXTI_InitStruct.EXTI_Line = EXTI_Line4;</span><br><span class="line">	EXTI_InitStruct.EXTI_LineCmd = ENABLE;</span><br><span class="line">	EXTI_InitStruct.EXTI_Mode = EXTI_Mode_Interrupt;</span><br><span class="line">	EXTI_InitStruct.EXTI_Trigger = EXTI_Trigger_Falling;</span><br><span class="line">	EXTI_Init(&amp;EXTI_InitStruct);</span><br><span class="line">	</span><br><span class="line">	NVIC_InitStruct.NVIC_IRQChannel = EXTI4_IRQn;</span><br><span class="line">	NVIC_InitStruct.NVIC_IRQChannelCmd = ENABLE;</span><br><span class="line">	NVIC_InitStruct.NVIC_IRQChannelPreemptionPriority = <span class="number">2</span>;</span><br><span class="line">	NVIC_InitStruct.NVIC_IRQChannelSubPriority = <span class="number">2</span>;</span><br><span class="line">	NVIC_Init(&amp;NVIC_InitStruct);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EXTI4_IRQHandler</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	delay_ms(<span class="number">10</span>);</span><br><span class="line">	<span class="keyword">if</span>(KEY0 == <span class="number">0</span>)&#123;</span><br><span class="line">		LED0 = !LED0;</span><br><span class="line">		LED1 = !LED1;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//手动清除中断标志位</span></span><br><span class="line">	EXTI_ClearITPendingBit(EXTI_Line4);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">SetSysClock</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> SYSCLK_FREQ_HSE</span></span><br><span class="line">  SetSysClockToHSE();</span><br><span class="line"><span class="meta">#<span class="meta-keyword">elif</span> defined SYSCLK_FREQ_24MHz</span></span><br><span class="line">  SetSysClockTo24();</span><br><span class="line"><span class="meta">#<span class="meta-keyword">elif</span> defined SYSCLK_FREQ_36MHz</span></span><br><span class="line">  SetSysClockTo36();</span><br><span class="line"><span class="meta">#<span class="meta-keyword">elif</span> defined SYSCLK_FREQ_48MHz</span></span><br><span class="line">  SetSysClockTo48();</span><br><span class="line"><span class="meta">#<span class="meta-keyword">elif</span> defined SYSCLK_FREQ_56MHz</span></span><br><span class="line">  SetSysClockTo56();  </span><br><span class="line"><span class="meta">#<span class="meta-keyword">elif</span> defined SYSCLK_FREQ_72MHz</span></span><br><span class="line">  SetSysClockTo72();</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//main.c文件</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stm32f10x.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"led.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"beep.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"key.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"sys.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"delay.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"exti.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"usart.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	delay_init();	    	  <span class="comment">//延时函数初始化	  </span></span><br><span class="line">	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);</span><br><span class="line"> 	LED_Init();			      <span class="comment">//LED端口初始化</span></span><br><span class="line">	KEY_Init();           <span class="comment">//初始化与按键连接的硬件接口</span></span><br><span class="line">	EXTIX_Init();</span><br><span class="line">	LED0 = <span class="number">0</span>;					    <span class="comment">//先点亮红灯</span></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"OK\r\n"</span>);</span><br><span class="line">	&#125;	 </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	
 
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">SetSysClockTo72</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  __IO <span class="keyword">uint32_t</span> StartUpCounter = <span class="number">0</span>, HSEStatus = <span class="number">0</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">/* SYSCLK, HCLK, PCLK2 and PCLK1 configuration ---------------------------*/</span>    </span><br><span class="line">  <span class="comment">/* Enable HSE */</span>    </span><br><span class="line">  RCC-&gt;CR |= ((<span class="keyword">uint32_t</span>)RCC_CR_HSEON);</span><br><span class="line"> </span><br><span class="line">  <span class="comment">/* Wait till HSE is ready and if Time out is reached exit */</span></span><br><span class="line">  <span class="keyword">do</span></span><br><span class="line">  &#123;</span><br><span class="line">    HSEStatus = RCC-&gt;CR &amp; RCC_CR_HSERDY;</span><br><span class="line">    StartUpCounter++;  </span><br><span class="line">  &#125; <span class="keyword">while</span>((HSEStatus == <span class="number">0</span>) &amp;&amp; (StartUpCounter != HSE_STARTUP_TIMEOUT));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> ((RCC-&gt;CR &amp; RCC_CR_HSERDY) != RESET)</span><br><span class="line">  &#123;</span><br><span class="line">    HSEStatus = (<span class="keyword">uint32_t</span>)<span class="number">0x01</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  &#123;</span><br><span class="line">    HSEStatus = (<span class="keyword">uint32_t</span>)<span class="number">0x00</span>;</span><br><span class="line">  &#125;  </span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (HSEStatus == (<span class="keyword">uint32_t</span>)<span class="number">0x01</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">/* Enable Prefetch Buffer */</span></span><br><span class="line">    FLASH-&gt;ACR |= FLASH_ACR_PRFTBE;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Flash 2 wait state */</span></span><br><span class="line">    FLASH-&gt;ACR &amp;= (<span class="keyword">uint32_t</span>)((<span class="keyword">uint32_t</span>)~FLASH_ACR_LATENCY);</span><br><span class="line">    FLASH-&gt;ACR |= (<span class="keyword">uint32_t</span>)FLASH_ACR_LATENCY_2;    </span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">    <span class="comment">/* HCLK = SYSCLK */</span></span><br><span class="line">    RCC-&gt;CFGR |= (<span class="keyword">uint32_t</span>)RCC_CFGR_HPRE_DIV1;</span><br><span class="line">      </span><br><span class="line">    <span class="comment">/* PCLK2 = HCLK */</span></span><br><span class="line">    RCC-&gt;CFGR |= (<span class="keyword">uint32_t</span>)RCC_CFGR_PPRE2_DIV1;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/* PCLK1 = HCLK */</span></span><br><span class="line">    RCC-&gt;CFGR |= (<span class="keyword">uint32_t</span>)RCC_CFGR_PPRE1_DIV2;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> STM32F10X_CL</span></span><br><span class="line">    <span class="comment">/* Configure PLLs ------------------------------------------------------*/</span></span><br><span class="line">    <span class="comment">/* PLL2 configuration: PLL2CLK = (HSE / 5) * 8 = 40 MHz */</span></span><br><span class="line">    <span class="comment">/* PREDIV1 configuration: PREDIV1CLK = PLL2 / 5 = 8 MHz */</span></span><br><span class="line">        </span><br><span class="line">    RCC-&gt;CFGR2 &amp;= (<span class="keyword">uint32_t</span>)~(RCC_CFGR2_PREDIV2 | RCC_CFGR2_PLL2MUL |</span><br><span class="line">                              RCC_CFGR2_PREDIV1 | RCC_CFGR2_PREDIV1SRC);</span><br><span class="line">    RCC-&gt;CFGR2 |= (<span class="keyword">uint32_t</span>)(RCC_CFGR2_PREDIV2_DIV5 | RCC_CFGR2_PLL2MUL8 |</span><br><span class="line">                             RCC_CFGR2_PREDIV1SRC_PLL2 | RCC_CFGR2_PREDIV1_DIV5);</span><br><span class="line">  </span><br><span class="line">    <span class="comment">/* Enable PLL2 */</span></span><br><span class="line">    RCC-&gt;CR |= RCC_CR_PLL2ON;</span><br><span class="line">    <span class="comment">/* Wait till PLL2 is ready */</span></span><br><span class="line">    <span class="keyword">while</span>((RCC-&gt;CR &amp; RCC_CR_PLL2RDY) == <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">   </span><br><span class="line">    <span class="comment">/* PLL configuration: PLLCLK = PREDIV1 * 9 = 72 MHz */</span> </span><br><span class="line">    RCC-&gt;CFGR &amp;= (<span class="keyword">uint32_t</span>)~(RCC_CFGR_PLLXTPRE | RCC_CFGR_PLLSRC | RCC_CFGR_PLLMULL);</span><br><span class="line">    RCC-&gt;CFGR |= (<span class="keyword">uint32_t</span>)(RCC_CFGR_PLLXTPRE_PREDIV1 | RCC_CFGR_PLLSRC_PREDIV1 | </span><br><span class="line">                            RCC_CFGR_PLLMULL9); </span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span>    </span></span><br><span class="line">    <span class="comment">/*  PLL configuration: PLLCLK = HSE * 9 = 72 MHz */</span></span><br><span class="line">    RCC-&gt;CFGR &amp;= (<span class="keyword">uint32_t</span>)((<span class="keyword">uint32_t</span>)~(RCC_CFGR_PLLSRC | RCC_CFGR_PLLXTPRE |</span><br><span class="line">                                        RCC_CFGR_PLLMULL));</span><br><span class="line">    RCC-&gt;CFGR |= (<span class="keyword">uint32_t</span>)(RCC_CFGR_PLLSRC_HSE | RCC_CFGR_PLLMULL9);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* STM32F10X_CL */</span></span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Enable PLL */</span></span><br><span class="line">    RCC-&gt;CR |= RCC_CR_PLLON;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Wait till PLL is ready */</span></span><br><span class="line">    <span class="keyword">while</span>((RCC-&gt;CR &amp; RCC_CR_PLLRDY) == <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/* Select PLL as system clock source */</span></span><br><span class="line">    RCC-&gt;CFGR &amp;= (<span class="keyword">uint32_t</span>)((<span class="keyword">uint32_t</span>)~(RCC_CFGR_SW));</span><br><span class="line">    RCC-&gt;CFGR |= (<span class="keyword">uint32_t</span>)RCC_CFGR_SW_PLL;    </span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Wait till PLL is used as system clock source */</span></span><br><span class="line">    <span class="keyword">while</span> ((RCC-&gt;CFGR &amp; (<span class="keyword">uint32_t</span>)RCC_CFGR_SWS) != (<span class="keyword">uint32_t</span>)<span class="number">0x08</span>)</span><br><span class="line">    &#123;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  &#123; <span class="comment">/* If HSE fails to start-up, the application will have wrong clock </span></span><br><span class="line"><span class="comment">         configuration. User can add here some code to deal with this error */</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+    
 
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/MicroController/【STM32】串口通信基本原理.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Qian Hongbo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/Me.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Qian Homeberg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/MicroController/【STM32】串口通信基本原理.html" itemprop="url">【STM32】串口通信基本原理</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-19T16:56:38+08:00">
+                2019-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/STM32/" itemprop="url" rel="index">
+                    <span itemprop="name">STM32</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+		  
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/MicroController/【STM32】串口通信基本原理.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="MicroController/【STM32】串口通信基本原理.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  927 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="处理器与外部设备通信的两种方式"><a href="#处理器与外部设备通信的两种方式" class="headerlink" title="处理器与外部设备通信的两种方式"></a>处理器与外部设备通信的两种方式</h1><ol>
+<li><p>并行通信</p>
+<ul>
+<li>传输原理：数据各个位同时传输。</li>
+<li>优点：速度快</li>
+<li>缺点：占用引脚资源多</li>
+</ul>
+</li>
+<li><p>串行通信</p>
+<ul>
+<li>传输原理：数据按位顺序传输。</li>
+<li>优点：占用引脚资源少</li>
+<li>缺点：速度相对较慢</li>
+</ul>
+</li>
+</ol>
+<h1 id="串行通信"><a href="#串行通信" class="headerlink" title="串行通信"></a>串行通信</h1><h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>按照数据传送方向，分为：</p>
+<ol>
+<li><p>单工：数据传输只支持数据在<strong>一个方向上</strong>传输</p>
+</li>
+<li><p>半双工：允许数据在两个方向上传输，但是，在某一时刻，只允许数据在一个方向上传输，它实际上是一种<strong>切换方向</strong>的单工通信；</p>
+</li>
+<li><p>全双工：允许数据同时在两个方向上传输，因此，全双工通信是两个单工通信方式的结合，它要求发送设备和接收设备都有<strong>独立的</strong>接收和发送能力。 </p>
+</li>
+</ol>
+<h2 id="串行通信的通信方式"><a href="#串行通信的通信方式" class="headerlink" title="串行通信的通信方式"></a>串行通信的通信方式</h2><ol>
+<li><p>同步通信：<strong>带时钟同步信号</strong>传输。-SPI，IIC通信接口</p>
+</li>
+<li><p>异步通信：<strong>不带时钟同步信号</strong>。-<code>UART</code>(通用异步收发器),单总线（必须约定波特率，按照相同的速度发送和读取）</p>
+</li>
+</ol>
+<h1 id="常见的串行通信接口"><a href="#常见的串行通信接口" class="headerlink" title="常见的串行通信接口"></a>常见的串行通信接口</h1><p><img src="http://wx1.sinaimg.cn/large/006BuM4Jgy1g653m0aqzgj30ml0acdgt.jpg" alt="图片6"></p>
+<p>STM32的串口通信接口</p>
+<ul>
+<li>UART:通用异步收发器</li>
+<li>USART:通用同步异步收发器</li>
+</ul>
+<p>大容量STM32F10x系列芯片，包含3个USART和2个UART</p>
+<h1 id="UART异步通信方式引脚连接方法"><a href="#UART异步通信方式引脚连接方法" class="headerlink" title="UART异步通信方式引脚连接方法"></a>UART异步通信方式引脚连接方法</h1><ul>
+<li>RXD:数据输入引脚。数据接受。</li>
+<li>TXD:数据发送引脚。数据发送。</li>
+</ul>
+<p><img src="http://wx2.sinaimg.cn/large/006BuM4Jgy1g653v4l3u9j309g05hjrm.jpg" alt="图片7"></p>
+<p><img src="http://wx2.sinaimg.cn/large/006BuM4Jgy1g653vfp7wtj30d4059gm0.jpg" alt="图片8"></p>
+<p><img src="http://wx2.sinaimg.cn/large/006BuM4Jgy1g653wqh5f9j30j4071aa5.jpg" alt="图片9"></p>
+<h1 id="UART异步通信方式特点"><a href="#UART异步通信方式特点" class="headerlink" title="UART异步通信方式特点"></a>UART异步通信方式特点</h1><ul>
+<li>全双工异步通信。</li>
+<li>分数波特率发生器系统，提供精确的波特率。</li>
+<li>发送和接受共用的可编程波特率，最高可达4.5Mbits/s</li>
+<li>可编程的数据字长度（8位或者9位）；</li>
+<li>可配置的停止位（支持1或者2位停止位）；</li>
+<li>可配置的使用DMA多缓冲器通信。</li>
+<li>单独的发送器和接收器使能位。</li>
+<li>检测标志：① 接受缓冲器  ②发送缓冲器空 ③传输结束标志</li>
+<li>多个带标志的中断源。触发中断。</li>
+<li>其他：校验控制，四个错误检测标志。</li>
+</ul>
+<h1 id="STM32串口异步通信需要定义的参数"><a href="#STM32串口异步通信需要定义的参数" class="headerlink" title="STM32串口异步通信需要定义的参数"></a>STM32串口异步通信需要定义的参数</h1><ul>
+<li>起始位，通信双方约定从空闲位开始</li>
+<li>数据位（8位或者9位），第九位就是奇偶校验位</li>
+<li>奇偶校验位（第9位），偶校验：使1的数量为偶数；奇校验：使1的数量为奇数</li>
+<li>停止位（1,15,2位）</li>
+<li>波特率设置</li>
+</ul>
+<h1 id="常用的串口相关寄存器"><a href="#常用的串口相关寄存器" class="headerlink" title="常用的串口相关寄存器"></a>常用的串口相关寄存器</h1><ul>
+<li>USART_SR状态寄存器</li>
+<li>USART_DR数据寄存器</li>
+<li>USART_BRR波特率寄存器 </li>
+</ul>
+<h1 id="波特率计算方法"><a href="#波特率计算方法" class="headerlink" title="波特率计算方法"></a>波特率计算方法</h1><p><img src="http://wx1.sinaimg.cn/large/006BuM4Jgy1g654k6970sj30lv0d90z4.jpg" alt="图片11"></p>
+<h1 id="串口操作相关库函数"><a href="#串口操作相关库函数" class="headerlink" title="串口操作相关库函数"></a>串口操作相关库函数</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_Init</span><span class="params">()</span></span>; <span class="comment">//串口初始化：波特率，数据字长，奇偶校验，硬件流控以及收发使能</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_Cmd</span><span class="params">()</span></span>;<span class="comment">//使能串口</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_ITConfig</span><span class="params">()</span></span>;<span class="comment">//使能相关中断</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_SendData</span><span class="params">()</span></span>;<span class="comment">//发送数据到串口，DR</span></span><br><span class="line"><span class="keyword">uint16_t</span> USART_ReceiveData();<span class="comment">//接受数据，从DR读取接受到的数据</span></span><br><span class="line"></span><br><span class="line"><span class="function">FlagStatus <span class="title">USART_GetFlagStatus</span><span class="params">()</span></span>;<span class="comment">//获取状态标志位</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_ClearFlag</span><span class="params">()</span></span>;<span class="comment">//清除状态标志位</span></span><br><span class="line"><span class="function">ITStatus <span class="title">USART_GetITStatus</span><span class="params">()</span></span>;<span class="comment">//获取中断状态标志位</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">USART_ClearITPendingBit</span><span class="params">()</span></span>;<span class="comment">//清除中断状态标志位</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="串口配置的一般步骤"><a href="#串口配置的一般步骤" class="headerlink" title="串口配置的一般步骤"></a>串口配置的一般步骤</h1><ol>
+<li>串口时钟使能，GPIO时钟使能:<code>RCC_APB2PeriphClockCmd();</code></li>
+<li>串口复位:<code>USART_DeInit()</code>; 这一步不是必须的</li>
+<li>GPIO端口模式设置:<code>GPIO_Init();</code> 模式设置为<code>GPIO_Mode_AF_PP</code></li>
+<li>串口参数初始化：<code>USART_Init();</code></li>
+<li>开启中断并且初始化NVIC（如果需要开启中断才需要这个步骤）<code>NVIC_Init();``USART_ITConfig();</code></li>
+<li>使能串口:<code>USART_Cmd();</code></li>
+<li>编写中断处理函数：<code>USARTx_IRQHandler();</code></li>
+<li>串口数据收发：<br><code>void USART_SendData();//发送数据到串口，DR</code>, <code>uint16_t USART_ReceiveData();//接受数据，从DR读取接受到的数据</code></li>
+<li>串口传输状态获取：<br><code>FlagStatus USART_GetFlagStatus(USART_TypeDef* USARTx, uint16_t USART_FLAG);
+void USART_ClearITPendingBit(USART_TypeDef* USARTx, uint16_t USART_IT);</code></li>
+</ol>
 
           
         
@@ -1010,7 +1270,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/MicroController/【C】struct和typedef struct.html">
+    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/MicroController/【STM32】NVIC中断优先级管理.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Qian Hongbo">
@@ -1029,7 +1289,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/MicroController/【C】struct和typedef struct.html" itemprop="url">【C】struct和typedef struct</a></h2>
+                <a class="post-title-link" href="/MicroController/【STM32】NVIC中断优先级管理.html" itemprop="url">【STM32】NVIC中断优先级管理</a></h2>
         
 
         <div class="post-meta">
@@ -1041,8 +1301,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-14T17:42:08+08:00">
-                2019-08-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-19T14:39:35+08:00">
+                2019-08-19
               </time>
             
 
@@ -1064,8 +1324,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
+                  <a href="/categories/STM32/" itemprop="url" rel="index">
+                    <span itemprop="name">STM32</span>
                   </a>
                 </span>
 
@@ -1084,8 +1344,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/MicroController/【C】struct和typedef struct.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="MicroController/【C】struct和typedef struct.html" itemprop="commentCount"></span>
+                <a href="/MicroController/【STM32】NVIC中断优先级管理.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="MicroController/【STM32】NVIC中断优先级管理.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1107,7 +1367,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  363 字
+                  1.3k 字
                 </span>
               
 
@@ -1123,7 +1383,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  5 分钟
                 </span>
               
             </div>
@@ -1147,275 +1407,83 @@
       
         
           
-            <h1 id="首先"><a href="#首先" class="headerlink" title="首先"></a>首先</h1><p>注意在C和C++里不同</p>
-<p>在C中定义一个结构体类型要用typedef:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Student</span></span></span><br><span class="line"><span class="class">　　　　&#123;</span></span><br><span class="line">　　　　 <span class="keyword">int</span> a;</span><br><span class="line">　　　　&#125;Stu;</span><br></pre></td></tr></table></figure>
+            <h1 id="NVIC中断介绍"><a href="#NVIC中断介绍" class="headerlink" title="NVIC中断介绍"></a>NVIC中断介绍</h1><ul>
+<li>CM3内核支持256个中断，其中包含了16个内核中断和240个外部中断，并且具有256级的可编程中断设置。</li>
+<li>STM32并没有使用CM3内核的全部东西，而是只用了它的一部分。</li>
+<li>STM32有84个中断，包括16个内核中断和68个可屏蔽中断，具有16级可编程的中断优先级。</li>
+<li>STM32F103系列上面，又只有60个可屏蔽中断（在107系列才有68个）</li>
+</ul>
+<h1 id="中断管理方法"><a href="#中断管理方法" class="headerlink" title="中断管理方法"></a>中断管理方法</h1><p>首先，对STM32中断进行分组，组0~4。同时，对每个中断设置一个抢占优先级和一个响应优先级值。</p>
+<p>分组配置是在寄存器SCB-&gt;AIRCR中配置：</p>
+<p><img src="http://ws3.sinaimg.cn/large/006BuM4Jgy1g67l4p94d5j30jf073t8r.jpg" alt="图片5"></p>
+<h1 id="抢占优先级-amp-响应优先级区别"><a href="#抢占优先级-amp-响应优先级区别" class="headerlink" title="抢占优先级 &amp; 响应优先级区别"></a>抢占优先级 &amp; 响应优先级区别</h1><ul>
+<li>高优先级的抢占优先级是可以打断正在进行的低抢占优先级中断的。</li>
+<li>抢占优先级相同的中断，高响应优先级不可以打断低响应优先级的中断。</li>
+<li>抢占优先级相同的中断，当两个中断同时发生的情况下，哪个响应优先级高，哪个先执行。</li>
+<li>如果两个中断的抢占优先级和响应优先级都是一样的话，则看哪个中断先发生就先执行；</li>
+</ul>
+<h1 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h1><p>假定设置中断优先级组为2，然后设置中断3(RTC中断)的抢占优先级为2，响应优先级为1。  中断6（外部中断0）的抢占优先级为3，响应优先级为0。中断7（外部中断1）的抢占优先级为2，响应优先级为0。</p>
+<p>那么这3个中断的优先级顺序为：中断7&gt;中断3&gt;中断6。 </p>
+<h1 id="特别说明"><a href="#特别说明" class="headerlink" title="特别说明"></a>特别说明</h1><p>一般情况下，系统代码执行过程中，只设置一次中断优先级分组，比如分组2，设置好分组之后一般不会再改变分组。随意改变分组会导致中断管理混乱，程序出现意想不到的执行结果。</p>
+<h1 id="中断优先级分组函数"><a href="#中断优先级分组函数" class="headerlink" title="中断优先级分组函数"></a>中断优先级分组函数</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">NVIC_PriorityGroupConfig</span><span class="params">(<span class="keyword">uint32_t</span> NVIC_PriorityGroup)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  assert_param(IS_NVIC_PRIORITY_GROUP(NVIC_PriorityGroup));</span><br><span class="line">  SCB-&gt;AIRCR = AIRCR_VECTKEY_MASK | NVIC_PriorityGroup;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//比如：</span></span><br><span class="line">NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);</span><br></pre></td></tr></table></figure>
 
-<p>于是在声明变量的时候就可：<code>Stu stu1</code> (如果没有typedef就必须用struct Student stu1;来声明)</p>
-<p>这里的Stu实际上就是struct Student的别名。<code>Stu==struct Student</code><br>　　　　<br>另外这里也可以不写Student（于是也不能struct Student stu1;了，必须是Stu stu1;）</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">　　　 &#123;</span></span><br><span class="line">　　　　 <span class="keyword">int</span> a;</span><br><span class="line">　　　　&#125;Stu;</span><br></pre></td></tr></table></figure>
+<h1 id="中断设置相关寄存器"><a href="#中断设置相关寄存器" class="headerlink" title="中断设置相关寄存器"></a>中断设置相关寄存器</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">__IO <span class="keyword">uint8_t</span>  IP[<span class="number">240</span>]; <span class="comment">//中断优先级控制的寄存器组</span></span><br><span class="line">__IO <span class="keyword">uint32_t</span> ISER[<span class="number">8</span>]; <span class="comment">//中断使能寄存器组</span></span><br><span class="line">__IO <span class="keyword">uint32_t</span> ICER[<span class="number">8</span>]; <span class="comment">//中断失能寄存器组</span></span><br><span class="line">__IO <span class="keyword">uint32_t</span> ISPR[<span class="number">8</span>]; <span class="comment">//中断挂起寄存器组</span></span><br><span class="line">__IO <span class="keyword">uint32_t</span> ICPR[<span class="number">8</span>]; <span class="comment">//中断解挂寄存器组</span></span><br><span class="line">__IO <span class="keyword">uint32_t</span> IABR[<span class="number">8</span>]; <span class="comment">//中断激活标志位寄存器组</span></span><br></pre></td></tr></table></figure>
 
-<p>但在c++里很简单，直接</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Student</span></span></span><br><span class="line"><span class="class">　　　　&#123;</span></span><br><span class="line">　　　　 <span class="keyword">int</span> a;</span><br><span class="line">　　　　&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="MDK中NVIC寄存器结构体"><a href="#MDK中NVIC寄存器结构体" class="headerlink" title="MDK中NVIC寄存器结构体"></a>MDK中NVIC寄存器结构体</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  __IO <span class="keyword">uint32_t</span> ISER[<span class="number">8</span>];             </span><br><span class="line">       <span class="keyword">uint32_t</span> RESERVED0[<span class="number">24</span>];                                   </span><br><span class="line">  __IO <span class="keyword">uint32_t</span> ICER[<span class="number">8</span>];                    </span><br><span class="line">       <span class="keyword">uint32_t</span> RSERVED1[<span class="number">24</span>];                                    </span><br><span class="line">  __IO <span class="keyword">uint32_t</span> ISPR[<span class="number">8</span>];                     </span><br><span class="line">       <span class="keyword">uint32_t</span> RESERVED2[<span class="number">24</span>];                                   </span><br><span class="line">  __IO <span class="keyword">uint32_t</span> ICPR[<span class="number">8</span>];                   </span><br><span class="line">       <span class="keyword">uint32_t</span> RESERVED3[<span class="number">24</span>];                                   </span><br><span class="line">  __IO <span class="keyword">uint32_t</span> IABR[<span class="number">8</span>];                     </span><br><span class="line">       <span class="keyword">uint32_t</span> RESERVED4[<span class="number">56</span>];                                   </span><br><span class="line">  __IO <span class="keyword">uint8_t</span>  IP[<span class="number">240</span>];                     </span><br><span class="line">       <span class="keyword">uint32_t</span> RESERVED5[<span class="number">644</span>];                                  </span><br><span class="line">  __O  <span class="keyword">uint32_t</span> STIR;                         </span><br><span class="line">&#125;  NVIC_Type;</span><br></pre></td></tr></table></figure>
 
-<p>于是就定义了结构体类型Student，声明变量时直接<code>Student stu2</code></p>
-<h1 id="其次"><a href="#其次" class="headerlink" title="其次"></a>其次</h1><p>　　　　<br>在c++中如果用typedef的话，又会造成区别：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Student</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">&#125;stu1;          <span class="comment">//stu1是一个变量</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Student2</span></span></span><br><span class="line"><span class="class">　　　　&#123;</span></span><br><span class="line">　　　　    <span class="keyword">int</span> a;</span><br><span class="line">　　　　&#125;stu2;   <span class="comment">//stu2是一个结构体类型=struct Student</span></span><br></pre></td></tr></table></figure>
-
-<p>使用时可以直接访问<code>stu1.a</code>，</p>
-<p>但是stu2则必须先<code>stu2 s2</code>;然后<code>s2.a=10</code>;</p>
-<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>　typedef struct和struct的区别：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">tagMyStruct</span></span></span><br><span class="line"><span class="class">　　　　&#123;</span> </span><br><span class="line">　　　　　<span class="keyword">int</span> iNum;</span><br><span class="line">　　　　　<span class="keyword">long</span> lLength;</span><br><span class="line">　　　　&#125; MyStruct;</span><br><span class="line"></span><br><span class="line"><span class="comment">//上面的tagMyStruct是标识符，</span></span><br><span class="line"><span class="comment">//MyStruct是变量类型（相当于（int,char等））</span></span><br></pre></td></tr></table></figure>
-
-<p>这语句实际上完成两个操作：</p>
-<ol>
-<li>定义一个新的结构类型</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tagMyStruct</span></span></span><br><span class="line"><span class="class">　　　　&#123;</span>　　 </span><br><span class="line">　　　　　<span class="keyword">int</span> iNum; </span><br><span class="line">　　　　　<span class="keyword">long</span> lLength; </span><br><span class="line">　　　　&#125;;</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>typedef为这个新的结构起了一个名字，叫MyStruct</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">　<span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">tagMyStruct</span> <span class="title">MyStruct</span>;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">typedef struct tagMyStruct</span><br><span class="line">　　　　&#123; </span><br><span class="line">　　　　　int iNum;</span><br><span class="line">　　　　　long lLength;</span><br><span class="line">　　　　&#125; MyStruct;</span><br></pre></td></tr></table></figure>
-
-<p>在C中，这个申明后申请结构变量的方法有两种：</p>
-<ul>
-<li><p>struct tagMyStruct 变量名</p>
+<h1 id="对于每个中断怎么设置优先级"><a href="#对于每个中断怎么设置优先级" class="headerlink" title="对于每个中断怎么设置优先级"></a>对于每个中断怎么设置优先级</h1><h2 id="中断优先级控制的寄存器组：IP-240"><a href="#中断优先级控制的寄存器组：IP-240" class="headerlink" title="中断优先级控制的寄存器组：IP[240]"></a>中断优先级控制的寄存器组：IP[240]</h2><ul>
+<li><p>全称是：Interrupt Priority Registers</p>
 </li>
-<li><p>MyStruct 变量名</p>
+<li><p>240个8位寄存器，每个中断使用一个寄存器来确定优先级。STM32F10x系列一共60个可屏蔽中断，使用IP[59]~IP[0]。</p>
+</li>
+<li><p>每个IP寄存器的高4位用来设置抢占和响应优先级（根据分组），低4位没有用到。</p>
+</li>
+<li><p><code>void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct);</code></p>
 </li>
 </ul>
-<p>在c++中可以有</p>
-<ul>
-<li><p>struct tagMyStruct 变量名</p>
+<h2 id="中断使能寄存器组：ISER-8"><a href="#中断使能寄存器组：ISER-8" class="headerlink" title="中断使能寄存器组：ISER[8]"></a>中断使能寄存器组：ISER[8]</h2><ul>
+<li><p>作用：用来使能中断</p>
 </li>
-<li><p>MyStruct 变量名</p>
+<li><p>32位寄存器，每个位控制一个中断的使能。STM32F10x只有60个可屏蔽中断，所以只使用了其中的ISER[0]和ISER[1]。</p>
 </li>
-<li><p>tagMyStruct 变量名</p>
+<li><p>ISER[0]的<code>bit0-bit31</code>分别对应中断<code>0-31</code>。ISER[1]的<code>bit0-27</code>对应中断<code>32~59</code>；</p>
+</li>
+<li><p><code>void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct);</code></p>
 </li>
 </ul>
+<h2 id="中断失能寄存器组：ICER-8"><a href="#中断失能寄存器组：ICER-8" class="headerlink" title="中断失能寄存器组：ICER[8]"></a>中断失能寄存器组：ICER[8]</h2><ul>
+<li><p>作用：只读，通过它可以知道当前在执行的中断是哪一个</p>
+</li>
+<li><p>32位寄存器，每个位控制一个中断的失能。STM32F10x只有60个可屏蔽中断，所以只使用了其中的ICER[0]和ICER[1]。</p>
+</li>
+<li><p>ICER[0]的<code>bit0~bit31</code>分别对应中断<code>0~31</code>。ICER[1]的<code>bit0~27</code>对应中断<code>32~59</code>；</p>
+</li>
+<li><p>配置方法跟ISER一样<br><code>static __INLINE uint32_t NVIC_GetActive(IRQn_Type IRQn)</code></p>
+</li>
+</ul>
+<h2 id="中断挂起控制寄存器组：ISPR-8"><a href="#中断挂起控制寄存器组：ISPR-8" class="headerlink" title="中断挂起控制寄存器组：ISPR[8]"></a>中断挂起控制寄存器组：ISPR[8]</h2><ul>
+<li>作用：用来挂起中断</li>
+</ul>
+<h2 id="中断解挂控制寄存器组：ICPR-8"><a href="#中断解挂控制寄存器组：ICPR-8" class="headerlink" title="中断解挂控制寄存器组：ICPR[8]"></a>中断解挂控制寄存器组：ICPR[8]</h2><ul>
+<li>作用：用来解挂中断</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">static __INLINE void NVIC_SetPendingIRQ(IRQn_Type IRQn)；</span><br><span class="line">static __INLINE uint32_t NVIC_GetPendingIRQ(IRQn_Type IRQn)；</span><br><span class="line"><span class="keyword">static</span> __<span class="function">INLINE <span class="keyword">void</span> <span class="title">NVIC_ClearPendingIRQ</span><span class="params">(IRQn_Type IRQn)</span></span></span><br></pre></td></tr></table></figure>
 
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	
+<h2 id="中断激活标志位寄存器组：IABR-8"><a href="#中断激活标志位寄存器组：IABR-8" class="headerlink" title="中断激活标志位寄存器组：IABR [8]"></a>中断激活标志位寄存器组：IABR [8]</h2><ul>
+<li><p>作用：只读，通过它可以知道当前在执行的中断是哪一个</p>
+</li>
+<li><p>如果对应位为1，说明该中断正在执行。</p>
+</li>
+<li><p><code>static __INLINE uint32_t NVIC_GetActive(IRQn_Type IRQn)</code></p>
+</li>
+</ul>
+<h1 id="中断参数初始化函数"><a href="#中断参数初始化函数" class="headerlink" title="中断参数初始化函数"></a>中断参数初始化函数</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">NVIC_Init</span><span class="params">(NVIC_InitTypeDef* NVIC_InitStruct)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  <span class="keyword">uint8_t</span> NVIC_IRQChannel; <span class="comment">//设置中断通道</span></span><br><span class="line">  <span class="keyword">uint8_t</span> NVIC_IRQChannelPreemptionPriority;<span class="comment">//设置响应优先级</span></span><br><span class="line">  <span class="keyword">uint8_t</span> NVIC_IRQChannelSubPriority; <span class="comment">//设置抢占优先级</span></span><br><span class="line">  FunctionalState NVIC_IRQChannelCmd; <span class="comment">//使能/使能</span></span><br><span class="line">&#125; NVIC_InitTypeDef;</span><br><span class="line"></span><br><span class="line">NVIC_InitTypeDef   NVIC_InitStructure;</span><br><span class="line">NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;<span class="comment">//串口1中断</span></span><br><span class="line">NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=<span class="number">1</span> ;<span class="comment">// 抢占优先级为1</span></span><br><span class="line">NVIC_InitStructure.NVIC_IRQChannelSubPriority = <span class="number">2</span>;<span class="comment">// 子优先级位2</span></span><br><span class="line">NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;<span class="comment">//IRQ通道使能</span></span><br><span class="line">NVIC_Init(&amp;NVIC_InitStructure);	<span class="comment">//根据上面指定的参数初始化NVIC寄存器</span></span><br></pre></td></tr></table></figure>
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.qianhongbo.com/MicroController/【C】从GPIO_Init引发的关于C的研究.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Qian Hongbo">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/Me.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog | Qian Homeberg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/MicroController/【C】从GPIO_Init引发的关于C的研究.html" itemprop="url">【C】从GPIO_Init引发的关于C的研究</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-14T16:26:18+08:00">
-                2019-08-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-		  
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/MicroController/【C】从GPIO_Init引发的关于C的研究.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="MicroController/【C】从GPIO_Init引发的关于C的研究.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  369 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在我看下面这段代码对<code>GPIO_Init</code>有一些不理解</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BEEP_Init</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"> GPIO_InitTypeDef  GPIO_InitStructure;     <span class="comment">//声明变量</span></span><br><span class="line"> 	</span><br><span class="line"> RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);</span><br><span class="line"> GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8;				 </span><br><span class="line"> GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 		 </span><br><span class="line"> GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	 </span><br><span class="line"> </span><br><span class="line"> GPIO_Init(GPIOB, &amp;GPIO_InitStructure);	  <span class="comment">//不理解</span></span><br><span class="line"> GPIO_ResetBits(GPIOB,GPIO_Pin_8);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>首先看一下<code>GPIO_Init</code>的语法</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">GPIO_Init</span><span class="params">(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)</span></span>;</span><br></pre></td></tr></table></figure>
-
-<p>我产生了几个疑问：</p>
-<ol>
-<li><code>GPIO_TypeDef* GPIOx</code>是什么意思？</li>
-<li>为什么<code>&amp;GPIO_InitStructure</code>要用指针类型？</li>
-<li>为什么<code>GPIOB</code>不用使用指针类型？</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这里定义了一个结构体</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  u16 GPIO_Pin;</span><br><span class="line">  GPIOSpeed_TypeDef GPIO_Speed;</span><br><span class="line">  GPIOMode_TypeDef GPIO_Mode;</span><br><span class="line">&#125;GPIO_InitTypeDef;     <span class="comment">//代码里用它来声明变量</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>怎么理解呢？<br>int 是 类型， i 是变量<br>GPIO_InitTypeDef GPIO_InitStructure;<br>同样，GPIO_InitTypeDef 是类型，GPIO_InitStructure 是变量！</p>
-</blockquote>
-<blockquote>
-<p>C语言里面没有这种GPIO_InitTypeDef 类型 ，所以要自己 通过 typedef 来定义这种类型。</p>
-</blockquote>
-<p>引用自一个知乎问题，<a href="https://www.zhihu.com/question/21136956" target="_blank" rel="noopener">链接</a></p>
-<blockquote>
-<p>一般int* p表示p类型是一个int型指针，int *p表示p是一个指针，指向的类型是int。</p>
-</blockquote>
-<p>也就是<code>GPIO_TypeDef* GPIOx</code>等同于<code>GPIO_TypeDef *GPIOx</code>，而且我之前对于<code>init *p</code>也有误解，我以为这是在声明一个<code>init</code>常量，我当时误认<code>*</code>已经把地址取值了，实则是造成了误会，它是定义了一个指向<code>init</code>类型的指针变量，也就是<code>p</code>，所以从这点考虑，<code>init* p</code>或许表意更清楚一点！</p>
-<p>终于搞懂了！！！</p>
-<p>第二个问题也就好解释了，因为<code>GPIO_Init</code>就是要求输入两个指针变量</p>
-<p>第三个问题</p>
-<blockquote>
-<p>GPIOB本身就是一个指针类型！</p>
-</blockquote>
+<h1 id="中断优先级设置步骤"><a href="#中断优先级设置步骤" class="headerlink" title="中断优先级设置步骤"></a>中断优先级设置步骤</h1><ul>
+<li>系统运行后先设置中断优先级分组。调用函数：<br><code>void NVIC_PriorityGroupConfig(uint32_t NVIC_PriorityGroup);</code>整个系统执行过程中，只设置一次中断分组。</li>
+<li>针对每个中断，设置对应的抢占优先级和响应优先级：<br><code>void NVIC_Init(NVIC_InitTypeDef* NVIC_InitStruct);</code></li>
+<li>如果需要挂起/解挂，查看中断当前激活状态，分别调用相关函数即可。</li>
+</ul>
 
           
         
@@ -1457,7 +1525,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/11/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/13/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/11/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/13/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1505,7 +1573,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">68</span>
+                  <span class="site-state-item-count">73</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1527,7 +1595,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1621,7 +1689,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">66.4k</span>
+    <span title="Site words total count">72.1k</span>
   
 </div>
 

@@ -1,10 +1,10 @@
+https://www.qianhongbo.com/Backend/C++/gcc-makefile-c.html
+https://www.qianhongbo.com/Backend/C++/内存对齐.html
+https://www.qianhongbo.com/Backend/C++/变量定义.html
+https://www.qianhongbo.com/Backend/C++/编译与链接.html
+https://www.qianhongbo.com/Backend/operating-system/内存管理.html
 https://www.qianhongbo.com/Backend/C++/C-data-types-size.html
 https://www.qianhongbo.com/Backend/C++/C-generate-random-number.html
 https://www.qianhongbo.com/Fullstack/AWS/AWS-CLI.html
 https://www.qianhongbo.com/Fullstack/AWS/AWS-s3.html
 https://www.qianhongbo.com/Fullstack/AWS/AWS-Elastic-Beanstalk.html
-https://www.qianhongbo.com/Fullstack/AWS/AWS-RDS.html
-https://www.qianhongbo.com/Fullstack/Angular-Basis.html
-https://www.qianhongbo.com/Fullstack/Authentication-and-Authorization-in-a-Node-API.html
-https://www.qianhongbo.com/Fullstack/Create-an-API-with-Express.html
-https://www.qianhongbo.com/Fullstack/Databases-and-SQL.html

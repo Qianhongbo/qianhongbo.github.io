@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.qianhongbo.com/Backend/operating-system/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.html</loc>
+    
+    <lastmod>2022-12-06T22:27:55.241Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qianhongbo.com/Backend/C++/%E7%BC%96%E8%AF%91%E4%B8%8E%E9%93%BE%E6%8E%A5.html</loc>
+    
+    <lastmod>2022-12-06T22:27:55.241Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qianhongbo.com/Backend/C++/%E5%8F%98%E9%87%8F%E5%AE%9A%E4%B9%89.html</loc>
+    
+    <lastmod>2022-12-06T22:27:55.240Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qianhongbo.com/Backend/C++/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90.html</loc>
+    
+    <lastmod>2022-12-06T22:27:55.239Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.qianhongbo.com/Backend/C++/gcc-makefile-c.html</loc>
+    
+    <lastmod>2022-12-06T22:27:55.238Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.qianhongbo.com/Backend/C++/lambda-expression-in-C.html</loc>
     
     <lastmod>2022-10-30T21:07:58.211Z</lastmod>
@@ -401,14 +436,14 @@
   </url>
   
   <url>
-    <loc>https://www.qianhongbo.com/MicroController/%E3%80%90STM32%E3%80%91NVIC%E4%B8%AD%E6%96%AD%E4%BC%98%E5%85%88%E7%BA%A7%E7%AE%A1%E7%90%86.html</loc>
+    <loc>https://www.qianhongbo.com/MicroController/%E3%80%90STM32%E3%80%91%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86.html</loc>
     
     <lastmod>2019-08-29T03:31:46.735Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.qianhongbo.com/MicroController/%E3%80%90STM32%E3%80%91%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86.html</loc>
+    <loc>https://www.qianhongbo.com/MicroController/%E3%80%90STM32%E3%80%91NVIC%E4%B8%AD%E6%96%AD%E4%BC%98%E5%85%88%E7%BA%A7%E7%AE%A1%E7%90%86.html</loc>
     
     <lastmod>2019-08-29T03:31:46.735Z</lastmod>
     
